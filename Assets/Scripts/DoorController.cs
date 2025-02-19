@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    Animator anim;
+    public Animator anim;
     bool isPlayerInTrigger = false;
     bool Open = false;
 
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    
 
     private void Update()
     {
