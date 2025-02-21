@@ -8,6 +8,7 @@ public class Item : ScriptableObject
 {
     public string itemName; //nombre del objeto
     public Sprite icon; //icono del objeto en la ventana de inventario
+    public GameObject itemPrefab;
 
 }
 public class Object : MonoBehaviour

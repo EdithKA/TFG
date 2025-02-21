@@ -18,6 +18,9 @@ public class InventoryManager : MonoBehaviour
 
     public bool isInventoryOpen = false;
 
+    public Transform leftHand;
+    public Transform rightHand;
+
     private void Start()
     {
         if (inventoryUI != null)
@@ -81,6 +84,9 @@ public class InventoryManager : MonoBehaviour
             Image icon = slot.transform.Find("Icon").GetComponent<Image>();
             icon.sprite = item.icon;
             slots.Add(slot);
+
+            Button button = slot.GetComponent<Button>();
+            button.onClick.AddListener(() => EquipItem(item));
         }
     }
 
@@ -101,6 +107,22 @@ public class InventoryManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Debug.Log("Inventario cerrado.");
+        }
+    }
+
+    private void EquipItem(Item item)
+    {
+        if(item.itemName != "mokia")
+        {
+            foreach(Transform child in rightHand)
+            {
+                Destroy(child.gameObject); //Quitamos de la mano derecha si hay algun objeto previo
+            }
+
+            GameObject itemOnHand = Instantiate(item.itemPrefab, rightHand);
+            itemOnHand.transform.localPosition = Vector3.zero; 
+            itemOnHand.transform.localRotation = Quaternion.identity;
+
         }
     }
 }
