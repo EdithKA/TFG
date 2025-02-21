@@ -5,8 +5,9 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 1.5f; 
-    public Transform cameraTransform; 
-    private float xRotation = 0f; 
+    public Transform cameraTransform;
+    private float xRotation = 0f;
+    public GameObject gameManager;
 
     private void Start()
     {
@@ -16,8 +17,12 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
-        RotatePlayer();
-        RotateCamera();
+        if (!gameManager.GetComponent<InventoryManager>().isInventoryOpen)
+        {
+            RotatePlayer();
+            RotateCamera();
+        }
+        
     }
 
     void RotatePlayer()
@@ -28,6 +33,7 @@ public class MouseLook : MonoBehaviour
 
     void RotateCamera()
     {
+        
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         xRotation -= mouseY; 

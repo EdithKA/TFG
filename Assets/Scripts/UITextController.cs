@@ -2,14 +2,13 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class InstructionTrigger : MonoBehaviour
+public class UITextController : MonoBehaviour
 {
     public  TextMeshProUGUI instructionText; 
     public string message = "Pulsa 'E' para interactuar"; 
     public float typingSpeed = 0.05f; 
     public float deletingSpeed = 0.05f; 
 
-    private bool isPlayerInTrigger = false; 
     private Coroutine typingCoroutine; 
     private Coroutine deletingCoroutine; 
 
@@ -19,7 +18,6 @@ public class InstructionTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            isPlayerInTrigger = true;
 
             if (deletingCoroutine != null) StopCoroutine(deletingCoroutine); 
             if (typingCoroutine != null) StopCoroutine(typingCoroutine);
@@ -32,7 +30,6 @@ public class InstructionTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            isPlayerInTrigger = false;
 
             if (typingCoroutine != null) StopCoroutine(typingCoroutine); 
             if (deletingCoroutine != null) StopCoroutine(deletingCoroutine); 
