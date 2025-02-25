@@ -15,7 +15,7 @@ public class Object : MonoBehaviour
 {
     public Transform PlayerHand;
     bool isPlayerInTrigger = false;
-    private bool isHeld = false;
+    public bool isHeld = false;
     public Item itemData;
     public UITextController instructions;
     public InventoryManager inventory; 
@@ -32,6 +32,10 @@ public class Object : MonoBehaviour
             Destroy(instructions.instructionText);
             Destroy(instructions);
             PickUp();
+        }
+        if(isHeld)
+        {
+            Destroy(instructions);
         }
     }
 
@@ -53,6 +57,7 @@ public class Object : MonoBehaviour
     void PickUp()
     {
         
+
         Debug.Log("You picked up a " + itemData.itemName);
         inventory.AddItem(itemData);
 

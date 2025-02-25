@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour
     public Transform leftHand;
     public Transform rightHand;
 
+    public string itemOnHand;
+
     private void Start()
     {
         if (inventoryUI != null)
@@ -112,17 +114,23 @@ public class InventoryManager : MonoBehaviour
 
     private void EquipItem(Item item)
     {
-        if(item.itemName != "mokia")
+        Debug.Log(item.name);
+        if(itemOnHand == item.name)
         {
-            foreach(Transform child in rightHand)
+            foreach (Transform child in rightHand)
             {
                 Destroy(child.gameObject); //Quitamos de la mano derecha si hay algun objeto previo
+                itemOnHand = "";
             }
-
-            GameObject itemOnHand = Instantiate(item.itemPrefab, rightHand);
-            itemOnHand.transform.localPosition = Vector3.zero; 
-            itemOnHand.transform.localRotation = Quaternion.identity;
-
+        }
+        
+        else if (item.itemName != "Mokia")
+        {
+            GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
+            itemSelected.transform.localPosition = Vector3.zero; 
+            itemSelected.transform.localRotation = Quaternion.identity;
+            itemSelected.GetComponent<Object>().isHeld = true;
+            itemOnHand = item.itemName;
         }
     }
 }

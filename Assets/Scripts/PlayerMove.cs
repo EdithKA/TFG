@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float playerSpeed = 20f;
+    float speed;
     private CharacterController characterController;
     public Animator camAnim;
     private bool isWalking;
@@ -14,8 +15,12 @@ public class PlayerMove : MonoBehaviour
     private Vector3 movementVector;
     private float Gravity = -10f;
 
+    public float stamina;
+    public float currentStamina;
+
     void Start()
     {
+        currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
     }
 
@@ -42,11 +47,24 @@ public class PlayerMove : MonoBehaviour
 
     void GetInput()
     {
+        if(Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
+        {
+            speed = playerSpeed * 3;
+            currentStamina = currentStamina - 0.1f;
+        }
+        else
+        {
+            speed = playerSpeed;
+            if(currentStamina < stamina)
+            {
+                currentStamina= currentStamina + 0.1f;
+            }
+        }
         inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         inputVector.Normalize();
         inputVector = transform.TransformDirection(inputVector);
 
-        movementVector = (inputVector * playerSpeed) + (Vector3.up * Gravity);
+        movementVector = (inputVector * speed) + (Vector3.up * Gravity);
     }
 
     void MovePlayer()
