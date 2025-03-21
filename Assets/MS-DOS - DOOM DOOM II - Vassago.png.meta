@@ -1,0 +1,2688 @@
+fileFormatVersion: 2
+guid: 3968e504f550c604092bf9830bf02794
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 824
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067dd108bb7f9394c9a68120f02b0cb3
+      internalID: -67965912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 825
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81832624dc384944b886a115d97f5f2c
+      internalID: 1845151151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 825
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62c54618714c3d4494f9ca7da6c9c24
+      internalID: 1856586893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_3
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 824
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d35afd74a691aa42b5197d3a19a6c8c
+      internalID: -197273700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 825
+        width: 83
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fac9ae64cc1eca4399f4bc0384e464e
+      internalID: -1509496603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_5
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 825
+        width: 60
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526688c47c5bb434280fe935c0ee9fa6
+      internalID: 837968624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 824
+        width: 63
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dadc0c780a985964aa21e347344ac391
+      internalID: -1694096848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_7
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 734
+        width: 78
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc108f6f581b28478e6464d4c3b14f1
+      internalID: 1272984920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 735
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f3db9e34b75eb43adca6c394f9b81f
+      internalID: 1601452234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_9
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 735
+        width: 69
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987a0e3e1022e7e44beef24a256819c9
+      internalID: -1203396542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 734
+        width: 53
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3660a429973db468a60d469b967d96
+      internalID: 1278605888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_11
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 734
+        width: 63
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26f7c5f8871be946befa0baca9f3129
+      internalID: -746756845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 734
+        width: 84
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71e4b61191099e4baa9208251c9d5ac
+      internalID: -1223605428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_13
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 734
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a92ccbb3d7c8f43bd2e47cba17883d
+      internalID: 1460313868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_14
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 734
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfec5afdc217e0049ada80dc6b4c0e0f
+      internalID: -479025424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_15
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 769
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a9350feaae87c4ca450bca16e7d737
+      internalID: -113346910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_16
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 769
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0cceddc29081341b49322894c87e8b
+      internalID: 587325697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_17
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 769
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d9f1d0c9dc3c74aa1924af3a2c392b
+      internalID: 1650722221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_18
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 769
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c17e325317033541a1bbfe852d1f3a5
+      internalID: 1279290404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_19
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 769
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f771f663eaf204cbfec259c5c1bc9c
+      internalID: -1199529520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_20
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 769
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36640efc5705714da4cdb9f3af6b80e
+      internalID: -1226007231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 644
+        width: 75
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131345cbae4205e4f9585b9e2177de0a
+      internalID: -868231754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_22
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 644
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03172c82b8c6b68458bbd7383ebe4ee7
+      internalID: -1867954031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_23
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 644
+        width: 63
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f54698991b1a3488b527b288ab6410
+      internalID: -1809358582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_24
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 645
+        width: 83
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff70cf606dfc48b4ca31e10869671139
+      internalID: -716888833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_25
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 644
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb195416e72c0784eaee4d52912bed49
+      internalID: -768072051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_26
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 645
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511c26718fe17544aba5fa088ea81a65
+      internalID: 328595915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_27
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 645
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb854a6da9b7f14484ca019d260d2b1
+      internalID: -376308707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_28
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 732
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0dd78be989460418da32ffc809cf50
+      internalID: -47731219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_29
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 732
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c703ce1d9c5763d45b6d108a80607865
+      internalID: -1044760212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_30
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 645
+        width: 60
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820d6fbfbd2842344a4aa91bf39d77df
+      internalID: -69670968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_31
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbda9d36f5eb70458e8f83d364d03dc
+      internalID: 1715648545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_32
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7721cca45883fe4a9e29c6398841c87
+      internalID: 805950948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_33
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555272ca0f2b1fc4fb471c507c4fb38a
+      internalID: -649791571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_34
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 695
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc93e3f7a3b75e148acc1166795d0bca
+      internalID: 1916980825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_35
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 695
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00a578fa7401c94797a585dff8dd456
+      internalID: -1706321872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_36
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfabecdfbeea405468c6a6a5484ed510
+      internalID: 681998302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_37
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8148aedaa7f9648a63d6adb905eca3
+      internalID: -1753531102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_38
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 695
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b7bee8a19c7ad49babc85a43acab86
+      internalID: 1613178705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_39
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 695
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48ebe01f3dce804ba76e5cec4cced94
+      internalID: 1756077715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_40
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 555
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5e92fcdad5f194693fdc9d3fadd1ec
+      internalID: -629522201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_41
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 554
+        width: 67
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fa579ba706ece4598155d2d1339532
+      internalID: 1859170486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_42
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 554
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58798854dd4a5f04598e0c604a3a9c7f
+      internalID: 792737281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_43
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 554
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275a6354dfea2ca4a8478b856d725eb0
+      internalID: -1170583397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_44
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 554
+        width: 84
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a052bbe7cfbcca44fa18ec8918b3b0e0
+      internalID: -1111874252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_45
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 554
+        width: 63
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ec81bdd32ed5346bbbd6dd786796f4
+      internalID: -17230910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_46
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 554
+        width: 53
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e10f07f3a127394fb76c5c00216f9f0
+      internalID: -580178990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_47
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 555
+        width: 69
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f879ab4e640e04eb4de6972138953c
+      internalID: 366655869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_48
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 462
+        width: 104
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d21f95571a5c341b5ca45eace5e023
+      internalID: -353362135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_49
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 461
+        width: 66
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc6ed5b2867c444fb86b9f718f59b78
+      internalID: -707797676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_50
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 460
+        width: 75
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc24bdb63c1c974384368494ed75987
+      internalID: 121006929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_51
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 461
+        width: 107
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b990ae0f0d12bc34b960a2a74bac2a18
+      internalID: -1356056116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_52
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 461
+        width: 110
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e5e5d9866d809428472dd6de3bfa98
+      internalID: -101896763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_53
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 460
+        width: 61
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af68813de2d479a44b5c7a501c76ec50
+      internalID: -852285511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_54
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 460
+        width: 72
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcb3a07304ebc9489a53d23a4a4e6fc
+      internalID: 1926078479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_55
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 461
+        width: 116
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70cf18095c4c69b48b634d590fff802f
+      internalID: -1875621418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 367
+        width: 138
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3305bbd21bbf834687b1c5366de0fd2
+      internalID: 2125115301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_57
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 368
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5a1a6970bec4e49b296d1db599001c
+      internalID: -1662231576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_58
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 368
+        width: 57
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8746fb093aa08b54abc7565f592f8906
+      internalID: -1476545900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_59
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 369
+        width: 107
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a46cb91f8126e4b9bc82cf28aa44ac
+      internalID: -1903658824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_60
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 368
+        width: 122
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e212953020df65942b81c71188ed4ad7
+      internalID: -1338573066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_61
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 367
+        width: 98
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05fcc3b70031b647a92b5a4d903f499
+      internalID: 1115955744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_62
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 366
+        width: 55
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22d75d4b6de1be4ca6deaf89ac11f27
+      internalID: -1103584616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_63
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 366
+        width: 110
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbafaa03d403d543b8bf4f17733cdbc
+      internalID: -460381054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_64
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 273
+        width: 99
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17fff19880805d4c95b8fc6f26da76a
+      internalID: 876551588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_65
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 273
+        width: 133
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9fc8f997153b641abb29ecbd3d4225
+      internalID: 2136906985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_66
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 272
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af34c9806f633dd479ae3d516578d193
+      internalID: 1256150097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_67
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 271
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aeb7b2112e6fec4da5fe4fd2492af47
+      internalID: -245642825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_68
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 274
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab70b49e052aae4da986ec7ce3f81ba
+      internalID: -1235641319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_69
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 274
+        width: 117
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726c3aa880e224642938f28647eed32a
+      internalID: 363191541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_70
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 273
+        width: 100
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3ea9d1ce674514aad0247320d2d034
+      internalID: -264058919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_71
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 273
+        width: 59
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c6a1f43d914254db27b6d7854fdb93
+      internalID: -921107109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_72
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 181
+        width: 79
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc4fa21d08446e4fa63675bbd1443a0
+      internalID: 1745995374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_73
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 180
+        width: 120
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe2ba4809736874cb97daba83f93005
+      internalID: 561930701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_74
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 178
+        width: 108
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca98392ba408bf141a7f030361001437
+      internalID: -1475988283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_75
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 178
+        width: 58
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba8892ec98b0aa4ba7ba5bdae2708d1
+      internalID: -1402510609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_76
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 180
+        width: 82
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e74951d371e34747b0e3b40e78e8231
+      internalID: -303137939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_77
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 180
+        width: 109
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eee9acf6eeba1f4f8f7954bb901ef4d
+      internalID: 1822800096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_78
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 181
+        width: 103
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0e9dd7abcf2d04085a905760365934
+      internalID: -241363004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_79
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 180
+        width: 65
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cffa4ff96cdf047bf35c344df9094d
+      internalID: 1091035201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 89
+        width: 75
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d3734f24ae94f46a2386cb43b04dd9
+      internalID: 2088487454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_81
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 88
+        width: 70
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd0e711415ce4e42bb78227c970e282
+      internalID: -2019616414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_82
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 87
+        width: 58
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a496a16fba66d4ea211b64c778e1f7
+      internalID: 305343654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_83
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 87
+        width: 78
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a84162216fdc9f4181a4e724cb5b1d4
+      internalID: 1915576933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_84
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 81
+        width: 86
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c75a7660726d647a3403b32972503a
+      internalID: -1716500097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_85
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 86
+        width: 74
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff439d1fda6468448700a8dcac1911c
+      internalID: 999913023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_86
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 86
+        width: 54
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca05af5318b84443a2ace34853ce607
+      internalID: 1719817495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_87
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 89
+        width: 80
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff982ac83527b0d49b57ad9a0072d854
+      internalID: -350192699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 150
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f854b95b0b1ac429be8777aef6b75c
+      internalID: -534269344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_89
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 0
+        width: 73
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edacef255e5eaf543bae18f9621fcb03
+      internalID: 1322943938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_90
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
+        width: 72
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b984eafac561ac4499fdbe15449a23d7
+      internalID: 1088956514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_91
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e213f3bf2ed2ca4458804410a94b6dae
+      internalID: -650233545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_92
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 41
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1c341032143054eb18890e0881404c
+      internalID: 515760106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_93
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 75
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9899855efd93c4e4aa56b8d9879e52c9
+      internalID: -1629876464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_94
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 66
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4611502173f82419caa45e5433f459
+      internalID: -1466377833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_95
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 73
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95109d7dd4d71fb499b3fc2c36ccc54d
+      internalID: -550968930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_96
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 63
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccb334272792514d938f4624f0fdfc3
+      internalID: 581941170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_97
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 38
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6fc1e2277f7ad46a61676159811978
+      internalID: -557992925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_98
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 59
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391a40ccc9483134caf52d16fcea38d7
+      internalID: 1163676456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_99
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 38
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087280aa5240b4b4398249e6d902689b
+      internalID: 1473943639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_100
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 50
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729e3d64c8ee1d8418f35b3e30344510
+      internalID: -354255871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_101
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 54
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06b354ac9720af428ed9b66cf249a5b
+      internalID: 467695851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_102
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 37
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd43aa4427a2d4c4b92c08c630055bed
+      internalID: -1805275671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_103
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 21
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a326a5273b35806438d3a79052c1569f
+      internalID: -1439735341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_104
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 3
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06afc8d2e8ad19f429bdb54492e061e6
+      internalID: -577937123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_105
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 27
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88155a3c2fc519418142ac21ad6b6b1
+      internalID: -593528682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_106
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 26
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e791c277fe41d4781d65a4d5d56cbc
+      internalID: 1712004364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_107
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa58a63424165fd4381355eaebe58628
+      internalID: 1290924985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_108
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 3
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c155686bf7cd54383ca90bef8e81cd
+      internalID: 1707571812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_109
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 10
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669c895b9f3b3304cadd0c64ffa05edf
+      internalID: 649129572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_110
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 18
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0beff73c31c3aa24784a65d3c2ac69ec
+      internalID: -1703420244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_111
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 16
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d94814dd1312104bbd6e562b8a77278
+      internalID: -1523083859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_112
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 3
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e5bdb1fd03a0742bd69cbb0a05e3e9
+      internalID: 213200604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_113
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 12
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d88b28c15a1e645bf19ee904036b3b
+      internalID: 2070486257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_114
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 0
+        width: 48
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e2d1ac70eaa184587151ed0a5b81a5
+      internalID: -1040206575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_115
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 0
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae1133446e43804d928620a4d088474
+      internalID: -148759111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MS-DOS - DOOM DOOM II - Vassago_116
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 0
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d50737557f21249917ff8167a9e1b6
+      internalID: -500659589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MS-DOS - DOOM DOOM II - Vassago_0: -67965912
+      MS-DOS - DOOM DOOM II - Vassago_1: 1845151151
+      MS-DOS - DOOM DOOM II - Vassago_10: 1278605888
+      MS-DOS - DOOM DOOM II - Vassago_100: -354255871
+      MS-DOS - DOOM DOOM II - Vassago_101: 467695851
+      MS-DOS - DOOM DOOM II - Vassago_102: -1805275671
+      MS-DOS - DOOM DOOM II - Vassago_103: -1439735341
+      MS-DOS - DOOM DOOM II - Vassago_104: -577937123
+      MS-DOS - DOOM DOOM II - Vassago_105: -593528682
+      MS-DOS - DOOM DOOM II - Vassago_106: 1712004364
+      MS-DOS - DOOM DOOM II - Vassago_107: 1290924985
+      MS-DOS - DOOM DOOM II - Vassago_108: 1707571812
+      MS-DOS - DOOM DOOM II - Vassago_109: 649129572
+      MS-DOS - DOOM DOOM II - Vassago_11: -746756845
+      MS-DOS - DOOM DOOM II - Vassago_110: -1703420244
+      MS-DOS - DOOM DOOM II - Vassago_111: -1523083859
+      MS-DOS - DOOM DOOM II - Vassago_112: 213200604
+      MS-DOS - DOOM DOOM II - Vassago_113: 2070486257
+      MS-DOS - DOOM DOOM II - Vassago_114: -1040206575
+      MS-DOS - DOOM DOOM II - Vassago_115: -148759111
+      MS-DOS - DOOM DOOM II - Vassago_116: -500659589
+      MS-DOS - DOOM DOOM II - Vassago_12: -1223605428
+      MS-DOS - DOOM DOOM II - Vassago_13: 1460313868
+      MS-DOS - DOOM DOOM II - Vassago_14: -479025424
+      MS-DOS - DOOM DOOM II - Vassago_15: -113346910
+      MS-DOS - DOOM DOOM II - Vassago_16: 587325697
+      MS-DOS - DOOM DOOM II - Vassago_17: 1650722221
+      MS-DOS - DOOM DOOM II - Vassago_18: 1279290404
+      MS-DOS - DOOM DOOM II - Vassago_19: -1199529520
+      MS-DOS - DOOM DOOM II - Vassago_2: 1856586893
+      MS-DOS - DOOM DOOM II - Vassago_20: -1226007231
+      MS-DOS - DOOM DOOM II - Vassago_21: -868231754
+      MS-DOS - DOOM DOOM II - Vassago_22: -1867954031
+      MS-DOS - DOOM DOOM II - Vassago_23: -1809358582
+      MS-DOS - DOOM DOOM II - Vassago_24: -716888833
+      MS-DOS - DOOM DOOM II - Vassago_25: -768072051
+      MS-DOS - DOOM DOOM II - Vassago_26: 328595915
+      MS-DOS - DOOM DOOM II - Vassago_27: -376308707
+      MS-DOS - DOOM DOOM II - Vassago_28: -47731219
+      MS-DOS - DOOM DOOM II - Vassago_29: -1044760212
+      MS-DOS - DOOM DOOM II - Vassago_3: -197273700
+      MS-DOS - DOOM DOOM II - Vassago_30: -69670968
+      MS-DOS - DOOM DOOM II - Vassago_31: 1715648545
+      MS-DOS - DOOM DOOM II - Vassago_32: 805950948
+      MS-DOS - DOOM DOOM II - Vassago_33: -649791571
+      MS-DOS - DOOM DOOM II - Vassago_34: 1916980825
+      MS-DOS - DOOM DOOM II - Vassago_35: -1706321872
+      MS-DOS - DOOM DOOM II - Vassago_36: 681998302
+      MS-DOS - DOOM DOOM II - Vassago_37: -1753531102
+      MS-DOS - DOOM DOOM II - Vassago_38: 1613178705
+      MS-DOS - DOOM DOOM II - Vassago_39: 1756077715
+      MS-DOS - DOOM DOOM II - Vassago_4: -1509496603
+      MS-DOS - DOOM DOOM II - Vassago_40: -629522201
+      MS-DOS - DOOM DOOM II - Vassago_41: 1859170486
+      MS-DOS - DOOM DOOM II - Vassago_42: 792737281
+      MS-DOS - DOOM DOOM II - Vassago_43: -1170583397
+      MS-DOS - DOOM DOOM II - Vassago_44: -1111874252
+      MS-DOS - DOOM DOOM II - Vassago_45: -17230910
+      MS-DOS - DOOM DOOM II - Vassago_46: -580178990
+      MS-DOS - DOOM DOOM II - Vassago_47: 366655869
+      MS-DOS - DOOM DOOM II - Vassago_48: -353362135
+      MS-DOS - DOOM DOOM II - Vassago_49: -707797676
+      MS-DOS - DOOM DOOM II - Vassago_5: 837968624
+      MS-DOS - DOOM DOOM II - Vassago_50: 121006929
+      MS-DOS - DOOM DOOM II - Vassago_51: -1356056116
+      MS-DOS - DOOM DOOM II - Vassago_52: -101896763
+      MS-DOS - DOOM DOOM II - Vassago_53: -852285511
+      MS-DOS - DOOM DOOM II - Vassago_54: 1926078479
+      MS-DOS - DOOM DOOM II - Vassago_55: -1875621418
+      MS-DOS - DOOM DOOM II - Vassago_56: 2125115301
+      MS-DOS - DOOM DOOM II - Vassago_57: -1662231576
+      MS-DOS - DOOM DOOM II - Vassago_58: -1476545900
+      MS-DOS - DOOM DOOM II - Vassago_59: -1903658824
+      MS-DOS - DOOM DOOM II - Vassago_6: -1694096848
+      MS-DOS - DOOM DOOM II - Vassago_60: -1338573066
+      MS-DOS - DOOM DOOM II - Vassago_61: 1115955744
+      MS-DOS - DOOM DOOM II - Vassago_62: -1103584616
+      MS-DOS - DOOM DOOM II - Vassago_63: -460381054
+      MS-DOS - DOOM DOOM II - Vassago_64: 876551588
+      MS-DOS - DOOM DOOM II - Vassago_65: 2136906985
+      MS-DOS - DOOM DOOM II - Vassago_66: 1256150097
+      MS-DOS - DOOM DOOM II - Vassago_67: -245642825
+      MS-DOS - DOOM DOOM II - Vassago_68: -1235641319
+      MS-DOS - DOOM DOOM II - Vassago_69: 363191541
+      MS-DOS - DOOM DOOM II - Vassago_7: 1272984920
+      MS-DOS - DOOM DOOM II - Vassago_70: -264058919
+      MS-DOS - DOOM DOOM II - Vassago_71: -921107109
+      MS-DOS - DOOM DOOM II - Vassago_72: 1745995374
+      MS-DOS - DOOM DOOM II - Vassago_73: 561930701
+      MS-DOS - DOOM DOOM II - Vassago_74: -1475988283
+      MS-DOS - DOOM DOOM II - Vassago_75: -1402510609
+      MS-DOS - DOOM DOOM II - Vassago_76: -303137939
+      MS-DOS - DOOM DOOM II - Vassago_77: 1822800096
+      MS-DOS - DOOM DOOM II - Vassago_78: -241363004
+      MS-DOS - DOOM DOOM II - Vassago_79: 1091035201
+      MS-DOS - DOOM DOOM II - Vassago_8: 1601452234
+      MS-DOS - DOOM DOOM II - Vassago_80: 2088487454
+      MS-DOS - DOOM DOOM II - Vassago_81: -2019616414
+      MS-DOS - DOOM DOOM II - Vassago_82: 305343654
+      MS-DOS - DOOM DOOM II - Vassago_83: 1915576933
+      MS-DOS - DOOM DOOM II - Vassago_84: -1716500097
+      MS-DOS - DOOM DOOM II - Vassago_85: 999913023
+      MS-DOS - DOOM DOOM II - Vassago_86: 1719817495
+      MS-DOS - DOOM DOOM II - Vassago_87: -350192699
+      MS-DOS - DOOM DOOM II - Vassago_88: -534269344
+      MS-DOS - DOOM DOOM II - Vassago_89: 1322943938
+      MS-DOS - DOOM DOOM II - Vassago_9: -1203396542
+      MS-DOS - DOOM DOOM II - Vassago_90: 1088956514
+      MS-DOS - DOOM DOOM II - Vassago_91: -650233545
+      MS-DOS - DOOM DOOM II - Vassago_92: 515760106
+      MS-DOS - DOOM DOOM II - Vassago_93: -1629876464
+      MS-DOS - DOOM DOOM II - Vassago_94: -1466377833
+      MS-DOS - DOOM DOOM II - Vassago_95: -550968930
+      MS-DOS - DOOM DOOM II - Vassago_96: 581941170
+      MS-DOS - DOOM DOOM II - Vassago_97: -557992925
+      MS-DOS - DOOM DOOM II - Vassago_98: 1163676456
+      MS-DOS - DOOM DOOM II - Vassago_99: 1473943639
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
