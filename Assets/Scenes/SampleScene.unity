@@ -4356,6 +4356,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29a6db4858bd2f8498f74efb19904a8a, type: 3}
   - {fileID: 21300000, guid: 9b6d4c05b4d1cd74689b967575912a8a, type: 3}
   - {fileID: 21300000, guid: 81ad4dc98198136478269ad095b15290, type: 3}
+  - {fileID: 21300000, guid: 81ad4dc98198136478269ad095b15290, type: 3}
   healthBars:
   - {fileID: 1954065663}
   - {fileID: 1954065662}
