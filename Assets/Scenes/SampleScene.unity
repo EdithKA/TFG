@@ -2781,14 +2781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.52156866}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.80784315}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12cf267831570e449bb24a9434e980a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af4b0e7312764214d9f6a339a3e56ea2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4352,10 +4352,10 @@ MonoBehaviour:
   rotationRange: 45
   heartIcon: {fileID: 1954065664}
   heartStats:
+  - {fileID: 21300000, guid: 80399daf904f290459639bbc502af5b0, type: 3}
   - {fileID: 21300000, guid: ad56f0a0faf3ef742bad71971389d8a8, type: 3}
   - {fileID: 21300000, guid: 29a6db4858bd2f8498f74efb19904a8a, type: 3}
   - {fileID: 21300000, guid: 9b6d4c05b4d1cd74689b967575912a8a, type: 3}
-  - {fileID: 21300000, guid: 81ad4dc98198136478269ad095b15290, type: 3}
   - {fileID: 21300000, guid: 81ad4dc98198136478269ad095b15290, type: 3}
   healthBars:
   - {fileID: 1954065663}
@@ -4366,6 +4366,7 @@ MonoBehaviour:
   brainStats:
   - {fileID: 21300000, guid: 71edb84299b06c04f99900aed08a7072, type: 3}
   - {fileID: 21300000, guid: 564de1b7de3db2f4bb8a54a8182fa694, type: 3}
+  - {fileID: 21300000, guid: 4d08d6f9dffc179449a8a2d1ccae1120, type: 3}
   - {fileID: 21300000, guid: f66af1307196d5c489100b78df56fe53, type: 3}
   - {fileID: 21300000, guid: 250f065d3dfb97f4bbd447232ca33213, type: 3}
   sanityBars:

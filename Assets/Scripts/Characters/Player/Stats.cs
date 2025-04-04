@@ -80,17 +80,20 @@ public class Stats : MonoBehaviour
 
         switch (health)
         {
-            case <= 25:
-                heartIcon.sprite = heartStats[0];
+            case <= 0:
+                heartIcon.sprite = heartStats[0]; 
                 break;
-            case > 25 and <= 50:
+            case <= 25:
                 heartIcon.sprite = heartStats[1];
                 break;
-            case > 50 and <= 75:
+            case > 25 and <= 50:
                 heartIcon.sprite = heartStats[2];
                 break;
-            case > 75:
+            case > 50 and <= 75:
                 heartIcon.sprite = heartStats[3];
+                break;
+            case > 75:
+                heartIcon.sprite = heartStats[4];
                 break;
         }
     }
@@ -101,17 +104,20 @@ public class Stats : MonoBehaviour
 
         switch (sanity)
         {
-            case <= 25:
+            case <= 0:
                 sanityIcon.sprite = brainStats[0];
                 break;
-            case > 25 and <= 50:
+            case <= 25:
                 sanityIcon.sprite = brainStats[1];
                 break;
-            case > 50 and <= 75:
+            case > 25 and <= 50:
                 sanityIcon.sprite = brainStats[2];
                 break;
-            case > 75:
+            case > 50 and <= 75:
                 sanityIcon.sprite = brainStats[3];
+                break;
+            case > 75:
+                sanityIcon.sprite = brainStats[4];
                 break;
         }
     }
