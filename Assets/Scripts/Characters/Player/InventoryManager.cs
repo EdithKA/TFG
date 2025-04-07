@@ -23,8 +23,11 @@ public class InventoryManager : MonoBehaviour
 
     public string itemOnHand;
 
+    Camera playerCam;
+
     private void Start()
     {
+        playerCam = FindObjectOfType<Camera>();
         if (inventoryUI != null)
         {
             inventoryUI.SetActive(false); 
@@ -99,16 +102,20 @@ public class InventoryManager : MonoBehaviour
 
         if (isInventoryOpen)
         {
+            //playerCam.transform.rotation = Quaternion.Euler(18.175f, 0f, 0f);
             Debug.Log("Inventario abierto.");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            
+            Vector3 targetPosition = inventoryUI.transform.position - playerCam.transform.position;
+            playerCam.transform.rotation = Quaternion.LookRotation(targetPosition.normalized);
+
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Debug.Log("Inventario cerrado.");
+            playerCam.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 

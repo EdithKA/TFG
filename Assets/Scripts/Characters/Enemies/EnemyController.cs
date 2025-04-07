@@ -6,10 +6,13 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public bool isAggressive;
+    public bool canChase;
+    public bool canAttack;
     public Transform playerTransform;
     private NavMeshAgent enemyNavMeshAgent;
+    public float chaseDistance;
     public float attackDistance;
+
 
     // Animation
     public Animator anim;
@@ -33,25 +36,38 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        isAggressive = CheckPlayerDistance();
 
-        anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
+        NextAction();
+        setAnimation();
+       
+    }
 
-        if (isAggressive)
+    void NextAction()
+    {
+
+        float dist = Vector3.Distance(transform.position, playerTransform.position);
+        Debug.Log(dist);
+        canAttack = false;
+        if(dist > chaseDistance) //Patrullar
+        {
+            Patrol();
+        }
+        else if (dist > attackDistance) //Atacar
         {
             SetDestinationToPlayer();
         }
         else
         {
-            Patrol();
+            canAttack = true;
         }
     }
-
-    bool CheckPlayerDistance()
+    void setAnimation()
     {
-        var dist = Vector3.Distance(transform.position, playerTransform.position);
-        return dist <= attackDistance;
+        anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
+        anim.SetBool("Attack", canAttack);
     }
+    
+
 
     void SetDestinationToPlayer()
     {

@@ -18,15 +18,23 @@ public class PlayerMove : MonoBehaviour
     public float stamina;
     public float currentStamina;
 
+    public Animator handAnim;
+
+    public InventoryManager inventoryManager;
+
     void Start()
     {
+        inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        GetInput();
+        if(inventoryManager.isInventoryOpen == false)
+        {
+            GetInput();
+        }
         MovePlayer();
         CheckForHeadBob();
 
@@ -52,12 +60,20 @@ public class PlayerMove : MonoBehaviour
             speed = playerSpeed * 3;
             currentStamina = currentStamina - 0.1f;
         }
+        else if(Input.GetMouseButtonDown(1)) //Acercar el telefono
+        {
+            handAnim.SetBool("closer", true);
+        }
+        else if (Input.GetMouseButtonUp(1)) //Alejar el telefono
+        {
+            handAnim.SetBool("closer", false);
+        }
         else
         {
             speed = playerSpeed;
-            if(currentStamina < stamina)
+            if (currentStamina < stamina)
             {
-                currentStamina= currentStamina + 0.1f;
+                currentStamina = currentStamina + 0.1f;
             }
         }
         inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
