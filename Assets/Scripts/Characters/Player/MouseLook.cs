@@ -7,17 +7,20 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 1.5f; 
     public Transform cameraTransform;
     private float xRotation = 0f;
-    public GameObject gameManager;
+    public PlayerMove player;
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerMove>();
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
     }
 
+
+
     private void Update()
     {
-        if (!gameManager.GetComponent<InventoryManager>().isInventoryOpen)
+        if (!player.isInventoryOpen)
         {
             RotatePlayer();
             RotateCamera();

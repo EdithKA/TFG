@@ -16,7 +16,6 @@ public class InventoryManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     private List<GameObject> slots = new List<GameObject>(); //Slots en la UI
 
-    public bool isInventoryOpen = false;
 
     public Transform leftHand;
     public Transform rightHand;
@@ -24,6 +23,7 @@ public class InventoryManager : MonoBehaviour
     public string itemOnHand;
 
     Camera playerCam;
+    public bool IsInventoryOpen { get; private set; }
 
     private void Start()
     {
@@ -36,10 +36,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && HasItem("Mokia"))
-        {
-            ToggleInventory();
-        }
+       
     }
 
 
@@ -52,7 +49,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Inventory is full");
+            //Debug.Log("Inventory is full");
         }
     }
 
@@ -95,33 +92,26 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void ToggleInventory()
+    public void ToggleInventory()
     {
-        isInventoryOpen = !isInventoryOpen;
-        inventoryUI.SetActive(isInventoryOpen); // Mostrar/Ocultar la UI del inventario
+        IsInventoryOpen = !IsInventoryOpen;
+        inventoryUI.SetActive(IsInventoryOpen);
 
-        if (isInventoryOpen)
+        if (IsInventoryOpen)
         {
-            //playerCam.transform.rotation = Quaternion.Euler(18.175f, 0f, 0f);
-            Debug.Log("Inventario abierto.");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Vector3 targetPosition = inventoryUI.transform.position - playerCam.transform.position;
-            playerCam.transform.rotation = Quaternion.LookRotation(targetPosition.normalized);
-
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Debug.Log("Inventario cerrado.");
-            playerCam.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
     private void EquipItem(Item item)
     {
-        Debug.Log(item.name);
+        //Debug.Log(item.name);
         if(itemOnHand == item.name)
         {
             foreach (Transform child in rightHand)

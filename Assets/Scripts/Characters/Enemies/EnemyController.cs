@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     {
 
         float dist = Vector3.Distance(transform.position, playerTransform.position);
-        Debug.Log(dist);
+        //Debug.Log(dist);
         canAttack = false;
         if(dist > chaseDistance) //Patrullar
         {
