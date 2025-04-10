@@ -114,16 +114,20 @@ public class InventoryManager : MonoBehaviour
 
     private void EquipItem(Item item)
     {
+        bool itemGrab = false;
+
         //Debug.Log(item.name);
-        if(itemOnHand == item.name)
+        if (itemOnHand == item.name)
         {
+            itemGrab = true;
             foreach (Transform child in rightHand)
             {
                 Destroy(child.gameObject); //Quitamos de la mano derecha si hay algun objeto previo
                 itemOnHand = "";
             }
+
         }
-        
+
         else if (item.itemName != "Mokia")
         {
             GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
@@ -134,6 +138,7 @@ public class InventoryManager : MonoBehaviour
             playerMove.RightHandOn = !playerMove.RightHandOn;
         }
 
+        playerMove.RightHandOn = itemGrab;
     }
 }
 

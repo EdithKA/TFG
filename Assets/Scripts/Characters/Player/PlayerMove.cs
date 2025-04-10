@@ -37,6 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        rightHand.SetActive(RightHandOn);
         inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
@@ -80,6 +81,8 @@ public class PlayerMove : MonoBehaviour
 
         leftHand.SetActive(LeftHandOn);
         rightHand.SetActive(RightHandOn);
+
+
 
     }
 
@@ -144,7 +147,9 @@ public class PlayerMove : MonoBehaviour
             handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
         );
         inventoryManager.ToggleInventory();
+        
         isInventoryOpen = inventoryManager.IsInventoryOpen; // Sincronizar estado
+
     }
 
     void MovePlayer()
