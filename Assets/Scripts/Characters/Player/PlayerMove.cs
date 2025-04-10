@@ -22,6 +22,10 @@ public class PlayerMove : MonoBehaviour
 
     public InventoryManager inventoryManager;
     public bool isInventoryOpen = false;
+    public bool closer = false;
+
+    //Manos Solo visibles si tienen un objeto
+
 
 
     void Start()
@@ -54,7 +58,15 @@ public class PlayerMove : MonoBehaviour
 
         MovePlayer();
         CheckForHeadBob();
+        setAnimation();
+        //camAnim.SetBool("IsWalking", isWalking);
+    }
+
+    void setAnimation()
+    {
         camAnim.SetBool("IsWalking", isWalking);
+        handAnim.SetBool("closer", closer);
+
     }
 
     private void CheckForHeadBob()
@@ -89,11 +101,11 @@ public class PlayerMove : MonoBehaviour
         // 2. Manejar el teléfono
         if (Input.GetMouseButtonDown(1)) // Acercar el teléfono
         {
-            handAnim.SetBool("closer", true);
+            closer = true;
         }
         else if (Input.GetMouseButtonUp(1)) // Alejar el teléfono
         {
-            handAnim.SetBool("closer", false);
+            closer = false;
         }
 
         
