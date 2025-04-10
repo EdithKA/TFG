@@ -2808,7 +2808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1099738345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3808,6 +3808,11 @@ MonoBehaviour:
   handAnim: {fileID: 779699488}
   inventoryManager: {fileID: 0}
   isInventoryOpen: 0
+  closer: 0
+  LeftHandOn: 0
+  RightHandOn: 0
+  leftHand: {fileID: 906595547}
+  rightHand: {fileID: 2118785471}
 --- !u!143 &1430354748
 CharacterController:
   m_ObjectHideFlags: 0

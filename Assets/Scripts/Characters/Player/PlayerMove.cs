@@ -25,6 +25,13 @@ public class PlayerMove : MonoBehaviour
     public bool closer = false;
 
     //Manos Solo visibles si tienen un objeto
+    [Header("Hands Settings")]
+    public bool LeftHandOn = false;
+    public bool RightHandOn = false;
+    public GameObject leftHand;
+    public GameObject rightHand;
+
+
 
 
 
@@ -42,6 +49,7 @@ public class PlayerMove : MonoBehaviour
             isInventoryOpen = !isInventoryOpen;
             StartCoroutine(OpenInventory());
             Debug.Log(isInventoryOpen);
+            
         }
 
 
@@ -66,6 +74,12 @@ public class PlayerMove : MonoBehaviour
     {
         camAnim.SetBool("IsWalking", isWalking);
         handAnim.SetBool("closer", closer);
+        handAnim.SetBool("OpenInventory", isInventoryOpen);
+        handAnim.SetBool("LObject", LeftHandOn);
+        handAnim.SetBool("RObject", RightHandOn);
+
+        leftHand.SetActive(LeftHandOn);
+        rightHand.SetActive(RightHandOn);
 
     }
 
@@ -121,14 +135,14 @@ public class PlayerMove : MonoBehaviour
     IEnumerator OpenInventory()
     {
 
-        handAnim.SetBool("OpenInventory", isInventoryOpen);
-   
+        //handAnim.SetBool("OpenInventory", isInventoryOpen);
+        Debug.Log("aguacate");
+
         // Esperar a que termine la animación (no usar WaitForSeconds)
         yield return new WaitUntil(() =>
             handAnim.GetCurrentAnimatorStateInfo(0).IsName("OpenInventory") &&
             handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
         );
-
         inventoryManager.ToggleInventory();
         isInventoryOpen = inventoryManager.IsInventoryOpen; // Sincronizar estado
     }

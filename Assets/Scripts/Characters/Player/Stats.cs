@@ -168,7 +168,6 @@ public class Stats : MonoBehaviour
 
     IEnumerator CorruptObjects()
     {
-        Debug.Log("Corrompiendo objetos debido a la cordura: " + sanity);
 
         foreach (GameObject obj in corruptibleObjects)
         {

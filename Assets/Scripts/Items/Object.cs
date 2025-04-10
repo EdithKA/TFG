@@ -18,10 +18,13 @@ public class Object : MonoBehaviour
     public bool isHeld = false;
     public Item itemData;
     public UITextController instructions;
-    public InventoryManager inventory; 
+    public InventoryManager inventory;
+    PlayerMove playerMove;
+
 
     private void Start()
     {
+        playerMove = FindAnyObjectByType<PlayerMove>();
         instructions = GetComponent<UITextController>();
         inventory = FindAnyObjectByType<InventoryManager>();
     }
@@ -29,6 +32,10 @@ public class Object : MonoBehaviour
     {
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !isHeld)
         {
+            if(itemData.name == "Mokia")
+            {
+                playerMove.LeftHandOn = true;
+            }
             Destroy(instructions.instructionText);
             Destroy(instructions);
             PickUp();
