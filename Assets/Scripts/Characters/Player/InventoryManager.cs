@@ -114,32 +114,31 @@ public class InventoryManager : MonoBehaviour
 
     private void EquipItem(Item item)
     {
-        bool itemGrab = false;
-
-        //Debug.Log(item.name);
+        // Check if this is the currently equipped item
         if (itemOnHand == item.name)
         {
-            itemGrab = true;
+            // User is unequipping the current item
             foreach (Transform child in rightHand)
             {
-                Destroy(child.gameObject); //Quitamos de la mano derecha si hay algun objeto previo
+                Destroy(child.gameObject); // Remove the object from hand
                 itemOnHand = "";
             }
 
+            
         }
-
         else if (item.itemName != "Mokia")
         {
+            // User is equipping a new item
             GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
-            itemSelected.transform.localPosition = Vector3.zero; 
+            itemSelected.transform.localPosition = Vector3.zero;
             itemSelected.transform.localRotation = Quaternion.identity;
             itemSelected.GetComponent<Object>().isHeld = true;
             itemOnHand = item.itemName;
-            playerMove.RightHandOn = !playerMove.RightHandOn;
-        }
 
-        playerMove.RightHandOn = itemGrab;
+          
+        }
     }
+
 }
 
 

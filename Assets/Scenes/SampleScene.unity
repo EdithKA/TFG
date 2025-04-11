@@ -1675,7 +1675,6 @@ GameObject:
   m_Component:
   - component: {fileID: 779699486}
   - component: {fileID: 779699487}
-  - component: {fileID: 779699488}
   m_Layer: 0
   m_Name: manos
   m_TagString: Untagged
@@ -1691,15 +1690,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779699485}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31734645, y: -0, z: -0, w: 0.94830966}
-  m_LocalPosition: {x: 0.02900004, y: 0.062, z: 0.804}
+  m_LocalRotation: {x: 0.39846125, y: -0.10899919, z: -0.060365435, w: 0.9086825}
+  m_LocalPosition: {x: 0.02900004, y: -0.026, z: 0.792}
   m_LocalScale: {x: 0.30066293, y: 0.3006629, z: 0.30066296}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 906595548}
   - {fileID: 2118785472}
   m_Father: {fileID: 1430354749}
-  m_LocalEulerAnglesHint: {x: 37.005, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.316, y: -20.494, z: -16.232}
 --- !u!212 &779699487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1752,27 +1751,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &779699488
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779699485}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b78787a90ca48ea4d80ba80f5933ed53, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &825627384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,6 +2258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906595548}
   - component: {fileID: 906595549}
+  - component: {fileID: 906595550}
   m_Layer: 0
   m_Name: LHandSprite
   m_TagString: Untagged
@@ -2295,14 +2274,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906595547}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.073552996, y: -0.13288975, z: -0.011884466, w: 0.98832643}
-  m_LocalPosition: {x: -1.86, y: -0.69, z: 0.08}
-  m_LocalScale: {x: 0.28841478, y: 0.28841478, z: 0.28841484}
+  m_LocalRotation: {x: -0.07502707, y: 0.07865734, z: -0.050503507, w: -0.99279076}
+  m_LocalPosition: {x: -1.375, y: -0.876, z: 0.102}
+  m_LocalScale: {x: 0.1900309, y: 0.1900309, z: 0.19003095}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1978627110}
   m_Father: {fileID: 779699486}
-  m_LocalEulerAnglesHint: {x: 8.177, y: -15.494, z: -2.492}
+  m_LocalEulerAnglesHint: {x: 9.028, y: -8.654, z: 5.14}
 --- !u!212 &906595549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2355,6 +2334,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &906595550
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906595547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5617d2deaafad147817cb6045ee87d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &930336605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,14 +3810,11 @@ MonoBehaviour:
   isWalking: 0
   stamina: 100
   currentStamina: 0
-  handAnim: {fileID: 779699488}
   inventoryManager: {fileID: 0}
   isInventoryOpen: 0
-  closer: 0
-  LeftHandOn: 0
-  RightHandOn: 0
-  leftHand: {fileID: 906595547}
-  rightHand: {fileID: 2118785471}
+  LHAnim: {fileID: 906595550}
+  LActive: 0
+  isCloser: 0
 --- !u!143 &1430354748
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5420,9 +5417,9 @@ Transform:
   m_GameObject: {fileID: 1978627109}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17817764, y: 0.6759366, z: -0.19115904, w: -0.68907243}
-  m_LocalPosition: {x: 2.12, y: 1.05, z: 0.21}
-  m_LocalScale: {x: 2.9598496, y: 2.9598503, z: 2.9598498}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 2.35, y: 1.68, z: -0.030002}
+  m_LocalScale: {x: 0.25898212, y: 0.25898212, z: 0.25898212}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 906595548}
   m_LocalEulerAnglesHint: {x: 0.737, y: -88.698, z: 30.289}
@@ -5609,6 +5606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118785472}
   - component: {fileID: 2118785473}
+  - component: {fileID: 2118785474}
   m_Layer: 0
   m_Name: RHandSprite
   m_TagString: Untagged
@@ -5684,6 +5682,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2118785474
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118785471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2142068535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5362561031396149313, guid: a968da64460e50b4f800c8998fa91964,

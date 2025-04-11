@@ -18,26 +18,19 @@ public class PlayerMove : MonoBehaviour
     public float stamina;
     public float currentStamina;
 
-    public Animator handAnim;
-
     public InventoryManager inventoryManager;
     public bool isInventoryOpen = false;
-    public bool closer = false;
 
-    //Manos Solo visibles si tienen un objeto
     [Header("Hands Settings")]
-    public bool LeftHandOn = false;
-    public bool RightHandOn = false;
-    public GameObject leftHand;
-    public GameObject rightHand;
+    //Left Hand
+    public Animator LHAnim;
+    public bool LActive = false;
+    public bool isCloser = false;
 
-
-
-
+   
 
     void Start()
     {
-        rightHand.SetActive(RightHandOn);
         inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
@@ -49,10 +42,9 @@ public class PlayerMove : MonoBehaviour
         {
             isInventoryOpen = !isInventoryOpen;
             StartCoroutine(OpenInventory());
-            Debug.Log(isInventoryOpen);
-            
+            Debug.Log("Estado del inventario: " + isInventoryOpen);
+            isCloser = !isCloser;
         }
-
 
         if (!isInventoryOpen)
         {
@@ -62,33 +54,32 @@ public class PlayerMove : MonoBehaviour
         {
             speed = 0;
             isWalking = false;
-            movementVector = Vector3.zero; 
+            movementVector = Vector3.zero;
         }
 
         MovePlayer();
         CheckForHeadBob();
+
+        
+
+        // Actualizamos los parámetros de animación
         setAnimation();
-        //camAnim.SetBool("IsWalking", isWalking);
+
+       
     }
 
     void setAnimation()
     {
         camAnim.SetBool("IsWalking", isWalking);
-        handAnim.SetBool("closer", closer);
-        handAnim.SetBool("OpenInventory", isInventoryOpen);
-        handAnim.SetBool("LObject", LeftHandOn);
-        handAnim.SetBool("RObject", RightHandOn);
-
-        leftHand.SetActive(LeftHandOn);
-        rightHand.SetActive(RightHandOn);
-
-
+        LHAnim.SetBool("isCloser", isCloser);
+        LHAnim.SetBool("isActive", LActive);
+        
 
     }
 
     private void CheckForHeadBob()
     {
-        if(characterController.velocity.magnitude > 0.1f)
+        if (characterController.velocity.magnitude > 0.1f)
         {
             isWalking = true;
         }
@@ -118,14 +109,12 @@ public class PlayerMove : MonoBehaviour
         // 2. Manejar el teléfono
         if (Input.GetMouseButtonDown(1)) // Acercar el teléfono
         {
-            closer = true;
+            isCloser = true;
         }
         else if (Input.GetMouseButtonUp(1)) // Alejar el teléfono
         {
-            closer = false;
+            isCloser = false;
         }
-
-        
 
         // Movimiento (siempre se calcula)
         inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -134,22 +123,27 @@ public class PlayerMove : MonoBehaviour
         movementVector = (inputVector * speed) + (Vector3.up * Gravity);
     }
 
+    
 
     IEnumerator OpenInventory()
     {
-
-        //handAnim.SetBool("OpenInventory", isInventoryOpen);
-        Debug.Log("aguacate");
-
-        // Esperar a que termine la animación (no usar WaitForSeconds)
-        yield return new WaitUntil(() =>
-            handAnim.GetCurrentAnimatorStateInfo(0).IsName("OpenInventory") &&
-            handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
-        );
-        inventoryManager.ToggleInventory();
         
-        isInventoryOpen = inventoryManager.IsInventoryOpen; // Sincronizar estado
 
+        // Esperamos un pequeño tiempo para que la transición comience
+        yield return new WaitForSeconds(0.1f);
+
+        // Luego esperamos a que la animación se esté reproduciendo y termine
+        string animName = isInventoryOpen ? "OpenInventory" : "CloseInventory";
+
+        
+
+        // Activar/desactivar el inventario
+        inventoryManager.ToggleInventory();
+
+        // Sincronizar estado
+        isInventoryOpen = inventoryManager.IsInventoryOpen;
+
+        
     }
 
     void MovePlayer()

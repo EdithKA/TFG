@@ -34,7 +34,7 @@ public class Object : MonoBehaviour
         {
             if(itemData.name == "Mokia")
             {
-                playerMove.LeftHandOn = true;
+                playerMove.LActive = true;
             }
             Destroy(instructions.instructionText);
             Destroy(instructions);
