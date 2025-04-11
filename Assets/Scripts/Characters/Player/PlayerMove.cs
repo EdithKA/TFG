@@ -27,7 +27,12 @@ public class PlayerMove : MonoBehaviour
     public bool LActive = false;
     public bool isCloser = false;
 
-   
+    //Right Hand
+    public Animator RHAnim;
+    public bool RActive = false;
+ 
+
+
 
     void Start()
     {
@@ -73,7 +78,9 @@ public class PlayerMove : MonoBehaviour
         camAnim.SetBool("IsWalking", isWalking);
         LHAnim.SetBool("isCloser", isCloser);
         LHAnim.SetBool("isActive", LActive);
-        
+        RHAnim.SetBool("isActive", RActive);
+
+
 
     }
 

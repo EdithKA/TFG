@@ -3815,6 +3815,8 @@ MonoBehaviour:
   LHAnim: {fileID: 906595550}
   LActive: 0
   isCloser: 0
+  RHAnim: {fileID: 2118785474}
+  RActive: 0
 --- !u!143 &1430354748
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5692,7 +5694,7 @@ Animator:
   m_GameObject: {fileID: 2118785471}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e332461425baef442a914ec8fa771e78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
