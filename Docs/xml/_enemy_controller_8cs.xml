@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_enemy_controller_8cs" kind="file" language="C#">
+    <compoundname>EnemyController.cs</compoundname>
+    <innerclass refid="class_enemy_controller" prot="public">EnemyController</innerclass>
+    <innernamespace refid="namespace_t_m_pro">TMPro</innernamespace>
+    <innernamespace refid="namespace_unity_engine_1_1_a_i">UnityEngine::AI</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TMPro;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.AI;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_enemy_controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_enemy_controller" kindref="compound">EnemyController</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a11b9600482e6eeb91387c32d533aae2c" kindref="member">canChase</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1acc213925570889aad852b2270a6b45b9" kindref="member">canAttack</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Transform<sp/><ref refid="class_enemy_controller_1a6886eb23800bdaf128c2025d4fafe8f1" kindref="member">playerTransform</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>NavMeshAgent<sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a461df3205618bc8766baacec91e6cd05" kindref="member">chaseDistance</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1adfb21d24642a324a13e66e83d9aca828" kindref="member">attackDistance</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Animator<sp/><ref refid="class_enemy_controller_1ac6ca3de26711fd546569096a49d098ed" kindref="member">anim</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_angle_to_player" kindref="compound">AngleToPlayer</ref><sp/><ref refid="class_enemy_controller_1a0fbbd1570f224cbab0167ddfbfc8087d" kindref="member">angleToPlayer</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Transform[]<sp/><ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>;<sp/></highlight><highlight class="comment">//<sp/>Array<sp/>de<sp/>waypoints</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a64f2c61f18030051f29b9e6bb0681295" kindref="member">currentWaypointIndex</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1aef5af22782327b22749e5632ad7467fb" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a6886eb23800bdaf128c2025d4fafe8f1" kindref="member">playerTransform</ref><sp/>=<sp/>FindObjectOfType&lt;PlayerController&gt;().transform;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref><sp/>=<sp/>GetComponent&lt;NavMeshAgent&gt;();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a0fbbd1570f224cbab0167ddfbfc8087d" kindref="member">angleToPlayer</ref><sp/>=<sp/>GetComponent&lt;AngleToPlayer&gt;();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>.Length<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>.SetDestination(<ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>[<ref refid="class_enemy_controller_1a64f2c61f18030051f29b9e6bb0681295" kindref="member">currentWaypointIndex</ref>].position);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a41090510cff98622fe675d1f6e3ecd82" kindref="member">Update</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a77ff56a1dfde21b295ec897affe44e8d" kindref="member">NextAction</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a8bbe9bd93908fc5681b9b014ee1bde5f" kindref="member">setAnimation</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a77ff56a1dfde21b295ec897affe44e8d" kindref="member">NextAction</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dist<sp/>=<sp/>Vector3.Distance(transform.position,<sp/><ref refid="class_enemy_controller_1a6886eb23800bdaf128c2025d4fafe8f1" kindref="member">playerTransform</ref>.position);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Debug.Log(dist);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1acc213925570889aad852b2270a6b45b9" kindref="member">canAttack</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dist<sp/>&gt;<sp/><ref refid="class_enemy_controller_1a461df3205618bc8766baacec91e6cd05" kindref="member">chaseDistance</ref>)<sp/></highlight><highlight class="comment">//Patrullar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a459a8fec76b52f83c04eb5aa06dfcf12" kindref="member">Patrol</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dist<sp/>&gt;<sp/><ref refid="class_enemy_controller_1adfb21d24642a324a13e66e83d9aca828" kindref="member">attackDistance</ref>)<sp/></highlight><highlight class="comment">//Atacar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1ae9dc81b0d719b80d7e89389cca9d1c9f" kindref="member">SetDestinationToPlayer</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1acc213925570889aad852b2270a6b45b9" kindref="member">canAttack</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a8bbe9bd93908fc5681b9b014ee1bde5f" kindref="member">setAnimation</ref>()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1ac6ca3de26711fd546569096a49d098ed" kindref="member">anim</ref>.SetFloat(</highlight><highlight class="stringliteral">&quot;spriteRot&quot;</highlight><highlight class="normal">,<sp/><ref refid="class_enemy_controller_1a0fbbd1570f224cbab0167ddfbfc8087d" kindref="member">angleToPlayer</ref>.lastIndex);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1ac6ca3de26711fd546569096a49d098ed" kindref="member">anim</ref>.SetBool(</highlight><highlight class="stringliteral">&quot;Attack&quot;</highlight><highlight class="normal">,<sp/><ref refid="class_enemy_controller_1acc213925570889aad852b2270a6b45b9" kindref="member">canAttack</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1ae9dc81b0d719b80d7e89389cca9d1c9f" kindref="member">SetDestinationToPlayer</ref>()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>.SetDestination(<ref refid="class_enemy_controller_1a6886eb23800bdaf128c2025d4fafe8f1" kindref="member">playerTransform</ref>.position);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_enemy_controller_1a459a8fec76b52f83c04eb5aa06dfcf12" kindref="member">Patrol</ref>()</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>.Length<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>.pathPending<sp/>&amp;&amp;<sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>.remainingDistance<sp/>&lt;<sp/>0.5f)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a64f2c61f18030051f29b9e6bb0681295" kindref="member">currentWaypointIndex</ref><sp/>=<sp/>(<ref refid="class_enemy_controller_1a64f2c61f18030051f29b9e6bb0681295" kindref="member">currentWaypointIndex</ref><sp/>+<sp/>1)<sp/>%<sp/><ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>.Length;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_enemy_controller_1a16fac7492fa63410bffe3963b06296da" kindref="member">enemyNavMeshAgent</ref>.SetDestination(<ref refid="class_enemy_controller_1ae26acc981c14cabaaaabac07ec42b524" kindref="member">waypoints</ref>[<ref refid="class_enemy_controller_1a64f2c61f18030051f29b9e6bb0681295" kindref="member">currentWaypointIndex</ref>].position);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Scripts/Characters/Enemies/EnemyController.cs"/>
+  </compounddef>
+</doxygen>

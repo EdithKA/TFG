@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_billboard_controller" kind="class" language="C#" prot="public">
+    <compoundname>BillboardController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_billboard_controller_1a4a7b1b21f12731f851785e15f956db8f" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform BillboardController.player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <qualifiedname>BillboardController.player</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/BillboardController.cs" line="7" column="22" bodyfile="Scripts/Characters/BillboardController.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_billboard_controller_1ade139ddeae82f9d63de880bfdb139c99" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BillboardController.alignToCameraForward</definition>
+        <argsstring></argsstring>
+        <name>alignToCameraForward</name>
+        <qualifiedname>BillboardController.alignToCameraForward</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/BillboardController.cs" line="8" column="17" bodyfile="Scripts/Characters/BillboardController.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_billboard_controller_1a63578eb6fe0ffd823d32c5bf2760d77c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BillboardController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>BillboardController.Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/BillboardController.cs" line="10" column="18" bodyfile="Scripts/Characters/BillboardController.cs" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_billboard_controller_1aeaab563d8b8d56da42d405a8dce335d9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BillboardController.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>BillboardController.Update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/BillboardController.cs" line="18" column="18" bodyfile="Scripts/Characters/BillboardController.cs" bodystart="18" bodyend="34"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BillboardController</label>
+        <link refid="class_billboard_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BillboardController</label>
+        <link refid="class_billboard_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Scripts/Characters/BillboardController.cs" line="5" column="7" bodyfile="Scripts/Characters/BillboardController.cs" bodystart="6" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_billboard_controller_1ade139ddeae82f9d63de880bfdb139c99" prot="public" virt="non-virtual"><scope>BillboardController</scope><name>alignToCameraForward</name></member>
+      <member refid="class_billboard_controller_1a4a7b1b21f12731f851785e15f956db8f" prot="public" virt="non-virtual"><scope>BillboardController</scope><name>player</name></member>
+      <member refid="class_billboard_controller_1a63578eb6fe0ffd823d32c5bf2760d77c" prot="private" virt="non-virtual"><scope>BillboardController</scope><name>Start</name></member>
+      <member refid="class_billboard_controller_1aeaab563d8b8d56da42d405a8dce335d9" prot="private" virt="non-virtual"><scope>BillboardController</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

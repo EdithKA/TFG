@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_player_controller" kind="class" language="C#" prot="public">
+    <compoundname>PlayerController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_player_controller_1acecf71e7f4f5b22273c0391effb57e22" prot="public" static="no" mutable="no">
+        <type>Animator</type>
+        <definition>Animator PlayerController.camAnim</definition>
+        <argsstring></argsstring>
+        <name>camAnim</name>
+        <qualifiedname>PlayerController.camAnim</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="12" column="21" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1ad7f03e37ff7be11e361f8f45526fabad" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerController.playerSpeed</definition>
+        <argsstring></argsstring>
+        <name>playerSpeed</name>
+        <qualifiedname>PlayerController.playerSpeed</qualifiedname>
+        <initializer>= 20f</initializer>
+        <briefdescription>
+<para>It is used to walk the camera walk. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="15" column="18" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a993bebb87e65c0b35cf13629f1c32f91" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PlayerController.isWalking</definition>
+        <argsstring></argsstring>
+        <name>isWalking</name>
+        <qualifiedname>PlayerController.isWalking</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="19" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a91e9c34ee791cf1192de8126f22e74d8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerController.stamina</definition>
+        <argsstring></argsstring>
+        <name>stamina</name>
+        <qualifiedname>PlayerController.stamina</qualifiedname>
+        <briefdescription>
+<para>Player statistics that influence the game. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="30" column="18" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a1780dc222b68afbb38bd8852fbf409be" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerController.currentStamina</definition>
+        <argsstring></argsstring>
+        <name>currentStamina</name>
+        <qualifiedname>PlayerController.currentStamina</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="31" column="18" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a43f272f1a8f815342e21479498dbf064" prot="public" static="no" mutable="no">
+        <type><ref refid="class_inventory_manager" kindref="compound">InventoryManager</ref></type>
+        <definition>InventoryManager PlayerController.inventoryManager</definition>
+        <argsstring></argsstring>
+        <name>inventoryManager</name>
+        <qualifiedname>PlayerController.inventoryManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="35" column="29" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1af407de2d2068da64333034251c805e43" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PlayerController.isInventoryOpen</definition>
+        <argsstring></argsstring>
+        <name>isInventoryOpen</name>
+        <qualifiedname>PlayerController.isInventoryOpen</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="36" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a8a45a6a837ef2858e1b7010d02b5bf33" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PlayerController.closer</definition>
+        <argsstring></argsstring>
+        <name>closer</name>
+        <qualifiedname>PlayerController.closer</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="37" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a84e21a5d0a9a55d0f2cd42c1416498e9" prot="public" static="no" mutable="no">
+        <type>Animator</type>
+        <definition>Animator PlayerController.handAnim</definition>
+        <argsstring></argsstring>
+        <name>handAnim</name>
+        <qualifiedname>PlayerController.handAnim</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="41" column="21" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a9d4a77e35e45f47c3afa7814c3f5cde3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PlayerController.LeftHandOn</definition>
+        <argsstring></argsstring>
+        <name>LeftHandOn</name>
+        <qualifiedname>PlayerController.LeftHandOn</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="42" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a4e37128c8edc3867d1f54b1e4ba25f48" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PlayerController.RightHandOn</definition>
+        <argsstring></argsstring>
+        <name>RightHandOn</name>
+        <qualifiedname>PlayerController.RightHandOn</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Indicate if the left hand is being used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="43" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a792b6d54d6309e0b48823c5f46002d8f" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PlayerController.leftHand</definition>
+        <argsstring></argsstring>
+        <name>leftHand</name>
+        <qualifiedname>PlayerController.leftHand</qualifiedname>
+        <briefdescription>
+<para>Indicate if the right hand is being used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="44" column="23" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1aa225c2489f22d0540be9f061771fa4d4" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PlayerController.rightHand</definition>
+        <argsstring></argsstring>
+        <name>rightHand</name>
+        <qualifiedname>PlayerController.rightHand</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="45" column="23" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_player_controller_1a0928605583f0563cd84fe43119d336ec" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerController.speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>PlayerController.speed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="16" column="11" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1ac0f9de9c0ab3c9e5f9c4aebb56cd36da" prot="private" static="no" mutable="no">
+        <type>CharacterController</type>
+        <definition>CharacterController PlayerController.characterController</definition>
+        <argsstring></argsstring>
+        <name>characterController</name>
+        <qualifiedname>PlayerController.characterController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="17" column="33" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1af18a1c6ab088393ab7b61202700769c0" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 PlayerController.inputVector</definition>
+        <argsstring></argsstring>
+        <name>inputVector</name>
+        <qualifiedname>PlayerController.inputVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="21" column="21" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a7944c2b7786e62e1b4f72e4d6a1adb0d" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 PlayerController.movementVector</definition>
+        <argsstring></argsstring>
+        <name>movementVector</name>
+        <qualifiedname>PlayerController.movementVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="22" column="21" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_controller_1a11562d1a4c5be3e0e7d4adeba1fb7f8d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlayerController.Gravity</definition>
+        <argsstring></argsstring>
+        <name>Gravity</name>
+        <qualifiedname>PlayerController.Gravity</qualifiedname>
+        <initializer>= -10f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="23" column="19" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_player_controller_1ae1117d9c4da3193181cddad2c814e467" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>PlayerController.Start</qualifiedname>
+        <briefdescription>
+<para>Start of the game. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>We assign the script that controls and manages the player&apos;s inventory.</para>
+<para>The player&apos;s stamina is restored to the maximum.</para>
+<para>We assign the component that controls the character.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="53" column="10" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1ae8bc83dffb99867a04be016473ed2c43" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>PlayerController.Update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Pressing the I key and only if we have the phone, we can open the inventory.</para>
+<para>The inventory is open.</para>
+<para>We reproduce the animation to open the inventory. <linebreak/>
+</para>
+<para>While the inventory is closed, we can move.</para>
+<para>If we open the inventory, we cannot move or interact with the outside.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="60" column="10" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="60" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1a547170047da087b1e3dad2ee7c5a1390" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.setAnimation</definition>
+        <argsstring>()</argsstring>
+        <name>setAnimation</name>
+        <qualifiedname>PlayerController.setAnimation</qualifiedname>
+        <briefdescription>
+<para>This function assigns the player animation the animation (or animations) that corresponds based on the value of different variables that are modified throughout the code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Chamber movement.</para>
+<para>Bring the phone closer.</para>
+<para>Open the inventory.</para>
+<para>Remove or &quot;save&quot; your left hand.</para>
+<para>Take out or &quot;save&quot; your right hand.</para>
+<para>Active or disabled left hand.</para>
+<para>Right or disabled right hand.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="89" column="10" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="89" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1ae8b9cf7409e0e8122a44fdd9c03e944d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.CheckForHeadBob</definition>
+        <argsstring>()</argsstring>
+        <name>CheckForHeadBob</name>
+        <qualifiedname>PlayerController.CheckForHeadBob</qualifiedname>
+        <briefdescription>
+<para>This function determines whether the character is walking or not to reproduce the animation of the camera that simulates the way of walking the player. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="105" column="18" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="105" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1a067e52f8db324a7fe74ef6c233832cbc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.GetInput</definition>
+        <argsstring>()</argsstring>
+        <name>GetInput</name>
+        <qualifiedname>PlayerController.GetInput</qualifiedname>
+        <briefdescription>
+<para>Handle the user&apos;s input system. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Run as long as you stamin.</para>
+<para>Bring the phone closer.</para>
+<para>Player displacement (it is continuously calculated once the function is called).</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="120" column="10" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="120" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1a8dc54799a67e94e02a438ea1f9421c73" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator PlayerController.OpenInventory</definition>
+        <argsstring>()</argsstring>
+        <name>OpenInventory</name>
+        <qualifiedname>PlayerController.OpenInventory</qualifiedname>
+        <briefdescription>
+<para>It is used to soften the animation to open the inventory. The inventory becomes visible or invisible a while after starting animation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="157" column="17" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="157" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_controller_1ae04cde2fdd7d08b3b45d8619c5705fa1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlayerController.MovePlayer</definition>
+        <argsstring>()</argsstring>
+        <name>MovePlayer</name>
+        <qualifiedname>PlayerController.MovePlayer</qualifiedname>
+        <briefdescription>
+<para>Move the character. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/PlayerController.cs" line="172" column="10" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="172" bodyend="175"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This class controls the interactions and movement of the player. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PlayerController</label>
+        <link refid="class_player_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>InventoryManager</label>
+        <link refid="class_inventory_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>playerController</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PlayerController</label>
+        <link refid="class_player_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>inventoryManager</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Scripts/Characters/Player/PlayerController.cs" line="9" column="7" bodyfile="Scripts/Characters/Player/PlayerController.cs" bodystart="10" bodyend="176"/>
+    <listofallmembers>
+      <member refid="class_player_controller_1acecf71e7f4f5b22273c0391effb57e22" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>camAnim</name></member>
+      <member refid="class_player_controller_1ac0f9de9c0ab3c9e5f9c4aebb56cd36da" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>characterController</name></member>
+      <member refid="class_player_controller_1ae8b9cf7409e0e8122a44fdd9c03e944d" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>CheckForHeadBob</name></member>
+      <member refid="class_player_controller_1a8a45a6a837ef2858e1b7010d02b5bf33" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>closer</name></member>
+      <member refid="class_player_controller_1a1780dc222b68afbb38bd8852fbf409be" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>currentStamina</name></member>
+      <member refid="class_player_controller_1a067e52f8db324a7fe74ef6c233832cbc" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>GetInput</name></member>
+      <member refid="class_player_controller_1a11562d1a4c5be3e0e7d4adeba1fb7f8d" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>Gravity</name></member>
+      <member refid="class_player_controller_1a84e21a5d0a9a55d0f2cd42c1416498e9" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>handAnim</name></member>
+      <member refid="class_player_controller_1af18a1c6ab088393ab7b61202700769c0" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>inputVector</name></member>
+      <member refid="class_player_controller_1a43f272f1a8f815342e21479498dbf064" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>inventoryManager</name></member>
+      <member refid="class_player_controller_1af407de2d2068da64333034251c805e43" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>isInventoryOpen</name></member>
+      <member refid="class_player_controller_1a993bebb87e65c0b35cf13629f1c32f91" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>isWalking</name></member>
+      <member refid="class_player_controller_1a792b6d54d6309e0b48823c5f46002d8f" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>leftHand</name></member>
+      <member refid="class_player_controller_1a9d4a77e35e45f47c3afa7814c3f5cde3" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>LeftHandOn</name></member>
+      <member refid="class_player_controller_1a7944c2b7786e62e1b4f72e4d6a1adb0d" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>movementVector</name></member>
+      <member refid="class_player_controller_1ae04cde2fdd7d08b3b45d8619c5705fa1" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>MovePlayer</name></member>
+      <member refid="class_player_controller_1a8dc54799a67e94e02a438ea1f9421c73" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>OpenInventory</name></member>
+      <member refid="class_player_controller_1ad7f03e37ff7be11e361f8f45526fabad" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>playerSpeed</name></member>
+      <member refid="class_player_controller_1aa225c2489f22d0540be9f061771fa4d4" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>rightHand</name></member>
+      <member refid="class_player_controller_1a4e37128c8edc3867d1f54b1e4ba25f48" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>RightHandOn</name></member>
+      <member refid="class_player_controller_1a547170047da087b1e3dad2ee7c5a1390" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>setAnimation</name></member>
+      <member refid="class_player_controller_1a0928605583f0563cd84fe43119d336ec" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>speed</name></member>
+      <member refid="class_player_controller_1a91e9c34ee791cf1192de8126f22e74d8" prot="public" virt="non-virtual"><scope>PlayerController</scope><name>stamina</name></member>
+      <member refid="class_player_controller_1ae1117d9c4da3193181cddad2c814e467" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>Start</name></member>
+      <member refid="class_player_controller_1ae8bc83dffb99867a04be016473ed2c43" prot="private" virt="non-virtual"><scope>PlayerController</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_f6c504e0d3cc80b11a581e4049e272d4" kind="dir">
+    <compoundname>Scripts/Characters/Player</compoundname>
+    <innerfile refid="_inventory_manager_8cs">InventoryManager.cs</innerfile>
+    <innerfile refid="_mouse_look_8cs">MouseLook.cs</innerfile>
+    <innerfile refid="_player_controller_8cs">PlayerController.cs</innerfile>
+    <innerfile refid="_stats_8cs">Stats.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Scripts/Characters/Player/"/>
+  </compounddef>
+</doxygen>

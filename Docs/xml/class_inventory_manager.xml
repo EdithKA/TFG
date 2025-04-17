@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_inventory_manager" kind="class" language="C#" prot="public">
+    <compoundname>InventoryManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_inventory_manager_1a092943feb47c79fd1b12613640b14a30" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InventoryManager.inventorySize</definition>
+        <argsstring></argsstring>
+        <name>inventorySize</name>
+        <qualifiedname>InventoryManager.inventorySize</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@Brief Inventory configuration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="14" column="16" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1a5654d9fee257edb7c6d237c4fbeb6a9f" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject InventoryManager.inventorySlotPrefab</definition>
+        <argsstring></argsstring>
+        <name>inventorySlotPrefab</name>
+        <qualifiedname>InventoryManager.inventorySlotPrefab</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="15" column="23" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1aed656f8e5efb81f008b13b8886bb45cf" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform InventoryManager.inventoryGrid</definition>
+        <argsstring></argsstring>
+        <name>inventoryGrid</name>
+        <qualifiedname>InventoryManager.inventoryGrid</qualifiedname>
+        <briefdescription>
+<para>Prefab of the inventory boxes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="16" column="22" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1aa006da3f967c18737ac6bb978c66a23f" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject InventoryManager.inventoryUI</definition>
+        <argsstring></argsstring>
+        <name>inventoryUI</name>
+        <qualifiedname>InventoryManager.inventoryUI</qualifiedname>
+        <briefdescription>
+<para>Grid where the boxes are placed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="17" column="23" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1a9178b7de01f139ff256f16e3f1dd62e6" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>List&lt;Item&gt; InventoryManager.items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <qualifiedname>InventoryManager.items</qualifiedname>
+        <initializer>= new List&lt;<ref refid="class_item" kindref="compound">Item</ref>&gt;()</initializer>
+        <briefdescription>
+<para>Canvas containing the inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="18" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1acda1ac0d407d41e520a986445d29ed07" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform InventoryManager.leftHand</definition>
+        <argsstring></argsstring>
+        <name>leftHand</name>
+        <qualifiedname>InventoryManager.leftHand</qualifiedname>
+        <briefdescription>
+<para>Slots in the UI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Coordinates where the objects assigned to the hands are placed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="25" column="22" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1a9117e06d048be3f8202abf967b9fa266" prot="public" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform InventoryManager.rightHand</definition>
+        <argsstring></argsstring>
+        <name>rightHand</name>
+        <qualifiedname>InventoryManager.rightHand</qualifiedname>
+        <briefdescription>
+<para>Anchor point of the left hand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="26" column="22" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1a07ac5bdf3d1557aef5e2c123e10d4b9f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string InventoryManager.itemOnHand</definition>
+        <argsstring></argsstring>
+        <name>itemOnHand</name>
+        <qualifiedname>InventoryManager.itemOnHand</qualifiedname>
+        <briefdescription>
+<para>Anchor point of the right hand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="29" column="19" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_inventory_manager_1a1ba74f4b51fc220d80c471a2acf8573f" prot="private" static="no" mutable="no">
+        <type>List&lt; GameObject &gt;</type>
+        <definition>List&lt;GameObject&gt; InventoryManager.slots</definition>
+        <argsstring></argsstring>
+        <name>slots</name>
+        <qualifiedname>InventoryManager.slots</qualifiedname>
+        <initializer>= new List&lt;GameObject&gt;()</initializer>
+        <briefdescription>
+<para>Objects in the inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="19" column="18" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_inventory_manager_1af759cfbe1aea1d78d741e6f55a0ddcc4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_player_controller" kindref="compound">PlayerController</ref></type>
+        <definition>PlayerController InventoryManager.playerController</definition>
+        <argsstring></argsstring>
+        <name>playerController</name>
+        <qualifiedname>InventoryManager.playerController</qualifiedname>
+        <briefdescription>
+<para>Inventory status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="33" column="22" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_inventory_manager_1a933a6fafa9762c6715ba6b537b2932a2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool InventoryManager.IsInventoryOpen</definition>
+        <argsstring></argsstring>
+        <name>IsInventoryOpen</name>
+        <qualifiedname>InventoryManager.IsInventoryOpen</qualifiedname>
+        <briefdescription>
+<para>Active object in the right hand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="31" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_inventory_manager_1a5b18458e8dd8426c55d2d4e2d184706a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>InventoryManager.Start</qualifiedname>
+        <briefdescription>
+<para>Player controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the game appears the inventory is hidden. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="38" column="18" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="38" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_inventory_manager_1a0959bc576a07ab9b7465434d9ff390f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.UpdateInventoryUI</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateInventoryUI</name>
+        <qualifiedname>InventoryManager.UpdateInventoryUI</qualifiedname>
+        <briefdescription>
+<para>Upper the UI depending on the state of the inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="87" column="18" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="87" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_inventory_manager_1ab4a4bc9e6a7d711a841fdd7f7cfa034a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.EquipItem</definition>
+        <argsstring>(Item item)</argsstring>
+        <name>EquipItem</name>
+        <qualifiedname>InventoryManager.EquipItem</qualifiedname>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>It is used to equip or unbalance an object in hand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>We lift from the right hand if there is any previous object.</para>
+<para>If the object collected is the phone, it is equipped on the left.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="130" column="18" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="130" bodyend="152"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_inventory_manager_1ab03cb9976ed0fd2ee6e77cd7006d1104" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.AddItem</definition>
+        <argsstring>(Item item)</argsstring>
+        <name>AddItem</name>
+        <qualifiedname>InventoryManager.AddItem</qualifiedname>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>It is used to add an object to the inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>We update the UI after adding object.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="50" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="50" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_inventory_manager_1afc55d3b8671e510b3fd64199e140b001" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.RemoveItem</definition>
+        <argsstring>(Item item)</argsstring>
+        <name>RemoveItem</name>
+        <qualifiedname>InventoryManager.RemoveItem</qualifiedname>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Eliminates an object from inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Update the UI when we eliminate an object.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="62" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="62" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_inventory_manager_1ae105fd7e1358690239919d27df074ffb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool InventoryManager.HasItem</definition>
+        <argsstring>(string itemName)</argsstring>
+        <name>HasItem</name>
+        <qualifiedname>InventoryManager.HasItem</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>itemName</declname>
+        </param>
+        <briefdescription>
+<para>It serves to check if we have an object in the inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="74" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="74" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_inventory_manager_1a87c8ecad45dfad4a04b0ec48b901b3c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void InventoryManager.ToggleInventory</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleInventory</name>
+        <qualifiedname>InventoryManager.ToggleInventory</qualifiedname>
+        <briefdescription>
+<para>It is used to enable or disable inventory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Player/InventoryManager.cs" line="110" column="17" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="110" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>InventoryManager</label>
+        <link refid="class_inventory_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>InventoryManager</label>
+        <link refid="class_inventory_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>playerController</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>PlayerController</label>
+        <link refid="class_player_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>inventoryManager</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Scripts/Characters/Player/InventoryManager.cs" line="7" column="7" bodyfile="Scripts/Characters/Player/InventoryManager.cs" bodystart="8" bodyend="153"/>
+    <listofallmembers>
+      <member refid="class_inventory_manager_1ab03cb9976ed0fd2ee6e77cd7006d1104" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>AddItem</name></member>
+      <member refid="class_inventory_manager_1ab4a4bc9e6a7d711a841fdd7f7cfa034a" prot="private" virt="non-virtual"><scope>InventoryManager</scope><name>EquipItem</name></member>
+      <member refid="class_inventory_manager_1ae105fd7e1358690239919d27df074ffb" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>HasItem</name></member>
+      <member refid="class_inventory_manager_1aed656f8e5efb81f008b13b8886bb45cf" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>inventoryGrid</name></member>
+      <member refid="class_inventory_manager_1a092943feb47c79fd1b12613640b14a30" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>inventorySize</name></member>
+      <member refid="class_inventory_manager_1a5654d9fee257edb7c6d237c4fbeb6a9f" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>inventorySlotPrefab</name></member>
+      <member refid="class_inventory_manager_1aa006da3f967c18737ac6bb978c66a23f" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>inventoryUI</name></member>
+      <member refid="class_inventory_manager_1a933a6fafa9762c6715ba6b537b2932a2" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>IsInventoryOpen</name></member>
+      <member refid="class_inventory_manager_1a07ac5bdf3d1557aef5e2c123e10d4b9f" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>itemOnHand</name></member>
+      <member refid="class_inventory_manager_1a9178b7de01f139ff256f16e3f1dd62e6" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>items</name></member>
+      <member refid="class_inventory_manager_1acda1ac0d407d41e520a986445d29ed07" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>leftHand</name></member>
+      <member refid="class_inventory_manager_1af759cfbe1aea1d78d741e6f55a0ddcc4" prot="private" virt="non-virtual"><scope>InventoryManager</scope><name>playerController</name></member>
+      <member refid="class_inventory_manager_1afc55d3b8671e510b3fd64199e140b001" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>RemoveItem</name></member>
+      <member refid="class_inventory_manager_1a9117e06d048be3f8202abf967b9fa266" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>rightHand</name></member>
+      <member refid="class_inventory_manager_1a1ba74f4b51fc220d80c471a2acf8573f" prot="private" virt="non-virtual"><scope>InventoryManager</scope><name>slots</name></member>
+      <member refid="class_inventory_manager_1a5b18458e8dd8426c55d2d4e2d184706a" prot="private" virt="non-virtual"><scope>InventoryManager</scope><name>Start</name></member>
+      <member refid="class_inventory_manager_1a87c8ecad45dfad4a04b0ec48b901b3c8" prot="public" virt="non-virtual"><scope>InventoryManager</scope><name>ToggleInventory</name></member>
+      <member refid="class_inventory_manager_1a0959bc576a07ab9b7465434d9ff390f3" prot="private" virt="non-virtual"><scope>InventoryManager</scope><name>UpdateInventoryUI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

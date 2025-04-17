@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_enemy_sprite_look" kind="class" language="C#" prot="public">
+    <compoundname>EnemySpriteLook</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_enemy_sprite_look_1a6e8a89afb8366c7b48080d06cc593be9" prot="private" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform EnemySpriteLook.target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <qualifiedname>EnemySpriteLook.target</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/EnemySpriteLook.cs" line="10" column="15" bodyfile="Scripts/Characters/Enemies/EnemySpriteLook.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_enemy_sprite_look_1adba02e7b25180e8fe3c3b5eff6959dd4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EnemySpriteLook.canLookVertically</definition>
+        <argsstring></argsstring>
+        <name>canLookVertically</name>
+        <qualifiedname>EnemySpriteLook.canLookVertically</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/EnemySpriteLook.cs" line="11" column="17" bodyfile="Scripts/Characters/Enemies/EnemySpriteLook.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_enemy_sprite_look_1ad6f3c7421caa2c0bd4d0425ea9fd9931" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EnemySpriteLook.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>EnemySpriteLook.Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/EnemySpriteLook.cs" line="13" column="10" bodyfile="Scripts/Characters/Enemies/EnemySpriteLook.cs" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_enemy_sprite_look_1a920f8a0d1e5e2d46f70ed61524edd2ed" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EnemySpriteLook.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>EnemySpriteLook.Update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/EnemySpriteLook.cs" line="19" column="10" bodyfile="Scripts/Characters/Enemies/EnemySpriteLook.cs" bodystart="19" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This script makes the enemy&apos;s sprite always look towards the player. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>EnemySpriteLook</label>
+        <link refid="class_enemy_sprite_look"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>EnemySpriteLook</label>
+        <link refid="class_enemy_sprite_look"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Scripts/Characters/Enemies/EnemySpriteLook.cs" line="8" column="7" bodyfile="Scripts/Characters/Enemies/EnemySpriteLook.cs" bodystart="9" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_enemy_sprite_look_1adba02e7b25180e8fe3c3b5eff6959dd4" prot="public" virt="non-virtual"><scope>EnemySpriteLook</scope><name>canLookVertically</name></member>
+      <member refid="class_enemy_sprite_look_1ad6f3c7421caa2c0bd4d0425ea9fd9931" prot="private" virt="non-virtual"><scope>EnemySpriteLook</scope><name>Start</name></member>
+      <member refid="class_enemy_sprite_look_1a6e8a89afb8366c7b48080d06cc593be9" prot="private" virt="non-virtual"><scope>EnemySpriteLook</scope><name>target</name></member>
+      <member refid="class_enemy_sprite_look_1a920f8a0d1e5e2d46f70ed61524edd2ed" prot="private" virt="non-virtual"><scope>EnemySpriteLook</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

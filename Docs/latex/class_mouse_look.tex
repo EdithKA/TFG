@@ -1,0 +1,108 @@
+\doxysection{Mouse\+Look Class Reference}
+\hypertarget{class_mouse_look}{}\label{class_mouse_look}\index{MouseLook@{MouseLook}}
+
+
+This class configures the player\textquotesingle{}s view and the camera movement with the mouse.  
+
+
+Inheritance diagram for Mouse\+Look\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mouse_look}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_mouse_look_a3e984b4fd9a46c25309ffeedd22aa4aa}{mouse\+Sensitivity}} = 1.\+5f
+\item 
+Transform \mbox{\hyperlink{class_mouse_look_ab0f3a530a840babd6944a17d7e30a732}{camera\+Transform}}
+\item 
+\mbox{\hyperlink{class_player_controller}{Player\+Controller}} \mbox{\hyperlink{class_mouse_look_a06078a39ce3864f7e2c4a0715632943c}{player}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mouse_look_adbe4a40eadd089cc9279af502155a732}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_mouse_look_a74aea4a5377c9adfdfbfce2f8c11dd3b}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_mouse_look_ace3da1728797fc66a23b92fcf8ec69df}{Rotate\+Player}} ()
+\begin{DoxyCompactList}\small\item\em The player broken on the X axis towards the direction of the mouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mouse_look_ab7678c4290a78d0a777f84f92c7f7d3c}{Rotate\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em The camera can move up and down a certain angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_mouse_look_aee64ea4c4b337ec782f6adcf23b4cf11}{x\+Rotation}} = 0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class configures the player\textquotesingle{}s view and the camera movement with the mouse. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mouse_look_ab7678c4290a78d0a777f84f92c7f7d3c}\index{MouseLook@{MouseLook}!RotateCamera@{RotateCamera}}
+\index{RotateCamera@{RotateCamera}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{RotateCamera()}{RotateCamera()}}
+{\footnotesize\ttfamily \label{class_mouse_look_ab7678c4290a78d0a777f84f92c7f7d3c} 
+void Mouse\+Look.\+Rotate\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The camera can move up and down a certain angle. 
+
+\Hypertarget{class_mouse_look_ace3da1728797fc66a23b92fcf8ec69df}\index{MouseLook@{MouseLook}!RotatePlayer@{RotatePlayer}}
+\index{RotatePlayer@{RotatePlayer}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{RotatePlayer()}{RotatePlayer()}}
+{\footnotesize\ttfamily \label{class_mouse_look_ace3da1728797fc66a23b92fcf8ec69df} 
+void Mouse\+Look.\+Rotate\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The player broken on the X axis towards the direction of the mouse. 
+
+\Hypertarget{class_mouse_look_adbe4a40eadd089cc9279af502155a732}\index{MouseLook@{MouseLook}!Start@{Start}}
+\index{Start@{Start}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_mouse_look_adbe4a40eadd089cc9279af502155a732} 
+void Mouse\+Look.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_mouse_look_a74aea4a5377c9adfdfbfce2f8c11dd3b}\index{MouseLook@{MouseLook}!Update@{Update}}
+\index{Update@{Update}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_mouse_look_a74aea4a5377c9adfdfbfce2f8c11dd3b} 
+void Mouse\+Look.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+If the inventory is open, the camera cannot move.
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mouse_look_ab0f3a530a840babd6944a17d7e30a732}\index{MouseLook@{MouseLook}!cameraTransform@{cameraTransform}}
+\index{cameraTransform@{cameraTransform}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{cameraTransform}{cameraTransform}}
+{\footnotesize\ttfamily \label{class_mouse_look_ab0f3a530a840babd6944a17d7e30a732} 
+Transform Mouse\+Look.\+camera\+Transform}
+
+\Hypertarget{class_mouse_look_a3e984b4fd9a46c25309ffeedd22aa4aa}\index{MouseLook@{MouseLook}!mouseSensitivity@{mouseSensitivity}}
+\index{mouseSensitivity@{mouseSensitivity}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{mouseSensitivity}{mouseSensitivity}}
+{\footnotesize\ttfamily \label{class_mouse_look_a3e984b4fd9a46c25309ffeedd22aa4aa} 
+float Mouse\+Look.\+mouse\+Sensitivity = 1.\+5f}
+
+\Hypertarget{class_mouse_look_a06078a39ce3864f7e2c4a0715632943c}\index{MouseLook@{MouseLook}!player@{player}}
+\index{player@{player}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \label{class_mouse_look_a06078a39ce3864f7e2c4a0715632943c} 
+\mbox{\hyperlink{class_player_controller}{Player\+Controller}} Mouse\+Look.\+player}
+
+\Hypertarget{class_mouse_look_aee64ea4c4b337ec782f6adcf23b4cf11}\index{MouseLook@{MouseLook}!xRotation@{xRotation}}
+\index{xRotation@{xRotation}!MouseLook@{MouseLook}}
+\doxysubsubsection{\texorpdfstring{xRotation}{xRotation}}
+{\footnotesize\ttfamily \label{class_mouse_look_aee64ea4c4b337ec782f6adcf23b4cf11} 
+float Mouse\+Look.\+x\+Rotation = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Scripts/\+Characters/\+Player/\mbox{\hyperlink{_mouse_look_8cs}{Mouse\+Look.\+cs}}\end{DoxyCompactItemize}

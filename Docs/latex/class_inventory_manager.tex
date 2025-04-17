@@ -1,0 +1,247 @@
+\doxysection{Inventory\+Manager Class Reference}
+\hypertarget{class_inventory_manager}{}\label{class_inventory_manager}\index{InventoryManager@{InventoryManager}}
+Inheritance diagram for Inventory\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_inventory_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_inventory_manager_ab03cb9976ed0fd2ee6e77cd7006d1104}{Add\+Item}} (\mbox{\hyperlink{class_item}{Item}} item)
+\begin{DoxyCompactList}\small\item\em It is used to add an object to the inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_manager_afc55d3b8671e510b3fd64199e140b001}{Remove\+Item}} (\mbox{\hyperlink{class_item}{Item}} item)
+\begin{DoxyCompactList}\small\item\em Eliminates an object from inventory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_inventory_manager_ae105fd7e1358690239919d27df074ffb}{Has\+Item}} (string item\+Name)
+\begin{DoxyCompactList}\small\item\em It serves to check if we have an object in the inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_manager_a87c8ecad45dfad4a04b0ec48b901b3c8}{Toggle\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em It is used to enable or disable inventory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_inventory_manager_a092943feb47c79fd1b12613640b14a30}{inventory\+Size}} = 20
+\item 
+Game\+Object \mbox{\hyperlink{class_inventory_manager_a5654d9fee257edb7c6d237c4fbeb6a9f}{inventory\+Slot\+Prefab}}
+\item 
+Transform \mbox{\hyperlink{class_inventory_manager_aed656f8e5efb81f008b13b8886bb45cf}{inventory\+Grid}}
+\begin{DoxyCompactList}\small\item\em Prefab of the inventory boxes. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_inventory_manager_aa006da3f967c18737ac6bb978c66a23f}{inventory\+UI}}
+\begin{DoxyCompactList}\small\item\em Grid where the boxes are placed. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_item}{Item}} $>$ \mbox{\hyperlink{class_inventory_manager_a9178b7de01f139ff256f16e3f1dd62e6}{items}} = new List$<$\mbox{\hyperlink{class_item}{Item}}$>$()
+\begin{DoxyCompactList}\small\item\em Canvas containing the inventory. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_inventory_manager_acda1ac0d407d41e520a986445d29ed07}{left\+Hand}}
+\begin{DoxyCompactList}\small\item\em Slots in the UI. \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_inventory_manager_a9117e06d048be3f8202abf967b9fa266}{right\+Hand}}
+\begin{DoxyCompactList}\small\item\em Anchor point of the left hand. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_inventory_manager_a07ac5bdf3d1557aef5e2c123e10d4b9f}{item\+On\+Hand}}
+\begin{DoxyCompactList}\small\item\em Anchor point of the right hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_inventory_manager_a933a6fafa9762c6715ba6b537b2932a2}{Is\+Inventory\+Open}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Active object in the right hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_inventory_manager_a5b18458e8dd8426c55d2d4e2d184706a}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Player controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_manager_a0959bc576a07ab9b7465434d9ff390f3}{Update\+Inventory\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Upper the UI depending on the state of the inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_manager_ab4a4bc9e6a7d711a841fdd7f7cfa034a}{Equip\+Item}} (\mbox{\hyperlink{class_item}{Item}} item)
+\begin{DoxyCompactList}\small\item\em It is used to equip or unbalance an object in hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_inventory_manager_a1ba74f4b51fc220d80c471a2acf8573f}{slots}} = new List$<$Game\+Object$>$()
+\begin{DoxyCompactList}\small\item\em Objects in the inventory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_controller}{Player\+Controller}} \mbox{\hyperlink{class_inventory_manager_af759cfbe1aea1d78d741e6f55a0ddcc4}{player\+Controller}}
+\begin{DoxyCompactList}\small\item\em Inventory status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_inventory_manager_ab03cb9976ed0fd2ee6e77cd7006d1104}\index{InventoryManager@{InventoryManager}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_ab03cb9976ed0fd2ee6e77cd7006d1104} 
+void Inventory\+Manager.\+Add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+It is used to add an object to the inventory. 
+
+We update the UI after adding object.\Hypertarget{class_inventory_manager_ab4a4bc9e6a7d711a841fdd7f7cfa034a}\index{InventoryManager@{InventoryManager}!EquipItem@{EquipItem}}
+\index{EquipItem@{EquipItem}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{EquipItem()}{EquipItem()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_ab4a4bc9e6a7d711a841fdd7f7cfa034a} 
+void Inventory\+Manager.\+Equip\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}}}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It is used to equip or unbalance an object in hand. 
+
+We lift from the right hand if there is any previous object.
+
+If the object collected is the phone, it is equipped on the left.\Hypertarget{class_inventory_manager_ae105fd7e1358690239919d27df074ffb}\index{InventoryManager@{InventoryManager}!HasItem@{HasItem}}
+\index{HasItem@{HasItem}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{HasItem()}{HasItem()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_ae105fd7e1358690239919d27df074ffb} 
+bool Inventory\+Manager.\+Has\+Item (\begin{DoxyParamCaption}\item[{string}]{item\+Name}{}\end{DoxyParamCaption})}
+
+
+
+It serves to check if we have an object in the inventory. 
+
+\Hypertarget{class_inventory_manager_afc55d3b8671e510b3fd64199e140b001}\index{InventoryManager@{InventoryManager}!RemoveItem@{RemoveItem}}
+\index{RemoveItem@{RemoveItem}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{RemoveItem()}{RemoveItem()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_afc55d3b8671e510b3fd64199e140b001} 
+void Inventory\+Manager.\+Remove\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Eliminates an object from inventory. 
+
+Update the UI when we eliminate an object.\Hypertarget{class_inventory_manager_a5b18458e8dd8426c55d2d4e2d184706a}\index{InventoryManager@{InventoryManager}!Start@{Start}}
+\index{Start@{Start}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a5b18458e8dd8426c55d2d4e2d184706a} 
+void Inventory\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Player controller. 
+
+When the game appears the inventory is hidden. \Hypertarget{class_inventory_manager_a87c8ecad45dfad4a04b0ec48b901b3c8}\index{InventoryManager@{InventoryManager}!ToggleInventory@{ToggleInventory}}
+\index{ToggleInventory@{ToggleInventory}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{ToggleInventory()}{ToggleInventory()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a87c8ecad45dfad4a04b0ec48b901b3c8} 
+void Inventory\+Manager.\+Toggle\+Inventory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+It is used to enable or disable inventory. 
+
+\Hypertarget{class_inventory_manager_a0959bc576a07ab9b7465434d9ff390f3}\index{InventoryManager@{InventoryManager}!UpdateInventoryUI@{UpdateInventoryUI}}
+\index{UpdateInventoryUI@{UpdateInventoryUI}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{UpdateInventoryUI()}{UpdateInventoryUI()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a0959bc576a07ab9b7465434d9ff390f3} 
+void Inventory\+Manager.\+Update\+Inventory\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Upper the UI depending on the state of the inventory. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_inventory_manager_aed656f8e5efb81f008b13b8886bb45cf}\index{InventoryManager@{InventoryManager}!inventoryGrid@{inventoryGrid}}
+\index{inventoryGrid@{inventoryGrid}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{inventoryGrid}{inventoryGrid}}
+{\footnotesize\ttfamily \label{class_inventory_manager_aed656f8e5efb81f008b13b8886bb45cf} 
+Transform Inventory\+Manager.\+inventory\+Grid}
+
+
+
+Prefab of the inventory boxes. 
+
+\Hypertarget{class_inventory_manager_a092943feb47c79fd1b12613640b14a30}\index{InventoryManager@{InventoryManager}!inventorySize@{inventorySize}}
+\index{inventorySize@{inventorySize}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{inventorySize}{inventorySize}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a092943feb47c79fd1b12613640b14a30} 
+int Inventory\+Manager.\+inventory\+Size = 20}
+
+@\+Brief Inventory configuration. \Hypertarget{class_inventory_manager_a5654d9fee257edb7c6d237c4fbeb6a9f}\index{InventoryManager@{InventoryManager}!inventorySlotPrefab@{inventorySlotPrefab}}
+\index{inventorySlotPrefab@{inventorySlotPrefab}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{inventorySlotPrefab}{inventorySlotPrefab}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a5654d9fee257edb7c6d237c4fbeb6a9f} 
+Game\+Object Inventory\+Manager.\+inventory\+Slot\+Prefab}
+
+\Hypertarget{class_inventory_manager_aa006da3f967c18737ac6bb978c66a23f}\index{InventoryManager@{InventoryManager}!inventoryUI@{inventoryUI}}
+\index{inventoryUI@{inventoryUI}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{inventoryUI}{inventoryUI}}
+{\footnotesize\ttfamily \label{class_inventory_manager_aa006da3f967c18737ac6bb978c66a23f} 
+Game\+Object Inventory\+Manager.\+inventory\+UI}
+
+
+
+Grid where the boxes are placed. 
+
+\Hypertarget{class_inventory_manager_a07ac5bdf3d1557aef5e2c123e10d4b9f}\index{InventoryManager@{InventoryManager}!itemOnHand@{itemOnHand}}
+\index{itemOnHand@{itemOnHand}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{itemOnHand}{itemOnHand}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a07ac5bdf3d1557aef5e2c123e10d4b9f} 
+string Inventory\+Manager.\+item\+On\+Hand}
+
+
+
+Anchor point of the right hand. 
+
+\Hypertarget{class_inventory_manager_a9178b7de01f139ff256f16e3f1dd62e6}\index{InventoryManager@{InventoryManager}!items@{items}}
+\index{items@{items}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a9178b7de01f139ff256f16e3f1dd62e6} 
+List$<$\mbox{\hyperlink{class_item}{Item}}$>$ Inventory\+Manager.\+items = new List$<$\mbox{\hyperlink{class_item}{Item}}$>$()}
+
+
+
+Canvas containing the inventory. 
+
+\Hypertarget{class_inventory_manager_acda1ac0d407d41e520a986445d29ed07}\index{InventoryManager@{InventoryManager}!leftHand@{leftHand}}
+\index{leftHand@{leftHand}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{leftHand}{leftHand}}
+{\footnotesize\ttfamily \label{class_inventory_manager_acda1ac0d407d41e520a986445d29ed07} 
+Transform Inventory\+Manager.\+left\+Hand}
+
+
+
+Slots in the UI. 
+
+Coordinates where the objects assigned to the hands are placed. \Hypertarget{class_inventory_manager_af759cfbe1aea1d78d741e6f55a0ddcc4}\index{InventoryManager@{InventoryManager}!playerController@{playerController}}
+\index{playerController@{playerController}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{playerController}{playerController}}
+{\footnotesize\ttfamily \label{class_inventory_manager_af759cfbe1aea1d78d741e6f55a0ddcc4} 
+\mbox{\hyperlink{class_player_controller}{Player\+Controller}} Inventory\+Manager.\+player\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inventory status. 
+
+\Hypertarget{class_inventory_manager_a9117e06d048be3f8202abf967b9fa266}\index{InventoryManager@{InventoryManager}!rightHand@{rightHand}}
+\index{rightHand@{rightHand}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{rightHand}{rightHand}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a9117e06d048be3f8202abf967b9fa266} 
+Transform Inventory\+Manager.\+right\+Hand}
+
+
+
+Anchor point of the left hand. 
+
+\Hypertarget{class_inventory_manager_a1ba74f4b51fc220d80c471a2acf8573f}\index{InventoryManager@{InventoryManager}!slots@{slots}}
+\index{slots@{slots}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{slots}{slots}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a1ba74f4b51fc220d80c471a2acf8573f} 
+List$<$Game\+Object$>$ Inventory\+Manager.\+slots = new List$<$Game\+Object$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Objects in the inventory. 
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_inventory_manager_a933a6fafa9762c6715ba6b537b2932a2}\index{InventoryManager@{InventoryManager}!IsInventoryOpen@{IsInventoryOpen}}
+\index{IsInventoryOpen@{IsInventoryOpen}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{IsInventoryOpen}{IsInventoryOpen}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a933a6fafa9762c6715ba6b537b2932a2} 
+bool Inventory\+Manager.\+Is\+Inventory\+Open\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+Active object in the right hand. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Scripts/\+Characters/\+Player/\mbox{\hyperlink{_inventory_manager_8cs}{Inventory\+Manager.\+cs}}\end{DoxyCompactItemize}

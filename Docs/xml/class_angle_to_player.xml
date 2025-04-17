@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_angle_to_player" kind="class" language="C#" prot="public">
+    <compoundname>AngleToPlayer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_angle_to_player_1a3fc1f77d4f31bc33cc4aae852184ec34" prot="private" static="no" mutable="no">
+        <type>Transform</type>
+        <definition>Transform AngleToPlayer.player</definition>
+        <argsstring></argsstring>
+        <name>player</name>
+        <qualifiedname>AngleToPlayer.player</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="13" column="15" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_angle_to_player_1add2204e7c4277d0c52afd5589b697a43" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 AngleToPlayer.targetPos</definition>
+        <argsstring></argsstring>
+        <name>targetPos</name>
+        <qualifiedname>AngleToPlayer.targetPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="14" column="13" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_angle_to_player_1a5f50a687af26add963378ee36d8c5dd4" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 AngleToPlayer.targetDir</definition>
+        <argsstring></argsstring>
+        <name>targetDir</name>
+        <qualifiedname>AngleToPlayer.targetDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="15" column="13" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_angle_to_player_1a0e0d88bd734e998dae86f55b0ce247e7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float AngleToPlayer.angle</definition>
+        <argsstring></argsstring>
+        <name>angle</name>
+        <qualifiedname>AngleToPlayer.angle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="17" column="11" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_angle_to_player_1a65f4a46d9485b06ad0d10a44f64ed288" prot="private" static="no" mutable="no">
+        <type>SpriteRenderer</type>
+        <definition>SpriteRenderer AngleToPlayer.spriteRenderer</definition>
+        <argsstring></argsstring>
+        <name>spriteRenderer</name>
+        <qualifiedname>AngleToPlayer.spriteRenderer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="20" column="20" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_angle_to_player_1a69c5bd12acab4d229db026a561070603" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AngleToPlayer.lastIndex</definition>
+        <argsstring></argsstring>
+        <name>lastIndex</name>
+        <qualifiedname>AngleToPlayer.lastIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="18" column="16" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_angle_to_player_1a3790bfd32449d5feab353c7b7b95acc2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AngleToPlayer.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>AngleToPlayer.Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="22" column="10" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_angle_to_player_1ae73bcc669d67bdb13439f31abf871b1c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AngleToPlayer.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>AngleToPlayer.Update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Current player position.</para>
+<para>Address towards the player.</para>
+<para>Angle between the direction of the enemy and the position of the player.</para>
+<para>Turn the sprite if necessary.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="28" column="10" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="28" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_angle_to_player_1a1a7a5732d9a0659c0a4f5f56b4450549" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int AngleToPlayer.GetIndex</definition>
+        <argsstring>(float angle)</argsstring>
+        <name>GetIndex</name>
+        <qualifiedname>AngleToPlayer.GetIndex</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+<para>Depending on the angle towards the player, assign an index or another to select the corresponding sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Front.</para>
+<para>Back.</para>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="47" column="9" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="47" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_angle_to_player_1a162307c7d7b325043000c34cbb3e1bbd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AngleToPlayer.OnDrawGizmosSelected</definition>
+        <argsstring>()</argsstring>
+        <name>OnDrawGizmosSelected</name>
+        <qualifiedname>AngleToPlayer.OnDrawGizmosSelected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="72" column="18" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="72" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This script controls the player&apos;s angle with respect to the enemy to assign a sprite or another. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AngleToPlayer</label>
+        <link refid="class_angle_to_player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AngleToPlayer</label>
+        <link refid="class_angle_to_player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="Scripts/Characters/Enemies/AngleToPlayer.cs" line="10" column="7" bodyfile="Scripts/Characters/Enemies/AngleToPlayer.cs" bodystart="11" bodyend="79"/>
+    <listofallmembers>
+      <member refid="class_angle_to_player_1a0e0d88bd734e998dae86f55b0ce247e7" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>angle</name></member>
+      <member refid="class_angle_to_player_1a1a7a5732d9a0659c0a4f5f56b4450549" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>GetIndex</name></member>
+      <member refid="class_angle_to_player_1a69c5bd12acab4d229db026a561070603" prot="public" virt="non-virtual"><scope>AngleToPlayer</scope><name>lastIndex</name></member>
+      <member refid="class_angle_to_player_1a162307c7d7b325043000c34cbb3e1bbd" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>OnDrawGizmosSelected</name></member>
+      <member refid="class_angle_to_player_1a3fc1f77d4f31bc33cc4aae852184ec34" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>player</name></member>
+      <member refid="class_angle_to_player_1a65f4a46d9485b06ad0d10a44f64ed288" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>spriteRenderer</name></member>
+      <member refid="class_angle_to_player_1a3790bfd32449d5feab353c7b7b95acc2" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>Start</name></member>
+      <member refid="class_angle_to_player_1a5f50a687af26add963378ee36d8c5dd4" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>targetDir</name></member>
+      <member refid="class_angle_to_player_1add2204e7c4277d0c52afd5589b697a43" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>targetPos</name></member>
+      <member refid="class_angle_to_player_1ae73bcc669d67bdb13439f31abf871b1c" prot="private" virt="non-virtual"><scope>AngleToPlayer</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

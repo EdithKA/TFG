@@ -1,0 +1,305 @@
+\doxysection{Player\+Controller Class Reference}
+\hypertarget{class_player_controller}{}\label{class_player_controller}\index{PlayerController@{PlayerController}}
+
+
+This class controls the interactions and movement of the player.  
+
+
+Inheritance diagram for Player\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Animator \mbox{\hyperlink{class_player_controller_acecf71e7f4f5b22273c0391effb57e22}{cam\+Anim}}
+\item 
+float \mbox{\hyperlink{class_player_controller_ad7f03e37ff7be11e361f8f45526fabad}{player\+Speed}} = 20f
+\begin{DoxyCompactList}\small\item\em It is used to walk the camera walk. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_controller_a993bebb87e65c0b35cf13629f1c32f91}{is\+Walking}}
+\item 
+float \mbox{\hyperlink{class_player_controller_a91e9c34ee791cf1192de8126f22e74d8}{stamina}}
+\begin{DoxyCompactList}\small\item\em Player statistics that influence the game. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_controller_a1780dc222b68afbb38bd8852fbf409be}{current\+Stamina}}
+\item 
+\mbox{\hyperlink{class_inventory_manager}{Inventory\+Manager}} \mbox{\hyperlink{class_player_controller_a43f272f1a8f815342e21479498dbf064}{inventory\+Manager}}
+\item 
+bool \mbox{\hyperlink{class_player_controller_af407de2d2068da64333034251c805e43}{is\+Inventory\+Open}} = false
+\item 
+bool \mbox{\hyperlink{class_player_controller_a8a45a6a837ef2858e1b7010d02b5bf33}{closer}} = false
+\item 
+Animator \mbox{\hyperlink{class_player_controller_a84e21a5d0a9a55d0f2cd42c1416498e9}{hand\+Anim}}
+\item 
+bool \mbox{\hyperlink{class_player_controller_a9d4a77e35e45f47c3afa7814c3f5cde3}{Left\+Hand\+On}} = false
+\item 
+bool \mbox{\hyperlink{class_player_controller_a4e37128c8edc3867d1f54b1e4ba25f48}{Right\+Hand\+On}} = false
+\begin{DoxyCompactList}\small\item\em Indicate if the left hand is being used. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_player_controller_a792b6d54d6309e0b48823c5f46002d8f}{left\+Hand}}
+\begin{DoxyCompactList}\small\item\em Indicate if the right hand is being used. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_player_controller_aa225c2489f22d0540be9f061771fa4d4}{right\+Hand}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_controller_ae1117d9c4da3193181cddad2c814e467}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Start of the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_controller_ae8bc83dffb99867a04be016473ed2c43}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_player_controller_a547170047da087b1e3dad2ee7c5a1390}{set\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em This function assigns the player animation the animation (or animations) that corresponds based on the value of different variables that are modified throughout the code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_controller_ae8b9cf7409e0e8122a44fdd9c03e944d}{Check\+For\+Head\+Bob}} ()
+\begin{DoxyCompactList}\small\item\em This function determines whether the character is walking or not to reproduce the animation of the camera that simulates the way of walking the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_controller_a067e52f8db324a7fe74ef6c233832cbc}{Get\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Handle the user\textquotesingle{}s input system. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_player_controller_a8dc54799a67e94e02a438ea1f9421c73}{Open\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em It is used to soften the animation to open the inventory. The inventory becomes visible or invisible a while after starting animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_controller_ae04cde2fdd7d08b3b45d8619c5705fa1}{Move\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Move the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_controller_a0928605583f0563cd84fe43119d336ec}{speed}}
+\item 
+Character\+Controller \mbox{\hyperlink{class_player_controller_ac0f9de9c0ab3c9e5f9c4aebb56cd36da}{character\+Controller}}
+\item 
+Vector3 \mbox{\hyperlink{class_player_controller_af18a1c6ab088393ab7b61202700769c0}{input\+Vector}}
+\item 
+Vector3 \mbox{\hyperlink{class_player_controller_a7944c2b7786e62e1b4f72e4d6a1adb0d}{movement\+Vector}}
+\item 
+float \mbox{\hyperlink{class_player_controller_a11562d1a4c5be3e0e7d4adeba1fb7f8d}{Gravity}} = -\/10f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class controls the interactions and movement of the player. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_controller_ae8b9cf7409e0e8122a44fdd9c03e944d}\index{PlayerController@{PlayerController}!CheckForHeadBob@{CheckForHeadBob}}
+\index{CheckForHeadBob@{CheckForHeadBob}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{CheckForHeadBob()}{CheckForHeadBob()}}
+{\footnotesize\ttfamily \label{class_player_controller_ae8b9cf7409e0e8122a44fdd9c03e944d} 
+void Player\+Controller.\+Check\+For\+Head\+Bob (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function determines whether the character is walking or not to reproduce the animation of the camera that simulates the way of walking the player. 
+
+\Hypertarget{class_player_controller_a067e52f8db324a7fe74ef6c233832cbc}\index{PlayerController@{PlayerController}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily \label{class_player_controller_a067e52f8db324a7fe74ef6c233832cbc} 
+void Player\+Controller.\+Get\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle the user\textquotesingle{}s input system. 
+
+Run as long as you stamin.
+
+Bring the phone closer.
+
+Player displacement (it is continuously calculated once the function is called).\Hypertarget{class_player_controller_ae04cde2fdd7d08b3b45d8619c5705fa1}\index{PlayerController@{PlayerController}!MovePlayer@{MovePlayer}}
+\index{MovePlayer@{MovePlayer}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{MovePlayer()}{MovePlayer()}}
+{\footnotesize\ttfamily \label{class_player_controller_ae04cde2fdd7d08b3b45d8619c5705fa1} 
+void Player\+Controller.\+Move\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Move the character. 
+
+\Hypertarget{class_player_controller_a8dc54799a67e94e02a438ea1f9421c73}\index{PlayerController@{PlayerController}!OpenInventory@{OpenInventory}}
+\index{OpenInventory@{OpenInventory}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{OpenInventory()}{OpenInventory()}}
+{\footnotesize\ttfamily \label{class_player_controller_a8dc54799a67e94e02a438ea1f9421c73} 
+IEnumerator Player\+Controller.\+Open\+Inventory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+It is used to soften the animation to open the inventory. The inventory becomes visible or invisible a while after starting animation. 
+
+\Hypertarget{class_player_controller_a547170047da087b1e3dad2ee7c5a1390}\index{PlayerController@{PlayerController}!setAnimation@{setAnimation}}
+\index{setAnimation@{setAnimation}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
+{\footnotesize\ttfamily \label{class_player_controller_a547170047da087b1e3dad2ee7c5a1390} 
+void Player\+Controller.\+set\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function assigns the player animation the animation (or animations) that corresponds based on the value of different variables that are modified throughout the code. 
+
+Chamber movement.
+
+Bring the phone closer.
+
+Open the inventory.
+
+Remove or "{}save"{} your left hand.
+
+Take out or "{}save"{} your right hand.
+
+Active or disabled left hand.
+
+Right or disabled right hand.\Hypertarget{class_player_controller_ae1117d9c4da3193181cddad2c814e467}\index{PlayerController@{PlayerController}!Start@{Start}}
+\index{Start@{Start}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_player_controller_ae1117d9c4da3193181cddad2c814e467} 
+void Player\+Controller.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start of the game. 
+
+We assign the script that controls and manages the player\textquotesingle{}s inventory.
+
+The player\textquotesingle{}s stamina is restored to the maximum.
+
+We assign the component that controls the character.\Hypertarget{class_player_controller_ae8bc83dffb99867a04be016473ed2c43}\index{PlayerController@{PlayerController}!Update@{Update}}
+\index{Update@{Update}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_player_controller_ae8bc83dffb99867a04be016473ed2c43} 
+void Player\+Controller.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pressing the I key and only if we have the phone, we can open the inventory.
+
+The inventory is open.
+
+We reproduce the animation to open the inventory. ~\newline
+
+
+While the inventory is closed, we can move.
+
+If we open the inventory, we cannot move or interact with the outside.
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_controller_acecf71e7f4f5b22273c0391effb57e22}\index{PlayerController@{PlayerController}!camAnim@{camAnim}}
+\index{camAnim@{camAnim}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{camAnim}{camAnim}}
+{\footnotesize\ttfamily \label{class_player_controller_acecf71e7f4f5b22273c0391effb57e22} 
+Animator Player\+Controller.\+cam\+Anim}
+
+\Hypertarget{class_player_controller_ac0f9de9c0ab3c9e5f9c4aebb56cd36da}\index{PlayerController@{PlayerController}!characterController@{characterController}}
+\index{characterController@{characterController}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{characterController}{characterController}}
+{\footnotesize\ttfamily \label{class_player_controller_ac0f9de9c0ab3c9e5f9c4aebb56cd36da} 
+Character\+Controller Player\+Controller.\+character\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_controller_a8a45a6a837ef2858e1b7010d02b5bf33}\index{PlayerController@{PlayerController}!closer@{closer}}
+\index{closer@{closer}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{closer}{closer}}
+{\footnotesize\ttfamily \label{class_player_controller_a8a45a6a837ef2858e1b7010d02b5bf33} 
+bool Player\+Controller.\+closer = false}
+
+\Hypertarget{class_player_controller_a1780dc222b68afbb38bd8852fbf409be}\index{PlayerController@{PlayerController}!currentStamina@{currentStamina}}
+\index{currentStamina@{currentStamina}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{currentStamina}{currentStamina}}
+{\footnotesize\ttfamily \label{class_player_controller_a1780dc222b68afbb38bd8852fbf409be} 
+float Player\+Controller.\+current\+Stamina}
+
+\Hypertarget{class_player_controller_a11562d1a4c5be3e0e7d4adeba1fb7f8d}\index{PlayerController@{PlayerController}!Gravity@{Gravity}}
+\index{Gravity@{Gravity}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{Gravity}{Gravity}}
+{\footnotesize\ttfamily \label{class_player_controller_a11562d1a4c5be3e0e7d4adeba1fb7f8d} 
+float Player\+Controller.\+Gravity = -\/10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_controller_a84e21a5d0a9a55d0f2cd42c1416498e9}\index{PlayerController@{PlayerController}!handAnim@{handAnim}}
+\index{handAnim@{handAnim}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{handAnim}{handAnim}}
+{\footnotesize\ttfamily \label{class_player_controller_a84e21a5d0a9a55d0f2cd42c1416498e9} 
+Animator Player\+Controller.\+hand\+Anim}
+
+\Hypertarget{class_player_controller_af18a1c6ab088393ab7b61202700769c0}\index{PlayerController@{PlayerController}!inputVector@{inputVector}}
+\index{inputVector@{inputVector}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{inputVector}{inputVector}}
+{\footnotesize\ttfamily \label{class_player_controller_af18a1c6ab088393ab7b61202700769c0} 
+Vector3 Player\+Controller.\+input\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_controller_a43f272f1a8f815342e21479498dbf064}\index{PlayerController@{PlayerController}!inventoryManager@{inventoryManager}}
+\index{inventoryManager@{inventoryManager}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{inventoryManager}{inventoryManager}}
+{\footnotesize\ttfamily \label{class_player_controller_a43f272f1a8f815342e21479498dbf064} 
+\mbox{\hyperlink{class_inventory_manager}{Inventory\+Manager}} Player\+Controller.\+inventory\+Manager}
+
+\Hypertarget{class_player_controller_af407de2d2068da64333034251c805e43}\index{PlayerController@{PlayerController}!isInventoryOpen@{isInventoryOpen}}
+\index{isInventoryOpen@{isInventoryOpen}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{isInventoryOpen}{isInventoryOpen}}
+{\footnotesize\ttfamily \label{class_player_controller_af407de2d2068da64333034251c805e43} 
+bool Player\+Controller.\+is\+Inventory\+Open = false}
+
+\Hypertarget{class_player_controller_a993bebb87e65c0b35cf13629f1c32f91}\index{PlayerController@{PlayerController}!isWalking@{isWalking}}
+\index{isWalking@{isWalking}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{isWalking}{isWalking}}
+{\footnotesize\ttfamily \label{class_player_controller_a993bebb87e65c0b35cf13629f1c32f91} 
+bool Player\+Controller.\+is\+Walking}
+
+\Hypertarget{class_player_controller_a792b6d54d6309e0b48823c5f46002d8f}\index{PlayerController@{PlayerController}!leftHand@{leftHand}}
+\index{leftHand@{leftHand}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{leftHand}{leftHand}}
+{\footnotesize\ttfamily \label{class_player_controller_a792b6d54d6309e0b48823c5f46002d8f} 
+Game\+Object Player\+Controller.\+left\+Hand}
+
+
+
+Indicate if the right hand is being used. 
+
+\Hypertarget{class_player_controller_a9d4a77e35e45f47c3afa7814c3f5cde3}\index{PlayerController@{PlayerController}!LeftHandOn@{LeftHandOn}}
+\index{LeftHandOn@{LeftHandOn}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{LeftHandOn}{LeftHandOn}}
+{\footnotesize\ttfamily \label{class_player_controller_a9d4a77e35e45f47c3afa7814c3f5cde3} 
+bool Player\+Controller.\+Left\+Hand\+On = false}
+
+\Hypertarget{class_player_controller_a7944c2b7786e62e1b4f72e4d6a1adb0d}\index{PlayerController@{PlayerController}!movementVector@{movementVector}}
+\index{movementVector@{movementVector}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{movementVector}{movementVector}}
+{\footnotesize\ttfamily \label{class_player_controller_a7944c2b7786e62e1b4f72e4d6a1adb0d} 
+Vector3 Player\+Controller.\+movement\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_controller_ad7f03e37ff7be11e361f8f45526fabad}\index{PlayerController@{PlayerController}!playerSpeed@{playerSpeed}}
+\index{playerSpeed@{playerSpeed}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{playerSpeed}{playerSpeed}}
+{\footnotesize\ttfamily \label{class_player_controller_ad7f03e37ff7be11e361f8f45526fabad} 
+float Player\+Controller.\+player\+Speed = 20f}
+
+
+
+It is used to walk the camera walk. 
+
+\Hypertarget{class_player_controller_aa225c2489f22d0540be9f061771fa4d4}\index{PlayerController@{PlayerController}!rightHand@{rightHand}}
+\index{rightHand@{rightHand}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{rightHand}{rightHand}}
+{\footnotesize\ttfamily \label{class_player_controller_aa225c2489f22d0540be9f061771fa4d4} 
+Game\+Object Player\+Controller.\+right\+Hand}
+
+\Hypertarget{class_player_controller_a4e37128c8edc3867d1f54b1e4ba25f48}\index{PlayerController@{PlayerController}!RightHandOn@{RightHandOn}}
+\index{RightHandOn@{RightHandOn}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{RightHandOn}{RightHandOn}}
+{\footnotesize\ttfamily \label{class_player_controller_a4e37128c8edc3867d1f54b1e4ba25f48} 
+bool Player\+Controller.\+Right\+Hand\+On = false}
+
+
+
+Indicate if the left hand is being used. 
+
+\Hypertarget{class_player_controller_a0928605583f0563cd84fe43119d336ec}\index{PlayerController@{PlayerController}!speed@{speed}}
+\index{speed@{speed}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily \label{class_player_controller_a0928605583f0563cd84fe43119d336ec} 
+float Player\+Controller.\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_controller_a91e9c34ee791cf1192de8126f22e74d8}\index{PlayerController@{PlayerController}!stamina@{stamina}}
+\index{stamina@{stamina}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{stamina}{stamina}}
+{\footnotesize\ttfamily \label{class_player_controller_a91e9c34ee791cf1192de8126f22e74d8} 
+float Player\+Controller.\+stamina}
+
+
+
+Player statistics that influence the game. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Scripts/\+Characters/\+Player/\mbox{\hyperlink{_player_controller_8cs}{Player\+Controller.\+cs}}\end{DoxyCompactItemize}
