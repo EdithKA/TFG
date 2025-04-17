@@ -1,0 +1,27 @@
+var class_player_controller =
+[
+    [ "Start", "class_player_controller.html#ae1117d9c4da3193181cddad2c814e467", null ],
+    [ "Update", "class_player_controller.html#ae8bc83dffb99867a04be016473ed2c43", null ],
+    [ "setAnimation", "class_player_controller.html#a547170047da087b1e3dad2ee7c5a1390", null ],
+    [ "CheckForHeadBob", "class_player_controller.html#ae8b9cf7409e0e8122a44fdd9c03e944d", null ],
+    [ "GetInput", "class_player_controller.html#a067e52f8db324a7fe74ef6c233832cbc", null ],
+    [ "OpenInventory", "class_player_controller.html#a8dc54799a67e94e02a438ea1f9421c73", null ],
+    [ "MovePlayer", "class_player_controller.html#ae04cde2fdd7d08b3b45d8619c5705fa1", null ],
+    [ "playerSpeed", "class_player_controller.html#ad7f03e37ff7be11e361f8f45526fabad", null ],
+    [ "speed", "class_player_controller.html#a0928605583f0563cd84fe43119d336ec", null ],
+    [ "characterController", "class_player_controller.html#ac0f9de9c0ab3c9e5f9c4aebb56cd36da", null ],
+    [ "camAnim", "class_player_controller.html#acecf71e7f4f5b22273c0391effb57e22", null ],
+    [ "isWalking", "class_player_controller.html#a993bebb87e65c0b35cf13629f1c32f91", null ],
+    [ "inputVector", "class_player_controller.html#af18a1c6ab088393ab7b61202700769c0", null ],
+    [ "movementVector", "class_player_controller.html#a7944c2b7786e62e1b4f72e4d6a1adb0d", null ],
+    [ "Gravity", "class_player_controller.html#a11562d1a4c5be3e0e7d4adeba1fb7f8d", null ],
+    [ "stamina", "class_player_controller.html#a91e9c34ee791cf1192de8126f22e74d8", null ],
+    [ "currentStamina", "class_player_controller.html#a1780dc222b68afbb38bd8852fbf409be", null ],
+    [ "inventoryManager", "class_player_controller.html#a43f272f1a8f815342e21479498dbf064", null ],
+    [ "isInventoryOpen", "class_player_controller.html#af407de2d2068da64333034251c805e43", null ],
+    [ "LHAnim", "class_player_controller.html#a42bb3e0ab9f4b4bc528f523f1452a9d8", null ],
+    [ "LActive", "class_player_controller.html#a6f6a7c82bf5871ef5c7de798eeadc6fd", null ],
+    [ "isCloser", "class_player_controller.html#acea1043daef8e44676fd39450e0f06c1", null ],
+    [ "RHAnim", "class_player_controller.html#ac3c1e99f53b48bc358e17098658f7be7", null ],
+    [ "RActive", "class_player_controller.html#a16598999d91f07c3679317402ee64e98", null ]
+];

@@ -3,87 +3,119 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
+/**
+ * @brief Defines inventory items as ScriptableObjects for easy asset creation
+ */
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    public string itemName; //nombre del objeto
-    public Sprite icon; //icono del objeto en la ventana de inventario
-    public GameObject itemPrefab;
-
+    [Header("Item Configuration")]
+    public string itemName;         /// Name displayed in inventory UI
+    public Sprite icon;             /// 2D representation in inventory slots
+    public GameObject itemPrefab;   /// 3D prefab for in-world representation
 }
+
+/**
+ * @brief Handles interactable object behavior and inventory integration
+ */
 public class Object : MonoBehaviour
 {
-    public Transform PlayerHand;
-    bool isPlayerInTrigger = false;
-    public bool isHeld = false;
-    public Item itemData;
-    public UITextController instructions;
-    public InventoryManager inventory;
-    PlayerMove playerMove;
+    [Header("Player References")]
+    public Transform PlayerHand;    /// Transform for item positioning when held
 
+    [Header("Item Data")]
+    public Item itemData;           /// ScriptableObject containing item properties
 
+    [Header("State Management")]
+    bool isPlayerInTrigger = false; /// Player proximity detection flag
+    public bool isHeld = false;     /// Item equipment status
+
+    [Header("UI Components")]
+    public UITextController instructions; /// Interaction prompt controller
+
+    [Header("Inventory System")]
+    public InventoryManager inventory; /// Core inventory management reference
+
+    private PlayerController playerMove; /// Player controller for animation updates
+
+    /**
+     * @brief Initializes required components and references
+     */
     private void Start()
     {
-        playerMove = FindAnyObjectByType<PlayerMove>();
+        playerMove = FindAnyObjectByType<PlayerController>();
         instructions = GetComponent<UITextController>();
         inventory = FindAnyObjectByType<InventoryManager>();
     }
+
+    /**
+     * @brief Handles player interaction input and state changes
+     */
     private void Update()
     {
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !isHeld)
         {
-            if(itemData.name == "Mokia")
+            // Special case for phone equipment
+            if (itemData.name == "Mokia")
             {
-                playerMove.LeftHandOn = true;
+                playerMove.LActive = true; // Activate left hand animation
             }
+
+            // Clear interaction prompts
             Destroy(instructions.instructionText);
             Destroy(instructions);
+
             PickUp();
         }
-        if(isHeld)
+
+        if (isHeld)
         {
-            Destroy(instructions);
+            Destroy(instructions); // Remove prompts after pickup
         }
     }
 
+    /**
+     * @brief Handles trigger enter event for player proximity
+     */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
         }
     }
+
+    /**
+     * @brief Handles trigger exit event for player proximity
+     */
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
         }
     }
 
+    /**
+     * @brief Main item pickup logic and inventory management
+     */
     void PickUp()
     {
-        
-
-        Debug.Log("You picked up a " + itemData.itemName);
+        Debug.Log($"Acquired item: {itemData.itemName}");
         inventory.AddItem(itemData);
 
-        if(itemData.itemName == "Mokia")
+        // Special handling for equippable items
+        if (itemData.itemName == "Mokia")
         {
             isHeld = true;
-
-
+            // Parent item to player's hand
             transform.position = PlayerHand.position;
             transform.rotation = PlayerHand.rotation;
-
             transform.SetParent(PlayerHand);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Remove consumable items immediately
         }
     }
-
-
-
 }

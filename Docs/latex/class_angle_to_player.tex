@@ -1,0 +1,160 @@
+\doxysection{Angle\+To\+Player Class Reference}
+\hypertarget{class_angle_to_player}{}\label{class_angle_to_player}\index{AngleToPlayer@{AngleToPlayer}}
+
+
+Calculates relative angles to player and manages sprite direction visualization.  
+
+
+Inheritance diagram for Angle\+To\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_angle_to_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_angle_to_player_a69c5bd12acab4d229db026a561070603}{last\+Index}}
+\begin{DoxyCompactList}\small\item\em Calculated signed angle between enemy forward and player direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_angle_to_player_a3790bfd32449d5feab353c7b7b95acc2}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Reference to the sprite renderer component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_angle_to_player_ae73bcc669d67bdb13439f31abf871b1c}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates angle calculations and sprite direction each frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_angle_to_player_a1a7a5732d9a0659c0a4f5f56b4450549}{Get\+Index}} (float \mbox{\hyperlink{class_angle_to_player_a0e0d88bd734e998dae86f55b0ce247e7}{angle}})
+\begin{DoxyCompactList}\small\item\em Converts angle value into 8-\/direction index for animation states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_angle_to_player_a162307c7d7b325043000c34cbb3e1bbd}{On\+Draw\+Gizmos\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em Draws debug visuals in Scene view when object is selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_angle_to_player_a3fc1f77d4f31bc33cc4aae852184ec34}{player}}
+\item 
+Vector3 \mbox{\hyperlink{class_angle_to_player_add2204e7c4277d0c52afd5589b697a43}{target\+Pos}}
+\begin{DoxyCompactList}\small\item\em Reference to the player\textquotesingle{}s transform. \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_angle_to_player_a5f50a687af26add963378ee36d8c5dd4}{target\+Dir}}
+\begin{DoxyCompactList}\small\item\em Calculated target position (ignoring vertical difference). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_angle_to_player_a0e0d88bd734e998dae86f55b0ce247e7}{angle}}
+\begin{DoxyCompactList}\small\item\em Direction vector from enemy to player. \end{DoxyCompactList}\item 
+Sprite\+Renderer \mbox{\hyperlink{class_angle_to_player_a65f4a46d9485b06ad0d10a44f64ed288}{sprite\+Renderer}}
+\begin{DoxyCompactList}\small\item\em Last calculated direction index for animation purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calculates relative angles to player and manages sprite direction visualization. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_angle_to_player_a3790bfd32449d5feab353c7b7b95acc2}\index{AngleToPlayer@{AngleToPlayer}!Start@{Start}}
+\index{Start@{Start}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a3790bfd32449d5feab353c7b7b95acc2} 
+void Angle\+To\+Player.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Reference to the sprite renderer component. 
+
+Initializes player reference and sprite renderer component. \Hypertarget{class_angle_to_player_ae73bcc669d67bdb13439f31abf871b1c}\index{AngleToPlayer@{AngleToPlayer}!Update@{Update}}
+\index{Update@{Update}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_angle_to_player_ae73bcc669d67bdb13439f31abf871b1c} 
+void Angle\+To\+Player.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates angle calculations and sprite direction each frame. 
+
+\Hypertarget{class_angle_to_player_a1a7a5732d9a0659c0a4f5f56b4450549}\index{AngleToPlayer@{AngleToPlayer}!GetIndex@{GetIndex}}
+\index{GetIndex@{GetIndex}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{GetIndex()}{GetIndex()}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a1a7a5732d9a0659c0a4f5f56b4450549} 
+int Angle\+To\+Player.\+Get\+Index (\begin{DoxyParamCaption}\item[{float}]{angle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts angle value into 8-\/direction index for animation states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Signed angle between -\/180 and 180 degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer index representing cardinal and intercardinal directions. 
+\end{DoxyReturn}
+\Hypertarget{class_angle_to_player_a162307c7d7b325043000c34cbb3e1bbd}\index{AngleToPlayer@{AngleToPlayer}!OnDrawGizmosSelected@{OnDrawGizmosSelected}}
+\index{OnDrawGizmosSelected@{OnDrawGizmosSelected}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmosSelected()}{OnDrawGizmosSelected()}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a162307c7d7b325043000c34cbb3e1bbd} 
+void Angle\+To\+Player.\+On\+Draw\+Gizmos\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Draws debug visuals in Scene view when object is selected. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_angle_to_player_a3fc1f77d4f31bc33cc4aae852184ec34}\index{AngleToPlayer@{AngleToPlayer}!player@{player}}
+\index{player@{player}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a3fc1f77d4f31bc33cc4aae852184ec34} 
+Transform Angle\+To\+Player.\+player\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_angle_to_player_add2204e7c4277d0c52afd5589b697a43}\index{AngleToPlayer@{AngleToPlayer}!targetPos@{targetPos}}
+\index{targetPos@{targetPos}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{targetPos}{targetPos}}
+{\footnotesize\ttfamily \label{class_angle_to_player_add2204e7c4277d0c52afd5589b697a43} 
+Vector3 Angle\+To\+Player.\+target\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the player\textquotesingle{}s transform. 
+
+\Hypertarget{class_angle_to_player_a5f50a687af26add963378ee36d8c5dd4}\index{AngleToPlayer@{AngleToPlayer}!targetDir@{targetDir}}
+\index{targetDir@{targetDir}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{targetDir}{targetDir}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a5f50a687af26add963378ee36d8c5dd4} 
+Vector3 Angle\+To\+Player.\+target\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculated target position (ignoring vertical difference). 
+
+\Hypertarget{class_angle_to_player_a0e0d88bd734e998dae86f55b0ce247e7}\index{AngleToPlayer@{AngleToPlayer}!angle@{angle}}
+\index{angle@{angle}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a0e0d88bd734e998dae86f55b0ce247e7} 
+float Angle\+To\+Player.\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Direction vector from enemy to player. 
+
+\Hypertarget{class_angle_to_player_a69c5bd12acab4d229db026a561070603}\index{AngleToPlayer@{AngleToPlayer}!lastIndex@{lastIndex}}
+\index{lastIndex@{lastIndex}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{lastIndex}{lastIndex}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a69c5bd12acab4d229db026a561070603} 
+int Angle\+To\+Player.\+last\+Index}
+
+
+
+Calculated signed angle between enemy forward and player direction. 
+
+\Hypertarget{class_angle_to_player_a65f4a46d9485b06ad0d10a44f64ed288}\index{AngleToPlayer@{AngleToPlayer}!spriteRenderer@{spriteRenderer}}
+\index{spriteRenderer@{spriteRenderer}!AngleToPlayer@{AngleToPlayer}}
+\doxysubsubsection{\texorpdfstring{spriteRenderer}{spriteRenderer}}
+{\footnotesize\ttfamily \label{class_angle_to_player_a65f4a46d9485b06ad0d10a44f64ed288} 
+Sprite\+Renderer Angle\+To\+Player.\+sprite\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last calculated direction index for animation purposes. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+My\+Projects/\+TFG/\+Assets/\+Scripts/\+Characters/\+Enemies/\mbox{\hyperlink{_angle_to_player_8cs}{Angle\+To\+Player.\+cs}}\end{DoxyCompactItemize}

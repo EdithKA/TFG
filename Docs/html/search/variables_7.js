@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['icon_0',['icon',['../class_item.html#af1dc016532d298122f97471dc66c2c81',1,'Item']]],
+  ['inputvector_1',['inputVector',['../class_player_controller.html#af18a1c6ab088393ab7b61202700769c0',1,'PlayerController']]],
+  ['instructions_2',['instructions',['../class_object.html#afc54923fa8a9976d6c6ab5d471c97bac',1,'Object']]],
+  ['instructiontext_3',['instructionText',['../class_u_i_text_controller.html#ab6dacf294f8d846a2d688ef1aecbda68',1,'UITextController']]],
+  ['inventory_4',['inventory',['../class_object.html#a52dbd77ef92a8097e1c058731d7da549',1,'Object']]],
+  ['inventorygrid_5',['inventoryGrid',['../class_inventory_manager.html#aed656f8e5efb81f008b13b8886bb45cf',1,'InventoryManager']]],
+  ['inventorymanager_6',['inventoryManager',['../class_player_controller.html#a43f272f1a8f815342e21479498dbf064',1,'PlayerController']]],
+  ['inventorysize_7',['inventorySize',['../class_inventory_manager.html#a092943feb47c79fd1b12613640b14a30',1,'InventoryManager']]],
+  ['inventoryslotprefab_8',['inventorySlotPrefab',['../class_inventory_manager.html#a5654d9fee257edb7c6d237c4fbeb6a9f',1,'InventoryManager']]],
+  ['inventoryui_9',['inventoryUI',['../class_inventory_manager.html#aa006da3f967c18737ac6bb978c66a23f',1,'InventoryManager']]],
+  ['iscloser_10',['isCloser',['../class_player_controller.html#acea1043daef8e44676fd39450e0f06c1',1,'PlayerController']]],
+  ['isheld_11',['isHeld',['../class_object.html#af06ed313b4f6c9b709550bfe389449d3',1,'Object']]],
+  ['isinventoryopen_12',['isInventoryOpen',['../class_player_controller.html#af407de2d2068da64333034251c805e43',1,'PlayerController']]],
+  ['isplayerintrigger_13',['isPlayerInTrigger',['../class_door_controller.html#a65bae3c7f2d6397502ba0c76c3fb6506',1,'DoorController.isPlayerInTrigger'],['../class_object.html#a5de05b118ce4fdfff3ca8bf07f897774',1,'Object.isPlayerInTrigger']]],
+  ['iswalking_14',['isWalking',['../class_player_controller.html#a993bebb87e65c0b35cf13629f1c32f91',1,'PlayerController']]],
+  ['itemdata_15',['itemData',['../class_object.html#ae43a94cfaa5ab66a710725b4e43d198a',1,'Object']]],
+  ['itemname_16',['itemName',['../class_item.html#a8c54f77a262b1ffd78c1cd8cbed86ae0',1,'Item']]],
+  ['itemonhand_17',['itemOnHand',['../class_inventory_manager.html#a07ac5bdf3d1557aef5e2c123e10d4b9f',1,'InventoryManager']]],
+  ['itemprefab_18',['itemPrefab',['../class_item.html#ac8a02928a85ce008707ec653a1c6c254',1,'Item']]],
+  ['items_19',['items',['../class_inventory_manager.html#a9178b7de01f139ff256f16e3f1dd62e6',1,'InventoryManager']]]
+];

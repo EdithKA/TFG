@@ -2,26 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * @brief Controls enemy sprite rotation to face the player, with optional vertical tracking.
+ */
 public class EnemySpriteLook : MonoBehaviour
 {
-    Transform target;
-    public bool canLookVertically;
+    public Transform target; /// Reference to the player's transform.
+    public bool canLookVertically; /// Can the enemy look up/down at the player?
 
-    // Start is called before the first frame update
+    /**
+     * @brief Initializes target reference to the player's transform.
+     */
     void Start()
     {
-        target = FindAnyObjectByType<PlayerMove>().transform;
+        target = FindAnyObjectByType<PlayerController>().transform;
     }
 
-    // Update is called once per frame
+    /**
+     * @brief Updates sprite rotation to face the player each frame.
+     */
     void Update()
     {
-        if(canLookVertically)
+        if (canLookVertically)
         {
+            // Full 3D rotation tracking
             transform.LookAt(target);
         }
         else
         {
+            // Horizontal-only tracking (lock Y-axis position)
             Vector3 modifiedTarget = target.position;
             modifiedTarget.y = transform.position.y;
             transform.LookAt(modifiedTarget);

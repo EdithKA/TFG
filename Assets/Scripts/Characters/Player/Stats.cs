@@ -2,46 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // Cambiado desde UIElements
+using UnityEngine.UI;
 
+/**
+ * @brief Manages player stats (health and sanity), updates UI, and handles world corruption effects.
+ */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    int sanity;
-    int health;
-    float decreaseInterval = 1.5f;
+    int sanity; /// Current sanity value (0-100).
+    int health; /// Current health value (0-100).
+    float decreaseInterval = 1.5f; /// Time interval between sanity decreases.
 
-    // Marcadores - UI
-    public TextMeshProUGUI sanityCounter;
-    public TextMeshProUGUI healthCounter;
+    public TextMeshProUGUI sanityCounter; /// UI text displaying current sanity.
+    public TextMeshProUGUI healthCounter; /// UI text displaying current health.
 
     [Header("World Corruption")]
-    public string corruptibleTag; // Tag de los objetos corrompibles
-    public float moveRange = 0.5f; // Rango de movimiento aleatorio
-    public float rotationSpeed = 50f; // Velocidad de rotación del objeto
-    public int sanityThreshold; // Inicio de la corrupción
-    public float rotationRange = 45f;
+    public string corruptibleTag; /// Tag for objects that can be corrupted.
+    public float moveRange = 0.5f; /// Maximum random movement offset during corruption.
+    public float rotationSpeed = 50f; /// Speed of rotation during corruption (not used in this script).
+    public int sanityThreshold; /// Sanity value at which corruption starts.
+    public float rotationRange = 45f; /// Maximum random rotation angle during corruption.
 
-    private List<GameObject> corruptibleObjects = new List<GameObject>();
-    private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>();
-    private int lastSanityTrigger; // Último múltiplo de 5 en el que se ejecutó la corrupción
+    private List<GameObject> corruptibleObjects = new List<GameObject>(); /// List of objects that can be corrupted.
+    private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); /// Original positions of corruptible objects.
+    private int lastSanityTrigger; /// Last sanity value at which corruption was triggered.
 
     [Header("Health")]
-    public Image heartIcon; // Referencia al objeto del corazón
-    public Sprite[] heartStats; // Diferentes sprites del corazón
-    public List<GameObject> healthBars;
+    public Image heartIcon; /// UI image for the heart icon.
+    public Sprite[] heartStats; /// Sprites for different heart states.
+    public List<GameObject> healthBars; /// List of health bar UI segments.
 
     [Header("Sanity")]
-    public Image sanityIcon; // Referencia al objeto del cerebro
-    public Sprite[] brainStats; // Diferentes sprites del cerebro
-    public List<GameObject> sanityBars;
+    public Image sanityIcon; /// UI image for the brain icon.
+    public Sprite[] brainStats; /// Sprites for different brain states.
+    public List<GameObject> sanityBars; /// List of sanity bar UI segments.
+
+    /**
+     * @brief Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine.
+     */
     private void Start()
     {
-        // Identificar los objetos que podrán corromperse
         GameObject[] corruptObjects = GameObject.FindGameObjectsWithTag(corruptibleTag);
         corruptibleObjects.AddRange(corruptObjects);
 
-        // Guardar las posiciones originales de los objetos
         foreach (GameObject obj in corruptibleObjects)
         {
             if (obj != null)
@@ -50,7 +54,6 @@ public class Stats : MonoBehaviour
             }
         }
 
-        // Inicialización de las estadísticas
         sanity = 100;
         health = 100;
         lastSanityTrigger = sanity;
@@ -58,6 +61,9 @@ public class Stats : MonoBehaviour
         StartCoroutine(DecreaseSanity());
     }
 
+    /**
+     * @brief Updates UI and bar displays every frame.
+     */
     private void Update()
     {
         UpdateUI();
@@ -66,6 +72,9 @@ public class Stats : MonoBehaviour
         UpdateBars();
     }
 
+    /**
+     * @brief Updates the text UI for sanity and health.
+     */
     void UpdateUI()
     {
         sanityCounter.text = sanity.ToString();
@@ -74,14 +83,15 @@ public class Stats : MonoBehaviour
         SetSanity();
     }
 
+    /**
+     * @brief Sets the heart icon sprite based on current health value.
+     */
     void SetHealth()
     {
-        
-
         switch (health)
         {
             case <= 0:
-                heartIcon.sprite = heartStats[0]; 
+                heartIcon.sprite = heartStats[0];
                 break;
             case <= 25:
                 heartIcon.sprite = heartStats[1];
@@ -98,10 +108,11 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Sets the brain icon sprite based on current sanity value.
+     */
     void SetSanity()
     {
-       
-
         switch (sanity)
         {
             case <= 0:
@@ -122,6 +133,9 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Coroutine that decreases sanity over time and triggers corruption if needed.
+     */
     IEnumerator DecreaseSanity()
     {
         while (true)
@@ -143,32 +157,42 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Updates the health and sanity bar UI elements.
+     */
     void UpdateBars()
     {
         UpdateBar(health, healthBars);
         UpdateBar(sanity, sanityBars);
     }
 
+    /**
+     * @brief Activates or deactivates bar segments based on the stat value.
+     * @param statValue The value of the stat (health or sanity).
+     * @param bars The list of bar segment GameObjects.
+     */
     void UpdateBar(int statValue, List<GameObject> bars)
     {
-        int activeBarsCount = Mathf.CeilToInt(statValue / 25f); // Calcula cuántos objetos activar según el valor
+        int activeBarsCount = Mathf.CeilToInt(statValue / 25f);
 
         for (int i = 0; i < bars.Count; i++)
         {
             if (i < activeBarsCount)
             {
-                bars[i].SetActive(true); // Activa los objetos necesarios
+                bars[i].SetActive(true);
             }
             else
             {
-                bars[i].SetActive(false); // Desactiva los demás objetos
+                bars[i].SetActive(false);
             }
         }
     }
 
+    /**
+     * @brief Coroutine that corrupts objects by moving and rotating them randomly, then resets them.
+     */
     IEnumerator CorruptObjects()
     {
-
         foreach (GameObject obj in corruptibleObjects)
         {
             if (obj != null)
@@ -192,9 +216,12 @@ public class Stats : MonoBehaviour
         ResetObjects();
     }
 
+    /**
+     * @brief Resets all corruptible objects to their original positions and rotations.
+     */
     private void ResetObjects()
     {
-        Debug.Log("Restaurando objetos a sus posiciones originales.");
+        Debug.Log("Restoring objects to their original positions.");
 
         foreach (GameObject obj in corruptibleObjects)
         {

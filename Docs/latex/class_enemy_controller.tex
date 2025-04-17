@@ -1,0 +1,224 @@
+\doxysection{Enemy\+Controller Class Reference}
+\hypertarget{class_enemy_controller}{}\label{class_enemy_controller}\index{EnemyController@{EnemyController}}
+
+
+Controls enemy AI behavior including patrolling, chasing, and attacking the player.  
+
+
+Inheritance diagram for Enemy\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_enemy_controller_a11b9600482e6eeb91387c32d533aae2c}{can\+Chase}}
+\item 
+bool \mbox{\hyperlink{class_enemy_controller_acc213925570889aad852b2270a6b45b9}{can\+Attack}}
+\begin{DoxyCompactList}\small\item\em Can the enemy chase the player? \end{DoxyCompactList}\item 
+Transform \mbox{\hyperlink{class_enemy_controller_a6886eb23800bdaf128c2025d4fafe8f1}{player\+Transform}}
+\begin{DoxyCompactList}\small\item\em Is the enemy currently attacking? \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_controller_a461df3205618bc8766baacec91e6cd05}{chase\+Distance}}
+\begin{DoxyCompactList}\small\item\em Reference to the player\textquotesingle{}s transform. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_controller_adfb21d24642a324a13e66e83d9aca828}{attack\+Distance}}
+\begin{DoxyCompactList}\small\item\em Minimum distance to start chasing. \end{DoxyCompactList}\item 
+Animator \mbox{\hyperlink{class_enemy_controller_ac6ca3de26711fd546569096a49d098ed}{anim}}
+\begin{DoxyCompactList}\small\item\em Reference to the Nav\+Mesh\+Agent component. \end{DoxyCompactList}\item 
+Transform\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_enemy_controller_ae26acc981c14cabaaaabac07ec42b524}{waypoints}}
+\begin{DoxyCompactList}\small\item\em Component to determine facing direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Current waypoint index in array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_a41090510cff98622fe675d1f6e3ecd82}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates enemy behavior and animations each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_a77ff56a1dfde21b295ec897affe44e8d}{Next\+Action}} ()
+\begin{DoxyCompactList}\small\item\em Determines enemy behavior based on distance to player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_a8bbe9bd93908fc5681b9b014ee1bde5f}{set\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Updates animation parameters based on facing direction and attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_ae9dc81b0d719b80d7e89389cca9d1c9f}{Set\+Destination\+To\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Sets navigation target to player\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_a459a8fec76b52f83c04eb5aa06dfcf12}{Patrol}} ()
+\begin{DoxyCompactList}\small\item\em Handles waypoint navigation and patrolling behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Nav\+Mesh\+Agent \mbox{\hyperlink{class_enemy_controller_a16fac7492fa63410bffe3963b06296da}{enemy\+Nav\+Mesh\+Agent}}
+\begin{DoxyCompactList}\small\item\em Minimum distance to initiate attack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_angle_to_player}{Angle\+To\+Player}} \mbox{\hyperlink{class_enemy_controller_a0fbbd1570f224cbab0167ddfbfc8087d}{angle\+To\+Player}}
+\begin{DoxyCompactList}\small\item\em Animator controller for enemy sprites. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_controller_a64f2c61f18030051f29b9e6bb0681295}{current\+Waypoint\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em Array of patrol waypoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls enemy AI behavior including patrolling, chasing, and attacking the player. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}\index{EnemyController@{EnemyController}!Start@{Start}}
+\index{Start@{Start}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_aef5af22782327b22749e5632ad7467fb} 
+void Enemy\+Controller.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Current waypoint index in array. 
+
+Initializes components and starts patrolling. \Hypertarget{class_enemy_controller_a41090510cff98622fe675d1f6e3ecd82}\index{EnemyController@{EnemyController}!Update@{Update}}
+\index{Update@{Update}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a41090510cff98622fe675d1f6e3ecd82} 
+void Enemy\+Controller.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates enemy behavior and animations each frame. 
+
+\Hypertarget{class_enemy_controller_a77ff56a1dfde21b295ec897affe44e8d}\index{EnemyController@{EnemyController}!NextAction@{NextAction}}
+\index{NextAction@{NextAction}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{NextAction()}{NextAction()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a77ff56a1dfde21b295ec897affe44e8d} 
+void Enemy\+Controller.\+Next\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Determines enemy behavior based on distance to player. 
+
+\Hypertarget{class_enemy_controller_a8bbe9bd93908fc5681b9b014ee1bde5f}\index{EnemyController@{EnemyController}!setAnimation@{setAnimation}}
+\index{setAnimation@{setAnimation}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a8bbe9bd93908fc5681b9b014ee1bde5f} 
+void Enemy\+Controller.\+set\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates animation parameters based on facing direction and attack state. 
+
+\Hypertarget{class_enemy_controller_ae9dc81b0d719b80d7e89389cca9d1c9f}\index{EnemyController@{EnemyController}!SetDestinationToPlayer@{SetDestinationToPlayer}}
+\index{SetDestinationToPlayer@{SetDestinationToPlayer}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{SetDestinationToPlayer()}{SetDestinationToPlayer()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_ae9dc81b0d719b80d7e89389cca9d1c9f} 
+void Enemy\+Controller.\+Set\+Destination\+To\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sets navigation target to player\textquotesingle{}s current position. 
+
+\Hypertarget{class_enemy_controller_a459a8fec76b52f83c04eb5aa06dfcf12}\index{EnemyController@{EnemyController}!Patrol@{Patrol}}
+\index{Patrol@{Patrol}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{Patrol()}{Patrol()}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a459a8fec76b52f83c04eb5aa06dfcf12} 
+void Enemy\+Controller.\+Patrol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Handles waypoint navigation and patrolling behavior. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_enemy_controller_a11b9600482e6eeb91387c32d533aae2c}\index{EnemyController@{EnemyController}!canChase@{canChase}}
+\index{canChase@{canChase}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{canChase}{canChase}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a11b9600482e6eeb91387c32d533aae2c} 
+bool Enemy\+Controller.\+can\+Chase}
+
+\Hypertarget{class_enemy_controller_acc213925570889aad852b2270a6b45b9}\index{EnemyController@{EnemyController}!canAttack@{canAttack}}
+\index{canAttack@{canAttack}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{canAttack}{canAttack}}
+{\footnotesize\ttfamily \label{class_enemy_controller_acc213925570889aad852b2270a6b45b9} 
+bool Enemy\+Controller.\+can\+Attack}
+
+
+
+Can the enemy chase the player? 
+
+\Hypertarget{class_enemy_controller_a6886eb23800bdaf128c2025d4fafe8f1}\index{EnemyController@{EnemyController}!playerTransform@{playerTransform}}
+\index{playerTransform@{playerTransform}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{playerTransform}{playerTransform}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a6886eb23800bdaf128c2025d4fafe8f1} 
+Transform Enemy\+Controller.\+player\+Transform}
+
+
+
+Is the enemy currently attacking? 
+
+\Hypertarget{class_enemy_controller_a461df3205618bc8766baacec91e6cd05}\index{EnemyController@{EnemyController}!chaseDistance@{chaseDistance}}
+\index{chaseDistance@{chaseDistance}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{chaseDistance}{chaseDistance}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a461df3205618bc8766baacec91e6cd05} 
+float Enemy\+Controller.\+chase\+Distance}
+
+
+
+Reference to the player\textquotesingle{}s transform. 
+
+\Hypertarget{class_enemy_controller_adfb21d24642a324a13e66e83d9aca828}\index{EnemyController@{EnemyController}!attackDistance@{attackDistance}}
+\index{attackDistance@{attackDistance}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{attackDistance}{attackDistance}}
+{\footnotesize\ttfamily \label{class_enemy_controller_adfb21d24642a324a13e66e83d9aca828} 
+float Enemy\+Controller.\+attack\+Distance}
+
+
+
+Minimum distance to start chasing. 
+
+\Hypertarget{class_enemy_controller_a16fac7492fa63410bffe3963b06296da}\index{EnemyController@{EnemyController}!enemyNavMeshAgent@{enemyNavMeshAgent}}
+\index{enemyNavMeshAgent@{enemyNavMeshAgent}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{enemyNavMeshAgent}{enemyNavMeshAgent}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a16fac7492fa63410bffe3963b06296da} 
+Nav\+Mesh\+Agent Enemy\+Controller.\+enemy\+Nav\+Mesh\+Agent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum distance to initiate attack. 
+
+\Hypertarget{class_enemy_controller_ac6ca3de26711fd546569096a49d098ed}\index{EnemyController@{EnemyController}!anim@{anim}}
+\index{anim@{anim}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{anim}{anim}}
+{\footnotesize\ttfamily \label{class_enemy_controller_ac6ca3de26711fd546569096a49d098ed} 
+Animator Enemy\+Controller.\+anim}
+
+
+
+Reference to the Nav\+Mesh\+Agent component. 
+
+\Hypertarget{class_enemy_controller_a0fbbd1570f224cbab0167ddfbfc8087d}\index{EnemyController@{EnemyController}!angleToPlayer@{angleToPlayer}}
+\index{angleToPlayer@{angleToPlayer}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{angleToPlayer}{angleToPlayer}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a0fbbd1570f224cbab0167ddfbfc8087d} 
+\mbox{\hyperlink{class_angle_to_player}{Angle\+To\+Player}} Enemy\+Controller.\+angle\+To\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Animator controller for enemy sprites. 
+
+\Hypertarget{class_enemy_controller_ae26acc981c14cabaaaabac07ec42b524}\index{EnemyController@{EnemyController}!waypoints@{waypoints}}
+\index{waypoints@{waypoints}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{waypoints}{waypoints}}
+{\footnotesize\ttfamily \label{class_enemy_controller_ae26acc981c14cabaaaabac07ec42b524} 
+Transform \mbox{[}$\,$\mbox{]} Enemy\+Controller.\+waypoints}
+
+
+
+Component to determine facing direction. 
+
+\Hypertarget{class_enemy_controller_a64f2c61f18030051f29b9e6bb0681295}\index{EnemyController@{EnemyController}!currentWaypointIndex@{currentWaypointIndex}}
+\index{currentWaypointIndex@{currentWaypointIndex}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{currentWaypointIndex}{currentWaypointIndex}}
+{\footnotesize\ttfamily \label{class_enemy_controller_a64f2c61f18030051f29b9e6bb0681295} 
+int Enemy\+Controller.\+current\+Waypoint\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Array of patrol waypoints. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+My\+Projects/\+TFG/\+Assets/\+Scripts/\+Characters/\+Enemies/\mbox{\hyperlink{_enemy_controller_8cs}{Enemy\+Controller.\+cs}}\end{DoxyCompactItemize}

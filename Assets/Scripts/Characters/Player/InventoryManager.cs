@@ -4,67 +4,74 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+ * @brief Manages the player's inventory, including UI updates and item equipping.
+ */
 public class InventoryManager : MonoBehaviour
 {
-
     [Header("Inventory Settings")]
-    public int inventorySize = 20;
-    public GameObject inventorySlotPrefab; //Prefab de las casillas del inventario
-    public Transform inventoryGrid; //Grid donde se colocan las casillas
-    public GameObject inventoryUI; //Canvas que contiene el inventario
+    public int inventorySize = 20; /// Maximum number of items in the inventory.
+    public GameObject inventorySlotPrefab; /// Prefab for inventory slot UI elements.
+    public Transform inventoryGrid; /// Parent transform for the inventory slots.
+    public GameObject inventoryUI; /// Main inventory UI canvas.
 
-    public List<Item> items = new List<Item>();
-    private List<GameObject> slots = new List<GameObject>(); //Slots en la UI
+    public List<Item> items = new List<Item>(); /// List of items currently in the inventory.
+    private List<GameObject> slots = new List<GameObject>(); /// List of instantiated inventory slot UI objects.
 
+    public Transform leftHand; /// Transform for equipping items in the left hand.
+    public Transform rightHand; /// Transform for equipping items in the right hand.
 
-    public Transform leftHand;
-    public Transform rightHand;
+    public string itemOnHand; /// Name of the currently equipped item.
 
-    public string itemOnHand;
+    private Camera playerCam; /// Reference to the player's camera.
+    public bool IsInventoryOpen { get; private set; } /// Indicates if the inventory UI is open.
 
-    Camera playerCam;
-    public bool IsInventoryOpen { get; private set; }
+    private PlayerController playerMove; /// Reference to the PlayerController script.
 
-    PlayerMove playerMove;
-
+    /**
+     * @brief Initializes references and hides the inventory UI at the start.
+     */
     private void Start()
     {
-        playerMove = FindAnyObjectByType<PlayerMove>();
+        playerMove = FindAnyObjectByType<PlayerController>();
         playerCam = FindObjectOfType<Camera>();
         if (inventoryUI != null)
         {
-            inventoryUI.SetActive(false); 
+            inventoryUI.SetActive(false); /// Hide inventory UI at the start.
         }
     }
 
-    private void Update()
-    {
-       
-    }
-
-
+    /**
+     * @brief Adds an item to the inventory if there is space and updates the UI.
+     * @param item The item to add.
+     */
     public void AddItem(Item item)
     {
         if (items.Count < inventorySize)
         {
             items.Add(item);
-            UpdateInventoryUI(); //Actualizamos la UI tras a�adir objeto
-        }
-        else
-        {
-            //Debug.Log("Inventory is full");
+            UpdateInventoryUI(); /// Update the UI after adding an item.
         }
     }
 
+    /**
+     * @brief Removes an item from the inventory and updates the UI.
+     * @param item The item to remove.
+     */
     public void RemoveItem(Item item)
     {
-        if(items.Contains(item))
+        if (items.Contains(item))
         {
             items.Remove(item);
-            UpdateInventoryUI(); //Actualizar la UI cuando eliminamos un objeto
+            UpdateInventoryUI(); /// Update the UI after removing an item.
         }
     }
 
+    /**
+     * @brief Checks if the inventory contains an item with the given name.
+     * @param itemName The name of the item to check.
+     * @return True if the item is found, false otherwise.
+     */
     public bool HasItem(string itemName)
     {
         foreach (Item item in items)
@@ -75,14 +82,19 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    /**
+     * @brief Updates the inventory UI to match the current list of items.
+     */
     private void UpdateInventoryUI()
     {
+        // Remove all existing slots from the UI.
         foreach (GameObject slot in slots)
         {
             Destroy(slot);
         }
         slots.Clear();
 
+        // Create a new slot for each item in the inventory.
         foreach (Item item in items)
         {
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryGrid);
@@ -95,11 +107,14 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Toggles the inventory UI on or off and manages the cursor state.
+     */
     public void ToggleInventory()
     {
         IsInventoryOpen = !IsInventoryOpen;
         inventoryUI.SetActive(IsInventoryOpen);
-        Debug.Log("Inventario abierto");
+        Debug.Log("Inventory opened");
         if (IsInventoryOpen)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -112,17 +127,21 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Equips the selected item in the player's right hand, or unequips it if already equipped.
+     * @param item The item to equip or unequip.
+     */
     private void EquipItem(Item item)
     {
         if (itemOnHand == item.name)
         {
             StartCoroutine(DestroyObect());
             itemOnHand = "";
-
             playerMove.RActive = false;
         }
         else if (item.itemName != "Mokia")
         {
+            // Remove any previously equipped item.
             if (itemOnHand != "")
             {
                 foreach (Transform child in rightHand)
@@ -141,6 +160,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Coroutine that destroys the equipped object after a delay.
+     */
     IEnumerator DestroyObect()
     {
         yield return new WaitForSeconds(10f);
@@ -150,9 +172,4 @@ public class InventoryManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
 }
-
-
-
-
