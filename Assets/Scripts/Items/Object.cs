@@ -19,12 +19,12 @@ public class Object : MonoBehaviour
     public Item itemData;
     public UITextController instructions;
     public InventoryManager inventory;
-    PlayerController playerMove;
+    PlayerMove playerMove;
 
 
     private void Start()
     {
-        playerMove = FindAnyObjectByType<PlayerController>();
+        playerMove = FindAnyObjectByType<PlayerMove>();
         instructions = GetComponent<UITextController>();
         inventory = FindAnyObjectByType<InventoryManager>();
     }

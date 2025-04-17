@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * @brief This class configures the player's view and the camera movement with the mouse.
- */
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 1.5f; 
     public Transform cameraTransform;
     private float xRotation = 0f;
-    public PlayerController player;
-
+    public PlayerMove player;
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<PlayerMove>();
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
     }
@@ -24,7 +20,7 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
-        if (!player.isInventoryOpen) /// If the inventory is open, the camera cannot move.
+        if (!player.isInventoryOpen)
         {
             RotatePlayer();
             RotateCamera();
@@ -32,18 +28,12 @@ public class MouseLook : MonoBehaviour
         
     }
 
-    /**
-     * @brief The player broken on the X axis towards the direction of the mouse.
-     */
     void RotatePlayer()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX); 
     }
 
-    /**
-     * @brief The camera can move up and down a certain angle.
-     */
     void RotateCamera()
     {
         

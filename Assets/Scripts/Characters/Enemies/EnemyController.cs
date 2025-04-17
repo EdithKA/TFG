@@ -4,9 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-/**
- * @brief This class controls the mechanics that correspond to enemies.
- */
 public class EnemyController : MonoBehaviour
 {
     public bool canChase;
@@ -17,17 +14,17 @@ public class EnemyController : MonoBehaviour
     public float attackDistance;
 
 
-    /// Animation.
+    // Animation
     public Animator anim;
     AngleToPlayer angleToPlayer;
 
-    /// Patrol.
+    // Patrol
     public Transform[] waypoints; // Array de waypoints
     private int currentWaypointIndex = 0;
 
     private void Start()
     {
-        playerTransform = FindObjectOfType<PlayerController>().transform;
+        playerTransform = FindObjectOfType<PlayerMove>().transform;
         enemyNavMeshAgent = GetComponent<NavMeshAgent>();
         angleToPlayer = GetComponent<AngleToPlayer>();
 
@@ -45,9 +42,6 @@ public class EnemyController : MonoBehaviour
        
     }
 
-    /**
-     * @brief It is used to determine what the enemy's following action will be depending on his distances to the player.
-     */
     void NextAction()
     {
 
@@ -67,10 +61,6 @@ public class EnemyController : MonoBehaviour
             canAttack = true;
         }
     }
-
-    /**
-     * @brief Assigns the animation that corresponds to the enemy.
-     */
     void setAnimation()
     {
         anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
@@ -78,17 +68,12 @@ public class EnemyController : MonoBehaviour
     }
     
 
-    /**
-     * @brief Assign the player's location as destination.
-     */
+
     void SetDestinationToPlayer()
     {
         enemyNavMeshAgent.SetDestination(playerTransform.position);
     }
 
-    /**
-     * @brief Implants the patrol mechanics of the enemy.
-     */
     void Patrol()
     {
         if (waypoints.Length == 0) return;

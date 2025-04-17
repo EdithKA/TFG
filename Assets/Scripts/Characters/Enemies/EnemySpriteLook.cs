@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * @brief This script makes the enemy's sprite always look towards the player.
- */
 public class EnemySpriteLook : MonoBehaviour
 {
     Transform target;
     public bool canLookVertically;
 
+    // Start is called before the first frame update
     void Start()
     {
-        target = FindAnyObjectByType<PlayerController>().transform;
+        target = FindAnyObjectByType<PlayerMove>().transform;
     }
 
-
+    // Update is called once per frame
     void Update()
     {
         if(canLookVertically)
