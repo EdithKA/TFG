@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
         if (items.Count < inventorySize)
         {
             items.Add(item);
-            UpdateInventoryUI(); //Actualizamos la UI tras añadir objeto
+            UpdateInventoryUI(); //Actualizamos la UI tras aï¿½adir objeto
         }
         else
         {
@@ -114,27 +114,43 @@ public class InventoryManager : MonoBehaviour
 
     private void EquipItem(Item item)
     {
-        //Debug.Log(item.name);
-        if(itemOnHand == item.name)
+        if (itemOnHand == item.name)
         {
-            foreach (Transform child in rightHand)
-            {
-                Destroy(child.gameObject); //Quitamos de la mano derecha si hay algun objeto previo
-                itemOnHand = "";
-            }
+            StartCoroutine(DestroyObect());
+            itemOnHand = "";
+
+            playerMove.RActive = false;
         }
-        
         else if (item.itemName != "Mokia")
         {
+            if (itemOnHand != "")
+            {
+                foreach (Transform child in rightHand)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
             GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
-            itemSelected.transform.localPosition = Vector3.zero; 
+            itemSelected.transform.localPosition = Vector3.zero;
             itemSelected.transform.localRotation = Quaternion.identity;
             itemSelected.GetComponent<Object>().isHeld = true;
-            itemOnHand = item.itemName;
-            playerMove.RightHandOn = !playerMove.RightHandOn;
-        }
+            itemOnHand = item.name;
 
+            playerMove.RActive = true;
+        }
     }
+
+    IEnumerator DestroyObect()
+    {
+        yield return new WaitForSeconds(10f);
+
+        foreach (Transform child in rightHand)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
 }
 
 
