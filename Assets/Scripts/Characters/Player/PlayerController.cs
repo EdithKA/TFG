@@ -1,54 +1,56 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * @brief This class controls the player's movement, stamina, inventory, and animation logic.
- */
+/// <summary>
+/// Controls the player's movement, stamina, inventory, animation logic, and object interaction.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float playerSpeed = 20f;           /// Base movement speed of the player.
-    float speed;                              /// Current speed (may be affected by sprinting).
-    private CharacterController characterController; /// Reference to the CharacterController component.
-    public Animator camAnim;                  /// Animator for the camera (head bobbing).
-    public bool isWalking;                    /// Indicates if the player is currently walking.
+    public float playerSpeed = 20f;
+    float speed;
+    private CharacterController characterController;
+    public Animator camAnim;
+    public bool isWalking;
 
-    private Vector3 inputVector;              /// Stores player input direction.
-    private Vector3 movementVector;           /// Final movement vector applied to the character.
-    private float Gravity = -10f;             /// Gravity applied to the player.
+    private Vector3 inputVector;
+    private Vector3 movementVector;
+    private float Gravity = -10f;
 
     [Header("Stamina Settings")]
-    public float stamina;                     /// Maximum stamina.
-    public float currentStamina;              /// Current stamina.
+    public float stamina;
+    public float currentStamina;
 
     [Header("Inventory Settings")]
-    public InventoryManager inventoryManager; /// Reference to the inventory manager.
-    public bool isInventoryOpen = false;      /// Indicates if the inventory is currently open.
+    public InventoryManager inventoryManager;
+    public bool isInventoryOpen = false;
 
     [Header("Hands Settings")]
     // Left Hand
-    public Animator LHAnim;                   /// Animator for the left hand.
-    public bool LActive = false;              /// Is the left hand active?
-    public bool isCloser = false;             /// Is the phone being held closer?
+    public Animator LHAnim;
+    public bool LActive = false;
+    public bool isCloser = false;
 
     // Right Hand
-    public Animator RHAnim;                   /// Animator for the right hand.
-    public bool RActive = false;              /// Is the right hand active?
+    public Animator RHAnim;
+    public bool RActive = false;
+
+    [Header("Interaction Settings")]
+    public float distanciaInteraccion = 2f; // Distancia máxima para interactuar
+    public LayerMask capaInteractuables;    // Asigna la capa de objetos interactuables en el inspector
 
     /**
      * @brief Initialization of components and player stats.
      */
     void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>(); /// Assign the inventory manager.
-        currentStamina = stamina;                                /// Restore stamina to maximum.
-        characterController = GetComponent<CharacterController>();/// Assign the CharacterController component.
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        currentStamina = stamina;
+        characterController = GetComponent<CharacterController>();
     }
 
     /**
-     * @brief Main update loop. Handles input, movement, and animation updates.
+     * @brief Main update loop. Handles input, movement, animation updates, and interaction.
      */
     void Update()
     {
@@ -78,6 +80,30 @@ public class PlayerController : MonoBehaviour
 
         // Update all animation parameters.
         setAnimation();
+
+        // --- INTERACCIÓN ---
+        if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
+        {
+            InteractuarConObjeto();
+        }
+    }
+
+    /**
+     * @brief Método para lanzar el Raycast y realizar la interacción.
+     */
+    void InteractuarConObjeto()
+    {
+        Ray ray = new Ray(transform.position + Vector3.up, transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, distanciaInteraccion, capaInteractuables))
+        {
+            IInteractuable interactuable = hit.collider.GetComponent<IInteractuable>();
+            if (interactuable != null)
+            {
+                // Obtén el objeto en mano desde el inventario (ajusta esto según tu sistema real)
+                GameObject objetoEnMano = inventoryManager != null ? inventoryManager.GetObjectOnHand() : null;
+                interactuable.Interact(objetoEnMano);
+            }
+        }
     }
 
     /**
@@ -85,10 +111,10 @@ public class PlayerController : MonoBehaviour
      */
     void setAnimation()
     {
-        camAnim.SetBool("IsWalking", isWalking);      /// Camera walk animation.
-        LHAnim.SetBool("isCloser", isCloser);         /// Phone proximity animation.
-        LHAnim.SetBool("isActive", LActive);          /// Left hand active/inactive.
-        RHAnim.SetBool("isActive", RActive);          /// Right hand active/inactive.
+        camAnim.SetBool("IsWalking", isWalking);
+        LHAnim.SetBool("isCloser", isCloser);
+        LHAnim.SetBool("isActive", LActive);
+        RHAnim.SetBool("isActive", RActive);
     }
 
     /**

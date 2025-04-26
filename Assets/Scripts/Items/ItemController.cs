@@ -18,7 +18,7 @@ public class Item : ScriptableObject
 /**
  * @brief Handles interactable object behavior and inventory integration
  */
-public class Object : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
     [Header("Player References")]
     public Transform PlayerHand;    /// Transform for item positioning when held

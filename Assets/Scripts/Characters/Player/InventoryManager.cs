@@ -153,7 +153,7 @@ public class InventoryManager : MonoBehaviour
             GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
             itemSelected.transform.localPosition = Vector3.zero;
             itemSelected.transform.localRotation = Quaternion.identity;
-            itemSelected.GetComponent<Object>().isHeld = true;
+            itemSelected.GetComponent<ItemController>().isHeld = true;
             itemOnHand = item.name;
 
             playerMove.RActive = true;
@@ -171,5 +171,14 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    public GameObject GetObjectOnHand()
+    {
+        if (rightHand != null && rightHand.childCount > 0)
+        {
+            return rightHand.GetChild(0).gameObject;
+        }
+        return null;
     }
 }
