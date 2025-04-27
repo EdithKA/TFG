@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6694589198421262555}
   - component: {fileID: 624612807711539897}
   - component: {fileID: 3188813954812985207}
-  - component: {fileID: 7742920363036398137}
   m_Layer: 0
   m_Name: CrashDVD
   m_TagString: Untagged
@@ -122,21 +121,5 @@ MonoBehaviour:
   PlayerHand: {fileID: 0}
   itemData: {fileID: 11400000, guid: b09c5f64ca696b94b97a78329fecee03, type: 2}
   isHeld: 0
-  instructions: {fileID: 0}
+  UIText: {fileID: 0}
   inventory: {fileID: 0}
---- !u!114 &7742920363036398137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181119895663714574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2f1aaa2811f4654b4822d92c6536f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instructionText: {fileID: 0}
-  message: Pulsa 'E' para interactuar
-  typingSpeed: 0.05
-  deletingSpeed: 0.05
