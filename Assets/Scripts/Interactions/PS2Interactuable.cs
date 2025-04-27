@@ -61,6 +61,7 @@ public class PS2Interactuable : MonoBehaviour, IInteractuable
                     {
                         uiController.ShowMessage(UIMessageType.Read, errorMessage_2);
                     }
+                    Destroy(objectOnHand);
                 }
                 else
                 {

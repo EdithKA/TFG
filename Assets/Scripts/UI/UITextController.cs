@@ -19,7 +19,7 @@ public class UITextController : MonoBehaviour
 
     [Header("Animation Settings")]
     public float typingSpeed = 0.05f;
-    public float messageDuration = 2f; // Tiempo que se muestra el mensaje
+    public float messageDuration = 1f; // Tiempo que se muestra el mensaje
     public float fadeDuration = 0.4f;
 
     private Coroutine currentRoutine;
