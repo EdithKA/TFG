@@ -14,6 +14,8 @@ public class Stats : MonoBehaviour
     int health; /// Current health value (0-100).
     float decreaseInterval = 1.5f; /// Time interval between sanity decreases.
 
+    public TextMeshProUGUI sanityCounter; /// UI text displaying current sanity.
+    public TextMeshProUGUI healthCounter; /// UI text displaying current health.
 
     [Header("World Corruption")]
     public string corruptibleTag; /// Tag for objects that can be corrupted.
@@ -75,7 +77,8 @@ public class Stats : MonoBehaviour
      */
     void UpdateUI()
     {
-        
+        sanityCounter.text = sanity.ToString();
+        healthCounter.text = health.ToString();
         SetHealth();
         SetSanity();
     }
@@ -218,6 +221,7 @@ public class Stats : MonoBehaviour
      */
     private void ResetObjects()
     {
+        Debug.Log("Restoring objects to their original positions.");
 
         foreach (GameObject obj in corruptibleObjects)
         {

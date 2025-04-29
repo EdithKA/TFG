@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -13,10 +12,7 @@ public class Item : ScriptableObject
     [Header("Item Configuration")]
     public string itemName;         /// Name displayed in inventory UI
     public Sprite icon;             /// 2D representation in inventory slots
-    public string type;
     public GameObject itemPrefab;   /// 3D prefab for in-world representation
-    public string collectedText;
- 
 }
 
 /**
@@ -35,7 +31,7 @@ public class ItemController : MonoBehaviour
     public bool isHeld = false;     /// Item equipment status
 
     [Header("UI Components")]
-    public UITextController UIText; /// Interaction prompt controller
+    public UITextController instructions; /// Interaction prompt controller
 
     [Header("Inventory System")]
     public InventoryManager inventory; /// Core inventory management reference
@@ -48,7 +44,7 @@ public class ItemController : MonoBehaviour
     private void Start()
     {
         playerMove = FindAnyObjectByType<PlayerController>();
-        UIText = FindAnyObjectByType<UITextController>();
+        instructions = GetComponent<UITextController>();
         inventory = FindAnyObjectByType<InventoryManager>();
     }
 
@@ -65,12 +61,17 @@ public class ItemController : MonoBehaviour
                 playerMove.LActive = true; // Activate left hand animation
             }
 
-            
+            // Clear interaction prompts
+            Destroy(instructions.instructionText);
+            Destroy(instructions);
 
             PickUp();
         }
 
-        
+        if (isHeld)
+        {
+            Destroy(instructions); // Remove prompts after pickup
+        }
     }
 
     /**
@@ -81,11 +82,6 @@ public class ItemController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
-
-            
-            UIText.ShowMessage(UIMessageType.Collect, null);
-            
-            
         }
     }
 
@@ -108,20 +104,18 @@ public class ItemController : MonoBehaviour
         Debug.Log($"Acquired item: {itemData.itemName}");
         inventory.AddItem(itemData);
 
-        // Mostrar mensaje de recogida (sin borrar inmediatamente)
-        UIText.ShowMessage(UIMessageType.Collected, itemData.collectedText);
-
+        // Special handling for equippable items
         if (itemData.itemName == "Mokia")
         {
             isHeld = true;
+            // Parent item to player's hand
+            transform.position = PlayerHand.position;
+            transform.rotation = PlayerHand.rotation;
             transform.SetParent(PlayerHand);
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Remove consumable items immediately
         }
     }
-
 }

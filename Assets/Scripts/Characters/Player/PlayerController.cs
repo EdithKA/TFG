@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -27,39 +26,44 @@ public class PlayerController : MonoBehaviour
     public bool isInventoryOpen = false;
 
     [Header("Hands Settings")]
+    // Left Hand
     public Animator LHAnim;
     public bool LActive = false;
     public bool isCloser = false;
 
+    // Right Hand
     public Animator RHAnim;
     public bool RActive = false;
 
     [Header("Interaction Settings")]
-    public float radioInteraccion = 3f; // Radio de detección de objetos
-    public LayerMask capaInteractuables;
-    private List<IInteractuable> interactuablesCercanos = new List<IInteractuable>();
+    public float distanciaInteraccion = 2f; // Distancia máxima para interactuar
+    public LayerMask capaInteractuables;    // Asigna la capa de objetos interactuables en el inspector
 
+    /**
+     * @brief Initialization of components and player stats.
+     */
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
-
-        // Configurar collider de interacción
-        SphereCollider interactionCollider = gameObject.AddComponent<SphereCollider>();
-        interactionCollider.isTrigger = true;
-        interactionCollider.radius = radioInteraccion;
     }
 
+    /**
+     * @brief Main update loop. Handles input, movement, animation updates, and interaction.
+     */
     void Update()
     {
+        // Toggle inventory if "I" is pressed and the player has the "Mokia" item.
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mokia"))
         {
             isInventoryOpen = !isInventoryOpen;
             StartCoroutine(OpenInventory());
-            isCloser = !isCloser;
+            Debug.Log("Inventory state: " + isInventoryOpen);
+            isCloser = !isCloser; // Toggle phone proximity
         }
 
+        // Only allow movement if inventory is closed.
         if (!isInventoryOpen)
         {
             GetInput();
@@ -73,70 +77,38 @@ public class PlayerController : MonoBehaviour
 
         MovePlayer();
         CheckForHeadBob();
+
+        // Update all animation parameters.
         setAnimation();
 
+        // --- INTERACCIÓN ---
         if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
         {
             InteractuarConObjeto();
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (((1 << other.gameObject.layer) & capaInteractuables) != 0)
-        {
-            IInteractuable interactuable = other.GetComponent<IInteractuable>();
-            if (interactuable != null && !interactuablesCercanos.Contains(interactuable))
-            {
-                interactuablesCercanos.Add(interactuable);
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (((1 << other.gameObject.layer) & capaInteractuables) != 0)
-        {
-            IInteractuable interactuable = other.GetComponent<IInteractuable>();
-            if (interactuable != null)
-            {
-                interactuablesCercanos.Remove(interactuable);
-            }
-        }
-    }
-
+    /**
+     * @brief Método para lanzar el Raycast y realizar la interacción.
+     */
     void InteractuarConObjeto()
     {
-        if (interactuablesCercanos.Count == 0) return;
-
-        // Buscar el interactuable más cercano
-        IInteractuable masCercano = null;
-        float distanciaMinima = Mathf.Infinity;
-        Vector3 posicionJugador = transform.position;
-
-        foreach (IInteractuable interactuable in interactuablesCercanos)
+        Ray ray = new Ray(transform.position + Vector3.up, transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, distanciaInteraccion, capaInteractuables))
         {
-            if (interactuable == null) continue;
-
-            float distancia = Vector3.Distance(
-                posicionJugador,
-                (interactuable as MonoBehaviour).transform.position
-            );
-
-            if (distancia < distanciaMinima)
+            IInteractuable interactuable = hit.collider.GetComponent<IInteractuable>();
+            if (interactuable != null)
             {
-                distanciaMinima = distancia;
-                masCercano = interactuable;
+                // Obtén el objeto en mano desde el inventario (ajusta esto según tu sistema real)
+                GameObject objetoEnMano = inventoryManager != null ? inventoryManager.GetObjectOnHand() : null;
+                interactuable.Interact(objetoEnMano);
             }
-        }
-
-        if (masCercano != null)
-        {
-            GameObject objetoEnMano = inventoryManager?.GetObjectOnHand();
-            masCercano.Interact(objetoEnMano);
         }
     }
 
+    /**
+     * @brief Updates all animation parameters for camera and hands.
+     */
     void setAnimation()
     {
         camAnim.SetBool("IsWalking", isWalking);
@@ -145,39 +117,79 @@ public class PlayerController : MonoBehaviour
         RHAnim.SetBool("isActive", RActive);
     }
 
-    void CheckForHeadBob()
+    /**
+     * @brief Checks if the player is walking to trigger head bob animation.
+     */
+    private void CheckForHeadBob()
     {
-        isWalking = characterController.velocity.magnitude > 0.1f;
+        if (characterController.velocity.magnitude > 0.1f)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
     }
 
+    /**
+     * @brief Handles player input for movement, sprinting, and phone interaction.
+     */
     void GetInput()
     {
+        // 1. Handle sprinting
         if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
         {
             speed = playerSpeed * 3;
             currentStamina -= 0.1f;
         }
-        else
+        else // Reset speed if not sprinting
         {
             speed = playerSpeed;
-            if (currentStamina < stamina) currentStamina += 0.1f;
+            if (currentStamina < stamina)
+            {
+                currentStamina += 0.1f;
+            }
         }
 
-        if (Input.GetMouseButtonDown(1)) isCloser = true;
-        else if (Input.GetMouseButtonUp(1)) isCloser = false;
+        // 2. Handle phone proximity
+        if (Input.GetMouseButtonDown(1)) // Bring phone closer
+        {
+            isCloser = true;
+        }
+        else if (Input.GetMouseButtonUp(1)) // Move phone away
+        {
+            isCloser = false;
+        }
 
-        inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        // 3. Calculate movement vector
+        inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        inputVector.Normalize();
         inputVector = transform.TransformDirection(inputVector);
         movementVector = (inputVector * speed) + (Vector3.up * Gravity);
     }
 
+    /**
+     * @brief Handles the inventory opening animation and state.
+     */
     IEnumerator OpenInventory()
     {
+        // Wait a short time for the animation transition to start
         yield return new WaitForSeconds(0.1f);
+
+        // Determine the animation name based on inventory state
+        string animName = isInventoryOpen ? "OpenInventory" : "CloseInventory";
+
+        // Toggle inventory visibility
         inventoryManager.ToggleInventory();
+
+        // Synchronize state with inventory manager
         isInventoryOpen = inventoryManager.IsInventoryOpen;
     }
 
+    /**
+     * @brief Moves the player character using the calculated movement vector.
+     */
     void MovePlayer()
     {
         characterController.Move(movementVector * Time.deltaTime);

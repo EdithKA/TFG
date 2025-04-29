@@ -2,92 +2,73 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public enum UIMessageType { Interact, Collect, Collected, Read }
-
+/**
+ * @brief Controls the display and animation of UI instructions for player interaction.
+ */
 public class UITextController : MonoBehaviour
 {
-    [Header("References")]
-    public TextMeshProUGUI uiText;
-    public CanvasGroup canvasGroup;
+    public TextMeshProUGUI instructionText; /// Reference to the UI text component for instructions.
+    public string message = "Pulsa 'E' para interactuar"; /// Message displayed to the player.
+    public float typingSpeed = 0.05f; /// Time between each character when typing.
+    public float deletingSpeed = 0.05f; /// Time between each character when deleting.
 
-    [Header("Style Settings")]
-    public Color interactColor = Color.cyan;
-    public Color collectColor = Color.yellow;
-    public Color collectedColor = Color.green; // Nuevo color para Collected
-    public Color readColor = Color.white;
-    public float textSize = 28f;
+    private Coroutine typingCoroutine; /// Reference to the currently running typing coroutine.
+    private Coroutine deletingCoroutine; /// Reference to the currently running deleting coroutine.
 
-    [Header("Animation Settings")]
-    public float typingSpeed = 0.05f;
-    public float messageDuration = 1f; // Tiempo que se muestra el mensaje
-    public float fadeDuration = 0.4f;
-
-    private Coroutine currentRoutine;
-
-    private void Awake() => canvasGroup.alpha = 0;
-
-    public void ShowMessage(UIMessageType type, string message = null)
+    /**
+     * @brief Called when another collider enters this object's trigger area.
+     * @param other The collider that entered the trigger.
+     */
+    private void OnTriggerEnter(Collider other)
     {
-        ClearMessage();
-        if (currentRoutine != null) StopCoroutine(currentRoutine);
-        currentRoutine = StartCoroutine(ShowMessageRoutine(type, message));
+        if (other.CompareTag("Player"))
+        {
+            // Stop any ongoing coroutines to avoid overlap.
+            if (deletingCoroutine != null) StopCoroutine(deletingCoroutine);
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+
+            typingCoroutine = StartCoroutine(TypeText()); /// Start typing the instruction message.
+        }
     }
 
-    private IEnumerator ShowMessageRoutine(UIMessageType type, string message = null)
+    /**
+     * @brief Called when another collider exits this object's trigger area.
+     * @param other The collider that exited the trigger.
+     */
+    private void OnTriggerExit(Collider other)
     {
-        // Configurar estilo según tipo
-        switch (type)
+        if (other.CompareTag("Player"))
         {
-            case UIMessageType.Interact:
-                message = "Pulsa [E] para interactuar";
-                uiText.color = interactColor;
-                break;
-            case UIMessageType.Collect:
-                message = "Pulsa [E] para recoger";
-                uiText.color = collectColor;
-                break;
-            case UIMessageType.Collected:
-                uiText.color = collectedColor; // Usar color específico
-                break;
-            case UIMessageType.Read:
-                uiText.color = readColor;
-                break;
+            // Stop any ongoing coroutines to avoid overlap.
+            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+            if (deletingCoroutine != null) StopCoroutine(deletingCoroutine);
+
+            deletingCoroutine = StartCoroutine(DeleteText()); /// Start deleting the instruction message.
         }
-
-        uiText.fontSize = textSize;
-
-        // Fade in
-        yield return StartCoroutine(FadeCanvas(1f));
-
-        // Escribir texto
-        uiText.text = "";
-        foreach (char letter in message)
-        {
-            uiText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-
-        // Esperar antes de ocultar
-        yield return new WaitForSeconds(messageDuration);
-
-        // Fade out
-        yield return StartCoroutine(FadeCanvas(0f));
     }
 
-    private IEnumerator FadeCanvas(float targetAlpha)
+    /**
+     * @brief Coroutine that types out the message character by character.
+     */
+    private IEnumerator TypeText()
     {
-        float startAlpha = canvasGroup.alpha;
-        float t = 0f;
-
-        while (t < fadeDuration)
+        instructionText.text = ""; /// Clear the text before typing.
+        foreach (char c in message.ToCharArray())
         {
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t / fadeDuration);
-            t += Time.deltaTime;
-            yield return null;
+            instructionText.text += c; /// Add the next character.
+            yield return new WaitForSeconds(typingSpeed); /// Wait before adding the next character.
         }
-
-        canvasGroup.alpha = targetAlpha;
     }
 
-    public void ClearMessage() => canvasGroup.alpha = 0;
+    /**
+     * @brief Coroutine that deletes the message character by character.
+     */
+    private IEnumerator DeleteText()
+    {
+        while (instructionText.text.Length > 0)
+        {
+            instructionText.text = instructionText.text.Substring(0, instructionText.text.Length - 1); /// Remove the last character.
+            yield return new WaitForSeconds(deletingSpeed); /// Wait before removing the next character.
+        }
+    }
 }
