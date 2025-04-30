@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class PS2Interactuable : MonoBehaviour, IInteractuable
 {
@@ -17,7 +18,10 @@ public class PS2Interactuable : MonoBehaviour, IInteractuable
     private string errorMessage_1 = "Necesitas un DVD";
     private string errorMessage_2 = "DVD incorrecto";
 
-
+    [Header("Video")]
+    public VideoPlayer dvdPlayer;
+    public VideoClip boot;
+    public VideoClip errorBoot;
 
 
 
@@ -54,13 +58,18 @@ public class PS2Interactuable : MonoBehaviour, IInteractuable
                     {
                         // Éxito: DVD correcto
                         uiController.ShowMessage(UIMessageType.Read, successMessage);
-                        led.color = Color.green;
-                        audioSource.PlayOneShot(bootEffect);
+                        dvdPlayer.clip = boot;
+                        
                     }
                     else
                     {
                         uiController.ShowMessage(UIMessageType.Read, errorMessage_2);
+
+                        dvdPlayer.clip = errorBoot;
                     }
+                    led.color = Color.green;
+                    audioSource.PlayOneShot(bootEffect);
+                    dvdPlayer.Play();
                     Destroy(objectOnHand);
                 }
                 else
