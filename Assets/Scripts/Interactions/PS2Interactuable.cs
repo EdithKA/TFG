@@ -2,47 +2,94 @@ using UnityEngine;
 
 public class PS2Interactuable : MonoBehaviour, IInteractuable
 {
+    [Header("Componentes")]
     public Light led;
-    [SerializeField] private string requiredItemName = "Crash"; // Nombre exacto del ítem requerido
+    public AudioClip bootEffect;
+    private string requiredItemName = "CrashDVD";
+    private AudioSource audioSource;
+    private UITextController uiController;
+    private bool playerOnRange;
+    private PlayerController playerController;
+
+    [Header("Mensajes UI")]
+    private string interactionMessage = "Presiona [E] para insertar DVD";
+    private string successMessage = "¡DVD correcto! Iniciando juego...";
+    private string errorMessage_1 = "Necesitas un DVD";
+    private string errorMessage_2 = "DVD incorrecto";
+
+
+
+
 
     private void Start()
     {
         led = GetComponentInChildren<Light>();
+        audioSource = GetComponent<AudioSource>();
+        uiController = FindObjectOfType<UITextController>();
+        playerController = FindObjectOfType<PlayerController>();
+
         led.color = Color.red;
+    }
+
+    private void Update()
+    {
+        if (playerOnRange && Input.GetKeyDown(KeyCode.E))
+        {
+            // Obtener objeto en mano del inventario
+            GameObject objetoEnMano = FindObjectOfType<InventoryManager>()?.GetObjectOnHand();
+            Interact(objetoEnMano);
+        }
     }
 
     public void Interact(GameObject objectOnHand = null)
     {
-        Debug.Log("Intentando interactuar con PS2...");
-
         if (objectOnHand != null)
         {
-            // Verifica si el objeto tiene el componente ItemController
-            ItemController itemController = objectOnHand.GetComponent<ItemController>();
-            if (itemController != null && itemController.itemData != null)
+            ItemController item = objectOnHand.GetComponent<ItemController>();
+            if (item != null && item.itemData != null)
             {
-                string objectName = itemController.itemData.itemName;
-                Debug.Log("Objeto en mano: " + objectName);
-
-                if (objectName == requiredItemName)
+                if(item.itemData.type == "DVD")
                 {
-                    led.color = Color.green;
-                    Debug.Log("¡DVD correcto insertado!");
-                    // Aquí puedes añadir lógica para iniciar el minijuego
+                    if (item.itemData.itemName == requiredItemName)
+                    {
+                        // Éxito: DVD correcto
+                        uiController.ShowMessage(UIMessageType.Read, successMessage);
+                        led.color = Color.green;
+                        audioSource.PlayOneShot(bootEffect);
+                    }
+                    else
+                    {
+                        uiController.ShowMessage(UIMessageType.Read, errorMessage_2);
+                    }
+                    Destroy(objectOnHand);
                 }
                 else
                 {
-                    Debug.Log("DVD incorrecto. Se requiere: " + requiredItemName);
+                    // Error: DVD incorrecto
+                    uiController.ShowMessage(UIMessageType.Read, errorMessage_1);
                 }
-            }
-            else
-            {
-                Debug.LogError("El objeto en mano no tiene ItemController o itemData no está asignado");
+                return;
             }
         }
-        else
+
+        // No hay objeto en mano
+        uiController.ShowMessage(UIMessageType.Read, errorMessage_1);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Necesitas un DVD para interactuar con la PS2");
+            playerOnRange = true;
+            uiController.ShowMessage(UIMessageType.Interact, interactionMessage);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerOnRange = false;
         }
     }
 }
