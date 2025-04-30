@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHand: {fileID: 0}
+  itemData: {fileID: 11400000, guid: f5b1048481ae69948a9918202e824b26, type: 2}
   isHeld: 0
-  itemData: {fileID: 11400000, guid: 2913c5110eb20e44aa32daf6b08334d8, type: 2}
-  instructions: {fileID: 3950772105879134900}
+  UIText: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!114 &3950772105879134900
 MonoBehaviour:
@@ -87,10 +87,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2f1aaa2811f4654b4822d92c6536f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionText: {fileID: 41929852287899564}
-  message: Pulsa 'E' para interactuar
+  uiText: {fileID: 0}
+  canvasGroup: {fileID: 0}
+  interactColor: {r: 0, g: 1, b: 1, a: 1}
+  collectColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  collectedColor: {r: 0, g: 1, b: 0, a: 1}
+  readColor: {r: 1, g: 1, b: 1, a: 1}
+  textSize: 28
   typingSpeed: 0.05
-  deletingSpeed: 0.05
+  messageDuration: 1
+  fadeDuration: 0.4
 --- !u!1 &2681115812477210527
 GameObject:
   m_ObjectHideFlags: 0

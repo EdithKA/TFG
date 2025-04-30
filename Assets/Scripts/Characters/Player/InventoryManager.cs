@@ -15,6 +15,7 @@ public class InventoryManager : MonoBehaviour
     public Transform inventoryGrid; /// Parent transform for the inventory slots.
     public GameObject inventoryUI; /// Main inventory UI canvas.
 
+
     public List<Item> items = new List<Item>(); /// List of items currently in the inventory.
     private List<GameObject> slots = new List<GameObject>(); /// List of instantiated inventory slot UI objects.
 
@@ -139,7 +140,7 @@ public class InventoryManager : MonoBehaviour
             itemOnHand = "";
             playerMove.RActive = false;
         }
-        else if (item.itemName != "Mokia")
+        else if (item.itemName != "Mobile")
         {
             // Remove any previously equipped item.
             if (itemOnHand != "")

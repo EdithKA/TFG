@@ -65,7 +65,7 @@ public class PS2Interactuable : MonoBehaviour, IInteractuable
                 }
                 else
                 {
-                    // Error: DVD incorrecto
+                    // Error: No es un DVD
                     uiController.ShowMessage(UIMessageType.Read, errorMessage_1);
                 }
                 return;

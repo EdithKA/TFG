@@ -5,21 +5,6 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 /**
- * @brief Defines inventory items as ScriptableObjects for easy asset creation
- */
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
-public class Item : ScriptableObject
-{
-    [Header("Item Configuration")]
-    public string itemName;         /// Name displayed in inventory UI
-    public Sprite icon;             /// 2D representation in inventory slots
-    public string type;
-    public GameObject itemPrefab;   /// 3D prefab for in-world representation
-    public string collectedText;
- 
-}
-
-/**
  * @brief Handles interactable object behavior and inventory integration
  */
 public class ItemController : MonoBehaviour
@@ -60,7 +45,7 @@ public class ItemController : MonoBehaviour
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !isHeld)
         {
             // Special case for phone equipment
-            if (itemData.name == "Mokia")
+            if (itemData.name == "Mobile")
             {
                 playerMove.LActive = true; // Activate left hand animation
             }
@@ -111,7 +96,7 @@ public class ItemController : MonoBehaviour
         // Mostrar mensaje de recogida (sin borrar inmediatamente)
         UIText.ShowMessage(UIMessageType.Collected, itemData.collectedText);
 
-        if (itemData.itemName == "Mokia")
+        if (itemData.itemName == "Mobile")
         {
             isHeld = true;
             transform.SetParent(PlayerHand);

@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mokia"))
+        if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
         {
             isInventoryOpen = !isInventoryOpen;
             StartCoroutine(OpenInventory());

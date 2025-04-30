@@ -3,7 +3,12 @@ guid: 932a0c1b95085c64ebd9bab6123ce45d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nokia
+    second: {fileID: 2100000, guid: de659b7977330864780c59a435b12d4f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
