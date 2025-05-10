@@ -50,7 +50,6 @@ public class ItemController : MonoBehaviour
                 playerMove.LActive = true; // Activate left hand animation
             }
 
-            
 
             PickUp();
         }
@@ -67,7 +66,7 @@ public class ItemController : MonoBehaviour
         {
             isPlayerInTrigger = true;
 
-            
+            //UIText.ClearMessage();
             UIText.ShowMessage(UIMessageType.Collect, null);
             
             

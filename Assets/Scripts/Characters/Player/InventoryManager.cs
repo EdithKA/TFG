@@ -29,17 +29,27 @@ public class InventoryManager : MonoBehaviour
 
     private PlayerController playerMove; /// Reference to the PlayerController script.
 
+    private int toyPieces;
+
+    public Item completedToy;
+
     /**
      * @brief Initializes references and hides the inventory UI at the start.
      */
     private void Start()
     {
+        toyPieces = 0;
         playerMove = FindAnyObjectByType<PlayerController>();
         playerCam = FindObjectOfType<Camera>();
         if (inventoryUI != null)
         {
             inventoryUI.SetActive(false); /// Hide inventory UI at the start.
         }
+    }
+
+    private void Update()
+    {
+        UpdateInventoryUI();
     }
 
     /**
@@ -51,9 +61,23 @@ public class InventoryManager : MonoBehaviour
         if (items.Count < inventorySize)
         {
             items.Add(item);
-            UpdateInventoryUI(); /// Update the UI after adding an item.
+            if(item.type == "piece")
+            {
+                toyPieces += 1;
+                if(toyPieces == 2)
+                {
+                    items.RemoveAll(i => i.type == "piece");
+                    toyPieces = 0;
+                    AddItem(completedToy);
+                }
+
+                
+
+            }
         }
     }
+
+
 
     /**
      * @brief Removes an item from the inventory and updates the UI.
@@ -64,7 +88,6 @@ public class InventoryManager : MonoBehaviour
         if (items.Contains(item))
         {
             items.Remove(item);
-            UpdateInventoryUI(); /// Update the UI after removing an item.
         }
     }
 

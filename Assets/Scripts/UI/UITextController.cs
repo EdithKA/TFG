@@ -33,6 +33,7 @@ public class UITextController : MonoBehaviour
         currentRoutine = StartCoroutine(ShowMessageRoutine(type, message));
     }
 
+    
     private IEnumerator ShowMessageRoutine(UIMessageType type, string message = null)
     {
         // Configurar estilo según tipo
@@ -89,5 +90,10 @@ public class UITextController : MonoBehaviour
         canvasGroup.alpha = targetAlpha;
     }
 
-    public void ClearMessage() => canvasGroup.alpha = 0;
+    public void ClearMessage()
+    {
+        uiText.text = string.Empty;
+        canvasGroup.alpha = 0;
+        StopAllCoroutines();
+    }
 }

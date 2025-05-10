@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [Header("Inventory Settings")]
     public InventoryManager inventoryManager;
     public bool isInventoryOpen = false;
+    public UITextController textController;
 
     [Header("Hands Settings")]
     public Animator LHAnim;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
-
+        textController = FindAnyObjectByType<UITextController>();
         // Configurar collider de interacción
         SphereCollider interactionCollider = gameObject.AddComponent<SphereCollider>();
         interactionCollider.isTrigger = true;
@@ -103,6 +104,8 @@ public class PlayerController : MonoBehaviour
                 interactuablesCercanos.Remove(interactuable);
             }
         }
+
+        //textController.ClearMessage();
     }
 
     void InteractuarConObjeto()
