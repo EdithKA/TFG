@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: InventoryManager Class Reference</title>
+<title>THE IN-BETWEEN: InventoryManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,16 +104,15 @@ $(function(){initNavTree('class_inventory_manager.html',''); initResizable(true)
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="class_inventory_manager-members.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">InventoryManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Manages the player's inventory, including UI updates and item equipping.  
+<p>Manages the player's inventory, including UI updates, item storage, and equipment logic. Designed for a survival horror game where the player can pick up, equip, and combine items.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for InventoryManager:</div>
@@ -125,7 +124,7 @@ Inheritance diagram for InventoryManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab03cb9976ed0fd2ee6e77cd7006d1104" id="r_ab03cb9976ed0fd2ee6e77cd7006d1104"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03cb9976ed0fd2ee6e77cd7006d1104">AddItem</a> (<a class="el" href="class_item.html">Item</a> item)</td></tr>
-<tr class="memdesc:ab03cb9976ed0fd2ee6e77cd7006d1104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the inventory if there is space and updates the UI.  <br /></td></tr>
+<tr class="memdesc:ab03cb9976ed0fd2ee6e77cd7006d1104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the inventory, handles special cases, and updates the UI.  <br /></td></tr>
 <tr class="separator:ab03cb9976ed0fd2ee6e77cd7006d1104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc55d3b8671e510b3fd64199e140b001" id="r_afc55d3b8671e510b3fd64199e140b001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc55d3b8671e510b3fd64199e140b001">RemoveItem</a> (<a class="el" href="class_item.html">Item</a> item)</td></tr>
 <tr class="memdesc:afc55d3b8671e510b3fd64199e140b001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item from the inventory and updates the UI.  <br /></td></tr>
@@ -134,108 +133,87 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae105fd7e1358690239919d27df074ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the inventory contains an item with the given name.  <br /></td></tr>
 <tr class="separator:ae105fd7e1358690239919d27df074ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87c8ecad45dfad4a04b0ec48b901b3c8" id="r_a87c8ecad45dfad4a04b0ec48b901b3c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87c8ecad45dfad4a04b0ec48b901b3c8">ToggleInventory</a> ()</td></tr>
-<tr class="memdesc:a87c8ecad45dfad4a04b0ec48b901b3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the inventory UI on or off and manages the cursor state.  <br /></td></tr>
+<tr class="memdesc:a87c8ecad45dfad4a04b0ec48b901b3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the inventory UI and manages cursor state.  <br /></td></tr>
 <tr class="separator:a87c8ecad45dfad4a04b0ec48b901b3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e0b17c1e4fce547e13e5695ffacd3d" id="r_a32e0b17c1e4fce547e13e5695ffacd3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32e0b17c1e4fce547e13e5695ffacd3d">RefreshUI</a> ()</td></tr>
+<tr class="memdesc:a32e0b17c1e4fce547e13e5695ffacd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the inventory UI to match the current items.  <br /></td></tr>
+<tr class="separator:a32e0b17c1e4fce547e13e5695ffacd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b14cdc3f7da13050a3dc9c38d44d62d" id="r_a5b14cdc3f7da13050a3dc9c38d44d62d"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b14cdc3f7da13050a3dc9c38d44d62d">GetObjectOnHand</a> ()</td></tr>
+<tr class="memdesc:a5b14cdc3f7da13050a3dc9c38d44d62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GameObject currently equipped in the right hand, if any.  <br /></td></tr>
+<tr class="separator:a5b14cdc3f7da13050a3dc9c38d44d62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a092943feb47c79fd1b12613640b14a30" id="r_a092943feb47c79fd1b12613640b14a30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a092943feb47c79fd1b12613640b14a30">inventorySize</a> = 20</td></tr>
 <tr class="separator:a092943feb47c79fd1b12613640b14a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5654d9fee257edb7c6d237c4fbeb6a9f" id="r_a5654d9fee257edb7c6d237c4fbeb6a9f"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5654d9fee257edb7c6d237c4fbeb6a9f">inventorySlotPrefab</a></td></tr>
-<tr class="memdesc:a5654d9fee257edb7c6d237c4fbeb6a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of items in the inventory.  <br /></td></tr>
+<tr class="memdesc:a5654d9fee257edb7c6d237c4fbeb6a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of items the player can carry.  <br /></td></tr>
 <tr class="separator:a5654d9fee257edb7c6d237c4fbeb6a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed656f8e5efb81f008b13b8886bb45cf" id="r_aed656f8e5efb81f008b13b8886bb45cf"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed656f8e5efb81f008b13b8886bb45cf">inventoryGrid</a></td></tr>
-<tr class="memdesc:aed656f8e5efb81f008b13b8886bb45cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab for inventory slot UI elements.  <br /></td></tr>
+<tr class="memdesc:aed656f8e5efb81f008b13b8886bb45cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab for each inventory slot in the UI.  <br /></td></tr>
 <tr class="separator:aed656f8e5efb81f008b13b8886bb45cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa006da3f967c18737ac6bb978c66a23f" id="r_aa006da3f967c18737ac6bb978c66a23f"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa006da3f967c18737ac6bb978c66a23f">inventoryUI</a></td></tr>
-<tr class="memdesc:aa006da3f967c18737ac6bb978c66a23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parent transform for the inventory slots.  <br /></td></tr>
+<tr class="memdesc:aa006da3f967c18737ac6bb978c66a23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parent transform for inventory slots in the UI.  <br /></td></tr>
 <tr class="separator:aa006da3f967c18737ac6bb978c66a23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9178b7de01f139ff256f16e3f1dd62e6" id="r_a9178b7de01f139ff256f16e3f1dd62e6"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9178b7de01f139ff256f16e3f1dd62e6">items</a> = new List&lt;<a class="el" href="class_item.html">Item</a>&gt;()</td></tr>
-<tr class="memdesc:a9178b7de01f139ff256f16e3f1dd62e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main inventory UI canvas.  <br /></td></tr>
-<tr class="separator:a9178b7de01f139ff256f16e3f1dd62e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acda1ac0d407d41e520a986445d29ed07" id="r_acda1ac0d407d41e520a986445d29ed07"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acda1ac0d407d41e520a986445d29ed07">leftHand</a></td></tr>
-<tr class="memdesc:acda1ac0d407d41e520a986445d29ed07"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of instantiated inventory slot UI objects.  <br /></td></tr>
+<tr class="memdesc:acda1ac0d407d41e520a986445d29ed07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main inventory UI panel.  <br /></td></tr>
 <tr class="separator:acda1ac0d407d41e520a986445d29ed07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9117e06d048be3f8202abf967b9fa266" id="r_a9117e06d048be3f8202abf967b9fa266"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9117e06d048be3f8202abf967b9fa266">rightHand</a></td></tr>
 <tr class="memdesc:a9117e06d048be3f8202abf967b9fa266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform for equipping items in the left hand.  <br /></td></tr>
 <tr class="separator:a9117e06d048be3f8202abf967b9fa266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07ac5bdf3d1557aef5e2c123e10d4b9f" id="r_a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ac5bdf3d1557aef5e2c123e10d4b9f">itemOnHand</a></td></tr>
-<tr class="memdesc:a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform for equipping items in the right hand.  <br /></td></tr>
-<tr class="separator:a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60011c9b3bda8b4aa05d6721c55e9f67" id="r_a60011c9b3bda8b4aa05d6721c55e9f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_item.html">Item</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60011c9b3bda8b4aa05d6721c55e9f67">completedToy</a></td></tr>
+<tr class="memdesc:a60011c9b3bda8b4aa05d6721c55e9f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform for equipping items in the right hand.  <br /></td></tr>
+<tr class="separator:a60011c9b3bda8b4aa05d6721c55e9f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a933a6fafa9762c6715ba6b537b2932a2" id="r_a933a6fafa9762c6715ba6b537b2932a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a933a6fafa9762c6715ba6b537b2932a2">IsInventoryOpen</a><code> [get, private set]</code></td></tr>
-<tr class="memdesc:a933a6fafa9762c6715ba6b537b2932a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the player's camera.  <br /></td></tr>
+<tr class="memitem:a933a6fafa9762c6715ba6b537b2932a2" id="r_a933a6fafa9762c6715ba6b537b2932a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a933a6fafa9762c6715ba6b537b2932a2">IsInventoryOpen</a><code> [get]</code></td></tr>
+<tr class="memdesc:a933a6fafa9762c6715ba6b537b2932a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the inventory currently open?  <br /></td></tr>
 <tr class="separator:a933a6fafa9762c6715ba6b537b2932a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5b18458e8dd8426c55d2d4e2d184706a" id="r_a5b18458e8dd8426c55d2d4e2d184706a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b18458e8dd8426c55d2d4e2d184706a">Start</a> ()</td></tr>
-<tr class="memdesc:a5b18458e8dd8426c55d2d4e2d184706a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_player_controller.html" title="This class controls the player&#39;s movement, stamina, inventory, and animation logic.">PlayerController</a> script.  <br /></td></tr>
+<tr class="memdesc:a5b18458e8dd8426c55d2d4e2d184706a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_player_controller.html" title="Controls core player functionality including movement, interactions, and inventory management....">PlayerController</a> script.  <br /></td></tr>
 <tr class="separator:a5b18458e8dd8426c55d2d4e2d184706a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0959bc576a07ab9b7465434d9ff390f3" id="r_a0959bc576a07ab9b7465434d9ff390f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0959bc576a07ab9b7465434d9ff390f3">UpdateInventoryUI</a> ()</td></tr>
-<tr class="memdesc:a0959bc576a07ab9b7465434d9ff390f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the inventory UI to match the current list of items.  <br /></td></tr>
-<tr class="separator:a0959bc576a07ab9b7465434d9ff390f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4a4bc9e6a7d711a841fdd7f7cfa034a" id="r_ab4a4bc9e6a7d711a841fdd7f7cfa034a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4a4bc9e6a7d711a841fdd7f7cfa034a">EquipItem</a> (<a class="el" href="class_item.html">Item</a> item)</td></tr>
 <tr class="memdesc:ab4a4bc9e6a7d711a841fdd7f7cfa034a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equips the selected item in the player's right hand, or unequips it if already equipped.  <br /></td></tr>
 <tr class="separator:ab4a4bc9e6a7d711a841fdd7f7cfa034a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ababd1be86e6117fbc65a91b1289c7362" id="r_ababd1be86e6117fbc65a91b1289c7362"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ababd1be86e6117fbc65a91b1289c7362">DestroyObect</a> ()</td></tr>
-<tr class="memdesc:ababd1be86e6117fbc65a91b1289c7362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine that destroys the equipped object after a delay.  <br /></td></tr>
-<tr class="separator:ababd1be86e6117fbc65a91b1289c7362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e7da8585ce6314c07d899b07bb6797" id="r_a90e7da8585ce6314c07d899b07bb6797"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90e7da8585ce6314c07d899b07bb6797">DestroyEquippedItem</a> ()</td></tr>
+<tr class="memdesc:a90e7da8585ce6314c07d899b07bb6797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine that destroys the equipped object after a delay.  <br /></td></tr>
+<tr class="separator:a90e7da8585ce6314c07d899b07bb6797"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a9178b7de01f139ff256f16e3f1dd62e6" id="r_a9178b7de01f139ff256f16e3f1dd62e6"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9178b7de01f139ff256f16e3f1dd62e6">items</a> = new List&lt;<a class="el" href="class_item.html">Item</a>&gt;()</td></tr>
+<tr class="memdesc:a9178b7de01f139ff256f16e3f1dd62e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The combined toy item (when all pieces are collected).  <br /></td></tr>
+<tr class="separator:a9178b7de01f139ff256f16e3f1dd62e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba74f4b51fc220d80c471a2acf8573f" id="r_a1ba74f4b51fc220d80c471a2acf8573f"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ba74f4b51fc220d80c471a2acf8573f">slots</a> = new List&lt;GameObject&gt;()</td></tr>
 <tr class="memdesc:a1ba74f4b51fc220d80c471a2acf8573f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of items currently in the inventory.  <br /></td></tr>
 <tr class="separator:a1ba74f4b51fc220d80c471a2acf8573f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20d72ee9c632b348f78d496f17477459" id="r_a20d72ee9c632b348f78d496f17477459"><td class="memItemLeft" align="right" valign="top">Camera&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d72ee9c632b348f78d496f17477459">playerCam</a></td></tr>
-<tr class="memdesc:a20d72ee9c632b348f78d496f17477459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the currently equipped item.  <br /></td></tr>
-<tr class="separator:a20d72ee9c632b348f78d496f17477459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f5a670cfe18375c7b1b9c1b31f1dd4" id="r_ae6f5a670cfe18375c7b1b9c1b31f1dd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_controller.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6f5a670cfe18375c7b1b9c1b31f1dd4">playerMove</a></td></tr>
-<tr class="memdesc:ae6f5a670cfe18375c7b1b9c1b31f1dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the inventory UI is open.  <br /></td></tr>
-<tr class="separator:ae6f5a670cfe18375c7b1b9c1b31f1dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b1ae7eeefed7308f625609926578bd" id="r_a50b1ae7eeefed7308f625609926578bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50b1ae7eeefed7308f625609926578bd">toyPieces</a> = 0</td></tr>
+<tr class="memdesc:a50b1ae7eeefed7308f625609926578bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of instantiated inventory slot UI objects.  <br /></td></tr>
+<tr class="separator:a50b1ae7eeefed7308f625609926578bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ac5bdf3d1557aef5e2c123e10d4b9f" id="r_a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ac5bdf3d1557aef5e2c123e10d4b9f">itemOnHand</a></td></tr>
+<tr class="memdesc:a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter for collected toy pieces.  <br /></td></tr>
+<tr class="separator:a07ac5bdf3d1557aef5e2c123e10d4b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2b8d0bb5817c6a7bcb0b1c70c2e2a7" id="r_adf2b8d0bb5817c6a7bcb0b1c70c2e2a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf2b8d0bb5817c6a7bcb0b1c70c2e2a7">isInventoryOpen</a> = false</td></tr>
+<tr class="memdesc:adf2b8d0bb5817c6a7bcb0b1c70c2e2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the currently equipped item.  <br /></td></tr>
+<tr class="separator:adf2b8d0bb5817c6a7bcb0b1c70c2e2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af759cfbe1aea1d78d741e6f55a0ddcc4" id="r_af759cfbe1aea1d78d741e6f55a0ddcc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_controller.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af759cfbe1aea1d78d741e6f55a0ddcc4">playerController</a></td></tr>
+<tr class="memdesc:af759cfbe1aea1d78d741e6f55a0ddcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public getter for inventory state.  <br /></td></tr>
+<tr class="separator:af759cfbe1aea1d78d741e6f55a0ddcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages the player's inventory, including UI updates and item equipping. </p>
+<div class="textblock"><p>Manages the player's inventory, including UI updates, item storage, and equipment logic. Designed for a survival horror game where the player can pick up, equip, and combine items. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00010">10</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5b18458e8dd8426c55d2d4e2d184706a" name="a5b18458e8dd8426c55d2d4e2d184706a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b18458e8dd8426c55d2d4e2d184706a">&#9670;&#160;</a></span>Start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InventoryManager.Start </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reference to the <a class="el" href="class_player_controller.html" title="This class controls the player&#39;s movement, stamina, inventory, and animation logic.">PlayerController</a> script. </p>
-<p>Initializes references and hides the inventory UI at the start. </p>
-<p>Hide inventory UI at the start.</p>
-
-</div>
-</div>
 <a id="ab03cb9976ed0fd2ee6e77cd7006d1104" name="ab03cb9976ed0fd2ee6e77cd7006d1104"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab03cb9976ed0fd2ee6e77cd7006d1104">&#9670;&#160;</a></span>AddItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void InventoryManager.AddItem </td>
@@ -244,26 +222,22 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Adds an item to the inventory if there is space and updates the UI. </p>
+<p>Adds an item to the inventory, handles special cases, and updates the UI. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">item</td><td>The item to add. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Update the UI after adding an item.</p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00051">51</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
-<a id="afc55d3b8671e510b3fd64199e140b001" name="afc55d3b8671e510b3fd64199e140b001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc55d3b8671e510b3fd64199e140b001">&#9670;&#160;</a></span>RemoveItem()</h2>
+<a id="a90e7da8585ce6314c07d899b07bb6797" name="a90e7da8585ce6314c07d899b07bb6797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90e7da8585ce6314c07d899b07bb6797">&#9670;&#160;</a></span>DestroyEquippedItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,75 +246,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void InventoryManager.RemoveItem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_item.html">Item</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes an item from the inventory and updates the UI. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>The item to remove. </td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Update the UI after removing an item.</p>
-
-</div>
-</div>
-<a id="ae105fd7e1358690239919d27df074ffb" name="ae105fd7e1358690239919d27df074ffb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae105fd7e1358690239919d27df074ffb">&#9670;&#160;</a></span>HasItem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool InventoryManager.HasItem </td>
-          <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>itemName</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the inventory contains an item with the given name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">itemName</td><td>The name of the item to check. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the item is found, false otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a0959bc576a07ab9b7465434d9ff390f3" name="a0959bc576a07ab9b7465434d9ff390f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0959bc576a07ab9b7465434d9ff390f3">&#9670;&#160;</a></span>UpdateInventoryUI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InventoryManager.UpdateInventoryUI </td>
+          <td class="memname">IEnumerator InventoryManager.DestroyEquippedItem </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -348,39 +254,14 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Updates the inventory UI to match the current list of items. </p>
+<p>Coroutine that destroys the equipped object after a delay. </p>
 
-</div>
-</div>
-<a id="a87c8ecad45dfad4a04b0ec48b901b3c8" name="a87c8ecad45dfad4a04b0ec48b901b3c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87c8ecad45dfad4a04b0ec48b901b3c8">&#9670;&#160;</a></span>ToggleInventory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InventoryManager.ToggleInventory </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Toggles the inventory UI on or off and manages the cursor state. </p>
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00173">173</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -402,7 +283,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -415,10 +296,110 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00143">143</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="ababd1be86e6117fbc65a91b1289c7362" name="ababd1be86e6117fbc65a91b1289c7362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ababd1be86e6117fbc65a91b1289c7362">&#9670;&#160;</a></span>DestroyObect()</h2>
+<a id="a5b14cdc3f7da13050a3dc9c38d44d62d" name="a5b14cdc3f7da13050a3dc9c38d44d62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b14cdc3f7da13050a3dc9c38d44d62d">&#9670;&#160;</a></span>GetObjectOnHand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject InventoryManager.GetObjectOnHand </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the GameObject currently equipped in the right hand, if any. </p>
+<dl class="section return"><dt>Returns</dt><dd>The equipped object or null. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00187">187</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae105fd7e1358690239919d27df074ffb" name="ae105fd7e1358690239919d27df074ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae105fd7e1358690239919d27df074ffb">&#9670;&#160;</a></span>HasItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InventoryManager.HasItem </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>itemName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the inventory contains an item with the given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">itemName</td><td>The name of the item to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the item is found, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00091">91</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a32e0b17c1e4fce547e13e5695ffacd3d" name="a32e0b17c1e4fce547e13e5695ffacd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e0b17c1e4fce547e13e5695ffacd3d">&#9670;&#160;</a></span>RefreshUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InventoryManager.RefreshUI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Refreshes the inventory UI to match the current items. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00116">116</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="afc55d3b8671e510b3fd64199e140b001" name="afc55d3b8671e510b3fd64199e140b001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc55d3b8671e510b3fd64199e140b001">&#9670;&#160;</a></span>RemoveItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InventoryManager.RemoveItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_item.html">Item</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an item from the inventory and updates the UI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00077">77</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5b18458e8dd8426c55d2d4e2d184706a" name="a5b18458e8dd8426c55d2d4e2d184706a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b18458e8dd8426c55d2d4e2d184706a">&#9670;&#160;</a></span>Start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -427,7 +408,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IEnumerator InventoryManager.DestroyObect </td>
+          <td class="memname">void InventoryManager.Start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -435,43 +416,55 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Coroutine that destroys the equipped object after a delay. </p>
+<p>Reference to the <a class="el" href="class_player_controller.html" title="Controls core player functionality including movement, interactions, and inventory management....">PlayerController</a> script. </p>
+<p>Initializes inventory state and hides the UI at the start. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00038">38</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a092943feb47c79fd1b12613640b14a30" name="a092943feb47c79fd1b12613640b14a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a092943feb47c79fd1b12613640b14a30">&#9670;&#160;</a></span>inventorySize</h2>
+<a id="a87c8ecad45dfad4a04b0ec48b901b3c8" name="a87c8ecad45dfad4a04b0ec48b901b3c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c8ecad45dfad4a04b0ec48b901b3c8">&#9670;&#160;</a></span>ToggleInventory()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int InventoryManager.inventorySize = 20</td>
+          <td class="memname">void InventoryManager.ToggleInventory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Toggles the inventory UI and manages cursor state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00104">104</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="a5654d9fee257edb7c6d237c4fbeb6a9f" name="a5654d9fee257edb7c6d237c4fbeb6a9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5654d9fee257edb7c6d237c4fbeb6a9f">&#9670;&#160;</a></span>inventorySlotPrefab</h2>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a60011c9b3bda8b4aa05d6721c55e9f67" name="a60011c9b3bda8b4aa05d6721c55e9f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60011c9b3bda8b4aa05d6721c55e9f67">&#9670;&#160;</a></span>completedToy</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">GameObject InventoryManager.inventorySlotPrefab</td>
+          <td class="memname"><a class="el" href="class_item.html">Item</a> InventoryManager.completedToy</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum number of items in the inventory. </p>
+<p>Transform for equipping items in the right hand. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00023">23</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -487,7 +480,43 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prefab for inventory slot UI elements. </p>
+<p>Prefab for each inventory slot in the UI. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00015">15</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a092943feb47c79fd1b12613640b14a30" name="a092943feb47c79fd1b12613640b14a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092943feb47c79fd1b12613640b14a30">&#9670;&#160;</a></span>inventorySize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InventoryManager.inventorySize = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00013">13</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5654d9fee257edb7c6d237c4fbeb6a9f" name="a5654d9fee257edb7c6d237c4fbeb6a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5654d9fee257edb7c6d237c4fbeb6a9f">&#9670;&#160;</a></span>inventorySlotPrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject InventoryManager.inventorySlotPrefab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of items the player can carry. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00014">14</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -503,7 +532,61 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parent transform for the inventory slots. </p>
+<p>Parent transform for inventory slots in the UI. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00016">16</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="adf2b8d0bb5817c6a7bcb0b1c70c2e2a7" name="adf2b8d0bb5817c6a7bcb0b1c70c2e2a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2b8d0bb5817c6a7bcb0b1c70c2e2a7">&#9670;&#160;</a></span>isInventoryOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InventoryManager.isInventoryOpen = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Name of the currently equipped item. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00030">30</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a07ac5bdf3d1557aef5e2c123e10d4b9f" name="a07ac5bdf3d1557aef5e2c123e10d4b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ac5bdf3d1557aef5e2c123e10d4b9f">&#9670;&#160;</a></span>itemOnHand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string InventoryManager.itemOnHand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Counter for collected toy pieces. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00029">29</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -512,14 +595,86 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">List&lt;<a class="el" href="class_item.html">Item</a>&gt; InventoryManager.items = new List&lt;<a class="el" href="class_item.html">Item</a>&gt;()</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Main inventory UI canvas. </p>
+<p>The combined toy item (when all pieces are collected). </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00025">25</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="acda1ac0d407d41e520a986445d29ed07" name="acda1ac0d407d41e520a986445d29ed07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda1ac0d407d41e520a986445d29ed07">&#9670;&#160;</a></span>leftHand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform InventoryManager.leftHand</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main inventory UI panel. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00019">19</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="af759cfbe1aea1d78d741e6f55a0ddcc4" name="af759cfbe1aea1d78d741e6f55a0ddcc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af759cfbe1aea1d78d741e6f55a0ddcc4">&#9670;&#160;</a></span>playerController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player_controller.html">PlayerController</a> InventoryManager.playerController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Public getter for inventory state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00033">33</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9117e06d048be3f8202abf967b9fa266" name="a9117e06d048be3f8202abf967b9fa266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9117e06d048be3f8202abf967b9fa266">&#9670;&#160;</a></span>rightHand</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform InventoryManager.rightHand</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transform for equipping items in the left hand. </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00020">20</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -545,101 +700,33 @@ Private Attributes</h2></td></tr>
 
 <p>List of items currently in the inventory. </p>
 
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00026">26</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="acda1ac0d407d41e520a986445d29ed07" name="acda1ac0d407d41e520a986445d29ed07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acda1ac0d407d41e520a986445d29ed07">&#9670;&#160;</a></span>leftHand</h2>
+<a id="a50b1ae7eeefed7308f625609926578bd" name="a50b1ae7eeefed7308f625609926578bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b1ae7eeefed7308f625609926578bd">&#9670;&#160;</a></span>toyPieces</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Transform InventoryManager.leftHand</td>
+          <td class="memname">int InventoryManager.toyPieces = 0</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>List of instantiated inventory slot UI objects. </p>
 
-</div>
-</div>
-<a id="a9117e06d048be3f8202abf967b9fa266" name="a9117e06d048be3f8202abf967b9fa266"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9117e06d048be3f8202abf967b9fa266">&#9670;&#160;</a></span>rightHand</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Transform InventoryManager.rightHand</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Transform for equipping items in the left hand. </p>
-
-</div>
-</div>
-<a id="a07ac5bdf3d1557aef5e2c123e10d4b9f" name="a07ac5bdf3d1557aef5e2c123e10d4b9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07ac5bdf3d1557aef5e2c123e10d4b9f">&#9670;&#160;</a></span>itemOnHand</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string InventoryManager.itemOnHand</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Transform for equipping items in the right hand. </p>
-
-</div>
-</div>
-<a id="a20d72ee9c632b348f78d496f17477459" name="a20d72ee9c632b348f78d496f17477459"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20d72ee9c632b348f78d496f17477459">&#9670;&#160;</a></span>playerCam</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Camera InventoryManager.playerCam</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Name of the currently equipped item. </p>
-
-</div>
-</div>
-<a id="ae6f5a670cfe18375c7b1b9c1b31f1dd4" name="ae6f5a670cfe18375c7b1b9c1b31f1dd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6f5a670cfe18375c7b1b9c1b31f1dd4">&#9670;&#160;</a></span>playerMove</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_player_controller.html">PlayerController</a> InventoryManager.playerMove</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates if the inventory UI is open. </p>
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00027">27</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
@@ -659,17 +746,19 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel private-set">private set</span></span>  </td>
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reference to the player's camera. </p>
+<p>Is the inventory currently open? </p>
+
+<p class="definition">Definition at line <a class="el" href="_inventory_manager_8cs_source.html#l00031">31</a> of file <a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<a class="el" href="_inventory_manager_8cs.html">InventoryManager.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<a class="el" href="_inventory_manager_8cs_source.html">InventoryManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

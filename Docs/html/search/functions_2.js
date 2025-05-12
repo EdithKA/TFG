@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['decreasesanity_0',['DecreaseSanity',['../class_stats.html#a48f26357fa39c35ed3bf697d050c5922',1,'Stats']]],
-  ['deletetext_1',['DeleteText',['../class_u_i_text_controller.html#ae063e564a535cd6ee1589d89ef82314b',1,'UITextController']]],
-  ['destroyobect_2',['DestroyObect',['../class_inventory_manager.html#ababd1be86e6117fbc65a91b1289c7362',1,'InventoryManager']]]
+  ['decideaction_0',['DecideAction',['../class_enemy_controller.html#ad5cc7798ee5f6e063635487365d094b6',1,'EnemyController']]],
+  ['decreasesanityovertime_1',['DecreaseSanityOverTime',['../class_stats.html#a18d688dcfc2719fa7dd4963063912211',1,'Stats']]],
+  ['destroyequippeditem_2',['DestroyEquippedItem',['../class_inventory_manager.html#a90e7da8585ce6314c07d899b07bb6797',1,'InventoryManager']]]
 ];

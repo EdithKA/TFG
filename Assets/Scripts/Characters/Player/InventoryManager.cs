@@ -1,83 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 /**
- * @brief Manages the player's inventory, including UI updates and item equipping.
+ * @brief Manages the player's inventory, including UI updates, item storage, and equipment logic.
+ *        Designed for a survival horror game where the player can pick up, equip, and combine items.
  */
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    public int inventorySize = 20; /// Maximum number of items in the inventory.
-    public GameObject inventorySlotPrefab; /// Prefab for inventory slot UI elements.
-    public Transform inventoryGrid; /// Parent transform for the inventory slots.
-    public GameObject inventoryUI; /// Main inventory UI canvas.
+    public int inventorySize = 20;                       /// Maximum number of items the player can carry.
+    public GameObject inventorySlotPrefab;                /// Prefab for each inventory slot in the UI.
+    public Transform inventoryGrid;                       /// Parent transform for inventory slots in the UI.
+    public GameObject inventoryUI;                        /// Main inventory UI panel.
 
+    [Header("Hand References")]
+    public Transform leftHand;                            /// Transform for equipping items in the left hand.
+    public Transform rightHand;                           /// Transform for equipping items in the right hand.
 
-    public List<Item> items = new List<Item>(); /// List of items currently in the inventory.
+    [Header("Special Items")]
+    public Item completedToy;                             /// The combined toy item (when all pieces are collected).
+
+    private List<Item> items = new List<Item>();          /// List of items currently in the inventory.
     private List<GameObject> slots = new List<GameObject>(); /// List of instantiated inventory slot UI objects.
+    private int toyPieces = 0;                            /// Counter for collected toy pieces.
 
-    public Transform leftHand; /// Transform for equipping items in the left hand.
-    public Transform rightHand; /// Transform for equipping items in the right hand.
+    private string itemOnHand;                            /// Name of the currently equipped item.
+    private bool isInventoryOpen = false;                 /// Is the inventory currently open?
+    public bool IsInventoryOpen => isInventoryOpen;       /// Public getter for inventory state.
 
-    public string itemOnHand; /// Name of the currently equipped item.
-
-    private Camera playerCam; /// Reference to the player's camera.
-    public bool IsInventoryOpen { get; private set; } /// Indicates if the inventory UI is open.
-
-    private PlayerController playerMove; /// Reference to the PlayerController script.
-
-    private int toyPieces;
-
-    public Item completedToy;
+    private PlayerController playerController;            /// Reference to the PlayerController script.
 
     /**
-     * @brief Initializes references and hides the inventory UI at the start.
+     * @brief Initializes inventory state and hides the UI at the start.
      */
     private void Start()
     {
-        toyPieces = 0;
-        playerMove = FindAnyObjectByType<PlayerController>();
-        playerCam = FindObjectOfType<Camera>();
+        playerController = FindAnyObjectByType<PlayerController>();
         if (inventoryUI != null)
-        {
-            inventoryUI.SetActive(false); /// Hide inventory UI at the start.
-        }
-    }
+            inventoryUI.SetActive(false); // Hide inventory UI at the start.
 
-    private void Update()
-    {
-        UpdateInventoryUI();
+        RefreshUI();
     }
 
     /**
-     * @brief Adds an item to the inventory if there is space and updates the UI.
+     * @brief Adds an item to the inventory, handles special cases, and updates the UI.
      * @param item The item to add.
      */
     public void AddItem(Item item)
     {
         if (items.Count < inventorySize)
         {
-            items.Add(item);
-            if(item.type == "piece")
+            // Handle toy piece combination logic
+            if (item.type == "piece")
             {
-                toyPieces += 1;
-                if(toyPieces == 2)
+                toyPieces++;
+                if (toyPieces == 2)
                 {
                     items.RemoveAll(i => i.type == "piece");
                     toyPieces = 0;
                     AddItem(completedToy);
+                    return; // Prevent double UI refresh
                 }
-
-                
-
             }
+
+            items.Add(item);
+            RefreshUI();
         }
     }
-
-
 
     /**
      * @brief Removes an item from the inventory and updates the UI.
@@ -88,6 +79,7 @@ public class InventoryManager : MonoBehaviour
         if (items.Contains(item))
         {
             items.Remove(item);
+            RefreshUI();
         }
     }
 
@@ -107,9 +99,21 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Updates the inventory UI to match the current list of items.
+     * @brief Toggles the inventory UI and manages cursor state.
      */
-    private void UpdateInventoryUI()
+    public void ToggleInventory()
+    {
+        isInventoryOpen = !isInventoryOpen;
+        inventoryUI.SetActive(isInventoryOpen);
+
+        Cursor.lockState = isInventoryOpen ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = isInventoryOpen;
+    }
+
+    /**
+     * @brief Refreshes the inventory UI to match the current items.
+     */
+    public void RefreshUI()
     {
         // Remove all existing slots from the UI.
         foreach (GameObject slot in slots)
@@ -121,33 +125,14 @@ public class InventoryManager : MonoBehaviour
         // Create a new slot for each item in the inventory.
         foreach (Item item in items)
         {
+            Item currentItem = item; // Prevent closure issue in delegates
             GameObject slot = Instantiate(inventorySlotPrefab, inventoryGrid);
             Image icon = slot.transform.Find("Icon").GetComponent<Image>();
-            icon.sprite = item.icon;
+            icon.sprite = currentItem.icon;
             slots.Add(slot);
 
             Button button = slot.GetComponent<Button>();
-            button.onClick.AddListener(() => EquipItem(item));
-        }
-    }
-
-    /**
-     * @brief Toggles the inventory UI on or off and manages the cursor state.
-     */
-    public void ToggleInventory()
-    {
-        IsInventoryOpen = !IsInventoryOpen;
-        inventoryUI.SetActive(IsInventoryOpen);
-        Debug.Log("Inventory opened");
-        if (IsInventoryOpen)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            button.onClick.AddListener(() => EquipItem(currentItem));
         }
     }
 
@@ -157,16 +142,15 @@ public class InventoryManager : MonoBehaviour
      */
     private void EquipItem(Item item)
     {
-        if (itemOnHand == item.name)
+        if (itemOnHand == item.itemName)
         {
-            StartCoroutine(DestroyObect());
+            StartCoroutine(DestroyEquippedItem());
             itemOnHand = "";
-            playerMove.RActive = false;
         }
         else if (item.itemName != "Mobile")
         {
             // Remove any previously equipped item.
-            if (itemOnHand != "")
+            if (!string.IsNullOrEmpty(itemOnHand))
             {
                 foreach (Transform child in rightHand)
                 {
@@ -174,20 +158,19 @@ public class InventoryManager : MonoBehaviour
                 }
             }
 
+            // Equip the new item
             GameObject itemSelected = Instantiate(item.itemPrefab, rightHand);
             itemSelected.transform.localPosition = Vector3.zero;
             itemSelected.transform.localRotation = Quaternion.identity;
             itemSelected.GetComponent<ItemController>().isHeld = true;
-            itemOnHand = item.name;
-
-            playerMove.RActive = true;
+            itemOnHand = item.itemName;
         }
     }
 
     /**
      * @brief Coroutine that destroys the equipped object after a delay.
      */
-    IEnumerator DestroyObect()
+    IEnumerator DestroyEquippedItem()
     {
         yield return new WaitForSeconds(10f);
 
@@ -197,6 +180,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    /**
+     * @brief Returns the GameObject currently equipped in the right hand, if any.
+     * @return The equipped object or null.
+     */
     public GameObject GetObjectOnHand()
     {
         if (rightHand != null && rightHand.childCount > 0)

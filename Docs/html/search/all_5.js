@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['getindex_0',['GetIndex',['../class_angle_to_player.html#a1a7a5732d9a0659c0a4f5f56b4450549',1,'AngleToPlayer']]],
-  ['getinput_1',['GetInput',['../class_player_controller.html#a067e52f8db324a7fe74ef6c233832cbc',1,'PlayerController']]],
-  ['gravity_2',['Gravity',['../class_player_controller.html#a11562d1a4c5be3e0e7d4adeba1fb7f8d',1,'PlayerController']]]
+  ['fadecanvas_0',['FadeCanvas',['../class_u_i_text_controller.html#a2f37f62026f1a8077a784d0766032ca3',1,'UITextController']]],
+  ['fadeduration_1',['fadeDuration',['../class_u_i_text_controller.html#a30730cbb92010637a81800b1d4d8b871',1,'UITextController']]],
+  ['findnearestinteractable_2',['FindNearestInteractable',['../class_player_controller.html#ac3d21aaffe18be24695247384a560131',1,'PlayerController']]],
+  ['fixedupdate_3',['FixedUpdate',['../class_player_controller.html#ae5bdb1b48571f67c3f722a58b6f404d4',1,'PlayerController']]],
+  ['flattenedplayerposition_4',['flattenedPlayerPosition',['../class_angle_to_player.html#a575700003e3636a1d257d0b47db47e14',1,'AngleToPlayer']]]
 ];

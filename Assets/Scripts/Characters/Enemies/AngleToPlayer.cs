@@ -1,83 +1,107 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /**
- * @brief Calculates relative angles to player and manages sprite direction visualization.
+ * @brief This script calculates the angle between this object and the player,
+ *        and flips the sprite depending on where the player is.
+ *        It's useful for 2D enemies or NPCs that need to "look" at the player.
  */
 public class AngleToPlayer : MonoBehaviour
 {
-    private Transform player; /// Reference to the player's transform.
-    private Vector3 targetPos; /// Calculated target position (ignoring vertical difference).
-    private Vector3 targetDir; /// Direction vector from enemy to player.
+    // Reference to the player's transform (we find it automatically in Start)
+    private Transform playerTransform;
 
-    private float angle; /// Calculated signed angle between enemy forward and player direction.
-    public int lastIndex; /// Last calculated direction index for animation purposes.
+    // We'll use this to store the player's position but with our own Y (so we ignore vertical difference)
+    private Vector3 flattenedPlayerPosition;
 
-    private SpriteRenderer spriteRenderer; /// Reference to the sprite renderer component.
+    // Direction vector from this object to the player (on the XZ plane)
+    private Vector3 directionToPlayer;
+
+    // The signed angle (in degrees) between where we're facing and where the player is
+    private float signedAngleToPlayer;
+
+    // This will store which of the 8 directions (for animation) we're currently facing
+    public int lastIndex; // Keeps the last valid direction index
+
+    // Reference to the SpriteRenderer so we can flip the sprite visually
+    private SpriteRenderer spriteRenderer;
 
     /**
-     * @brief Initializes player reference and sprite renderer component.
+     * @brief Get references to the player and the sprite renderer.
      */
     void Start()
     {
-        player = FindObjectOfType<PlayerController>().transform;
+        // Find the player in the scene (assumes there's only one PlayerController)
+        playerTransform = FindObjectOfType<PlayerController>().transform;
+
+        // Get the SpriteRenderer from children (so it works even if the sprite is a child)
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     /**
-     * @brief Updates angle calculations and sprite direction each frame.
+     * @brief Every frame, calculate the direction to the player and update the sprite.
      */
     void Update()
     {
-        // Calculate horizontal position difference (ignore vertical axis)
-        targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
-        targetDir = targetPos - transform.position;
+        // Ignore Y axis so the calculation is always "flat" (good for 2D or top-down)
+        flattenedPlayerPosition = new Vector3(
+            playerTransform.position.x,
+            transform.position.y,
+            playerTransform.position.z
+        );
 
-        // Get signed angle between enemy forward and player direction
-        angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
+        // Get the direction vector from us to the player
+        directionToPlayer = flattenedPlayerPosition - transform.position;
 
-        // Flip sprite based on left/right angle
-        Vector3 tempScale = Vector3.one;
-        if (angle > 0)
-        {
-            tempScale.x = -1f; // Flip sprite when player is to the right
-        }
+        // Calculate the signed angle between our forward and the direction to the player
+        // Positive = player is to our right, Negative = player is to our left
+        signedAngleToPlayer = Vector3.SignedAngle(directionToPlayer, transform.forward, Vector3.up);
 
-        lastIndex = GetIndex(angle); // Update direction index for animations
+        // Flip the sprite if the player is to our right (so the enemy looks at the player)
+        Vector3 scale = Vector3.one;
+        if (signedAngleToPlayer > 0)
+            scale.x = -1f; // Mirror the sprite
+        spriteRenderer.transform.localScale = scale;
+
+        // Get the direction index (for 8-way animation, if needed)
+        lastIndex = GetDirectionIndex(signedAngleToPlayer, lastIndex);
     }
 
     /**
-     * @brief Converts angle value into 8-direction index for animation states.
-     * @param angle Signed angle between -180 and 180 degrees.
-     * @return Integer index representing cardinal and intercardinal directions.
+     * @brief Convert the angle to an index (0-7) for 8 possible directions.
+     *        This is useful if you want to play different animations depending on where the player is.
+     * @param angle The signed angle between us and the player, in degrees.
+     * @param previousIndex The last valid direction index.
+     * @return An integer from 0 to 7 representing the direction.
      */
-    int GetIndex(float angle)
+    int GetDirectionIndex(float angle, int previousIndex)
     {
-        // Front-facing directions
-        if (angle > -22.5f && angle < 22.6f) return 0; // Front-center
-        if (angle >= 22.5f && angle < 67.5f) return 7; // Front-right
-        if (angle >= 67.5f && angle < 112.5f) return 6; // Right profile
-        if (angle >= 112.5f && angle < 157.5f) return 5; // Back-right
+        // 0 = Front, 1 = Front-Left, 2 = Left, 3 = Back-Left, 4 = Back,
+        // 5 = Back-Right, 6 = Right, 7 = Front-Right
 
-        // Back-facing directions
-        if (angle <= -157.5f || angle >= 157.5f) return 4; // Directly behind
-        if (angle >= -157.4f && angle < -112.5f) return 3; // Back-left
-        if (angle >= -112.5f && angle < -67.5f) return 2; // Left profile
-        if (angle >= -67.5f && angle <= -22.5f) return 1; // Front-left
+        if (angle > -22.5f && angle < 22.5f) return 0; // Front
+        if (angle >= 22.5f && angle < 67.5f) return 7; // Front-Right
+        if (angle >= 67.5f && angle < 112.5f) return 6; // Right
+        if (angle >= 112.5f && angle < 157.5f) return 5; // Back-Right
+        if (angle <= -157.5f || angle >= 157.5f) return 4; // Back
+        if (angle >= -157.5f && angle < -112.5f) return 3; // Back-Left
+        if (angle >= -112.5f && angle < -67.5f) return 2; // Left
+        if (angle >= -67.5f && angle <= -22.5f) return 1; // Front-Left
 
-        return lastIndex; // Fallback to previous value
+        // If for some reason the angle doesn't fit, keep the previous direction
+        return previousIndex;
     }
 
     /**
-     * @brief Draws debug visuals in Scene view when object is selected.
+     * @brief Draws debug lines in the Scene view so I can see the direction calculations.
      */
     private void OnDrawGizmosSelected()
     {
+        // Draw a green line pointing from this object to the player
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, targetPos); // Player direction ray
+        Gizmos.DrawLine(transform.position, flattenedPlayerPosition);
+
+        // Draw a blue ray showing our forward direction
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPos); // Connection line to player
+        Gizmos.DrawRay(transform.position, transform.forward * 2f);
     }
 }

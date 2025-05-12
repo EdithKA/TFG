@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['doorcontroller_0',['DoorController',['../class_door_controller.html',1,'']]]
+  ['doorinteractable_0',['DoorInteractable',['../class_door_interactable.html',1,'']]]
 ];

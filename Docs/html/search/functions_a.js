@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['removeitem_0',['RemoveItem',['../class_inventory_manager.html#afc55d3b8671e510b3fd64199e140b001',1,'InventoryManager']]],
-  ['resetobjects_1',['ResetObjects',['../class_stats.html#aec8d5bd99323a692342a1c68be3be204',1,'Stats']]],
-  ['rotatecamera_2',['RotateCamera',['../class_mouse_look.html#ab7678c4290a78d0a777f84f92c7f7d3c',1,'MouseLook']]],
-  ['rotateplayer_3',['RotatePlayer',['../class_mouse_look.html#ace3da1728797fc66a23b92fcf8ec69df',1,'MouseLook']]]
+  ['patrol_0',['Patrol',['../class_enemy_controller.html#a459a8fec76b52f83c04eb5aa06dfcf12',1,'EnemyController']]],
+  ['pickup_1',['PickUp',['../class_item_controller.html#a0903b0f03b5c768ff54ef45583bd3951',1,'ItemController']]],
+  ['processplayerinput_2',['ProcessPlayerInput',['../class_player_controller.html#a0d542301d8bb095f8369ce57ff412669',1,'PlayerController']]]
 ];

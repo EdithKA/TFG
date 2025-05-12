@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: Item Class Reference</title>
+<title>THE IN-BETWEEN: Item Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,13 +103,12 @@ $(function(){initNavTree('class_item.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="class_item-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">Item Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines inventory items as ScriptableObjects for easy asset creation.  
+<p>Defines inventory items as ScriptableObjects for easy asset creation and management. Used for both 2D UI representations and 3D in-game objects.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Item:</div>
@@ -119,30 +118,42 @@ Inheritance diagram for Item:</div>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a8c54f77a262b1ffd78c1cd8cbed86ae0" id="r_a8c54f77a262b1ffd78c1cd8cbed86ae0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c54f77a262b1ffd78c1cd8cbed86ae0">itemName</a></td></tr>
 <tr class="separator:a8c54f77a262b1ffd78c1cd8cbed86ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1dc016532d298122f97471dc66c2c81" id="r_af1dc016532d298122f97471dc66c2c81"><td class="memItemLeft" align="right" valign="top">Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1dc016532d298122f97471dc66c2c81">icon</a></td></tr>
 <tr class="memdesc:af1dc016532d298122f97471dc66c2c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name displayed in inventory UI.  <br /></td></tr>
 <tr class="separator:af1dc016532d298122f97471dc66c2c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d786fb301e578483742debd5e56cc1e" id="r_a3d786fb301e578483742debd5e56cc1e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d786fb301e578483742debd5e56cc1e">type</a></td></tr>
+<tr class="memdesc:a3d786fb301e578483742debd5e56cc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D representation in inventory slots.  <br /></td></tr>
+<tr class="separator:a3d786fb301e578483742debd5e56cc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8a02928a85ce008707ec653a1c6c254" id="r_ac8a02928a85ce008707ec653a1c6c254"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8a02928a85ce008707ec653a1c6c254">itemPrefab</a></td></tr>
-<tr class="memdesc:ac8a02928a85ce008707ec653a1c6c254"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D representation in inventory slots  <br /></td></tr>
+<tr class="memdesc:ac8a02928a85ce008707ec653a1c6c254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category or type for gameplay logic (e.g., "piece", "DVD", etc.).  <br /></td></tr>
 <tr class="separator:ac8a02928a85ce008707ec653a1c6c254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479ccd81f48b8b19d6bbc9613b4efe40" id="r_a479ccd81f48b8b19d6bbc9613b4efe40"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a479ccd81f48b8b19d6bbc9613b4efe40">collectedText</a></td></tr>
+<tr class="memdesc:a479ccd81f48b8b19d6bbc9613b4efe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D prefab for in-world representation.  <br /></td></tr>
+<tr class="separator:a479ccd81f48b8b19d6bbc9613b4efe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines inventory items as ScriptableObjects for easy asset creation. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8c54f77a262b1ffd78c1cd8cbed86ae0" name="a8c54f77a262b1ffd78c1cd8cbed86ae0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c54f77a262b1ffd78c1cd8cbed86ae0">&#9670;&#160;</a></span>itemName</h2>
+<div class="textblock"><p>Defines inventory items as ScriptableObjects for easy asset creation and management. Used for both 2D UI representations and 3D in-game objects. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00008">8</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a479ccd81f48b8b19d6bbc9613b4efe40" name="a479ccd81f48b8b19d6bbc9613b4efe40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479ccd81f48b8b19d6bbc9613b4efe40">&#9670;&#160;</a></span>collectedText</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string Item.itemName</td>
+          <td class="memname">string Item.collectedText</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>3D prefab for in-world representation. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00015">15</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
 
 </div>
 </div>
@@ -160,6 +171,24 @@ Public Attributes</h2></td></tr>
 
 <p>Name displayed in inventory UI. </p>
 
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00012">12</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8c54f77a262b1ffd78c1cd8cbed86ae0" name="a8c54f77a262b1ffd78c1cd8cbed86ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c54f77a262b1ffd78c1cd8cbed86ae0">&#9670;&#160;</a></span>itemName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Item.itemName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00011">11</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
+
 </div>
 </div>
 <a id="ac8a02928a85ce008707ec653a1c6c254" name="ac8a02928a85ce008707ec653a1c6c254"></a>
@@ -174,12 +203,32 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>2D representation in inventory slots </p>
+<p>Category or type for gameplay logic (e.g., "piece", "DVD", etc.). </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00014">14</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3d786fb301e578483742debd5e56cc1e" name="a3d786fb301e578483742debd5e56cc1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d786fb301e578483742debd5e56cc1e">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Item.type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>2D representation in inventory slots. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_8cs_source.html#l00013">13</a> of file <a class="el" href="_item_8cs_source.html">Item.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Items/<a class="el" href="_object_8cs.html">Object.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Items/<a class="el" href="_item_8cs_source.html">Item.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,48 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 /**
- * @brief Manages player stats (health and sanity), updates UI, and handles world corruption effects.
+ * @brief Manages player stats (health and sanity), updates the UI, and triggers world corruption effects.
+ *        Designed for a survival horror game where the world becomes more unstable as sanity decreases.
  */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    int sanity; /// Current sanity value (0-100).
-    int health; /// Current health value (0-100).
-    float decreaseInterval = 1.5f; /// Time interval between sanity decreases.
-
+    private int sanity;                                 /// Current sanity value (0-100).
+    private int health;                                 /// Current health value (0-100).
+    [SerializeField] private float decreaseInterval = 1.5f; /// Time in seconds between sanity decreases.
 
     [Header("World Corruption")]
-    public string corruptibleTag; /// Tag for objects that can be corrupted.
-    public float moveRange = 0.5f; /// Maximum random movement offset during corruption.
-    public float rotationSpeed = 50f; /// Speed of rotation during corruption (not used in this script).
-    public int sanityThreshold; /// Sanity value at which corruption starts.
-    public float rotationRange = 45f; /// Maximum random rotation angle during corruption.
+    public string corruptibleTag;                       /// Tag for objects that can be corrupted.
+    public float moveRange = 0.5f;                      /// Maximum random movement offset during corruption.
+    public float rotationRange = 45f;                   /// Maximum random rotation angle during corruption.
+    public int sanityThreshold = 75;                    /// Sanity value at which corruption starts.
 
     private List<GameObject> corruptibleObjects = new List<GameObject>(); /// List of objects that can be corrupted.
-    private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); /// Original positions of corruptible objects.
-    private int lastSanityTrigger; /// Last sanity value at which corruption was triggered.
+    private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); /// Stores original positions.
 
-    [Header("Health")]
-    public Image heartIcon; /// UI image for the heart icon.
-    public Sprite[] heartStats; /// Sprites for different heart states.
-    public List<GameObject> healthBars; /// List of health bar UI segments.
+    [Header("Health UI")]
+    public Image heartIcon;                             /// UI image for the heart icon.
+    public Sprite[] heartSprites;                       /// Sprites for different health states.
+    public List<GameObject> healthBars;                 /// List of health bar UI segments.
 
-    [Header("Sanity")]
-    public Image sanityIcon; /// UI image for the brain icon.
-    public Sprite[] brainStats; /// Sprites for different brain states.
-    public List<GameObject> sanityBars; /// List of sanity bar UI segments.
+    [Header("Sanity UI")]
+    public Image sanityIcon;                            /// UI image for the brain icon.
+    public Sprite[] brainSprites;                       /// Sprites for different sanity states.
+    public List<GameObject> sanityBars;                 /// List of sanity bar UI segments.
 
-    /**
-     * @brief Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine.
-     */
+    /// <summary>
+    /// Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine.
+    /// </summary>
     private void Start()
     {
-        GameObject[] corruptObjects = GameObject.FindGameObjectsWithTag(corruptibleTag);
-        corruptibleObjects.AddRange(corruptObjects);
+        // Find all objects in the scene that can be corrupted and store their original positions
+        GameObject[] foundObjects = GameObject.FindGameObjectsWithTag(corruptibleTag);
+        corruptibleObjects.AddRange(foundObjects);
 
         foreach (GameObject obj in corruptibleObjects)
         {
@@ -54,86 +52,66 @@ public class Stats : MonoBehaviour
 
         sanity = 100;
         health = 100;
-        lastSanityTrigger = sanity;
 
-        StartCoroutine(DecreaseSanity());
+        StartCoroutine(DecreaseSanityOverTime());
     }
 
-    /**
-     * @brief Updates UI and bar displays every frame.
-     */
+    /// <summary>
+    /// Updates the UI and bar displays every frame.
+    /// </summary>
     private void Update()
     {
         UpdateUI();
-        SetHealth();
-        SetSanity();
         UpdateBars();
     }
 
-    /**
-     * @brief Updates the text UI for sanity and health.
-     */
-    void UpdateUI()
+    /// <summary>
+    /// Updates the heart and brain icons based on current health and sanity.
+    /// </summary>
+    private void UpdateUI()
     {
-        
-        SetHealth();
-        SetSanity();
+        SetHeartIcon();
+        SetBrainIcon();
     }
 
-    /**
-     * @brief Sets the heart icon sprite based on current health value.
-     */
-    void SetHealth()
+    /// <summary>
+    /// Sets the heart icon sprite based on current health value.
+    /// </summary>
+    private void SetHeartIcon()
     {
-        switch (health)
-        {
-            case <= 0:
-                heartIcon.sprite = heartStats[0];
-                break;
-            case <= 25:
-                heartIcon.sprite = heartStats[1];
-                break;
-            case > 25 and <= 50:
-                heartIcon.sprite = heartStats[2];
-                break;
-            case > 50 and <= 75:
-                heartIcon.sprite = heartStats[3];
-                break;
-            case > 75:
-                heartIcon.sprite = heartStats[4];
-                break;
-        }
+        if (health <= 0)
+            heartIcon.sprite = heartSprites[0];
+        else if (health <= 25)
+            heartIcon.sprite = heartSprites[1];
+        else if (health <= 50)
+            heartIcon.sprite = heartSprites[2];
+        else if (health <= 75)
+            heartIcon.sprite = heartSprites[3];
+        else
+            heartIcon.sprite = heartSprites[4];
     }
 
-    /**
-     * @brief Sets the brain icon sprite based on current sanity value.
-     */
-    void SetSanity()
+    /// <summary>
+    /// Sets the brain icon sprite based on current sanity value.
+    /// </summary>
+    private void SetBrainIcon()
     {
-        switch (sanity)
-        {
-            case <= 0:
-                sanityIcon.sprite = brainStats[0];
-                break;
-            case <= 25:
-                sanityIcon.sprite = brainStats[1];
-                break;
-            case > 25 and <= 50:
-                sanityIcon.sprite = brainStats[2];
-                break;
-            case > 50 and <= 75:
-                sanityIcon.sprite = brainStats[3];
-                break;
-            case > 75:
-                sanityIcon.sprite = brainStats[4];
-                break;
-        }
+        if (sanity <= 0)
+            sanityIcon.sprite = brainSprites[0];
+        else if (sanity <= 25)
+            sanityIcon.sprite = brainSprites[1];
+        else if (sanity <= 50)
+            sanityIcon.sprite = brainSprites[2];
+        else if (sanity <= 75)
+            sanityIcon.sprite = brainSprites[3];
+        else
+            sanityIcon.sprite = brainSprites[4];
     }
 
-    /**
-     * @brief Coroutine that decreases sanity over time and triggers corruption if needed.
-     */
-    IEnumerator DecreaseSanity()
+    /// <summary>
+    /// Coroutine that decreases sanity over time and triggers corruption if needed.
+    /// </summary>
+    private IEnumerator DecreaseSanityOverTime()
     {
         while (true)
         {
@@ -154,46 +132,40 @@ public class Stats : MonoBehaviour
         }
     }
 
-    /**
-     * @brief Updates the health and sanity bar UI elements.
-     */
-    void UpdateBars()
+    /// <summary>
+    /// Updates the health and sanity bar UI elements.
+    /// </summary>
+    private void UpdateBars()
     {
         UpdateBar(health, healthBars);
         UpdateBar(sanity, sanityBars);
     }
 
-    /**
-     * @brief Activates or deactivates bar segments based on the stat value.
-     * @param statValue The value of the stat (health or sanity).
-     * @param bars The list of bar segment GameObjects.
-     */
-    void UpdateBar(int statValue, List<GameObject> bars)
+    /// <summary>
+    /// Activates or deactivates bar segments based on the stat value.
+    /// </summary>
+    /// <param name="statValue">The value of the stat (health or sanity).</param>
+    /// <param name="bars">The list of bar segment GameObjects.</param>
+    private void UpdateBar(int statValue, List<GameObject> bars)
     {
         int activeBarsCount = Mathf.CeilToInt(statValue / 25f);
 
         for (int i = 0; i < bars.Count; i++)
         {
-            if (i < activeBarsCount)
-            {
-                bars[i].SetActive(true);
-            }
-            else
-            {
-                bars[i].SetActive(false);
-            }
+            bars[i].SetActive(i < activeBarsCount);
         }
     }
 
-    /**
-     * @brief Coroutine that corrupts objects by moving and rotating them randomly, then resets them.
-     */
-    IEnumerator CorruptObjects()
+    /// <summary>
+    /// Coroutine that corrupts objects by moving and rotating them randomly, then resets them.
+    /// </summary>
+    private IEnumerator CorruptObjects()
     {
         foreach (GameObject obj in corruptibleObjects)
         {
             if (obj != null)
             {
+                // Move the object to a random nearby position
                 Vector3 randomOffset = new Vector3(
                     Random.Range(-moveRange, moveRange),
                     Random.Range(-moveRange, moveRange),
@@ -201,24 +173,25 @@ public class Stats : MonoBehaviour
                 );
                 obj.transform.position += randomOffset;
 
-                float randomXRotation = Random.Range(-rotationRange, rotationRange);
-                float randomYRotation = Random.Range(-rotationRange, rotationRange);
-                float randomZRotation = Random.Range(-rotationRange, rotationRange);
-                obj.transform.Rotate(new Vector3(randomXRotation, randomYRotation, randomZRotation));
+                // Apply a random rotation
+                float randomX = Random.Range(-rotationRange, rotationRange);
+                float randomY = Random.Range(-rotationRange, rotationRange);
+                float randomZ = Random.Range(-rotationRange, rotationRange);
+                obj.transform.Rotate(new Vector3(randomX, randomY, randomZ));
             }
         }
 
+        // Wait a moment before resetting
         yield return new WaitForSeconds(2f);
 
-        ResetObjects();
+        ResetCorruptedObjects();
     }
 
-    /**
-     * @brief Resets all corruptible objects to their original positions and rotations.
-     */
-    private void ResetObjects()
+    /// <summary>
+    /// Resets all corruptible objects to their original positions and rotations.
+    /// </summary>
+    private void ResetCorruptedObjects()
     {
-
         foreach (GameObject obj in corruptibleObjects)
         {
             if (obj != null && originalPositions.ContainsKey(obj))

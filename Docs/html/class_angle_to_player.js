@@ -1,13 +1,13 @@
 var class_angle_to_player =
 [
+    [ "GetDirectionIndex", "class_angle_to_player.html#a7cf5f3a79226cb29a938a55e04ade837", null ],
+    [ "OnDrawGizmosSelected", "class_angle_to_player.html#a162307c7d7b325043000c34cbb3e1bbd", null ],
     [ "Start", "class_angle_to_player.html#a3790bfd32449d5feab353c7b7b95acc2", null ],
     [ "Update", "class_angle_to_player.html#ae73bcc669d67bdb13439f31abf871b1c", null ],
-    [ "GetIndex", "class_angle_to_player.html#a1a7a5732d9a0659c0a4f5f56b4450549", null ],
-    [ "OnDrawGizmosSelected", "class_angle_to_player.html#a162307c7d7b325043000c34cbb3e1bbd", null ],
-    [ "player", "class_angle_to_player.html#a3fc1f77d4f31bc33cc4aae852184ec34", null ],
-    [ "targetPos", "class_angle_to_player.html#add2204e7c4277d0c52afd5589b697a43", null ],
-    [ "targetDir", "class_angle_to_player.html#a5f50a687af26add963378ee36d8c5dd4", null ],
-    [ "angle", "class_angle_to_player.html#a0e0d88bd734e998dae86f55b0ce247e7", null ],
+    [ "directionToPlayer", "class_angle_to_player.html#ab76113149773cb0f0b34652c8d509c52", null ],
+    [ "flattenedPlayerPosition", "class_angle_to_player.html#a575700003e3636a1d257d0b47db47e14", null ],
     [ "lastIndex", "class_angle_to_player.html#a69c5bd12acab4d229db026a561070603", null ],
+    [ "playerTransform", "class_angle_to_player.html#a284731d635bdab0757f3e2a16d46ace6", null ],
+    [ "signedAngleToPlayer", "class_angle_to_player.html#ae850f2b26741bfe81c61347fccb365e0", null ],
     [ "spriteRenderer", "class_angle_to_player.html#a65f4a46d9485b06ad0d10a44f64ed288", null ]
 ];

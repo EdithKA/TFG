@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['sanity_0',['sanity',['../class_stats.html#a72bec48562258013be6e4b75d9c34463',1,'Stats']]],
-  ['sanitybars_1',['sanityBars',['../class_stats.html#a63947ff30ac0518d61e76aea6399bd83',1,'Stats']]],
-  ['sanitycounter_2',['sanityCounter',['../class_stats.html#a0963aab16da96b049391c5d72e6d5c29',1,'Stats']]],
-  ['sanityicon_3',['sanityIcon',['../class_stats.html#abda59df727f5ea418a7442882814cbdd',1,'Stats']]],
-  ['sanitythreshold_4',['sanityThreshold',['../class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894',1,'Stats']]],
-  ['slots_5',['slots',['../class_inventory_manager.html#a1ba74f4b51fc220d80c471a2acf8573f',1,'InventoryManager']]],
-  ['speed_6',['speed',['../class_player_controller.html#a0928605583f0563cd84fe43119d336ec',1,'PlayerController']]],
-  ['spriterenderer_7',['spriteRenderer',['../class_angle_to_player.html#a65f4a46d9485b06ad0d10a44f64ed288',1,'AngleToPlayer']]],
-  ['stamina_8',['stamina',['../class_player_controller.html#a91e9c34ee791cf1192de8126f22e74d8',1,'PlayerController']]]
+  ['patrolwaypoints_0',['patrolWaypoints',['../class_enemy_controller.html#afb217a5fd6d6296ba7617e551516f2fb',1,'EnemyController']]],
+  ['pickupmessage_1',['pickupMessage',['../class_holder_interactable.html#a6c94280d4722b42665f77f3a3d6e9214',1,'HolderInteractable']]],
+  ['playercontroller_2',['playerController',['../class_inventory_manager.html#af759cfbe1aea1d78d741e6f55a0ddcc4',1,'InventoryManager.playerController'],['../class_mouse_look.html#a56fcd0e1b37a70f0eb1f65807cdf1c68',1,'MouseLook.playerController'],['../class_p_s2_interactable.html#a39cf3810feae2505daa28a7bea18eb37',1,'PS2Interactable.playerController'],['../class_item_controller.html#afa5880cf9a49df632068849c62817926',1,'ItemController.playerController']]],
+  ['playerhand_3',['playerHand',['../class_item_controller.html#afb85f6de444f98dbc2d2e7c9786b6a6d',1,'ItemController']]],
+  ['playerinrange_4',['playerInRange',['../class_holder_interactable.html#adb7ca26b40152f7a90f8a2a6f8964793',1,'HolderInteractable.playerInRange'],['../class_p_s2_interactable.html#ac3718cfd762941308a63b43bff03dd7b',1,'PS2Interactable.playerInRange']]],
+  ['playertransform_5',['playerTransform',['../class_angle_to_player.html#a284731d635bdab0757f3e2a16d46ace6',1,'AngleToPlayer.playerTransform'],['../class_enemy_controller.html#a6886eb23800bdaf128c2025d4fafe8f1',1,'EnemyController.playerTransform']]]
 ];

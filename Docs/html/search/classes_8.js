@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uitextcontroller_0',['UITextController',['../class_u_i_text_controller.html',1,'']]]
+  ['stats_0',['Stats',['../class_stats.html',1,'']]]
 ];

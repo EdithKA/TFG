@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playercontroller_0',['PlayerController',['../class_player_controller.html',1,'']]]
+  ['mouselook_0',['MouseLook',['../class_mouse_look.html',1,'']]]
 ];

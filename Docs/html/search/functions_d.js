@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['update_0',['Update',['../class_angle_to_player.html#ae73bcc669d67bdb13439f31abf871b1c',1,'AngleToPlayer.Update()'],['../class_enemy_controller.html#a41090510cff98622fe675d1f6e3ecd82',1,'EnemyController.Update()'],['../class_enemy_sprite_look.html#a920f8a0d1e5e2d46f70ed61524edd2ed',1,'EnemySpriteLook.Update()'],['../class_mouse_look.html#a74aea4a5377c9adfdfbfce2f8c11dd3b',1,'MouseLook.Update()'],['../class_player_controller.html#ae8bc83dffb99867a04be016473ed2c43',1,'PlayerController.Update()'],['../class_stats.html#a66237d25345c00b4022dc9c02aa1fa26',1,'Stats.Update()'],['../class_door_controller.html#aa836d9b76c2e74271657d02800752569',1,'DoorController.Update()'],['../class_object.html#abead1903e60735965ffe30cfeab076c0',1,'Object.Update()']]],
-  ['updatebar_1',['UpdateBar',['../class_stats.html#a151f0a0d1da5805e7ee7d1884f8df151',1,'Stats']]],
-  ['updatebars_2',['UpdateBars',['../class_stats.html#aecc284e0ece872a7617613b181fd9192',1,'Stats']]],
-  ['updateinventoryui_3',['UpdateInventoryUI',['../class_inventory_manager.html#a0959bc576a07ab9b7465434d9ff390f3',1,'InventoryManager']]],
-  ['updateui_4',['UpdateUI',['../class_stats.html#afb1e78b38a3a8c80813afdc62c306b6b',1,'Stats']]]
+  ['setbrainicon_0',['SetBrainIcon',['../class_stats.html#abf58e872f3be56be69d85af7563aa5cf',1,'Stats']]],
+  ['sethearticon_1',['SetHeartIcon',['../class_stats.html#a3e84dab90b23988582631c2477ea83d5',1,'Stats']]],
+  ['showmessage_2',['ShowMessage',['../class_u_i_text_controller.html#a504bea7985eb6d20a9acff32ad9b1d3d',1,'UITextController']]],
+  ['showmessageroutine_3',['ShowMessageRoutine',['../class_u_i_text_controller.html#a663c6b5a7221f95e3bc7315a3d7a0431',1,'UITextController']]],
+  ['start_4',['Start',['../class_angle_to_player.html#a3790bfd32449d5feab353c7b7b95acc2',1,'AngleToPlayer.Start()'],['../class_enemy_controller.html#aef5af22782327b22749e5632ad7467fb',1,'EnemyController.Start()'],['../class_enemy_sprite_look.html#ad6f3c7421caa2c0bd4d0425ea9fd9931',1,'EnemySpriteLook.Start()'],['../class_inventory_manager.html#a5b18458e8dd8426c55d2d4e2d184706a',1,'InventoryManager.Start()'],['../class_mouse_look.html#adbe4a40eadd089cc9279af502155a732',1,'MouseLook.Start()'],['../class_player_controller.html#ae1117d9c4da3193181cddad2c814e467',1,'PlayerController.Start()'],['../class_stats.html#ab7122da0fafe848b0eb99729c0f5db44',1,'Stats.Start()'],['../class_holder_interactable.html#af52a38b36806ead9d3935d615ab46ac1',1,'HolderInteractable.Start()'],['../class_p_s2_interactable.html#abb0fbde1408029ec5aecb17dc5c60cb5',1,'PS2Interactable.Start()'],['../class_item_controller.html#afb5ecae626948a2ec9ccc174be29f784',1,'ItemController.Start()']]]
 ];

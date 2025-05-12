@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
+  m_Name: JakXDVD
+  m_EditorClassIdentifier: 
+  itemName: Jak X
+  icon: {fileID: 21300000, guid: 1051c8f9e6eb190409f18aba4d9ca445, type: 3}
+  type: DVD
+  itemPrefab: {fileID: 5181119895663714574, guid: 13e1094ea20d0a042879051e30ea1fc9,
+    type: 3}
+  collectedText: "\xA1Has encontrado el DVD de Jak X!"

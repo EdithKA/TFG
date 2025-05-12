@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uitextcontroller_2ecs_0',['UITextController.cs',['../_u_i_text_controller_8cs.html',1,'']]]
+  ['stats_2ecs_0',['Stats.cs',['../_stats_8cs.html',1,'']]]
 ];

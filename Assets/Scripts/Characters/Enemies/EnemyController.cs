@@ -1,110 +1,108 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
 /**
- * @brief Controls enemy AI behavior including patrolling, chasing, and attacking the player.
+ * @brief Controls the enemy's AI: patrol, chase, and attack logic.
+ *        Designed for a survival horror style game.
  */
 public class EnemyController : MonoBehaviour
 {
     [Header("Behavior Flags")]
-    public bool canChase; /// Can the enemy chase the player?
-    public bool canAttack; /// Is the enemy currently attacking?
+    public bool canChase = true;           /// Determines if the enemy is allowed to chase the player.
+    public bool isAttacking = false;       /// True if the enemy is currently attacking.
 
-    [Header("Target References")]
-    public Transform playerTransform; /// Reference to the player's transform.
+    [Header("Player Reference")]
+    public Transform playerTransform;      /// Reference to the player's transform.
 
-    [Header("Movement Settings")]
-    public float chaseDistance; /// Minimum distance to start chasing.
-    public float attackDistance; /// Minimum distance to initiate attack.
-
-    private NavMeshAgent enemyNavMeshAgent; /// Reference to the NavMeshAgent component.
-
-    [Header("Animation")]
-    public Animator anim; /// Animator controller for enemy sprites.
-    AngleToPlayer angleToPlayer; /// Component to determine facing direction.
+    [Header("Distance Settings")]
+    public float chaseDistance = 10f;      /// Minimum distance to start chasing the player.
+    public float attackDistance = 2f;      /// Minimum distance to start attacking.
 
     [Header("Patrol Settings")]
-    public Transform[] waypoints; /// Array of patrol waypoints.
-    private int currentWaypointIndex = 0; /// Current waypoint index in array.
+    public Transform[] patrolWaypoints;    /// Array of waypoints for patrolling.
+    private int currentWaypointIndex = 0;  /// Tracks which waypoint the enemy is moving towards.
+
+    [Header("Components")]
+    private NavMeshAgent navAgent;         /// Reference to the NavMeshAgent for pathfinding.
+    private AngleToPlayer angleToPlayer;   /// Reference to the script that calculates facing direction.
+    public Animator animator;              /// Animator for controlling enemy animations.
 
     /**
-     * @brief Initializes components and starts patrolling.
+     * @brief Initializes references and starts patrolling if waypoints are set.
      */
-    private void Start()
+    void Start()
     {
+        // Find player in the scene (assumes only one PlayerController exists)
         playerTransform = FindObjectOfType<PlayerController>().transform;
-        enemyNavMeshAgent = GetComponent<NavMeshAgent>();
+        navAgent = GetComponent<NavMeshAgent>();
         angleToPlayer = GetComponent<AngleToPlayer>();
 
-        if (waypoints.Length > 0)
+        // Start patrolling if waypoints are set
+        if (patrolWaypoints.Length > 0)
         {
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+            navAgent.SetDestination(patrolWaypoints[currentWaypointIndex].position);
         }
     }
 
     /**
-     * @brief Updates enemy behavior and animations each frame.
+     * @brief Updates enemy behavior and animation every frame.
      */
-    private void Update()
+    void Update()
     {
-        NextAction();
-        setAnimation();
+        DecideAction();
+        UpdateAnimation();
     }
 
     /**
-     * @brief Determines enemy behavior based on distance to player.
+     * @brief Decides what the enemy should do based on distance to the player.
      */
-    void NextAction()
+    void DecideAction()
     {
-        float dist = Vector3.Distance(transform.position, playerTransform.position);
-        canAttack = false;
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        isAttacking = false; // Reset attack flag
 
-        if (dist > chaseDistance)
+        // Priority: Attack > Chase > Patrol
+        if (distanceToPlayer <= attackDistance)
         {
-            Patrol(); // Patrol when player is far
+            // Player is close enough to attack
+            isAttacking = true;
+            // (Here you could call an Attack() method if you want to add damage logic)
         }
-        else if (dist > attackDistance)
+        else if (distanceToPlayer <= chaseDistance && canChase)
         {
-            SetDestinationToPlayer(); // Chase when player is in chase range
+            // Player is within chase range
+            navAgent.SetDestination(playerTransform.position);
         }
         else
         {
-            canAttack = true; // Attack when player is close
+            // Player is too far, patrol between waypoints
+            Patrol();
         }
     }
 
     /**
-     * @brief Updates animation parameters based on facing direction and attack state.
+     * @brief Updates the animator parameters for direction and attack.
      */
-    void setAnimation()
+    void UpdateAnimation()
     {
-        anim.SetFloat("spriteRot", angleToPlayer.lastIndex); // Set sprite rotation direction
-        anim.SetBool("Attack", canAttack); // Trigger attack animation
+        // Set the direction index for 8-way animation
+        animator.SetFloat("spriteRot", angleToPlayer.lastIndex);
+        // Set attack animation flag
+        animator.SetBool("Attack", isAttacking);
     }
 
     /**
-     * @brief Sets navigation target to player's current position.
-     */
-    void SetDestinationToPlayer()
-    {
-        enemyNavMeshAgent.SetDestination(playerTransform.position);
-    }
-
-    /**
-     * @brief Handles waypoint navigation and patrolling behavior.
+     * @brief Handles patrolling between waypoints.
      */
     void Patrol()
     {
-        if (waypoints.Length == 0) return;
+        if (patrolWaypoints.Length == 0) return;
 
-        // Cycle through waypoints when reaching current destination
-        if (!enemyNavMeshAgent.pathPending && enemyNavMeshAgent.remainingDistance < 0.5f)
+        // If close to the current waypoint, go to the next one
+        if (!navAgent.pathPending && navAgent.remainingDistance < 0.5f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+            currentWaypointIndex = (currentWaypointIndex + 1) % patrolWaypoints.Length;
+            navAgent.SetDestination(patrolWaypoints[currentWaypointIndex].position);
         }
     }
 }

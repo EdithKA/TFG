@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: MouseLook Class Reference</title>
+<title>THE IN-BETWEEN: MouseLook Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,15 +103,14 @@ $(function(){initNavTree('class_mouse_look.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="class_mouse_look-members.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">MouseLook Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Handles mouse look functionality for player and camera rotation.  
+<p>Handles first-person mouse look for both the player body and the camera. Disables look controls when the inventory is open.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for MouseLook:</div>
@@ -121,40 +120,100 @@ Inheritance diagram for MouseLook:</div>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a3e984b4fd9a46c25309ffeedd22aa4aa" id="r_a3e984b4fd9a46c25309ffeedd22aa4aa"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e984b4fd9a46c25309ffeedd22aa4aa">mouseSensitivity</a> = 1.5f</td></tr>
 <tr class="separator:a3e984b4fd9a46c25309ffeedd22aa4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0f3a530a840babd6944a17d7e30a732" id="r_ab0f3a530a840babd6944a17d7e30a732"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0f3a530a840babd6944a17d7e30a732">cameraTransform</a></td></tr>
 <tr class="memdesc:ab0f3a530a840babd6944a17d7e30a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensitivity multiplier for mouse movement.  <br /></td></tr>
 <tr class="separator:ab0f3a530a840babd6944a17d7e30a732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06078a39ce3864f7e2c4a0715632943c" id="r_a06078a39ce3864f7e2c4a0715632943c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_controller.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06078a39ce3864f7e2c4a0715632943c">player</a></td></tr>
-<tr class="memdesc:a06078a39ce3864f7e2c4a0715632943c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current vertical rotation value for the camera.  <br /></td></tr>
-<tr class="separator:a06078a39ce3864f7e2c4a0715632943c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56fcd0e1b37a70f0eb1f65807cdf1c68" id="r_a56fcd0e1b37a70f0eb1f65807cdf1c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_controller.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56fcd0e1b37a70f0eb1f65807cdf1c68">playerController</a></td></tr>
+<tr class="memdesc:a56fcd0e1b37a70f0eb1f65807cdf1c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracks the camera's up/down rotation.  <br /></td></tr>
+<tr class="separator:a56fcd0e1b37a70f0eb1f65807cdf1c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:adbe4a40eadd089cc9279af502155a732" id="r_adbe4a40eadd089cc9279af502155a732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbe4a40eadd089cc9279af502155a732">Start</a> ()</td></tr>
-<tr class="memdesc:adbe4a40eadd089cc9279af502155a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_player_controller.html" title="This class controls the player&#39;s movement, stamina, inventory, and animation logic.">PlayerController</a> to check inventory state.  <br /></td></tr>
+<tr class="memdesc:adbe4a40eadd089cc9279af502155a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to <a class="el" href="class_player_controller.html" title="Controls core player functionality including movement, interactions, and inventory management....">PlayerController</a> (to check inventory state).  <br /></td></tr>
 <tr class="separator:adbe4a40eadd089cc9279af502155a732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74aea4a5377c9adfdfbfce2f8c11dd3b" id="r_a74aea4a5377c9adfdfbfce2f8c11dd3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74aea4a5377c9adfdfbfce2f8c11dd3b">Update</a> ()</td></tr>
-<tr class="memdesc:a74aea4a5377c9adfdfbfce2f8c11dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles mouse input and applies rotation if inventory is closed.  <br /></td></tr>
+<tr class="memdesc:a74aea4a5377c9adfdfbfce2f8c11dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles mouse input and applies rotation only if inventory is closed.  <br /></td></tr>
 <tr class="separator:a74aea4a5377c9adfdfbfce2f8c11dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace3da1728797fc66a23b92fcf8ec69df" id="r_ace3da1728797fc66a23b92fcf8ec69df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace3da1728797fc66a23b92fcf8ec69df">RotatePlayer</a> ()</td></tr>
-<tr class="memdesc:ace3da1728797fc66a23b92fcf8ec69df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the player horizontally based on mouse X movement.  <br /></td></tr>
-<tr class="separator:ace3da1728797fc66a23b92fcf8ec69df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7678c4290a78d0a777f84f92c7f7d3c" id="r_ab7678c4290a78d0a777f84f92c7f7d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7678c4290a78d0a777f84f92c7f7d3c">RotateCamera</a> ()</td></tr>
-<tr class="memdesc:ab7678c4290a78d0a777f84f92c7f7d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the camera vertically based on mouse Y movement, with clamping.  <br /></td></tr>
-<tr class="separator:ab7678c4290a78d0a777f84f92c7f7d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380dd3f677e85af8249492a6d5092f49" id="r_a380dd3f677e85af8249492a6d5092f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a380dd3f677e85af8249492a6d5092f49">HandleHorizontalRotation</a> ()</td></tr>
+<tr class="memdesc:a380dd3f677e85af8249492a6d5092f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the player horizontally (left/right) based on mouse X movement.  <br /></td></tr>
+<tr class="separator:a380dd3f677e85af8249492a6d5092f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc8ac6e8e6f56341c68f1bb336d0345" id="r_aacc8ac6e8e6f56341c68f1bb336d0345"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacc8ac6e8e6f56341c68f1bb336d0345">HandleVerticalRotation</a> ()</td></tr>
+<tr class="memdesc:aacc8ac6e8e6f56341c68f1bb336d0345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates the camera vertically (up/down) based on mouse Y movement, with clamping.  <br /></td></tr>
+<tr class="separator:aacc8ac6e8e6f56341c68f1bb336d0345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aee64ea4c4b337ec782f6adcf23b4cf11" id="r_aee64ea4c4b337ec782f6adcf23b4cf11"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee64ea4c4b337ec782f6adcf23b4cf11">xRotation</a> = 0f</td></tr>
-<tr class="memdesc:aee64ea4c4b337ec782f6adcf23b4cf11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the camera's transform.  <br /></td></tr>
-<tr class="separator:aee64ea4c4b337ec782f6adcf23b4cf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6eebe98dcbcd63acf2d90f51ba073a5" id="r_ac6eebe98dcbcd63acf2d90f51ba073a5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6eebe98dcbcd63acf2d90f51ba073a5">verticalRotation</a> = 0f</td></tr>
+<tr class="memdesc:ac6eebe98dcbcd63acf2d90f51ba073a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the camera's transform.  <br /></td></tr>
+<tr class="separator:ac6eebe98dcbcd63acf2d90f51ba073a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles mouse look functionality for player and camera rotation. </p>
+<div class="textblock"><p>Handles first-person mouse look for both the player body and the camera. Disables look controls when the inventory is open. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00007">7</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a380dd3f677e85af8249492a6d5092f49" name="a380dd3f677e85af8249492a6d5092f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380dd3f677e85af8249492a6d5092f49">&#9670;&#160;</a></span>HandleHorizontalRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MouseLook.HandleHorizontalRotation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rotates the player horizontally (left/right) based on mouse X movement. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00045">45</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
+
+</div>
+</div>
+<a id="aacc8ac6e8e6f56341c68f1bb336d0345" name="aacc8ac6e8e6f56341c68f1bb336d0345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc8ac6e8e6f56341c68f1bb336d0345">&#9670;&#160;</a></span>HandleVerticalRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MouseLook.HandleVerticalRotation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rotates the camera vertically (up/down) based on mouse Y movement, with clamping. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00054">54</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
+
+</div>
+</div>
 <a id="adbe4a40eadd089cc9279af502155a732" name="adbe4a40eadd089cc9279af502155a732"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbe4a40eadd089cc9279af502155a732">&#9670;&#160;</a></span>Start()</h2>
 
@@ -173,15 +232,15 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reference to the <a class="el" href="class_player_controller.html" title="This class controls the player&#39;s movement, stamina, inventory, and animation logic.">PlayerController</a> to check inventory state. </p>
-<p>Initializes references and locks the cursor at the start. </p>
-<p>Lock the cursor to the center of the screen.</p>
-<p>Hide the cursor.</p>
+<p>Reference to <a class="el" href="class_player_controller.html" title="Controls core player functionality including movement, interactions, and inventory management....">PlayerController</a> (to check inventory state). </p>
+<p>Initializes references and locks the cursor at the start of the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00018">18</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
 
 </div>
 </div>
@@ -203,84 +262,18 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handles mouse input and applies rotation if inventory is closed. </p>
+<p>Handles mouse input and applies rotation only if inventory is closed. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00032">32</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
 
 </div>
 </div>
-<a id="ace3da1728797fc66a23b92fcf8ec69df" name="ace3da1728797fc66a23b92fcf8ec69df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace3da1728797fc66a23b92fcf8ec69df">&#9670;&#160;</a></span>RotatePlayer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MouseLook.RotatePlayer </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rotates the player horizontally based on mouse X movement. </p>
-
-</div>
-</div>
-<a id="ab7678c4290a78d0a777f84f92c7f7d3c" name="ab7678c4290a78d0a777f84f92c7f7d3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7678c4290a78d0a777f84f92c7f7d3c">&#9670;&#160;</a></span>RotateCamera()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MouseLook.RotateCamera </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rotates the camera vertically based on mouse Y movement, with clamping. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3e984b4fd9a46c25309ffeedd22aa4aa" name="a3e984b4fd9a46c25309ffeedd22aa4aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e984b4fd9a46c25309ffeedd22aa4aa">&#9670;&#160;</a></span>mouseSensitivity</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float MouseLook.mouseSensitivity = 1.5f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="ab0f3a530a840babd6944a17d7e30a732" name="ab0f3a530a840babd6944a17d7e30a732"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab0f3a530a840babd6944a17d7e30a732">&#9670;&#160;</a></span>cameraTransform</h2>
 
@@ -295,10 +288,46 @@ Private Attributes</h2></td></tr>
 
 <p>Sensitivity multiplier for mouse movement. </p>
 
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00011">11</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
+
 </div>
 </div>
-<a id="aee64ea4c4b337ec782f6adcf23b4cf11" name="aee64ea4c4b337ec782f6adcf23b4cf11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee64ea4c4b337ec782f6adcf23b4cf11">&#9670;&#160;</a></span>xRotation</h2>
+<a id="a3e984b4fd9a46c25309ffeedd22aa4aa" name="a3e984b4fd9a46c25309ffeedd22aa4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e984b4fd9a46c25309ffeedd22aa4aa">&#9670;&#160;</a></span>mouseSensitivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MouseLook.mouseSensitivity = 1.5f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00010">10</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
+
+</div>
+</div>
+<a id="a56fcd0e1b37a70f0eb1f65807cdf1c68" name="a56fcd0e1b37a70f0eb1f65807cdf1c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56fcd0e1b37a70f0eb1f65807cdf1c68">&#9670;&#160;</a></span>playerController</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player_controller.html">PlayerController</a> MouseLook.playerController</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tracks the camera's up/down rotation. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00013">13</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac6eebe98dcbcd63acf2d90f51ba073a5" name="ac6eebe98dcbcd63acf2d90f51ba073a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6eebe98dcbcd63acf2d90f51ba073a5">&#9670;&#160;</a></span>verticalRotation</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +336,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float MouseLook.xRotation = 0f</td>
+          <td class="memname">float MouseLook.verticalRotation = 0f</td>
         </tr>
       </table>
   </td>
@@ -319,26 +348,12 @@ Private Attributes</h2></td></tr>
 
 <p>Reference to the camera's transform. </p>
 
-</div>
-</div>
-<a id="a06078a39ce3864f7e2c4a0715632943c" name="a06078a39ce3864f7e2c4a0715632943c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06078a39ce3864f7e2c4a0715632943c">&#9670;&#160;</a></span>player</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_player_controller.html">PlayerController</a> MouseLook.player</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current vertical rotation value for the camera. </p>
+<p class="definition">Definition at line <a class="el" href="_mouse_look_8cs_source.html#l00012">12</a> of file <a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<a class="el" href="_mouse_look_8cs.html">MouseLook.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<a class="el" href="_mouse_look_8cs_source.html">MouseLook.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

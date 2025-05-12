@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['toggleinventory_0',['ToggleInventory',['../class_inventory_manager.html#a87c8ecad45dfad4a04b0ec48b901b3c8',1,'InventoryManager']]],
-  ['typetext_1',['TypeText',['../class_u_i_text_controller.html#a43c48382931cd5de61c1c72dedd94a7d',1,'UITextController']]]
+  ['refreshui_0',['RefreshUI',['../class_inventory_manager.html#a32e0b17c1e4fce547e13e5695ffacd3d',1,'InventoryManager']]],
+  ['removeitem_1',['RemoveItem',['../class_inventory_manager.html#afc55d3b8671e510b3fd64199e140b001',1,'InventoryManager']]],
+  ['resetcorruptedobjects_2',['ResetCorruptedObjects',['../class_stats.html#aadfab142d46a8582ca09911a0c4fdb6b',1,'Stats']]]
 ];

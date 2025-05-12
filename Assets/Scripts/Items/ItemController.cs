@@ -1,111 +1,122 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 /**
- * @brief Handles interactable object behavior and inventory integration
+ * @brief Handles item pickup, inventory integration, and player interaction logic.
+ *        Supports both equippable items (like the phone) and consumables.
  */
 public class ItemController : MonoBehaviour
 {
     [Header("Player References")]
-    public Transform PlayerHand;    /// Transform for item positioning when held
+    public Transform playerHand;                    /// Transform where the item will be attached when held.
 
     [Header("Item Data")]
-    public Item itemData;           /// ScriptableObject containing item properties
+    public Item itemData;                           /// ScriptableObject containing this item's properties.
 
     [Header("State Management")]
-    bool isPlayerInTrigger = false; /// Player proximity detection flag
-    public bool isHeld = false;     /// Item equipment status
+    private bool isPlayerInTrigger = false;         /// True if the player is near enough to interact.
+    public bool isHeld = false;                     /// True if the item is currently equipped.
 
     [Header("UI Components")]
-    public UITextController UIText; /// Interaction prompt controller
+    public UITextController uiTextController;       /// Reference to the UI text controller.
 
     [Header("Inventory System")]
-    public InventoryManager inventory; /// Core inventory management reference
+    public InventoryManager inventoryManager;       /// Reference to the inventory manager.
 
-    private PlayerController playerMove; /// Player controller for animation updates
+    private PlayerController playerController;      /// Reference to the player controller.
 
     /**
-     * @brief Initializes required components and references
+     * @brief Initializes references and assigns the correct hand for equippable items.
      */
     private void Start()
     {
-        playerMove = FindAnyObjectByType<PlayerController>();
-        UIText = FindAnyObjectByType<UITextController>();
-        inventory = FindAnyObjectByType<InventoryManager>();
+        playerController = FindAnyObjectByType<PlayerController>();
+
+        if (uiTextController == null)
+            uiTextController = FindAnyObjectByType<UITextController>();
+
+        if (inventoryManager == null)
+            inventoryManager = FindAnyObjectByType<InventoryManager>();
+
+        // Decide which hand to use for this item (e.g., phone goes in left hand)
+        if (itemData != null && itemData.itemName == "Mobile")
+        {
+            if (inventoryManager.leftHand != null)
+                playerHand = inventoryManager.leftHand;
+        }
+        else
+        {
+            if (inventoryManager.rightHand != null)
+                playerHand = inventoryManager.rightHand;
+        }
+
+        if (playerHand == null)
+            Debug.LogWarning("Player hand reference not assigned!");
     }
 
     /**
-     * @brief Handles player interaction input and state changes
+     * @brief Handles player input for picking up the item.
      */
     private void Update()
     {
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !isHeld)
         {
-            // Special case for phone equipment
-            if (itemData.name == "Mobile")
-            {
-                playerMove.LActive = true; // Activate left hand animation
-            }
-
-
             PickUp();
         }
-
-        
     }
 
     /**
-     * @brief Handles trigger enter event for player proximity
+     * @brief Called when the player enters the item's trigger area.
      */
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = true;
-
-            //UIText.ClearMessage();
-            UIText.ShowMessage(UIMessageType.Collect, null);
-            
-            
+            uiTextController.ShowMessage(UIMessageType.Collect, "Press E to pick up");
         }
     }
 
     /**
-     * @brief Handles trigger exit event for player proximity
+     * @brief Called when the player exits the item's trigger area.
      */
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPlayerInTrigger = false;
+            uiTextController.ClearMessage();
         }
     }
 
     /**
-     * @brief Main item pickup logic and inventory management
+     * @brief Handles the logic for picking up and equipping or consuming the item.
      */
-    void PickUp()
+    private void PickUp()
     {
         Debug.Log($"Acquired item: {itemData.itemName}");
-        inventory.AddItem(itemData);
+        inventoryManager.AddItem(itemData);
 
-        // Mostrar mensaje de recogida (sin borrar inmediatamente)
-        UIText.ShowMessage(UIMessageType.Collected, itemData.collectedText);
+        // Show pickup message (do not clear immediately)
+        uiTextController.ShowMessage(UIMessageType.Collected, itemData.collectedText);
 
+        // If the item is the phone, equip it in the hand; otherwise, destroy after pickup
         if (itemData.itemName == "Mobile")
         {
             isHeld = true;
-            transform.SetParent(PlayerHand);
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
+            if (playerHand != null)
+            {
+                transform.SetParent(playerHand);
+                transform.localPosition = Vector3.zero;
+                transform.localRotation = Quaternion.identity;
+            }
+            else
+            {
+                Debug.LogWarning("Attempted to equip item without valid hand reference!");
+            }
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
 }

@@ -1,14 +1,21 @@
 var searchData=
 [
-  ['camanim_0',['camAnim',['../class_player_controller.html#acecf71e7f4f5b22273c0391effb57e22',1,'PlayerController']]],
+  ['calculatedmovement_0',['calculatedMovement',['../class_player_controller.html#a3c855fea12d9184dbdf04a45524fc7a6',1,'PlayerController']]],
   ['cameratransform_1',['cameraTransform',['../class_mouse_look.html#ab0f3a530a840babd6944a17d7e30a732',1,'MouseLook']]],
-  ['canattack_2',['canAttack',['../class_enemy_controller.html#acc213925570889aad852b2270a6b45b9',1,'EnemyController']]],
-  ['canchase_3',['canChase',['../class_enemy_controller.html#a11b9600482e6eeb91387c32d533aae2c',1,'EnemyController']]],
-  ['canlookvertically_4',['canLookVertically',['../class_enemy_sprite_look.html#adba02e7b25180e8fe3c3b5eff6959dd4',1,'EnemySpriteLook']]],
-  ['charactercontroller_5',['characterController',['../class_player_controller.html#ac0f9de9c0ab3c9e5f9c4aebb56cd36da',1,'PlayerController']]],
-  ['chasedistance_6',['chaseDistance',['../class_enemy_controller.html#a461df3205618bc8766baacec91e6cd05',1,'EnemyController']]],
-  ['corruptibleobjects_7',['corruptibleObjects',['../class_stats.html#ac467b455ac70bdacd6abb5cecf6a06e3',1,'Stats']]],
-  ['corruptibletag_8',['corruptibleTag',['../class_stats.html#a4878ad61cc3f165e926e1a0ab2a9d188',1,'Stats']]],
-  ['currentstamina_9',['currentStamina',['../class_player_controller.html#a1780dc222b68afbb38bd8852fbf409be',1,'PlayerController']]],
-  ['currentwaypointindex_10',['currentWaypointIndex',['../class_enemy_controller.html#a64f2c61f18030051f29b9e6bb0681295',1,'EnemyController']]]
+  ['canchase_2',['canChase',['../class_enemy_controller.html#a11b9600482e6eeb91387c32d533aae2c',1,'EnemyController']]],
+  ['canlookvertically_3',['canLookVertically',['../class_enemy_sprite_look.html#adba02e7b25180e8fe3c3b5eff6959dd4',1,'EnemySpriteLook']]],
+  ['canvasgroup_4',['canvasGroup',['../class_u_i_text_controller.html#a0d8082d1222e7b30a79d094eea0b5f49',1,'UITextController']]],
+  ['chasedistance_5',['chaseDistance',['../class_enemy_controller.html#a461df3205618bc8766baacec91e6cd05',1,'EnemyController']]],
+  ['collectcolor_6',['collectColor',['../class_u_i_text_controller.html#acc29b84fc387e80a166e9b6e380a3a90',1,'UITextController']]],
+  ['collectedcolor_7',['collectedColor',['../class_u_i_text_controller.html#aad25fc3e4e4ccd68a61041fb7888f9b3',1,'UITextController']]],
+  ['collectedtext_8',['collectedText',['../class_item.html#a479ccd81f48b8b19d6bbc9613b4efe40',1,'Item']]],
+  ['completedtoy_9',['completedToy',['../class_inventory_manager.html#a60011c9b3bda8b4aa05d6721c55e9f67',1,'InventoryManager']]],
+  ['controller_10',['controller',['../class_player_controller.html#afefcef558683eb0b7260f1f36035789e',1,'PlayerController']]],
+  ['correctobjectname_11',['correctObjectName',['../class_holder_interactable.html#a0d7f20d64a149db8d8b55502d8e7c0bd',1,'HolderInteractable']]],
+  ['corruptibleobjects_12',['corruptibleObjects',['../class_stats.html#ac467b455ac70bdacd6abb5cecf6a06e3',1,'Stats']]],
+  ['corruptibletag_13',['corruptibleTag',['../class_stats.html#a4878ad61cc3f165e926e1a0ab2a9d188',1,'Stats']]],
+  ['currentroutine_14',['currentRoutine',['../class_u_i_text_controller.html#ab032d5a409c5099fc04edd2bbb2bdc05',1,'UITextController']]],
+  ['currentspeed_15',['currentSpeed',['../class_player_controller.html#a015c55d3a7c7eed11bdec88c2fb81899',1,'PlayerController']]],
+  ['currentstamina_16',['currentStamina',['../class_player_controller.html#a1780dc222b68afbb38bd8852fbf409be',1,'PlayerController']]],
+  ['currentwaypointindex_17',['currentWaypointIndex',['../class_enemy_controller.html#a64f2c61f18030051f29b9e6bb0681295',1,'EnemyController']]]
 ];

@@ -1,56 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief Handles mouse look functionality for player and camera rotation.
+ * @brief Handles first-person mouse look for both the player body and the camera.
+ *        Disables look controls when the inventory is open.
  */
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 1.5f; /// Sensitivity multiplier for mouse movement.
-    public Transform cameraTransform; /// Reference to the camera's transform.
-    private float xRotation = 0f; /// Current vertical rotation value for the camera.
-    public PlayerController player; /// Reference to the PlayerController to check inventory state.
+    [Header("Mouse Look Settings")]
+    public float mouseSensitivity = 1.5f;     /// Sensitivity multiplier for mouse movement.
+    public Transform cameraTransform;         /// Reference to the camera's transform.
+    private float verticalRotation = 0f;      /// Tracks the camera's up/down rotation.
+    public PlayerController playerController; /// Reference to PlayerController (to check inventory state).
 
     /**
-     * @brief Initializes references and locks the cursor at the start.
+     * @brief Initializes references and locks the cursor at the start of the game.
      */
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        Cursor.lockState = CursorLockMode.Locked; /// Lock the cursor to the center of the screen.
-        Cursor.visible = false; /// Hide the cursor.
+        // Find the player controller in the scene if not set in the Inspector
+        if (playerController == null)
+            playerController = FindObjectOfType<PlayerController>();
+
+        // Lock the cursor to the center of the screen and hide it
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     /**
-     * @brief Handles mouse input and applies rotation if inventory is closed.
+     * @brief Handles mouse input and applies rotation only if inventory is closed.
      */
     private void Update()
     {
-        if (!player.isInventoryOpen)
+        // Only allow mouse look when the inventory is closed
+        if (!playerController.isInventoryOpen)
         {
-            RotatePlayer();
-            RotateCamera();
+            HandleHorizontalRotation();
+            HandleVerticalRotation();
         }
     }
 
     /**
-     * @brief Rotates the player horizontally based on mouse X movement.
+     * @brief Rotates the player horizontally (left/right) based on mouse X movement.
      */
-    void RotatePlayer()
+    private void HandleHorizontalRotation()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(Vector3.up * mouseX);
     }
 
     /**
-     * @brief Rotates the camera vertically based on mouse Y movement, with clamping.
+     * @brief Rotates the camera vertically (up/down) based on mouse Y movement, with clamping.
      */
-    void RotateCamera()
+    private void HandleVerticalRotation()
     {
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -20f, 40f);
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -20f, 40f); // Prevents looking too far up/down
+        cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
     }
 }
