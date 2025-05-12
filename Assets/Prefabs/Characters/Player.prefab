@@ -235,10 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5978990e8a39d4cb91d02a722f344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3
+  playerSpeed: 20
   camAnim: {fileID: 6257806584907888641}
   isWalking: 0
-  stamina: 100
+  stamina: 0
   currentStamina: 0
   inventoryManager: {fileID: 0}
   isInventoryOpen: 0
@@ -250,8 +250,8 @@ MonoBehaviour:
   RHAnim: {fileID: 8360542537413222698}
   rightHand: {fileID: 1048081918533513145}
   RActive: 0
-  radioInteraccion: 3
-  capaInteractuables:
+  interactionRadius: 3
+  interactableMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!114 &4331497947740910269
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 1.5
   cameraTransform: {fileID: 2170818524068862676}
-  player: {fileID: 1220839721377553220}
+  playerController: {fileID: 1220839721377553220}
 --- !u!1 &2962968020118812799
 GameObject:
   m_ObjectHideFlags: 0

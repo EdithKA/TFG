@@ -2,7 +2,8 @@ using UnityEngine;
 
 /**
  * @brief Controls door interaction behavior (opening/closing) using animations.
- *        Implements the IInteractable interface for player interactions.
+ *        Implements the IInteractable
+ *        interface for player interactions.
  */
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
