@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Controls core player functionality including movement, interactions, and inventory management.
-/// Designed for a 3D survival horror experience with physics-based movement.
-/// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -39,17 +35,17 @@ public class PlayerController : MonoBehaviour
     public bool RActive = false;
 
     [Header("Interaction Settings")]
-    public float interactionRadius = 3f; // Formerly radioInteraccion
-    public LayerMask interactableMask;   // Formerly capainteractables
-    private List<IInteractable> nearbyInteractables = new List<IInteractable>(); // Formerly interactuablesCercanos
+    public float interactionRadius = 3f;
+    private List<IInteractable> nearbyInteractables = new List<IInteractable>();
 
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
         currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
-        textController = FindAnyObjectByType<UITextController>();
-        // Configure interaction collider
+        textController = FindObjectOfType<UITextController>();
+
+        // Configurar collider de interacción
         SphereCollider interactionCollider = gameObject.AddComponent<SphereCollider>();
         interactionCollider.isTrigger = true;
         interactionCollider.radius = interactionRadius;
@@ -79,10 +75,12 @@ public class PlayerController : MonoBehaviour
         CheckForHeadBob();
         setAnimation();
 
-        if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen && inventoryManager.HasItem("Mobile"))
-        {
+        if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
+        { 
             InteractWithObject();
+            
         }
+       
 
         LActive = leftHand.childCount > 0;
         RActive = rightHand.childCount > 0;
@@ -90,43 +88,38 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (((1 << other.gameObject.layer) & interactableMask) != 0)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null && !nearbyInteractables.Contains(interactable))
         {
-            IInteractable interactable = other.GetComponent<IInteractable>();
-            if (interactable != null && !nearbyInteractables.Contains(interactable))
-            {
-                nearbyInteractables.Add(interactable);
-            }
+            nearbyInteractables.Add(interactable);
+            Debug.Log("Interactuable detectado: " + other.name);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (((1 << other.gameObject.layer) & interactableMask) != 0)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null)
         {
-            IInteractable interactable = other.GetComponent<IInteractable>();
-            if (interactable != null)
-            {
-                nearbyInteractables.Remove(interactable);
-            }
+            nearbyInteractables.Remove(interactable);
+            Debug.Log("Interactuable eliminado: " + other.name);
         }
-
-        //textController.ClearMessage();
     }
 
-    void InteractWithObject() // Formerly InteractuarConObjeto
+    void InteractWithObject()
     {
         if (nearbyInteractables.Count == 0) return;
 
-        // Find the nearest interactable
+        // Limpiar interactuables nulos
+        nearbyInteractables.RemoveAll(x => x == null);
+
+        // Buscar el más cercano
         IInteractable nearest = null;
         float minDistance = Mathf.Infinity;
         Vector3 playerPosition = transform.position;
 
         foreach (IInteractable interactable in nearbyInteractables)
         {
-            if (interactable == null) continue;
-
             float distance = Vector3.Distance(
                 playerPosition,
                 (interactable as MonoBehaviour).transform.position

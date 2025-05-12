@@ -12,5 +12,4 @@ public class Item : ScriptableObject
     public Sprite icon;             /// 2D representation in inventory slots.
     public string type;             /// Category or type for gameplay logic (e.g., "piece", "DVD", etc.).
     public GameObject itemPrefab;   /// 3D prefab for in-world representation.
-    public string collectedText;    /// Message shown when item is collected.
 }
