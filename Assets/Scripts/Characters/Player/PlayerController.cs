@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
         if (nearest != null)
         {
-            GameObject objectInHand = inventoryManager?.GetObjectOnHand();
+            GameObject objectInHand = inventoryManager?.equippedRight;
             nearest.Interact(objectInHand);
         }
     }

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: B
   icon: {fileID: 21300000, guid: 4c6c8a70d3a689044bfe613c7a565cbc, type: 3}
   type: 
-  itemPrefab: {fileID: 237021732838240646, guid: e45f719f3b06977459ff801ab1318f84,
+  itemPrefab: {fileID: 7855882818226270307, guid: 0e369539b46c6374fb68a3174dc660be,
     type: 3}
-  collectedText: 
+  equipPositionOffset: {x: 0, y: 0, z: 0}
+  equipRotationOffset: {x: 0, y: 0, z: 0}

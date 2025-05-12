@@ -31,8 +31,6 @@ public class HolderInteractable : MonoBehaviour, IInteractable
                 Destroy(itemOnHolder.gameObject);
                 itemOnHolder = null;
                 uiTextController.ShowThought(gameTexts.collectedMessage);
-
-                // Limpia el mensaje de interacción al recoger
                 uiTextController.ClearMessages();
             }
             else
@@ -47,23 +45,27 @@ public class HolderInteractable : MonoBehaviour, IInteractable
                 ItemController item = objectOnHand.GetComponent<ItemController>();
                 if (item != null)
                 {
-                    itemOnHolder = Instantiate(item.itemData.itemPrefab, holderPoint.position, holderPoint.rotation, holderPoint).GetComponent<ItemController>();
+                    // Instancia el objeto y busca ItemController en hijos
+                    GameObject newItem = Instantiate(item.itemData.itemPrefab, holderPoint.position, holderPoint.rotation, holderPoint);
+                    itemOnHolder = newItem.GetComponentInChildren<ItemController>(true);
+
+                    if (itemOnHolder == null)
+                    {
+                        Debug.LogError("El prefab no tiene ItemController");
+                        Destroy(newItem);
+                        return;
+                    }
+
                     inventoryManager.RemoveItem(item.itemData);
                     Destroy(objectOnHand);
 
                     bool isCorrect = item.itemData.itemName.Equals(correctObjectName, System.StringComparison.OrdinalIgnoreCase);
 
                     if (isCorrect)
-                    {
                         uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
-                        
-                    }
                     else
-                    {
                         uiTextController.ShowThought(gameTexts.wrongObjectMessage);
-                    }
 
-                    // Limpia el mensaje de interacción al colocar
                     uiTextController.ClearMessages();
                 }
             }
@@ -73,6 +75,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable
             }
         }
     }
+
 
 
     private void OnTriggerEnter(Collider other)

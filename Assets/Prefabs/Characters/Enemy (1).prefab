@@ -121,14 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc385bef602be43a95c88108d50713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAggressive: 0
+  canChase: 1
+  canAttack: 0
   playerTransform: {fileID: 0}
+  chaseDistance: 10
   attackDistance: 10
   anim: {fileID: 4415263157411669828}
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
 --- !u!114 &993483071117669491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,4 +260,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc62c6aed60e3254591af461faac3594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   canLookVertically: 1
