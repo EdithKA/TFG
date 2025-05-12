@@ -3,10 +3,14 @@ using UnityEngine.Video;
 
 public class PS2Interactable : MonoBehaviour, IInteractable
 {
+    [Header("Reward")]
+    public Item crashSaveData;
+
     [Header("Componentes")]
     public Light led;
     public AudioClip bootSound;
     public VideoPlayer dvdPlayer;
+    public VideoClip noSignal;
     public VideoClip correctDVD;
     public VideoClip wrongDVD;
     public GameTexts gameTexts;
@@ -26,26 +30,38 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         inventoryManager = FindObjectOfType<InventoryManager>();
         led.color = Color.red;
         gameTexts = uiTextController.gameTexts;
+
+        dvdPlayer.loopPointReached += VideoEnded;
+        dvdPlayer.clip = noSignal;
+        dvdPlayer.Play();
+    }
+
+    void VideoEnded(VideoPlayer vp)
+    {
+        // Si el video correcto ha terminado, doy el premio
+        if (completed)
+        {
+            inventoryManager.AddItem(crashSaveData);
+            uiTextController.ShowThought($"Parece que he conseguido un...¿{crashSaveData.displayName}?");
+
+        }
+        // Siempre vuelvo a no signal
+        dvdPlayer.clip = noSignal;
+        dvdPlayer.Play();
+        led.color = Color.red;
     }
 
     public void Interact(GameObject objectOnHand = null)
     {
         if (!completed)
         {
-
             if (objectOnHand != null)
             {
                 ItemController item = objectOnHand.GetComponent<ItemController>();
                 if (item != null && item.itemData.type == "DVD")
                 {
-                    // Detener reproducción actual antes de cambiar
-                    if (dvdPlayer.isPlaying)
-                    {
-                        dvdPlayer.Stop();
-                        audioSource.Stop();
-                    }
+        
 
-                    // Determinar qué video reproducir
                     if (item.itemData.itemID == requiredDVD)
                     {
                         completed = true;
@@ -57,14 +73,12 @@ public class PS2Interactable : MonoBehaviour, IInteractable
                     {
                         uiTextController.ShowThought(gameTexts.dvdError);
                         dvdPlayer.clip = wrongDVD;
-                        led.color = Color.yellow; // Color diferente para DVD incorrecto
+                        led.color = Color.yellow;
                     }
 
-                    // Reproducir nuevo video
                     dvdPlayer.Play();
                     audioSource.PlayOneShot(bootSound);
 
-                    // Eliminar DVD usado
                     inventoryManager.RemoveItem(item.itemData);
                     Destroy(objectOnHand);
                 }

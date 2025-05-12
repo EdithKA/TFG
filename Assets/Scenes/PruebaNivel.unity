@@ -844,6 +844,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
         type: 3}
+      propertyPath: noSignal
+      value: 
+      objectReference: {fileID: 32900000, guid: 1608f452ebcaf4241804949c0f71b00d,
+        type: 3}
+    - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
+        type: 3}
       propertyPath: wrongDVD
       value: 
       objectReference: {fileID: 32900000, guid: b485050cb0b2c08468022e44ad5621a4,
@@ -869,6 +875,12 @@ PrefabInstance:
       propertyPath: requiredDVD
       value: Crash
       objectReference: {fileID: 0}
+    - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
+        type: 3}
+      propertyPath: crashSaveData
+      value: 
+      objectReference: {fileID: 11400000, guid: f5b1048481ae69948a9918202e824b26,
+        type: 2}
     - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
         type: 3}
       propertyPath: requiredItemName
@@ -2421,7 +2433,7 @@ MonoBehaviour:
   interactionFadeDuration: 0.4
   interactionDisplayTime: 1.5
   thoughtColor: {r: 1, g: 1, b: 1, a: 1}
-  thoughtTypingSpeed: 0.03
+  thoughtTypingSpeed: 0.04
   thoughtDisplayTime: 3
   thoughtFadeDuration: 0.5
 --- !u!1 &1709331384
@@ -2666,6 +2678,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: tv
       objectReference: {fileID: 0}
+    - target: {fileID: 8558788926266246478, guid: eddd9fe6bfb318f4db1e4a6d3331ec65,
+        type: 3}
+      propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558788926266246478, guid: eddd9fe6bfb318f4db1e4a6d3331ec65,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 1608f452ebcaf4241804949c0f71b00d,
+        type: 3}
     - target: {fileID: 8558788926266246478, guid: eddd9fe6bfb318f4db1e4a6d3331ec65,
         type: 3}
       propertyPath: m_DirectAudioVolumes.Array.data[0]
