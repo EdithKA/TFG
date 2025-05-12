@@ -63,7 +63,7 @@ public class InventoryManager : MonoBehaviour
             items.Add(item);
             RefreshUI();
 
-            if (item.itemName == "Mobile" && !IsMobileEquipped())
+            if (item.itemID == "Mobile" && !IsMobileEquipped())
             {
                 EquipMobile(item);
             }
@@ -103,7 +103,7 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Checks if inventory contains item by name
     /// </summary>
-    public bool HasItem(string itemName) => items.Exists(item => item.itemName == itemName);
+    public bool HasItem(string itemName) => items.Exists(item => item.itemID == itemName);
 
     /// <summary>
     /// Toggles inventory visibility and cursor state
@@ -130,7 +130,7 @@ public class InventoryManager : MonoBehaviour
             Image icon = slot.transform.Find("Icon").GetComponent<Image>();
             icon.sprite = item.icon;
 
-            if (item.itemName != "Mobile")
+            if (item.itemID != "Mobile")
             {
                 Button button = slot.GetComponent<Button>();
                 button.onClick.AddListener(() => EquipRightHandItem(item));

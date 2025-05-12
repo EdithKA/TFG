@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 198102446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.904, y: 0.569, z: -1.023}
+  m_LocalPosition: {x: -1.904, y: 0.66, z: -1.023}
   m_LocalScale: {x: 0.25754, y: 0.154524, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctObjectName: A
+  completed: 0
   holderPoint: {fileID: 1970055353}
   gameTexts: {fileID: 0}
 --- !u!65 &198102449
@@ -863,6 +864,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32900000, guid: 0af87f2b296b2ee498e32275a8f48c4d,
         type: 3}
+    - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
+        type: 3}
+      propertyPath: requiredDVD
+      value: Crash
+      objectReference: {fileID: 0}
     - target: {fileID: 8557057555187227961, guid: 78ef1c7302fab8040b895cb725f1e59a,
         type: 3}
       propertyPath: requiredItemName
@@ -1791,7 +1797,7 @@ Transform:
   m_GameObject: {fileID: 1483003660}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.434, y: 0.569, z: -1.023}
+  m_LocalPosition: {x: 0.434, y: 0.66, z: -1.023}
   m_LocalScale: {x: 0.25754, y: 0.154524, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1811,6 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctObjectName: C
+  completed: 0
   holderPoint: {fileID: 1677292596}
   gameTexts: {fileID: 0}
 --- !u!65 &1483003663
@@ -1973,7 +1980,7 @@ Transform:
   m_GameObject: {fileID: 1562122180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.759, y: 0.569, z: -1.023}
+  m_LocalPosition: {x: -0.759, y: 0.66, z: -1.023}
   m_LocalScale: {x: 0.25754, y: 0.154524, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1993,6 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctObjectName: B
+  completed: 0
   holderPoint: {fileID: 1709331385}
   gameTexts: {fileID: 0}
 --- !u!65 &1562122183
@@ -2407,7 +2415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionText: {fileID: 338155262}
   thoughtText: {fileID: 1427638087}
-  gameTexts: {fileID: 11400000, guid: 6f8e1cf450892484e8535c3453601d83, type: 2}
+  gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
   interactColor: {r: 0, g: 1, b: 1, a: 1}
   collectColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   interactionFadeDuration: 0.4
@@ -2415,6 +2423,7 @@ MonoBehaviour:
   thoughtColor: {r: 1, g: 1, b: 1, a: 1}
   thoughtTypingSpeed: 0.03
   thoughtDisplayTime: 3
+  thoughtFadeDuration: 0.5
 --- !u!1 &1709331384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,7 +3108,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.826, y: 0.279, z: 0}
-  m_LocalScale: {x: 5.0040483, y: 0.43301836, z: 2.426516}
+  m_LocalScale: {x: 5.0040483, y: 0.66771436, z: 2.426516}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1496625332}
@@ -3352,7 +3361,7 @@ PrefabInstance:
     - target: {fileID: 5270162521615572158, guid: 0e369539b46c6374fb68a3174dc660be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.686
+      value: 0.777
       objectReference: {fileID: 0}
     - target: {fileID: 5270162521615572158, guid: 0e369539b46c6374fb68a3174dc660be,
         type: 3}
@@ -3613,7 +3622,7 @@ PrefabInstance:
     - target: {fileID: 8852181299210119422, guid: 98c27ae9772c5ec4fba6da362dea76fa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65156
+      value: 0.74256
       objectReference: {fileID: 0}
     - target: {fileID: 8852181299210119422, guid: 98c27ae9772c5ec4fba6da362dea76fa,
         type: 3}
@@ -3676,7 +3685,7 @@ PrefabInstance:
     - target: {fileID: 890428469941875823, guid: ba692739cbdb79c4684fba7090980c94,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.58736
+      value: 0.67836004
       objectReference: {fileID: 0}
     - target: {fileID: 890428469941875823, guid: ba692739cbdb79c4684fba7090980c94,
         type: 3}

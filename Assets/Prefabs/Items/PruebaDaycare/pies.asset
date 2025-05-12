@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: pies
   m_EditorClassIdentifier: 
-  itemName: pies
+  itemID: pies
+  displayName: pies
   icon: {fileID: 21300000, guid: 80399daf904f290459639bbc502af5b0, type: 3}
   type: piece
   itemPrefab: {fileID: 4596640645639373022, guid: 0db4f24b164f1f845b4fb04b766b5d52,
     type: 3}
-  collectedText: Has recogido pies
+  equipPositionOffset: {x: 0, y: 0, z: 0}
+  equipRotationOffset: {x: 0, y: 0, z: 0}

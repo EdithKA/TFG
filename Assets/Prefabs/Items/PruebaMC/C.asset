@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: C
   m_EditorClassIdentifier: 
-  itemName: C
+  itemID: C
+  displayName: esfera
   icon: {fileID: 21300000, guid: 097a97d3af473cc49b30333d61688342, type: 3}
   type: 
   itemPrefab: {fileID: 4787482325266708436, guid: 98c27ae9772c5ec4fba6da362dea76fa,

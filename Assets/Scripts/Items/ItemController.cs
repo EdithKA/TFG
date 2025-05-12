@@ -53,9 +53,9 @@ public class ItemController : MonoBehaviour
     private void PickUp()
     {
         inventoryManager.AddItem(itemData);
-        uiTextController.ShowThought(uiTextController.gameTexts.collectedMessage);
+        uiTextController.ShowThought($"He encontrado un {itemData.displayName}");
 
-        if (itemData.itemName == "Mobile")
+        if (itemData.itemID == "Mobile")
         {
             isHeld = true;
             transform.SetParent(playerController.leftHand);

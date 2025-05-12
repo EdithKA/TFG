@@ -17,6 +17,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable
     private AudioSource audioSource;
     private UITextController uiTextController;
     private InventoryManager inventoryManager;
+    private bool completed;
 
     private void Start()
     {
@@ -29,48 +30,53 @@ public class PS2Interactable : MonoBehaviour, IInteractable
 
     public void Interact(GameObject objectOnHand = null)
     {
-        if (objectOnHand != null)
+        if (!completed)
         {
-            ItemController item = objectOnHand.GetComponent<ItemController>();
-            if (item != null && item.itemData.type == "DVD")
-            {
-                // Detener reproducción actual antes de cambiar
-                if (dvdPlayer.isPlaying)
-                {
-                    dvdPlayer.Stop();
-                    audioSource.Stop();
-                }
 
-                // Determinar qué video reproducir
-                if (item.itemData.itemName == requiredDVD)
+            if (objectOnHand != null)
+            {
+                ItemController item = objectOnHand.GetComponent<ItemController>();
+                if (item != null && item.itemData.type == "DVD")
                 {
-                    uiTextController.ShowThought(gameTexts.dvdCorrectMessage);
-                    dvdPlayer.clip = correctDVD;
-                    led.color = Color.green;
+                    // Detener reproducción actual antes de cambiar
+                    if (dvdPlayer.isPlaying)
+                    {
+                        dvdPlayer.Stop();
+                        audioSource.Stop();
+                    }
+
+                    // Determinar qué video reproducir
+                    if (item.itemData.itemID == requiredDVD)
+                    {
+                        completed = true;
+                        uiTextController.ShowThought(gameTexts.dvdCorrectMessage);
+                        dvdPlayer.clip = correctDVD;
+                        led.color = Color.green;
+                    }
+                    else
+                    {
+                        uiTextController.ShowThought(gameTexts.dvdError);
+                        dvdPlayer.clip = wrongDVD;
+                        led.color = Color.yellow; // Color diferente para DVD incorrecto
+                    }
+
+                    // Reproducir nuevo video
+                    dvdPlayer.Play();
+                    audioSource.PlayOneShot(bootSound);
+
+                    // Eliminar DVD usado
+                    inventoryManager.RemoveItem(item.itemData);
+                    Destroy(objectOnHand);
                 }
                 else
                 {
-                    uiTextController.ShowThought(gameTexts.dvdError);
-                    dvdPlayer.clip = wrongDVD;
-                    led.color = Color.yellow; // Color diferente para DVD incorrecto
+                    uiTextController.ShowThought(gameTexts.dvdMissing);
                 }
-
-                // Reproducir nuevo video
-                dvdPlayer.Play();
-                audioSource.PlayOneShot(bootSound);
-
-                // Eliminar DVD usado
-                inventoryManager.RemoveItem(item.itemData);
-                Destroy(objectOnHand);
             }
             else
             {
-                uiTextController.ShowInteraction(gameTexts.dvdMissing, Color.red);
+                uiTextController.ShowThought(gameTexts.dvdMissing);
             }
-        }
-        else
-        {
-            uiTextController.ShowInteraction(gameTexts.dvdMissing, Color.red);
         }
     }
 

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: A
   m_EditorClassIdentifier: 
-  itemName: A
+  itemID: A
+  displayName: capsula
   icon: {fileID: 21300000, guid: f63597931f36f7449ae9fab4215bab9e, type: 3}
   type: 
   itemPrefab: {fileID: 8672690339686251019, guid: ba692739cbdb79c4684fba7090980c94,

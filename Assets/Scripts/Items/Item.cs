@@ -8,7 +8,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     [Header("Item Configuration")]
-    public string itemName;         /// Name displayed in inventory UI.
+    public string itemID;         /// Name displayed in inventory UI.
+    public string displayName;    
     public Sprite icon;             /// 2D representation in inventory slots.
     public string type;             /// Category or type for gameplay logic (e.g., "piece", "DVD", etc.).
     public GameObject itemPrefab;   /// 3D prefab for in-world representation.

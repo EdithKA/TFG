@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: cuerpo
   m_EditorClassIdentifier: 
-  itemName: Cuerpo
+  itemID: cuerpo
+  displayName: Un cuerpo
   icon: {fileID: 21300000, guid: 29a6db4858bd2f8498f74efb19904a8a, type: 3}
   type: piece
   itemPrefab: {fileID: 3276281955633696228, guid: 319c016ff17952849bfa877f9154d0c0,
     type: 3}
-  collectedText: 
+  equipPositionOffset: {x: 0, y: 0, z: 0}
+  equipRotationOffset: {x: 0, y: 0, z: 0}

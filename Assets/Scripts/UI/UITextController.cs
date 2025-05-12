@@ -7,11 +7,11 @@ public enum UIMessageType { Interact, Collect, Collected, Read }
 public class UITextController : MonoBehaviour
 {
     [Header("Text Components")]
-    public TextMeshProUGUI interactionText;  // Mensajes de acción
-    public TextMeshProUGUI thoughtText;      // Pensamientos/Narración
+    public TextMeshProUGUI interactionText;  // Action messages
+    public TextMeshProUGUI thoughtText;      // Thoughts/Narration
 
     [Header("Game Texts")]
-    public GameTexts gameTexts;              // ScriptableObject con textos
+    public GameTexts gameTexts;              // ScriptableObject with texts
 
     [Header("Interaction Settings")]
     public Color interactColor = Color.cyan;
@@ -22,23 +22,24 @@ public class UITextController : MonoBehaviour
     [Header("Thought Settings")]
     public Color thoughtColor = Color.white;
     public float thoughtTypingSpeed = 0.03f;
-    public float thoughtDisplayTime = 3f;
+    public float thoughtDisplayTime = 3f;    // Time thought stays after writing
+    public float thoughtFadeDuration = 0.5f; // Fade out duration
 
     private Coroutine interactionRoutine;
     private Coroutine thoughtRoutine;
 
-    /// <summary> Muestra un mensaje de interacción con fade </summary>
+    /// <summary> Shows an interaction message with fade </summary>
     public void ShowInteraction(string message, Color color)
     {
         if (interactionRoutine != null) StopCoroutine(interactionRoutine);
         interactionRoutine = StartCoroutine(ShowInteractionRoutine(message, color));
     }
 
-    /// <summary> Muestra un pensamiento con efecto de escritura </summary>
+    /// <summary> Shows a thought with typewriter effect, always </summary>
     public void ShowThought(string message)
     {
         if (thoughtRoutine != null) StopCoroutine(thoughtRoutine);
-        thoughtRoutine = StartCoroutine(ShowThoughtRoutine(message));
+        thoughtRoutine = StartCoroutine(ShowThoughtTypewriterRoutine(message));
     }
 
     private IEnumerator ShowInteractionRoutine(string message, Color color)
@@ -70,26 +71,43 @@ public class UITextController : MonoBehaviour
         interactionText.text = "";
     }
 
-    private IEnumerator ShowThoughtRoutine(string message)
+    private IEnumerator ShowThoughtTypewriterRoutine(string message)
     {
-        thoughtText.color = thoughtColor;
         thoughtText.text = "";
+        thoughtText.color = thoughtColor;
+        thoughtText.alpha = 1f;
 
+        // Typewriter effect
         foreach (char letter in message)
         {
             thoughtText.text += letter;
             yield return new WaitForSeconds(thoughtTypingSpeed);
         }
 
+        // Wait after writing
         yield return new WaitForSeconds(thoughtDisplayTime);
+
+        // Fade out
+        float elapsed = 0f;
+        float startAlpha = thoughtText.alpha;
+        while (elapsed < thoughtFadeDuration)
+        {
+            thoughtText.alpha = Mathf.Lerp(startAlpha, 0, elapsed / thoughtFadeDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
         thoughtText.text = "";
+        thoughtText.alpha = 0f;
     }
 
     public void ClearMessages()
     {
+        //if (thoughtRoutine != null) StopCoroutine(thoughtRoutine);
+        if (interactionRoutine != null) StopCoroutine(interactionRoutine);
+
+        //thoughtText.text = "";
         interactionText.text = "";
-        thoughtText.text = "";
-        interactionText.alpha = 0;
-        StopAllCoroutines();
+        //thoughtText.alpha = 0f;
+        interactionText.alpha = 0f;
     }
 }

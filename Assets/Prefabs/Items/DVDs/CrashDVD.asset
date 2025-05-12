@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: CrashDVD
   m_EditorClassIdentifier: 
-  itemName: Crash
+  itemID: Crash
+  displayName: DVD de Crash Bandicoot
   icon: {fileID: 21300000, guid: 2f2b060bbad24144b9d7142b185c4a11, type: 3}
   type: DVD
   itemPrefab: {fileID: 5181119895663714574, guid: d514e80c4999ba344990d03fcecfc8a9,
