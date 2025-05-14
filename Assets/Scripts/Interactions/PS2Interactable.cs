@@ -39,7 +39,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable
     void VideoEnded(VideoPlayer vp)
     {
         // Si el video correcto ha terminado, doy el premio
-        if (completed)
+        if (completed && !inventoryManager.HasItem(crashSaveData.name))
         {
             inventoryManager.AddItem(crashSaveData);
             uiTextController.ShowThought($"Parece que he conseguido un...¿{crashSaveData.displayName}?");
