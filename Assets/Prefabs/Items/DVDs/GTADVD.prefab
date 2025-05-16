@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5525030213165972404}
   - component: {fileID: 8863930836563653649}
   - component: {fileID: 6694589198421262555}
-  - component: {fileID: 624612807711539897}
   - component: {fileID: 3188813954812985207}
-  - component: {fileID: 7742920363036398137}
-  m_Layer: 0
+  - component: {fileID: 581291387799468165}
+  m_Layer: 3
   m_Name: GTADVD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,8 +85,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &624612807711539897
-SphereCollider:
+--- !u!114 &3188813954812985207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181119895663714574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634460691f849734f85882e104fff452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: b09c5f64ca696b94b97a78329fecee03, type: 2}
+  isHeld: 0
+--- !u!64 &581291387799468165
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,48 +114,10 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.11
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3188813954812985207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181119895663714574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634460691f849734f85882e104fff452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHand: {fileID: 0}
-  itemData: {fileID: 11400000, guid: b09c5f64ca696b94b97a78329fecee03, type: 2}
-  isHeld: 0
-  UIText: {fileID: 0}
-  inventory: {fileID: 0}
---- !u!114 &7742920363036398137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181119895663714574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2f1aaa2811f4654b4822d92c6536f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 0}
-  canvasGroup: {fileID: 0}
-  interactColor: {r: 0, g: 1, b: 1, a: 1}
-  collectColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  collectedColor: {r: 0, g: 1, b: 0, a: 1}
-  readColor: {r: 1, g: 1, b: 1, a: 1}
-  textSize: 28
-  typingSpeed: 0.05
-  messageDuration: 1
-  fadeDuration: 0.4
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2426508734089713321, guid: 6c7f2866cc2f3c24ebce2a98222aae6f, type: 3}

@@ -3,7 +3,15 @@ guid: 780f23f550f350942b01c6fac123889e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - crashSaveData: {fileID: 11400000, guid: f5b1048481ae69948a9918202e824b26, type: 2}
+  - led: {instanceID: 0}
+  - bootSound: {fileID: 8300000, guid: bc15b94c685b9644d96a0c4f4368c684, type: 3}
+  - dvdPlayer: {instanceID: 0}
+  - noSignal: {fileID: 32900000, guid: d9acd92f7e910f842a5a57557307736b, type: 3}
+  - correctDVD: {fileID: 32900000, guid: 0af87f2b296b2ee498e32275a8f48c4d, type: 3}
+  - wrongDVD: {fileID: 32900000, guid: b485050cb0b2c08468022e44ad5621a4, type: 3}
+  - gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

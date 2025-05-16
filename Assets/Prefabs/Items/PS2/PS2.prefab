@@ -216,10 +216,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5970402999970100837}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe9800515140e2445befbe29ee073a8a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2227907804662065580}
   m_SourcePrefab: {fileID: 100100000, guid: fe9800515140e2445befbe29ee073a8a, type: 3}
 --- !u!4 &4786440353471594473 stripped
 Transform:
@@ -267,11 +263,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780f23f550f350942b01c6fac123889e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashSaveData: {fileID: 0}
   led: {fileID: 2620565251382861951}
-  bootEffect: {fileID: 8300000, guid: bc15b94c685b9644d96a0c4f4368c684, type: 3}
+  bootSound: {fileID: 8300000, guid: bc15b94c685b9644d96a0c4f4368c684, type: 3}
   dvdPlayer: {fileID: 0}
-  boot: {fileID: 32900000, guid: 0af87f2b296b2ee498e32275a8f48c4d, type: 3}
-  errorBoot: {fileID: 32900000, guid: b485050cb0b2c08468022e44ad5621a4, type: 3}
+  noSignal: {fileID: 32900000, guid: d9acd92f7e910f842a5a57557307736b, type: 3}
+  correctDVD: {fileID: 32900000, guid: 0af87f2b296b2ee498e32275a8f48c4d, type: 3}
+  wrongDVD: {fileID: 32900000, guid: b485050cb0b2c08468022e44ad5621a4, type: 3}
+  gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
+  requiredDVD: CrashDVD
 --- !u!82 &5970402999970100837
 AudioSource:
   m_ObjectHideFlags: 0
@@ -368,24 +368,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &2227907804662065580
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5271193471681865043}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.064404115, y: 0.03601674, z: 0.008947575}
-  m_Center: {x: -0.024342969, y: 0.0019475187, z: 0.000731797}

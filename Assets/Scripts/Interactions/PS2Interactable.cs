@@ -3,10 +3,10 @@ using UnityEngine.Video;
 
 public class PS2Interactable : MonoBehaviour, IInteractable
 {
-    [Header("Reward")]
+    [Header("Reward Settings")]
     public Item crashSaveData;
 
-    [Header("Componentes")]
+    [Header("Components")]
     public Light led;
     public AudioClip bootSound;
     public VideoPlayer dvdPlayer;
@@ -15,7 +15,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable
     public VideoClip wrongDVD;
     public GameTexts gameTexts;
 
-    [Header("Configuración")]
+    [Header("Configuration")]
     public string requiredDVD = "CrashDVD";
 
     private AudioSource audioSource;
@@ -29,26 +29,22 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         uiTextController = FindObjectOfType<UITextController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
         led.color = Color.red;
-        gameTexts = uiTextController.gameTexts;
 
-        dvdPlayer.loopPointReached += VideoEnded;
+        dvdPlayer.loopPointReached += OnVideoEnded;
         dvdPlayer.clip = noSignal;
         dvdPlayer.Play();
     }
 
-    void VideoEnded(VideoPlayer vp)
+    // IInteractable implementation
+    public void OnHoverEnter(UITextController textController)
     {
-        // Si el video correcto ha terminado, doy el premio
-        if (completed && !inventoryManager.HasItem(crashSaveData.name))
-        {
-            inventoryManager.AddItem(crashSaveData);
-            uiTextController.ShowThought($"Parece que he conseguido un...¿{crashSaveData.displayName}?");
+        if (!completed)
+            textController.ShowInteraction(gameTexts.interactMessage, Color.cyan);
+    }
 
-        }
-        // Siempre vuelvo a no signal
-        dvdPlayer.clip = noSignal;
-        dvdPlayer.Play();
-        led.color = Color.red;
+    public void OnHoverExit()
+    {
+        uiTextController.ClearMessages();
     }
 
     public void Interact(GameObject objectOnHand = null)
@@ -57,10 +53,10 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         {
             if (objectOnHand != null)
             {
-                ItemController item = objectOnHand.GetComponent<ItemController>();
+                ItemInteractable item = objectOnHand.GetComponent<ItemInteractable>();
                 if (item != null && item.itemData.type == "DVD")
                 {
-        
+
 
                     if (item.itemData.itemID == requiredDVD)
                     {
@@ -94,19 +90,19 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            uiTextController.ShowInteraction(gameTexts.interactMessage, Color.cyan);
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
+
+    private void OnVideoEnded(VideoPlayer vp)
     {
-        if (other.CompareTag("Player"))
+        if (completed && !inventoryManager.HasItem(crashSaveData.itemID))
         {
-            uiTextController.ClearMessages();
+            inventoryManager.AddItem(crashSaveData);
+            uiTextController.ShowThought($"Parece que he conseguido un...¿{crashSaveData.displayName}?");
         }
+
+        dvdPlayer.clip = noSignal;
+        dvdPlayer.Play();
+        led.color = Color.red;
+        completed = false;
     }
 }

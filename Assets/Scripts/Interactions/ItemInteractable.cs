@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class ItemInteractable : MonoBehaviour, IInteractable
 {
     [Header("Configuración")]
     public Item itemData;
@@ -10,7 +10,6 @@ public class ItemController : MonoBehaviour
     private InventoryManager inventoryManager;
     private UITextController uiTextController;
     private PlayerController playerController;
-    private bool playerInRange;
 
     private void Start()
     {
@@ -19,35 +18,31 @@ public class ItemController : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
-    private void Update()
+    // Implementación de IInteractable
+    public void OnHoverEnter(UITextController textController)
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E) && !isHeld)
+        if (!isHeld)
         {
-
-            if(!inventoryManager.HasItem("Mobile") && itemData.name != "Mobile")
-                uiTextController.ShowThought(uiTextController.gameTexts.needMobileMessage);
-            else
-                PickUp();
-
+            textController.ShowInteraction(textController.gameTexts.collectMessage, Color.yellow);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnHoverExit()
     {
-        if (other.CompareTag("Player") && !isHeld)
-        {
-            playerInRange = true;
-            uiTextController.ShowInteraction(uiTextController.gameTexts.collectMessage, Color.yellow);
-        }
+        uiTextController.ClearMessages();
     }
 
-    private void OnTriggerExit(Collider other)
+    public void Interact(GameObject objectOnHand = null)
     {
-        if (other.CompareTag("Player"))
+        if (isHeld) return;
+
+        if (!inventoryManager.HasItem("Mobile") && itemData.itemID != "Mobile")
         {
-            playerInRange = false;
-            uiTextController.ClearMessages();
+            uiTextController.ShowThought(uiTextController.gameTexts.needMobileMessage);
+            return;
         }
+
+        PickUp();
     }
 
     private void PickUp()
@@ -66,9 +61,5 @@ public class ItemController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        // Limpia el mensaje de interacción al recoger
-        uiTextController.ClearMessages();
     }
-
 }

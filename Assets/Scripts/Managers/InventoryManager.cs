@@ -78,7 +78,7 @@ public class InventoryManager : MonoBehaviour
         GameObject mobile = Instantiate(mobileItem.itemPrefab, leftHand);
         mobile.transform.localPosition = Vector3.zero;
         mobile.transform.localRotation = Quaternion.identity;
-        mobile.GetComponent<ItemController>().isHeld = true;
+        mobile.GetComponent<ItemInteractable>().isHeld = true;
     }
 
     /// <summary>
@@ -159,7 +159,7 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     private void EquipRightHandItem(Item item)
     {
-        if (equippedRight != null && equippedRight.GetComponent<ItemController>().itemData == item)
+        if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
         {
             UnequipRightHandItem();
         }
@@ -169,7 +169,7 @@ public class InventoryManager : MonoBehaviour
             equippedRight = Instantiate(item.itemPrefab, rightHand);
             equippedRight.transform.localPosition = item.equipPositionOffset;
             equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
-            equippedRight.GetComponent<ItemController>().isHeld = true;
+            equippedRight.GetComponent<ItemInteractable>().isHeld = true;
         }
     }
 

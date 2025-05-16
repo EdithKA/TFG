@@ -1,57 +1,64 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls player movement, stamina, inventory, and raycast-based interactions.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float playerSpeed = 20f;
-    float speed;
-    private CharacterController characterController;
-    public Animator camAnim;
-    public bool isWalking;
-
-    private Vector3 inputVector;
-    private Vector3 movementVector;
-    private float Gravity = -10f;
-
-    [Header("Stamina Settings")]
     public float stamina;
-    public float currentStamina;
+    public float interactDistance = 3f;
+    public LayerMask interactMask;
 
-    [Header("Inventory Settings")]
+    [Header("References")]
+    public Animator camAnim;
+    public Animator LHAnim;
+    public Animator RHAnim;
+    public Transform leftHand;
+    public Transform rightHand;
     public InventoryManager inventoryManager;
-    public bool isInventoryOpen = false;
     public UITextController textController;
 
-    [Header("Hands Settings")]
-    public Animator LHAnim;
-    public Transform leftHand;
-    public bool LActive = false;
-    public bool isCloser = false;
+    CharacterController characterController;
+    Camera mainCamera;
+    float currentStamina;
+    float speed;
+    Vector3 movementVector;
+    bool isWalking;
+    public bool isInventoryOpen;
+    bool isCloser;
+    IInteractable currentInteractable;
 
-    public Animator RHAnim;
-    public Transform rightHand;
-    public bool RActive = false;
-
-    [Header("Interaction Settings")]
-    public float interactionRadius = 3f;
-    private List<IInteractable> nearbyInteractables = new List<IInteractable>();
-
+    /// <summary>
+    /// Initialize references and set starting values.
+    /// </summary>
     void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>();
-        currentStamina = stamina;
         characterController = GetComponent<CharacterController>();
-        textController = FindObjectOfType<UITextController>();
-
-        // Configurar collider de interacción
-        SphereCollider interactionCollider = gameObject.AddComponent<SphereCollider>();
-        interactionCollider.isTrigger = true;
-        interactionCollider.radius = interactionRadius;
+        mainCamera = Camera.main;
+        currentStamina = stamina;
+        if (!inventoryManager) inventoryManager = FindObjectOfType<InventoryManager>();
+        if (!textController) textController = FindObjectOfType<UITextController>();
     }
 
+    /// <summary>
+    /// Main update loop for movement, inventory, and interaction.
+    /// </summary>
     void Update()
+    {
+        HandleInventoryToggle();
+        HandleMovement();
+        HandleInteraction();
+        UpdateAnimations();
+        HandleInteractionInput();
+    }
+
+    /// <summary>
+    /// Opens or closes the inventory if the player has the mobile.
+    /// </summary>
+    void HandleInventoryToggle()
     {
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
         {
@@ -59,10 +66,34 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(OpenInventory());
             isCloser = !isCloser;
         }
+    }
 
+    /// <summary>
+    /// Handles player movement and stamina.
+    /// </summary>
+    void HandleMovement()
+    {
         if (!isInventoryOpen)
         {
-            GetInput();
+            if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
+            {
+                speed = playerSpeed * 3;
+                currentStamina -= 0.1f;
+            }
+            else
+            {
+                speed = playerSpeed;
+                if (currentStamina < stamina) currentStamina += 0.1f;
+            }
+
+            if (Input.GetMouseButtonDown(1)) isCloser = true;
+            else if (Input.GetMouseButtonUp(1)) isCloser = false;
+
+            Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+            movementVector = transform.TransformDirection(input) * speed + Vector3.up * -10f;
+
+            characterController.Move(movementVector * Time.deltaTime);
+            isWalking = characterController.velocity.magnitude > 0.1f;
         }
         else
         {
@@ -70,118 +101,61 @@ public class PlayerController : MonoBehaviour
             isWalking = false;
             movementVector = Vector3.zero;
         }
+    }
 
-        MovePlayer();
-        CheckForHeadBob();
-        setAnimation();
+    /// <summary>
+    /// Handles raycast interaction detection and hover UI.
+    /// </summary>
+    void HandleInteraction()
+    {
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        IInteractable newInteractable = null;
 
+        if (Physics.Raycast(ray, out hit, interactDistance, interactMask, QueryTriggerInteraction.Collide))
+            newInteractable = hit.collider.GetComponent<IInteractable>();
+
+        if (newInteractable != currentInteractable)
+        {
+            if (currentInteractable != null)
+                currentInteractable.OnHoverExit();
+
+            currentInteractable = newInteractable;
+            if (currentInteractable != null)
+                currentInteractable.OnHoverEnter(textController);
+        }
+    }
+
+    /// <summary>
+    /// Handles interaction input (E key).
+    /// </summary>
+    void HandleInteractionInput()
+    {
         if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
-        { 
-            InteractWithObject();
-            
-        }
-       
-
-        LActive = leftHand.childCount > 0;
-        RActive = rightHand.childCount > 0;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        IInteractable interactable = other.GetComponent<IInteractable>();
-        if (interactable != null && !nearbyInteractables.Contains(interactable))
         {
-            nearbyInteractables.Add(interactable);
-            Debug.Log("Interactuable detectado: " + other.name);
+            GameObject heldItem = inventoryManager?.GetRightHandObject();
+            currentInteractable?.Interact(heldItem);
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        IInteractable interactable = other.GetComponent<IInteractable>();
-        if (interactable != null)
-        {
-            nearbyInteractables.Remove(interactable);
-            Debug.Log("Interactuable eliminado: " + other.name);
-        }
-    }
-
-    void InteractWithObject()
-    {
-        if (nearbyInteractables.Count == 0) return;
-
-        // Limpiar interactuables nulos
-        nearbyInteractables.RemoveAll(x => x == null);
-
-        // Buscar el más cercano
-        IInteractable nearest = null;
-        float minDistance = Mathf.Infinity;
-        Vector3 playerPosition = transform.position;
-
-        foreach (IInteractable interactable in nearbyInteractables)
-        {
-            float distance = Vector3.Distance(
-                playerPosition,
-                (interactable as MonoBehaviour).transform.position
-            );
-
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                nearest = interactable;
-            }
-        }
-
-        if (nearest != null)
-        {
-            GameObject objectInHand = inventoryManager?.equippedRight;
-            nearest.Interact(objectInHand);
-        }
-    }
-
-    void setAnimation()
+    /// <summary>
+    /// Updates camera and hand animations.
+    /// </summary>
+    void UpdateAnimations()
     {
         camAnim.SetBool("IsWalking", isWalking);
         LHAnim.SetBool("isCloser", isCloser);
-        LHAnim.SetBool("isActive", LActive);
-        RHAnim.SetBool("isActive", RActive);
+        LHAnim.SetBool("isActive", leftHand.childCount > 0);
+        RHAnim.SetBool("isActive", rightHand.childCount > 0);
     }
 
-    void CheckForHeadBob()
-    {
-        isWalking = characterController.velocity.magnitude > 0.1f;
-    }
-
-    void GetInput()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
-        {
-            speed = playerSpeed * 3;
-            currentStamina -= 0.1f;
-        }
-        else
-        {
-            speed = playerSpeed;
-            if (currentStamina < stamina) currentStamina += 0.1f;
-        }
-
-        if (Input.GetMouseButtonDown(1)) isCloser = true;
-        else if (Input.GetMouseButtonUp(1)) isCloser = false;
-
-        inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-        inputVector = transform.TransformDirection(inputVector);
-        movementVector = (inputVector * speed) + (Vector3.up * Gravity);
-    }
-
+    /// <summary>
+    /// Coroutine for inventory toggle delay.
+    /// </summary>
     IEnumerator OpenInventory()
     {
         yield return new WaitForSeconds(0.1f);
         inventoryManager.ToggleInventory();
         isInventoryOpen = inventoryManager.IsInventoryOpen;
-    }
-
-    void MovePlayer()
-    {
-        characterController.Move(movementVector * Time.deltaTime);
     }
 }

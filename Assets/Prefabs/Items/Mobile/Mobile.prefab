@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4838350562356733323}
   - component: {fileID: 8821920990567101567}
   - component: {fileID: 1484521890673560781}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pantalla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6084738296022332844}
   - component: {fileID: 4297532094734788874}
   - component: {fileID: 7135842808235335651}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 3738039410331150902}
   - component: {fileID: 3512880373931752506}
   - component: {fileID: 4075284873954421885}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HeartIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4948406815560745270}
   - component: {fileID: 8207350903341103133}
   - component: {fileID: 2487208771727176996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6510717245925432366}
   - component: {fileID: 5644623066463482681}
   - component: {fileID: 3525128910138452046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8041150652472296400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 275722027704768054}
   - component: {fileID: 5878777401631551808}
   - component: {fileID: 5649293513201851160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 4530892288895534615}
   - component: {fileID: 4104181214923092168}
   - component: {fileID: 5206148711112413125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 577469478601633209}
   - component: {fileID: 9008774329306083686}
   - component: {fileID: 5871753738358459193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 5012333130008117314}
   - component: {fileID: 4107218629682495435}
   - component: {fileID: 4727883677703636471}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mobile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,11 +750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634460691f849734f85882e104fff452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHand: {fileID: 0}
   itemData: {fileID: 11400000, guid: 21f8185571045f542b10b96500ef062c, type: 2}
   isHeld: 0
-  UIText: {fileID: 0}
-  inventory: {fileID: 0}
 --- !u!1 &6706400998243380198
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +763,7 @@ GameObject:
   - component: {fileID: 6153944626655961335}
   - component: {fileID: 4423196425494365671}
   - component: {fileID: 3311604437802837217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +838,7 @@ GameObject:
   - component: {fileID: 7829536400884030800}
   - component: {fileID: 8137320998634552768}
   - component: {fileID: 1637882687466432122}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +913,7 @@ GameObject:
   - component: {fileID: 6456154886980720151}
   - component: {fileID: 8412959316985693227}
   - component: {fileID: 5894128631664869635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +989,7 @@ GameObject:
   - component: {fileID: 6571396878013908231}
   - component: {fileID: 4092202906828335188}
   - component: {fileID: 863844301852870869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MobileScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,7 +1088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283304558245859442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1129,7 @@ GameObject:
   - component: {fileID: 8863191505403992678}
   - component: {fileID: 1767518562434178820}
   - component: {fileID: 8627096517797929064}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SanityIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1208,7 +1205,7 @@ GameObject:
   - component: {fileID: 8032551265873235496}
   - component: {fileID: 895167687766479113}
   - component: {fileID: 5670297453459323597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
