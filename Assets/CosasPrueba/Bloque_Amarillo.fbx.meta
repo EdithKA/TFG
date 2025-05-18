@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 932a0c1b95085c64ebd9bab6123ce45d
+guid: 37cbed24356bafb449fb1e99c4a084c5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 64f03e986c369214e9bd6c80dc7fe0ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nokia
-    second: {fileID: 2100000, guid: de659b7977330864780c59a435b12d4f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

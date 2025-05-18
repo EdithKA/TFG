@@ -44,6 +44,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable
             uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
             return;
         }
+        
 
         // Si hay un objeto en el holder (y no está completado), puedes recogerlo
         if (itemOnHolder != null)
@@ -76,6 +77,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable
 
                 if (item.itemData.itemID == correctObjectID)
                 {
+                    item.GetComponent<Collider>().enabled = false; 
                     uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
                     completed = true;
                 }
@@ -91,5 +93,6 @@ public class HolderInteractable : MonoBehaviour, IInteractable
         {
             uiTextController.ShowInteraction(gameTexts.needObjectMessage, Color.red);
         }
+        
     }
 }
