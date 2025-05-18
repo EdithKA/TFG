@@ -1001,22 +1001,37 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 860379686}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.957
+      value: 0.24507645
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9113199
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.3563
+      value: 4.8643746
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
@@ -1026,7 +1041,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37cbed24356bafb449fb1e99c4a084c5,
         type: 3}
@@ -4441,6 +4456,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 609685808}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2588f9c4d78f1e1449baebe9ae533ff6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1308345519}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2588f9c4d78f1e1449baebe9ae533ff6,
         type: 3}
@@ -5770,6 +5789,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cuerpo
       objectReference: {fileID: 0}
+    - target: {fileID: 3276281955633696228, guid: 319c016ff17952849bfa877f9154d0c0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5885655285286292945, guid: 319c016ff17952849bfa877f9154d0c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6295,6 +6319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pies
       objectReference: {fileID: 0}
+    - target: {fileID: 4596640645639373022, guid: 0db4f24b164f1f845b4fb04b766b5d52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7040309944991123571, guid: 0db4f24b164f1f845b4fb04b766b5d52,
         type: 3}
       propertyPath: UIText
@@ -6616,7 +6645,6 @@ SceneRoots:
   - {fileID: 1088192577}
   - {fileID: 1893834861}
   - {fileID: 561672455}
-  - {fileID: 548037408}
   - {fileID: 7330130712701945134}
   - {fileID: 6832032417289094384}
   - {fileID: 8277729041782905801}

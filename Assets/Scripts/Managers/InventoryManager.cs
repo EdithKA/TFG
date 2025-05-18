@@ -63,23 +63,10 @@ public class InventoryManager : MonoBehaviour
             items.Add(item);
             RefreshUI();
 
-            if (item.itemID == "Mobile" && !IsMobileEquipped())
-            {
-                EquipMobile(item);
-            }
+           
         }
     }
 
-    /// <summary>
-    /// Instantiates mobile phone prefab in left hand
-    /// </summary>
-    private void EquipMobile(Item mobileItem)
-    {
-        GameObject mobile = Instantiate(mobileItem.itemPrefab, leftHand);
-        mobile.transform.localPosition = Vector3.zero;
-        mobile.transform.localRotation = Quaternion.identity;
-        mobile.GetComponent<ItemInteractable>().isHeld = true;
-    }
 
     /// <summary>
     /// Checks if mobile phone is currently equipped

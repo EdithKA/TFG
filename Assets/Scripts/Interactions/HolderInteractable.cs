@@ -77,6 +77,9 @@ public class HolderInteractable : MonoBehaviour, IInteractable
 
                 if (item.itemData.itemID == correctObjectID)
                 {
+                    itemOnHolder.enabled = false; 
+                    Collider collider = itemOnHolder.GetComponent<Collider>();
+                    if (collider != null) collider.enabled = false;
                     item.GetComponent<Collider>().enabled = false; 
                     uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
                     completed = true;
