@@ -18,4 +18,5 @@ public class GameTexts : ScriptableObject
     public string dvdCorrectMessage = "";
     public string dvdError = "";
     public string dvdMissing = "";
+    public string rewardAppear = "";
 }

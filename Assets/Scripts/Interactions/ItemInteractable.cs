@@ -48,7 +48,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     private void PickUp()
     {
         inventoryManager.AddItem(itemData);
-        uiTextController.ShowThought($"He encontrado un {itemData.displayName}");
+        uiTextController.ShowThought($"He encontrado {itemData.displayName}");
 
         if (itemData.itemID == "Mobile")
         {

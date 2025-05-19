@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.Video;
+using System;
 
-public class PS2Interactable : MonoBehaviour, IInteractable
+public class PS2Interactable : MonoBehaviour, IInteractable, IPuzzleObjective
 {
+    public bool isComplete { get; private set; }
+    public event Action onCompleted; // Evento correcto según la interfaz
+
     [Header("Reward Settings")]
     public Item crashSaveData;
 
@@ -21,7 +25,6 @@ public class PS2Interactable : MonoBehaviour, IInteractable
     private AudioSource audioSource;
     private UITextController uiTextController;
     private InventoryManager inventoryManager;
-    private bool completed;
 
     private void Start()
     {
@@ -38,7 +41,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable
     // IInteractable implementation
     public void OnHoverEnter(UITextController textController)
     {
-        if (!completed)
+        if (!isComplete)
             textController.ShowInteraction(gameTexts.interactMessage, Color.cyan);
     }
 
@@ -49,18 +52,16 @@ public class PS2Interactable : MonoBehaviour, IInteractable
 
     public void Interact(GameObject objectOnHand = null)
     {
-        if (!completed)
+        if (!isComplete)
         {
             if (objectOnHand != null)
             {
                 ItemInteractable item = objectOnHand.GetComponent<ItemInteractable>();
                 if (item != null && item.itemData.type == "DVD")
                 {
-
-
                     if (item.itemData.itemID == requiredDVD)
                     {
-                        completed = true;
+                        isComplete = true;
                         uiTextController.ShowThought(gameTexts.dvdCorrectMessage);
                         dvdPlayer.clip = correctDVD;
                         led.color = Color.green;
@@ -90,12 +91,11 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         }
     }
 
-
-
     private void OnVideoEnded(VideoPlayer vp)
     {
-        if (completed && !inventoryManager.HasItem(crashSaveData.itemID))
+        if (isComplete && !inventoryManager.HasItem(crashSaveData.itemID))
         {
+            onCompleted?.Invoke(); // Evento correcto
             inventoryManager.AddItem(crashSaveData);
             uiTextController.ShowThought($"Parece que he conseguido un...¿{crashSaveData.displayName}?");
         }
@@ -103,6 +103,6 @@ public class PS2Interactable : MonoBehaviour, IInteractable
         dvdPlayer.clip = noSignal;
         dvdPlayer.Play();
         led.color = Color.red;
-        completed = false;
+        isComplete = false; // Si quieres que solo se pueda completar una vez, elimina esta línea
     }
 }

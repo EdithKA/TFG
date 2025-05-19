@@ -1,10 +1,13 @@
+using System;
 using UnityEngine;
 
-public class HolderInteractable : MonoBehaviour, IInteractable
+public class HolderInteractable : MonoBehaviour, IInteractable, IPuzzleObjective
 {
+    public bool isComplete { get; private set; }
+    public event Action onCompleted; // Solo este
+
     [Header("Configuración")]
     public string correctObjectID;
-    public bool completed;
     public Transform holderPoint;
     public GameTexts gameTexts;
 
@@ -21,7 +24,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable
 
     public void OnHoverEnter(UITextController textController)
     {
-        if (!completed)
+        if (!isComplete)
         {
             textController.ShowInteraction("Pulsa [E] para colocar un objeto", Color.cyan);
         }
@@ -38,31 +41,25 @@ public class HolderInteractable : MonoBehaviour, IInteractable
 
     public void Interact(GameObject objectOnHand = null)
     {
-        // Si ya está completado, no se puede recoger ni colocar nada
-        if (completed)
+        if (isComplete)
         {
             uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
             return;
         }
-        
 
-        // Si hay un objeto en el holder (y no está completado), puedes recogerlo
         if (itemOnHolder != null)
         {
-            // Recoger solo si NO está completado
             inventoryManager.AddItem(itemOnHolder.itemData);
             Destroy(itemOnHolder.gameObject);
             itemOnHolder = null;
             uiTextController.ShowThought(gameTexts.collectedMessage);
             uiTextController.ClearMessages();
         }
-        // Si no hay objeto en el holder, puedes colocar uno si tienes en la mano
         else if (objectOnHand != null)
         {
             ItemInteractable item = objectOnHand.GetComponent<ItemInteractable>();
             if (item != null)
             {
-                // Instanciar el objeto en el holder
                 GameObject newItem = Instantiate(item.itemData.itemPrefab, holderPoint.position, holderPoint.rotation, holderPoint);
                 itemOnHolder = newItem.GetComponentInChildren<ItemInteractable>(true);
 
@@ -77,12 +74,13 @@ public class HolderInteractable : MonoBehaviour, IInteractable
 
                 if (item.itemData.itemID == correctObjectID)
                 {
-                    itemOnHolder.enabled = false; 
+                    itemOnHolder.enabled = false;
                     Collider collider = itemOnHolder.GetComponent<Collider>();
                     if (collider != null) collider.enabled = false;
-                    item.GetComponent<Collider>().enabled = false; 
+                    item.GetComponent<Collider>().enabled = false;
                     uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
-                    completed = true;
+                    isComplete = true;
+                    onCompleted?.Invoke(); // ¡Este es el evento correcto!
                 }
                 else
                 {
@@ -96,6 +94,5 @@ public class HolderInteractable : MonoBehaviour, IInteractable
         {
             uiTextController.ShowInteraction(gameTexts.needObjectMessage, Color.red);
         }
-        
     }
 }
