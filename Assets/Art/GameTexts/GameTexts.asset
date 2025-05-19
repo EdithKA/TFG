@@ -23,3 +23,4 @@ MonoBehaviour:
   dvdCorrectMessage: "\xA1Funciona! Me encantaba este juego."
   dvdError: "No parece que funcione como deber\xEDa."
   dvdMissing: Necesito un DVD para que funcione.
+  rewardAppear: "\xA1Ha aparecido algo!"

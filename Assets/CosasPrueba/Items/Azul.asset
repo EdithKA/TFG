@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Azul
   m_EditorClassIdentifier: 
   itemID: Azul
-  displayName: Azul
+  displayName: 'un juguete azul '
   icon: {fileID: 21300000, guid: e9d1aa0f7fea5144db92da035ef3458a, type: 3}
   type: 
   itemPrefab: {fileID: 1675905916716157406, guid: 6933d3ffb6e195245ac1125cb73ce438,
