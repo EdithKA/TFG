@@ -7,24 +7,21 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     public bool isHeld = false;
 
     [Header("Referencias")]
-    private InventoryManager inventoryManager;
-    private UITextController uiTextController;
-    private PlayerController playerController;
+    public InventoryManager inventoryManager;
+    public UITextController uiTextController;
+    public PlayerController playerController;
 
     private void Start()
     {
-        inventoryManager = FindObjectOfType<InventoryManager>();
-        uiTextController = FindObjectOfType<UITextController>();
         playerController = FindObjectOfType<PlayerController>();
+        inventoryManager = playerController.inventoryManager;
+        uiTextController = playerController.textController;
     }
 
-    // Implementación de IInteractable
     public void OnHoverEnter(UITextController textController)
     {
         if (!isHeld)
-        {
-            textController.ShowInteraction(textController.gameTexts.collectMessage, Color.yellow);
-        }
+            textController.ShowInteraction(textController.gameTexts.collectMessage);
     }
 
     public void OnHoverExit()
@@ -48,7 +45,6 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     private void PickUp()
     {
         inventoryManager.AddItem(itemData);
-        uiTextController.ShowThought($"He encontrado {itemData.displayName}");
 
         if (itemData.itemID == "Mobile")
         {
@@ -61,5 +57,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         {
             Destroy(gameObject);
         }
+
+        uiTextController.ClearMessages();
     }
 }

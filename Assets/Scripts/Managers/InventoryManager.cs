@@ -22,6 +22,9 @@ public class InventoryManager : MonoBehaviour
     [Header("Special Items")]
     public Item completedToy;                     // Combined toy item
 
+    [Header("UI Reference")]
+    [SerializeField] private UITextController uiTextController; // Asignar desde el Inspector
+
     private List<Item> items = new List<Item>();  // Inventory contents
     private List<GameObject> slots = new List<GameObject>(); // UI slot instances
     private int toyPieces = 0;                    // Collected toy fragments
@@ -62,11 +65,9 @@ public class InventoryManager : MonoBehaviour
 
             items.Add(item);
             RefreshUI();
-
-           
+            uiTextController.ShowInventoryMessage($"{item.displayName} añadido al inventario.", true);
         }
     }
-
 
     /// <summary>
     /// Checks if mobile phone is currently equipped
@@ -83,8 +84,12 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public void RemoveItem(Item item)
     {
-        if (items.Contains(item)) items.Remove(item);
-        RefreshUI();
+        if (items.Contains(item))
+        {
+            items.Remove(item);
+            RefreshUI();
+            uiTextController.ShowInventoryMessage($"{item.displayName} eliminado del inventario.", false);
+        }
     }
 
     /// <summary>

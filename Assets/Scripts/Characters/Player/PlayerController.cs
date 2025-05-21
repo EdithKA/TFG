@@ -31,6 +31,13 @@ public class PlayerController : MonoBehaviour
     bool isCloser;
     IInteractable currentInteractable;
 
+    [Header("Sounds Configuration")]
+    public AudioSource stepsPlayer;
+    public AudioClip stepSound;
+    public float stepInterval = 1f;
+
+    float stepTimer = 0f;
+
     /// <summary>
     /// Initialize references and set starting values.
     /// </summary>
@@ -39,8 +46,10 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         mainCamera = Camera.main;
         currentStamina = stamina;
-        if (!inventoryManager) inventoryManager = FindObjectOfType<InventoryManager>();
-        if (!textController) textController = FindObjectOfType<UITextController>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        textController = FindObjectOfType<UITextController>();
+
+
     }
 
     /// <summary>
@@ -53,6 +62,8 @@ public class PlayerController : MonoBehaviour
         HandleInteraction();
         UpdateAnimations();
         HandleInteractionInput();
+        HandleFootsteps();
+
     }
 
     /// <summary>
@@ -78,10 +89,12 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
             {
                 speed = playerSpeed * 3;
+                stepInterval = 0.25f;
                 currentStamina -= 0.1f;
             }
             else
             {
+                stepInterval = 0.95f;
                 speed = playerSpeed;
                 if (currentStamina < stamina) currentStamina += 0.1f;
             }
@@ -158,4 +171,19 @@ public class PlayerController : MonoBehaviour
         inventoryManager.ToggleInventory();
         isInventoryOpen = inventoryManager.IsInventoryOpen;
     }
+
+    void HandleFootsteps()
+    {
+        if(isWalking & !isInventoryOpen && characterController.isGrounded)
+        {
+            stepTimer += Time.deltaTime;
+            if(stepTimer >= stepInterval)
+            {
+                stepsPlayer.PlayOneShot(stepSound);
+                stepTimer = 0f;
+            }
+        }
+    }
+
+    
 }
