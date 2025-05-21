@@ -16,6 +16,8 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         playerController = FindObjectOfType<PlayerController>();
         inventoryManager = playerController.inventoryManager;
         uiTextController = playerController.textController;
+
+        
     }
 
     public void OnHoverEnter(UITextController textController)
@@ -38,8 +40,13 @@ public class ItemInteractable : MonoBehaviour, IInteractable
             uiTextController.ShowThought(uiTextController.gameTexts.needMobileMessage);
             return;
         }
-
+        if(itemData.name == "Mobile")
+        {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.Stop();
+        }
         PickUp();
+        
     }
 
     private void PickUp()

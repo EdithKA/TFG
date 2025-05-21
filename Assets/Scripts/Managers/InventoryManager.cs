@@ -33,11 +33,15 @@ public class InventoryManager : MonoBehaviour
     private bool isInventoryOpen = false;         // Inventory visibility state
     public bool IsInventoryOpen => isInventoryOpen; // Public accessor
 
+    public AudioSource player;
+    public AudioClip inventorySoundClip;
+
     /// <summary>
     /// Initializes inventory UI and ensures mobile phone is equipped if present
     /// </summary>
     private void Start()
     {
+        player = GetComponent<AudioSource>();
         if (inventoryUI != null) inventoryUI.SetActive(false);
         RefreshUI();
     }
@@ -49,6 +53,7 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public void AddItem(Item item)
     {
+        player.PlayOneShot(inventorySoundClip);
         if (items.Count < inventorySize)
         {
             if (item.type == "piece")
@@ -84,11 +89,14 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public void RemoveItem(Item item)
     {
+
         if (items.Contains(item))
         {
             items.Remove(item);
             RefreshUI();
             uiTextController.ShowInventoryMessage($"{item.displayName} eliminado del inventario.", false);
+            player.PlayOneShot(inventorySoundClip);
+
         }
     }
 

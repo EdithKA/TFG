@@ -31,11 +31,18 @@ public class EnemyController : MonoBehaviour
     public Transform[] waypoints; /// Array of patrol waypoints.
     private int currentWaypointIndex = 0; /// Current waypoint index in array.
 
+    [Header("Attack Settings")]
+    public int damageAmount = 10;           // Daño por ataque
+    public float attackCooldown = 1.5f;     // Tiempo entre ataques
+    private float attackTimer = 0f;
+    private Stats playerStats;
+
     /**
     * @brief Initializes components and starts patrolling.
 */
     private void Start()
     {
+        playerStats = FindAnyObjectByType<Stats>();
         playerTransform = FindObjectOfType<PlayerController>().transform;
         enemyNavMeshAgent = GetComponent<NavMeshAgent>();
         angleToPlayer = GetComponent<AngleToPlayer>();
@@ -104,7 +111,11 @@ public class EnemyController : MonoBehaviour
         // Cycle through waypoints when reaching current destination
         if (!enemyNavMeshAgent.pathPending && enemyNavMeshAgent.remainingDistance < 0.5f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+            int previousIndex = currentWaypointIndex;
+            do
+            {
+                currentWaypointIndex = Random.Range(0, waypoints.Length);
+            } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
             enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
