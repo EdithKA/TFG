@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 /**
@@ -9,6 +10,38 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour
 {
+    [Header("Pause Menu Config")]
+    public GameObject pauseMenu;
+    public bool isLevel;
+    private bool isPaused = false;
+    
+
+    private void Update()
+    {
+        if (isLevel && Input.GetKeyDown(KeyCode.Escape))
+            if (isPaused)
+                Resume();
+            else
+                Pause();
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused=true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     /**
      * @brief Loads a new scene by its name.
      * @param name The name of the scene to load.
