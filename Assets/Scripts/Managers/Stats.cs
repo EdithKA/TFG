@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /**
@@ -33,11 +34,14 @@ public class Stats : MonoBehaviour
     public Sprite[] brainSprites;                       /// Sprites for different sanity states.
     public List<GameObject> sanityBars;                 /// List of sanity bar UI segments.
 
+    [Header("References")]
+    public GameManager gameManager;
     /// <summary>
     /// Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine.
     /// </summary>
     private void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         // Find all objects in the scene that can be corrupted and store their original positions
         GameObject[] foundObjects = GameObject.FindGameObjectsWithTag(corruptibleTag);
         corruptibleObjects.AddRange(foundObjects);
@@ -199,6 +203,15 @@ public class Stats : MonoBehaviour
                 obj.transform.position = originalPositions[obj];
                 obj.transform.rotation = Quaternion.identity;
             }
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            gameManager.LoadSceneByName("GameOver");
         }
     }
 }

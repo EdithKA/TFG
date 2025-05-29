@@ -48,6 +48,17 @@ public class GameManager : MonoBehaviour
      */
     public void LoadSceneByName(string name)
     {
+        if(name != "PruebaNivel2")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        Time.timeScale = 1f;
         SceneManager.LoadScene(name);
     }
 

@@ -32,10 +32,11 @@ public class EnemyController : MonoBehaviour
     private int currentWaypointIndex = 0; /// Current waypoint index in array.
 
     [Header("Attack Settings")]
-    public int damageAmount = 10;           // Daño por ataque
-    public float attackCooldown = 1.5f;     // Tiempo entre ataques
+    public int damageAmount = 25;           // Daño por ataque
+    public float attackCooldown = 0.2f;     // Tiempo entre ataques
     private float attackTimer = 0f;
     private Stats playerStats;
+
 
     /**
     * @brief Initializes components and starts patrolling.
@@ -60,6 +61,7 @@ public class EnemyController : MonoBehaviour
     {
         NextAction();
         setAnimation();
+        HandleAttack();
     }
 
     /**
@@ -117,6 +119,20 @@ public class EnemyController : MonoBehaviour
                 currentWaypointIndex = Random.Range(0, waypoints.Length);
             } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
             enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+    }
+
+    void HandleAttack()
+    {
+        if(canAttack && attackTimer <= 0f)
+        {
+            playerStats.TakeDamage(damageAmount);
+            attackTimer = attackCooldown;
+
+        }
+        else
+        {
+            attackTimer -= Time.deltaTime;
         }
     }
 }
