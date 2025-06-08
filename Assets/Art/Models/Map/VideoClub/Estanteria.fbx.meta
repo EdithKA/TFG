@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 84b7046272ce2e047a13c6bfd22555f3
+guid: b4c2557fbd62e1045856f3f8724c8353
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,78 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Barandillas
-    second: {fileID: 2100000, guid: b161f3d8c4e53df4e942f2f8682ed85f, type: 2}
+      name: Estanteria
+    second: {fileID: 2100000, guid: 835f3663865ea0b4a8daa4293edb9b4e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CC_2_PLANTA
-    second: {fileID: 2100000, guid: 600970ae4cfdec842a3779f4f478a009, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 2bb489d1e12a96d4e83f80ef711ba6b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Conos
-    second: {fileID: 2100000, guid: 87c44e27ce3e79d43999e5a3e0353f0b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: DC
-    second: {fileID: 2100000, guid: 4e22e3d44d24a484b86871e5941db1e2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MD
-    second: {fileID: 2100000, guid: 2bbcc2ede74c8b446ad41ce131e750b4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_CC_DC
-    second: {fileID: 2100000, guid: f07141aeb51915a498375a970bbc4b22, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_CC_MD
-    second: {fileID: 2100000, guid: 8d9c42cb91c765b49924b2c138851235, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_CC_TH
-    second: {fileID: 2100000, guid: 0e8294a6a1f1a7c4a86d46c84dc78411, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_CC_VC
-    second: {fileID: 2100000, guid: 0c07574cb9f2d584083ff2bcbf63b42d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_DC_TH
-    second: {fileID: 2100000, guid: 4c8975a1fd93e6b4487ee59d4045fff7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pasillo_VC_TH
-    second: {fileID: 2100000, guid: 404bbc2b618669a47b4cc235c7685c20, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Suelo_Primera_Planta
-    second: {fileID: 2100000, guid: fbe069eb5ca57e04080903b784a71f9f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TH
-    second: {fileID: 2100000, guid: e8f6c4c2135413148aa03c8c1bf85ffe, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Techo
-    second: {fileID: 2100000, guid: b0dd321730b350c4b9451aa15ecd71b2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: VC
-    second: {fileID: 2100000, guid: 27bb0a03b062bf042aa4330d637953fe, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: e26db3eea548fdf48b248ce5a0f9b1ba, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
