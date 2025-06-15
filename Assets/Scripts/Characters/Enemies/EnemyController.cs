@@ -5,11 +5,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum EnemyType { None, Melee, Distance}
 /**
 * @brief Controls enemy AI behavior including patrolling, chasing, and attacking the player.
 */
 public class EnemyController : MonoBehaviour
 {
+    public EnemyType enemyType = EnemyType.None;
     [Header("Behavior Flags")]
     public bool canChase; /// Can the enemy chase the player?
     public bool canAttack; /// Is the enemy currently attacking?
@@ -51,6 +53,11 @@ public class EnemyController : MonoBehaviour
         if (waypoints.Length > 0)
         {
             enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+
+        if(enemyType == EnemyType.Distance)
+        {
+            attackDistance = attackDistance * 0.5f;
         }
     }
 
