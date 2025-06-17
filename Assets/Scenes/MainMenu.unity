@@ -529,7 +529,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PruebaNivel2
+          m_StringArgument: MainLevel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &471420621
@@ -1859,6 +1859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecb011ee9013ee4789c66db842b55a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  isLevel: 0
 --- !u!82 &1910927188
 AudioSource:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Transform rightHand;
     public InventoryManager inventoryManager;
     public UITextController textController;
+    public GameManager gameManager;
 
     CharacterController characterController;
     Camera mainCamera;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public float stepInterval = 1f;
 
     float stepTimer = 0f;
+    
 
     /// <summary>
     /// Initialize references and set starting values.
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         currentStamina = stamina;
         inventoryManager = FindObjectOfType<InventoryManager>();
         textController = FindObjectOfType<UITextController>();
+        gameManager = FindObjectOfType<GameManager>();
 
 
     }
@@ -185,5 +188,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "End")
+            gameManager.gameComplete = true;
+
+    }
+
 }

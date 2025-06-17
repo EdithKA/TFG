@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public bool isLevel;
     private bool isPaused = false;
+    public bool gameComplete = false;
     
 
     private void Update()
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
                 Resume();
             else
                 Pause();
+        if (isLevel && gameComplete)
+            LoadSceneByName("MainMenu");
     }
 
     public void Resume()
