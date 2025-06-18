@@ -84,7 +84,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -176,6 +176,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e4ec0e130ee4dfc4cb8874a1ae3a90f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: e4ec0e130ee4dfc4cb8874a1ae3a90f9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -191,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 75f576e7e5a0efc4f9d4a2513e05782e, type: 2}
+    - target: {fileID: -516098083770646512, guid: e4ec0e130ee4dfc4cb8874a1ae3a90f9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e4ec0e130ee4dfc4cb8874a1ae3a90f9,
         type: 3}
       propertyPath: m_Name
