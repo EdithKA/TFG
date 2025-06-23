@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -10,7 +11,9 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Reference to the door's Animator component.
     /// </summary>
-    private Animator doorAnimator;
+    public Animator leftDoorAnim;
+    public Animator rightDoorAnim;
+
 
     /// <summary>
     /// Name of the animation parameter that controls door state.
@@ -27,6 +30,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// Game text configurations for UI messages.
     /// </summary>
     public GameTexts gameTexts;
+    public UITextController textController;
 
     [Header("Required Item")]
     /// <summary>
@@ -34,14 +38,25 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public string requiredItem;
 
+    BoxCollider interactCollider;
+
     /// <summary>
     /// Initializes the door animator reference.
     /// </summary>
     private void Start()
     {
-        doorAnimator = GetComponent<Animator>();
+        interactCollider = GetComponent<BoxCollider>();
+        textController = FindObjectOfType<UITextController>();
     }
 
+    private void Update()
+    {
+        interactCollider.enabled = !isOpen;
+
+        leftDoorAnim.SetBool(openParameter, isOpen);
+        rightDoorAnim.SetBool(openParameter, isOpen);
+
+    }
     /// <summary>
     /// Displays interaction prompt when hovering over the door.
     /// </summary>
@@ -56,7 +71,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public void OnHoverExit()
     {
-        FindObjectOfType<UITextController>().ClearMessages();
+        textController.ClearMessages();
     }
 
     /// <summary>
@@ -70,16 +85,18 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         // Check if soundPlayer has required item
         if (!inventory.HasItem(requiredItem))
         {
-            FindObjectOfType<UITextController>().ShowThought("Parece que necesito algo...");
+            textController.ShowThought("Looks like I need something...");
             return;
         }
+        else
+        {
+            textController.ShowThought("I can finally open it.");
+        }
+
 
         // Toggle door state
         isOpen = !isOpen;
-        doorAnimator.SetBool(openParameter, isOpen);
 
-        FindObjectOfType<UITextController>().ShowThought(
-            isOpen ? gameTexts.interactMessage : gameTexts.interactMessage
-        );
+        
     }
 }

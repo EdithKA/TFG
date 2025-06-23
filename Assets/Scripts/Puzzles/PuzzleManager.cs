@@ -46,7 +46,7 @@ public class PuzzleManager : MonoBehaviour
             }
         }
         // All completed!
-        Instantiate(rewardPrefab, rewardSpawnPoint.position, rewardSpawnPoint.rotation);
+        Instantiate(rewardPrefab, rewardSpawnPoint.position, rewardPrefab.transform.rotation);
     }
 
     private void OnDestroy()
