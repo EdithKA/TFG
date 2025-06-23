@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal; // URP!
 
 /**
  * @brief Manages player stats (health and sanity), updates the UI, and triggers world corruption effects.
@@ -11,38 +13,47 @@ using UnityEngine.UI;
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    private int sanity;                                 /// Current sanity value (0-100).
-    private int health;                                 /// Current health value (0-100).
-    [SerializeField] private float decreaseInterval = 1.5f; /// Time in seconds between sanity decreases.
+    private int sanity = 100;                                 /// Current sanity value (0-100).
+    private int health = 100;                                 /// Current health value (0-100).
+    public float decreaseInterval = 1.5f;                     /// Time in seconds between sanity decreases.
+    private float lastSanityDecreaseTime;                     /// Timestamp of last sanity decrease.
+    public bool hasPhone = false;                             /// Whether the player has obtained the phone.
 
     [Header("World Corruption")]
-    public string corruptibleTag;                       /// Tag for objects that can be corrupted.
-    public float moveRange = 0.5f;                      /// Maximum random movement offset during corruption.
-    public float rotationRange = 45f;                   /// Maximum random rotation angle during corruption.
-    public int sanityThreshold = 75;                    /// Sanity value at which corruption starts.
+    public string corruptibleTag;                             /// Tag for objects that can be corrupted.
+    public float moveRange = 0.5f;                            /// Maximum random movement offset during corruption.
+    public float rotationRange = 45f;                         /// Maximum random rotation angle during corruption.
+    public int sanityThreshold = 50;                          /// Sanity value at which corruption starts (50% threshold).
 
     private List<GameObject> corruptibleObjects = new List<GameObject>(); /// List of objects that can be corrupted.
     private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); /// Stores original positions.
+    private Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>(); /// Stores original rotations.
+    private int lastSanityValue = 100;                        /// Stores last sanity value to detect changes.
 
     [Header("Health UI")]
-    public Image heartIcon;                             /// UI image for the heart icon.
-    public Sprite[] heartSprites;                       /// Sprites for different health states.
-    public List<GameObject> healthBars;                 /// List of health bar UI segments.
+    public Image heartIcon;                                   /// UI image for the heart icon.
+    public Sprite[] heartSprites;                             /// Sprites for different health states.
+    public List<GameObject> healthBars;                       /// List of health bar UI segments.
 
     [Header("Sanity UI")]
-    public Image sanityIcon;                            /// UI image for the brain icon.
-    public Sprite[] brainSprites;                       /// Sprites for different sanity states.
-    public List<GameObject> sanityBars;                 /// List of sanity bar UI segments.
+    public Image sanityIcon;                                  /// UI image for the brain icon.
+    public Sprite[] sanitySprites;                            /// Sprites for different sanity states.
+    public List<GameObject> sanityBars;                       /// List of sanity bar UI segments.
 
     [Header("References")]
     public GameManager gameManager;
+
+    [Header("Camera Effects")]
+    public Volume postProcessVolume; // URP Volume
+    private Vignette vignette;
+
     /// <summary>
-    /// Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine.
+    /// Initializes stats, finds corruptible objects, and stores their original transforms.
     /// </summary>
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
-        // Find all objects in the scene that can be corrupted and store their original positions
+        // Find all objects in the scene that can be corrupted and store their original positions/rotations
         GameObject[] foundObjects = GameObject.FindGameObjectsWithTag(corruptibleTag);
         corruptibleObjects.AddRange(foundObjects);
 
@@ -51,22 +62,101 @@ public class Stats : MonoBehaviour
             if (obj != null)
             {
                 originalPositions[obj] = obj.transform.position;
+                originalRotations[obj] = obj.transform.rotation;
             }
         }
 
         sanity = 100;
         health = 100;
+        lastSanityValue = sanity;
+        lastSanityDecreaseTime = Time.time;
 
-        StartCoroutine(DecreaseSanityOverTime());
+        if (postProcessVolume != null && postProcessVolume.profile != null)
+        {
+            postProcessVolume.profile.TryGet<Vignette>(out vignette);
+        }
     }
 
     /// <summary>
-    /// Updates the UI and bar displays every frame.
+    /// Updates the UI, decreases sanity over time (if phone obtained), and applies corruption effects.
     /// </summary>
     private void Update()
     {
+        // Only decrease sanity if the player has obtained the phone
+        if (hasPhone)
+        {
+            if (Time.time - lastSanityDecreaseTime > decreaseInterval)
+            {
+                lastSanityDecreaseTime = Time.time;
+                if (sanity > 0)
+                {
+                    sanity--;
+                }
+                else if (health > 0)
+                {
+                    health--;
+                }
+            }
+        }
+
+        // If sanity has changed and is below threshold, apply corruption effect
+        if (sanity < lastSanityValue && sanity < sanityThreshold)
+        {
+            ApplyCorruptionStep();
+        }
+        lastSanityValue = sanity;
+
+        // Reset objects if sanity is restored above threshold
+        if (sanity >= sanityThreshold)
+        {
+            ResetCorruptedObjects();
+        }
+
         UpdateUI();
         UpdateBars();
+        UpdateVignetteEffect();
+    }
+
+    /// <summary>
+    /// Applies a single step of corruption effect (objects "jump" to new position).
+    /// </summary>
+    private void ApplyCorruptionStep()
+    {
+        foreach (GameObject obj in corruptibleObjects)
+        {
+            if (obj != null && originalPositions.ContainsKey(obj))
+            {
+                // Calculate new random offset (intensity based on sanity)
+                float intensity = 1 - (sanity / (float)sanityThreshold);
+                Vector3 randomOffset = new Vector3(
+                    Random.Range(-moveRange, moveRange) * intensity,
+                    Random.Range(-moveRange, moveRange) * intensity,
+                    Random.Range(-moveRange, moveRange) * intensity
+                );
+                obj.transform.position = originalPositions[obj] + randomOffset;
+
+                // Apply random rotation
+                float randomX = Random.Range(-rotationRange, rotationRange) * intensity;
+                float randomY = Random.Range(-rotationRange, rotationRange) * intensity;
+                float randomZ = Random.Range(-rotationRange, rotationRange) * intensity;
+                obj.transform.rotation = Quaternion.Euler(randomX, randomY, randomZ);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Resets all corruptible objects to their original positions and rotations.
+    /// </summary>
+    private void ResetCorruptedObjects()
+    {
+        foreach (GameObject obj in corruptibleObjects)
+        {
+            if (obj != null && originalPositions.ContainsKey(obj) && originalRotations.ContainsKey(obj))
+            {
+                obj.transform.position = originalPositions[obj];
+                obj.transform.rotation = originalRotations[obj];
+            }
+        }
     }
 
     /// <summary>
@@ -101,39 +191,15 @@ public class Stats : MonoBehaviour
     private void SetBrainIcon()
     {
         if (sanity <= 0)
-            sanityIcon.sprite = brainSprites[0];
+            sanityIcon.sprite = sanitySprites[0];
         else if (sanity <= 25)
-            sanityIcon.sprite = brainSprites[1];
+            sanityIcon.sprite = sanitySprites[1];
         else if (sanity <= 50)
-            sanityIcon.sprite = brainSprites[2];
+            sanityIcon.sprite = sanitySprites[2];
         else if (sanity <= 75)
-            sanityIcon.sprite = brainSprites[3];
+            sanityIcon.sprite = sanitySprites[3];
         else
-            sanityIcon.sprite = brainSprites[4];
-    }
-
-    /// <summary>
-    /// Coroutine that decreases sanity over time and triggers corruption if needed.
-    /// </summary>
-    private IEnumerator DecreaseSanityOverTime()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(decreaseInterval);
-
-            if (sanity > 0)
-            {
-                sanity--;
-                if (sanity < sanityThreshold)
-                {
-                    StartCoroutine(CorruptObjects());
-                }
-            }
-            else if (health > 0)
-            {
-                health--;
-            }
-        }
+            sanityIcon.sprite = sanitySprites[4];
     }
 
     /// <summary>
@@ -161,51 +227,9 @@ public class Stats : MonoBehaviour
     }
 
     /// <summary>
-    /// Coroutine that corrupts objects by moving and rotating them randomly, then resets them.
+    /// Applies damage to the player and triggers game over if health reaches zero.
     /// </summary>
-    private IEnumerator CorruptObjects()
-    {
-        foreach (GameObject obj in corruptibleObjects)
-        {
-            if (obj != null)
-            {
-                // Move the object to a random nearby position
-                Vector3 randomOffset = new Vector3(
-                    Random.Range(-moveRange, moveRange),
-                    Random.Range(-moveRange, moveRange),
-                    Random.Range(-moveRange, moveRange)
-                );
-                obj.transform.position += randomOffset;
-
-                // Apply a random rotation
-                float randomX = Random.Range(-rotationRange, rotationRange);
-                float randomY = Random.Range(-rotationRange, rotationRange);
-                float randomZ = Random.Range(-rotationRange, rotationRange);
-                obj.transform.Rotate(new Vector3(randomX, randomY, randomZ));
-            }
-        }
-
-        // Wait a moment before resetting
-        yield return new WaitForSeconds(2f);
-
-        ResetCorruptedObjects();
-    }
-
-    /// <summary>
-    /// Resets all corruptible objects to their original positions and rotations.
-    /// </summary>
-    private void ResetCorruptedObjects()
-    {
-        foreach (GameObject obj in corruptibleObjects)
-        {
-            if (obj != null && originalPositions.ContainsKey(obj))
-            {
-                obj.transform.position = originalPositions[obj];
-                obj.transform.rotation = Quaternion.identity;
-            }
-        }
-    }
-
+    /// <param name="amount">Amount of damage to take.</param>
     public void TakeDamage(int amount)
     {
         health -= amount;
@@ -213,5 +237,20 @@ public class Stats : MonoBehaviour
         {
             gameManager.LoadSceneByName("GameOver");
         }
+    }
+
+    /// <summary>
+    /// Updates the vignette color and intensity based on the player's health.
+    /// </summary>
+    private void UpdateVignetteEffect()
+    {
+        if (vignette == null) return;
+
+        float healthPercent = Mathf.Clamp01(health / 100f);
+        vignette.color.value = Color.Lerp(Color.red, Color.black, healthPercent);
+        vignette.intensity.value = Mathf.Lerp(0.9f, 0.3f, healthPercent);
+
+        float vignetteSmoothness = Mathf.Lerp(0.1f, 0.5f, healthPercent);
+        vignette.smoothness.Override(vignetteSmoothness);
     }
 }

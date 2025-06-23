@@ -3,17 +3,7 @@ guid: bac41e695ae72644da1c14bb63c51922
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: a5a990221feccfd439fd98df4b98e735, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: toboganTextur
-    second: {fileID: 2800000, guid: 1524ebf8306175147abc11f3362bedce, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

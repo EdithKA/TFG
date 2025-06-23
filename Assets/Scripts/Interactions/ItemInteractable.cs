@@ -10,14 +10,15 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     public InventoryManager inventoryManager;
     public UITextController uiTextController;
     public PlayerController playerController;
+    public Stats stats;
 
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         inventoryManager = playerController.inventoryManager;
         uiTextController = playerController.textController;
+        stats = FindObjectOfType<Stats>();
 
-        
     }
 
     public void OnHoverEnter(UITextController textController)
@@ -42,6 +43,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         }
         if(itemData.name == "Mobile")
         {
+            stats.hasPhone = true;
             AudioSource audioSource = gameObject.GetComponent<AudioSource>();
             audioSource.Stop();
         }
