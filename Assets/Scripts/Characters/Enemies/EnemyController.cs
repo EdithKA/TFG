@@ -15,29 +15,29 @@ public class EnemyController : MonoBehaviour
 
     [Header("Behavior Flags")]
     /// <summary>
-    /// Whether the enemy can chase the player.
+    /// Whether the enemy can chase the soundPlayer.
     /// </summary>
     public bool canChase;
 
     /// <summary>
-    /// Whether the enemy can attack the player.
+    /// Whether the enemy can attack the soundPlayer.
     /// </summary>
     public bool canAttack;
 
     [Header("Target References")]
     /// <summary>
-    /// Reference to the player's transform.
+    /// Reference to the soundPlayer's transform.
     /// </summary>
     public Transform playerTransform;
 
     [Header("Movement Settings")]
     /// <summary>
-    /// Distance at which the enemy starts chasing the player.
+    /// Distance at which the enemy starts chasing the soundPlayer.
     /// </summary>
     public float chaseDistance;
 
     /// <summary>
-    /// Distance at which the enemy can attack the player.
+    /// Distance at which the enemy can attack the soundPlayer.
     /// </summary>
     public float attackDistance;
 
@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
 
     /// <summary>
-    /// Script that calculates angle to player for sprite direction.
+    /// Script that calculates angle to soundPlayer for sprite direction.
     /// </summary>
     AngleToPlayer angleToPlayer;
 
@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attack Settings")]
     /// <summary>
-    /// Amount of damage the enemy deals to the player.
+    /// Amount of damage the enemy deals to the soundPlayer.
     /// </summary>
     public int damageAmount = 25;
 
@@ -85,7 +85,7 @@ public class EnemyController : MonoBehaviour
     private float attackTimer = 0f;
 
     /// <summary>
-    /// Reference to the player's stats component.
+    /// Reference to the soundPlayer's stats component.
     /// </summary>
     private Stats playerStats;
 
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
     public Collider spotTrigger;
 
     /// <summary>
-    /// Whether the player is currently in the spotlight.
+    /// Whether the soundPlayer is currently in the spotlight.
     /// </summary>
     public bool playerInSpotlight = false;
 
@@ -142,7 +142,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Determines the next action based on distance to player (patrol, chase, or attack).
+    /// Determines the next action based on distance to soundPlayer (patrol, chase, or attack).
     /// </summary>
     void NextAction()
     {
@@ -173,7 +173,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets the enemy's navigation destination to the player's position.
+    /// Sets the enemy's navigation destination to the soundPlayer's position.
     /// </summary>
     void SetDestinationToPlayer()
     {
@@ -236,7 +236,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Detects when player enters the spotlight trigger for distance enemies.
+    /// Detects when soundPlayer enters the spotlight trigger for distance enemies.
     /// </summary>
     /// <param name="other">The collider that entered the trigger.</param>
     private void OnTriggerEnter(Collider other)
@@ -248,7 +248,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Detects when player exits the spotlight trigger for distance enemies.
+    /// Detects when soundPlayer exits the spotlight trigger for distance enemies.
     /// </summary>
     /// <param name="other">The collider that exited the trigger.</param>
     private void OnTriggerExit(Collider other)

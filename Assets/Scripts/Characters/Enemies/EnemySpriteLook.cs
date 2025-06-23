@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Controls enemy sprite rotation to face the player, with optional vertical tracking.
+/// Controls enemy sprite rotation to face the soundPlayer, with optional vertical tracking.
 /// </summary>
 public class EnemySpriteLook : MonoBehaviour
 {
     /// <summary>
-    /// Reference to the player's transform.
+    /// Reference to the soundPlayer's transform.
     /// </summary>
     public Transform target;
 
     /// <summary>
-    /// Whether the enemy can look up/down at the player.
+    /// Whether the enemy can look up/down at the soundPlayer.
     /// </summary>
     public bool canLookVertically;
 
     /// <summary>
-    /// Initializes target reference to the player's transform.
+    /// Initializes target reference to the soundPlayer's transform.
     /// </summary>
     void Start()
     {
@@ -26,7 +26,7 @@ public class EnemySpriteLook : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates sprite rotation to face the player each frame.
+    /// Updates sprite rotation to face the soundPlayer each frame.
     /// </summary>
     void Update()
     {

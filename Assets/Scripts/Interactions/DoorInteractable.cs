@@ -62,12 +62,12 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Handles door interaction, checking for required item and toggling door state.
     /// </summary>
-    /// <param name="objectOnHand">Item currently held by the player.</param>
+    /// <param name="objectOnHand">Item currently held by the soundPlayer.</param>
     public void Interact(GameObject objectOnHand = null)
     {
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        // Check if player has required item
+        // Check if soundPlayer has required item
         if (!inventory.HasItem(requiredItem))
         {
             FindObjectOfType<UITextController>().ShowThought("Parece que necesito algo...");

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Handles first-person mouse look for both the player body and the camera.
+/// Handles first-person mouse look for both the soundPlayer body and the camera.
 /// Disables look controls when the inventory is open.
 /// </summary>
 public class MouseLook : MonoBehaviour
@@ -32,7 +32,7 @@ public class MouseLook : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        // Find the player controller in the scene if not set in the Inspector
+        // Find the soundPlayer controller in the scene if not set in the Inspector
         if (playerController == null)
             playerController = FindObjectOfType<PlayerController>();
 
@@ -55,7 +55,7 @@ public class MouseLook : MonoBehaviour
     }
 
     /// <summary>
-    /// Rotates the player horizontally (left/right) based on mouse X movement.
+    /// Rotates the soundPlayer horizontally (left/right) based on mouse X movement.
     /// </summary>
     private void HandleHorizontalRotation()
     {

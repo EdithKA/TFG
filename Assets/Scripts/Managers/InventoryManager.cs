@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Manages player inventory system including item storage, UI representation, 
+/// Manages soundPlayer inventory system including item storage, UI representation, 
 /// and equipment handling. Supports item combination, mobile phone auto-equipping,
 /// and dual-hand item management (static left hand for mobile, dynamic right hand).
 /// </summary>
@@ -33,15 +33,17 @@ public class InventoryManager : MonoBehaviour
     private bool isInventoryOpen = false;         // Inventory visibility state
     public bool IsInventoryOpen => isInventoryOpen; // Public accessor
 
-    public AudioSource player;
+    public AudioSource soundPlayer;
     public AudioClip inventorySoundClip;
+    Stats stats;
 
     /// <summary>
     /// Initializes inventory UI and ensures mobile phone is equipped if present
     /// </summary>
     private void Start()
     {
-        player = GetComponent<AudioSource>();
+        soundPlayer = GetComponent<AudioSource>();
+        stats = FindAnyObjectByType<Stats>();
         if (inventoryUI != null) inventoryUI.SetActive(false);
         RefreshUI();
     }
@@ -53,7 +55,7 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public void AddItem(Item item)
     {
-        player.PlayOneShot(inventorySoundClip);
+        soundPlayer.PlayOneShot(inventorySoundClip);
         if (items.Count < inventorySize)
         {
             if (item.type == "piece")
@@ -67,10 +69,14 @@ public class InventoryManager : MonoBehaviour
                     return;
                 }
             }
+            if (item.type == "reward")
+                stats.sanity += (100 - stats.sanity);
+            if (item.type == "photo")
+                stats.sanity = Mathf.Min(stats.sanity + 20, 100);
 
             items.Add(item);
             RefreshUI();
-            uiTextController.ShowInventoryMessage($"{item.displayName} añadido al inventario.", true);
+            uiTextController.ShowInventoryMessage($"{item.displayName} added to inventory.", true);
         }
     }
 
@@ -94,8 +100,8 @@ public class InventoryManager : MonoBehaviour
         {
             items.Remove(item);
             RefreshUI();
-            uiTextController.ShowInventoryMessage($"{item.displayName} eliminado del inventario.", false);
-            player.PlayOneShot(inventorySoundClip);
+            uiTextController.ShowInventoryMessage($"{item.displayName} removed from inventory.", false);
+            soundPlayer.PlayOneShot(inventorySoundClip);
 
         }
     }

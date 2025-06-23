@@ -85,7 +85,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzzleObjective
     /// <summary>
     /// Handles object placement and puzzle verification.
     /// </summary>
-    /// <param name="objectOnHand">Item currently held by the player.</param>
+    /// <param name="objectOnHand">Item currently held by the soundPlayer.</param>
     public void Interact(GameObject objectOnHand = null)
     {
         if (isComplete)

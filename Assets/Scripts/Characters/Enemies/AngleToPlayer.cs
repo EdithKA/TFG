@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief Calculates relative angles to player and manages sprite direction visualization.
+ * @brief Calculates relative angles to soundPlayer and manages sprite direction visualization.
  */
 public class AngleToPlayer : MonoBehaviour
 {
     /// <summary>
-    /// Reference to the player's transform.
+    /// Reference to the soundPlayer's transform.
     /// </summary>
     private Transform player;
 
@@ -18,12 +18,12 @@ public class AngleToPlayer : MonoBehaviour
     private Vector3 targetPos;
 
     /// <summary>
-    /// Direction vector from enemy to player.
+    /// Direction vector from enemy to soundPlayer.
     /// </summary>
     private Vector3 targetDir;
 
     /// <summary>
-    /// Calculated signed angle between enemy forward and player direction.
+    /// Calculated signed angle between enemy forward and soundPlayer direction.
     /// </summary>
     private float angle;
 
@@ -38,7 +38,7 @@ public class AngleToPlayer : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     /// <summary>
-    /// Initializes player reference and sprite renderer component.
+    /// Initializes soundPlayer reference and sprite renderer component.
     /// </summary>
     void Start()
     {
@@ -55,14 +55,14 @@ public class AngleToPlayer : MonoBehaviour
         targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
         targetDir = targetPos - transform.position;
 
-        // Get signed angle between enemy forward and player direction
+        // Get signed angle between enemy forward and soundPlayer direction
         angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
 
         // Flip sprite based on left/right angle
         Vector3 tempScale = Vector3.one;
         if (angle > 0)
         {
-            tempScale.x = -1f; // Flip sprite when player is to the right
+            tempScale.x = -1f; // Flip sprite when soundPlayer is to the right
         }
 
         lastIndex = GetIndex(angle); // Update direction index for animations
@@ -98,6 +98,6 @@ public class AngleToPlayer : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, targetPos - transform.position); // Player direction ray
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPos); // Connection line to player
+        Gizmos.DrawLine(transform.position, targetPos); // Connection line to soundPlayer
     }
 }

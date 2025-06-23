@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        AudioListener.pause = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     void Pause()
     {
         pauseMenu.SetActive(true);
+        AudioListener.pause = true;
         Time.timeScale = 0f;
         isPaused=true;
         Cursor.lockState = CursorLockMode.None;

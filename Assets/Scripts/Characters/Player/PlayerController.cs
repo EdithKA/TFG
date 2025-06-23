@@ -2,13 +2,13 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Controls player movement, stamina, inventory, and raycast-based interactions.
+/// Controls soundPlayer movement, stamina, inventory, and raycast-based interactions.
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     /// <summary>
-    /// Base movement speed of the player.
+    /// Base movement speed of the soundPlayer.
     /// </summary>
     public float playerSpeed = 20f;
 
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 movementVector;
 
     /// <summary>
-    /// Is the player currently walking?
+    /// Is the soundPlayer currently walking?
     /// </summary>
     private bool isWalking;
 
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
     public bool isInventoryOpen;
 
     /// <summary>
-    /// Is the player in "closer" mode (zoomed view)?
+    /// Is the soundPlayer in "closer" mode (zoomed view)?
     /// </summary>
     public bool isCloser;
 
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Opens or closes the inventory if the player has the mobile.
+    /// Opens or closes the inventory if the soundPlayer has the mobile.
     /// </summary>
     void HandleInventoryToggle()
     {
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles player movement and stamina management.
+    /// Handles soundPlayer movement and stamina management.
     /// </summary>
     void HandleMovement()
     {
@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates camera and hand animations based on player state.
+    /// Updates camera and hand animations based on soundPlayer state.
     /// </summary>
     void UpdateAnimations()
     {
@@ -283,7 +283,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Detects when player enters the end game trigger.
+    /// Detects when soundPlayer enters the end game trigger.
     /// </summary>
     private void OnTriggerEnter(Collider other)
     {

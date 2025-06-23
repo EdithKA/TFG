@@ -7,17 +7,17 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal; // URP!
 
 /**
- * @brief Manages player stats (health and sanity), updates the UI, and triggers world corruption effects.
+ * @brief Manages soundPlayer stats (health and sanity), updates the UI, and triggers world corruption effects.
  *        Designed for a survival horror game where the world becomes more unstable as sanity decreases.
  */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    private int sanity = 100;                                 /// Current sanity value (0-100).
-    private int health = 100;                                 /// Current health value (0-100).
+    public int sanity = 100;                                 /// Current sanity value (0-100).
+    int health = 100;                                 /// Current health value (0-100).
     public float decreaseInterval = 1.5f;                     /// Time in seconds between sanity decreases.
     private float lastSanityDecreaseTime;                     /// Timestamp of last sanity decrease.
-    public bool hasPhone = false;                             /// Whether the player has obtained the phone.
+    public bool hasPhone = false;                             /// Whether the soundPlayer has obtained the phone.
 
     [Header("World Corruption")]
     public string corruptibleTag;                             /// Tag for objects that can be corrupted.
@@ -82,7 +82,7 @@ public class Stats : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // Only decrease sanity if the player has obtained the phone
+        // Only decrease sanity if the soundPlayer has obtained the phone
         if (hasPhone)
         {
             if (Time.time - lastSanityDecreaseTime > decreaseInterval)
@@ -227,7 +227,7 @@ public class Stats : MonoBehaviour
     }
 
     /// <summary>
-    /// Applies damage to the player and triggers game over if health reaches zero.
+    /// Applies damage to the soundPlayer and triggers game over if health reaches zero.
     /// </summary>
     /// <param name="amount">Amount of damage to take.</param>
     public void TakeDamage(int amount)
@@ -240,7 +240,7 @@ public class Stats : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the vignette color and intensity based on the player's health.
+    /// Updates the vignette color and intensity based on the soundPlayer's health.
     /// </summary>
     private void UpdateVignetteEffect()
     {
