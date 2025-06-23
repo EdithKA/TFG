@@ -1,35 +1,54 @@
-
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /**
-* @brief Calculates relative angles to player and manages sprite direction visualization.
-*/
+ * @brief Calculates relative angles to player and manages sprite direction visualization.
+ */
 public class AngleToPlayer : MonoBehaviour
 {
-    private Transform player; /// Reference to the player's transform.
-    private Vector3 targetPos; /// Calculated target position (ignoring vertical difference).
-    private Vector3 targetDir; /// Direction vector from enemy to player.
+    /// <summary>
+    /// Reference to the player's transform.
+    /// </summary>
+    private Transform player;
 
-    private float angle; /// Calculated signed angle between enemy forward and player direction.
-    public int lastIndex; /// Last calculated direction index for animation purposes.
+    /// <summary>
+    /// Calculated target position (ignoring vertical difference).
+    /// </summary>
+    private Vector3 targetPos;
 
-    private SpriteRenderer spriteRenderer; /// Reference to the sprite renderer component.
+    /// <summary>
+    /// Direction vector from enemy to player.
+    /// </summary>
+    private Vector3 targetDir;
 
-    /**
-    * @brief Initializes player reference and sprite renderer component.
-*/
+    /// <summary>
+    /// Calculated signed angle between enemy forward and player direction.
+    /// </summary>
+    private float angle;
+
+    /// <summary>
+    /// Last calculated direction index for animation purposes.
+    /// </summary>
+    public int lastIndex;
+
+    /// <summary>
+    /// Reference to the sprite renderer component.
+    /// </summary>
+    private SpriteRenderer spriteRenderer;
+
+    /// <summary>
+    /// Initializes player reference and sprite renderer component.
+    /// </summary>
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    /**
-    * @brief Updates angle calculations and sprite direction each frame.
-*/
+    /// <summary>
+    /// Updates angle calculations and sprite direction each frame.
+    /// </summary>
     void Update()
     {
         // Calculate horizontal position difference (ignore vertical axis)
@@ -49,11 +68,11 @@ public class AngleToPlayer : MonoBehaviour
         lastIndex = GetIndex(angle); // Update direction index for animations
     }
 
-    /**
-    * @brief Converts angle value into 8-direction index for animation states.
-    * @param angle Signed angle between -180 and 180 degrees.
-    * @return Integer index representing cardinal and intercardinal directions.
-*/
+    /// <summary>
+    /// Converts angle value into 8-direction index for animation states.
+    /// </summary>
+    /// <param name="angle">Signed angle between -180 and 180 degrees.</param>
+    /// <returns>Integer index representing cardinal and intercardinal directions.</returns>
     int GetIndex(float angle)
     {
         // Front-facing directions
@@ -71,13 +90,13 @@ public class AngleToPlayer : MonoBehaviour
         return lastIndex; // Fallback to previous value
     }
 
-    /**
-    * @brief Draws debug visuals in Scene view when object is selected.
-*/
+    /// <summary>
+    /// Draws debug visuals in Scene view when object is selected.
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, targetPos); // Player direction ray
+        Gizmos.DrawRay(transform.position, targetPos - transform.position); // Player direction ray
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, targetPos); // Connection line to player
     }

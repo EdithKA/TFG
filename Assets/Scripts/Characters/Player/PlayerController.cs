@@ -7,38 +7,132 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
+    /// <summary>
+    /// Base movement speed of the player.
+    /// </summary>
     public float playerSpeed = 20f;
+
+    /// <summary>
+    /// Maximum stamina value.
+    /// </summary>
     public float stamina;
+
+    /// <summary>
+    /// Maximum distance for interaction raycasts.
+    /// </summary>
     public float interactDistance = 3f;
+
+    /// <summary>
+    /// Layer mask for interactable objects.
+    /// </summary>
     public LayerMask interactMask;
 
     [Header("References")]
+    /// <summary>
+    /// Animator for camera movement.
+    /// </summary>
     public Animator camAnim;
+
+    /// <summary>
+    /// Animator for left hand.
+    /// </summary>
     public Animator LHAnim;
+
+    /// <summary>
+    /// Animator for right hand.
+    /// </summary>
     public Animator RHAnim;
+
+    /// <summary>
+    /// Transform for left hand item position.
+    /// </summary>
     public Transform leftHand;
+
+    /// <summary>
+    /// Transform for right hand item position.
+    /// </summary>
     public Transform rightHand;
+
+    /// <summary>
+    /// Reference to inventory manager.
+    /// </summary>
     public InventoryManager inventoryManager;
+
+    /// <summary>
+    /// Reference to UI text controller.
+    /// </summary>
     public UITextController textController;
+
+    /// <summary>
+    /// Reference to game manager.
+    /// </summary>
     public GameManager gameManager;
 
-    CharacterController characterController;
-    Camera mainCamera;
-    float currentStamina;
-    float speed;
-    Vector3 movementVector;
-    bool isWalking;
-    public bool isInventoryOpen;
-    bool isCloser;
-    IInteractable currentInteractable;
-
     [Header("Sounds Configuration")]
+    /// <summary>
+    /// Audio source for footsteps.
+    /// </summary>
     public AudioSource stepsPlayer;
+
+    /// <summary>
+    /// Footstep sound clip.
+    /// </summary>
     public AudioClip stepSound;
+
+    /// <summary>
+    /// Time interval between footstep sounds.
+    /// </summary>
     public float stepInterval = 1f;
 
-    float stepTimer = 0f;
-    
+    /// <summary>
+    /// Character controller component reference.
+    /// </summary>
+    private CharacterController characterController;
+
+    /// <summary>
+    /// Main camera reference.
+    /// </summary>
+    private Camera mainCamera;
+
+    /// <summary>
+    /// Current stamina value.
+    /// </summary>
+    private float currentStamina;
+
+    /// <summary>
+    /// Current movement speed.
+    /// </summary>
+    private float speed;
+
+    /// <summary>
+    /// Current movement vector.
+    /// </summary>
+    private Vector3 movementVector;
+
+    /// <summary>
+    /// Is the player currently walking?
+    /// </summary>
+    private bool isWalking;
+
+    /// <summary>
+    /// Is the inventory currently open?
+    /// </summary>
+    public bool isInventoryOpen;
+
+    /// <summary>
+    /// Is the player in "closer" mode (zoomed view)?
+    /// </summary>
+    public bool isCloser;
+
+    /// <summary>
+    /// Currently focused interactable object.
+    /// </summary>
+    private IInteractable currentInteractable;
+
+    /// <summary>
+    /// Timer for footstep sounds.
+    /// </summary>
+    private float stepTimer = 0f;
 
     /// <summary>
     /// Initialize references and set starting values.
@@ -51,8 +145,6 @@ public class PlayerController : MonoBehaviour
         inventoryManager = FindObjectOfType<InventoryManager>();
         textController = FindObjectOfType<UITextController>();
         gameManager = FindObjectOfType<GameManager>();
-
-
     }
 
     /// <summary>
@@ -66,7 +158,6 @@ public class PlayerController : MonoBehaviour
         UpdateAnimations();
         HandleInteractionInput();
         HandleFootsteps();
-
     }
 
     /// <summary>
@@ -83,7 +174,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles player movement and stamina.
+    /// Handles player movement and stamina management.
     /// </summary>
     void HandleMovement()
     {
@@ -155,7 +246,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates camera and hand animations.
+    /// Updates camera and hand animations based on player state.
     /// </summary>
     void UpdateAnimations()
     {
@@ -175,12 +266,15 @@ public class PlayerController : MonoBehaviour
         isInventoryOpen = inventoryManager.IsInventoryOpen;
     }
 
+    /// <summary>
+    /// Manages footstep sound playback during movement.
+    /// </summary>
     void HandleFootsteps()
     {
-        if(isWalking & !isInventoryOpen && characterController.isGrounded)
+        if (isWalking & !isInventoryOpen && characterController.isGrounded)
         {
             stepTimer += Time.deltaTime;
-            if(stepTimer >= stepInterval)
+            if (stepTimer >= stepInterval)
             {
                 stepsPlayer.PlayOneShot(stepSound);
                 stepTimer = 0f;
@@ -188,11 +282,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detects when player enters the end game trigger.
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "End")
             gameManager.gameComplete = true;
-
     }
-
 }

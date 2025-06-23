@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944ebf1f7507a0b4ebb3c10844ed5109, type: 3}
   m_Name: GameTexts
   m_EditorClassIdentifier: 
-  interactMessage: Pulsa [E] para interactuar.
-  collectMessage: Pulsa [E] para recoger.
-  collectedMessage: "\xA1Objeto recogido!"
-  needMobileMessage: Parece que necesito recoger algo antes.
-  objectAlreadyPlaced: "Ya hay un objeto aqu\xED."
-  needObjectMessage: "Tengo que colocar algo aqu\xED."
-  placedCorrectlyMessage: "Definitivamente esto va aqu\xED."
-  wrongObjectMessage: "Parece que esto no va aqu\xED."
-  dvdCorrectMessage: "\xA1Funciona! Me encantaba este juego."
-  dvdError: "No parece que funcione como deber\xEDa."
-  dvdMissing: Necesito un DVD para que funcione.
-  rewardAppear: "\xA1Ha aparecido algo!"
+  interactMessage: Press [E] to interact.
+  collectMessage: Press [E] to pick up.
+  collectedMessage: Item collected!
+  needMobileMessage: Looks like I need to pick something up first.
+  objectAlreadyPlaced: There is already an object here.
+  needObjectMessage: I have to put something here.
+  placedCorrectlyMessage: This definitely goes here.
+  wrongObjectMessage: It seems this doesn't belong here.
+  dvdCorrectMessage: It works! I loved this game.
+  dvdError: It doesn't seem to work as it should.
+  dvdMissing: I need a DVD for this to work.
+  rewardAppear: Something has appeared!

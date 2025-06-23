@@ -1,62 +1,108 @@
 using UnityEngine;
 
+/// <summary>
+/// Represents an interactable item that can be collected by the player.
+/// Implements the IInteractable interface for interaction handling.
+/// </summary>
 public class ItemInteractable : MonoBehaviour, IInteractable
 {
-    [Header("Configuración")]
+    [Header("Configuration")]
+    /// <summary>
+    /// Data container for the item's properties.
+    /// </summary>
     public Item itemData;
+
+    /// <summary>
+    /// Flag indicating if the item is currently being held by the player.
+    /// </summary>
     public bool isHeld = false;
 
-    [Header("Referencias")]
+    [Header("References")]
+    /// <summary>
+    /// Reference to the inventory manager.
+    /// </summary>
     public InventoryManager inventoryManager;
+
+    /// <summary>
+    /// Reference to the UI text controller.
+    /// </summary>
     public UITextController uiTextController;
+
+    /// <summary>
+    /// Reference to the player controller.
+    /// </summary>
     public PlayerController playerController;
+
+    /// <summary>
+    /// Reference to the player stats component.
+    /// </summary>
     public Stats stats;
 
+    /// <summary>
+    /// Initializes references to necessary components.
+    /// </summary>
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         inventoryManager = playerController.inventoryManager;
         uiTextController = playerController.textController;
         stats = FindObjectOfType<Stats>();
-
     }
 
+    /// <summary>
+    /// Displays interaction prompt when the item is hovered over.
+    /// </summary>
+    /// <param name="textController">UI text controller reference.</param>
     public void OnHoverEnter(UITextController textController)
     {
         if (!isHeld)
             textController.ShowInteraction(textController.gameTexts.collectMessage);
     }
 
+    /// <summary>
+    /// Clears interaction prompt when hover ends.
+    /// </summary>
     public void OnHoverExit()
     {
         uiTextController.ClearMessages();
     }
 
+    /// <summary>
+    /// Handles item interaction logic when the player interacts with the item.
+    /// </summary>
+    /// <param name="objectOnHand">Item currently held by the player (unused).</param>
     public void Interact(GameObject objectOnHand = null)
     {
         if (isHeld) return;
 
+        // Special case: Mobile is required to collect other items
         if (!inventoryManager.HasItem("Mobile") && itemData.itemID != "Mobile")
         {
             uiTextController.ShowThought(uiTextController.gameTexts.needMobileMessage);
             return;
         }
-        if(itemData.name == "Mobile")
+
+        // Special handling for Mobile item
+        if (itemData.name == "Mobile")
         {
             stats.hasPhone = true;
             AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.Stop();
+            if (audioSource != null) audioSource.Stop();
         }
+
         PickUp();
-        
     }
 
+    /// <summary>
+    /// Picks up the item and adds it to the inventory.
+    /// </summary>
     private void PickUp()
     {
         inventoryManager.AddItem(itemData);
 
         if (itemData.itemID == "Mobile")
         {
+            // Parent the mobile to player's hand
             isHeld = true;
             transform.SetParent(playerController.leftHand);
             transform.localPosition = Vector3.zero;
@@ -64,6 +110,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         }
         else
         {
+            // Destroy regular items after collection
             Destroy(gameObject);
         }
 
