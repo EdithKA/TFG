@@ -185,4 +185,31 @@ public class InventoryManager : MonoBehaviour
     public GameObject GetRightHandObject() => equippedRight;
 
 
+    public List<string> GetInventoryItemIDs()
+    {
+        List<string> ids = new List<string>();
+        foreach (Item item in items)
+            ids.Add(item.itemID);
+        return ids;
+    }
+
+    public void RestoreInventory(List<string> itemIDs)
+    {
+        items.Clear();
+        foreach (string id in itemIDs)
+        {
+            Item item = FindItemByID(id);
+            if (item != null)
+                items.Add(item);
+        }
+        RefreshUI();
+    }
+
+    private Item FindItemByID(string id)
+    {
+        foreach (Item item in Resources.LoadAll<Item>("Items"))
+            if (item.itemID == id)
+                return item;
+        return null;
+    }
 }
