@@ -23,7 +23,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Current state of the door (open/closed).
     /// </summary>
-    private bool isOpen = false;
+    public bool isOpen = false;
 
     [Header("UI References")]
     /// <summary>

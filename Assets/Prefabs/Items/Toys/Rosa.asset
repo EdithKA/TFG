@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rosa
   m_EditorClassIdentifier: 
   itemID: Rosa
-  displayName: Juguete rosa
+  displayName: Pink Toy
   icon: {fileID: 21300000, guid: e8a5a515468fd7f4992c03f0cbad6d1e, type: 3}
   type: 
   itemPrefab: {fileID: 6949429696534865871, guid: 30c5327bdcd14984c84ecdbed10b1d9d,

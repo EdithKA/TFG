@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
      */
     public void LoadSceneByName(string name)
     {
-        if(name != "PruebaNivel2")
+        if(name != "MainLevel")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -76,3 +77,4 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 }
+

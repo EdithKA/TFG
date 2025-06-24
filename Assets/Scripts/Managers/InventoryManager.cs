@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
     [Header("UI Reference")]
     [SerializeField] private UITextController uiTextController; // Asignar desde el Inspector
 
-    private List<Item> items = new List<Item>();  // Inventory contents
+    public List<Item> items = new List<Item>();  // Inventory contents
     private List<GameObject> slots = new List<GameObject>(); // UI slot instances
     private int toyPieces = 0;                    // Collected toy fragments
 
@@ -183,4 +183,6 @@ public class InventoryManager : MonoBehaviour
     /// Returns currently equipped right-hand item
     /// </summary>
     public GameObject GetRightHandObject() => equippedRight;
+
+
 }

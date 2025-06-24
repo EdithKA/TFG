@@ -14,7 +14,7 @@ public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
     public int sanity = 100;                                 /// Current sanity value (0-100).
-    int health = 100;                                 /// Current health value (0-100).
+    public int health = 100;                                 /// Current health value (0-100).
     public float decreaseInterval = 1.5f;                     /// Time in seconds between sanity decreases.
     private float lastSanityDecreaseTime;                     /// Timestamp of last sanity decrease.
     public bool hasPhone = false;                             /// Whether the soundPlayer has obtained the phone.

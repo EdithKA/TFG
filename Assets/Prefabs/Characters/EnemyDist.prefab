@@ -83,10 +83,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.73439014
+  m_Height: 2.0232067
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.002322122, y: -0.1508431, z: 0}
 --- !u!195 &3506604176906817925
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc385bef602be43a95c88108d50713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   canChase: 1
   canAttack: 0
   playerTransform: {fileID: 0}
@@ -134,6 +135,9 @@ MonoBehaviour:
   - {fileID: 0}
   damageAmount: 25
   attackCooldown: 0.2
+  spotLight: {fileID: 0}
+  spotTrigger: {fileID: 0}
+  playerInSpotlight: 0
 --- !u!114 &1909709621583081124
 MonoBehaviour:
   m_ObjectHideFlags: 0
