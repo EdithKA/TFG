@@ -51,7 +51,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        interactCollider.enabled = !isOpen;
+        //interactCollider.enabled = !isOpen;
 
         leftDoorAnim.SetBool(openParameter, isOpen);
         rightDoorAnim.SetBool(openParameter, isOpen);

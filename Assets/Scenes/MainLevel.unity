@@ -30120,7 +30120,12 @@ PrefabInstance:
     - target: {fileID: 8862643557797746754, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: requiredItem
-      value: mealBox
+      value: Mobile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994350320944791137, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
