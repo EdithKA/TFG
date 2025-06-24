@@ -266,6 +266,7 @@ MonoBehaviour:
   leftDoorAnim: {fileID: 1560418520850934062}
   rightDoorAnim: {fileID: 2644721840571346332}
   gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
+  textController: {fileID: 0}
   requiredItem: Mobile
 --- !u!65 &8994350320944791137
 BoxCollider:
@@ -282,7 +283,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
