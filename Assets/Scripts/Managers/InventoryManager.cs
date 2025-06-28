@@ -61,7 +61,7 @@ public class InventoryManager : MonoBehaviour
             if (item.type == "piece")
             {
                 toyPieces++;
-                if (toyPieces == 2)
+                if (toyPieces == 5)
                 {
                     items.RemoveAll(i => i.type == "piece");
                     toyPieces = 0;
