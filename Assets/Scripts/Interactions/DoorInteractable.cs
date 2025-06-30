@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; // Añadido para NavMeshObstacle
 
 /// <summary>
 /// Controls door interaction, requiring a specific item to open/close.
@@ -13,7 +14,6 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public Animator leftDoorAnim;
     public Animator rightDoorAnim;
-
 
     /// <summary>
     /// Name of the animation parameter that controls door state.
@@ -40,6 +40,12 @@ public class DoorInteractable : MonoBehaviour, IInteractable
 
     BoxCollider interactCollider;
 
+    [Header("NavMesh Settings")]
+    /// <summary>
+    /// NavMesh obstacle to block enemies when door is closed
+    /// </summary>
+    public NavMeshObstacle navMeshObstacle;
+
     /// <summary>
     /// Initializes the door animator reference.
     /// </summary>
@@ -47,16 +53,36 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     {
         interactCollider = GetComponent<BoxCollider>();
         textController = FindObjectOfType<UITextController>();
+
+        // Configurar NavMeshObstacle
+        if (navMeshObstacle == null)
+        {
+            navMeshObstacle = gameObject.AddComponent<NavMeshObstacle>();
+            navMeshObstacle.carving = true;
+            navMeshObstacle.shape = NavMeshObstacleShape.Box;
+            navMeshObstacle.size = new Vector3(1.5f, 2f, 0.1f);
+        }
+        UpdateObstacleState();
     }
 
     private void Update()
     {
-        //interactCollider.enabled = !isOpen;
-
         leftDoorAnim.SetBool(openParameter, isOpen);
         rightDoorAnim.SetBool(openParameter, isOpen);
-
     }
+
+    /// <summary>
+    /// Updates NavMeshObstacle based on door state
+    /// </summary>
+    private void UpdateObstacleState()
+    {
+        if (navMeshObstacle != null)
+        {
+            navMeshObstacle.enabled = !isOpen;
+            navMeshObstacle.carving = !isOpen;
+        }
+    }
+
     /// <summary>
     /// Displays interaction prompt when hovering over the door.
     /// </summary>
@@ -77,12 +103,12 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Handles door interaction, checking for required item and toggling door state.
     /// </summary>
-    /// <param name="objectOnHand">Item currently held by the soundPlayer.</param>
+    /// <param name="objectOnHand">Item currently held by the player.</param>
     public void Interact(GameObject objectOnHand = null)
     {
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        // Check if soundPlayer has required item
+        // Check if player has required item
         if (!inventory.HasItem(requiredItem))
         {
             textController.ShowThought("Looks like I need something...");
@@ -90,13 +116,14 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         }
         else
         {
-            textController.ShowThought("I can finally open it.");
+            if (!isOpen)
+                textController.ShowThought("I can finally open it.");
+            else
+                textController.ShowThought("Let's keep it closed just in case.");
         }
-
 
         // Toggle door state
         isOpen = !isOpen;
-
-        
+        UpdateObstacleState();
     }
 }

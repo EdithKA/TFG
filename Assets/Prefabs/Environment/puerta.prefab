@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: -5694082214570585467, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -118005201305737827, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
         type: 3}
@@ -111,12 +111,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8496648089076792855, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -130,6 +130,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8994350320944791137}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5720572868156698217}
     - targetCorrespondingSourceObject: {fileID: -5694082214570585467, guid: d7b49dd8b72ddc84596687cfd3ed23bf,
         type: 3}
       insertIndex: -1
@@ -193,7 +197,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3050938545289416455, guid: d7b49dd8b72ddc84596687cfd3ed23bf, type: 3}
 --- !u!1 &6322893564918098817 stripped
@@ -242,7 +246,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3542615889746358037, guid: d7b49dd8b72ddc84596687cfd3ed23bf, type: 3}
 --- !u!1 &7747468473694962773 stripped
@@ -265,9 +269,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftDoorAnim: {fileID: 1560418520850934062}
   rightDoorAnim: {fileID: 2644721840571346332}
+  isOpen: 0
   gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
   textController: {fileID: 0}
   requiredItem: Mobile
+  navMeshObstacle: {fileID: 5720572868156698217}
 --- !u!65 &8994350320944791137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -289,3 +295,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.0959396, y: 4.211733, z: 0.6711302}
   m_Center: {x: -0.41978836, y: 9.620709, z: 10.270292}
+--- !u!208 &5720572868156698217
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747468473694962773}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

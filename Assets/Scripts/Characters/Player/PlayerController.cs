@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     /// Layer mask for interactable objects.
     /// </summary>
     public LayerMask interactMask;
+    public LayerMask doorsMask;
 
     [Header("References")]
     /// <summary>
@@ -134,9 +135,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private float stepTimer = 0f;
 
-    /// <summary>
-    /// Initialize references and set starting values.
-    /// </summary>
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -147,22 +145,16 @@ public class PlayerController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    /// <summary>
-    /// Main update loop for movement, inventory, and interaction.
-    /// </summary>
     void Update()
     {
         HandleInventoryToggle();
         HandleMovement();
         HandleInteraction();
-        UpdateAnimations();
+        Update1Animations();
         HandleInteractionInput();
         HandleFootsteps();
     }
 
-    /// <summary>
-    /// Opens or closes the inventory if the soundPlayer has the mobile.
-    /// </summary>
     void HandleInventoryToggle()
     {
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
@@ -173,9 +165,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Handles soundPlayer movement and stamina management.
-    /// </summary>
     void HandleMovement()
     {
         if (!isInventoryOpen)
@@ -210,9 +199,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Handles raycast interaction detection and hover UI.
-    /// </summary>
     void HandleInteraction()
     {
         Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -221,21 +207,19 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance, interactMask, QueryTriggerInteraction.Collide))
             newInteractable = hit.collider.GetComponent<IInteractable>();
+        else if (Physics.Raycast(ray, out hit, interactDistance, doorsMask, QueryTriggerInteraction.Collide))
+            newInteractable = hit.collider.GetComponent<IInteractable>();
 
         if (newInteractable != currentInteractable)
         {
             if (currentInteractable != null)
                 currentInteractable.OnHoverExit();
-
             currentInteractable = newInteractable;
             if (currentInteractable != null)
                 currentInteractable.OnHoverEnter(textController);
         }
     }
 
-    /// <summary>
-    /// Handles interaction input (E key).
-    /// </summary>
     void HandleInteractionInput()
     {
         if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
@@ -245,10 +229,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Updates camera and hand animations based on soundPlayer state.
-    /// </summary>
-    void UpdateAnimations()
+    void Update1Animations()
     {
         camAnim.SetBool("IsWalking", isWalking);
         LHAnim.SetBool("isCloser", isCloser);
@@ -256,9 +237,6 @@ public class PlayerController : MonoBehaviour
         RHAnim.SetBool("isActive", rightHand.childCount > 0);
     }
 
-    /// <summary>
-    /// Coroutine for inventory toggle delay.
-    /// </summary>
     IEnumerator OpenInventory()
     {
         yield return new WaitForSeconds(0.1f);
@@ -266,9 +244,6 @@ public class PlayerController : MonoBehaviour
         isInventoryOpen = inventoryManager.IsInventoryOpen;
     }
 
-    /// <summary>
-    /// Manages footstep sound playback during movement.
-    /// </summary>
     void HandleFootsteps()
     {
         if (isWalking & !isInventoryOpen && characterController.isGrounded)
@@ -282,9 +257,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Detects when soundPlayer enters the end game trigger.
-    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "End")

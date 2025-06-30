@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,132 +7,29 @@ public enum EnemyType { None, Melee, Distance }
 
 public class EnemyController : MonoBehaviour
 {
-    /// <summary>
-    /// Type of enemy behavior (None, Melee, or Distance).
-    /// </summary>
     public EnemyType enemyType = EnemyType.None;
-
-    [Header("Behavior Flags")]
-    /// <summary>
-    /// Whether the enemy can chase the soundPlayer.
-    /// </summary>
     public bool canChase;
-
-    /// <summary>
-    /// Whether the enemy can attack the soundPlayer.
-    /// </summary>
     public bool canAttack;
-
-    [Header("Target References")]
-    /// <summary>
-    /// Reference to the soundPlayer's transform.
-    /// </summary>
     public Transform playerTransform;
-
-    [Header("Movement Settings")]
-    /// <summary>
-    /// Distance at which the enemy starts chasing the soundPlayer.
-    /// </summary>
     public float chaseDistance;
-
-    /// <summary>
-    /// Distance at which the enemy can attack the soundPlayer.
-    /// </summary>
     public float attackDistance;
-
-    /// <summary>
-    /// NavMesh agent component for enemy movement.
-    /// </summary>
     private NavMeshAgent enemyNavMeshAgent;
-
-    [Header("Animation")]
-    /// <summary>
-    /// Animator component for enemy animations.
-    /// </summary>
     public Animator anim;
-
-    /// <summary>
-    /// Script that calculates angle to soundPlayer for sprite direction.
-    /// </summary>
     AngleToPlayer angleToPlayer;
-
-    [Header("Patrol Settings")]
-    /// <summary>
-    /// Array of waypoints for enemy patrol behavior.
-    /// </summary>
-    public Transform[] waypoints;
-
-    /// <summary>
-    /// Current waypoint index for patrol system.
-    /// </summary>
-    private int currentWaypointIndex = 0;
-
-    [Header("Attack Settings")]
-    /// <summary>
-    /// Amount of damage the enemy deals to the soundPlayer.
-    /// </summary>
     public int damageAmount = 25;
-
-    /// <summary>
-    /// Time between enemy attacks.
-    /// </summary>
     public float attackCooldown = 0.2f;
-
-    /// <summary>
-    /// Timer for tracking attack cooldown.
-    /// </summary>
     private float attackTimer = 0f;
-
-    /// <summary>
-    /// Reference to the soundPlayer's stats component.
-    /// </summary>
     private Stats playerStats;
+    public LayerMask doorLayer;
 
-    [Header("Distance Enemy Settings")]
-    /// <summary>
-    /// Spotlight component for distance enemy type.
-    /// </summary>
-    public Light spotLight;
-
-    /// <summary>
-    /// Trigger collider for spotlight detection.
-    /// </summary>
-    public Collider spotTrigger;
-
-    /// <summary>
-    /// Whether the soundPlayer is currently in the spotlight.
-    /// </summary>
-    public bool playerInSpotlight = false;
-
-    /// <summary>
-    /// Timer for distance enemy damage over time.
-    /// </summary>
-    private float distanceDamageTimer = 0f;
-
-    /// <summary>
-    /// Initializes enemy components and references.
-    /// </summary>
     private void Start()
     {
         playerStats = FindAnyObjectByType<Stats>();
         playerTransform = FindObjectOfType<PlayerController>().transform;
         enemyNavMeshAgent = GetComponent<NavMeshAgent>();
         angleToPlayer = GetComponent<AngleToPlayer>();
-
-        if (waypoints.Length > 0)
-        {
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
-        }
-
-        if (enemyType == EnemyType.Distance && spotTrigger != null)
-        {
-            spotTrigger.isTrigger = true;
-        }
     }
 
-    /// <summary>
-    /// Updates enemy behavior, animations, and attack logic each frame.
-    /// </summary>
     private void Update()
     {
         NextAction();
@@ -142,8 +38,25 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Determines the next action based on distance to soundPlayer (patrol, chase, or attack).
+    /// Checks if a closed door is blocking the path to the player
     /// </summary>
+    private bool IsDoorBlockingPath()
+    {
+        Vector3 direction = playerTransform.position - transform.position;
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, direction, out hit, distance, doorLayer))
+        {
+            DoorInteractable door = hit.collider.GetComponent<DoorInteractable>();
+            if (door != null && !door.isOpen)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void NextAction()
     {
         float dist = Vector3.Distance(transform.position, playerTransform.position);
@@ -159,7 +72,10 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            canAttack = true;
+            if (!IsDoorBlockingPath())
+            {
+                canAttack = true;
+            }
         }
     }
 
@@ -172,90 +88,21 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("Attack", canAttack);
     }
 
-    /// <summary>
-    /// Sets the enemy's navigation destination to the soundPlayer's position.
-    /// </summary>
     void SetDestinationToPlayer()
     {
         enemyNavMeshAgent.SetDestination(playerTransform.position);
     }
 
-    /// <summary>
-    /// Handles enemy patrol behavior between waypoints.
-    /// </summary>
-    void Patrol()
-    {
-        if (waypoints.Length == 0) return;
-
-        if (!enemyNavMeshAgent.pathPending && enemyNavMeshAgent.remainingDistance < 0.5f)
-        {
-            int previousIndex = currentWaypointIndex;
-            do
-            {
-                currentWaypointIndex = Random.Range(0, waypoints.Length);
-            } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
-        }
-    }
-
-    /// <summary>
-    /// Manages attack logic for different enemy types (Melee and Distance).
-    /// </summary>
     void HandleAttack()
     {
-        switch (enemyType)
+        if (canAttack && attackTimer <= 0f)
         {
-            case EnemyType.Melee:
-                if (canAttack && attackTimer <= 0f)
-                {
-                    playerStats.TakeDamage(damageAmount);
-                    attackTimer = attackCooldown;
-                }
-                else
-                {
-                    attackTimer -= Time.deltaTime;
-                }
-                break;
-
-            case EnemyType.Distance:
-                if (canAttack && playerInSpotlight)
-                {
-                    distanceDamageTimer += Time.deltaTime;
-                    if (distanceDamageTimer >= 1f)
-                    {
-                        playerStats.TakeDamage(damageAmount);
-                        distanceDamageTimer -= 1f;
-                    }
-                }
-                else
-                {
-                    distanceDamageTimer = 0f;
-                }
-                break;
+            playerStats.TakeDamage(damageAmount);
+            attackTimer = attackCooldown;
         }
-    }
-
-    /// <summary>
-    /// Detects when soundPlayer enters the spotlight trigger for distance enemies.
-    /// </summary>
-    /// <param name="other">The collider that entered the trigger.</param>
-    private void OnTriggerEnter(Collider other)
-    {
-        if (enemyType == EnemyType.Distance && other.CompareTag("Player"))
+        else
         {
-            playerInSpotlight = true;
-        }
-    }
-
-    /// <summary>
-    /// Detects when soundPlayer exits the spotlight trigger for distance enemies.
-    /// </summary>
-    /// <param name="other">The collider that exited the trigger.</param>
-    private void OnTriggerExit(Collider other)
-    {
-        if (enemyType == EnemyType.Distance && other.CompareTag("Player"))
-        {
-            playerInSpotlight = false;
+            attackTimer -= Time.deltaTime;
         }
     }
 }
