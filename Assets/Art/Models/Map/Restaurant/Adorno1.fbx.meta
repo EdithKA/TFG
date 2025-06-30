@@ -3,7 +3,27 @@ guid: 9841adfa23a88de4c9a1da3962ead802
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Adorno
+    second: {fileID: 2100000, guid: fe69100037c9b0f45b7af5a9082b206d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Adorno_2
+    second: {fileID: 2100000, guid: 0534e498425c01b4cad51a4a56ca884b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Adorno_Palos
+    second: {fileID: 2100000, guid: fba4af69f62ad4c4c82697e0358bcd05, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Texture_Adorno
+    second: {fileID: 2800000, guid: 8e4af9fd56b0dfa46bc3be963def20c6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

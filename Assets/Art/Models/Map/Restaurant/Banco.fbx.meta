@@ -3,7 +3,22 @@ guid: 61832fb3275f34740b6b22e03bbb7053
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Colchon
+    second: {fileID: 2100000, guid: 1e26cd749872f79439a2595ea9003caf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Patas
+    second: {fileID: 2100000, guid: 7e63afc940ebb184b8b0595117e6df30, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Texture_Colchon
+    second: {fileID: 2800000, guid: 95494b662d49bcd43b108abe7b392390, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
