@@ -5,6 +5,7 @@ public class GameTexts : ScriptableObject
 {
     [Header("Interaction Messages")]
     public string interactMessage = "";
+    public string placeObjectMessage = "";
     public string collectMessage = "";
     public string collectedMessage = "";
 

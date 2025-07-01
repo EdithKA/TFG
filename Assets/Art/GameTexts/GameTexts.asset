@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameTexts
   m_EditorClassIdentifier: 
   interactMessage: Press [E] to interact.
+  placeObjectMessage: Press [E] to place an object.
   collectMessage: Press [E] to pick up.
   collectedMessage: Item collected!
   needMobileMessage: Looks like I need to pick something up first.

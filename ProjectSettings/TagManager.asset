@@ -15,8 +15,8 @@ TagManager:
   - UI
   - PhoneUICamera
   - Doors
-  - 
-  - 
+  - PlayerRender
+  - PlayerFog
   - 
   - 
   - 

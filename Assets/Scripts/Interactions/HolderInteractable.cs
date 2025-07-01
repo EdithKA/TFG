@@ -25,11 +25,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzzleObjective
     {
         if (!isComplete)
         {
-            textController.ShowInteraction("Pulsa [E] para colocar un objeto", Color.cyan);
-        }
-        else if (itemOnHolder != null)
-        {
-            textController.ShowInteraction("Objeto colocado correctamente", Color.green);
+            textController.ShowInteraction(gameTexts.placeObjectMessage);
         }
     }
 

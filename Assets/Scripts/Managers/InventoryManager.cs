@@ -2,57 +2,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Manages soundPlayer inventory system including item storage, UI representation, 
-/// and equipment handling. Supports item combination, mobile phone auto-equipping,
-/// and dual-hand item management (static left hand for mobile, dynamic right hand).
-/// </summary>
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    public int inventorySize = 20;                // Maximum carry capacity
-    public GameObject inventorySlotPrefab;        // UI slot template
-    public Transform inventoryGrid;               // Parent for inventory slots
-    public GameObject inventoryUI;                // Main inventory panel
+    public int inventorySize = 20;
+    public GameObject inventorySlotPrefab;
+    public Transform inventoryGrid;
+    public GameObject inventoryUI;
 
     [Header("Hand References")]
-    public Transform leftHand;                    // Permanent mobile phone hand
-    public Transform rightHand;                   // Equippable item hand
+    public Transform leftHand;
+    public Transform rightHand;
 
     [Header("Special Items")]
-    public Item completedToy;                     // Combined toy item
+    public Item completedToy;
 
     [Header("UI Reference")]
-    [SerializeField] private UITextController uiTextController; // Asignar desde el Inspector
+    [SerializeField] private UITextController uiTextController;
 
-    public List<Item> items = new List<Item>();  // Inventory contents
-    private List<GameObject> slots = new List<GameObject>(); // UI slot instances
-    private int toyPieces = 0;                    // Collected toy fragments
+    public List<Item> items = new List<Item>();
+    private List<GameObject> slots = new List<GameObject>();
+    private int toyPieces = 0;
 
-    public GameObject equippedRight;              // Currently held right-hand item
-    private bool isInventoryOpen = false;         // Inventory visibility state
-    public bool IsInventoryOpen => isInventoryOpen; // Public accessor
+    public GameObject equippedRight;
+    private bool isInventoryOpen = false;
+    public bool IsInventoryOpen => isInventoryOpen;
 
     public AudioSource soundPlayer;
     public AudioClip inventorySoundClip;
     Stats stats;
 
-    /// <summary>
-    /// Initializes inventory UI and ensures mobile phone is equipped if present
-    /// </summary>
+    [Header("Photo Inspection")]
+    public GameObject inspectMenu;
+    public Image photoDisplay;
+
     private void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
         if (inventoryUI != null) inventoryUI.SetActive(false);
+
+        inspectMenu.gameObject.SetActive(false);
+        Button btn = photoDisplay.GetComponent<Button>();
+        btn.onClick.AddListener(HidePhotoInspect);
+       
+
         RefreshUI();
     }
 
-    /// <summary>
-    /// Adds item to inventory and handles special cases:
-    /// - Toy piece combination logic
-    /// - Mobile phone auto-equipping
-    /// </summary>
     public void AddItem(Item item)
     {
         soundPlayer.PlayOneShot(inventorySoundClip);
@@ -80,19 +77,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Checks if mobile phone is currently equipped
-    /// </summary>
     private bool IsMobileEquipped() => leftHand.childCount > 0;
-
-    /// <summary>
-    /// Public interface for mobile phone check
-    /// </summary>
     public bool HasMobileEquipped() => IsMobileEquipped();
 
-    /// <summary>
-    /// Removes specified item from inventory
-    /// </summary>
     public void RemoveItem(Item item)
     {
         if (items.Contains(item))
@@ -104,14 +91,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Checks if inventory contains item by name
-    /// </summary>
     public bool HasItem(string itemName) => items.Exists(item => item.itemID == itemName);
 
-    /// <summary>
-    /// Toggles inventory visibility and cursor state
-    /// </summary>
     public void ToggleInventory()
     {
         isInventoryOpen = !isInventoryOpen;
@@ -120,9 +101,6 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = isInventoryOpen;
     }
 
-    /// <summary>
-    /// Rebuilds inventory UI from current items
-    /// </summary>
     public void RefreshUI()
     {
         foreach (GameObject slot in slots) Destroy(slot);
@@ -137,16 +115,20 @@ public class InventoryManager : MonoBehaviour
             if (item.itemID != "Mobile")
             {
                 Button button = slot.GetComponent<Button>();
-                button.onClick.AddListener(() => EquipRightHandItem(item));
+                if (item.type == "photo")
+                {
+                    button.onClick.AddListener(() => ShowPhotoInspect(item.icon));
+                }
+                else
+                {
+                    button.onClick.AddListener(() => EquipRightHandItem(item));
+                }
             }
 
             slots.Add(slot);
         }
     }
 
-    /// <summary>
-    /// Removes current right-hand item
-    /// </summary>
     public void UnequipRightHandItem()
     {
         if (equippedRight != null)
@@ -156,11 +138,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Handles right-hand item equipment logic:
-    /// - Toggles item if same type is equipped
-    /// - Replaces previous item if different
-    /// </summary>
     private void EquipRightHandItem(Item item)
     {
         if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
@@ -176,7 +153,7 @@ public class InventoryManager : MonoBehaviour
             }
             else if (item.type == "photo")
             {
-                Debug.Log("pepe");
+                ShowPhotoInspect(item.icon);
             }
             else
             {
@@ -191,8 +168,34 @@ public class InventoryManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns currently equipped right-hand item
+    /// Muestra la foto en el objeto Image de la UI
     /// </summary>
+    public void ShowPhotoInspect(Sprite photoSprite)
+    {
+        photoDisplay.sprite = photoSprite;
+        inspectMenu.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
+    }
+
+    /// <summary>
+    /// Oculta la foto de la UI
+    /// </summary>
+    public void HidePhotoInspect()
+    {
+       
+        inspectMenu.SetActive(false);
+        Time.timeScale = 1f;
+        if (!isInventoryOpen)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+       
+    }
+
     public GameObject GetRightHandObject() => equippedRight;
 
     public List<string> GetInventoryItemIDs()

@@ -142,13 +142,28 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isCloser = inventoryManager.IsInventoryOpen;
+        HandleZoom();
         HandleInventoryToggle();
         HandleMovement();
         HandleInteraction();
         Update1Animations();
         HandleInteractionInput();
         HandleFootsteps();
+    }
+
+    /// <summary>
+    /// Handles mobile phone zoom based on right mouse button
+    /// </summary>
+    void HandleZoom()
+    {
+        if (Input.GetMouseButtonDown(1) && !inventoryManager.IsInventoryOpen)
+        {
+            isCloser = true;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            isCloser = false;
+        }
     }
 
     void HandleInventoryToggle()
@@ -175,9 +190,6 @@ public class PlayerController : MonoBehaviour
                 speed = playerSpeed;
                 if (currentStamina < stamina) currentStamina += 0.1f;
             }
-
-            if (Input.GetMouseButtonDown(1)) isCloser = true;
-            else if (Input.GetMouseButtonUp(1)) isCloser = false;
 
             Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
             movementVector = transform.TransformDirection(input) * speed + Vector3.up * -10f;
