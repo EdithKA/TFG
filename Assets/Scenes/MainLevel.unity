@@ -24542,7 +24542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanity: 100
   health: 100
-  decreaseInterval: 102
+  decreaseInterval: 0.1
   hasPhone: 0
   corruptibleTag: Glitch
   moveRange: 4
