@@ -95,14 +95,12 @@ public class InventoryManager : MonoBehaviour
     /// </summary>
     public void RemoveItem(Item item)
     {
-
         if (items.Contains(item))
         {
             items.Remove(item);
             RefreshUI();
             uiTextController.ShowInventoryMessage($"{item.displayName} removed from inventory.", false);
             soundPlayer.PlayOneShot(inventorySoundClip);
-
         }
     }
 
@@ -168,14 +166,18 @@ public class InventoryManager : MonoBehaviour
         if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
         {
             UnequipRightHandItem();
+            ToggleInventory();
         }
         else
         {
-            if(item.type == "piece")
+            if (item.type == "piece")
+            {
                 uiTextController.ShowThought("Looks like I need more parts.");
-            if (item.type == "photo")
-                //logica para ver la foto
+            }
+            else if (item.type == "photo")
+            {
                 Debug.Log("pepe");
+            }
             else
             {
                 UnequipRightHandItem();
@@ -183,8 +185,8 @@ public class InventoryManager : MonoBehaviour
                 equippedRight.transform.localPosition = item.equipPositionOffset;
                 equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
                 equippedRight.GetComponent<ItemInteractable>().isHeld = true;
+                ToggleInventory();
             }
-            
         }
     }
 
@@ -192,7 +194,6 @@ public class InventoryManager : MonoBehaviour
     /// Returns currently equipped right-hand item
     /// </summary>
     public GameObject GetRightHandObject() => equippedRight;
-
 
     public List<string> GetInventoryItemIDs()
     {

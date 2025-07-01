@@ -15,8 +15,8 @@ MonoBehaviour:
   itemID: SrPotato
   displayName: Sr.Potato
   icon: {fileID: 21300000, guid: ede00a9efce127a42afc49b7acac48d7, type: 3}
-  type: Reward
+  type: 
   itemPrefab: {fileID: 8484712116892264191, guid: 74cba53410faed441a7727ae007a5d89,
     type: 3}
-  equipPositionOffset: {x: 0.177, y: -0.154, z: -0.066}
-  equipRotationOffset: {x: -96.603, y: -100.27, z: -133.097}
+  equipPositionOffset: {x: 0, y: 0, z: 0}
+  equipRotationOffset: {x: 0, y: 0, z: 0}

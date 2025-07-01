@@ -116,11 +116,6 @@ public class PlayerController : MonoBehaviour
     private bool isWalking;
 
     /// <summary>
-    /// Is the inventory currently open?
-    /// </summary>
-    public bool isInventoryOpen;
-
-    /// <summary>
     /// Is the soundPlayer in "closer" mode (zoomed view)?
     /// </summary>
     public bool isCloser;
@@ -147,6 +142,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        isCloser = inventoryManager.IsInventoryOpen;
         HandleInventoryToggle();
         HandleMovement();
         HandleInteraction();
@@ -159,15 +155,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
         {
-            isInventoryOpen = !isInventoryOpen;
             StartCoroutine(OpenInventory());
-            isCloser = !isCloser;
         }
     }
 
     void HandleMovement()
     {
-        if (!isInventoryOpen)
+        if (!inventoryManager.IsInventoryOpen)
         {
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
             {
@@ -222,7 +216,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleInteractionInput()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isInventoryOpen)
+        if (Input.GetKeyDown(KeyCode.E) && !inventoryManager.IsInventoryOpen)
         {
             GameObject heldItem = inventoryManager?.GetRightHandObject();
             currentInteractable?.Interact(heldItem);
@@ -241,12 +235,11 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         inventoryManager.ToggleInventory();
-        isInventoryOpen = inventoryManager.IsInventoryOpen;
     }
 
     void HandleFootsteps()
     {
-        if (isWalking & !isInventoryOpen && characterController.isGrounded)
+        if (isWalking && !inventoryManager.IsInventoryOpen && characterController.isGrounded)
         {
             stepTimer += Time.deltaTime;
             if (stepTimer >= stepInterval)

@@ -947,6 +947,12 @@ MonoBehaviour:
   correctObjectID: SrPotato
   holderPoint: {fileID: 1445111523}
   gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
+--- !u!4 &77085146 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8563827165423442253, guid: e5ac83eb6bb18d140a44c87b5dd31270,
+    type: 3}
+  m_PrefabInstance: {fileID: 4624685032917364777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &79097495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7ecad2187bb4d14b97b5e514db56638,
@@ -1374,6 +1380,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1885496758}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1428,6 +1444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Puerta DC 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862643557797746754, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
@@ -2159,6 +2180,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 144987848}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2218,6 +2249,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862643557797746754, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
@@ -2828,6 +2864,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1885496758}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2892,6 +2938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Puerta DC 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862643557797746754, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
@@ -6067,7 +6118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &469348793
 Transform:
   m_ObjectHideFlags: 0
@@ -6694,8 +6745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleObjectives:
-  - {fileID: 4624685032917364779}
-  rewardPrefab: {fileID: 0}
+  - {fileID: 77085145}
+  rewardPrefab: {fileID: 7665508138012155823, guid: 870df9fa265973c42b1dc8a6e0282545,
+    type: 3}
   rewardSpawnPoint: {fileID: 1191580154}
   puzzleCompleted: 0
 --- !u!1 &505962755
@@ -7609,6 +7661,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1315930974}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7663,6 +7725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta MC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11610,6 +11677,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1189984383}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11679,6 +11756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta TH 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15721,6 +15803,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1189984383}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15790,6 +15882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta TH 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16365,12 +16462,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4053343473087991166, guid: 4d761d6abe31dc74795203d2106e7e0d, type: 3}
---- !u!1 &1177117365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2853720628903999181, guid: e5ac83eb6bb18d140a44c87b5dd31270,
-    type: 3}
-  m_PrefabInstance: {fileID: 4624685032917364777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177577552
 GameObject:
   m_ObjectHideFlags: 0
@@ -16847,7 +16938,7 @@ Transform:
   m_GameObject: {fileID: 1191580153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.59, y: -2.33, z: 8.42}
+  m_LocalPosition: {x: 6.188, y: -2.444, z: 8.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20953,7 +21044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445111523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HolderPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20968,13 +21059,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445111522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.042, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: -0.49999997, w: 0.49999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0.014058788}
+  m_LocalScale: {x: 0.093104705, y: 0.0078207925, z: 0.0078207925}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4624685032917364778}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 77085146}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &1462999017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22509,6 +22600,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1189984383}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -22578,6 +22679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta TH 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25230,7 +25336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanity: 100
   health: 100
-  decreaseInterval: 0.1
+  decreaseInterval: 20
   hasPhone: 0
   corruptibleTag: Glitch
   moveRange: 4
@@ -31575,7 +31681,7 @@ PrefabInstance:
     - target: {fileID: 4978289449165244078, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.94
+      value: 32.228992
       objectReference: {fileID: 0}
     - target: {fileID: 4978289449165244078, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
         type: 3}
@@ -32547,15 +32653,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3229542067570388087, guid: e5ac83eb6bb18d140a44c87b5dd31270,
+    - targetCorrespondingSourceObject: {fileID: 8563827165423442253, guid: e5ac83eb6bb18d140a44c87b5dd31270,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1445111523}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2853720628903999181, guid: e5ac83eb6bb18d140a44c87b5dd31270,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4624685032917364779}
     - targetCorrespondingSourceObject: {fileID: 6736355666002684591, guid: e5ac83eb6bb18d140a44c87b5dd31270,
         type: 3}
       insertIndex: -1
@@ -32567,21 +32669,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4624685032917364777}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4624685032917364779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177117365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c0647016312a884eb528888194a3ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctObjectID: SrPotato
-  holderPoint: {fileID: 1445111523}
-  gameTexts: {fileID: 11400000, guid: c38114ba82578a0429b5eb288756e476, type: 2}
 --- !u!1001 &4670585140084166626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33502,7 +33589,7 @@ PrefabInstance:
     - target: {fileID: 292008939902278200, guid: 7ada75afbf3aaaa42a0ed036ae7628ec,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.668995
+      value: 36.5
       objectReference: {fileID: 0}
     - target: {fileID: 292008939902278200, guid: 7ada75afbf3aaaa42a0ed036ae7628ec,
         type: 3}
@@ -33571,6 +33658,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 144987848}
     m_Modifications:
+    - target: {fileID: 1346514982048696083, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322893564918098817, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6975892393091407599, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -33630,6 +33727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: puerta
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747468473694962773, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862643557797746754, guid: b9c5c82a7ef099e4ebb71bf0d2aef71f,
         type: 3}

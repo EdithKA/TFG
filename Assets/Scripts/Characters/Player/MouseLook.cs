@@ -26,16 +26,15 @@ public class MouseLook : MonoBehaviour
     /// Reference to PlayerController (to check inventory state).
     /// </summary>
     public PlayerController playerController;
-
+    InventoryManager inventoryManager;
     /// <summary>
     /// Initializes references and locks the cursor at the start of the game.
     /// </summary>
     private void Start()
     {
-        // Find the soundPlayer controller in the scene if not set in the Inspector
-        if (playerController == null)
-            playerController = FindObjectOfType<PlayerController>();
-
+        
+        playerController = FindObjectOfType<PlayerController>();
+        inventoryManager = FindObjectOfType<InventoryManager>();    
         // Lock the cursor to the center of the screen and hide it
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -47,7 +46,7 @@ public class MouseLook : MonoBehaviour
     private void Update()
     {
         // Only allow mouse look when the inventory is closed
-        if (!playerController.isInventoryOpen)
+        if (!inventoryManager.IsInventoryOpen)
         {
             HandleHorizontalRotation();
             HandleVerticalRotation();

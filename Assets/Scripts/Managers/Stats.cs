@@ -82,6 +82,8 @@ public class Stats : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (health <= 0)
+            gameManager.LoadSceneByName("GameOver");
         // Only decrease sanity if the soundPlayer has obtained the phone
         if (hasPhone)
         {
