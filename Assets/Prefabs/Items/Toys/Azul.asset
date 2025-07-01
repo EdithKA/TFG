@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: Azul
   m_EditorClassIdentifier: 
-  itemID: Azul
-  displayName: Blue toy
-  icon: {fileID: 21300000, guid: e9d1aa0f7fea5144db92da035ef3458a, type: 3}
+  itemID: azul
+  displayName: Hot banditoz MP3 Player
+  icon: {fileID: 21300000, guid: 4175f1dcc50d1cf4c87feadd73a29ccf, type: 3}
   type: 
-  itemPrefab: {fileID: 1675905916716157406, guid: 6933d3ffb6e195245ac1125cb73ce438,
+  itemPrefab: {fileID: 56256816626196989, guid: 65b42b45fcecc28478613da6190fd223,
     type: 3}
   equipPositionOffset: {x: 0, y: 0, z: 0}
   equipRotationOffset: {x: 0, y: 0, z: 0}

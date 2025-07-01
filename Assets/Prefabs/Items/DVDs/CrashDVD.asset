@@ -18,5 +18,5 @@ MonoBehaviour:
   type: DVD
   itemPrefab: {fileID: 5181119895663714574, guid: d514e80c4999ba344990d03fcecfc8a9,
     type: 3}
-  equipPositionOffset: {x: 0.069, y: -0.002, z: 0}
+  equipPositionOffset: {x: 0.157, y: 0.001, z: 0.043}
   equipRotationOffset: {x: -64.133, y: -29.145, z: 43.023}

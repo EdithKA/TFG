@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: Amarillo
   m_EditorClassIdentifier: 
-  itemID: Amarillo
-  displayName: Yellow toy
+  itemID: amarillo
+  displayName: Lana del Rey MP3 Player
   icon: {fileID: 21300000, guid: 660c2cac9ad1dd44182d00ebd907aecc, type: 3}
   type: 
-  itemPrefab: {fileID: 7441484722781888361, guid: cbcec6397c301654181a7a88dc1d8c6d,
+  itemPrefab: {fileID: 2130404094606272598, guid: cbcec6397c301654181a7a88dc1d8c6d,
     type: 3}
   equipPositionOffset: {x: 0, y: 0, z: 0}
   equipRotationOffset: {x: 0, y: 0, z: 0}

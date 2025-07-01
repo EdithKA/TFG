@@ -171,11 +171,20 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            UnequipRightHandItem();
-            equippedRight = Instantiate(item.itemPrefab, rightHand);
-            equippedRight.transform.localPosition = item.equipPositionOffset;
-            equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
-            equippedRight.GetComponent<ItemInteractable>().isHeld = true;
+            if(item.type == "piece")
+                uiTextController.ShowThought("Looks like I need more parts.");
+            if (item.type == "photo")
+                //logica para ver la foto
+                Debug.Log("pepe");
+            else
+            {
+                UnequipRightHandItem();
+                equippedRight = Instantiate(item.itemPrefab, rightHand);
+                equippedRight.transform.localPosition = item.equipPositionOffset;
+                equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
+                equippedRight.GetComponent<ItemInteractable>().isHeld = true;
+            }
+            
         }
     }
 

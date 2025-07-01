@@ -59,6 +59,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzzleObjective
             ItemInteractable item = objectOnHand.GetComponent<ItemInteractable>();
             if (item != null)
             {
+                inventoryManager.RemoveItem(item.itemData);
                 GameObject newItem = Instantiate(item.itemData.itemPrefab, holderPoint.position, holderPoint.rotation, holderPoint);
                 itemOnHolder = newItem.GetComponentInChildren<ItemInteractable>(true);
 

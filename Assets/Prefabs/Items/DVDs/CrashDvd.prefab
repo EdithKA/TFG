@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5181119895663714574}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5562186, y: -0.009956802, z: 0.17646968, w: 0.81202227}
-  m_LocalPosition: {x: 0.069, y: -0.002, z: 0}
+  m_LocalRotation: {x: 0.036042817, y: 0.59064543, z: 0.8058557, w: -0.020868687}
+  m_LocalPosition: {x: 0.06838593, y: -0.000916905, z: -0.0032426356}
   m_LocalScale: {x: 14.03, y: 14.03, z: 0.2970898}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -64.133, y: -29.145, z: 43.023}
+  m_LocalEulerAnglesHint: {x: -72.45, y: 6.367, z: 178.301}
 --- !u!33 &8863930836563653649
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,6 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 11176168449a6cd4f93fcd3b38e3e3f8, type: 2}
   isHeld: 0
+  inventoryManager: {fileID: 0}
+  uiTextController: {fileID: 0}
+  playerController: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!64 &852552805249608694
 MeshCollider:
   m_ObjectHideFlags: 0
