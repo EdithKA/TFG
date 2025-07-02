@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: room
   displayName: A photo of me in my room
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 045ef8183d10cd145a181488fe292401, type: 3}
   type: photo
   itemPrefab: {fileID: 1813635505184648803, guid: 1ff1cc12a81e7ae48a5ab8153e963700,
     type: 3}

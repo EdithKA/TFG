@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: cousins
   displayName: A photo with my cousins
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3b805c68afdce2d429f257d986a925ec, type: 3}
   type: photo
   itemPrefab: {fileID: 3487019325594755498, guid: c94d0e517d912484e8c8425a23c033bf,
     type: 3}

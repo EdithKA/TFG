@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: pool
   displayName: A photo in the pool
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 75343bc1a5512c84c8ad00e1f04b0295, type: 3}
   type: photo
   itemPrefab: {fileID: 8760596702413284705, guid: 87490aac381c778499d3b68f450aec95,
     type: 3}

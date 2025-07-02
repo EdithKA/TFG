@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: birthday
   displayName: A photograph from my 5th birthday
-  icon: {fileID: 21300000, guid: 6cd935cc71014fb4dbc78438cc2384c4, type: 3}
+  icon: {fileID: 21300000, guid: 40386c4a5f35a0e48a76e19fa8c80b7d, type: 3}
   type: photo
   itemPrefab: {fileID: 7944399924244338298, guid: 22ec026b725c8b94995efebfa32036e4,
     type: 3}
