@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
      */
     public void LoadSceneByName(string name)
     {
+        if (AudioListener.pause == true)
+            AudioListener.pause = false;
         if (name != "MainLevel")
         {
             Cursor.lockState = CursorLockMode.None;
