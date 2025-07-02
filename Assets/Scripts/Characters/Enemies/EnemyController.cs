@@ -9,163 +9,142 @@ public class EnemyController : MonoBehaviour
 {
     public EnemyType enemyType = EnemyType.None;
 
-    [Header("Behavior Flags")]
-    public bool canChase;
-    public bool canAttack;
-
-    [Header("Target References")]
-    public Transform playerTransform;
-
-    [Header("Movement Settings")]
-    public float chaseDistance;
-    public float attackDistanceMelee;
-    public float attackDistanceRange;
-    private NavMeshAgent enemyNavMeshAgent;
-
-    [Header("Animation")]
-    public Animator anim;
-    AngleToPlayer angleToPlayer;
-
-    [Header("Patrol Settings")]
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
 
-    [Header("Attack Settings")]
-    public int damageAmount = 25;
-    public float attackCooldown = 0.2f;
+    public float patrolSpeed = 3.5f;
+    public float chaseSpeed = 5f;
+    public float chaseDistance = 8f;
+    public float meleeAttackDistance = 2f;
+    public float rangeAttackDistance = 6f;
+    public float viewAngle = 60f;
+
+    public int meleeDamage = 25;
+    public int rangeDamage = 15;
+    public float attackCooldown = 1f;
+
+    public LayerMask visionMask;
+    public GameObject visionCone;
+    public Transform eyes; // Asigna aquí el GameObject de los ojos en el inspector
+
     private float attackTimer = 0f;
+    private NavMeshAgent agent;
+    private Transform playerTransform;
     private Stats playerStats;
-
-    [Header("Player LayerMask")]
-    public LayerMask playerLayerMask;
-
-    [Header("Obstacle LayerMask")]
-    public LayerMask obstacleLayer;
+    private bool chasingPlayer = false;
 
     private void Start()
     {
-        playerStats = FindAnyObjectByType<Stats>();
+        agent = GetComponent<NavMeshAgent>();
         playerTransform = FindObjectOfType<PlayerController>().transform;
-        enemyNavMeshAgent = GetComponent<NavMeshAgent>();
-        angleToPlayer = GetComponent<AngleToPlayer>();
+        playerStats = FindAnyObjectByType<Stats>();
 
         if (waypoints.Length > 0)
         {
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+            GoToRandomWaypoint();
         }
     }
 
     private void Update()
     {
-        NextAction();
-        setAnimation();
-        HandleAttack();
-    }
+        float playerDist = Vector3.Distance(transform.position, playerTransform.position);
 
-    void NextAction()
-    {
-        float dist = Vector3.Distance(transform.position, playerTransform.position);
-        canAttack = false;
-
-        if (IsObstacleInFront())
+        if (playerDist <= chaseDistance)
         {
-            enemyNavMeshAgent.isStopped = true;
-            return;
+            chasingPlayer = true;
+        }
+        else if (chasingPlayer && playerDist > chaseDistance * 1.2f)
+        {
+            chasingPlayer = false;
+            GoToRandomWaypoint();
+        }
+
+        if (chasingPlayer)
+        {
+            ChasePlayer();
+            TryAttackPlayer();
         }
         else
-        {
-            enemyNavMeshAgent.isStopped = false;
-        }
-
-        if (dist > chaseDistance)
         {
             Patrol();
         }
-        else if (dist > GetAttackDistance())
+
+        if (visionCone != null)
         {
-            SetDestinationToPlayer();
+            visionCone.transform.position = transform.position;
+            visionCone.transform.rotation = transform.rotation;
         }
-        else
-        {
-            canAttack = CanSeePlayer();
-        }
-    }
-
-    private bool IsObstacleInFront()
-    {
-        Vector3 direction = (playerTransform.position - transform.position).normalized;
-        float maxDistance = Mathf.Max(chaseDistance, attackDistanceMelee, attackDistanceRange);
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, maxDistance, obstacleLayer | playerLayerMask))
-        {
-            if (hit.collider.transform != playerTransform)
-                return true;
-        }
-        return false;
-    }
-
-    private bool CanSeePlayer()
-    {
-        Vector3 direction = playerTransform.position - transform.position;
-        float distance = Vector3.Distance(transform.position, playerTransform.position);
-        float attackDistance = GetAttackDistance();
-
-        if (distance > attackDistance)
-            return false;
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, distance, playerLayerMask))
-        {
-            if (hit.collider.transform == playerTransform)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    void setAnimation()
-    {
-        anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
-        anim.SetBool("Attack", canAttack);
-    }
-
-    void SetDestinationToPlayer()
-    {
-        enemyNavMeshAgent.SetDestination(playerTransform.position);
     }
 
     void Patrol()
     {
+        agent.speed = patrolSpeed;
+
         if (waypoints.Length == 0) return;
 
-        if (!enemyNavMeshAgent.pathPending && enemyNavMeshAgent.remainingDistance < 0.5f)
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            int previousIndex = currentWaypointIndex;
-            do
-            {
-                currentWaypointIndex = Random.Range(0, waypoints.Length);
-            } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
-            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+            GoToRandomWaypoint();
         }
     }
 
-    private float GetAttackDistance()
+    void GoToRandomWaypoint()
     {
-        return enemyType == EnemyType.Melee ? attackDistanceMelee : attackDistanceRange;
+        if (waypoints.Length == 0) return;
+        int prevIndex = currentWaypointIndex;
+        do
+        {
+            currentWaypointIndex = Random.Range(0, waypoints.Length);
+        } while (waypoints.Length > 1 && currentWaypointIndex == prevIndex);
+
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
     }
 
-    void HandleAttack()
+    void ChasePlayer()
     {
-        if (canAttack && attackTimer <= 0f && CanSeePlayer())
+        agent.speed = chaseSpeed;
+        agent.SetDestination(playerTransform.position);
+    }
+
+    void TryAttackPlayer()
+    {
+        if (playerTransform == null || playerStats == null) return;
+
+        Vector3 toPlayer = playerTransform.position - transform.position;
+        float distance = toPlayer.magnitude;
+        float angle = Vector3.Angle(transform.forward, toPlayer);
+
+        float attackDist = enemyType == EnemyType.Melee ? meleeAttackDistance : rangeAttackDistance;
+        int damage = enemyType == EnemyType.Melee ? meleeDamage : rangeDamage;
+
+        if (distance <= attackDist && angle <= viewAngle * 0.5f && HasLineOfSight(attackDist))
         {
-            playerStats.TakeDamage(damageAmount);
-            attackTimer = attackCooldown;
+            if (attackTimer <= 0f)
+            {
+                playerStats.TakeDamage(damage);
+                attackTimer = attackCooldown;
+            }
+        }
+
+        if (attackTimer > 0f)
+            attackTimer -= Time.deltaTime;
+    }
+
+    bool HasLineOfSight(float distance)
+    {
+        if (eyes == null)
+            return false;
+
+        RaycastHit hit;
+        if (Physics.Raycast(eyes.position, eyes.forward, out hit, distance, visionMask))
+        {
+            Debug.Log("Raycast hit: " + hit.collider.gameObject.name + " (Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer) + ")");
+            return hit.collider.CompareTag("Player");
         }
         else
         {
-            attackTimer -= Time.deltaTime;
+            Debug.Log("Raycast did not hit anything.");
         }
+        return false;
     }
 }
