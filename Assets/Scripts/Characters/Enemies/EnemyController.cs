@@ -7,144 +7,251 @@ public enum EnemyType { None, Melee, Distance }
 
 public class EnemyController : MonoBehaviour
 {
+    /// <summary>
+    /// Type of enemy behavior (None, Melee, or Distance).
+    /// </summary>
     public EnemyType enemyType = EnemyType.None;
 
+    [Header("Behavior Flags")]
+    /// <summary>
+    /// Whether the enemy can chase the player.
+    /// </summary>
+    public bool canChase;
+
+    /// <summary>
+    /// Whether the enemy can attack the player.
+    /// </summary>
+    public bool canAttack;
+
+    [Header("Target References")]
+    /// <summary>
+    /// Reference to the player's transform.
+    /// </summary>
+    public Transform playerTransform;
+
+    [Header("Movement Settings")]
+    /// <summary>
+    /// Distance at which the enemy starts chasing the player.
+    /// </summary>
+    public float chaseDistance;
+
+    /// <summary>
+    /// Distance at which the enemy can attack the player (melee).
+    /// </summary>
+    public float attackDistanceMelee;
+
+    /// <summary>
+    /// Distance at which the enemy can attack the player (distance).
+    /// </summary>
+    public float attackDistanceRange;
+
+    /// <summary>
+    /// NavMesh agent component for enemy movement.
+    /// </summary>
+    private NavMeshAgent enemyNavMeshAgent;
+
+    [Header("Animation")]
+    /// <summary>
+    /// Animator component for enemy animations.
+    /// </summary>
+    public Animator anim;
+
+    /// <summary>
+    /// Script that calculates angle to player for sprite direction.
+    /// </summary>
+    AngleToPlayer angleToPlayer;
+
+    [Header("Patrol Settings")]
+    /// <summary>
+    /// Array of waypoints for enemy patrol behavior.
+    /// </summary>
     public Transform[] waypoints;
+
+    /// <summary>
+    /// Current waypoint index for patrol system.
+    /// </summary>
     private int currentWaypointIndex = 0;
 
-    public float patrolSpeed = 3.5f;
-    public float chaseSpeed = 5f;
-    public float chaseDistance = 8f;
-    public float meleeAttackDistance = 2f;
-    public float rangeAttackDistance = 6f;
-    public float viewAngle = 60f;
+    [Header("Attack Settings")]
+    /// <summary>
+    /// Amount of damage the enemy deals to the player.
+    /// </summary>
+    public int damageAmount = 25;
 
-    public int meleeDamage = 25;
-    public int rangeDamage = 15;
-    public float attackCooldown = 1f;
+    /// <summary>
+    /// Time between enemy attacks.
+    /// </summary>
+    public float attackCooldown = 0.2f;
 
-    public LayerMask visionMask;
-    public GameObject visionCone;
-    public Transform eyes; // Asigna aquí el GameObject de los ojos en el inspector
-
+    /// <summary>
+    /// Timer for tracking attack cooldown.
+    /// </summary>
     private float attackTimer = 0f;
-    private NavMeshAgent agent;
-    private Transform playerTransform;
-    private Stats playerStats;
-    private bool chasingPlayer = false;
 
+    /// <summary>
+    /// Reference to the player's stats component.
+    /// </summary>
+    private Stats playerStats;
+
+    [Header("Distance Enemy Settings")]
+    /// <summary>
+    /// Light component for distance enemy type.
+    /// </summary>
+    public Light spotLight;
+
+    /// <summary>
+    /// Object representing the light cone.
+    /// </summary>
+    public GameObject lightCone;
+
+    [Header("Door Detection")]
+    /// <summary>
+    /// LayerMask for detecting closed doors.
+    /// </summary>
+    public LayerMask doorLayer;
+
+    /// <summary>
+    /// LayerMask for detecting walls and obstacles.
+    /// </summary>
+    public LayerMask obstacleLayer;
+
+    /// <summary>
+    /// Initializes enemy components and references.
+    /// </summary>
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        playerTransform = FindObjectOfType<PlayerController>().transform;
         playerStats = FindAnyObjectByType<Stats>();
+        playerTransform = FindObjectOfType<PlayerController>().transform;
+        enemyNavMeshAgent = GetComponent<NavMeshAgent>();
+        angleToPlayer = GetComponent<AngleToPlayer>();
 
         if (waypoints.Length > 0)
         {
-            GoToRandomWaypoint();
+            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
 
+    /// <summary>
+    /// Updates enemy behavior, animations, and attack logic each frame.
+    /// </summary>
     private void Update()
     {
-        float playerDist = Vector3.Distance(transform.position, playerTransform.position);
+        NextAction();
+        setAnimation();
+        HandleAttack();
+    }
 
-        if (playerDist <= chaseDistance)
-        {
-            chasingPlayer = true;
-        }
-        else if (chasingPlayer && playerDist > chaseDistance * 1.2f)
-        {
-            chasingPlayer = false;
-            GoToRandomWaypoint();
-        }
+    /// <summary>
+    /// Determines the next action based on distance to player (patrol, chase, or attack).
+    /// </summary>
+    void NextAction()
+    {
+        float dist = Vector3.Distance(transform.position, playerTransform.position);
+        canAttack = false;
 
-        if (chasingPlayer)
-        {
-            ChasePlayer();
-            TryAttackPlayer();
-        }
-        else
+        if (dist > chaseDistance)
         {
             Patrol();
         }
-
-        if (visionCone != null)
+        else if (dist > GetAttackDistance())
         {
-            visionCone.transform.position = transform.position;
-            visionCone.transform.rotation = transform.rotation;
-        }
-    }
-
-    void Patrol()
-    {
-        agent.speed = patrolSpeed;
-
-        if (waypoints.Length == 0) return;
-
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-        {
-            GoToRandomWaypoint();
-        }
-    }
-
-    void GoToRandomWaypoint()
-    {
-        if (waypoints.Length == 0) return;
-        int prevIndex = currentWaypointIndex;
-        do
-        {
-            currentWaypointIndex = Random.Range(0, waypoints.Length);
-        } while (waypoints.Length > 1 && currentWaypointIndex == prevIndex);
-
-        agent.SetDestination(waypoints[currentWaypointIndex].position);
-    }
-
-    void ChasePlayer()
-    {
-        agent.speed = chaseSpeed;
-        agent.SetDestination(playerTransform.position);
-    }
-
-    void TryAttackPlayer()
-    {
-        if (playerTransform == null || playerStats == null) return;
-
-        Vector3 toPlayer = playerTransform.position - transform.position;
-        float distance = toPlayer.magnitude;
-        float angle = Vector3.Angle(transform.forward, toPlayer);
-
-        float attackDist = enemyType == EnemyType.Melee ? meleeAttackDistance : rangeAttackDistance;
-        int damage = enemyType == EnemyType.Melee ? meleeDamage : rangeDamage;
-
-        if (distance <= attackDist && angle <= viewAngle * 0.5f && HasLineOfSight(attackDist))
-        {
-            if (attackTimer <= 0f)
-            {
-                playerStats.TakeDamage(damage);
-                attackTimer = attackCooldown;
-            }
-        }
-
-        if (attackTimer > 0f)
-            attackTimer -= Time.deltaTime;
-    }
-
-    bool HasLineOfSight(float distance)
-    {
-        if (eyes == null)
-            return false;
-
-        RaycastHit hit;
-        if (Physics.Raycast(eyes.position, eyes.forward, out hit, distance, visionMask))
-        {
-            Debug.Log("Raycast hit: " + hit.collider.gameObject.name + " (Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer) + ")");
-            return hit.collider.CompareTag("Player");
+            SetDestinationToPlayer();
         }
         else
         {
-            Debug.Log("Raycast did not hit anything.");
+            canAttack = CanSeePlayer();
         }
-        return false;
+
+        // Desactiva la luz y el objeto si hay una puerta cerrada de por medio
+        if (enemyType == EnemyType.Distance)
+        {
+            
+        }
+    }
+
+
+    /// <summary>
+    /// Checks if the enemy can see the player directly (no obstacles between).
+    /// </summary>
+    private bool CanSeePlayer()
+    {
+        Vector3 direction = playerTransform.position - transform.position;
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+        float attackDistance = GetAttackDistance();
+
+        if (distance > attackDistance)
+            return false;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, direction, out hit, distance, obstacleLayer))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+            return false;
+        }
+        // Si no hay obstáculos, pero el raycast no devuelve nada (raro), asumimos que hay línea de visión
+        return Physics.Raycast(transform.position, direction, out hit, distance, doorLayer)
+            ? false : true; // Si hay puerta, false (ya se comprueba antes), si no, true
+    }
+
+    /// <summary>
+    /// Updates animation parameters based on enemy state and direction.
+    /// </summary>
+    void setAnimation()
+    {
+        anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
+        anim.SetBool("Attack", canAttack);
+    }
+
+    /// <summary>
+    /// Sets the enemy's navigation destination to the player's position.
+    /// </summary>
+    void SetDestinationToPlayer()
+    {
+        enemyNavMeshAgent.SetDestination(playerTransform.position);
+    }
+
+    /// <summary>
+    /// Handles enemy patrol behavior between waypoints.
+    /// </summary>
+    void Patrol()
+    {
+        if (waypoints.Length == 0) return;
+
+        if (!enemyNavMeshAgent.pathPending && enemyNavMeshAgent.remainingDistance < 0.5f)
+        {
+            int previousIndex = currentWaypointIndex;
+            do
+            {
+                currentWaypointIndex = Random.Range(0, waypoints.Length);
+            } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
+            enemyNavMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+        }
+    }
+
+    /// <summary>
+    /// Returns attack distance based on enemy type.
+    /// </summary>
+    private float GetAttackDistance()
+    {
+        return enemyType == EnemyType.Melee ? attackDistanceMelee : attackDistanceRange;
+    }
+
+    /// <summary>
+    /// Manages attack logic for both enemy types.
+    /// </summary>
+    void HandleAttack()
+    {
+        if (canAttack && attackTimer <= 0f)
+        {
+            playerStats.TakeDamage(damageAmount);
+            attackTimer = attackCooldown;
+        }
+        else
+        {
+            attackTimer -= Time.deltaTime;
+        }
     }
 }

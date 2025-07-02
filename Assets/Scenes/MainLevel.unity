@@ -10198,6 +10198,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bda0059b52f2d9439c888a7b503b68c, type: 3}
+--- !u!1 &642550093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193545043749884679, guid: 06e24d92cf0214a4697d6d6b5917586a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5059868411116867294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647396873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d786b2e4568bd0e408f01aab128e5363,
@@ -10996,6 +11002,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c481f1d5d62bb394789cab12149feee6,
     type: 3}
   m_PrefabInstance: {fileID: 1196828625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &712685470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1151908239323665438, guid: 06e24d92cf0214a4697d6d6b5917586a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5059868411116867294}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &713963618
 PrefabInstance:
@@ -35220,13 +35232,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
         type: 3}
+      propertyPath: eyes
+      value: 
+      objectReference: {fileID: 712685470}
+    - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
+        type: 3}
       propertyPath: canChase
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
         type: 3}
+      propertyPath: visionCone
+      value: 
+      objectReference: {fileID: 642550093}
+    - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
+        type: 3}
       propertyPath: damageAmount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
+        type: 3}
+      propertyPath: visionMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2559924858011582753, guid: 06e24d92cf0214a4697d6d6b5917586a,
         type: 3}
