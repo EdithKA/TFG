@@ -7,117 +7,41 @@ public enum EnemyType { None, Melee, Distance }
 
 public class EnemyController : MonoBehaviour
 {
-    /// <summary>
-    /// Type of enemy behavior (None, Melee, or Distance).
-    /// </summary>
     public EnemyType enemyType = EnemyType.None;
 
     [Header("Behavior Flags")]
-    /// <summary>
-    /// Whether the enemy can chase the player.
-    /// </summary>
     public bool canChase;
-
-    /// <summary>
-    /// Whether the enemy can attack the player.
-    /// </summary>
     public bool canAttack;
 
     [Header("Target References")]
-    /// <summary>
-    /// Reference to the player's transform.
-    /// </summary>
     public Transform playerTransform;
 
     [Header("Movement Settings")]
-    /// <summary>
-    /// Distance at which the enemy starts chasing the player.
-    /// </summary>
     public float chaseDistance;
-
-    /// <summary>
-    /// Distance at which the enemy can attack the player (melee).
-    /// </summary>
     public float attackDistanceMelee;
-
-    /// <summary>
-    /// Distance at which the enemy can attack the player (distance).
-    /// </summary>
     public float attackDistanceRange;
-
-    /// <summary>
-    /// NavMesh agent component for enemy movement.
-    /// </summary>
     private NavMeshAgent enemyNavMeshAgent;
 
     [Header("Animation")]
-    /// <summary>
-    /// Animator component for enemy animations.
-    /// </summary>
     public Animator anim;
-
-    /// <summary>
-    /// Script that calculates angle to player for sprite direction.
-    /// </summary>
     AngleToPlayer angleToPlayer;
 
     [Header("Patrol Settings")]
-    /// <summary>
-    /// Array of waypoints for enemy patrol behavior.
-    /// </summary>
     public Transform[] waypoints;
-
-    /// <summary>
-    /// Current waypoint index for patrol system.
-    /// </summary>
     private int currentWaypointIndex = 0;
 
     [Header("Attack Settings")]
-    /// <summary>
-    /// Amount of damage the enemy deals to the player.
-    /// </summary>
     public int damageAmount = 25;
-
-    /// <summary>
-    /// Time between enemy attacks.
-    /// </summary>
     public float attackCooldown = 0.2f;
-
-    /// <summary>
-    /// Timer for tracking attack cooldown.
-    /// </summary>
     private float attackTimer = 0f;
-
-    /// <summary>
-    /// Reference to the player's stats component.
-    /// </summary>
     private Stats playerStats;
 
-    [Header("Distance Enemy Settings")]
-    /// <summary>
-    /// Light component for distance enemy type.
-    /// </summary>
-    public Light spotLight;
+    [Header("Player LayerMask")]
+    public LayerMask playerLayerMask;
 
-    /// <summary>
-    /// Object representing the light cone.
-    /// </summary>
-    public GameObject lightCone;
-
-    [Header("Door Detection")]
-    /// <summary>
-    /// LayerMask for detecting closed doors.
-    /// </summary>
-    public LayerMask doorLayer;
-
-    /// <summary>
-    /// LayerMask for detecting walls and obstacles.
-    /// </summary>
+    [Header("Obstacle LayerMask")]
     public LayerMask obstacleLayer;
 
-    /// <summary>
-    /// Initializes enemy components and references.
-    /// </summary>
     private void Start()
     {
         playerStats = FindAnyObjectByType<Stats>();
@@ -131,9 +55,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Updates enemy behavior, animations, and attack logic each frame.
-    /// </summary>
     private void Update()
     {
         NextAction();
@@ -141,13 +62,20 @@ public class EnemyController : MonoBehaviour
         HandleAttack();
     }
 
-    /// <summary>
-    /// Determines the next action based on distance to player (patrol, chase, or attack).
-    /// </summary>
     void NextAction()
     {
         float dist = Vector3.Distance(transform.position, playerTransform.position);
         canAttack = false;
+
+        if (IsObstacleInFront())
+        {
+            enemyNavMeshAgent.isStopped = true;
+            return;
+        }
+        else
+        {
+            enemyNavMeshAgent.isStopped = false;
+        }
 
         if (dist > chaseDistance)
         {
@@ -161,41 +89,22 @@ public class EnemyController : MonoBehaviour
         {
             canAttack = CanSeePlayer();
         }
-
-        // Desactiva la luz y el objeto si hay una puerta cerrada de por medio
-        if (enemyType == EnemyType.Distance)
-        {
-            bool doorBlocking = IsDoorBlockingPath();
-            if (spotLight != null)
-                spotLight.enabled = !doorBlocking;
-            if (lightCone != null)
-                lightCone.SetActive(!doorBlocking);
-        }
     }
 
-    /// <summary>
-    /// Checks if a closed door is blocking the path to the player.
-    /// </summary>
-    private bool IsDoorBlockingPath()
+    private bool IsObstacleInFront()
     {
-        Vector3 direction = playerTransform.position - transform.position;
-        float distance = Vector3.Distance(transform.position, playerTransform.position);
+        Vector3 direction = (playerTransform.position - transform.position).normalized;
+        float maxDistance = Mathf.Max(chaseDistance, attackDistanceMelee, attackDistanceRange);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, distance, doorLayer))
+        if (Physics.Raycast(transform.position, direction, out hit, maxDistance, obstacleLayer | playerLayerMask))
         {
-            DoorInteractable door = hit.collider.GetComponent<DoorInteractable>();
-            if (door != null && !door.isOpen)
-            {
+            if (hit.collider.transform != playerTransform)
                 return true;
-            }
         }
         return false;
     }
 
-    /// <summary>
-    /// Checks if the enemy can see the player directly (no obstacles between).
-    /// </summary>
     private bool CanSeePlayer()
     {
         Vector3 direction = playerTransform.position - transform.position;
@@ -206,39 +115,27 @@ public class EnemyController : MonoBehaviour
             return false;
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, distance, obstacleLayer))
+        if (Physics.Raycast(transform.position, direction, out hit, distance, playerLayerMask))
         {
-            if (hit.collider.CompareTag("Player"))
+            if (hit.collider.transform == playerTransform)
             {
                 return true;
             }
-            return false;
         }
-        // Si no hay obstáculos, pero el raycast no devuelve nada (raro), asumimos que hay línea de visión
-        return Physics.Raycast(transform.position, direction, out hit, distance, doorLayer)
-            ? false : true; // Si hay puerta, false (ya se comprueba antes), si no, true
+        return false;
     }
 
-    /// <summary>
-    /// Updates animation parameters based on enemy state and direction.
-    /// </summary>
     void setAnimation()
     {
         anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
         anim.SetBool("Attack", canAttack);
     }
 
-    /// <summary>
-    /// Sets the enemy's navigation destination to the player's position.
-    /// </summary>
     void SetDestinationToPlayer()
     {
         enemyNavMeshAgent.SetDestination(playerTransform.position);
     }
 
-    /// <summary>
-    /// Handles enemy patrol behavior between waypoints.
-    /// </summary>
     void Patrol()
     {
         if (waypoints.Length == 0) return;
@@ -254,20 +151,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Returns attack distance based on enemy type.
-    /// </summary>
     private float GetAttackDistance()
     {
         return enemyType == EnemyType.Melee ? attackDistanceMelee : attackDistanceRange;
     }
 
-    /// <summary>
-    /// Manages attack logic for both enemy types.
-    /// </summary>
     void HandleAttack()
     {
-        if (canAttack && attackTimer <= 0f)
+        if (canAttack && attackTimer <= 0f && CanSeePlayer())
         {
             playerStats.TakeDamage(damageAmount);
             attackTimer = attackCooldown;
