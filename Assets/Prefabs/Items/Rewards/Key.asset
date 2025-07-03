@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Key
   displayName: Key
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 51e3c936a13899e429176db61fc8ba32, type: 3}
   type: reward
   itemPrefab: {fileID: 4577361019980829360, guid: 7a76d9dd862575749b4c45bc7d5bdd10,
     type: 3}

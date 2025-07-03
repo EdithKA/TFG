@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Tamagotchi
   displayName: Tamagotchi
-  icon: {fileID: 21300000, guid: e9510f3bed031f94780715203810c657, type: 3}
-  type: Toy
+  icon: {fileID: 21300000, guid: 40b7e44b8a303734e9f4fa9545170a64, type: 3}
+  type: reward
   itemPrefab: {fileID: 809885481976667606, guid: 2a6e1bab50fd21e488564474b9423c2a,
     type: 3}
   equipPositionOffset: {x: 0, y: 0, z: 0}

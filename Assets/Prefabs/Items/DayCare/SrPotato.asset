@@ -18,5 +18,5 @@ MonoBehaviour:
   type: 
   itemPrefab: {fileID: 8484712116892264191, guid: 74cba53410faed441a7727ae007a5d89,
     type: 3}
-  equipPositionOffset: {x: 0, y: 0, z: 0}
-  equipRotationOffset: {x: 0, y: 0, z: 0}
+  equipPositionOffset: {x: 0.204, y: -0.002, z: -0.068}
+  equipRotationOffset: {x: -124.898, y: -163.016, z: -65.33701}

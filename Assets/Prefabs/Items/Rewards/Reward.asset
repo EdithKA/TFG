@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: crashSaveData
   displayName: un saveData de Crash Bandicoot
   icon: {fileID: 21300000, guid: 6cd935cc71014fb4dbc78438cc2384c4, type: 3}
-  type: 
+  type: reward
   itemPrefab: {fileID: 3374569229112340830, guid: 8beb40388f878c8429fd0d7009f3b44a,
     type: 3}
   equipPositionOffset: {x: 0, y: 0, z: 0}

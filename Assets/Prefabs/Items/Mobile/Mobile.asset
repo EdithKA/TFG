@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: Mobile
   displayName: Mobile Phone
-  icon: {fileID: 21300000, guid: a74577bdc9c178a4ea81b5ae860e3939, type: 3}
+  icon: {fileID: 21300000, guid: 694f0df11a5cc404faa7f65b5fd62210, type: 3}
   type: Mobile
   itemPrefab: {fileID: 1100774116042817666, guid: 7ada75afbf3aaaa42a0ed036ae7628ec,
     type: 3}

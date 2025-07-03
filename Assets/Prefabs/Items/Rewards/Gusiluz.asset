@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: gusiluz
   displayName: Gusiluz
-  icon: {fileID: 21300000, guid: b57e7f427e0686844a9f3d46fecfa25a, type: 3}
+  icon: {fileID: 21300000, guid: a7d6b0ab2d4abfe4387a430cc52cf821, type: 3}
   type: reward
   itemPrefab: {fileID: 7665508138012155823, guid: 870df9fa265973c42b1dc8a6e0282545,
     type: 3}

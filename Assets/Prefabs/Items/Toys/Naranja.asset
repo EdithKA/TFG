@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: naranja
   displayName: Britney Spears MP3 Player
-  icon: {fileID: 21300000, guid: 3875b5dd31d7e2d4ea008914433a3938, type: 3}
+  icon: {fileID: 21300000, guid: f815f2b16d0cfca41a93c7d9d7674ea1, type: 3}
   type: 
   itemPrefab: {fileID: 3365068055953609817, guid: ae946e32e45f32a4d80638b28b6bab02,
     type: 3}

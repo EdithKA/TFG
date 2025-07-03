@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: morado
   displayName: Hannah Montana MP3 Player
-  icon: {fileID: 21300000, guid: e8a5a515468fd7f4992c03f0cbad6d1e, type: 3}
+  icon: {fileID: 21300000, guid: 023c0d2e26caf6c4bbe52f469317e04f, type: 3}
   type: 
   itemPrefab: {fileID: 3089205460066329628, guid: 602881f225743da41aee977e17b87947,
     type: 3}
