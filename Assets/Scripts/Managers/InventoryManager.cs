@@ -67,9 +67,18 @@ public class InventoryManager : MonoBehaviour
                 }
             }
             if (item.type == "reward")
-                stats.sanity += (100 - stats.sanity);
+            {
+                stats.sanity = Mathf.Min(stats.sanity + 100, 100);
+                uiTextController.ShowThought("It's like my childhood is protecting me. I feel whole again.");
+            }
+
+
+
             if (item.type == "photo")
-                stats.sanity = Mathf.Min(stats.sanity + 20, 100);
+            {
+                stats.sanity = Mathf.Min(stats.sanity + 50, 100);
+                uiTextController.ShowThought("Holding this photo, I feel a bit stronger. Memories really can heal.");
+            }
 
             items.Add(item);
             RefreshUI();
