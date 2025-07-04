@@ -16,6 +16,9 @@ MonoBehaviour:
   placeObjectMessage: Press [E] to place an object.
   collectMessage: Press [E] to pick up.
   collectedMessage: Item collected!
+  inspectMessage: 
+  objectAdded: 
+  objectRemoved: 
   needMobileMessage: Looks like I need to pick something up first.
   objectAlreadyPlaced: There is already an object here.
   needObjectMessage: I have to put something here.
@@ -25,3 +28,9 @@ MonoBehaviour:
   dvdError: It doesn't seem to work as it should.
   dvdMissing: I need a DVD for this to work.
   rewardAppear: Something has appeared!
+  needSomething: 
+  canOpen: 
+  closeDoor: 
+  rewardCollected: 
+  photoCollected: 
+  needPieces: 

@@ -8,6 +8,11 @@ public class GameTexts : ScriptableObject
     public string placeObjectMessage = "";
     public string collectMessage = "";
     public string collectedMessage = "";
+    public string inspectMessage = "";
+    public string objectAdded = "";
+    public string objectRemoved = "";
+
+
 
     [Header("Thoughts")]
     public string needMobileMessage = "";
@@ -20,6 +25,13 @@ public class GameTexts : ScriptableObject
     public string dvdError = "";
     public string dvdMissing = "";
     public string rewardAppear = "";
+
+    public string needSomething = "";
+    public string canOpen = "";
+    public string closeDoor = "";
+    public string rewardCollected = "";
+    public string photoCollected = "";
+    public string needPieces = "";
 
    
 
