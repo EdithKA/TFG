@@ -18,7 +18,8 @@ public class InventoryManager : MonoBehaviour
     public Item completedToy;
 
     [Header("UI Reference")]
-    [SerializeField] private UITextController uiTextController;
+    UITextController uiTextController;
+    GameTexts gameTexts;
 
     public List<Item> items = new List<Item>();
     private List<GameObject> slots = new List<GameObject>();
@@ -32,19 +33,20 @@ public class InventoryManager : MonoBehaviour
     public AudioClip inventorySoundClip;
     Stats stats;
 
-    [Header("Photo Inspection")]
+    // Object Inspection
     public GameObject inspectMenu;
-    public Image photoDisplay;
+    public Image itemDisplay;
 
     private void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
-        if (inventoryUI != null) inventoryUI.SetActive(false);
+        gameTexts = FindAnyObjectByType<GameTexts>();
+        inventoryUI.SetActive(false);
 
         inspectMenu.gameObject.SetActive(false);
-        Button btn = photoDisplay.GetComponent<Button>();
-        btn.onClick.AddListener(HidePhotoInspect);
+        Button btn = itemDisplay.GetComponent<Button>();
+        btn.onClick.AddListener(HideInspectMenu);
        
 
         RefreshUI();
@@ -69,7 +71,7 @@ public class InventoryManager : MonoBehaviour
             if (item.type == "reward")
             {
                 stats.sanity = Mathf.Min(stats.sanity + 100, 100);
-                uiTextController.ShowThought("It's like my childhood is protecting me. I feel whole again.");
+                uiTextController.ShowThought(gameTexts.rewardCollected);
             }
 
 
@@ -77,12 +79,12 @@ public class InventoryManager : MonoBehaviour
             if (item.type == "photo")
             {
                 stats.sanity = Mathf.Min(stats.sanity + 50, 100);
-                uiTextController.ShowThought("Holding this photo, I feel a bit stronger. Memories really can heal.");
+                uiTextController.ShowThought(gameTexts.photoCollected);
             }
 
             items.Add(item);
             RefreshUI();
-            uiTextController.ShowInventoryMessage($"{item.displayName} added to inventory.", true);
+            uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectAdded, true);
         }
     }
 
@@ -95,7 +97,7 @@ public class InventoryManager : MonoBehaviour
         {
             items.Remove(item);
             RefreshUI();
-            uiTextController.ShowInventoryMessage($"{item.displayName} removed from inventory.", false);
+            uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectRemoved, false);
             soundPlayer.PlayOneShot(inventorySoundClip);
         }
     }
@@ -126,7 +128,7 @@ public class InventoryManager : MonoBehaviour
                 Button button = slot.GetComponent<Button>();
                 if (item.type == "photo")
                 {
-                    button.onClick.AddListener(() => ShowPhotoInspect(item.icon));
+                    button.onClick.AddListener(() => ShowInspectMenu(item.icon));
                 }
                 else
                 {
@@ -158,11 +160,11 @@ public class InventoryManager : MonoBehaviour
         {
             if (item.type == "piece")
             {
-                uiTextController.ShowThought("Looks like I need more parts.");
+                uiTextController.ShowThought(gameTexts.needPieces);
             }
             else if (item.type == "photo")
             {
-                ShowPhotoInspect(item.icon);
+                ShowInspectMenu(item.icon);
             }
             else
             {
@@ -179,11 +181,10 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Muestra la foto en el objeto Image de la UI
     /// </summary>
-    public void ShowPhotoInspect(Sprite photoSprite)
+    public void ShowInspectMenu(Sprite photoSprite)
     {
-        photoDisplay.sprite = photoSprite;
+        itemDisplay.sprite = photoSprite;
         inspectMenu.SetActive(true);
-        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
@@ -192,11 +193,10 @@ public class InventoryManager : MonoBehaviour
     /// <summary>
     /// Oculta la foto de la UI
     /// </summary>
-    public void HidePhotoInspect()
+    public void HideInspectMenu()
     {
        
         inspectMenu.SetActive(false);
-        Time.timeScale = 1f;
         if (!isInventoryOpen)
         {
             Cursor.lockState = CursorLockMode.Locked;

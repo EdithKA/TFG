@@ -1,29 +1,30 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/**
- * @brief Handles core game management actions such as scene transitions and quitting the game.
- *        Simple and reusable for menus, checkpoints, or any global game logic.
- */
+// Controla el menú de pausa, cambio de escenas y salida del juego.
 public class GameManager : MonoBehaviour
 {
-    [Header("Pause Menu Config")]
-    public GameObject pauseMenu;
-    public bool isLevel;
-    private bool isPaused = false;
-    public bool gameComplete = false;
+    // Pause Menu Settings.
+    public GameObject pauseMenu; // Menú de pausa.
+    public bool isLevel; // Indica si estamos en un nivel o un menú.
+    private bool isPaused = false; // Estado de pausa.
+    public bool gameComplete = false; // Indica si el juego ha sido completado.
+
 
     private void Update()
     {
+        // Si es un nivel, tecla ESC para pausar/reanudar.
         if (isLevel && Input.GetKeyDown(KeyCode.Escape))
             if (isPaused)
                 Resume();
             else
                 Pause();
+        // Si el juego está completo se carga la escena final.
         if (isLevel && gameComplete)
             LoadSceneByName("End");
     }
 
+    // Reanuda el juego desde el menú de pausa.
     public void Resume()
     {
         AudioListener.pause = false;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
     }
 
+    // Activa el menú de pausa y detiene el tiempo.
     void Pause()
     {
         pauseMenu.SetActive(true);
@@ -44,10 +46,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    /**
-     * @brief Loads a new scene by its name.
-     * @param name The name of the scene to load.
-     */
+    // Cambia de escena según el nombre recibido.
     public void LoadSceneByName(string name)
     {
         if (AudioListener.pause == true)
@@ -66,10 +65,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    /**
-     * @brief Quits the game application.
-     *        Note: This will only work in a built game, not in the Unity Editor.
-     */
+    // Cierra la aplicación.
     public void QuitGame()
     {
         Application.Quit();
