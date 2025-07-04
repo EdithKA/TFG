@@ -3,12 +3,14 @@ using UnityEngine.AI;
 
 public class EnemyDistanceController : MonoBehaviour
 {
+    // Referencias
     public Transform playerTransform;
     public AngleToPlayer angleToPlayer;
-
     public Transform eyes;
-    public float chaseDistance = 20f;
-    public float attackDistance = 15f;
+
+    // Configuración navmesh Agent
+    public float chaseDistance = 20f; // Distancia para perseguir al jugador
+    public float attackDistance = 15f; // Distancia para atacar al jugador
     public float visionAngle = 60f;
     public LayerMask obstacleLayer;
     public int damageAmount = 15;

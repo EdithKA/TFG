@@ -2,74 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * @brief Calculates relative angles to the player and manages sprite direction visualization.
- */
+
 public class AngleToPlayer : MonoBehaviour
 {
-    /// <summary>
-    /// Reference to the the player's transform.
-    /// </summary>
-    private Transform player;
 
-    /// <summary>
-    /// Calculated target position (ignoring vertical difference).
-    /// </summary>
-    private Vector3 targetPos;
-
-    /// <summary>
-    /// Direction vector from enemy to the player.
-    /// </summary>
-    private Vector3 targetDir;
-
-    /// <summary>
-    /// Calculated signed angle between enemy forward and the Player direction.
-    /// </summary>
-    private float angle;
-
-    /// <summary>
-    /// Last calculated direction index for animation purposes.
-    /// </summary>
-    public int lastIndex;
-
-    /// <summary>
-    /// Reference to the sprite renderer component.
-    /// </summary>
+    private Transform player; // Referencia al jugador
+    private Vector3 targetPos; // Posicion del jugador proyectada en el plano horizontal
+    private Vector3 targetDir; // Dirección desde el enemigo hacia el jugador
+    private float angle; // Ángulo calculado entre el forward del enemigo y el jugador
+    public int lastIndex; // Indice de dirección para las animaciones
     private SpriteRenderer spriteRenderer;
 
-    /// <summary>
-    /// Initializes the player reference and sprite renderer component.
-    /// </summary>
+    // Al inicio se asignan las referencias automáticamente
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    /// <summary>
-    /// Updates angle calculations and sprite direction each frame.
-    /// </summary>
+    //En cada frame se calcula el ángulo y la dirección para el enemigo
     void Update()
     {
+        // Se obtiene la posición del jugador y se calcula la dirección hacia este
         targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
         targetDir = targetPos - transform.position;
 
+        // Se calcula el ángulo entre el forward del enemigo y la dirección
         angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
-
-        Vector3 tempScale = Vector3.one;
-        if (angle > 0)
-        {
-            tempScale.x = -1f; 
-        }
-
+        
+        // Se calcula el índice para la animación del enemigo
         lastIndex = GetIndex(angle); 
     }
 
-    /// <summary>
-    /// Converts angle value into 8-direction index for animation states.
-    /// </summary>
-    /// <param name="angle">Signed angle between -180 and 180 degrees.</param>
-    /// <returns>Integer index representing cardinal and intercardinal directions.</returns>
     int GetIndex(float angle)
     {
         // Front-facing directions
@@ -87,14 +51,4 @@ public class AngleToPlayer : MonoBehaviour
         return lastIndex; // Fallback to previous value
     }
 
-    /// <summary>
-    /// Draws debug visuals in Scene view when object is selected.
-    /// </summary>
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, targetPos - transform.position); // Player direction ray
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, targetPos); 
-    }
 }
