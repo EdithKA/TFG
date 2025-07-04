@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     void GetInputs()
     {
         // Acercar mano izquierda (Para ver mejor el telefono móvil)
-        if (Input.GetMouseButtonDown(1) && !inventoryManager.IsInventoryOpen)
+        if (Input.GetMouseButtonDown(1) && !inventoryManager.isInventoryOpen)
             isCloser = true;
         else if (Input.GetMouseButtonUp(1))
             isCloser = false;
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(OpenInventory());
 
         // Movimiento
-        if (!inventoryManager.IsInventoryOpen)
+        if (!inventoryManager.isInventoryOpen)
         {
             // Si tiene estamina, el jugador puede correr
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Interactua con el objeto detectado
-        if (Input.GetKeyDown(KeyCode.E) && !inventoryManager.IsInventoryOpen)
+        if (Input.GetKeyDown(KeyCode.E) && !inventoryManager.isInventoryOpen)
         {
             GameObject heldItem = inventoryManager?.GetRightHandObject();
             currentInteractable?.Interact(heldItem);
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     // Gestiona el sonido de las pisadas del jugador
     void HandleFootsteps()
     {
-        if (isWalking && !inventoryManager.IsInventoryOpen && characterController.isGrounded)
+        if (isWalking && !inventoryManager.isInventoryOpen && characterController.isGrounded)
         {
             stepTimer += Time.deltaTime;
             if (stepTimer >= stepInterval)

@@ -45,7 +45,7 @@ public class MouseLook : MonoBehaviour
     private void Update()
     {
         // Only allow mouse look when the inventory is closed
-        if (!inventoryManager.IsInventoryOpen)
+        if (!inventoryManager.isInventoryOpen)
         {
             HandleHorizontalRotation();
             HandleVerticalRotation();

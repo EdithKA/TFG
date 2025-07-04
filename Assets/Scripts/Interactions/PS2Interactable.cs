@@ -6,7 +6,7 @@ using System;
 /// Controls PS2 puzzle interaction, DVD verification, and reward system.
 /// Implements both interactable and puzzle objective interfaces.
 /// </summary>
-public class PS2Interactable : MonoBehaviour, IInteractable, IPuzzleObjective
+public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
 {
     /// <summary>
     /// Indicates if the puzzle has been completed.

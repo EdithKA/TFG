@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 // Permite asignar como objetivo de un puzzle un soporte y colocar objetos en el.
-public class HolderInteractable : MonoBehaviour, IInteractable, IPuzzleObjective
+public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
 {
     public bool isComplete { get; private set; } // Indica si el objetivo del holder ya se ha completado.
 

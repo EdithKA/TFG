@@ -2,36 +2,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Gestiona el inventario, la UI y la lógica de objetos especiales (a piezas).
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    public int inventorySize = 20;
-    public GameObject inventorySlotPrefab;
-    public Transform inventoryGrid;
-    public GameObject inventoryUI;
+    public int inventorySize = 20; // Tamaño máximo del inventario.
+    public GameObject inventorySlotPrefab; // Prefab para cada slot de la UI.
+    public Transform inventoryGrid; // Grid donde se instancian los slots.
+    public GameObject inventoryUI; // Panel de la UI del inventario.
 
     [Header("Hand References")]
-    public Transform leftHand;
-    public Transform rightHand;
+    public Transform leftHand; // Mano izquierda (para el teléfono).
+    public Transform rightHand; // Mano derecha (para el resto de objetos equipables).
 
     [Header("Special Items")]
-    public Item completedToy;
+    public Item completedToy; // Juguete completo (se obtiene al tener todas las piezas).
 
     [Header("UI Reference")]
-    UITextController uiTextController;
-    GameTexts gameTexts;
+    UITextController uiTextController; // Controlador de mensajes de la UI.
+    GameTexts gameTexts; // Textos del juego.
 
-    public List<Item> items = new List<Item>();
-    private List<GameObject> slots = new List<GameObject>();
-    private int toyPieces = 0;
+    public List<Item> items = new List<Item>(); // Lista de objetos en el inventario.
+    List<GameObject> slots = new List<GameObject>(); // Slots instanciados en la UI.
+    int toyPieces = 0; // Contador de piezas actuales en el inventario.
 
-    public GameObject equippedRight;
-    private bool isInventoryOpen = false;
-    public bool IsInventoryOpen => isInventoryOpen;
+    public GameObject equippedRight; // Objeto equipado en la mano derecha.
+    public bool isInventoryOpen = false; // Estado del inventario (abierto/cerrado).
+
 
     public AudioSource soundPlayer;
-    public AudioClip inventorySoundClip;
-    Stats stats;
+    public AudioClip inventorySoundClip; // Sonido al interactuar con el inventario.
+    Stats stats; // Referencia a las estadísticas del jugador.
 
     // Object Inspection
     public GameObject inspectMenu;
@@ -39,19 +40,28 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        // Asignamos las referencias de la escena.
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
         gameTexts = FindAnyObjectByType<GameTexts>();
+
+        // Inventario oculto al inicio.
         inventoryUI.SetActive(false);
 
+        // Ocultamos el menu de inspección
         inspectMenu.gameObject.SetActive(false);
         Button btn = itemDisplay.GetComponent<Button>();
         btn.onClick.AddListener(HideInspectMenu);
        
 
-        RefreshUI();
     }
 
+    private void Update()
+    {
+        UpdateUI();
+    }
+
+    // Añade un objeto al inventario y gestiona la lógica especial (piezas, recompensas, fotos).
     public void AddItem(Item item)
     {
         soundPlayer.PlayOneShot(inventorySoundClip);
@@ -83,27 +93,25 @@ public class InventoryManager : MonoBehaviour
             }
 
             items.Add(item);
-            RefreshUI();
             uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectAdded, true);
         }
     }
 
-    private bool IsMobileEquipped() => leftHand.childCount > 0;
-    public bool HasMobileEquipped() => IsMobileEquipped();
-
+    // Elimina un objeto del inventario
     public void RemoveItem(Item item)
     {
         if (items.Contains(item))
         {
             items.Remove(item);
-            RefreshUI();
             uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectRemoved, false);
             soundPlayer.PlayOneShot(inventorySoundClip);
         }
     }
 
+    // Comprueba si el inventario contiene un objeto con un determinado ID.
     public bool HasItem(string itemName) => items.Exists(item => item.itemID == itemName);
 
+    // Abre o cierra el inventario y gestiona la visibilidad y el bloqueo del cursor.
     public void ToggleInventory()
     {
         isInventoryOpen = !isInventoryOpen;
@@ -112,7 +120,8 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = isInventoryOpen;
     }
 
-    public void RefreshUI()
+    // Actualiza la UI del inventario.
+    public void UpdateUI()
     {
         foreach (GameObject slot in slots) Destroy(slot);
         slots.Clear();
@@ -132,7 +141,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 else
                 {
-                    button.onClick.AddListener(() => EquipRightHandItem(item));
+                    button.onClick.AddListener(() => EquipItem(item));
                 }
             }
 
@@ -140,7 +149,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void UnequipRightHandItem()
+    // Desequipa el objeto de la mano.
+    public void UnequipItem()
     {
         if (equippedRight != null)
         {
@@ -149,11 +159,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void EquipRightHandItem(Item item)
+    // Equipa un objeto de la mano o muestra mensaje si es pieza, foto o reward.
+    private void EquipItem(Item item)
     {
         if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
         {
-            UnequipRightHandItem();
+            UnequipItem();
             ToggleInventory();
         }
         else
@@ -168,7 +179,7 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                UnequipRightHandItem();
+                UnequipItem();
                 equippedRight = Instantiate(item.itemPrefab, rightHand);
                 equippedRight.transform.localPosition = item.equipPositionOffset;
                 equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
@@ -178,9 +189,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Muestra la foto en el objeto Image de la UI
-    /// </summary>
+    // Muestra en el menú de inspección el icono del objeto.
     public void ShowInspectMenu(Sprite photoSprite)
     {
         itemDisplay.sprite = photoSprite;
@@ -190,9 +199,7 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// Oculta la foto de la UI
-    /// </summary>
+    // Oculta el menú de inspección.
     public void HideInspectMenu()
     {
        
@@ -205,33 +212,7 @@ public class InventoryManager : MonoBehaviour
        
     }
 
+    // Devuelve el objeto equipado en la mano derecha.
     public GameObject GetRightHandObject() => equippedRight;
 
-    public List<string> GetInventoryItemIDs()
-    {
-        List<string> ids = new List<string>();
-        foreach (Item item in items)
-            ids.Add(item.itemID);
-        return ids;
-    }
-
-    public void RestoreInventory(List<string> itemIDs)
-    {
-        items.Clear();
-        foreach (string id in itemIDs)
-        {
-            Item item = FindItemByID(id);
-            if (item != null)
-                items.Add(item);
-        }
-        RefreshUI();
-    }
-
-    private Item FindItemByID(string id)
-    {
-        foreach (Item item in Resources.LoadAll<Item>("Items"))
-            if (item.itemID == id)
-                return item;
-        return null;
-    }
 }

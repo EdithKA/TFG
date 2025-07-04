@@ -8,14 +8,14 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private GameObject rewardPrefab;
     [SerializeField] private Transform rewardSpawnPoint;
 
-    public List<IPuzzleObjective> objectives = new List<IPuzzleObjective>();
+    public List<IPuzleObjective> objectives = new List<IPuzleObjective>();
     public bool puzzleCompleted = false;
 
     private void Start()
     {
         foreach (var mb in puzzleObjectives)
         {
-            var obj = mb as IPuzzleObjective;
+            var obj = mb as IPuzleObjective;
             if (obj != null)
             {
                 objectives.Add(obj);
