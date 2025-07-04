@@ -2,13 +2,13 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Controls soundPlayer movement, stamina, inventory, and raycast-based interactions.
+/// Controls the player movement, stamina, inventory, and raycast-based interactions.
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     /// <summary>
-    /// Base movement speed of the soundPlayer.
+    /// Base movement speed of the the player.
     /// </summary>
     public float playerSpeed = 20f;
 
@@ -111,12 +111,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 movementVector;
 
     /// <summary>
-    /// Is the soundPlayer currently walking?
+    /// Is the the player currently walking?
     /// </summary>
     private bool isWalking;
 
     /// <summary>
-    /// Is the soundPlayer in "closer" mode (zoomed view)?
+    /// Is the the player in "closer" mode (zoomed view)?
     /// </summary>
     public bool isCloser;
 

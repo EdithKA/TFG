@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Represents an interactable item that can be collected by the soundPlayer.
+/// Represents an interactable item that can be collected by the the player.
 /// Implements the IInteractable interface for interaction handling.
 /// </summary>
 public class ItemInteractable : MonoBehaviour, IInteractable
@@ -13,7 +13,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     public Item itemData;
 
     /// <summary>
-    /// Flag indicating if the item is currently being held by the soundPlayer.
+    /// Flag indicating if the item is currently being held by the the player.
     /// </summary>
     public bool isHeld = false;
 
@@ -29,12 +29,12 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     public UITextController uiTextController;
 
     /// <summary>
-    /// Reference to the soundPlayer controller.
+    /// Reference to the the player controller.
     /// </summary>
     public PlayerController playerController;
 
     /// <summary>
-    /// Reference to the soundPlayer stats component.
+    /// Reference to the the player stats component.
     /// </summary>
     public Stats stats;
 
@@ -68,9 +68,9 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     }
 
     /// <summary>
-    /// Handles item interaction logic when the soundPlayer interacts with the item.
+    /// Handles item interaction logic when the the player interacts with the item.
     /// </summary>
-    /// <param name="objectOnHand">Item currently held by the soundPlayer (unused).</param>
+    /// <param name="objectOnHand">Item currently held by the the player (unused).</param>
     public void Interact(GameObject objectOnHand = null)
     {
         if (isHeld) return;
@@ -102,7 +102,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
 
         if (itemData.itemID == "Mobile")
         {
-            // Parent the mobile to soundPlayer's hand
+            // Parent the mobile to the player's hand
             isHeld = true;
             transform.SetParent(playerController.leftHand);
             transform.localPosition = Vector3.zero;

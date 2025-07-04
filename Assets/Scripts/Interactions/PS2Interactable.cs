@@ -36,7 +36,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzzleObjective
     public AudioClip bootSound;
 
     /// <summary>
-    /// Video soundPlayer component for DVD playback.
+    /// Video the player component for DVD playback.
     /// </summary>
     public VideoPlayer dvdPlayer;
 
@@ -162,7 +162,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzzleObjective
     /// <summary>
     /// Handles video end events and reward distribution.
     /// </summary>
-    /// <param name="vp">Video soundPlayer that finished playback.</param>
+    /// <param name="vp">Video the player that finished playback.</param>
     private void OnVideoEnded(VideoPlayer vp)
     {
         if (isComplete && !inventoryManager.HasItem(crashSaveData.itemID))

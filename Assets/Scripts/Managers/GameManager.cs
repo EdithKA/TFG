@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             else
                 Pause();
         if (isLevel && gameComplete)
-            LoadSceneByName("MainMenu");
+            LoadSceneByName("End");
     }
 
     public void Resume()

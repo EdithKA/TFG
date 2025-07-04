@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal; // URP!
 
 /**
- * @brief Manages soundPlayer stats (health and sanity), updates the UI, and triggers world corruption effects.
+ * @brief Manages the player stats (health and sanity), updates the UI, and triggers world corruption effects.
  *        Designed for a survival horror game where the world becomes more unstable as sanity decreases.
  */
 public class Stats : MonoBehaviour
@@ -17,7 +17,7 @@ public class Stats : MonoBehaviour
     public int health = 100;                                 /// Current health value (0-100).
     public float decreaseInterval = 1.5f;                     /// Time in seconds between sanity decreases.
     float lastSanityDecreaseTime;                     /// Timestamp of last sanity decrease.
-    public bool hasPhone = false;                             /// Whether the soundPlayer has obtained the phone.
+    public bool hasPhone = false;                             /// Whether the the player has obtained the phone.
 
     [Header("World Corruption")]
     public string corruptibleTag;                             /// Tag for objects that can be corrupted.
