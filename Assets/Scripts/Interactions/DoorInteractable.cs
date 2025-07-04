@@ -40,12 +40,6 @@ public class DoorInteractable : MonoBehaviour, IInteractable
 
     BoxCollider interactCollider;
 
-    [Header("NavMesh Settings")]
-    /// <summary>
-    /// NavMesh obstacle to block enemies when door is closed
-    /// </summary>
-    public NavMeshObstacle navMeshObstacle;
-
     /// <summary>
     /// Initializes the door animator reference.
     /// </summary>
@@ -54,15 +48,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         interactCollider = GetComponent<BoxCollider>();
         textController = FindObjectOfType<UITextController>();
 
-        // Configurar NavMeshObstacle
-        if (navMeshObstacle == null)
-        {
-            navMeshObstacle = gameObject.AddComponent<NavMeshObstacle>();
-            navMeshObstacle.carving = true;
-            navMeshObstacle.shape = NavMeshObstacleShape.Box;
-            navMeshObstacle.size = new Vector3(1.5f, 2f, 0.1f);
-        }
-        UpdateObstacleState();
+       
     }
 
     private void Update()
@@ -71,17 +57,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         rightDoorAnim.SetBool(openParameter, isOpen);
     }
 
-    /// <summary>
-    /// Updates NavMeshObstacle based on door state
-    /// </summary>
-    private void UpdateObstacleState()
-    {
-        if (navMeshObstacle != null)
-        {
-            navMeshObstacle.enabled = !isOpen;
-            navMeshObstacle.carving = !isOpen;
-        }
-    }
+    
 
     /// <summary>
     /// Displays interaction prompt when hovering over the door.
@@ -124,6 +100,5 @@ public class DoorInteractable : MonoBehaviour, IInteractable
 
         // Toggle door state
         isOpen = !isOpen;
-        UpdateObstacleState();
     }
 }

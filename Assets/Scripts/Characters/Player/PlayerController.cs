@@ -1,134 +1,40 @@
 using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// Controls the player movement, stamina, inventory, and raycast-based interactions.
-/// </summary>
+// Este script recoge loc controles del jugador
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    /// <summary>
-    /// Base movement speed of the the player.
-    /// </summary>
-    public float playerSpeed = 20f;
-
-    /// <summary>
-    /// Maximum stamina value.
-    /// </summary>
+    // Movement settings
+    public float playerSpeed = 20f; 
     public float stamina;
-
-    /// <summary>
-    /// Maximum distance for interaction raycasts.
-    /// </summary>
     public float interactDistance = 3f;
-
-    /// <summary>
-    /// Layer mask for interactable objects.
-    /// </summary>
     public LayerMask interactMask;
     public LayerMask doorsMask;
 
-    [Header("References")]
-    /// <summary>
-    /// Animator for camera movement.
-    /// </summary>
+    // Referencias
     public Animator camAnim;
-
-    /// <summary>
-    /// Animator for left hand.
-    /// </summary>
     public Animator LHAnim;
-
-    /// <summary>
-    /// Animator for right hand.
-    /// </summary>
     public Animator RHAnim;
-
-    /// <summary>
-    /// Transform for left hand item position.
-    /// </summary>
     public Transform leftHand;
-
-    /// <summary>
-    /// Transform for right hand item position.
-    /// </summary>
     public Transform rightHand;
-
-    /// <summary>
-    /// Reference to inventory manager.
-    /// </summary>
     public InventoryManager inventoryManager;
-
-    /// <summary>
-    /// Reference to UI text controller.
-    /// </summary>
     public UITextController textController;
-
-    /// <summary>
-    /// Reference to game manager.
-    /// </summary>
     public GameManager gameManager;
 
     [Header("Sounds Configuration")]
-    /// <summary>
-    /// Audio source for footsteps.
-    /// </summary>
     public AudioSource stepsPlayer;
-
-    /// <summary>
-    /// Footstep sound clip.
-    /// </summary>
     public AudioClip stepSound;
-
-    /// <summary>
-    /// Time interval between footstep sounds.
-    /// </summary>
     public float stepInterval = 1f;
 
-    /// <summary>
-    /// Character controller component reference.
-    /// </summary>
-    private CharacterController characterController;
-
-    /// <summary>
-    /// Main camera reference.
-    /// </summary>
-    private Camera mainCamera;
-
-    /// <summary>
-    /// Current stamina value.
-    /// </summary>
-    private float currentStamina;
-
-    /// <summary>
-    /// Current movement speed.
-    /// </summary>
-    private float speed;
-
-    /// <summary>
-    /// Current movement vector.
-    /// </summary>
-    private Vector3 movementVector;
-
-    /// <summary>
-    /// Is the the player currently walking?
-    /// </summary>
-    private bool isWalking;
-
-    /// <summary>
-    /// Is the the player in "closer" mode (zoomed view)?
-    /// </summary>
-    public bool isCloser;
-
-    /// <summary>
-    /// Currently focused interactable object.
-    /// </summary>
-    private IInteractable currentInteractable;
-
-    /// <summary>
-    /// Timer for footstep sounds.
-    /// </summary>
-    private float stepTimer = 0f;
+    CharacterController characterController;
+    Camera mainCamera;
+    float currentStamina;
+    float speed;
+    Vector3 movementVector;
+    bool isWalking;
+    bool isCloser;
+    IInteractable currentInteractable;
+    float stepTimer = 0f;
 
     void Start()
     {
@@ -142,42 +48,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleZoom();
-        HandleInventoryToggle();
-        HandleMovement();
-        HandleInteraction();
-        Update1Animations();
-        HandleInteractionInput();
+        GetInputs();
+        SetAnimation();
         HandleFootsteps();
     }
 
-    /// <summary>
-    /// Handles mobile phone zoom based on right mouse button
-    /// </summary>
-    void HandleZoom()
+    void GetInputs()
     {
+        // Acercar mano izquierda (Para ver mejor el telefono móvil)
         if (Input.GetMouseButtonDown(1) && !inventoryManager.IsInventoryOpen)
-        {
             isCloser = true;
-        }
         else if (Input.GetMouseButtonUp(1))
-        {
             isCloser = false;
-        }
-    }
 
-    void HandleInventoryToggle()
-    {
+        // Abrir/Cerrar el inventario
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
-        {
             StartCoroutine(OpenInventory());
-        }
-    }
 
-    void HandleMovement()
-    {
+        // Movimiento
         if (!inventoryManager.IsInventoryOpen)
         {
+            // Si tiene estamina, el jugador puede correr
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
             {
                 speed = playerSpeed * 3;
@@ -193,7 +84,6 @@ public class PlayerController : MonoBehaviour
 
             Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
             movementVector = transform.TransformDirection(input) * speed + Vector3.up * -10f;
-
             characterController.Move(movementVector * Time.deltaTime);
             isWalking = characterController.velocity.magnitude > 0.1f;
         }
@@ -203,10 +93,8 @@ public class PlayerController : MonoBehaviour
             isWalking = false;
             movementVector = Vector3.zero;
         }
-    }
 
-    void HandleInteraction()
-    {
+        // Detecta el objeto con el que se puede interactuar
         Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         IInteractable newInteractable = null;
@@ -224,18 +112,17 @@ public class PlayerController : MonoBehaviour
             if (currentInteractable != null)
                 currentInteractable.OnHoverEnter(textController);
         }
-    }
 
-    void HandleInteractionInput()
-    {
+        // Interactua con el objeto detectado
         if (Input.GetKeyDown(KeyCode.E) && !inventoryManager.IsInventoryOpen)
         {
             GameObject heldItem = inventoryManager?.GetRightHandObject();
             currentInteractable?.Interact(heldItem);
         }
     }
-
-    void Update1Animations()
+    
+    // Actualiza las animaciones del jugador
+    void SetAnimation()
     {
         camAnim.SetBool("IsWalking", isWalking);
         LHAnim.SetBool("isCloser", isCloser);
@@ -243,12 +130,14 @@ public class PlayerController : MonoBehaviour
         RHAnim.SetBool("isActive", rightHand.childCount > 0);
     }
 
+    // Abre el inventario con un pequeño retardo
     IEnumerator OpenInventory()
     {
         yield return new WaitForSeconds(0.1f);
         inventoryManager.ToggleInventory();
     }
 
+    // Gestiona el sonido de las pisadas del jugador
     void HandleFootsteps()
     {
         if (isWalking && !inventoryManager.IsInventoryOpen && characterController.isGrounded)

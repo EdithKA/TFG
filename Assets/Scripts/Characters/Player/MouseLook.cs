@@ -6,7 +6,6 @@ using UnityEngine;
 /// </summary>
 public class MouseLook : MonoBehaviour
 {
-    [Header("Mouse Look Settings")]
     /// <summary>
     /// Sensitivity multiplier for mouse movement.
     /// </summary>
@@ -20,7 +19,7 @@ public class MouseLook : MonoBehaviour
     /// <summary>
     /// Tracks the camera's up/down rotation.
     /// </summary>
-    private float verticalRotation = 0f;
+    float verticalRotation = 0f;
 
     /// <summary>
     /// Reference to PlayerController (to check inventory state).

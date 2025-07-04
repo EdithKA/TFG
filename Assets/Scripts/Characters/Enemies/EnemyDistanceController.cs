@@ -5,53 +5,46 @@ public class EnemyDistanceController : MonoBehaviour
 {
     // Referencias
     public Transform playerTransform;
+    Stats playerStats;
     public AngleToPlayer angleToPlayer;
     public Transform eyes;
+    public Animator anim;
+    public Transform[] waypoints; // Puntos para el patrullaje
+    public GameObject lightCone; // "Rayo" del enemigo
 
-    // Configuración navmesh Agent
+
+    // Configuración del Agent
+    NavMeshAgent navMeshAgent;
     public float chaseDistance = 20f; // Distancia para perseguir al jugador
     public float attackDistance = 15f; // Distancia para atacar al jugador
-    public float visionAngle = 60f;
-    public LayerMask obstacleLayer;
-    public int damageAmount = 15;
-    public float attackCooldown = 0.8f;
-    public Animator anim;
-    public Transform[] waypoints;
-    public GameObject lightCone;
-
-    private NavMeshAgent navMeshAgent;
-    private Stats playerStats;
-    private int currentWaypointIndex = 0;
-    private float attackTimer = 0f;
+    public int damageAmount = 15; // Daño que hace el enemigo
+    public float attackCooldown = 0.8f; // Tiempo entre ataques
+    public float visionAngle = 60f; // Ángulo de visión del enemigo (para el raycast)
+    public LayerMask obstacleLayer; // Capas que el raycast puede detectar
+    int currentWaypointIndex = 0;
+    float attackTimer = 0f;
     public bool canChase = false;
     public bool canAttack = false;
 
+    // Busca las referencias necesarias al iniciar
     void Start()
     {
         playerStats = FindAnyObjectByType<Stats>();
         playerTransform = FindObjectOfType<PlayerController>().transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        if (waypoints.Length > 0)
-        {
-            navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
-        }
     }
 
     void Update()
     {
         NextAction();
         SetAnimation();
-        HandleAttack();
 
-        if (lightCone != null)
-        {
-            Vector3 moveDir = navMeshAgent.velocity.sqrMagnitude > 0.01f
-                ? navMeshAgent.velocity.normalized
-                : transform.forward;
-            lightCone.transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
-        }
+        // El "rayo" del enemigo va siempre en la dirección de éste
+        Vector3 moveDir = navMeshAgent.velocity.sqrMagnitude > 0.01f ? navMeshAgent.velocity.normalized: transform.forward;
+        lightCone.transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
     }
 
+    // Decide qué debe de hacer el enemigo: Patrullar, perseguir o atacar
     void NextAction()
     {
         float dist = Vector3.Distance(transform.position, playerTransform.position);
@@ -64,87 +57,47 @@ public class EnemyDistanceController : MonoBehaviour
         }
         else if (dist > attackDistance)
         {
-            SetDestinationToPlayer();
+            navMeshAgent.SetDestination(playerTransform.position);
             canChase = true;
         }
         else
         {
-            if (CanSeePlayer())
+            if (CanSeePlayer()) //Solo ataca al jugador si lo ve directamente
             {
                 canAttack = true;
                 navMeshAgent.ResetPath();
+                Attack(); 
             }
             else
             {
-                SetDestinationToPlayer();
+                navMeshAgent.SetDestination(playerTransform.position);
                 canChase = true;
             }
         }
     }
 
-    bool CanSeePlayer()
+    // Lógica de ataque del enemigo con un tiempo entre ataques
+    void Attack()
     {
-        Vector3 rayOrigin = eyes.position;
-        Vector3 direction = transform.forward; 
-        float maxDistance = attackDistance;
-
-
-        RaycastHit hit;
-        bool hitSomething = Physics.Raycast(rayOrigin, direction, out hit, maxDistance, obstacleLayer);
-
-        Debug.DrawLine(rayOrigin, rayOrigin + direction * maxDistance, Color.blue, 0.1f);
-
-        if (hitSomething)
+        if (attackTimer <= 0f)
         {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.DrawLine(rayOrigin, hit.point, Color.green, 0.15f);
-                return true;
-            }
-            else
-            {
-                Debug.DrawLine(rayOrigin, hit.point, Color.yellow, 0.15f);
-                return false;
-            }
-        }
-        return false;
-    }
-
-    void HandleAttack()
-    {
-        if (canAttack)
-        {
-            if (attackTimer <= 0f)
-            {
-                playerStats.TakeDamage(damageAmount);
-                attackTimer = attackCooldown;
-            }
-            else
-            {
-                attackTimer -= Time.deltaTime;
-            }
+            playerStats.TakeDamage(damageAmount);
+            attackTimer = attackCooldown;
         }
         else
         {
             attackTimer -= Time.deltaTime;
-            if (attackTimer < 0f) attackTimer = 0f;
         }
     }
 
 
     void SetAnimation()
     {
-
         anim.SetBool("Attack", canAttack);
         anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
-
     }
 
-    void SetDestinationToPlayer()
-    {
-        navMeshAgent.SetDestination(playerTransform.position);
-    }
-
+    // Lógica de patrulla entre diferentes puntos
     void Patrol()
     {
         if (waypoints.Length == 0) return;
@@ -157,5 +110,29 @@ public class EnemyDistanceController : MonoBehaviour
             } while (currentWaypointIndex == previousIndex && waypoints.Length > 1);
             navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
+    }
+
+    // Utilizando un raycast, comprueba si el enemigo ve al jugador
+    bool CanSeePlayer()
+    {
+        Vector3 rayOrigin = eyes.position; // El raycast sale desde los ojos del enemigo
+        Vector3 direction = transform.forward;
+        float maxDistance = chaseDistance; //  Cómo de lejos ve el enemigo
+
+        RaycastHit hit;
+        bool hitSomething = Physics.Raycast(rayOrigin, direction, out hit, maxDistance, obstacleLayer);
+
+        if (hitSomething)
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                return true; //Si el raycast colisiona con el jugador, devuelve true
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
     }
 }
