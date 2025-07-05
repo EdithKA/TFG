@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Body
   m_EditorClassIdentifier: 
   itemID: Body
-  displayName: Sr. Potato's Body
+  displayName: Mr.Potato's Body
   icon: {fileID: 21300000, guid: 9cb5d3a47a4f8c04daf1256503150682, type: 3}
   type: piece
   itemPrefab: {fileID: 3768687991368986159, guid: 9537fb818f8244942a440e1c207cc215,

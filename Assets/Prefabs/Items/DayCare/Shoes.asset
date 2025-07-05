@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shoes
   m_EditorClassIdentifier: 
   itemID: Shoes
-  displayName: Sr. Potato's shoes
+  displayName: Mr.Potato's shoes
   icon: {fileID: 21300000, guid: eaa42205f7101704aa8ee4867b7fd5a7, type: 3}
   type: piece
   itemPrefab: {fileID: 0}

@@ -821,6 +821,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 396710211914889051, guid: e85afd6283ebc49478dd7f403848e59b,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 396710211914889051, guid: e85afd6283ebc49478dd7f403848e59b,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1327,6 +1332,7 @@ GameObject:
   - component: {fileID: 106516300}
   - component: {fileID: 106516302}
   - component: {fileID: 106516301}
+  - component: {fileID: 106516303}
   m_Layer: 8
   m_Name: inspectBackground
   m_TagString: Untagged
@@ -1392,6 +1398,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106516299}
   m_CullTransparentMesh: 1
+--- !u!114 &106516303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106516299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1104225554}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1692874408}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: HidePhotoInspect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &120041416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1493,6 +1555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862519439658278946, guid: bf0ec0f88eb17ea469d9fa4173ea868a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Glitch
       objectReference: {fileID: 0}
     - target: {fileID: 5201924778603264664, guid: bf0ec0f88eb17ea469d9fa4173ea868a,
         type: 3}
@@ -5680,6 +5747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -7983,11 +8055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4676ad3208ee7e04fb809af6613af5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleObjectives:
-  - {fileID: 77085145}
   rewardPrefab: {fileID: 7665508138012155823, guid: 870df9fa265973c42b1dc8a6e0282545,
     type: 3}
-  rewardSpawnPoint: {fileID: 1191580154}
+  rewardSpawnPoint: {fileID: 1512969014}
   puzzleCompleted: 0
 --- !u!1 &505962755
 GameObject:
@@ -12881,6 +12951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -17438,7 +17513,6 @@ GameObject:
   - component: {fileID: 1104225553}
   - component: {fileID: 1104225555}
   - component: {fileID: 1104225554}
-  - component: {fileID: 1104225556}
   m_Layer: 8
   m_Name: inspect
   m_TagString: Untagged
@@ -17503,62 +17577,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104225552}
   m_CullTransparentMesh: 1
---- !u!114 &1104225556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104225552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1104225554}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1692874408}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: HidePhotoInspect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1106876440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18713,8 +18731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4676ad3208ee7e04fb809af6613af5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleObjectives:
-  - {fileID: 1396511200}
   rewardPrefab: {fileID: 4577361019980829360, guid: 7a76d9dd862575749b4c45bc7d5bdd10,
     type: 3}
   rewardSpawnPoint: {fileID: 2057536137}
@@ -21556,6 +21572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -22343,12 +22364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4676ad3208ee7e04fb809af6613af5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleObjectives:
-  - {fileID: 853472515}
-  - {fileID: 1307999443}
-  - {fileID: 1548876480}
-  - {fileID: 1851201842}
-  - {fileID: 38849398}
   rewardPrefab: {fileID: 1236141646750098962, guid: 30b3ec5899351bd468b73acf0700d31c,
     type: 3}
   rewardSpawnPoint: {fileID: 1645075207}
@@ -23627,6 +23642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bench (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970594699975101786, guid: 1aac9a1220765684f9d38a1eb732fb8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Glitch
       objectReference: {fileID: 0}
     - target: {fileID: 5970594699975101786, guid: 1aac9a1220765684f9d38a1eb732fb8e,
         type: 3}
@@ -27814,13 +27834,14 @@ MonoBehaviour:
   leftHand: {fileID: 1978627110}
   rightHand: {fileID: 1810593156}
   completedToy: {fileID: 11400000, guid: eaf6b818445297a4ea8acd444904ac2d, type: 2}
-  uiTextController: {fileID: 1692874411}
   items: []
   equippedRight: {fileID: 0}
+  isInventoryOpen: 0
   soundPlayer: {fileID: 0}
   inventorySoundClip: {fileID: 8300000, guid: 3cb32bbe7dc8e4141bacdb5146d5422d, type: 3}
   inspectMenu: {fileID: 106516299}
-  photoDisplay: {fileID: 1104225554}
+  itemDisplay: {fileID: 0}
+  btn: {fileID: 106516303}
 --- !u!4 &1692874409
 Transform:
   m_ObjectHideFlags: 0
@@ -27850,7 +27871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanity: 100
   health: 100
-  decreaseInterval: 20
+  decreaseInterval: 1
   hasPhone: 0
   corruptibleTag: Glitch
   moveRange: 4
@@ -33897,6 +33918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plant (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862519439658278946, guid: bf0ec0f88eb17ea469d9fa4173ea868a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Glitch
       objectReference: {fileID: 0}
     - target: {fileID: 4862519439658278946, guid: bf0ec0f88eb17ea469d9fa4173ea868a,
         type: 3}

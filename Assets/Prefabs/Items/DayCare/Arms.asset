@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Arms
   m_EditorClassIdentifier: 
   itemID: Arms
-  displayName: Sr. Potato's Arms
+  displayName: Mr.Potato's Arms
   icon: {fileID: 21300000, guid: a332f4dc0300f454a9e93208eb067b4f, type: 3}
   type: piece
   itemPrefab: {fileID: 1799427940337142906, guid: 309c3de5218345f45a5cadefa5b32f37,

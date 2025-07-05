@@ -38,6 +38,7 @@ public class InventoryManager : MonoBehaviour
     // Object Inspection
     public GameObject inspectMenu;
     public Image itemDisplay;
+    public Button btn;
 
     /**
      * @brief Assigns scene references at the start.
@@ -46,14 +47,16 @@ public class InventoryManager : MonoBehaviour
     {
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
-        gameTexts = FindAnyObjectByType<GameTexts>();
+        uiTextController = FindAnyObjectByType<UITextController>();
+        gameTexts = uiTextController.gameTexts;
+
+
 
         // Hide inventory at start.
         inventoryUI.SetActive(false);
 
         // Hide inspection menu.
         inspectMenu.gameObject.SetActive(false);
-        Button btn = itemDisplay.GetComponent<Button>();
         btn.onClick.AddListener(HideInspectMenu);
     }
 
