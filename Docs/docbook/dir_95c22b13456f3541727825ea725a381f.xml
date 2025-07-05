@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_95c22b13456f3541727825ea725a381f" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Managers Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Managers Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__game_manager_8cs">GameManager.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__inventory_manager_8cs">InventoryManager.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__stats_8cs">Stats.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

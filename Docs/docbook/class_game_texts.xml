@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_game_texts" xml:lang="en-US">
+<title>GameTexts Class Reference</title>
+<indexterm><primary>GameTexts</primary></indexterm>
+<para>
+
+<para>This class allows you to create an asset with the different texts present in the game. </para>
+ 
+</para>
+<para>Inheritance diagram for GameTexts:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_texts.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_game_texts_1a79871cdb2387e99a3a1a30e93ab4f187">interactMessage</link> = &quot;&quot;</para>
+
+<para>Message for interaction. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a3aa71ce1559848e20bce74f1f6e7ee83">placeObjectMessage</link> = &quot;&quot;</para>
+
+<para>Message for placing an object. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a291e7dcda254fdf2a4553dd111434d96">collectMessage</link> = &quot;&quot;</para>
+
+<para>Message for collecting. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1aaace18600fb0656bbc0843859befb961">collectedMessage</link> = &quot;&quot;</para>
+
+<para>Message for collected object. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a76a932e337e954aa733472b9640a7746">inspectMessage</link> = &quot;&quot;</para>
+
+<para>Message for inspecting. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a2d416b71970f9bc5065e4963e09f1199">objectAdded</link> = &quot;&quot;</para>
+
+<para>Message for object added to inventory. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1af5a312bb515c378fc9410708f6ff37be">objectRemoved</link> = &quot;&quot;</para>
+
+<para>Message for object removed from inventory. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a644c9d6b74f60d58df7c1f4b3c9abc62">needMobileMessage</link> = &quot;&quot;</para>
+
+<para>Message when mobile is needed. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a95410d54fb3571d9a79488eb8f92e107">objectAlreadyPlaced</link> = &quot;&quot;</para>
+
+<para>Message when object is already placed. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a9694be923b7a4e57969f6048657abf97">needObjectMessage</link> = &quot;&quot;</para>
+
+<para>Message when an object is needed. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a774747cf957d603791cc541effa210a7">placedCorrectlyMessage</link> = &quot;&quot;</para>
+
+<para>Message when object is placed correctly. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a1f6ef9fbff89c880207094e8ddb7c334">wrongObjectMessage</link> = &quot;&quot;</para>
+
+<para>Message when wrong object is placed. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a3ca1084cd8ea3eb1c8db279a15c01f27">dvdCorrectMessage</link> = &quot;&quot;</para>
+
+<para>Message when DVD is correct. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1ae2578de0257a13ff4bf8efc1b373c66d">dvdError</link> = &quot;&quot;</para>
+
+<para>Message for DVD error. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a241c29d1ac3e92563666102833d772cb">dvdMissing</link> = &quot;&quot;</para>
+
+<para>Message when DVD is missing. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1ab31aad798c0479e9a857131b7ccf375c">rewardAppear</link> = &quot;&quot;</para>
+
+<para>Message when reward appears. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a927948371de0a9158af4159458e0de55">needSomething</link> = &quot;&quot;</para>
+
+<para>Message when something is needed. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1aef4c852c50a5cd998584e6234a2d511b">canOpen</link> = &quot;&quot;</para>
+
+<para>Message when something can be opened. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a66d72bc757d92a19c7005c9c3b3d9657">closeDoor</link> = &quot;&quot;</para>
+
+<para>Message for closing the door. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a5af555507449207741b678a4be9dee3c">rewardCollected</link> = &quot;&quot;</para>
+
+<para>Message for reward collected. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a4289d4ae226cd440f906bbf941f582fa">photoCollected</link> = &quot;&quot;</para>
+
+<para>Message for photo collected. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_game_texts_1a8e22cd7fd4df664e1ee92dac1a5a1295">needPieces</link> = &quot;&quot;</para>
+
+<para>Message when more pieces are needed. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This class allows you to create an asset with the different texts present in the game. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_game_texts_1aef4c852c50a5cd998584e6234a2d511b"/><section>
+    <title>canOpen</title>
+<indexterm><primary>canOpen</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>canOpen</secondary></indexterm>
+<para><computeroutput>string GameTexts.canOpen = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when something can be opened. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a66d72bc757d92a19c7005c9c3b3d9657"/><section>
+    <title>closeDoor</title>
+<indexterm><primary>closeDoor</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>closeDoor</secondary></indexterm>
+<para><computeroutput>string GameTexts.closeDoor = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for closing the door. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1aaace18600fb0656bbc0843859befb961"/><section>
+    <title>collectedMessage</title>
+<indexterm><primary>collectedMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>collectedMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.collectedMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for collected object. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a291e7dcda254fdf2a4553dd111434d96"/><section>
+    <title>collectMessage</title>
+<indexterm><primary>collectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>collectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.collectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for collecting. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a3ca1084cd8ea3eb1c8db279a15c01f27"/><section>
+    <title>dvdCorrectMessage</title>
+<indexterm><primary>dvdCorrectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>dvdCorrectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.dvdCorrectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when DVD is correct. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1ae2578de0257a13ff4bf8efc1b373c66d"/><section>
+    <title>dvdError</title>
+<indexterm><primary>dvdError</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>dvdError</secondary></indexterm>
+<para><computeroutput>string GameTexts.dvdError = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for DVD error. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a241c29d1ac3e92563666102833d772cb"/><section>
+    <title>dvdMissing</title>
+<indexterm><primary>dvdMissing</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>dvdMissing</secondary></indexterm>
+<para><computeroutput>string GameTexts.dvdMissing = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when DVD is missing. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a76a932e337e954aa733472b9640a7746"/><section>
+    <title>inspectMessage</title>
+<indexterm><primary>inspectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>inspectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.inspectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for inspecting. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a79871cdb2387e99a3a1a30e93ab4f187"/><section>
+    <title>interactMessage</title>
+<indexterm><primary>interactMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>interactMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.interactMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for interaction. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a644c9d6b74f60d58df7c1f4b3c9abc62"/><section>
+    <title>needMobileMessage</title>
+<indexterm><primary>needMobileMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>needMobileMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.needMobileMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when mobile is needed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a9694be923b7a4e57969f6048657abf97"/><section>
+    <title>needObjectMessage</title>
+<indexterm><primary>needObjectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>needObjectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.needObjectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when an object is needed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a8e22cd7fd4df664e1ee92dac1a5a1295"/><section>
+    <title>needPieces</title>
+<indexterm><primary>needPieces</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>needPieces</secondary></indexterm>
+<para><computeroutput>string GameTexts.needPieces = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when more pieces are needed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a927948371de0a9158af4159458e0de55"/><section>
+    <title>needSomething</title>
+<indexterm><primary>needSomething</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>needSomething</secondary></indexterm>
+<para><computeroutput>string GameTexts.needSomething = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when something is needed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a2d416b71970f9bc5065e4963e09f1199"/><section>
+    <title>objectAdded</title>
+<indexterm><primary>objectAdded</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>objectAdded</secondary></indexterm>
+<para><computeroutput>string GameTexts.objectAdded = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for object added to inventory. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a95410d54fb3571d9a79488eb8f92e107"/><section>
+    <title>objectAlreadyPlaced</title>
+<indexterm><primary>objectAlreadyPlaced</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>objectAlreadyPlaced</secondary></indexterm>
+<para><computeroutput>string GameTexts.objectAlreadyPlaced = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when object is already placed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1af5a312bb515c378fc9410708f6ff37be"/><section>
+    <title>objectRemoved</title>
+<indexterm><primary>objectRemoved</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>objectRemoved</secondary></indexterm>
+<para><computeroutput>string GameTexts.objectRemoved = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for object removed from inventory. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a4289d4ae226cd440f906bbf941f582fa"/><section>
+    <title>photoCollected</title>
+<indexterm><primary>photoCollected</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>photoCollected</secondary></indexterm>
+<para><computeroutput>string GameTexts.photoCollected = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for photo collected. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a774747cf957d603791cc541effa210a7"/><section>
+    <title>placedCorrectlyMessage</title>
+<indexterm><primary>placedCorrectlyMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>placedCorrectlyMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.placedCorrectlyMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when object is placed correctly. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a3aa71ce1559848e20bce74f1f6e7ee83"/><section>
+    <title>placeObjectMessage</title>
+<indexterm><primary>placeObjectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>placeObjectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.placeObjectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for placing an object. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1ab31aad798c0479e9a857131b7ccf375c"/><section>
+    <title>rewardAppear</title>
+<indexterm><primary>rewardAppear</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>rewardAppear</secondary></indexterm>
+<para><computeroutput>string GameTexts.rewardAppear = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when reward appears. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a5af555507449207741b678a4be9dee3c"/><section>
+    <title>rewardCollected</title>
+<indexterm><primary>rewardCollected</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>rewardCollected</secondary></indexterm>
+<para><computeroutput>string GameTexts.rewardCollected = &quot;&quot;</computeroutput></para><para>
+
+<para>Message for reward collected. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_texts_1a1f6ef9fbff89c880207094e8ddb7c334"/><section>
+    <title>wrongObjectMessage</title>
+<indexterm><primary>wrongObjectMessage</primary><secondary>GameTexts</secondary></indexterm>
+<indexterm><primary>GameTexts</primary><secondary>wrongObjectMessage</secondary></indexterm>
+<para><computeroutput>string GameTexts.wrongObjectMessage = &quot;&quot;</computeroutput></para><para>
+
+<para>Message when wrong object is placed. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/UI/<link linkend="__game_texts_8cs">GameTexts.cs</link></section>
+</section>

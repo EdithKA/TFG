@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_player_controller" xml:lang="en-US">
+<title>PlayerController Class Reference</title>
+<indexterm><primary>PlayerController</primary></indexterm>
+<para>
+
+<para>This script handles the player&apos;s controls. </para>
+ 
+</para>
+<para>Inheritance diagram for PlayerController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_player_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_player_controller_1ad7f03e37ff7be11e361f8f45526fabad">playerSpeed</link> = 20f</para>
+
+<para>Player&apos;s base movement speed. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_controller_1a91e9c34ee791cf1192de8126f22e74d8">stamina</link></para>
+
+<para>Player&apos;s maximum stamina. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_controller_1ad0f25eadb0a487385ffaed867452469f">interactDistance</link> = 3f</para>
+
+<para>Distance to interact with objects. </para>
+</listitem>
+            <listitem><para>LayerMask <link linkend="_class_player_controller_1a5661740f5309d205f1b4c7d396129122">interactMask</link></para>
+
+<para>Layer mask for interactable objects. </para>
+</listitem>
+            <listitem><para>LayerMask <link linkend="_class_player_controller_1a0b487dbc88dc1755fe8a6070cbbaccee">doorsMask</link></para>
+
+<para>Layer mask for doors. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_player_controller_1acecf71e7f4f5b22273c0391effb57e22">camAnim</link></para>
+
+<para>Camera animator. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_player_controller_1a42bb3e0ab9f4b4bc528f523f1452a9d8">LHAnim</link></para>
+
+<para>Left hand animator. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_player_controller_1ac3c1e99f53b48bc358e17098658f7be7">RHAnim</link></para>
+
+<para>Right hand animator. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_player_controller_1a00d8cbe613653be8d7652d3aee7f4685">leftHand</link></para>
+
+<para>Left hand transform. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_player_controller_1a92e65dfec59bdd1e0a96079c9c01ff2a">rightHand</link></para>
+
+<para>Right hand transform. </para>
+</listitem>
+            <listitem><para><link linkend="_class_inventory_manager">InventoryManager</link> <link linkend="_class_player_controller_1a43f272f1a8f815342e21479498dbf064">inventoryManager</link></para>
+
+<para>Reference to <link linkend="_class_inventory_manager">InventoryManager</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_u_i_text_controller">UITextController</link> <link linkend="_class_player_controller_1a10cb430e7b85249ea4704909229b58be">textController</link></para>
+
+<para>Reference to <link linkend="_class_u_i_text_controller">UITextController</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_game_manager">GameManager</link> <link linkend="_class_player_controller_1ab71a808b87ea114cdfaa1403a1b2aa4c">gameManager</link></para>
+
+<para>Reference to <link linkend="_class_game_manager">GameManager</link>. </para>
+</listitem>
+            <listitem><para>AudioSource <link linkend="_class_player_controller_1ab4da3b524a6c2c9fcb8b329fd58fef77">stepsPlayer</link></para>
+
+<para>AudioSource for footsteps. </para>
+</listitem>
+            <listitem><para>AudioClip <link linkend="_class_player_controller_1a08566e581f83e2c173577a7c0c6de08e">stepSound</link></para>
+
+<para>AudioClip for a single footstep. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_player_controller_1affff329fd0f77606a5e593b41ff9ba6f">stepInterval</link> = 1f</para>
+
+<para>Interval between footsteps. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This script handles the player&apos;s controls. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_player_controller_1acecf71e7f4f5b22273c0391effb57e22"/><section>
+    <title>camAnim</title>
+<indexterm><primary>camAnim</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>camAnim</secondary></indexterm>
+<para><computeroutput>Animator PlayerController.camAnim</computeroutput></para><para>
+
+<para>Camera animator. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a0b487dbc88dc1755fe8a6070cbbaccee"/><section>
+    <title>doorsMask</title>
+<indexterm><primary>doorsMask</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>doorsMask</secondary></indexterm>
+<para><computeroutput>LayerMask PlayerController.doorsMask</computeroutput></para><para>
+
+<para>Layer mask for doors. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1ab71a808b87ea114cdfaa1403a1b2aa4c"/><section>
+    <title>gameManager</title>
+<indexterm><primary>gameManager</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>gameManager</secondary></indexterm>
+<para><computeroutput><link linkend="_class_game_manager">GameManager</link> PlayerController.gameManager</computeroutput></para><para>
+
+<para>Reference to <link linkend="_class_game_manager">GameManager</link>. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1ad0f25eadb0a487385ffaed867452469f"/><section>
+    <title>interactDistance</title>
+<indexterm><primary>interactDistance</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>interactDistance</secondary></indexterm>
+<para><computeroutput>float PlayerController.interactDistance = 3f</computeroutput></para><para>
+
+<para>Distance to interact with objects. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a5661740f5309d205f1b4c7d396129122"/><section>
+    <title>interactMask</title>
+<indexterm><primary>interactMask</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>interactMask</secondary></indexterm>
+<para><computeroutput>LayerMask PlayerController.interactMask</computeroutput></para><para>
+
+<para>Layer mask for interactable objects. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a43f272f1a8f815342e21479498dbf064"/><section>
+    <title>inventoryManager</title>
+<indexterm><primary>inventoryManager</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>inventoryManager</secondary></indexterm>
+<para><computeroutput><link linkend="_class_inventory_manager">InventoryManager</link> PlayerController.inventoryManager</computeroutput></para><para>
+
+<para>Reference to <link linkend="_class_inventory_manager">InventoryManager</link>. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a00d8cbe613653be8d7652d3aee7f4685"/><section>
+    <title>leftHand</title>
+<indexterm><primary>leftHand</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>leftHand</secondary></indexterm>
+<para><computeroutput>Transform PlayerController.leftHand</computeroutput></para><para>
+
+<para>Left hand transform. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a42bb3e0ab9f4b4bc528f523f1452a9d8"/><section>
+    <title>LHAnim</title>
+<indexterm><primary>LHAnim</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>LHAnim</secondary></indexterm>
+<para><computeroutput>Animator PlayerController.LHAnim</computeroutput></para><para>
+
+<para>Left hand animator. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1ad7f03e37ff7be11e361f8f45526fabad"/><section>
+    <title>playerSpeed</title>
+<indexterm><primary>playerSpeed</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>playerSpeed</secondary></indexterm>
+<para><computeroutput>float PlayerController.playerSpeed = 20f</computeroutput></para><para>
+
+<para>Player&apos;s base movement speed. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1ac3c1e99f53b48bc358e17098658f7be7"/><section>
+    <title>RHAnim</title>
+<indexterm><primary>RHAnim</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>RHAnim</secondary></indexterm>
+<para><computeroutput>Animator PlayerController.RHAnim</computeroutput></para><para>
+
+<para>Right hand animator. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a92e65dfec59bdd1e0a96079c9c01ff2a"/><section>
+    <title>rightHand</title>
+<indexterm><primary>rightHand</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>rightHand</secondary></indexterm>
+<para><computeroutput>Transform PlayerController.rightHand</computeroutput></para><para>
+
+<para>Right hand transform. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a91e9c34ee791cf1192de8126f22e74d8"/><section>
+    <title>stamina</title>
+<indexterm><primary>stamina</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>stamina</secondary></indexterm>
+<para><computeroutput>float PlayerController.stamina</computeroutput></para><para>
+
+<para>Player&apos;s maximum stamina. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1affff329fd0f77606a5e593b41ff9ba6f"/><section>
+    <title>stepInterval</title>
+<indexterm><primary>stepInterval</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>stepInterval</secondary></indexterm>
+<para><computeroutput>float PlayerController.stepInterval = 1f</computeroutput></para><para>
+
+<para>Interval between footsteps. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a08566e581f83e2c173577a7c0c6de08e"/><section>
+    <title>stepSound</title>
+<indexterm><primary>stepSound</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>stepSound</secondary></indexterm>
+<para><computeroutput>AudioClip PlayerController.stepSound</computeroutput></para><para>
+
+<para>AudioClip for a single footstep. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1ab4da3b524a6c2c9fcb8b329fd58fef77"/><section>
+    <title>stepsPlayer</title>
+<indexterm><primary>stepsPlayer</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>stepsPlayer</secondary></indexterm>
+<para><computeroutput>AudioSource PlayerController.stepsPlayer</computeroutput></para><para>
+
+<para>AudioSource for footsteps. </para>
+</para>
+</section>
+<anchor xml:id="_class_player_controller_1a10cb430e7b85249ea4704909229b58be"/><section>
+    <title>textController</title>
+<indexterm><primary>textController</primary><secondary>PlayerController</secondary></indexterm>
+<indexterm><primary>PlayerController</primary><secondary>textController</secondary></indexterm>
+<para><computeroutput><link linkend="_class_u_i_text_controller">UITextController</link> PlayerController.textController</computeroutput></para><para>
+
+<para>Reference to <link linkend="_class_u_i_text_controller">UITextController</link>. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<link linkend="__player_controller_8cs">PlayerController.cs</link></section>
+</section>

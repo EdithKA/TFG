@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_puzle_manager" xml:lang="en-US">
+<title>PuzleManager Class Reference</title>
+<indexterm><primary>PuzleManager</primary></indexterm>
+<para>
+
+<para>This script manages the state of a minigame based on its assigned objectives. </para>
+ 
+</para>
+<para>Inheritance diagram for PuzleManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_puzle_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>List&lt; <link linkend="_interface_i_puzle_objective">IPuzleObjective</link> &gt; <link linkend="_class_puzle_manager_1aa704f74be1178315000fd824d177c4d0">objectives</link> = new List&lt;<link linkend="_interface_i_puzle_objective">IPuzleObjective</link>&gt;()</para>
+
+<para>List of objectives converted to the <link linkend="_interface_i_puzle_objective">IPuzleObjective</link> interface. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_puzle_manager_1a1093fd11a3b93367cf0ada763ff752eb">puzzleCompleted</link> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This script manages the state of a minigame based on its assigned objectives. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_puzle_manager_1aa704f74be1178315000fd824d177c4d0"/><section>
+    <title>objectives</title>
+<indexterm><primary>objectives</primary><secondary>PuzleManager</secondary></indexterm>
+<indexterm><primary>PuzleManager</primary><secondary>objectives</secondary></indexterm>
+<para><computeroutput>List&lt;<link linkend="_interface_i_puzle_objective">IPuzleObjective</link>&gt; PuzleManager.objectives = new List&lt;<link linkend="_interface_i_puzle_objective">IPuzleObjective</link>&gt;()</computeroutput></para><para>
+
+<para>List of objectives converted to the <link linkend="_interface_i_puzle_objective">IPuzleObjective</link> interface. </para>
+</para>
+</section>
+<anchor xml:id="_class_puzle_manager_1a1093fd11a3b93367cf0ada763ff752eb"/><section>
+    <title>puzzleCompleted</title>
+<indexterm><primary>puzzleCompleted</primary><secondary>PuzleManager</secondary></indexterm>
+<indexterm><primary>PuzleManager</primary><secondary>puzzleCompleted</secondary></indexterm>
+<para><computeroutput>bool PuzleManager.puzzleCompleted = false</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Puzzles/<link linkend="__puzle_manager_8cs">PuzleManager.cs</link></section>
+</section>

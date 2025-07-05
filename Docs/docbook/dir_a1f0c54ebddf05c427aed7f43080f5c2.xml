@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a1f0c54ebddf05c427aed7f43080f5c2" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_000496aacb35cea80271af16b5558305">Characters</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_4fafd36790fc32ff38338948338392e8">Interactions</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_ded5e9de8d4b0a3e1f35dd9ae7581992">Items</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_95c22b13456f3541727825ea725a381f">Managers</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_cc5c089297ef31ef34564b2036169304">Puzzles</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_150b27a629972d31037e72d5a204536d">UI</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

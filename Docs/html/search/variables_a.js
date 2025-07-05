@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['maxstamina_0',['maxStamina',['../class_player_controller.html#a1123f37407c39923ccb53dab9be06e36',1,'PlayerController']]],
-  ['messageduration_1',['messageDuration',['../class_u_i_text_controller.html#a58e82edc7b1558a62162035995e36027',1,'UITextController']]],
-  ['mousesensitivity_2',['mouseSensitivity',['../class_mouse_look.html#a3e984b4fd9a46c25309ffeedd22aa4aa',1,'MouseLook']]],
-  ['movementinput_3',['movementInput',['../class_player_controller.html#a74dae7819b86b8b1de59b4a917d1ef72',1,'PlayerController']]],
-  ['moverange_4',['moveRange',['../class_stats.html#aa3d802107b5116940254cb648b1c9cec',1,'Stats']]]
+  ['needmobilemessage_0',['needMobileMessage',['../class_game_texts.html#a644c9d6b74f60d58df7c1f4b3c9abc62',1,'GameTexts']]],
+  ['needobjectmessage_1',['needObjectMessage',['../class_game_texts.html#a9694be923b7a4e57969f6048657abf97',1,'GameTexts']]],
+  ['needpieces_2',['needPieces',['../class_game_texts.html#a8e22cd7fd4df664e1ee92dac1a5a1295',1,'GameTexts']]],
+  ['needsomething_3',['needSomething',['../class_game_texts.html#a927948371de0a9158af4159458e0de55',1,'GameTexts']]],
+  ['nosignal_4',['noSignal',['../class_p_s2_interactable.html#a8e557b860624bb4247ecd80e906c0101',1,'PS2Interactable']]]
 ];

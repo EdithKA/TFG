@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THE IN-BETWEEN: IInteractable Interface Reference</title>
+<title>The In-Between: IInteractable Interface Reference</title>
+<link rel="icon" href="Mobile.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +33,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">THE IN-BETWEEN
+   <div id="projectname">The In-Between
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,12 +104,13 @@ $(function(){initNavTree('interface_i_interactable.html',''); initResizable(true
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="interface_i_interactable-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">IInteractable Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Interface for any object that can be interacted with by the player. The optional parameter allows passing the object currently held by the player (if any).  
+<p>Defines the standard interface for objects that can be interacted with by the the player.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for IInteractable:</div>
@@ -116,22 +118,28 @@ Inheritance diagram for IInteractable:</div>
  <div class="center">
   <img src="interface_i_interactable.png" usemap="#IInteractable_map" alt=""/>
   <map id="IInteractable_map" name="IInteractable_map">
-<area href="class_door_interactable.html" title="Controls door interaction behavior (opening/closing) using animations. Implements the IInteractable i..." alt="DoorInteractable" shape="rect" coords="0,56,116,80"/>
-<area href="class_holder_interactable.html" title="Allows the player to place or pick up objects on a holder (like a shelf or pedestal)...." alt="HolderInteractable" shape="rect" coords="126,56,242,80"/>
-<area href="class_p_s2_interactable.html" title="Handles the PS2 console interaction: accepts a specific DVD, plays video, and updates UI...." alt="PS2Interactable" shape="rect" coords="252,56,368,80"/>
+<area href="class_door_interactable.html" title="Controls door interaction, requiring a specific item to open/close. Implements the IInteractable inte..." alt="DoorInteractable" shape="rect" coords="0,56,118,80"/>
+<area href="class_holder_interactable.html" title="Allows assigning a holder as a puzzle objective and placing objects on it." alt="HolderInteractable" shape="rect" coords="128,56,246,80"/>
+<area href="class_inspect_interactable.html" title="Provides inspection functionality for examinable objects in the game world. Displays custom thoughts ..." alt="InspectInteractable" shape="rect" coords="256,56,374,80"/>
+<area href="class_item_interactable.html" title="Represents an interactable item that can be collected by the the player. Implements the IInteractable..." alt="ItemInteractable" shape="rect" coords="384,56,502,80"/>
+<area href="class_p_s2_interactable.html" title="Controls PS2 puzzle interaction, DVD verification, and reward system. Implements both interactable an..." alt="PS2Interactable" shape="rect" coords="512,56,630,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa4da5c9d3114de5d1ef7837aa86c7958" id="r_aa4da5c9d3114de5d1ef7837aa86c7958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4da5c9d3114de5d1ef7837aa86c7958">OnHoverEnter</a> (<a class="el" href="class_u_i_text_controller.html">UITextController</a> textController)</td></tr>
+<tr class="memdesc:aa4da5c9d3114de5d1ef7837aa86c7958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the the player hovers over the interactable object.  <br /></td></tr>
+<tr class="separator:aa4da5c9d3114de5d1ef7837aa86c7958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c157e6b4a36bdbf4acd4cbf0e2b78b" id="r_ae6c157e6b4a36bdbf4acd4cbf0e2b78b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">OnHoverExit</a> ()</td></tr>
+<tr class="memdesc:ae6c157e6b4a36bdbf4acd4cbf0e2b78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the the player stops hovering over the interactable object.  <br /></td></tr>
+<tr class="separator:ae6c157e6b4a36bdbf4acd4cbf0e2b78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96e72b5b0ddf4531aef36932deff760" id="r_ac96e72b5b0ddf4531aef36932deff760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac96e72b5b0ddf4531aef36932deff760">Interact</a> (GameObject objectOnHand=null)</td></tr>
-<tr class="memdesc:ac96e72b5b0ddf4531aef36932deff760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the interaction logic for the object.  <br /></td></tr>
+<tr class="memdesc:ac96e72b5b0ddf4531aef36932deff760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the the player interacts with the object.  <br /></td></tr>
 <tr class="separator:ac96e72b5b0ddf4531aef36932deff760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface for any object that can be interacted with by the player. The optional parameter allows passing the object currently held by the player (if any). </p>
-
-<p class="definition">Definition at line <a class="el" href="_i_interactable_8cs_source.html#l00007">7</a> of file <a class="el" href="_i_interactable_8cs_source.html">IInteractable.cs</a>.</p>
+<div class="textblock"><p>Defines the standard interface for objects that can be interacted with by the the player. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac96e72b5b0ddf4531aef36932deff760" name="ac96e72b5b0ddf4531aef36932deff760"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac96e72b5b0ddf4531aef36932deff760">&#9670;&#160;</a></span>Interact()</h2>
@@ -148,20 +156,68 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Defines the interaction logic for the object. </p>
+<p>Called when the the player interacts with the object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objectOnHand</td><td>The object currently held by the player (can be null).</td></tr>
+    <tr><td class="paramname">objectOnHand</td><td>Optional reference to the item currently held by the the player.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_door_interactable.html#aca45ba26f1331ebd7e2c47b1f3ec2fb9">DoorInteractable</a>, <a class="el" href="class_holder_interactable.html#a0f7b96c5278eeecc351faddf6cc1f7c2">HolderInteractable</a>, and <a class="el" href="class_p_s2_interactable.html#aedc8faf28ad6fcbdea43bcdef225e3ef">PS2Interactable</a>.</p>
+<p>Implemented in <a class="el" href="class_door_interactable.html#aca45ba26f1331ebd7e2c47b1f3ec2fb9">DoorInteractable</a>, <a class="el" href="class_holder_interactable.html#a0f7b96c5278eeecc351faddf6cc1f7c2">HolderInteractable</a>, <a class="el" href="class_inspect_interactable.html#ad2eb26eaad2d68a6ab823544adac23eb">InspectInteractable</a>, <a class="el" href="class_item_interactable.html#a5ab781057ba464b91fa03b8401007938">ItemInteractable</a>, and <a class="el" href="class_p_s2_interactable.html#aedc8faf28ad6fcbdea43bcdef225e3ef">PS2Interactable</a>.</p>
+
+</div>
+</div>
+<a id="aa4da5c9d3114de5d1ef7837aa86c7958" name="aa4da5c9d3114de5d1ef7837aa86c7958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4da5c9d3114de5d1ef7837aa86c7958">&#9670;&#160;</a></span>OnHoverEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IInteractable.OnHoverEnter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_u_i_text_controller.html">UITextController</a></td>          <td class="paramname"><span class="paramname"><em>textController</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called when the the player hovers over the interactable object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textController</td><td>The UI text controller to display interaction prompts.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_door_interactable.html#a9cba59428016261be71ccdabc6869895">DoorInteractable</a>, <a class="el" href="class_holder_interactable.html#a3c6d95b6d4bb99192bdb32b09b66db03">HolderInteractable</a>, <a class="el" href="class_inspect_interactable.html#a823492925442fba9d6ed9fbddd760f55">InspectInteractable</a>, <a class="el" href="class_item_interactable.html#a3d2c76c260a42ce13a98b6dca799312e">ItemInteractable</a>, and <a class="el" href="class_p_s2_interactable.html#a93d97e56864c3111cc96d9ab01bfc199">PS2Interactable</a>.</p>
+
+</div>
+</div>
+<a id="ae6c157e6b4a36bdbf4acd4cbf0e2b78b" name="ae6c157e6b4a36bdbf4acd4cbf0e2b78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">&#9670;&#160;</a></span>OnHoverExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IInteractable.OnHoverExit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called when the the player stops hovering over the interactable object. </p>
+
+<p>Implemented in <a class="el" href="class_door_interactable.html#a8a3d5f81ed3392b9f5e7a9f210d4d85e">DoorInteractable</a>, <a class="el" href="class_holder_interactable.html#aa26c72a758814e8661697f16194d5ea1">HolderInteractable</a>, <a class="el" href="class_inspect_interactable.html#aa213d6aebe28bf42e26cc438e585774a">InspectInteractable</a>, <a class="el" href="class_item_interactable.html#af3d3b7331b69312c4897c2bf2354d40d">ItemInteractable</a>, and <a class="el" href="class_p_s2_interactable.html#acb6ff54c815771ec5be55d729ff57661">PS2Interactable</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_i_interactable_8cs_source.html">IInteractable.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_i_interactable_8cs.html">IInteractable.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

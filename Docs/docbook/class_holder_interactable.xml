@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_holder_interactable" xml:lang="en-US">
+<title>HolderInteractable Class Reference</title>
+<indexterm><primary>HolderInteractable</primary></indexterm>
+<para>
+
+<para>Allows assigning a holder as a puzzle objective and placing objects on it. </para>
+ 
+</para>
+<para>Inheritance diagram for HolderInteractable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_holder_interactable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_holder_interactable_1a3c6d95b6d4bb99192bdb32b09b66db03">OnHoverEnter</link> (<link linkend="_class_u_i_text_controller">UITextController</link> textController)</para>
+
+<para>When hovering over the object, shows an interaction message if not completed. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_holder_interactable_1aa26c72a758814e8661697f16194d5ea1">OnHoverExit</link> ()</para>
+
+<para>Clears UI messages when the object is no longer being pointed at. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_holder_interactable_1a0f7b96c5278eeecc351faddf6cc1f7c2">Interact</link> (GameObject objectOnHand=null)</para>
+
+<para>Logic for interacting with the holder. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_holder_interactable_1a23439708a66d4095625f3545a432d446">correctObjectID</link></para>
+
+<para>ID of the correct object that must be placed on the holder. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_holder_interactable_1abe419dadc30edb937cd6b2051c074fdb">holderPoint</link></para>
+
+<para>Location where the placed object will be instantiated. </para>
+</listitem>
+            <listitem><para><link linkend="_class_game_texts">GameTexts</link> <link linkend="_class_holder_interactable_1abf111bca455fe2f05b639279f51a0c00">gameTexts</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_holder_interactable_1ad01e06cbaa91d3f0263ee7439119fe11">isComplete</link><computeroutput> [get]</computeroutput>
+</para>
+
+<para>Indicates whether the holder&apos;s objective has been completed. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Allows assigning a holder as a puzzle objective and placing objects on it. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_holder_interactable_1a0f7b96c5278eeecc351faddf6cc1f7c2"/><section>
+    <title>Interact()</title>
+<indexterm><primary>Interact</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>Interact</secondary></indexterm>
+<para><computeroutput>void HolderInteractable.Interact (GameObject objectOnHand = <computeroutput>null</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Logic for interacting with the holder. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>objectOnHand</entry><entry>
+<para>The object currently held by the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ac96e72b5b0ddf4531aef36932deff760">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_holder_interactable_1a3c6d95b6d4bb99192bdb32b09b66db03"/><section>
+    <title>OnHoverEnter()</title>
+<indexterm><primary>OnHoverEnter</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>OnHoverEnter</secondary></indexterm>
+<para><computeroutput>void HolderInteractable.OnHoverEnter (<link linkend="_class_u_i_text_controller">UITextController</link> textController)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>When hovering over the object, shows an interaction message if not completed. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>textController</entry><entry>
+<para>Reference to the UI text controller. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_holder_interactable_1aa26c72a758814e8661697f16194d5ea1"/><section>
+    <title>OnHoverExit()</title>
+<indexterm><primary>OnHoverExit</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>OnHoverExit</secondary></indexterm>
+<para><computeroutput>void HolderInteractable.OnHoverExit ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Clears UI messages when the object is no longer being pointed at. </para>
+</para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_holder_interactable_1a23439708a66d4095625f3545a432d446"/><section>
+    <title>correctObjectID</title>
+<indexterm><primary>correctObjectID</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>correctObjectID</secondary></indexterm>
+<para><computeroutput>string HolderInteractable.correctObjectID</computeroutput></para><para>
+
+<para>ID of the correct object that must be placed on the holder. </para>
+</para>
+</section>
+<anchor xml:id="_class_holder_interactable_1abf111bca455fe2f05b639279f51a0c00"/><section>
+    <title>gameTexts</title>
+<indexterm><primary>gameTexts</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>gameTexts</secondary></indexterm>
+<para><computeroutput><link linkend="_class_game_texts">GameTexts</link> HolderInteractable.gameTexts</computeroutput></para></section>
+<anchor xml:id="_class_holder_interactable_1abe419dadc30edb937cd6b2051c074fdb"/><section>
+    <title>holderPoint</title>
+<indexterm><primary>holderPoint</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>holderPoint</secondary></indexterm>
+<para><computeroutput>Transform HolderInteractable.holderPoint</computeroutput></para><para>
+
+<para>Location where the placed object will be instantiated. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_holder_interactable_1ad01e06cbaa91d3f0263ee7439119fe11"/><section>
+    <title>isComplete</title>
+<indexterm><primary>isComplete</primary><secondary>HolderInteractable</secondary></indexterm>
+<indexterm><primary>HolderInteractable</primary><secondary>isComplete</secondary></indexterm>
+<para><computeroutput>bool HolderInteractable.isComplete<computeroutput>[get]</computeroutput></computeroutput></para><para>
+
+<para>Indicates whether the holder&apos;s objective has been completed. </para>
+</para>
+<para>
+Implements <link linkend="_interface_i_puzle_objective_1a8ab7638bb7ab67ae5b43325e1510dc13">IPuzleObjective</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Interactions/<link linkend="__holder_interactable_8cs">HolderInteractable.cs</link></section>
+</section>

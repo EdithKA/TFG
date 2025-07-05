@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_i_puzle_objective" xml:lang="en-US">
+<title>IPuzleObjective Interface Reference</title>
+<indexterm><primary>IPuzleObjective</primary></indexterm>
+<para>
+
+<para>Interface to implement an objective to be completed for a minigame. </para>
+ 
+</para>
+<para>Inheritance diagram for IPuzleObjective:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="interface_i_puzle_objective.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_interface_i_puzle_objective_1a8ab7638bb7ab67ae5b43325e1510dc13">isComplete</link><computeroutput> [get]</computeroutput>
+</para>
+
+<para>Indicates if the objective is complete. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Interface to implement an objective to be completed for a minigame. </para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_interface_i_puzle_objective_1a8ab7638bb7ab67ae5b43325e1510dc13"/><section>
+    <title>isComplete</title>
+<indexterm><primary>isComplete</primary><secondary>IPuzleObjective</secondary></indexterm>
+<indexterm><primary>IPuzleObjective</primary><secondary>isComplete</secondary></indexterm>
+<para><computeroutput>bool IPuzleObjective.isComplete<computeroutput>[get]</computeroutput></computeroutput></para><para>
+
+<para>Indicates if the objective is complete. </para>
+</para>
+<para>
+Implemented in <link linkend="_class_cinema_manager_1a2bf2da61366e1a2115d603484dc4ce76">CinemaManager</link>, <link linkend="_class_holder_interactable_1ad01e06cbaa91d3f0263ee7439119fe11">HolderInteractable</link>, and <link linkend="_class_p_s2_interactable_1ad1c9d2ad40b160b40511bbe8cdb4f286">PS2Interactable</link>.</para>
+</section>
+<para>
+The documentation for this interface was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Puzzles/<link linkend="__i_puzle_objective_8cs">IPuzleObjective.cs</link></section>
+</section>

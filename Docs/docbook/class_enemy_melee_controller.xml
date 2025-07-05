@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_enemy_melee_controller" xml:lang="en-US">
+<title>EnemyMeleeController Class Reference</title>
+<indexterm><primary>EnemyMeleeController</primary></indexterm>
+<para>
+
+<para>Controls the melee enemy&apos;s behavior based on the player&apos;s distance and vision. </para>
+ 
+</para>
+<para>Inheritance diagram for EnemyMeleeController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_enemy_melee_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Transform <link linkend="_class_enemy_melee_controller_1a1f5efa46761f308e39a8f85ae2e4e8a4">playerTransform</link></para>
+
+<para>Reference to the player&apos;s transform. </para>
+</listitem>
+            <listitem><para><link linkend="_class_angle_to_player">AngleToPlayer</link> <link linkend="_class_enemy_melee_controller_1af3a0a87f964619e5520ec91dbddbbd6f">angleToPlayer</link></para>
+
+<para>Reference to the angle calculation script. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_enemy_melee_controller_1ad741e8c917694ae34184030580e0fd6f">eyes</link></para>
+
+<para>Enemy&apos;s eyes position for raycasting. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_enemy_melee_controller_1a4378a621a82fb5be9cd52c70e197cd4e">anim</link></para>
+
+<para>Animator for enemy animations. </para>
+</listitem>
+            <listitem><para>Transform[] <link linkend="_class_enemy_melee_controller_1a569ab78354e73041f5348e70a3445d23">waypoints</link></para>
+
+<para>Patrol points. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_melee_controller_1a56942b57dc63679dde3342ed48bfc706">chaseDistance</link> = 10f</para>
+
+<para>Distance to start chasing the player. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_melee_controller_1a37055b607e8bc35139345a65ff0e9c1e">attackDistance</link> = 4f</para>
+
+<para>Distance to start attacking the player. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_enemy_melee_controller_1af05881f81f54a0bb0b6200e49dbf3670">damageAmount</link> = 25</para>
+
+<para>Damage dealt by the enemy. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_melee_controller_1a3904e84cc72a5923338cbf65cdf44120">attackCooldown</link> = 0.5f</para>
+
+<para>Time between attacks. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_melee_controller_1a08c37f82baf636cc7f57831fb7d95aee">visionAngle</link> = 60f</para>
+
+<para>Enemy&apos;s field of view angle (for raycast) </para>
+</listitem>
+            <listitem><para>LayerMask <link linkend="_class_enemy_melee_controller_1a30889c15481d4ab7b0492f3aa0a19acf">obstacleLayer</link></para>
+
+<para>Layers the raycast can detect. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_enemy_melee_controller_1a339e37f718fb5937b5e3ea98d85506ae">canChase</link> = false</para>
+
+<para>Whether the enemy can chase. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_enemy_melee_controller_1a00f79100ad39297bb103d9191f63486b">canAttack</link> = false</para>
+
+<para>Whether the enemy can attack. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the melee enemy&apos;s behavior based on the player&apos;s distance and vision. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_enemy_melee_controller_1af3a0a87f964619e5520ec91dbddbbd6f"/><section>
+    <title>angleToPlayer</title>
+<indexterm><primary>angleToPlayer</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>angleToPlayer</secondary></indexterm>
+<para><computeroutput><link linkend="_class_angle_to_player">AngleToPlayer</link> EnemyMeleeController.angleToPlayer</computeroutput></para><para>
+
+<para>Reference to the angle calculation script. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a4378a621a82fb5be9cd52c70e197cd4e"/><section>
+    <title>anim</title>
+<indexterm><primary>anim</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>anim</secondary></indexterm>
+<para><computeroutput>Animator EnemyMeleeController.anim</computeroutput></para><para>
+
+<para>Animator for enemy animations. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a3904e84cc72a5923338cbf65cdf44120"/><section>
+    <title>attackCooldown</title>
+<indexterm><primary>attackCooldown</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>attackCooldown</secondary></indexterm>
+<para><computeroutput>float EnemyMeleeController.attackCooldown = 0.5f</computeroutput></para><para>
+
+<para>Time between attacks. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a37055b607e8bc35139345a65ff0e9c1e"/><section>
+    <title>attackDistance</title>
+<indexterm><primary>attackDistance</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>attackDistance</secondary></indexterm>
+<para><computeroutput>float EnemyMeleeController.attackDistance = 4f</computeroutput></para><para>
+
+<para>Distance to start attacking the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a00f79100ad39297bb103d9191f63486b"/><section>
+    <title>canAttack</title>
+<indexterm><primary>canAttack</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>canAttack</secondary></indexterm>
+<para><computeroutput>bool EnemyMeleeController.canAttack = false</computeroutput></para><para>
+
+<para>Whether the enemy can attack. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a339e37f718fb5937b5e3ea98d85506ae"/><section>
+    <title>canChase</title>
+<indexterm><primary>canChase</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>canChase</secondary></indexterm>
+<para><computeroutput>bool EnemyMeleeController.canChase = false</computeroutput></para><para>
+
+<para>Whether the enemy can chase. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a56942b57dc63679dde3342ed48bfc706"/><section>
+    <title>chaseDistance</title>
+<indexterm><primary>chaseDistance</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>chaseDistance</secondary></indexterm>
+<para><computeroutput>float EnemyMeleeController.chaseDistance = 10f</computeroutput></para><para>
+
+<para>Distance to start chasing the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1af05881f81f54a0bb0b6200e49dbf3670"/><section>
+    <title>damageAmount</title>
+<indexterm><primary>damageAmount</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>damageAmount</secondary></indexterm>
+<para><computeroutput>int EnemyMeleeController.damageAmount = 25</computeroutput></para><para>
+
+<para>Damage dealt by the enemy. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1ad741e8c917694ae34184030580e0fd6f"/><section>
+    <title>eyes</title>
+<indexterm><primary>eyes</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>eyes</secondary></indexterm>
+<para><computeroutput>Transform EnemyMeleeController.eyes</computeroutput></para><para>
+
+<para>Enemy&apos;s eyes position for raycasting. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a30889c15481d4ab7b0492f3aa0a19acf"/><section>
+    <title>obstacleLayer</title>
+<indexterm><primary>obstacleLayer</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>obstacleLayer</secondary></indexterm>
+<para><computeroutput>LayerMask EnemyMeleeController.obstacleLayer</computeroutput></para><para>
+
+<para>Layers the raycast can detect. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a1f5efa46761f308e39a8f85ae2e4e8a4"/><section>
+    <title>playerTransform</title>
+<indexterm><primary>playerTransform</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>playerTransform</secondary></indexterm>
+<para><computeroutput>Transform EnemyMeleeController.playerTransform</computeroutput></para><para>
+
+<para>Reference to the player&apos;s transform. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a08c37f82baf636cc7f57831fb7d95aee"/><section>
+    <title>visionAngle</title>
+<indexterm><primary>visionAngle</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>visionAngle</secondary></indexterm>
+<para><computeroutput>float EnemyMeleeController.visionAngle = 60f</computeroutput></para><para>
+
+<para>Enemy&apos;s field of view angle (for raycast) </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_melee_controller_1a569ab78354e73041f5348e70a3445d23"/><section>
+    <title>waypoints</title>
+<indexterm><primary>waypoints</primary><secondary>EnemyMeleeController</secondary></indexterm>
+<indexterm><primary>EnemyMeleeController</primary><secondary>waypoints</secondary></indexterm>
+<para><computeroutput>Transform [] EnemyMeleeController.waypoints</computeroutput></para><para>
+
+<para>Patrol points. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Enemies/<link linkend="__enemy_melee_controller_8cs">EnemyMeleeController.cs</link></section>
+</section>

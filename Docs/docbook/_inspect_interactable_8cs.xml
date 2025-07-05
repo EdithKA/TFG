@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__inspect_interactable_8cs" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Interactions/InspectInteractable.cs File Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Interactions/InspectInteractable.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_inspect_interactable">InspectInteractable</link></para>
+
+<para>Provides inspection functionality for examinable objects in the game world. Displays custom thoughts when the interacts with the object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

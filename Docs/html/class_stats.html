@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THE IN-BETWEEN: Stats Class Reference</title>
+<title>The In-Between: Stats Class Reference</title>
+<link rel="icon" href="Mobile.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +33,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">THE IN-BETWEEN
+   <div id="projectname">The In-Between
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,14 +104,14 @@ $(function(){initNavTree('class_stats.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_stats-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Stats Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Manages player stats (health and sanity), updates the UI, and triggers world corruption effects. Designed for a survival horror game where the world becomes more unstable as sanity decreases.  
+<p>Manages the player's health and sanity, UI, and world corruption effects.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Stats:</div>
@@ -119,96 +120,66 @@ Inheritance diagram for Stats:</div>
   <img src="class_stats.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6107871f3f867ffdfa7edddd9023ad6c" id="r_a6107871f3f867ffdfa7edddd9023ad6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6107871f3f867ffdfa7edddd9023ad6c">TakeDamage</a> (int amount)</td></tr>
+<tr class="memdesc:a6107871f3f867ffdfa7edddd9023ad6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts health from the player.  <br /></td></tr>
+<tr class="separator:a6107871f3f867ffdfa7edddd9023ad6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a4878ad61cc3f165e926e1a0ab2a9d188" id="r_a4878ad61cc3f165e926e1a0ab2a9d188"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4878ad61cc3f165e926e1a0ab2a9d188">corruptibleTag</a></td></tr>
-<tr class="memdesc:a4878ad61cc3f165e926e1a0ab2a9d188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in seconds between sanity decreases.  <br /></td></tr>
-<tr class="separator:a4878ad61cc3f165e926e1a0ab2a9d188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3d802107b5116940254cb648b1c9cec" id="r_aa3d802107b5116940254cb648b1c9cec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d802107b5116940254cb648b1c9cec">moveRange</a> = 0.5f</td></tr>
-<tr class="memdesc:aa3d802107b5116940254cb648b1c9cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for objects that can be corrupted.  <br /></td></tr>
-<tr class="separator:aa3d802107b5116940254cb648b1c9cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae79ab77a7b06d2ac673b0cc235188431" id="r_ae79ab77a7b06d2ac673b0cc235188431"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79ab77a7b06d2ac673b0cc235188431">rotationRange</a> = 45f</td></tr>
-<tr class="memdesc:ae79ab77a7b06d2ac673b0cc235188431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum random movement offset during corruption.  <br /></td></tr>
-<tr class="separator:ae79ab77a7b06d2ac673b0cc235188431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e1c5e0cdcc66d2b1f8e26882255894" id="r_a42e1c5e0cdcc66d2b1f8e26882255894"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42e1c5e0cdcc66d2b1f8e26882255894">sanityThreshold</a> = 75</td></tr>
-<tr class="memdesc:a42e1c5e0cdcc66d2b1f8e26882255894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum random rotation angle during corruption.  <br /></td></tr>
-<tr class="separator:a42e1c5e0cdcc66d2b1f8e26882255894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a732164e243d904f211d25de0fc9586c9" id="r_a732164e243d904f211d25de0fc9586c9"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a732164e243d904f211d25de0fc9586c9">heartIcon</a></td></tr>
-<tr class="memdesc:a732164e243d904f211d25de0fc9586c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores original positions.  <br /></td></tr>
-<tr class="separator:a732164e243d904f211d25de0fc9586c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae734d4d680c41be22704e63c33cebdef" id="r_ae734d4d680c41be22704e63c33cebdef"><td class="memItemLeft" align="right" valign="top">Sprite[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae734d4d680c41be22704e63c33cebdef">heartSprites</a></td></tr>
-<tr class="memdesc:ae734d4d680c41be22704e63c33cebdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI image for the heart icon.  <br /></td></tr>
-<tr class="separator:ae734d4d680c41be22704e63c33cebdef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92ffb04f87610042019c77cdb265414" id="r_ad92ffb04f87610042019c77cdb265414"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad92ffb04f87610042019c77cdb265414">healthBars</a></td></tr>
-<tr class="memdesc:ad92ffb04f87610042019c77cdb265414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprites for different health states.  <br /></td></tr>
-<tr class="separator:ad92ffb04f87610042019c77cdb265414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda59df727f5ea418a7442882814cbdd" id="r_abda59df727f5ea418a7442882814cbdd"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda59df727f5ea418a7442882814cbdd">sanityIcon</a></td></tr>
-<tr class="memdesc:abda59df727f5ea418a7442882814cbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of health bar UI segments.  <br /></td></tr>
-<tr class="separator:abda59df727f5ea418a7442882814cbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f843d8f43864f34aa0d99775b82a4aa" id="r_a1f843d8f43864f34aa0d99775b82a4aa"><td class="memItemLeft" align="right" valign="top">Sprite[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f843d8f43864f34aa0d99775b82a4aa">brainSprites</a></td></tr>
-<tr class="memdesc:a1f843d8f43864f34aa0d99775b82a4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI image for the brain icon.  <br /></td></tr>
-<tr class="separator:a1f843d8f43864f34aa0d99775b82a4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63947ff30ac0518d61e76aea6399bd83" id="r_a63947ff30ac0518d61e76aea6399bd83"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63947ff30ac0518d61e76aea6399bd83">sanityBars</a></td></tr>
-<tr class="memdesc:a63947ff30ac0518d61e76aea6399bd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprites for different sanity states.  <br /></td></tr>
-<tr class="separator:a63947ff30ac0518d61e76aea6399bd83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab7122da0fafe848b0eb99729c0f5db44" id="r_ab7122da0fafe848b0eb99729c0f5db44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7122da0fafe848b0eb99729c0f5db44">Start</a> ()</td></tr>
-<tr class="memdesc:ab7122da0fafe848b0eb99729c0f5db44"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of sanity bar UI segments.  <br /></td></tr>
-<tr class="separator:ab7122da0fafe848b0eb99729c0f5db44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66237d25345c00b4022dc9c02aa1fa26" id="r_a66237d25345c00b4022dc9c02aa1fa26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66237d25345c00b4022dc9c02aa1fa26">Update</a> ()</td></tr>
-<tr class="memdesc:a66237d25345c00b4022dc9c02aa1fa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the UI and bar displays every frame.  <br /></td></tr>
-<tr class="separator:a66237d25345c00b4022dc9c02aa1fa26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb1e78b38a3a8c80813afdc62c306b6b" id="r_afb1e78b38a3a8c80813afdc62c306b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb1e78b38a3a8c80813afdc62c306b6b">UpdateUI</a> ()</td></tr>
-<tr class="memdesc:afb1e78b38a3a8c80813afdc62c306b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the heart and brain icons based on current health and sanity.  <br /></td></tr>
-<tr class="separator:afb1e78b38a3a8c80813afdc62c306b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e84dab90b23988582631c2477ea83d5" id="r_a3e84dab90b23988582631c2477ea83d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e84dab90b23988582631c2477ea83d5">SetHeartIcon</a> ()</td></tr>
-<tr class="memdesc:a3e84dab90b23988582631c2477ea83d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the heart icon sprite based on current health value.  <br /></td></tr>
-<tr class="separator:a3e84dab90b23988582631c2477ea83d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf58e872f3be56be69d85af7563aa5cf" id="r_abf58e872f3be56be69d85af7563aa5cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf58e872f3be56be69d85af7563aa5cf">SetBrainIcon</a> ()</td></tr>
-<tr class="memdesc:abf58e872f3be56be69d85af7563aa5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the brain icon sprite based on current sanity value.  <br /></td></tr>
-<tr class="separator:abf58e872f3be56be69d85af7563aa5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18d688dcfc2719fa7dd4963063912211" id="r_a18d688dcfc2719fa7dd4963063912211"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18d688dcfc2719fa7dd4963063912211">DecreaseSanityOverTime</a> ()</td></tr>
-<tr class="memdesc:a18d688dcfc2719fa7dd4963063912211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine that decreases sanity over time and triggers corruption if needed.  <br /></td></tr>
-<tr class="separator:a18d688dcfc2719fa7dd4963063912211"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc284e0ece872a7617613b181fd9192" id="r_aecc284e0ece872a7617613b181fd9192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecc284e0ece872a7617613b181fd9192">UpdateBars</a> ()</td></tr>
-<tr class="memdesc:aecc284e0ece872a7617613b181fd9192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the health and sanity bar UI elements.  <br /></td></tr>
-<tr class="separator:aecc284e0ece872a7617613b181fd9192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a151f0a0d1da5805e7ee7d1884f8df151" id="r_a151f0a0d1da5805e7ee7d1884f8df151"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a151f0a0d1da5805e7ee7d1884f8df151">UpdateBar</a> (int statValue, List&lt; GameObject &gt; bars)</td></tr>
-<tr class="memdesc:a151f0a0d1da5805e7ee7d1884f8df151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates or deactivates bar segments based on the stat value.  <br /></td></tr>
-<tr class="separator:a151f0a0d1da5805e7ee7d1884f8df151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd5fc2bd51c8a73b66425dedc112aab" id="r_afdd5fc2bd51c8a73b66425dedc112aab"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdd5fc2bd51c8a73b66425dedc112aab">CorruptObjects</a> ()</td></tr>
-<tr class="memdesc:afdd5fc2bd51c8a73b66425dedc112aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine that corrupts objects by moving and rotating them randomly, then resets them.  <br /></td></tr>
-<tr class="separator:afdd5fc2bd51c8a73b66425dedc112aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadfab142d46a8582ca09911a0c4fdb6b" id="r_aadfab142d46a8582ca09911a0c4fdb6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadfab142d46a8582ca09911a0c4fdb6b">ResetCorruptedObjects</a> ()</td></tr>
-<tr class="memdesc:aadfab142d46a8582ca09911a0c4fdb6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all corruptible objects to their original positions and rotations.  <br /></td></tr>
-<tr class="separator:aadfab142d46a8582ca09911a0c4fdb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a72bec48562258013be6e4b75d9c34463" id="r_a72bec48562258013be6e4b75d9c34463"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72bec48562258013be6e4b75d9c34463">sanity</a></td></tr>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a72bec48562258013be6e4b75d9c34463" id="r_a72bec48562258013be6e4b75d9c34463"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72bec48562258013be6e4b75d9c34463">sanity</a> = 100</td></tr>
+<tr class="memdesc:a72bec48562258013be6e4b75d9c34463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current sanity.  <br /></td></tr>
 <tr class="separator:a72bec48562258013be6e4b75d9c34463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a611e0ef59fa783a6fdf34c09431195a3" id="r_a611e0ef59fa783a6fdf34c09431195a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a611e0ef59fa783a6fdf34c09431195a3">health</a></td></tr>
-<tr class="memdesc:a611e0ef59fa783a6fdf34c09431195a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current sanity value (0-100).  <br /></td></tr>
+<tr class="memitem:a611e0ef59fa783a6fdf34c09431195a3" id="r_a611e0ef59fa783a6fdf34c09431195a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a611e0ef59fa783a6fdf34c09431195a3">health</a> = 100</td></tr>
+<tr class="memdesc:a611e0ef59fa783a6fdf34c09431195a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current health.  <br /></td></tr>
 <tr class="separator:a611e0ef59fa783a6fdf34c09431195a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac218a6fa3d03cf7dce2c201fedf00da4" id="r_ac218a6fa3d03cf7dce2c201fedf00da4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac218a6fa3d03cf7dce2c201fedf00da4">decreaseInterval</a> = 1.5f</td></tr>
-<tr class="memdesc:ac218a6fa3d03cf7dce2c201fedf00da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current health value (0-100).  <br /></td></tr>
+<tr class="memdesc:ac218a6fa3d03cf7dce2c201fedf00da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanity decrease interval.  <br /></td></tr>
 <tr class="separator:ac218a6fa3d03cf7dce2c201fedf00da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac467b455ac70bdacd6abb5cecf6a06e3" id="r_ac467b455ac70bdacd6abb5cecf6a06e3"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac467b455ac70bdacd6abb5cecf6a06e3">corruptibleObjects</a> = new List&lt;GameObject&gt;()</td></tr>
-<tr class="memdesc:ac467b455ac70bdacd6abb5cecf6a06e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanity value at which corruption starts.  <br /></td></tr>
-<tr class="separator:ac467b455ac70bdacd6abb5cecf6a06e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedb7237a13b682fdf3f101f89d1027bd" id="r_aedb7237a13b682fdf3f101f89d1027bd"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; GameObject, Vector3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedb7237a13b682fdf3f101f89d1027bd">originalPositions</a> = new Dictionary&lt;GameObject, Vector3&gt;()</td></tr>
-<tr class="memdesc:aedb7237a13b682fdf3f101f89d1027bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of objects that can be corrupted.  <br /></td></tr>
-<tr class="separator:aedb7237a13b682fdf3f101f89d1027bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad683cc7700550d018522b6b6f1e0c382" id="r_ad683cc7700550d018522b6b6f1e0c382"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad683cc7700550d018522b6b6f1e0c382">hasPhone</a> = false</td></tr>
+<tr class="memdesc:ad683cc7700550d018522b6b6f1e0c382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the player has the phone.  <br /></td></tr>
+<tr class="separator:ad683cc7700550d018522b6b6f1e0c382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4878ad61cc3f165e926e1a0ab2a9d188" id="r_a4878ad61cc3f165e926e1a0ab2a9d188"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4878ad61cc3f165e926e1a0ab2a9d188">corruptibleTag</a></td></tr>
+<tr class="memdesc:a4878ad61cc3f165e926e1a0ab2a9d188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for corruptible objects.  <br /></td></tr>
+<tr class="separator:a4878ad61cc3f165e926e1a0ab2a9d188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d802107b5116940254cb648b1c9cec" id="r_aa3d802107b5116940254cb648b1c9cec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d802107b5116940254cb648b1c9cec">moveRange</a> = 0.5f</td></tr>
+<tr class="memdesc:aa3d802107b5116940254cb648b1c9cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum random movement of corruptible objects.  <br /></td></tr>
+<tr class="separator:aa3d802107b5116940254cb648b1c9cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79ab77a7b06d2ac673b0cc235188431" id="r_ae79ab77a7b06d2ac673b0cc235188431"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79ab77a7b06d2ac673b0cc235188431">rotationRange</a> = 45f</td></tr>
+<tr class="memdesc:ae79ab77a7b06d2ac673b0cc235188431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum random rotation of corruptible objects.  <br /></td></tr>
+<tr class="separator:ae79ab77a7b06d2ac673b0cc235188431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e1c5e0cdcc66d2b1f8e26882255894" id="r_a42e1c5e0cdcc66d2b1f8e26882255894"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42e1c5e0cdcc66d2b1f8e26882255894">sanityThreshold</a> = 50</td></tr>
+<tr class="memdesc:a42e1c5e0cdcc66d2b1f8e26882255894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanity threshold to start corruption.  <br /></td></tr>
+<tr class="separator:a42e1c5e0cdcc66d2b1f8e26882255894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732164e243d904f211d25de0fc9586c9" id="r_a732164e243d904f211d25de0fc9586c9"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a732164e243d904f211d25de0fc9586c9">heartIcon</a></td></tr>
+<tr class="memdesc:a732164e243d904f211d25de0fc9586c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Health icon in the UI.  <br /></td></tr>
+<tr class="separator:a732164e243d904f211d25de0fc9586c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae734d4d680c41be22704e63c33cebdef" id="r_ae734d4d680c41be22704e63c33cebdef"><td class="memItemLeft" align="right" valign="top">Sprite[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae734d4d680c41be22704e63c33cebdef">heartSprites</a></td></tr>
+<tr class="memdesc:ae734d4d680c41be22704e63c33cebdef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprites for different health states.  <br /></td></tr>
+<tr class="separator:ae734d4d680c41be22704e63c33cebdef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92ffb04f87610042019c77cdb265414" id="r_ad92ffb04f87610042019c77cdb265414"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad92ffb04f87610042019c77cdb265414">healthBars</a></td></tr>
+<tr class="memdesc:ad92ffb04f87610042019c77cdb265414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Health bars in the UI.  <br /></td></tr>
+<tr class="separator:ad92ffb04f87610042019c77cdb265414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda59df727f5ea418a7442882814cbdd" id="r_abda59df727f5ea418a7442882814cbdd"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda59df727f5ea418a7442882814cbdd">sanityIcon</a></td></tr>
+<tr class="memdesc:abda59df727f5ea418a7442882814cbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanity icon in the UI.  <br /></td></tr>
+<tr class="separator:abda59df727f5ea418a7442882814cbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2596ed66a1648ddb03572b40a60a217c" id="r_a2596ed66a1648ddb03572b40a60a217c"><td class="memItemLeft" align="right" valign="top">Sprite[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2596ed66a1648ddb03572b40a60a217c">sanitySprites</a></td></tr>
+<tr class="memdesc:a2596ed66a1648ddb03572b40a60a217c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprites for different sanity states.  <br /></td></tr>
+<tr class="separator:a2596ed66a1648ddb03572b40a60a217c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63947ff30ac0518d61e76aea6399bd83" id="r_a63947ff30ac0518d61e76aea6399bd83"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63947ff30ac0518d61e76aea6399bd83">sanityBars</a></td></tr>
+<tr class="memdesc:a63947ff30ac0518d61e76aea6399bd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sanity bars in the UI.  <br /></td></tr>
+<tr class="separator:a63947ff30ac0518d61e76aea6399bd83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2293cba6c2af4007f26e0aa321ac04ea" id="r_a2293cba6c2af4007f26e0aa321ac04ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_manager.html">GameManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2293cba6c2af4007f26e0aa321ac04ea">gameManager</a></td></tr>
+<tr class="separator:a2293cba6c2af4007f26e0aa321ac04ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc377de8911fff36fc931ff890857aa" id="r_afcc377de8911fff36fc931ff890857aa"><td class="memItemLeft" align="right" valign="top">Volume&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcc377de8911fff36fc931ff890857aa">postProcessVolume</a></td></tr>
+<tr class="separator:afcc377de8911fff36fc931ff890857aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Manages player stats (health and sanity), updates the UI, and triggers world corruption effects. Designed for a survival horror game where the world becomes more unstable as sanity decreases. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00010">10</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<div class="textblock"><p>Manages the player's health and sanity, UI, and world corruption effects. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="afdd5fc2bd51c8a73b66425dedc112aab" name="afdd5fc2bd51c8a73b66425dedc112aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdd5fc2bd51c8a73b66425dedc112aab">&#9670;&#160;</a></span>CorruptObjects()</h2>
+<a id="a6107871f3f867ffdfa7edddd9023ad6c" name="a6107871f3f867ffdfa7edddd9023ad6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6107871f3f867ffdfa7edddd9023ad6c">&#9670;&#160;</a></span>TakeDamage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,343 +188,30 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IEnumerator Stats.CorruptObjects </td>
+          <td class="memname">void Stats.TakeDamage </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amount</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Coroutine that corrupts objects by moving and rotating them randomly, then resets them. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00162">162</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="a18d688dcfc2719fa7dd4963063912211" name="a18d688dcfc2719fa7dd4963063912211"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18d688dcfc2719fa7dd4963063912211">&#9670;&#160;</a></span>DecreaseSanityOverTime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerator Stats.DecreaseSanityOverTime </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Coroutine that decreases sanity over time and triggers corruption if needed. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00114">114</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="aadfab142d46a8582ca09911a0c4fdb6b" name="aadfab142d46a8582ca09911a0c4fdb6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadfab142d46a8582ca09911a0c4fdb6b">&#9670;&#160;</a></span>ResetCorruptedObjects()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.ResetCorruptedObjects </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets all corruptible objects to their original positions and rotations. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00193">193</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="abf58e872f3be56be69d85af7563aa5cf" name="abf58e872f3be56be69d85af7563aa5cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf58e872f3be56be69d85af7563aa5cf">&#9670;&#160;</a></span>SetBrainIcon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.SetBrainIcon </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the brain icon sprite based on current sanity value. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00097">97</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="a3e84dab90b23988582631c2477ea83d5" name="a3e84dab90b23988582631c2477ea83d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e84dab90b23988582631c2477ea83d5">&#9670;&#160;</a></span>SetHeartIcon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.SetHeartIcon </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the heart icon sprite based on current health value. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00080">80</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="ab7122da0fafe848b0eb99729c0f5db44" name="ab7122da0fafe848b0eb99729c0f5db44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7122da0fafe848b0eb99729c0f5db44">&#9670;&#160;</a></span>Start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.Start </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>List of sanity bar UI segments. </p>
-<p>Initializes stats, finds corruptible objects, and starts the sanity decrease coroutine. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00039">39</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="a66237d25345c00b4022dc9c02aa1fa26" name="a66237d25345c00b4022dc9c02aa1fa26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66237d25345c00b4022dc9c02aa1fa26">&#9670;&#160;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.Update </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the UI and bar displays every frame. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00062">62</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="a151f0a0d1da5805e7ee7d1884f8df151" name="a151f0a0d1da5805e7ee7d1884f8df151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151f0a0d1da5805e7ee7d1884f8df151">&#9670;&#160;</a></span>UpdateBar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.UpdateBar </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>statValue</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; GameObject &gt;</td>          <td class="paramname"><span class="paramname"><em>bars</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Activates or deactivates bar segments based on the stat value. </p>
+<p>Subtracts health from the player. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">statValue</td><td>The value of the stat (health or sanity).</td></tr>
-    <tr><td class="paramname">bars</td><td>The list of bar segment GameObjects.</td></tr>
+    <tr><td class="paramname">amount</td><td>The amount of health to subtract. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00149">149</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
 </div>
 </div>
-<a id="aecc284e0ece872a7617613b181fd9192" name="aecc284e0ece872a7617613b181fd9192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecc284e0ece872a7617613b181fd9192">&#9670;&#160;</a></span>UpdateBars()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.UpdateBars </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the health and sanity bar UI elements. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00138">138</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="afb1e78b38a3a8c80813afdc62c306b6b" name="afb1e78b38a3a8c80813afdc62c306b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb1e78b38a3a8c80813afdc62c306b6b">&#9670;&#160;</a></span>UpdateUI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats.UpdateUI </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the heart and brain icons based on current health and sanity. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00071">71</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a1f843d8f43864f34aa0d99775b82a4aa" name="a1f843d8f43864f34aa0d99775b82a4aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f843d8f43864f34aa0d99775b82a4aa">&#9670;&#160;</a></span>brainSprites</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Sprite [] Stats.brainSprites</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UI image for the brain icon. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00033">33</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
-<a id="ac467b455ac70bdacd6abb5cecf6a06e3" name="ac467b455ac70bdacd6abb5cecf6a06e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac467b455ac70bdacd6abb5cecf6a06e3">&#9670;&#160;</a></span>corruptibleObjects</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;GameObject&gt; Stats.corruptibleObjects = new List&lt;GameObject&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sanity value at which corruption starts. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00023">23</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
-
-</div>
-</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a4878ad61cc3f165e926e1a0ab2a9d188" name="a4878ad61cc3f165e926e1a0ab2a9d188"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4878ad61cc3f165e926e1a0ab2a9d188">&#9670;&#160;</a></span>corruptibleTag</h2>
 
@@ -566,9 +224,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Time in seconds between sanity decreases. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00018">18</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Tag for corruptible objects. </p>
 
 </div>
 </div>
@@ -577,24 +233,44 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float Stats.decreaseInterval = 1.5f</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Current health value (0-100). </p>
+<p>Sanity decrease interval. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00015">15</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+</div>
+</div>
+<a id="a2293cba6c2af4007f26e0aa321ac04ea" name="a2293cba6c2af4007f26e0aa321ac04ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2293cba6c2af4007f26e0aa321ac04ea">&#9670;&#160;</a></span>gameManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_manager.html">GameManager</a> Stats.gameManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad683cc7700550d018522b6b6f1e0c382" name="ad683cc7700550d018522b6b6f1e0c382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad683cc7700550d018522b6b6f1e0c382">&#9670;&#160;</a></span>hasPhone</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Stats.hasPhone = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates if the player has the phone. </p>
 
 </div>
 </div>
@@ -603,24 +279,14 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Stats.health</td>
+          <td class="memname">int Stats.health = 100</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Current sanity value (0-100). </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00014">14</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Current health. </p>
 
 </div>
 </div>
@@ -636,9 +302,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sprites for different health states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00029">29</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Health bars in the UI. </p>
 
 </div>
 </div>
@@ -654,9 +318,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Stores original positions. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00027">27</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Health icon in the UI. </p>
 
 </div>
 </div>
@@ -672,9 +334,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>UI image for the heart icon. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00028">28</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Sprites for different health states. </p>
 
 </div>
 </div>
@@ -690,35 +350,21 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Tag for objects that can be corrupted. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00019">19</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Maximum random movement of corruptible objects. </p>
 
 </div>
 </div>
-<a id="aedb7237a13b682fdf3f101f89d1027bd" name="aedb7237a13b682fdf3f101f89d1027bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedb7237a13b682fdf3f101f89d1027bd">&#9670;&#160;</a></span>originalPositions</h2>
+<a id="afcc377de8911fff36fc931ff890857aa" name="afcc377de8911fff36fc931ff890857aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc377de8911fff36fc931ff890857aa">&#9670;&#160;</a></span>postProcessVolume</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Dictionary&lt;GameObject, Vector3&gt; Stats.originalPositions = new Dictionary&lt;GameObject, Vector3&gt;()</td>
+          <td class="memname">Volume Stats.postProcessVolume</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>List of objects that can be corrupted. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00024">24</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
 
 </div>
 </div>
@@ -734,9 +380,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum random movement offset during corruption. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00020">20</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Maximum random rotation of corruptible objects. </p>
 
 </div>
 </div>
@@ -745,22 +389,14 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Stats.sanity</td>
+          <td class="memname">int Stats.sanity = 100</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00013">13</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Current sanity. </p>
 
 </div>
 </div>
@@ -776,9 +412,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sprites for different sanity states. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00034">34</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Sanity bars in the UI. </p>
 
 </div>
 </div>
@@ -794,9 +428,23 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of health bar UI segments. </p>
+<p>Sanity icon in the UI. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00032">32</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+</div>
+</div>
+<a id="a2596ed66a1648ddb03572b40a60a217c" name="a2596ed66a1648ddb03572b40a60a217c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2596ed66a1648ddb03572b40a60a217c">&#9670;&#160;</a></span>sanitySprites</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sprite [] Stats.sanitySprites</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprites for different sanity states. </p>
 
 </div>
 </div>
@@ -807,19 +455,17 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Stats.sanityThreshold = 75</td>
+          <td class="memname">int Stats.sanityThreshold = 50</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum random rotation angle during corruption. </p>
-
-<p class="definition">Definition at line <a class="el" href="_stats_8cs_source.html#l00021">21</a> of file <a class="el" href="_stats_8cs_source.html">Stats.cs</a>.</p>
+<p>Sanity threshold to start corruption. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<a class="el" href="_stats_8cs_source.html">Stats.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Managers/<a class="el" href="_stats_8cs.html">Stats.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

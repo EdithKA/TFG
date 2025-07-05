@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_4fafd36790fc32ff38338948338392e8" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Interactions Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Interactions Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__door_interactable_8cs">DoorInteractable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__holder_interactable_8cs">HolderInteractable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__i_interactable_8cs">IInteractable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__inspect_interactable_8cs">InspectInteractable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__item_interactable_8cs">ItemInteractable.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__p_s2_interactable_8cs">PS2Interactable.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

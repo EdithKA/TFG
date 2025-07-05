@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_inventory_manager" xml:lang="en-US">
+<title>InventoryManager Class Reference</title>
+<indexterm><primary>InventoryManager</primary></indexterm>
+<para>
+
+<para>Manages the inventory, UI, and special item logic (such as pieces). </para>
+ 
+</para>
+<para>Inheritance diagram for InventoryManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_inventory_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_inventory_manager_1ab03cb9976ed0fd2ee6e77cd7006d1104">AddItem</link> (<link linkend="_class_item">Item</link> item)</para>
+
+<para>Adds an item to the inventory and handles special logic (pieces, rewards, photos). </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1afc55d3b8671e510b3fd64199e140b001">RemoveItem</link> (<link linkend="_class_item">Item</link> item)</para>
+
+<para>Removes an item from the inventory. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_inventory_manager_1ae105fd7e1358690239919d27df074ffb">HasItem</link> (string itemName)</para>
+
+<para>Checks if the inventory contains an item with a given ID. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1a87c8ecad45dfad4a04b0ec48b901b3c8">ToggleInventory</link> ()</para>
+
+<para>Opens or closes the inventory and manages cursor visibility and locking. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1a8d1fac39e9190b0b9643f927804d3413">UpdateUI</link> ()</para>
+
+<para>Updates the inventory UI. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1a6659c19268f452eaa013c869abb9f6ad">UnequipItem</link> ()</para>
+
+<para>Unequips the object from the hand. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1ac664ffcc393261b1bc3394df618e6a36">ShowInspectMenu</link> (Sprite photoSprite)</para>
+
+<para>Shows the item&apos;s icon in the inspection menu. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_inventory_manager_1a8a64ab457c653fe05556d307e7a98bd7">HideInspectMenu</link> ()</para>
+
+<para>Hides the inspection menu. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_inventory_manager_1a14061613b7558fb161c238f0558f0439">GetRightHandObject</link> ()</para>
+
+<para>Returns the object equipped in the right hand. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_inventory_manager_1a092943feb47c79fd1b12613640b14a30">inventorySize</link> = 20</para>
+
+<para>Maximum inventory size. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_inventory_manager_1a5654d9fee257edb7c6d237c4fbeb6a9f">inventorySlotPrefab</link></para>
+
+<para>Prefab for each UI slot. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_inventory_manager_1aed656f8e5efb81f008b13b8886bb45cf">inventoryGrid</link></para>
+
+<para>Grid where slots are instantiated. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_inventory_manager_1aa006da3f967c18737ac6bb978c66a23f">inventoryUI</link></para>
+
+<para>Inventory UI panel. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_inventory_manager_1acda1ac0d407d41e520a986445d29ed07">leftHand</link></para>
+
+<para>Left hand (for the phone). </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_inventory_manager_1a9117e06d048be3f8202abf967b9fa266">rightHand</link></para>
+
+<para>Right hand (for other equipable items). </para>
+</listitem>
+            <listitem><para><link linkend="_class_item">Item</link> <link linkend="_class_inventory_manager_1a60011c9b3bda8b4aa05d6721c55e9f67">completedToy</link></para>
+
+<para>Complete toy (obtained when collecting all pieces). </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_item">Item</link> &gt; <link linkend="_class_inventory_manager_1a9178b7de01f139ff256f16e3f1dd62e6">items</link> = new List&lt;<link linkend="_class_item">Item</link>&gt;()</para>
+
+<para>List of items in the inventory. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_inventory_manager_1a304b59aa253507606dfb6d97fb0690db">equippedRight</link></para>
+
+<para>Object equipped in the right hand. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_inventory_manager_1adf2b8d0bb5817c6a7bcb0b1c70c2e2a7">isInventoryOpen</link> = false</para>
+
+<para>Inventory state (open/closed). </para>
+</listitem>
+            <listitem><para>AudioSource <link linkend="_class_inventory_manager_1a64ceb3bc16df1b072214c8fa1505db0a">soundPlayer</link></para>
+</listitem>
+            <listitem><para>AudioClip <link linkend="_class_inventory_manager_1a9011236d6926409b22f5e9f939b35dbc">inventorySoundClip</link></para>
+
+<para>Sound played when interacting with the inventory. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_inventory_manager_1ad58024e2444031f38ec864ed200d1349">inspectMenu</link></para>
+</listitem>
+            <listitem><para>Image <link linkend="_class_inventory_manager_1a0e7ec20f46272ada636cf330aea76113">itemDisplay</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the inventory, UI, and special item logic (such as pieces). </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_inventory_manager_1ab03cb9976ed0fd2ee6e77cd7006d1104"/><section>
+    <title>AddItem()</title>
+<indexterm><primary>AddItem</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>AddItem</secondary></indexterm>
+<para><computeroutput>void InventoryManager.AddItem (<link linkend="_class_item">Item</link> item)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Adds an item to the inventory and handles special logic (pieces, rewards, photos). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>item</entry><entry>
+<para>The item to add. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a14061613b7558fb161c238f0558f0439"/><section>
+    <title>GetRightHandObject()</title>
+<indexterm><primary>GetRightHandObject</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>GetRightHandObject</secondary></indexterm>
+<para><computeroutput>GameObject InventoryManager.GetRightHandObject ( )</computeroutput></para><para>
+
+<para>Returns the object equipped in the right hand. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The equipped GameObject. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1ae105fd7e1358690239919d27df074ffb"/><section>
+    <title>HasItem()</title>
+<indexterm><primary>HasItem</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>HasItem</secondary></indexterm>
+<para><computeroutput>bool InventoryManager.HasItem (string itemName)</computeroutput></para><para>
+
+<para>Checks if the inventory contains an item with a given ID. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>itemName</entry><entry>
+<para>The ID of the item. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if the item is in the inventory, false otherwise. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a8a64ab457c653fe05556d307e7a98bd7"/><section>
+    <title>HideInspectMenu()</title>
+<indexterm><primary>HideInspectMenu</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>HideInspectMenu</secondary></indexterm>
+<para><computeroutput>void InventoryManager.HideInspectMenu ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Hides the inspection menu. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1afc55d3b8671e510b3fd64199e140b001"/><section>
+    <title>RemoveItem()</title>
+<indexterm><primary>RemoveItem</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>RemoveItem</secondary></indexterm>
+<para><computeroutput>void InventoryManager.RemoveItem (<link linkend="_class_item">Item</link> item)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Removes an item from the inventory. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>item</entry><entry>
+<para>The item to remove. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_inventory_manager_1ac664ffcc393261b1bc3394df618e6a36"/><section>
+    <title>ShowInspectMenu()</title>
+<indexterm><primary>ShowInspectMenu</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>ShowInspectMenu</secondary></indexterm>
+<para><computeroutput>void InventoryManager.ShowInspectMenu (Sprite photoSprite)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows the item&apos;s icon in the inspection menu. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>photoSprite</entry><entry>
+<para>The sprite to display. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a87c8ecad45dfad4a04b0ec48b901b3c8"/><section>
+    <title>ToggleInventory()</title>
+<indexterm><primary>ToggleInventory</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>ToggleInventory</secondary></indexterm>
+<para><computeroutput>void InventoryManager.ToggleInventory ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Opens or closes the inventory and manages cursor visibility and locking. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a6659c19268f452eaa013c869abb9f6ad"/><section>
+    <title>UnequipItem()</title>
+<indexterm><primary>UnequipItem</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>UnequipItem</secondary></indexterm>
+<para><computeroutput>void InventoryManager.UnequipItem ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Unequips the object from the hand. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a8d1fac39e9190b0b9643f927804d3413"/><section>
+    <title>UpdateUI()</title>
+<indexterm><primary>UpdateUI</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>UpdateUI</secondary></indexterm>
+<para><computeroutput>void InventoryManager.UpdateUI ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Updates the inventory UI. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_inventory_manager_1a60011c9b3bda8b4aa05d6721c55e9f67"/><section>
+    <title>completedToy</title>
+<indexterm><primary>completedToy</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>completedToy</secondary></indexterm>
+<para><computeroutput><link linkend="_class_item">Item</link> InventoryManager.completedToy</computeroutput></para><para>
+
+<para>Complete toy (obtained when collecting all pieces). </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a304b59aa253507606dfb6d97fb0690db"/><section>
+    <title>equippedRight</title>
+<indexterm><primary>equippedRight</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>equippedRight</secondary></indexterm>
+<para><computeroutput>GameObject InventoryManager.equippedRight</computeroutput></para><para>
+
+<para>Object equipped in the right hand. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1ad58024e2444031f38ec864ed200d1349"/><section>
+    <title>inspectMenu</title>
+<indexterm><primary>inspectMenu</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inspectMenu</secondary></indexterm>
+<para><computeroutput>GameObject InventoryManager.inspectMenu</computeroutput></para></section>
+<anchor xml:id="_class_inventory_manager_1aed656f8e5efb81f008b13b8886bb45cf"/><section>
+    <title>inventoryGrid</title>
+<indexterm><primary>inventoryGrid</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inventoryGrid</secondary></indexterm>
+<para><computeroutput>Transform InventoryManager.inventoryGrid</computeroutput></para><para>
+
+<para>Grid where slots are instantiated. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a092943feb47c79fd1b12613640b14a30"/><section>
+    <title>inventorySize</title>
+<indexterm><primary>inventorySize</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inventorySize</secondary></indexterm>
+<para><computeroutput>int InventoryManager.inventorySize = 20</computeroutput></para><para>
+
+<para>Maximum inventory size. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a5654d9fee257edb7c6d237c4fbeb6a9f"/><section>
+    <title>inventorySlotPrefab</title>
+<indexterm><primary>inventorySlotPrefab</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inventorySlotPrefab</secondary></indexterm>
+<para><computeroutput>GameObject InventoryManager.inventorySlotPrefab</computeroutput></para><para>
+
+<para>Prefab for each UI slot. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a9011236d6926409b22f5e9f939b35dbc"/><section>
+    <title>inventorySoundClip</title>
+<indexterm><primary>inventorySoundClip</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inventorySoundClip</secondary></indexterm>
+<para><computeroutput>AudioClip InventoryManager.inventorySoundClip</computeroutput></para><para>
+
+<para>Sound played when interacting with the inventory. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1aa006da3f967c18737ac6bb978c66a23f"/><section>
+    <title>inventoryUI</title>
+<indexterm><primary>inventoryUI</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>inventoryUI</secondary></indexterm>
+<para><computeroutput>GameObject InventoryManager.inventoryUI</computeroutput></para><para>
+
+<para>Inventory UI panel. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1adf2b8d0bb5817c6a7bcb0b1c70c2e2a7"/><section>
+    <title>isInventoryOpen</title>
+<indexterm><primary>isInventoryOpen</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>isInventoryOpen</secondary></indexterm>
+<para><computeroutput>bool InventoryManager.isInventoryOpen = false</computeroutput></para><para>
+
+<para>Inventory state (open/closed). </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a0e7ec20f46272ada636cf330aea76113"/><section>
+    <title>itemDisplay</title>
+<indexterm><primary>itemDisplay</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>itemDisplay</secondary></indexterm>
+<para><computeroutput>Image InventoryManager.itemDisplay</computeroutput></para></section>
+<anchor xml:id="_class_inventory_manager_1a9178b7de01f139ff256f16e3f1dd62e6"/><section>
+    <title>items</title>
+<indexterm><primary>items</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>items</secondary></indexterm>
+<para><computeroutput>List&lt;<link linkend="_class_item">Item</link>&gt; InventoryManager.items = new List&lt;<link linkend="_class_item">Item</link>&gt;()</computeroutput></para><para>
+
+<para>List of items in the inventory. </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1acda1ac0d407d41e520a986445d29ed07"/><section>
+    <title>leftHand</title>
+<indexterm><primary>leftHand</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>leftHand</secondary></indexterm>
+<para><computeroutput>Transform InventoryManager.leftHand</computeroutput></para><para>
+
+<para>Left hand (for the phone). </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a9117e06d048be3f8202abf967b9fa266"/><section>
+    <title>rightHand</title>
+<indexterm><primary>rightHand</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>rightHand</secondary></indexterm>
+<para><computeroutput>Transform InventoryManager.rightHand</computeroutput></para><para>
+
+<para>Right hand (for other equipable items). </para>
+</para>
+</section>
+<anchor xml:id="_class_inventory_manager_1a64ceb3bc16df1b072214c8fa1505db0a"/><section>
+    <title>soundPlayer</title>
+<indexterm><primary>soundPlayer</primary><secondary>InventoryManager</secondary></indexterm>
+<indexterm><primary>InventoryManager</primary><secondary>soundPlayer</secondary></indexterm>
+<para><computeroutput>AudioSource InventoryManager.soundPlayer</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Managers/<link linkend="__inventory_manager_8cs">InventoryManager.cs</link></section>
+</section>

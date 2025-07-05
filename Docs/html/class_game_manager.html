@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THE IN-BETWEEN: GameManager Class Reference</title>
+<title>The In-Between: GameManager Class Reference</title>
+<link rel="icon" href="Mobile.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +33,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">THE IN-BETWEEN
+   <div id="projectname">The In-Between
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -103,12 +104,14 @@ $(function(){initNavTree('class_game_manager.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_game_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GameManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Handles core game management actions such as scene transitions and quitting the game. Simple and reusable for menus, checkpoints, or any global game logic.  
+<p>Controls the pause menu, scene changes, and quitting the game.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameManager:</div>
@@ -119,23 +122,39 @@ Inheritance diagram for GameManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a59e6dd8d370a45a4eecd4b1fee7da4b3" id="r_a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</a> ()</td></tr>
+<tr class="memdesc:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the game from the pause menu.  <br /></td></tr>
+<tr class="separator:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b427a8159a66fe01c067fefa369ae86" id="r_a1b427a8159a66fe01c067fefa369ae86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b427a8159a66fe01c067fefa369ae86">LoadSceneByName</a> (string name)</td></tr>
-<tr class="memdesc:a1b427a8159a66fe01c067fefa369ae86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a new scene by its name.  <br /></td></tr>
+<tr class="memdesc:a1b427a8159a66fe01c067fefa369ae86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the scene according to the received name.  <br /></td></tr>
 <tr class="separator:a1b427a8159a66fe01c067fefa369ae86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2528be72763c8bf072557d9ece157b" id="r_aad2528be72763c8bf072557d9ece157b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2528be72763c8bf072557d9ece157b">QuitGame</a> ()</td></tr>
-<tr class="memdesc:aad2528be72763c8bf072557d9ece157b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quits the game application. Note: This will only work in a built game, not in the Unity Editor.  <br /></td></tr>
+<tr class="memdesc:aad2528be72763c8bf072557d9ece157b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the application.  <br /></td></tr>
 <tr class="separator:aad2528be72763c8bf072557d9ece157b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a0f1468dcf4ee59a87f135ee85cf6b800" id="r_a0f1468dcf4ee59a87f135ee85cf6b800"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</a></td></tr>
+<tr class="memdesc:a0f1468dcf4ee59a87f135ee85cf6b800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause menu.  <br /></td></tr>
+<tr class="separator:a0f1468dcf4ee59a87f135ee85cf6b800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f706085605070c6aa1a8367c3fd07d" id="r_aa1f706085605070c6aa1a8367c3fd07d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1f706085605070c6aa1a8367c3fd07d">isLevel</a></td></tr>
+<tr class="memdesc:aa1f706085605070c6aa1a8367c3fd07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if we are in a level or a menu.  <br /></td></tr>
+<tr class="separator:aa1f706085605070c6aa1a8367c3fd07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37b0224a8cb0b2c35e40584c28d700b" id="r_ab37b0224a8cb0b2c35e40584c28d700b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab37b0224a8cb0b2c35e40584c28d700b">gameComplete</a> = false</td></tr>
+<tr class="memdesc:ab37b0224a8cb0b2c35e40584c28d700b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the game has been completed.  <br /></td></tr>
+<tr class="separator:ab37b0224a8cb0b2c35e40584c28d700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles core game management actions such as scene transitions and quitting the game. Simple and reusable for menus, checkpoints, or any global game logic. </p>
-
-<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00010">10</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+<div class="textblock"><p>Controls the pause menu, scene changes, and quitting the game. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1b427a8159a66fe01c067fefa369ae86" name="a1b427a8159a66fe01c067fefa369ae86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b427a8159a66fe01c067fefa369ae86">&#9670;&#160;</a></span>LoadSceneByName()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GameManager.LoadSceneByName </td>
@@ -144,17 +163,20 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Loads a new scene by its name. </p>
+<p>Changes the scene according to the received name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the scene to load. </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the scene to load. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00016">16</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
@@ -163,6 +185,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GameManager.QuitGame </td>
@@ -171,16 +196,95 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Quits the game application. Note: This will only work in a built game, not in the Unity Editor. </p>
+<p>Closes the application. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00025">25</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+</div>
+</div>
+<a id="a59e6dd8d370a45a4eecd4b1fee7da4b3" name="a59e6dd8d370a45a4eecd4b1fee7da4b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59e6dd8d370a45a4eecd4b1fee7da4b3">&#9670;&#160;</a></span>Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.Resume </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resumes the game from the pause menu. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab37b0224a8cb0b2c35e40584c28d700b" name="ab37b0224a8cb0b2c35e40584c28d700b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab37b0224a8cb0b2c35e40584c28d700b">&#9670;&#160;</a></span>gameComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager.gameComplete = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates if the game has been completed. </p>
+
+</div>
+</div>
+<a id="aa1f706085605070c6aa1a8367c3fd07d" name="aa1f706085605070c6aa1a8367c3fd07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f706085605070c6aa1a8367c3fd07d">&#9670;&#160;</a></span>isLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager.isLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates if we are in a level or a menu. </p>
+
+</div>
+</div>
+<a id="a0f1468dcf4ee59a87f135ee85cf6b800" name="a0f1468dcf4ee59a87f135ee85cf6b800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1468dcf4ee59a87f135ee85cf6b800">&#9670;&#160;</a></span>pauseMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject GameManager.pauseMenu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pause menu. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Managers/<a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Managers/<a class="el" href="_game_manager_8cs.html">GameManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

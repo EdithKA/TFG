@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['errorclip_0',['errorClip',['../class_p_s2_interactable.html#a5719ff126dc9b5f2507caa683d7208e9',1,'PS2Interactable']]],
-  ['errormessage_1',['errorMessage',['../class_holder_interactable.html#a91d250bd09bad7ef093d8ba8ae65a281',1,'HolderInteractable']]],
-  ['errormessagenodvd_2',['errorMessageNoDVD',['../class_p_s2_interactable.html#a76a612e29b5db7af44f5d433a060133c',1,'PS2Interactable']]],
-  ['errormessagewrongdvd_3',['errorMessageWrongDVD',['../class_p_s2_interactable.html#a4be184e58d163a6f82d3703bfa441fbd',1,'PS2Interactable']]]
+  ['equippedright_0',['equippedRight',['../class_inventory_manager.html#a304b59aa253507606dfb6d97fb0690db',1,'InventoryManager']]],
+  ['equippositionoffset_1',['equipPositionOffset',['../class_item.html#a53e5695ec7c55e815c8a8f16145124d1',1,'Item']]],
+  ['equiprotationoffset_2',['equipRotationOffset',['../class_item.html#aa761fee02457427ee72ab2fdb6b420c0',1,'Item']]],
+  ['eyes_3',['eyes',['../class_enemy_distance_controller.html#a69efd756c04a124731f5a55c64640b89',1,'EnemyDistanceController.eyes'],['../class_enemy_melee_controller.html#ad741e8c917694ae34184030580e0fd6f',1,'EnemyMeleeController.eyes']]]
 ];

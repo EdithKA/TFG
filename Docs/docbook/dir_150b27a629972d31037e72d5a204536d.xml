@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_150b27a629972d31037e72d5a204536d" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/UI Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/UI Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__game_texts_8cs">GameTexts.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__u_i_text_controller_8cs">UITextController.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

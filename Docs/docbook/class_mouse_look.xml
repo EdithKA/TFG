@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_mouse_look" xml:lang="en-US">
+<title>MouseLook Class Reference</title>
+<indexterm><primary>MouseLook</primary></indexterm>
+<para>
+
+<para>Handles first-person mouse look for both the player body and the camera. Disables look controls when the inventory is open. </para>
+ 
+</para>
+<para>Inheritance diagram for MouseLook:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_mouse_look.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_class_mouse_look_1a3e984b4fd9a46c25309ffeedd22aa4aa">mouseSensitivity</link> = 1.5f</para>
+
+<para>Sensitivity multiplier for mouse movement. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_mouse_look_1ab0f3a530a840babd6944a17d7e30a732">cameraTransform</link></para>
+
+<para>Reference to the camera&apos;s transform. </para>
+</listitem>
+            <listitem><para><link linkend="_class_player_controller">PlayerController</link> <link linkend="_class_mouse_look_1a56fcd0e1b37a70f0eb1f65807cdf1c68">playerController</link></para>
+
+<para>Reference to <link linkend="_class_player_controller">PlayerController</link> (to check inventory state). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Handles first-person mouse look for both the player body and the camera. Disables look controls when the inventory is open. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_mouse_look_1ab0f3a530a840babd6944a17d7e30a732"/><section>
+    <title>cameraTransform</title>
+<indexterm><primary>cameraTransform</primary><secondary>MouseLook</secondary></indexterm>
+<indexterm><primary>MouseLook</primary><secondary>cameraTransform</secondary></indexterm>
+<para><computeroutput>Transform MouseLook.cameraTransform</computeroutput></para><para>
+
+<para>Reference to the camera&apos;s transform. </para>
+</para>
+</section>
+<anchor xml:id="_class_mouse_look_1a3e984b4fd9a46c25309ffeedd22aa4aa"/><section>
+    <title>mouseSensitivity</title>
+<indexterm><primary>mouseSensitivity</primary><secondary>MouseLook</secondary></indexterm>
+<indexterm><primary>MouseLook</primary><secondary>mouseSensitivity</secondary></indexterm>
+<para><computeroutput>float MouseLook.mouseSensitivity = 1.5f</computeroutput></para><para>
+
+<para>Sensitivity multiplier for mouse movement. </para>
+</para>
+</section>
+<anchor xml:id="_class_mouse_look_1a56fcd0e1b37a70f0eb1f65807cdf1c68"/><section>
+    <title>playerController</title>
+<indexterm><primary>playerController</primary><secondary>MouseLook</secondary></indexterm>
+<indexterm><primary>MouseLook</primary><secondary>playerController</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player_controller">PlayerController</link> MouseLook.playerController</computeroutput></para><para>
+
+<para>Reference to <link linkend="_class_player_controller">PlayerController</link> (to check inventory state). </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Player/<link linkend="__mouse_look_8cs">MouseLook.cs</link></section>
+</section>

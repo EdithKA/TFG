@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_item_interactable" xml:lang="en-US">
+<title>ItemInteractable Class Reference</title>
+<indexterm><primary>ItemInteractable</primary></indexterm>
+<para>
+
+<para>Represents an interactable item that can be collected by the the player. Implements the <link linkend="_interface_i_interactable">IInteractable</link> interface for interaction handling. </para>
+ 
+</para>
+<para>Inheritance diagram for ItemInteractable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_item_interactable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_item_interactable_1a3d2c76c260a42ce13a98b6dca799312e">OnHoverEnter</link> (<link linkend="_class_u_i_text_controller">UITextController</link> textController)</para>
+
+<para>Displays interaction prompt when the item is hovered over. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_item_interactable_1af3d3b7331b69312c4897c2bf2354d40d">OnHoverExit</link> ()</para>
+
+<para>Clears interaction prompt when hover ends. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_item_interactable_1a5ab781057ba464b91fa03b8401007938">Interact</link> (GameObject objectOnHand=null)</para>
+
+<para>Handles item interaction logic when the the player interacts with the item. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_item">Item</link> <link linkend="_class_item_interactable_1ae172325c7a166c41390d8a8af4fe5a29">itemData</link></para>
+
+<para>Data container for the item&apos;s properties. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_item_interactable_1a85fe05ef552790c82bf1ef871cb05644">isHeld</link> = false</para>
+
+<para>Flag indicating if the item is currently being held by the the player. </para>
+</listitem>
+            <listitem><para><link linkend="_class_inventory_manager">InventoryManager</link> <link linkend="_class_item_interactable_1aaee5fab3463f0d4ae0488d474ec0210c">inventoryManager</link></para>
+
+<para>Reference to the inventory manager. </para>
+</listitem>
+            <listitem><para><link linkend="_class_u_i_text_controller">UITextController</link> <link linkend="_class_item_interactable_1a98054d6d62309b7f1b5acdd758d9b7ba">uiTextController</link></para>
+
+<para>Reference to the UI text controller. </para>
+</listitem>
+            <listitem><para><link linkend="_class_player_controller">PlayerController</link> <link linkend="_class_item_interactable_1a5ba22469fedffc3a1449adc1efe70aac">playerController</link></para>
+
+<para>Reference to the the player controller. </para>
+</listitem>
+            <listitem><para><link linkend="_class_stats">Stats</link> <link linkend="_class_item_interactable_1a23f49e3607aa5a16c331e28f9a7a0285">stats</link></para>
+
+<para>Reference to the the player stats component. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents an interactable item that can be collected by the the player. Implements the <link linkend="_interface_i_interactable">IInteractable</link> interface for interaction handling. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_item_interactable_1a5ab781057ba464b91fa03b8401007938"/><section>
+    <title>Interact()</title>
+<indexterm><primary>Interact</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>Interact</secondary></indexterm>
+<para><computeroutput>void ItemInteractable.Interact (GameObject objectOnHand = <computeroutput>null</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Handles item interaction logic when the the player interacts with the item. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>objectOnHand</entry><entry>
+<para><link linkend="_class_item">Item</link> currently held by the the player (unused).</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ac96e72b5b0ddf4531aef36932deff760">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_item_interactable_1a3d2c76c260a42ce13a98b6dca799312e"/><section>
+    <title>OnHoverEnter()</title>
+<indexterm><primary>OnHoverEnter</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>OnHoverEnter</secondary></indexterm>
+<para><computeroutput>void ItemInteractable.OnHoverEnter (<link linkend="_class_u_i_text_controller">UITextController</link> textController)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Displays interaction prompt when the item is hovered over. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>textController</entry><entry>
+<para>UI text controller reference.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_item_interactable_1af3d3b7331b69312c4897c2bf2354d40d"/><section>
+    <title>OnHoverExit()</title>
+<indexterm><primary>OnHoverExit</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>OnHoverExit</secondary></indexterm>
+<para><computeroutput>void ItemInteractable.OnHoverExit ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Clears interaction prompt when hover ends. </para>
+</para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_item_interactable_1aaee5fab3463f0d4ae0488d474ec0210c"/><section>
+    <title>inventoryManager</title>
+<indexterm><primary>inventoryManager</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>inventoryManager</secondary></indexterm>
+<para><computeroutput><link linkend="_class_inventory_manager">InventoryManager</link> ItemInteractable.inventoryManager</computeroutput></para><para>
+
+<para>Reference to the inventory manager. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_interactable_1a85fe05ef552790c82bf1ef871cb05644"/><section>
+    <title>isHeld</title>
+<indexterm><primary>isHeld</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>isHeld</secondary></indexterm>
+<para><computeroutput>bool ItemInteractable.isHeld = false</computeroutput></para><para>
+
+<para>Flag indicating if the item is currently being held by the the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_interactable_1ae172325c7a166c41390d8a8af4fe5a29"/><section>
+    <title>itemData</title>
+<indexterm><primary>itemData</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>itemData</secondary></indexterm>
+<para><computeroutput><link linkend="_class_item">Item</link> ItemInteractable.itemData</computeroutput></para><para>
+
+<para>Data container for the item&apos;s properties. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_interactable_1a5ba22469fedffc3a1449adc1efe70aac"/><section>
+    <title>playerController</title>
+<indexterm><primary>playerController</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>playerController</secondary></indexterm>
+<para><computeroutput><link linkend="_class_player_controller">PlayerController</link> ItemInteractable.playerController</computeroutput></para><para>
+
+<para>Reference to the the player controller. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_interactable_1a23f49e3607aa5a16c331e28f9a7a0285"/><section>
+    <title>stats</title>
+<indexterm><primary>stats</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>stats</secondary></indexterm>
+<para><computeroutput><link linkend="_class_stats">Stats</link> ItemInteractable.stats</computeroutput></para><para>
+
+<para>Reference to the the player stats component. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_interactable_1a98054d6d62309b7f1b5acdd758d9b7ba"/><section>
+    <title>uiTextController</title>
+<indexterm><primary>uiTextController</primary><secondary>ItemInteractable</secondary></indexterm>
+<indexterm><primary>ItemInteractable</primary><secondary>uiTextController</secondary></indexterm>
+<para><computeroutput><link linkend="_class_u_i_text_controller">UITextController</link> ItemInteractable.uiTextController</computeroutput></para><para>
+
+<para>Reference to the UI text controller. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Interactions/<link linkend="__item_interactable_8cs">ItemInteractable.cs</link></section>
+</section>

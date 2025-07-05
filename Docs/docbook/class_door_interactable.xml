@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_door_interactable" xml:lang="en-US">
+<title>DoorInteractable Class Reference</title>
+<indexterm><primary>DoorInteractable</primary></indexterm>
+<para>
+
+<para>Controls door interaction, requiring a specific item to open/close. Implements the <link linkend="_interface_i_interactable">IInteractable</link> interface. </para>
+ 
+</para>
+<para>Inheritance diagram for DoorInteractable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_door_interactable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_door_interactable_1a9cba59428016261be71ccdabc6869895">OnHoverEnter</link> (<link linkend="_class_u_i_text_controller">UITextController</link> <link linkend="_class_door_interactable_1a85c0ce2c856629ea9dd595b2570a106c">textController</link>)</para>
+
+<para>Displays interaction prompt when hovering over the door. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_door_interactable_1a8a3d5f81ed3392b9f5e7a9f210d4d85e">OnHoverExit</link> ()</para>
+
+<para>Clears interaction prompt when hovering ends. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_door_interactable_1aca45ba26f1331ebd7e2c47b1f3ec2fb9">Interact</link> (GameObject objectOnHand=null)</para>
+
+<para>Handles door interaction, checking for required item and toggling door state. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Animator <link linkend="_class_door_interactable_1a2181e1fbc3d285905329197cb2d68501">leftDoorAnim</link></para>
+
+<para>Reference to the door&apos;s Animator component. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_door_interactable_1a3cd8257ba25234a1493b2d9b572a7e20">rightDoorAnim</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_door_interactable_1a7aedd397fbc4b98e9e687858fcdee971">isOpen</link> = false</para>
+
+<para>Current state of the door (open/closed). </para>
+</listitem>
+            <listitem><para><link linkend="_class_game_texts">GameTexts</link> <link linkend="_class_door_interactable_1aac1b5ef1384fa008255d5d1fd1e46300">gameTexts</link></para>
+
+<para>Game text configurations for UI messages. </para>
+</listitem>
+            <listitem><para><link linkend="_class_u_i_text_controller">UITextController</link> <link linkend="_class_door_interactable_1a85c0ce2c856629ea9dd595b2570a106c">textController</link></para>
+</listitem>
+            <listitem><para>string <link linkend="_class_door_interactable_1a2736038ee12f14b868d8930204c190a0">requiredItem</link></para>
+
+<para><link linkend="_class_item">Item</link> ID required to interact with the door. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls door interaction, requiring a specific item to open/close. Implements the <link linkend="_interface_i_interactable">IInteractable</link> interface. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_door_interactable_1aca45ba26f1331ebd7e2c47b1f3ec2fb9"/><section>
+    <title>Interact()</title>
+<indexterm><primary>Interact</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>Interact</secondary></indexterm>
+<para><computeroutput>void DoorInteractable.Interact (GameObject objectOnHand = <computeroutput>null</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Handles door interaction, checking for required item and toggling door state. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>objectOnHand</entry><entry>
+<para><link linkend="_class_item">Item</link> currently held by the player. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ac96e72b5b0ddf4531aef36932deff760">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a9cba59428016261be71ccdabc6869895"/><section>
+    <title>OnHoverEnter()</title>
+<indexterm><primary>OnHoverEnter</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>OnHoverEnter</secondary></indexterm>
+<para><computeroutput>void DoorInteractable.OnHoverEnter (<link linkend="_class_u_i_text_controller">UITextController</link> textController)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Displays interaction prompt when hovering over the door. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>textController</entry><entry>
+<para>UI text controller reference. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_interface_i_interactable_1aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</link>.</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a8a3d5f81ed3392b9f5e7a9f210d4d85e"/><section>
+    <title>OnHoverExit()</title>
+<indexterm><primary>OnHoverExit</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>OnHoverExit</secondary></indexterm>
+<para><computeroutput>void DoorInteractable.OnHoverExit ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Clears interaction prompt when hovering ends. </para>
+</para>
+<para>
+Implements <link linkend="_interface_i_interactable_1ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_door_interactable_1aac1b5ef1384fa008255d5d1fd1e46300"/><section>
+    <title>gameTexts</title>
+<indexterm><primary>gameTexts</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>gameTexts</secondary></indexterm>
+<para><computeroutput><link linkend="_class_game_texts">GameTexts</link> DoorInteractable.gameTexts</computeroutput></para><para>
+
+<para>Game text configurations for UI messages. </para>
+</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a7aedd397fbc4b98e9e687858fcdee971"/><section>
+    <title>isOpen</title>
+<indexterm><primary>isOpen</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>isOpen</secondary></indexterm>
+<para><computeroutput>bool DoorInteractable.isOpen = false</computeroutput></para><para>
+
+<para>Current state of the door (open/closed). </para>
+</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a2181e1fbc3d285905329197cb2d68501"/><section>
+    <title>leftDoorAnim</title>
+<indexterm><primary>leftDoorAnim</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>leftDoorAnim</secondary></indexterm>
+<para><computeroutput>Animator DoorInteractable.leftDoorAnim</computeroutput></para><para>
+
+<para>Reference to the door&apos;s Animator component. </para>
+</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a2736038ee12f14b868d8930204c190a0"/><section>
+    <title>requiredItem</title>
+<indexterm><primary>requiredItem</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>requiredItem</secondary></indexterm>
+<para><computeroutput>string DoorInteractable.requiredItem</computeroutput></para><para>
+
+<para><link linkend="_class_item">Item</link> ID required to interact with the door. </para>
+</para>
+</section>
+<anchor xml:id="_class_door_interactable_1a3cd8257ba25234a1493b2d9b572a7e20"/><section>
+    <title>rightDoorAnim</title>
+<indexterm><primary>rightDoorAnim</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>rightDoorAnim</secondary></indexterm>
+<para><computeroutput>Animator DoorInteractable.rightDoorAnim</computeroutput></para></section>
+<anchor xml:id="_class_door_interactable_1a85c0ce2c856629ea9dd595b2570a106c"/><section>
+    <title>textController</title>
+<indexterm><primary>textController</primary><secondary>DoorInteractable</secondary></indexterm>
+<indexterm><primary>DoorInteractable</primary><secondary>textController</secondary></indexterm>
+<para><computeroutput><link linkend="_class_u_i_text_controller">UITextController</link> DoorInteractable.textController</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Interactions/<link linkend="__door_interactable_8cs">DoorInteractable.cs</link></section>
+</section>

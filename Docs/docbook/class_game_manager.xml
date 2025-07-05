@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_game_manager" xml:lang="en-US">
+<title>GameManager Class Reference</title>
+<indexterm><primary>GameManager</primary></indexterm>
+<para>
+
+<para>Controls the pause menu, scene changes, and quitting the game. </para>
+ 
+</para>
+<para>Inheritance diagram for GameManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_game_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_game_manager_1a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</link> ()</para>
+
+<para>Resumes the game from the pause menu. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_game_manager_1a1b427a8159a66fe01c067fefa369ae86">LoadSceneByName</link> (string name)</para>
+
+<para>Changes the scene according to the received name. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_game_manager_1aad2528be72763c8bf072557d9ece157b">QuitGame</link> ()</para>
+
+<para>Closes the application. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>GameObject <link linkend="_class_game_manager_1a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</link></para>
+
+<para>Pause menu. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_game_manager_1aa1f706085605070c6aa1a8367c3fd07d">isLevel</link></para>
+
+<para>Indicates if we are in a level or a menu. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_game_manager_1ab37b0224a8cb0b2c35e40584c28d700b">gameComplete</link> = false</para>
+
+<para>Indicates if the game has been completed. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the pause menu, scene changes, and quitting the game. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_game_manager_1a1b427a8159a66fe01c067fefa369ae86"/><section>
+    <title>LoadSceneByName()</title>
+<indexterm><primary>LoadSceneByName</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>LoadSceneByName</secondary></indexterm>
+<para><computeroutput>void GameManager.LoadSceneByName (string name)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Changes the scene according to the received name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>Name of the scene to load. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_game_manager_1aad2528be72763c8bf072557d9ece157b"/><section>
+    <title>QuitGame()</title>
+<indexterm><primary>QuitGame</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>QuitGame</secondary></indexterm>
+<para><computeroutput>void GameManager.QuitGame ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Closes the application. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_manager_1a59e6dd8d370a45a4eecd4b1fee7da4b3"/><section>
+    <title>Resume()</title>
+<indexterm><primary>Resume</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>Resume</secondary></indexterm>
+<para><computeroutput>void GameManager.Resume ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Resumes the game from the pause menu. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_game_manager_1ab37b0224a8cb0b2c35e40584c28d700b"/><section>
+    <title>gameComplete</title>
+<indexterm><primary>gameComplete</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>gameComplete</secondary></indexterm>
+<para><computeroutput>bool GameManager.gameComplete = false</computeroutput></para><para>
+
+<para>Indicates if the game has been completed. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_manager_1aa1f706085605070c6aa1a8367c3fd07d"/><section>
+    <title>isLevel</title>
+<indexterm><primary>isLevel</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>isLevel</secondary></indexterm>
+<para><computeroutput>bool GameManager.isLevel</computeroutput></para><para>
+
+<para>Indicates if we are in a level or a menu. </para>
+</para>
+</section>
+<anchor xml:id="_class_game_manager_1a0f1468dcf4ee59a87f135ee85cf6b800"/><section>
+    <title>pauseMenu</title>
+<indexterm><primary>pauseMenu</primary><secondary>GameManager</secondary></indexterm>
+<indexterm><primary>GameManager</primary><secondary>pauseMenu</secondary></indexterm>
+<para><computeroutput>GameObject GameManager.pauseMenu</computeroutput></para><para>
+
+<para>Pause menu. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Managers/<link linkend="__game_manager_8cs">GameManager.cs</link></section>
+</section>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__mouse_look_8cs" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/MouseLook.cs File Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Characters/Player/MouseLook.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_mouse_look">MouseLook</link></para>
+
+<para>Handles first-person mouse look for both the player body and the camera. Disables look controls when the inventory is open. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_cinema_manager" xml:lang="en-US">
+<title>CinemaManager Class Reference</title>
+<indexterm><primary>CinemaManager</primary></indexterm>
+<para>
+
+<para>This script manages the state of the cinema puzzle. </para>
+ 
+</para>
+<para>Inheritance diagram for CinemaManager:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_cinema_manager.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Material <link linkend="_class_cinema_manager_1a3152d13cab508268088be81ace1c0c24">screenMaterial</link></para>
+
+<para>Material to assign to the screen when the puzzle is complete. </para>
+</listitem>
+            <listitem><para>List&lt; <link linkend="_class_door_interactable">DoorInteractable</link> &gt; <link linkend="_class_cinema_manager_1a6555bf2442e058344607201c5a2b2184">doors</link></para>
+
+<para>List of doors that must be open to complete the puzzle. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_cinema_manager_1a2bf2da61366e1a2115d603484dc4ce76">isComplete</link><computeroutput> [get]</computeroutput>
+</para>
+
+<para>Indicates if the puzzle objective is complete. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This script manages the state of the cinema puzzle. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_cinema_manager_1a6555bf2442e058344607201c5a2b2184"/><section>
+    <title>doors</title>
+<indexterm><primary>doors</primary><secondary>CinemaManager</secondary></indexterm>
+<indexterm><primary>CinemaManager</primary><secondary>doors</secondary></indexterm>
+<para><computeroutput>List&lt;<link linkend="_class_door_interactable">DoorInteractable</link>&gt; CinemaManager.doors</computeroutput></para><para>
+
+<para>List of doors that must be open to complete the puzzle. </para>
+</para>
+</section>
+<anchor xml:id="_class_cinema_manager_1a3152d13cab508268088be81ace1c0c24"/><section>
+    <title>screenMaterial</title>
+<indexterm><primary>screenMaterial</primary><secondary>CinemaManager</secondary></indexterm>
+<indexterm><primary>CinemaManager</primary><secondary>screenMaterial</secondary></indexterm>
+<para><computeroutput>Material CinemaManager.screenMaterial</computeroutput></para><para>
+
+<para>Material to assign to the screen when the puzzle is complete. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_cinema_manager_1a2bf2da61366e1a2115d603484dc4ce76"/><section>
+    <title>isComplete</title>
+<indexterm><primary>isComplete</primary><secondary>CinemaManager</secondary></indexterm>
+<indexterm><primary>CinemaManager</primary><secondary>isComplete</secondary></indexterm>
+<para><computeroutput>bool CinemaManager.isComplete<computeroutput>[get]</computeroutput></computeroutput></para><para>
+
+<para>Indicates if the puzzle objective is complete. </para>
+</para>
+<para>
+Implements <link linkend="_interface_i_puzle_objective_1a8ab7638bb7ab67ae5b43325e1510dc13">IPuzleObjective</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Puzzles/<link linkend="__cinema_manager_8cs">CinemaManager.cs</link></section>
+</section>

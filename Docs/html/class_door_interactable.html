@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THE IN-BETWEEN: DoorInteractable Class Reference</title>
+<title>The In-Between: DoorInteractable Class Reference</title>
+<link rel="icon" href="Mobile.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +33,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">THE IN-BETWEEN
+   <div id="projectname">The In-Between
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,13 +105,13 @@ $(function(){initNavTree('class_door_interactable.html',''); initResizable(true)
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_door_interactable-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DoorInteractable Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Controls door interaction behavior (opening/closing) using animations. Implements the <a class="el" href="interface_i_interactable.html" title="Interface for any object that can be interacted with by the player. The optional parameter allows pas...">IInteractable</a> interface for player interactions.  
+<p>Controls door interaction, requiring a specific item to open/close. Implements the <a class="el" href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player.">IInteractable</a> interface.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DoorInteractable:</div>
@@ -118,49 +119,52 @@ Inheritance diagram for DoorInteractable:</div>
  <div class="center">
   <img src="class_door_interactable.png" usemap="#DoorInteractable_map" alt=""/>
   <map id="DoorInteractable_map" name="DoorInteractable_map">
-<area href="interface_i_interactable.html" title="Interface for any object that can be interacted with by the player. The optional parameter allows pas..." alt="IInteractable" shape="rect" coords="116,0,222,24"/>
+<area href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player." alt="IInteractable" shape="rect" coords="116,0,222,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a9cba59428016261be71ccdabc6869895" id="r_a9cba59428016261be71ccdabc6869895"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cba59428016261be71ccdabc6869895">OnHoverEnter</a> (<a class="el" href="class_u_i_text_controller.html">UITextController</a> <a class="el" href="#a85c0ce2c856629ea9dd595b2570a106c">textController</a>)</td></tr>
+<tr class="memdesc:a9cba59428016261be71ccdabc6869895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays interaction prompt when hovering over the door.  <br /></td></tr>
+<tr class="separator:a9cba59428016261be71ccdabc6869895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3d5f81ed3392b9f5e7a9f210d4d85e" id="r_a8a3d5f81ed3392b9f5e7a9f210d4d85e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a3d5f81ed3392b9f5e7a9f210d4d85e">OnHoverExit</a> ()</td></tr>
+<tr class="memdesc:a8a3d5f81ed3392b9f5e7a9f210d4d85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears interaction prompt when hovering ends.  <br /></td></tr>
+<tr class="separator:a8a3d5f81ed3392b9f5e7a9f210d4d85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca45ba26f1331ebd7e2c47b1f3ec2fb9" id="r_aca45ba26f1331ebd7e2c47b1f3ec2fb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca45ba26f1331ebd7e2c47b1f3ec2fb9">Interact</a> (GameObject objectOnHand=null)</td></tr>
-<tr class="memdesc:aca45ba26f1331ebd7e2c47b1f3ec2fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the door's open/close state through animation.  <br /></td></tr>
+<tr class="memdesc:aca45ba26f1331ebd7e2c47b1f3ec2fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles door interaction, checking for required item and toggling door state.  <br /></td></tr>
 <tr class="separator:aca45ba26f1331ebd7e2c47b1f3ec2fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:af359fdaa987935a44415117562adb220" id="r_af359fdaa987935a44415117562adb220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af359fdaa987935a44415117562adb220">Update</a> ()</td></tr>
-<tr class="memdesc:af359fdaa987935a44415117562adb220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the player in interaction range?  <br /></td></tr>
-<tr class="separator:af359fdaa987935a44415117562adb220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d5293349359e183e6ee616c71d51611" id="r_a5d5293349359e183e6ee616c71d51611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d5293349359e183e6ee616c71d51611">OnTriggerEnter</a> (Collider other)</td></tr>
-<tr class="memdesc:a5d5293349359e183e6ee616c71d51611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets interaction flag when player enters trigger zone.  <br /></td></tr>
-<tr class="separator:a5d5293349359e183e6ee616c71d51611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bc0160ca52f916fee3a48d505036ced" id="r_a1bc0160ca52f916fee3a48d505036ced"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc0160ca52f916fee3a48d505036ced">OnTriggerExit</a> (Collider other)</td></tr>
-<tr class="memdesc:a1bc0160ca52f916fee3a48d505036ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears interaction flag when player exits trigger zone.  <br /></td></tr>
-<tr class="separator:a1bc0160ca52f916fee3a48d505036ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:aea9ea0e2758a83151a0c359fdb9d7053" id="r_aea9ea0e2758a83151a0c359fdb9d7053"><td class="memItemLeft" align="right" valign="top">Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea9ea0e2758a83151a0c359fdb9d7053">doorAnimator</a></td></tr>
-<tr class="separator:aea9ea0e2758a83151a0c359fdb9d7053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2181e1fbc3d285905329197cb2d68501" id="r_a2181e1fbc3d285905329197cb2d68501"><td class="memItemLeft" align="right" valign="top">Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2181e1fbc3d285905329197cb2d68501">leftDoorAnim</a></td></tr>
+<tr class="memdesc:a2181e1fbc3d285905329197cb2d68501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the door's Animator component.  <br /></td></tr>
+<tr class="separator:a2181e1fbc3d285905329197cb2d68501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd8257ba25234a1493b2d9b572a7e20" id="r_a3cd8257ba25234a1493b2d9b572a7e20"><td class="memItemLeft" align="right" valign="top">Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cd8257ba25234a1493b2d9b572a7e20">rightDoorAnim</a></td></tr>
+<tr class="separator:a3cd8257ba25234a1493b2d9b572a7e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aedd397fbc4b98e9e687858fcdee971" id="r_a7aedd397fbc4b98e9e687858fcdee971"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aedd397fbc4b98e9e687858fcdee971">isOpen</a> = false</td></tr>
-<tr class="memdesc:a7aedd397fbc4b98e9e687858fcdee971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the door's Animator component.  <br /></td></tr>
+<tr class="memdesc:a7aedd397fbc4b98e9e687858fcdee971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of the door (open/closed).  <br /></td></tr>
 <tr class="separator:a7aedd397fbc4b98e9e687858fcdee971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a212896c9822fb3cf72c59819c18e9ef6" id="r_a212896c9822fb3cf72c59819c18e9ef6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a212896c9822fb3cf72c59819c18e9ef6">isPlayerInRange</a> = false</td></tr>
-<tr class="memdesc:a212896c9822fb3cf72c59819c18e9ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of the door.  <br /></td></tr>
-<tr class="separator:a212896c9822fb3cf72c59819c18e9ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1b5ef1384fa008255d5d1fd1e46300" id="r_aac1b5ef1384fa008255d5d1fd1e46300"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_texts.html">GameTexts</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac1b5ef1384fa008255d5d1fd1e46300">gameTexts</a></td></tr>
+<tr class="memdesc:aac1b5ef1384fa008255d5d1fd1e46300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game text configurations for UI messages.  <br /></td></tr>
+<tr class="separator:aac1b5ef1384fa008255d5d1fd1e46300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c0ce2c856629ea9dd595b2570a106c" id="r_a85c0ce2c856629ea9dd595b2570a106c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_i_text_controller.html">UITextController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85c0ce2c856629ea9dd595b2570a106c">textController</a></td></tr>
+<tr class="separator:a85c0ce2c856629ea9dd595b2570a106c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2736038ee12f14b868d8930204c190a0" id="r_a2736038ee12f14b868d8930204c190a0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2736038ee12f14b868d8930204c190a0">requiredItem</a></td></tr>
+<tr class="memdesc:a2736038ee12f14b868d8930204c190a0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_item.html" title="Defines inventory items as ScriptableObjects for easy asset creation and management....">Item</a> ID required to interact with the door.  <br /></td></tr>
+<tr class="separator:a2736038ee12f14b868d8930204c190a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Controls door interaction behavior (opening/closing) using animations. Implements the <a class="el" href="interface_i_interactable.html" title="Interface for any object that can be interacted with by the player. The optional parameter allows pas...">IInteractable</a> interface for player interactions. </p>
-
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00007">7</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
+<div class="textblock"><p>Controls door interaction, requiring a specific item to open/close. Implements the <a class="el" href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player.">IInteractable</a> interface. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aca45ba26f1331ebd7e2c47b1f3ec2fb9" name="aca45ba26f1331ebd7e2c47b1f3ec2fb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca45ba26f1331ebd7e2c47b1f3ec2fb9">&#9670;&#160;</a></span>Interact()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DoorInteractable.Interact </td>
@@ -169,24 +173,27 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Toggles the door's open/close state through animation. </p>
+<p>Handles door interaction, checking for required item and toggling door state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objectOnHand</td><td>Not used in this implementation (required by interface). </td></tr>
+    <tr><td class="paramname">objectOnHand</td><td><a class="el" href="class_item.html" title="Defines inventory items as ScriptableObjects for easy asset creation and management....">Item</a> currently held by the player. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="interface_i_interactable.html#ac96e72b5b0ddf4531aef36932deff760">IInteractable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00029">29</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
-
 </div>
 </div>
-<a id="a5d5293349359e183e6ee616c71d51611" name="a5d5293349359e183e6ee616c71d51611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d5293349359e183e6ee616c71d51611">&#9670;&#160;</a></span>OnTriggerEnter()</h2>
+<a id="a9cba59428016261be71ccdabc6869895" name="a9cba59428016261be71ccdabc6869895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cba59428016261be71ccdabc6869895">&#9670;&#160;</a></span>OnHoverEnter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,27 +202,33 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DoorInteractable.OnTriggerEnter </td>
+          <td class="memname">void DoorInteractable.OnHoverEnter </td>
           <td>(</td>
-          <td class="paramtype">Collider</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_u_i_text_controller.html">UITextController</a></td>          <td class="paramname"><span class="paramname"><em>textController</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets interaction flag when player enters trigger zone. </p>
+<p>Displays interaction prompt when hovering over the door. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textController</td><td>UI text controller reference. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00044">44</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
+<p>Implements <a class="el" href="interface_i_interactable.html#aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</a>.</p>
 
 </div>
 </div>
-<a id="a1bc0160ca52f916fee3a48d505036ced" name="a1bc0160ca52f916fee3a48d505036ced"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bc0160ca52f916fee3a48d505036ced">&#9670;&#160;</a></span>OnTriggerExit()</h2>
+<a id="a8a3d5f81ed3392b9f5e7a9f210d4d85e" name="a8a3d5f81ed3392b9f5e7a9f210d4d85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3d5f81ed3392b9f5e7a9f210d4d85e">&#9670;&#160;</a></span>OnHoverExit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,36 +237,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DoorInteractable.OnTriggerExit </td>
-          <td>(</td>
-          <td class="paramtype">Collider</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clears interaction flag when player exits trigger zone. </p>
-
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00055">55</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
-
-</div>
-</div>
-<a id="af359fdaa987935a44415117562adb220" name="af359fdaa987935a44415117562adb220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af359fdaa987935a44415117562adb220">&#9670;&#160;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DoorInteractable.Update </td>
+          <td class="memname">void DoorInteractable.OnHoverExit </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -261,40 +245,31 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Is the player in interaction range? </p>
-<p>Checks for player interaction input each frame. </p>
+<p>Clears interaction prompt when hovering ends. </p>
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00017">17</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
+<p>Implements <a class="el" href="interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="aea9ea0e2758a83151a0c359fdb9d7053" name="aea9ea0e2758a83151a0c359fdb9d7053"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea9ea0e2758a83151a0c359fdb9d7053">&#9670;&#160;</a></span>doorAnimator</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aac1b5ef1384fa008255d5d1fd1e46300" name="aac1b5ef1384fa008255d5d1fd1e46300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1b5ef1384fa008255d5d1fd1e46300">&#9670;&#160;</a></span>gameTexts</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Animator DoorInteractable.doorAnimator</td>
+          <td class="memname"><a class="el" href="class_game_texts.html">GameTexts</a> DoorInteractable.gameTexts</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00010">10</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
+<p>Game text configurations for UI messages. </p>
 
 </div>
 </div>
@@ -303,55 +278,79 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool DoorInteractable.isOpen = false</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p>Current state of the door (open/closed). </p>
+
+</div>
+</div>
+<a id="a2181e1fbc3d285905329197cb2d68501" name="a2181e1fbc3d285905329197cb2d68501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2181e1fbc3d285905329197cb2d68501">&#9670;&#160;</a></span>leftDoorAnim</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animator DoorInteractable.leftDoorAnim</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>Reference to the door's Animator component. </p>
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00011">11</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
-
 </div>
 </div>
-<a id="a212896c9822fb3cf72c59819c18e9ef6" name="a212896c9822fb3cf72c59819c18e9ef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a212896c9822fb3cf72c59819c18e9ef6">&#9670;&#160;</a></span>isPlayerInRange</h2>
+<a id="a2736038ee12f14b868d8930204c190a0" name="a2736038ee12f14b868d8930204c190a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2736038ee12f14b868d8930204c190a0">&#9670;&#160;</a></span>requiredItem</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool DoorInteractable.isPlayerInRange = false</td>
+          <td class="memname">string DoorInteractable.requiredItem</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Current state of the door. </p>
+<p><a class="el" href="class_item.html" title="Defines inventory items as ScriptableObjects for easy asset creation and management....">Item</a> ID required to interact with the door. </p>
 
-<p class="definition">Definition at line <a class="el" href="_door_interactable_8cs_source.html#l00012">12</a> of file <a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a>.</p>
+</div>
+</div>
+<a id="a3cd8257ba25234a1493b2d9b572a7e20" name="a3cd8257ba25234a1493b2d9b572a7e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd8257ba25234a1493b2d9b572a7e20">&#9670;&#160;</a></span>rightDoorAnim</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animator DoorInteractable.rightDoorAnim</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85c0ce2c856629ea9dd595b2570a106c" name="a85c0ce2c856629ea9dd595b2570a106c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c0ce2c856629ea9dd595b2570a106c">&#9670;&#160;</a></span>textController</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_i_text_controller.html">UITextController</a> DoorInteractable.textController</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_door_interactable_8cs_source.html">DoorInteractable.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_door_interactable_8cs.html">DoorInteractable.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

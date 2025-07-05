@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['sanity_0',['sanity',['../class_stats.html#a72bec48562258013be6e4b75d9c34463',1,'Stats']]],
-  ['sanitybars_1',['sanityBars',['../class_stats.html#a63947ff30ac0518d61e76aea6399bd83',1,'Stats']]],
-  ['sanityicon_2',['sanityIcon',['../class_stats.html#abda59df727f5ea418a7442882814cbdd',1,'Stats']]],
-  ['sanitythreshold_3',['sanityThreshold',['../class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894',1,'Stats']]],
-  ['signedangletoplayer_4',['signedAngleToPlayer',['../class_angle_to_player.html#ae850f2b26741bfe81c61347fccb365e0',1,'AngleToPlayer']]],
-  ['slots_5',['slots',['../class_inventory_manager.html#a1ba74f4b51fc220d80c471a2acf8573f',1,'InventoryManager']]],
-  ['sprintmultiplier_6',['sprintMultiplier',['../class_player_controller.html#a835e76c9502eab5d68291ef5d3e2295d',1,'PlayerController']]],
-  ['spriterenderer_7',['spriteRenderer',['../class_angle_to_player.html#a65f4a46d9485b06ad0d10a44f64ed288',1,'AngleToPlayer']]],
-  ['staminadrainrate_8',['staminaDrainRate',['../class_player_controller.html#a9380135cad146c6067c047c3a9e225f4',1,'PlayerController']]],
-  ['staminaregenrate_9',['staminaRegenRate',['../class_player_controller.html#a4a532b39c009c1d1a3b08022f7490162',1,'PlayerController']]],
-  ['successmessage_10',['successMessage',['../class_holder_interactable.html#ad5ca3367ec7efb78b62dde97db4d132c',1,'HolderInteractable.successMessage'],['../class_p_s2_interactable.html#a00d4c946fac590d4a063003b4e3c3386',1,'PS2Interactable.successMessage']]]
+  ['target_0',['target',['../class_enemy_sprite_look.html#a6e8a89afb8366c7b48080d06cc593be9',1,'EnemySpriteLook']]],
+  ['textcontroller_1',['textController',['../class_player_controller.html#a10cb430e7b85249ea4704909229b58be',1,'PlayerController.textController'],['../class_door_interactable.html#a85c0ce2c856629ea9dd595b2570a106c',1,'DoorInteractable.textController']]],
+  ['thought_2',['thought',['../class_inspect_interactable.html#a4f0060db0b6835c5311304cff26110b3',1,'InspectInteractable']]],
+  ['thoughtcolor_3',['thoughtColor',['../class_u_i_text_controller.html#ae4dba6bf4a031e7f44ee36ab7b5b22a8',1,'UITextController']]],
+  ['thoughtdisplaytime_4',['thoughtDisplayTime',['../class_u_i_text_controller.html#a575f92656b2e37781048215d23adbdea',1,'UITextController']]],
+  ['thoughtfadeduration_5',['thoughtFadeDuration',['../class_u_i_text_controller.html#aa8756594e47dcf6ab2146b98286858da',1,'UITextController']]],
+  ['thoughttext_6',['thoughtText',['../class_u_i_text_controller.html#a76db01bb7ea6ec4387b63bbbf9520481',1,'UITextController']]],
+  ['thoughttypingspeed_7',['thoughtTypingSpeed',['../class_u_i_text_controller.html#a539c83a7954228741d80c89aec8adb9c',1,'UITextController']]],
+  ['type_8',['type',['../class_item.html#a3d786fb301e578483742debd5e56cc1e',1,'Item']]]
 ];

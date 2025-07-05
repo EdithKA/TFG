@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_u_i_text_controller" xml:lang="en-US">
+<title>UITextController Class Reference</title>
+<indexterm><primary>UITextController</primary></indexterm>
+<para>
+
+<para>Controls the UI text messages for interaction, thoughts, and inventory. </para>
+ 
+</para>
+<para>Inheritance diagram for UITextController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_u_i_text_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1a6f6167ceabfcaa37574dfcee66611623">ShowInteraction</link> (string message)</para>
+
+<para>Shows an interaction message with the default color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1ae3a14cfc01dd300bdaf647ebfb8f34db">ShowInteraction</link> (string message, Color color)</para>
+
+<para>Shows an interaction message with a custom color (if ever needed). </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1a4891bdea7ef5494663d8db0bdd1506c4">ShowCollect</link> (string message)</para>
+
+<para>Shows a collect message with the defined collect color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1ad3b4f10189dd2362e276fe4371a01a38">ShowThought</link> (string message)</para>
+
+<para>Shows a thought message with typewriter effect and default color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1ad413c12d669954460bfb2e2ab8bcf88e">ShowInventoryMessage</link> (string message, bool isAdding)</para>
+
+<para>Shows an inventory message with the default color. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_u_i_text_controller_1a4b0e5bb4e540eac1b5380e78b3648518">ClearMessages</link> ()</para>
+
+<para>Clears interaction and inventory messages. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>TextMeshProUGUI <link linkend="_class_u_i_text_controller_1a2133d6fcb26b197c8d18b5b237c1b373">interactionText</link></para>
+</listitem>
+            <listitem><para>TextMeshProUGUI <link linkend="_class_u_i_text_controller_1a76db01bb7ea6ec4387b63bbbf9520481">thoughtText</link></para>
+</listitem>
+            <listitem><para>TextMeshProUGUI <link linkend="_class_u_i_text_controller_1a9de692ac0eff730a7a5fb1d24e8f873c">inventoryText</link></para>
+</listitem>
+            <listitem><para><link linkend="_class_game_texts">GameTexts</link> <link linkend="_class_u_i_text_controller_1a29790892cc8b22b4e7e5bd519eb8ce2f">gameTexts</link></para>
+</listitem>
+            <listitem><para>Color <link linkend="_class_u_i_text_controller_1ac72ec9bc5bbc402bf4054c59b8682beb">interactColor</link> = Color.cyan</para>
+</listitem>
+            <listitem><para>Color <link linkend="_class_u_i_text_controller_1acc29b84fc387e80a166e9b6e380a3a90">collectColor</link> = Color.yellow</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1ae930050a9730f058cafe60289260ba47">interactionFadeDuration</link> = 0.4f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1ac71072d1ae7d70a80e0667a742131982">interactionDisplayTime</link> = 1.5f</para>
+</listitem>
+            <listitem><para>Color <link linkend="_class_u_i_text_controller_1ab013ba55a3ae8d92ac3e8cdd0b847f90">addColor</link></para>
+</listitem>
+            <listitem><para>Color <link linkend="_class_u_i_text_controller_1acea9c03da526cd093755d70eca0d5e4a">removeColor</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1aba8dad4f5d799124fcb0e660a10d46e8">inventoryTypingSpeed</link> = 0.03f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1a7ac844f91ebc3e2166fcc76093ee1382">inventoryDisplayTime</link> = 1f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1a73835d35050b5bf452b2806a117074d8">inventoryFadeDuration</link> = 0.5f</para>
+</listitem>
+            <listitem><para>Color <link linkend="_class_u_i_text_controller_1ae4dba6bf4a031e7f44ee36ab7b5b22a8">thoughtColor</link> = Color.white</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1a539c83a7954228741d80c89aec8adb9c">thoughtTypingSpeed</link> = 0.03f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1a575f92656b2e37781048215d23adbdea">thoughtDisplayTime</link> = 3f</para>
+</listitem>
+            <listitem><para>float <link linkend="_class_u_i_text_controller_1aa8756594e47dcf6ab2146b98286858da">thoughtFadeDuration</link> = 0.5f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the UI text messages for interaction, thoughts, and inventory. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_u_i_text_controller_1a4b0e5bb4e540eac1b5380e78b3648518"/><section>
+    <title>ClearMessages()</title>
+<indexterm><primary>ClearMessages</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ClearMessages</secondary></indexterm>
+<para><computeroutput>void UITextController.ClearMessages ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Clears interaction and inventory messages. </para>
+</para>
+</section>
+<anchor xml:id="_class_u_i_text_controller_1a4891bdea7ef5494663d8db0bdd1506c4"/><section>
+    <title>ShowCollect()</title>
+<indexterm><primary>ShowCollect</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ShowCollect</secondary></indexterm>
+<para><computeroutput>void UITextController.ShowCollect (string message)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows a collect message with the defined collect color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>The message to display. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_u_i_text_controller_1a6f6167ceabfcaa37574dfcee66611623"/><section>
+    <title>ShowInteraction()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ShowInteraction</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ShowInteraction</secondary></indexterm>
+<para><computeroutput>void UITextController.ShowInteraction (string message)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows an interaction message with the default color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>The message to display. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_u_i_text_controller_1ae3a14cfc01dd300bdaf647ebfb8f34db"/><section>
+    <title>ShowInteraction()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ShowInteraction</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ShowInteraction</secondary></indexterm>
+<para><computeroutput>void UITextController.ShowInteraction (string message, Color color)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows an interaction message with a custom color (if ever needed). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>The message to display. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>color</entry><entry>
+<para>The color for the message. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_u_i_text_controller_1ad413c12d669954460bfb2e2ab8bcf88e"/><section>
+    <title>ShowInventoryMessage()</title>
+<indexterm><primary>ShowInventoryMessage</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ShowInventoryMessage</secondary></indexterm>
+<para><computeroutput>void UITextController.ShowInventoryMessage (string message, bool isAdding)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows an inventory message with the default color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>The message to display. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>isAdding</entry><entry>
+<para>True if adding, false if removing. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_u_i_text_controller_1ad3b4f10189dd2362e276fe4371a01a38"/><section>
+    <title>ShowThought()</title>
+<indexterm><primary>ShowThought</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>ShowThought</secondary></indexterm>
+<para><computeroutput>void UITextController.ShowThought (string message)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Shows a thought message with typewriter effect and default color. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>The message to display. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_u_i_text_controller_1ab013ba55a3ae8d92ac3e8cdd0b847f90"/><section>
+    <title>addColor</title>
+<indexterm><primary>addColor</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>addColor</secondary></indexterm>
+<para><computeroutput>Color UITextController.addColor</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1acc29b84fc387e80a166e9b6e380a3a90"/><section>
+    <title>collectColor</title>
+<indexterm><primary>collectColor</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>collectColor</secondary></indexterm>
+<para><computeroutput>Color UITextController.collectColor = Color.yellow</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a29790892cc8b22b4e7e5bd519eb8ce2f"/><section>
+    <title>gameTexts</title>
+<indexterm><primary>gameTexts</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>gameTexts</secondary></indexterm>
+<para><computeroutput><link linkend="_class_game_texts">GameTexts</link> UITextController.gameTexts</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1ac72ec9bc5bbc402bf4054c59b8682beb"/><section>
+    <title>interactColor</title>
+<indexterm><primary>interactColor</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>interactColor</secondary></indexterm>
+<para><computeroutput>Color UITextController.interactColor = Color.cyan</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1ac71072d1ae7d70a80e0667a742131982"/><section>
+    <title>interactionDisplayTime</title>
+<indexterm><primary>interactionDisplayTime</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>interactionDisplayTime</secondary></indexterm>
+<para><computeroutput>float UITextController.interactionDisplayTime = 1.5f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1ae930050a9730f058cafe60289260ba47"/><section>
+    <title>interactionFadeDuration</title>
+<indexterm><primary>interactionFadeDuration</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>interactionFadeDuration</secondary></indexterm>
+<para><computeroutput>float UITextController.interactionFadeDuration = 0.4f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a2133d6fcb26b197c8d18b5b237c1b373"/><section>
+    <title>interactionText</title>
+<indexterm><primary>interactionText</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>interactionText</secondary></indexterm>
+<para><computeroutput>TextMeshProUGUI UITextController.interactionText</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a7ac844f91ebc3e2166fcc76093ee1382"/><section>
+    <title>inventoryDisplayTime</title>
+<indexterm><primary>inventoryDisplayTime</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>inventoryDisplayTime</secondary></indexterm>
+<para><computeroutput>float UITextController.inventoryDisplayTime = 1f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a73835d35050b5bf452b2806a117074d8"/><section>
+    <title>inventoryFadeDuration</title>
+<indexterm><primary>inventoryFadeDuration</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>inventoryFadeDuration</secondary></indexterm>
+<para><computeroutput>float UITextController.inventoryFadeDuration = 0.5f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a9de692ac0eff730a7a5fb1d24e8f873c"/><section>
+    <title>inventoryText</title>
+<indexterm><primary>inventoryText</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>inventoryText</secondary></indexterm>
+<para><computeroutput>TextMeshProUGUI UITextController.inventoryText</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1aba8dad4f5d799124fcb0e660a10d46e8"/><section>
+    <title>inventoryTypingSpeed</title>
+<indexterm><primary>inventoryTypingSpeed</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>inventoryTypingSpeed</secondary></indexterm>
+<para><computeroutput>float UITextController.inventoryTypingSpeed = 0.03f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1acea9c03da526cd093755d70eca0d5e4a"/><section>
+    <title>removeColor</title>
+<indexterm><primary>removeColor</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>removeColor</secondary></indexterm>
+<para><computeroutput>Color UITextController.removeColor</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1ae4dba6bf4a031e7f44ee36ab7b5b22a8"/><section>
+    <title>thoughtColor</title>
+<indexterm><primary>thoughtColor</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>thoughtColor</secondary></indexterm>
+<para><computeroutput>Color UITextController.thoughtColor = Color.white</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a575f92656b2e37781048215d23adbdea"/><section>
+    <title>thoughtDisplayTime</title>
+<indexterm><primary>thoughtDisplayTime</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>thoughtDisplayTime</secondary></indexterm>
+<para><computeroutput>float UITextController.thoughtDisplayTime = 3f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1aa8756594e47dcf6ab2146b98286858da"/><section>
+    <title>thoughtFadeDuration</title>
+<indexterm><primary>thoughtFadeDuration</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>thoughtFadeDuration</secondary></indexterm>
+<para><computeroutput>float UITextController.thoughtFadeDuration = 0.5f</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a76db01bb7ea6ec4387b63bbbf9520481"/><section>
+    <title>thoughtText</title>
+<indexterm><primary>thoughtText</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>thoughtText</secondary></indexterm>
+<para><computeroutput>TextMeshProUGUI UITextController.thoughtText</computeroutput></para></section>
+<anchor xml:id="_class_u_i_text_controller_1a539c83a7954228741d80c89aec8adb9c"/><section>
+    <title>thoughtTypingSpeed</title>
+<indexterm><primary>thoughtTypingSpeed</primary><secondary>UITextController</secondary></indexterm>
+<indexterm><primary>UITextController</primary><secondary>thoughtTypingSpeed</secondary></indexterm>
+<para><computeroutput>float UITextController.thoughtTypingSpeed = 0.03f</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/UI/<link linkend="__u_i_text_controller_8cs">UITextController.cs</link></section>
+</section>

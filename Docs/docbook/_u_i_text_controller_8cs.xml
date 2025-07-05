@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_text_controller_8cs" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/UI/UITextController.cs File Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/UI/UITextController.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_u_i_text_controller">UITextController</link></para>
+
+<para>Controls the UI text messages for interaction, thoughts, and inventory. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2">UIMessageType</link> { <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2aefbc873e4634f3db63d62377d36e5f56">Interact</link>
+, <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2ae7ca851922b13f555127b04b70435ca9">Collect</link>
+, <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2a81e91be8db96be69e372f0c715ec7444">Collected</link>
+, <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2a7a1a5f3e79fdc91edf2f5ead9d66abb4">Read</link>
+ }</para>
+
+<para>Enum for UI message types. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2"/><section>
+    <title>UIMessageType</title>
+<indexterm><primary>UIMessageType</primary><secondary>UITextController.cs</secondary></indexterm>
+<indexterm><primary>UITextController.cs</primary><secondary>UIMessageType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2">UIMessageType</link></computeroutput></para><para>
+
+<para>Enum for UI message types. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>Interact</primary><secondary>UITextController.cs</secondary></indexterm>
+<indexterm><primary>UITextController.cs</primary><secondary>Interact</secondary></indexterm>
+<anchor xml:id="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2aefbc873e4634f3db63d62377d36e5f56"/>Interact</entry><entry></entry></row><row><entry><indexterm><primary>Collect</primary><secondary>UITextController.cs</secondary></indexterm>
+<indexterm><primary>UITextController.cs</primary><secondary>Collect</secondary></indexterm>
+<anchor xml:id="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2ae7ca851922b13f555127b04b70435ca9"/>Collect</entry><entry></entry></row><row><entry><indexterm><primary>Collected</primary><secondary>UITextController.cs</secondary></indexterm>
+<indexterm><primary>UITextController.cs</primary><secondary>Collected</secondary></indexterm>
+<anchor xml:id="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2a81e91be8db96be69e372f0c715ec7444"/>Collected</entry><entry></entry></row><row><entry><indexterm><primary>Read</primary><secondary>UITextController.cs</secondary></indexterm>
+<indexterm><primary>UITextController.cs</primary><secondary>Read</secondary></indexterm>
+<anchor xml:id="__u_i_text_controller_8cs_1aaa2c5561ec366ee76870a79e66c16ef2a7a1a5f3e79fdc91edf2f5ead9d66abb4"/>Read</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>

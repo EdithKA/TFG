@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['patrolwaypoints_0',['patrolWaypoints',['../class_enemy_controller.html#afb217a5fd6d6296ba7617e551516f2fb',1,'EnemyController']]],
-  ['pickupmessage_1',['pickupMessage',['../class_holder_interactable.html#a6c94280d4722b42665f77f3a3d6e9214',1,'HolderInteractable']]],
-  ['playercontroller_2',['playerController',['../class_inventory_manager.html#af759cfbe1aea1d78d741e6f55a0ddcc4',1,'InventoryManager.playerController'],['../class_mouse_look.html#a56fcd0e1b37a70f0eb1f65807cdf1c68',1,'MouseLook.playerController'],['../class_p_s2_interactable.html#a39cf3810feae2505daa28a7bea18eb37',1,'PS2Interactable.playerController'],['../class_item_controller.html#afa5880cf9a49df632068849c62817926',1,'ItemController.playerController']]],
-  ['playerhand_3',['playerHand',['../class_item_controller.html#afb85f6de444f98dbc2d2e7c9786b6a6d',1,'ItemController']]],
-  ['playerinrange_4',['playerInRange',['../class_holder_interactable.html#adb7ca26b40152f7a90f8a2a6f8964793',1,'HolderInteractable.playerInRange'],['../class_p_s2_interactable.html#ac3718cfd762941308a63b43bff03dd7b',1,'PS2Interactable.playerInRange']]],
-  ['playertransform_5',['playerTransform',['../class_angle_to_player.html#a284731d635bdab0757f3e2a16d46ace6',1,'AngleToPlayer.playerTransform'],['../class_enemy_controller.html#a6886eb23800bdaf128c2025d4fafe8f1',1,'EnemyController.playerTransform']]]
+  ['removecolor_0',['removeColor',['../class_u_i_text_controller.html#acea9c03da526cd093755d70eca0d5e4a',1,'UITextController']]],
+  ['requireddvd_1',['requiredDVD',['../class_p_s2_interactable.html#ab7963a7780ad65858f21f12d6df4d1f3',1,'PS2Interactable']]],
+  ['requireditem_2',['requiredItem',['../class_door_interactable.html#a2736038ee12f14b868d8930204c190a0',1,'DoorInteractable']]],
+  ['rewardappear_3',['rewardAppear',['../class_game_texts.html#ab31aad798c0479e9a857131b7ccf375c',1,'GameTexts']]],
+  ['rewardcollected_4',['rewardCollected',['../class_game_texts.html#a5af555507449207741b678a4be9dee3c',1,'GameTexts']]],
+  ['rhanim_5',['RHAnim',['../class_player_controller.html#ac3c1e99f53b48bc358e17098658f7be7',1,'PlayerController']]],
+  ['rightdooranim_6',['rightDoorAnim',['../class_door_interactable.html#a3cd8257ba25234a1493b2d9b572a7e20',1,'DoorInteractable']]],
+  ['righthand_7',['rightHand',['../class_player_controller.html#a92e65dfec59bdd1e0a96079c9c01ff2a',1,'PlayerController.rightHand'],['../class_inventory_manager.html#a9117e06d048be3f8202abf967b9fa266',1,'InventoryManager.rightHand']]],
+  ['rotationrange_8',['rotationRange',['../class_stats.html#ae79ab77a7b06d2ac673b0cc235188431',1,'Stats']]]
 ];

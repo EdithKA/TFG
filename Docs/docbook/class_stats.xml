@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_stats" xml:lang="en-US">
+<title>Stats Class Reference</title>
+<indexterm><primary>Stats</primary></indexterm>
+<para>
+
+<para>Manages the player&apos;s health and sanity, UI, and world corruption effects. </para>
+ 
+</para>
+<para>Inheritance diagram for Stats:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_stats.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_stats_1a6107871f3f867ffdfa7edddd9023ad6c">TakeDamage</link> (int amount)</para>
+
+<para>Subtracts health from the player. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_stats_1a72bec48562258013be6e4b75d9c34463">sanity</link> = 100</para>
+
+<para>Current sanity. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_stats_1a611e0ef59fa783a6fdf34c09431195a3">health</link> = 100</para>
+
+<para>Current health. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_stats_1ac218a6fa3d03cf7dce2c201fedf00da4">decreaseInterval</link> = 1.5f</para>
+
+<para>Sanity decrease interval. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_stats_1ad683cc7700550d018522b6b6f1e0c382">hasPhone</link> = false</para>
+
+<para>Indicates if the player has the phone. </para>
+</listitem>
+            <listitem><para>string <link linkend="_class_stats_1a4878ad61cc3f165e926e1a0ab2a9d188">corruptibleTag</link></para>
+
+<para>Tag for corruptible objects. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_stats_1aa3d802107b5116940254cb648b1c9cec">moveRange</link> = 0.5f</para>
+
+<para>Maximum random movement of corruptible objects. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_stats_1ae79ab77a7b06d2ac673b0cc235188431">rotationRange</link> = 45f</para>
+
+<para>Maximum random rotation of corruptible objects. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_stats_1a42e1c5e0cdcc66d2b1f8e26882255894">sanityThreshold</link> = 50</para>
+
+<para>Sanity threshold to start corruption. </para>
+</listitem>
+            <listitem><para>Image <link linkend="_class_stats_1a732164e243d904f211d25de0fc9586c9">heartIcon</link></para>
+
+<para>Health icon in the UI. </para>
+</listitem>
+            <listitem><para>Sprite[] <link linkend="_class_stats_1ae734d4d680c41be22704e63c33cebdef">heartSprites</link></para>
+
+<para>Sprites for different health states. </para>
+</listitem>
+            <listitem><para>List&lt; GameObject &gt; <link linkend="_class_stats_1ad92ffb04f87610042019c77cdb265414">healthBars</link></para>
+
+<para>Health bars in the UI. </para>
+</listitem>
+            <listitem><para>Image <link linkend="_class_stats_1abda59df727f5ea418a7442882814cbdd">sanityIcon</link></para>
+
+<para>Sanity icon in the UI. </para>
+</listitem>
+            <listitem><para>Sprite[] <link linkend="_class_stats_1a2596ed66a1648ddb03572b40a60a217c">sanitySprites</link></para>
+
+<para>Sprites for different sanity states. </para>
+</listitem>
+            <listitem><para>List&lt; GameObject &gt; <link linkend="_class_stats_1a63947ff30ac0518d61e76aea6399bd83">sanityBars</link></para>
+
+<para>Sanity bars in the UI. </para>
+</listitem>
+            <listitem><para><link linkend="_class_game_manager">GameManager</link> <link linkend="_class_stats_1a2293cba6c2af4007f26e0aa321ac04ea">gameManager</link></para>
+</listitem>
+            <listitem><para>Volume <link linkend="_class_stats_1afcc377de8911fff36fc931ff890857aa">postProcessVolume</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the player&apos;s health and sanity, UI, and world corruption effects. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_stats_1a6107871f3f867ffdfa7edddd9023ad6c"/><section>
+    <title>TakeDamage()</title>
+<indexterm><primary>TakeDamage</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>TakeDamage</secondary></indexterm>
+<para><computeroutput>void Stats.TakeDamage (int amount)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtracts health from the player. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>The amount of health to subtract. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_stats_1a4878ad61cc3f165e926e1a0ab2a9d188"/><section>
+    <title>corruptibleTag</title>
+<indexterm><primary>corruptibleTag</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>corruptibleTag</secondary></indexterm>
+<para><computeroutput>string Stats.corruptibleTag</computeroutput></para><para>
+
+<para>Tag for corruptible objects. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1ac218a6fa3d03cf7dce2c201fedf00da4"/><section>
+    <title>decreaseInterval</title>
+<indexterm><primary>decreaseInterval</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>decreaseInterval</secondary></indexterm>
+<para><computeroutput>float Stats.decreaseInterval = 1.5f</computeroutput></para><para>
+
+<para>Sanity decrease interval. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a2293cba6c2af4007f26e0aa321ac04ea"/><section>
+    <title>gameManager</title>
+<indexterm><primary>gameManager</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>gameManager</secondary></indexterm>
+<para><computeroutput><link linkend="_class_game_manager">GameManager</link> Stats.gameManager</computeroutput></para></section>
+<anchor xml:id="_class_stats_1ad683cc7700550d018522b6b6f1e0c382"/><section>
+    <title>hasPhone</title>
+<indexterm><primary>hasPhone</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>hasPhone</secondary></indexterm>
+<para><computeroutput>bool Stats.hasPhone = false</computeroutput></para><para>
+
+<para>Indicates if the player has the phone. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a611e0ef59fa783a6fdf34c09431195a3"/><section>
+    <title>health</title>
+<indexterm><primary>health</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>health</secondary></indexterm>
+<para><computeroutput>int Stats.health = 100</computeroutput></para><para>
+
+<para>Current health. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1ad92ffb04f87610042019c77cdb265414"/><section>
+    <title>healthBars</title>
+<indexterm><primary>healthBars</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>healthBars</secondary></indexterm>
+<para><computeroutput>List&lt;GameObject&gt; Stats.healthBars</computeroutput></para><para>
+
+<para>Health bars in the UI. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a732164e243d904f211d25de0fc9586c9"/><section>
+    <title>heartIcon</title>
+<indexterm><primary>heartIcon</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>heartIcon</secondary></indexterm>
+<para><computeroutput>Image Stats.heartIcon</computeroutput></para><para>
+
+<para>Health icon in the UI. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1ae734d4d680c41be22704e63c33cebdef"/><section>
+    <title>heartSprites</title>
+<indexterm><primary>heartSprites</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>heartSprites</secondary></indexterm>
+<para><computeroutput>Sprite [] Stats.heartSprites</computeroutput></para><para>
+
+<para>Sprites for different health states. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1aa3d802107b5116940254cb648b1c9cec"/><section>
+    <title>moveRange</title>
+<indexterm><primary>moveRange</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>moveRange</secondary></indexterm>
+<para><computeroutput>float Stats.moveRange = 0.5f</computeroutput></para><para>
+
+<para>Maximum random movement of corruptible objects. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1afcc377de8911fff36fc931ff890857aa"/><section>
+    <title>postProcessVolume</title>
+<indexterm><primary>postProcessVolume</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>postProcessVolume</secondary></indexterm>
+<para><computeroutput>Volume Stats.postProcessVolume</computeroutput></para></section>
+<anchor xml:id="_class_stats_1ae79ab77a7b06d2ac673b0cc235188431"/><section>
+    <title>rotationRange</title>
+<indexterm><primary>rotationRange</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>rotationRange</secondary></indexterm>
+<para><computeroutput>float Stats.rotationRange = 45f</computeroutput></para><para>
+
+<para>Maximum random rotation of corruptible objects. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a72bec48562258013be6e4b75d9c34463"/><section>
+    <title>sanity</title>
+<indexterm><primary>sanity</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>sanity</secondary></indexterm>
+<para><computeroutput>int Stats.sanity = 100</computeroutput></para><para>
+
+<para>Current sanity. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a63947ff30ac0518d61e76aea6399bd83"/><section>
+    <title>sanityBars</title>
+<indexterm><primary>sanityBars</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>sanityBars</secondary></indexterm>
+<para><computeroutput>List&lt;GameObject&gt; Stats.sanityBars</computeroutput></para><para>
+
+<para>Sanity bars in the UI. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1abda59df727f5ea418a7442882814cbdd"/><section>
+    <title>sanityIcon</title>
+<indexterm><primary>sanityIcon</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>sanityIcon</secondary></indexterm>
+<para><computeroutput>Image Stats.sanityIcon</computeroutput></para><para>
+
+<para>Sanity icon in the UI. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a2596ed66a1648ddb03572b40a60a217c"/><section>
+    <title>sanitySprites</title>
+<indexterm><primary>sanitySprites</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>sanitySprites</secondary></indexterm>
+<para><computeroutput>Sprite [] Stats.sanitySprites</computeroutput></para><para>
+
+<para>Sprites for different sanity states. </para>
+</para>
+</section>
+<anchor xml:id="_class_stats_1a42e1c5e0cdcc66d2b1f8e26882255894"/><section>
+    <title>sanityThreshold</title>
+<indexterm><primary>sanityThreshold</primary><secondary>Stats</secondary></indexterm>
+<indexterm><primary>Stats</primary><secondary>sanityThreshold</secondary></indexterm>
+<para><computeroutput>int Stats.sanityThreshold = 50</computeroutput></para><para>
+
+<para>Sanity threshold to start corruption. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Managers/<link linkend="__stats_8cs">Stats.cs</link></section>
+</section>

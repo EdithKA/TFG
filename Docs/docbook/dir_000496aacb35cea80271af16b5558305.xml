@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_000496aacb35cea80271af16b5558305" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Characters Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Characters Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_2d2839990cac1d48003f30dabf35b528">Enemies</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_67680ebe926eb970e68e33758d4a62de">Player</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

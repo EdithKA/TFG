@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_enemy_sprite_look" xml:lang="en-US">
+<title>EnemySpriteLook Class Reference</title>
+<indexterm><primary>EnemySpriteLook</primary></indexterm>
+<para>
+
+<para>This script allows the enemy&apos;s sprite to always face the player. </para>
+ 
+</para>
+<para>Inheritance diagram for EnemySpriteLook:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_enemy_sprite_look.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Transform <link linkend="_class_enemy_sprite_look_1a6e8a89afb8366c7b48080d06cc593be9">target</link></para>
+
+<para>The player&apos;s position, the enemy always looks at the player. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_enemy_sprite_look_1adba02e7b25180e8fe3c3b5eff6959dd4">canLookVertically</link></para>
+
+<para>The enemy can look up/down at the player. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This script allows the enemy&apos;s sprite to always face the player. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_enemy_sprite_look_1adba02e7b25180e8fe3c3b5eff6959dd4"/><section>
+    <title>canLookVertically</title>
+<indexterm><primary>canLookVertically</primary><secondary>EnemySpriteLook</secondary></indexterm>
+<indexterm><primary>EnemySpriteLook</primary><secondary>canLookVertically</secondary></indexterm>
+<para><computeroutput>bool EnemySpriteLook.canLookVertically</computeroutput></para><para>
+
+<para>The enemy can look up/down at the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_sprite_look_1a6e8a89afb8366c7b48080d06cc593be9"/><section>
+    <title>target</title>
+<indexterm><primary>target</primary><secondary>EnemySpriteLook</secondary></indexterm>
+<indexterm><primary>EnemySpriteLook</primary><secondary>target</secondary></indexterm>
+<para><computeroutput>Transform EnemySpriteLook.target</computeroutput></para><para>
+
+<para>The player&apos;s position, the enemy always looks at the player. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Enemies/<link linkend="__enemy_sprite_look_8cs">EnemySpriteLook.cs</link></section>
+</section>

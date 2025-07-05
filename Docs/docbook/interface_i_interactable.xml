@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interface_i_interactable" xml:lang="en-US">
+<title>IInteractable Interface Reference</title>
+<indexterm><primary>IInteractable</primary></indexterm>
+<para>
+
+<para>Defines the standard interface for objects that can be interacted with by the the player. </para>
+ 
+</para>
+<para>Inheritance diagram for IInteractable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="interface_i_interactable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_interface_i_interactable_1aa4da5c9d3114de5d1ef7837aa86c7958">OnHoverEnter</link> (<link linkend="_class_u_i_text_controller">UITextController</link> textController)</para>
+
+<para>Called when the the player hovers over the interactable object. </para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_i_interactable_1ae6c157e6b4a36bdbf4acd4cbf0e2b78b">OnHoverExit</link> ()</para>
+
+<para>Called when the the player stops hovering over the interactable object. </para>
+</listitem>
+            <listitem><para>void <link linkend="_interface_i_interactable_1ac96e72b5b0ddf4531aef36932deff760">Interact</link> (GameObject objectOnHand=null)</para>
+
+<para>Called when the the player interacts with the object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Defines the standard interface for objects that can be interacted with by the the player. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_interface_i_interactable_1ac96e72b5b0ddf4531aef36932deff760"/><section>
+    <title>Interact()</title>
+<indexterm><primary>Interact</primary><secondary>IInteractable</secondary></indexterm>
+<indexterm><primary>IInteractable</primary><secondary>Interact</secondary></indexterm>
+<para><computeroutput>void IInteractable.Interact (GameObject objectOnHand = <computeroutput>null</computeroutput>
+)</computeroutput></para><para>
+
+<para>Called when the the player interacts with the object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>objectOnHand</entry><entry>
+<para>Optional reference to the item currently held by the the player.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_class_door_interactable_1aca45ba26f1331ebd7e2c47b1f3ec2fb9">DoorInteractable</link>, <link linkend="_class_holder_interactable_1a0f7b96c5278eeecc351faddf6cc1f7c2">HolderInteractable</link>, <link linkend="_class_inspect_interactable_1ad2eb26eaad2d68a6ab823544adac23eb">InspectInteractable</link>, <link linkend="_class_item_interactable_1a5ab781057ba464b91fa03b8401007938">ItemInteractable</link>, and <link linkend="_class_p_s2_interactable_1aedc8faf28ad6fcbdea43bcdef225e3ef">PS2Interactable</link>.</para>
+</section>
+<anchor xml:id="_interface_i_interactable_1aa4da5c9d3114de5d1ef7837aa86c7958"/><section>
+    <title>OnHoverEnter()</title>
+<indexterm><primary>OnHoverEnter</primary><secondary>IInteractable</secondary></indexterm>
+<indexterm><primary>IInteractable</primary><secondary>OnHoverEnter</secondary></indexterm>
+<para><computeroutput>void IInteractable.OnHoverEnter (<link linkend="_class_u_i_text_controller">UITextController</link> textController)</computeroutput></para><para>
+
+<para>Called when the the player hovers over the interactable object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>textController</entry><entry>
+<para>The UI text controller to display interaction prompts.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_class_door_interactable_1a9cba59428016261be71ccdabc6869895">DoorInteractable</link>, <link linkend="_class_holder_interactable_1a3c6d95b6d4bb99192bdb32b09b66db03">HolderInteractable</link>, <link linkend="_class_inspect_interactable_1a823492925442fba9d6ed9fbddd760f55">InspectInteractable</link>, <link linkend="_class_item_interactable_1a3d2c76c260a42ce13a98b6dca799312e">ItemInteractable</link>, and <link linkend="_class_p_s2_interactable_1a93d97e56864c3111cc96d9ab01bfc199">PS2Interactable</link>.</para>
+</section>
+<anchor xml:id="_interface_i_interactable_1ae6c157e6b4a36bdbf4acd4cbf0e2b78b"/><section>
+    <title>OnHoverExit()</title>
+<indexterm><primary>OnHoverExit</primary><secondary>IInteractable</secondary></indexterm>
+<indexterm><primary>IInteractable</primary><secondary>OnHoverExit</secondary></indexterm>
+<para><computeroutput>void IInteractable.OnHoverExit ( )</computeroutput></para><para>
+
+<para>Called when the the player stops hovering over the interactable object. </para>
+</para>
+<para>
+Implemented in <link linkend="_class_door_interactable_1a8a3d5f81ed3392b9f5e7a9f210d4d85e">DoorInteractable</link>, <link linkend="_class_holder_interactable_1aa26c72a758814e8661697f16194d5ea1">HolderInteractable</link>, <link linkend="_class_inspect_interactable_1aa213d6aebe28bf42e26cc438e585774a">InspectInteractable</link>, <link linkend="_class_item_interactable_1af3d3b7331b69312c4897c2bf2354d40d">ItemInteractable</link>, and <link linkend="_class_p_s2_interactable_1acb6ff54c815771ec5be55d729ff57661">PS2Interactable</link>.</para>
+</section>
+<para>
+The documentation for this interface was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Interactions/<link linkend="__i_interactable_8cs">IInteractable.cs</link></section>
+</section>

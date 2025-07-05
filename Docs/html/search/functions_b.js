@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quitgame_0',['QuitGame',['../class_game_manager.html#aad2528be72763c8bf072557d9ece157b',1,'GameManager']]]
+  ['unequipitem_0',['UnequipItem',['../class_inventory_manager.html#a6659c19268f452eaa013c869abb9f6ad',1,'InventoryManager']]],
+  ['updateui_1',['UpdateUI',['../class_inventory_manager.html#a8d1fac39e9190b0b9643f927804d3413',1,'InventoryManager']]]
 ];

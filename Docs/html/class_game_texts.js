@@ -1,0 +1,25 @@
+var class_game_texts =
+[
+    [ "canOpen", "class_game_texts.html#aef4c852c50a5cd998584e6234a2d511b", null ],
+    [ "closeDoor", "class_game_texts.html#a66d72bc757d92a19c7005c9c3b3d9657", null ],
+    [ "collectedMessage", "class_game_texts.html#aaace18600fb0656bbc0843859befb961", null ],
+    [ "collectMessage", "class_game_texts.html#a291e7dcda254fdf2a4553dd111434d96", null ],
+    [ "dvdCorrectMessage", "class_game_texts.html#a3ca1084cd8ea3eb1c8db279a15c01f27", null ],
+    [ "dvdError", "class_game_texts.html#ae2578de0257a13ff4bf8efc1b373c66d", null ],
+    [ "dvdMissing", "class_game_texts.html#a241c29d1ac3e92563666102833d772cb", null ],
+    [ "inspectMessage", "class_game_texts.html#a76a932e337e954aa733472b9640a7746", null ],
+    [ "interactMessage", "class_game_texts.html#a79871cdb2387e99a3a1a30e93ab4f187", null ],
+    [ "needMobileMessage", "class_game_texts.html#a644c9d6b74f60d58df7c1f4b3c9abc62", null ],
+    [ "needObjectMessage", "class_game_texts.html#a9694be923b7a4e57969f6048657abf97", null ],
+    [ "needPieces", "class_game_texts.html#a8e22cd7fd4df664e1ee92dac1a5a1295", null ],
+    [ "needSomething", "class_game_texts.html#a927948371de0a9158af4159458e0de55", null ],
+    [ "objectAdded", "class_game_texts.html#a2d416b71970f9bc5065e4963e09f1199", null ],
+    [ "objectAlreadyPlaced", "class_game_texts.html#a95410d54fb3571d9a79488eb8f92e107", null ],
+    [ "objectRemoved", "class_game_texts.html#af5a312bb515c378fc9410708f6ff37be", null ],
+    [ "photoCollected", "class_game_texts.html#a4289d4ae226cd440f906bbf941f582fa", null ],
+    [ "placedCorrectlyMessage", "class_game_texts.html#a774747cf957d603791cc541effa210a7", null ],
+    [ "placeObjectMessage", "class_game_texts.html#a3aa71ce1559848e20bce74f1f6e7ee83", null ],
+    [ "rewardAppear", "class_game_texts.html#ab31aad798c0479e9a857131b7ccf375c", null ],
+    [ "rewardCollected", "class_game_texts.html#a5af555507449207741b678a4be9dee3c", null ],
+    [ "wrongObjectMessage", "class_game_texts.html#a1f6ef9fbff89c880207094e8ddb7c334", null ]
+];

@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_enemy_distance_controller" xml:lang="en-US">
+<title>EnemyDistanceController Class Reference</title>
+<indexterm><primary>EnemyDistanceController</primary></indexterm>
+<para>
+
+<para>Controls the enemy&apos;s behavior based on the player&apos;s distance and vision. </para>
+ 
+</para>
+<para>Inheritance diagram for EnemyDistanceController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_enemy_distance_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Transform <link linkend="_class_enemy_distance_controller_1af34d4eba94ceec40ff26d7ce22f3991b">playerTransform</link></para>
+
+<para>Reference to the player&apos;s transform. </para>
+</listitem>
+            <listitem><para><link linkend="_class_angle_to_player">AngleToPlayer</link> <link linkend="_class_enemy_distance_controller_1ab1b16160776e645e968f2fd4040e9244">angleToPlayer</link></para>
+
+<para>Reference to the angle calculation script. </para>
+</listitem>
+            <listitem><para>Transform <link linkend="_class_enemy_distance_controller_1a69efd756c04a124731f5a55c64640b89">eyes</link></para>
+
+<para>Enemy&apos;s eyes position for raycasting. </para>
+</listitem>
+            <listitem><para>Animator <link linkend="_class_enemy_distance_controller_1a50f7e67d575fa18fd60a57dd2e3e16c4">anim</link></para>
+
+<para>Animator for enemy animations. </para>
+</listitem>
+            <listitem><para>Transform[] <link linkend="_class_enemy_distance_controller_1ad894c9343ee7b877dae680f9d86e9cdb">waypoints</link></para>
+
+<para>Patrol points. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_enemy_distance_controller_1ae5ab100ae8a8584269208f7d7318b97d">lightCone</link></para>
+
+<para>Enemy&apos;s &quot;ray&quot; or vision cone. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_distance_controller_1a6e8564e9a5d9cf19b7105d150d6a240a">chaseDistance</link> = 20f</para>
+
+<para>Distance to start chasing the player. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_distance_controller_1ae67e706d7eb7759961ab6382841e4e09">attackDistance</link> = 15f</para>
+
+<para>Distance to start attacking the player. </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_enemy_distance_controller_1a63665961ce06df78093562395a7a8155">damageAmount</link> = 15</para>
+
+<para>Damage dealt by the enemy. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_distance_controller_1ab81adc5fd6532b985ef97687effb7aaa">attackCooldown</link> = 0.8f</para>
+
+<para>Time between attacks. </para>
+</listitem>
+            <listitem><para>float <link linkend="_class_enemy_distance_controller_1a43440b7d72eef04171874eacfa3dfebe">visionAngle</link> = 60f</para>
+
+<para>Enemy&apos;s field of view angle (for raycast) </para>
+</listitem>
+            <listitem><para>LayerMask <link linkend="_class_enemy_distance_controller_1a95bd94b3ea5d9de7227e23fdc92e9fbf">obstacleLayer</link></para>
+
+<para>Layers the raycast can detect. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_enemy_distance_controller_1a9515462c88e69086c38f5cf1c783a6dd">canChase</link> = false</para>
+
+<para>Whether the enemy can chase. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_enemy_distance_controller_1ab7d1b7a26f9923f972386bfbe192c700">canAttack</link> = false</para>
+
+<para>Whether the enemy can attack. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the enemy&apos;s behavior based on the player&apos;s distance and vision. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_enemy_distance_controller_1ab1b16160776e645e968f2fd4040e9244"/><section>
+    <title>angleToPlayer</title>
+<indexterm><primary>angleToPlayer</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>angleToPlayer</secondary></indexterm>
+<para><computeroutput><link linkend="_class_angle_to_player">AngleToPlayer</link> EnemyDistanceController.angleToPlayer</computeroutput></para><para>
+
+<para>Reference to the angle calculation script. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a50f7e67d575fa18fd60a57dd2e3e16c4"/><section>
+    <title>anim</title>
+<indexterm><primary>anim</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>anim</secondary></indexterm>
+<para><computeroutput>Animator EnemyDistanceController.anim</computeroutput></para><para>
+
+<para>Animator for enemy animations. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1ab81adc5fd6532b985ef97687effb7aaa"/><section>
+    <title>attackCooldown</title>
+<indexterm><primary>attackCooldown</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>attackCooldown</secondary></indexterm>
+<para><computeroutput>float EnemyDistanceController.attackCooldown = 0.8f</computeroutput></para><para>
+
+<para>Time between attacks. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1ae67e706d7eb7759961ab6382841e4e09"/><section>
+    <title>attackDistance</title>
+<indexterm><primary>attackDistance</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>attackDistance</secondary></indexterm>
+<para><computeroutput>float EnemyDistanceController.attackDistance = 15f</computeroutput></para><para>
+
+<para>Distance to start attacking the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1ab7d1b7a26f9923f972386bfbe192c700"/><section>
+    <title>canAttack</title>
+<indexterm><primary>canAttack</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>canAttack</secondary></indexterm>
+<para><computeroutput>bool EnemyDistanceController.canAttack = false</computeroutput></para><para>
+
+<para>Whether the enemy can attack. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a9515462c88e69086c38f5cf1c783a6dd"/><section>
+    <title>canChase</title>
+<indexterm><primary>canChase</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>canChase</secondary></indexterm>
+<para><computeroutput>bool EnemyDistanceController.canChase = false</computeroutput></para><para>
+
+<para>Whether the enemy can chase. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a6e8564e9a5d9cf19b7105d150d6a240a"/><section>
+    <title>chaseDistance</title>
+<indexterm><primary>chaseDistance</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>chaseDistance</secondary></indexterm>
+<para><computeroutput>float EnemyDistanceController.chaseDistance = 20f</computeroutput></para><para>
+
+<para>Distance to start chasing the player. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a63665961ce06df78093562395a7a8155"/><section>
+    <title>damageAmount</title>
+<indexterm><primary>damageAmount</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>damageAmount</secondary></indexterm>
+<para><computeroutput>int EnemyDistanceController.damageAmount = 15</computeroutput></para><para>
+
+<para>Damage dealt by the enemy. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a69efd756c04a124731f5a55c64640b89"/><section>
+    <title>eyes</title>
+<indexterm><primary>eyes</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>eyes</secondary></indexterm>
+<para><computeroutput>Transform EnemyDistanceController.eyes</computeroutput></para><para>
+
+<para>Enemy&apos;s eyes position for raycasting. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1ae5ab100ae8a8584269208f7d7318b97d"/><section>
+    <title>lightCone</title>
+<indexterm><primary>lightCone</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>lightCone</secondary></indexterm>
+<para><computeroutput>GameObject EnemyDistanceController.lightCone</computeroutput></para><para>
+
+<para>Enemy&apos;s &quot;ray&quot; or vision cone. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a95bd94b3ea5d9de7227e23fdc92e9fbf"/><section>
+    <title>obstacleLayer</title>
+<indexterm><primary>obstacleLayer</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>obstacleLayer</secondary></indexterm>
+<para><computeroutput>LayerMask EnemyDistanceController.obstacleLayer</computeroutput></para><para>
+
+<para>Layers the raycast can detect. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1af34d4eba94ceec40ff26d7ce22f3991b"/><section>
+    <title>playerTransform</title>
+<indexterm><primary>playerTransform</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>playerTransform</secondary></indexterm>
+<para><computeroutput>Transform EnemyDistanceController.playerTransform</computeroutput></para><para>
+
+<para>Reference to the player&apos;s transform. </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1a43440b7d72eef04171874eacfa3dfebe"/><section>
+    <title>visionAngle</title>
+<indexterm><primary>visionAngle</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>visionAngle</secondary></indexterm>
+<para><computeroutput>float EnemyDistanceController.visionAngle = 60f</computeroutput></para><para>
+
+<para>Enemy&apos;s field of view angle (for raycast) </para>
+</para>
+</section>
+<anchor xml:id="_class_enemy_distance_controller_1ad894c9343ee7b877dae680f9d86e9cdb"/><section>
+    <title>waypoints</title>
+<indexterm><primary>waypoints</primary><secondary>EnemyDistanceController</secondary></indexterm>
+<indexterm><primary>EnemyDistanceController</primary><secondary>waypoints</secondary></indexterm>
+<para><computeroutput>Transform [] EnemyDistanceController.waypoints</computeroutput></para><para>
+
+<para>Patrol points. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Enemies/<link linkend="__enemy_distance_controller_8cs">EnemyDistanceController.cs</link></section>
+</section>

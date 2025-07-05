@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_item" xml:lang="en-US">
+<title>Item Class Reference</title>
+<indexterm><primary>Item</primary></indexterm>
+<para>
+
+<para>Defines inventory items as ScriptableObjects for easy asset creation and management. Used for both 2D UI representations and 3D in-game objects. </para>
+ 
+</para>
+<para>Inheritance diagram for Item:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_item.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_item_1adacabffa9a30a32fe37d4bc1bbb884a7">itemID</link></para>
+</listitem>
+            <listitem><para>string <link linkend="_class_item_1ade7ce17127e922548015b2ce04b268dc">displayName</link></para>
+
+<para>Name displayed in inventory UI. </para>
+</listitem>
+            <listitem><para>Sprite <link linkend="_class_item_1af1dc016532d298122f97471dc66c2c81">icon</link></para>
+</listitem>
+            <listitem><para>string <link linkend="_class_item_1a3d786fb301e578483742debd5e56cc1e">type</link></para>
+
+<para>2D representation in inventory slots. </para>
+</listitem>
+            <listitem><para>GameObject <link linkend="_class_item_1ac8a02928a85ce008707ec653a1c6c254">itemPrefab</link></para>
+
+<para>Category or type for gameplay logic (e.g., &quot;piece&quot;, &quot;DVD&quot;, etc.). </para>
+</listitem>
+            <listitem><para>Vector3 <link linkend="_class_item_1a53e5695ec7c55e815c8a8f16145124d1">equipPositionOffset</link></para>
+
+<para>3D prefab for in-world representation. </para>
+</listitem>
+            <listitem><para>Vector3 <link linkend="_class_item_1aa761fee02457427ee72ab2fdb6b420c0">equipRotationOffset</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Defines inventory items as ScriptableObjects for easy asset creation and management. Used for both 2D UI representations and 3D in-game objects. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_item_1ade7ce17127e922548015b2ce04b268dc"/><section>
+    <title>displayName</title>
+<indexterm><primary>displayName</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>displayName</secondary></indexterm>
+<para><computeroutput>string Item.displayName</computeroutput></para><para>
+
+<para>Name displayed in inventory UI. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_1a53e5695ec7c55e815c8a8f16145124d1"/><section>
+    <title>equipPositionOffset</title>
+<indexterm><primary>equipPositionOffset</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>equipPositionOffset</secondary></indexterm>
+<para><computeroutput>Vector3 Item.equipPositionOffset</computeroutput></para><para>
+
+<para>3D prefab for in-world representation. </para>
+</para>
+</section>
+<anchor xml:id="_class_item_1aa761fee02457427ee72ab2fdb6b420c0"/><section>
+    <title>equipRotationOffset</title>
+<indexterm><primary>equipRotationOffset</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>equipRotationOffset</secondary></indexterm>
+<para><computeroutput>Vector3 Item.equipRotationOffset</computeroutput></para></section>
+<anchor xml:id="_class_item_1af1dc016532d298122f97471dc66c2c81"/><section>
+    <title>icon</title>
+<indexterm><primary>icon</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>icon</secondary></indexterm>
+<para><computeroutput>Sprite Item.icon</computeroutput></para></section>
+<anchor xml:id="_class_item_1adacabffa9a30a32fe37d4bc1bbb884a7"/><section>
+    <title>itemID</title>
+<indexterm><primary>itemID</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>itemID</secondary></indexterm>
+<para><computeroutput>string Item.itemID</computeroutput></para></section>
+<anchor xml:id="_class_item_1ac8a02928a85ce008707ec653a1c6c254"/><section>
+    <title>itemPrefab</title>
+<indexterm><primary>itemPrefab</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>itemPrefab</secondary></indexterm>
+<para><computeroutput>GameObject Item.itemPrefab</computeroutput></para><para>
+
+<para>Category or type for gameplay logic (e.g., &quot;piece&quot;, &quot;DVD&quot;, etc.). </para>
+</para>
+</section>
+<anchor xml:id="_class_item_1a3d786fb301e578483742debd5e56cc1e"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Item</secondary></indexterm>
+<indexterm><primary>Item</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>string Item.type</computeroutput></para><para>
+
+<para>2D representation in inventory slots. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Items/<link linkend="__item_8cs">Item.cs</link></section>
+</section>

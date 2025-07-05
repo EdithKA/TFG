@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['navagent_0',['navAgent',['../class_enemy_controller.html#a046b59cce4f701f52fc74dda43ed2648',1,'EnemyController']]],
-  ['nearbyinteractables_1',['nearbyInteractables',['../class_player_controller.html#a6e5ddd92308cb731d7d615eb601aa58d',1,'PlayerController']]]
+  ['objectadded_0',['objectAdded',['../class_game_texts.html#a2d416b71970f9bc5065e4963e09f1199',1,'GameTexts']]],
+  ['objectalreadyplaced_1',['objectAlreadyPlaced',['../class_game_texts.html#a95410d54fb3571d9a79488eb8f92e107',1,'GameTexts']]],
+  ['objectives_2',['objectives',['../class_puzle_manager.html#aa704f74be1178315000fd824d177c4d0',1,'PuzleManager']]],
+  ['objectremoved_3',['objectRemoved',['../class_game_texts.html#af5a312bb515c378fc9410708f6ff37be',1,'GameTexts']]],
+  ['obstaclelayer_4',['obstacleLayer',['../class_enemy_distance_controller.html#a95bd94b3ea5d9de7227e23fdc92e9fbf',1,'EnemyDistanceController.obstacleLayer'],['../class_enemy_melee_controller.html#a30889c15481d4ab7b0492f3aa0a19acf',1,'EnemyMeleeController.obstacleLayer']]],
+  ['oncompleted_5',['onCompleted',['../class_p_s2_interactable.html#a2d889869ccd522cdbeb921947467ff15',1,'PS2Interactable']]],
+  ['onhoverenter_6',['OnHoverEnter',['../class_door_interactable.html#a9cba59428016261be71ccdabc6869895',1,'DoorInteractable.OnHoverEnter()'],['../class_holder_interactable.html#a3c6d95b6d4bb99192bdb32b09b66db03',1,'HolderInteractable.OnHoverEnter()'],['../interface_i_interactable.html#aa4da5c9d3114de5d1ef7837aa86c7958',1,'IInteractable.OnHoverEnter()'],['../class_inspect_interactable.html#a823492925442fba9d6ed9fbddd760f55',1,'InspectInteractable.OnHoverEnter()'],['../class_item_interactable.html#a3d2c76c260a42ce13a98b6dca799312e',1,'ItemInteractable.OnHoverEnter()'],['../class_p_s2_interactable.html#a93d97e56864c3111cc96d9ab01bfc199',1,'PS2Interactable.OnHoverEnter()']]],
+  ['onhoverexit_7',['OnHoverExit',['../class_door_interactable.html#a8a3d5f81ed3392b9f5e7a9f210d4d85e',1,'DoorInteractable.OnHoverExit()'],['../class_holder_interactable.html#aa26c72a758814e8661697f16194d5ea1',1,'HolderInteractable.OnHoverExit()'],['../interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b',1,'IInteractable.OnHoverExit()'],['../class_inspect_interactable.html#aa213d6aebe28bf42e26cc438e585774a',1,'InspectInteractable.OnHoverExit()'],['../class_item_interactable.html#af3d3b7331b69312c4897c2bf2354d40d',1,'ItemInteractable.OnHoverExit()'],['../class_p_s2_interactable.html#acb6ff54c815771ec5be55d729ff57661',1,'PS2Interactable.OnHoverExit()']]]
 ];

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_cc5c089297ef31ef34564b2036169304" xml:lang="en-US">
+<title>D:/MyProjects/TFG/Assets/Scripts/Puzzles Directory Reference</title>
+<indexterm><primary>D:/MyProjects/TFG/Assets/Scripts/Puzzles Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__cinema_manager_8cs">CinemaManager.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__i_puzle_objective_8cs">IPuzleObjective.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__puzle_manager_8cs">PuzleManager.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

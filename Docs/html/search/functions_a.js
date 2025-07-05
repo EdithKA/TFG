@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['patrol_0',['Patrol',['../class_enemy_controller.html#a459a8fec76b52f83c04eb5aa06dfcf12',1,'EnemyController']]],
-  ['pickup_1',['PickUp',['../class_item_controller.html#a0903b0f03b5c768ff54ef45583bd3951',1,'ItemController']]],
-  ['processplayerinput_2',['ProcessPlayerInput',['../class_player_controller.html#a0d542301d8bb095f8369ce57ff412669',1,'PlayerController']]]
+  ['takedamage_0',['TakeDamage',['../class_stats.html#a6107871f3f867ffdfa7edddd9023ad6c',1,'Stats']]],
+  ['toggleinventory_1',['ToggleInventory',['../class_inventory_manager.html#a87c8ecad45dfad4a04b0ec48b901b3c8',1,'InventoryManager']]]
 ];

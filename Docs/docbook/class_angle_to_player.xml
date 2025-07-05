@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_angle_to_player" xml:lang="en-US">
+<title>AngleToPlayer Class Reference</title>
+<indexterm><primary>AngleToPlayer</primary></indexterm>
+<para>
+
+<para>This script calculates the angle between the enemy and the player to determine animation direction. </para>
+ 
+</para>
+<para>Inheritance diagram for AngleToPlayer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_angle_to_player.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_class_angle_to_player_1a69c5bd12acab4d229db026a561070603">lastIndex</link></para>
+
+<para>Direction index for animations. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This script calculates the angle between the enemy and the player to determine animation direction. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_angle_to_player_1a69c5bd12acab4d229db026a561070603"/><section>
+    <title>lastIndex</title>
+<indexterm><primary>lastIndex</primary><secondary>AngleToPlayer</secondary></indexterm>
+<indexterm><primary>AngleToPlayer</primary><secondary>lastIndex</secondary></indexterm>
+<para><computeroutput>int AngleToPlayer.lastIndex</computeroutput></para><para>
+
+<para>Direction index for animations. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/MyProjects/TFG/Assets/Scripts/Characters/Enemies/<link linkend="__angle_to_player_8cs">AngleToPlayer.cs</link></section>
+</section>

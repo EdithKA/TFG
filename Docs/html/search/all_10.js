@@ -1,21 +1,14 @@
 var searchData=
 [
-  ['sanity_0',['sanity',['../class_stats.html#a72bec48562258013be6e4b75d9c34463',1,'Stats']]],
-  ['sanitybars_1',['sanityBars',['../class_stats.html#a63947ff30ac0518d61e76aea6399bd83',1,'Stats']]],
-  ['sanityicon_2',['sanityIcon',['../class_stats.html#abda59df727f5ea418a7442882814cbdd',1,'Stats']]],
-  ['sanitythreshold_3',['sanityThreshold',['../class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894',1,'Stats']]],
-  ['setbrainicon_4',['SetBrainIcon',['../class_stats.html#abf58e872f3be56be69d85af7563aa5cf',1,'Stats']]],
-  ['sethearticon_5',['SetHeartIcon',['../class_stats.html#a3e84dab90b23988582631c2477ea83d5',1,'Stats']]],
-  ['showmessage_6',['ShowMessage',['../class_u_i_text_controller.html#a504bea7985eb6d20a9acff32ad9b1d3d',1,'UITextController']]],
-  ['showmessageroutine_7',['ShowMessageRoutine',['../class_u_i_text_controller.html#a663c6b5a7221f95e3bc7315a3d7a0431',1,'UITextController']]],
-  ['signedangletoplayer_8',['signedAngleToPlayer',['../class_angle_to_player.html#ae850f2b26741bfe81c61347fccb365e0',1,'AngleToPlayer']]],
-  ['slots_9',['slots',['../class_inventory_manager.html#a1ba74f4b51fc220d80c471a2acf8573f',1,'InventoryManager']]],
-  ['sprintmultiplier_10',['sprintMultiplier',['../class_player_controller.html#a835e76c9502eab5d68291ef5d3e2295d',1,'PlayerController']]],
-  ['spriterenderer_11',['spriteRenderer',['../class_angle_to_player.html#a65f4a46d9485b06ad0d10a44f64ed288',1,'AngleToPlayer']]],
-  ['staminadrainrate_12',['staminaDrainRate',['../class_player_controller.html#a9380135cad146c6067c047c3a9e225f4',1,'PlayerController']]],
-  ['staminaregenrate_13',['staminaRegenRate',['../class_player_controller.html#a4a532b39c009c1d1a3b08022f7490162',1,'PlayerController']]],
-  ['start_14',['Start',['../class_angle_to_player.html#a3790bfd32449d5feab353c7b7b95acc2',1,'AngleToPlayer.Start()'],['../class_enemy_controller.html#aef5af22782327b22749e5632ad7467fb',1,'EnemyController.Start()'],['../class_enemy_sprite_look.html#ad6f3c7421caa2c0bd4d0425ea9fd9931',1,'EnemySpriteLook.Start()'],['../class_inventory_manager.html#a5b18458e8dd8426c55d2d4e2d184706a',1,'InventoryManager.Start()'],['../class_mouse_look.html#adbe4a40eadd089cc9279af502155a732',1,'MouseLook.Start()'],['../class_player_controller.html#ae1117d9c4da3193181cddad2c814e467',1,'PlayerController.Start()'],['../class_stats.html#ab7122da0fafe848b0eb99729c0f5db44',1,'Stats.Start()'],['../class_holder_interactable.html#af52a38b36806ead9d3935d615ab46ac1',1,'HolderInteractable.Start()'],['../class_p_s2_interactable.html#abb0fbde1408029ec5aecb17dc5c60cb5',1,'PS2Interactable.Start()'],['../class_item_controller.html#afb5ecae626948a2ec9ccc174be29f784',1,'ItemController.Start()']]],
-  ['stats_15',['Stats',['../class_stats.html',1,'']]],
-  ['stats_2ecs_16',['Stats.cs',['../_stats_8cs.html',1,'']]],
-  ['successmessage_17',['successMessage',['../class_holder_interactable.html#ad5ca3367ec7efb78b62dde97db4d132c',1,'HolderInteractable.successMessage'],['../class_p_s2_interactable.html#a00d4c946fac590d4a063003b4e3c3386',1,'PS2Interactable.successMessage']]]
+  ['takedamage_0',['TakeDamage',['../class_stats.html#a6107871f3f867ffdfa7edddd9023ad6c',1,'Stats']]],
+  ['target_1',['target',['../class_enemy_sprite_look.html#a6e8a89afb8366c7b48080d06cc593be9',1,'EnemySpriteLook']]],
+  ['textcontroller_2',['textController',['../class_player_controller.html#a10cb430e7b85249ea4704909229b58be',1,'PlayerController.textController'],['../class_door_interactable.html#a85c0ce2c856629ea9dd595b2570a106c',1,'DoorInteractable.textController']]],
+  ['thought_3',['thought',['../class_inspect_interactable.html#a4f0060db0b6835c5311304cff26110b3',1,'InspectInteractable']]],
+  ['thoughtcolor_4',['thoughtColor',['../class_u_i_text_controller.html#ae4dba6bf4a031e7f44ee36ab7b5b22a8',1,'UITextController']]],
+  ['thoughtdisplaytime_5',['thoughtDisplayTime',['../class_u_i_text_controller.html#a575f92656b2e37781048215d23adbdea',1,'UITextController']]],
+  ['thoughtfadeduration_6',['thoughtFadeDuration',['../class_u_i_text_controller.html#aa8756594e47dcf6ab2146b98286858da',1,'UITextController']]],
+  ['thoughttext_7',['thoughtText',['../class_u_i_text_controller.html#a76db01bb7ea6ec4387b63bbbf9520481',1,'UITextController']]],
+  ['thoughttypingspeed_8',['thoughtTypingSpeed',['../class_u_i_text_controller.html#a539c83a7954228741d80c89aec8adb9c',1,'UITextController']]],
+  ['toggleinventory_9',['ToggleInventory',['../class_inventory_manager.html#a87c8ecad45dfad4a04b0ec48b901b3c8',1,'InventoryManager']]],
+  ['type_10',['type',['../class_item.html#a3d786fb301e578483742debd5e56cc1e',1,'Item']]]
 ];
