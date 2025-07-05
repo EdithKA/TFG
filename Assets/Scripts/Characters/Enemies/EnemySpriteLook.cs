@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Este script permite que el sprite del enemigo esté siempre orientado hacia el jugador
+/**
+ * @brief This script allows the enemy's sprite to always face the player.
+ */
 public class EnemySpriteLook : MonoBehaviour
 {
-    public Transform target; // La posición del jugador, el enemigo siempre mira hacia el
-    public bool canLookVertically; // El enemigo puede mirar hacia arriba/abajo al jugador
+    public Transform target; ///< The player's position, the enemy always looks at the player
+    public bool canLookVertically; ///< The enemy can look up/down at the player
 
+    /**
+     * @brief Assigns the reference to the player in the scene.
+     */
     void Start()
     {
-        target = FindAnyObjectByType<PlayerController>().transform; // Se asigna en la referencia al jugador en la escena
+        target = FindAnyObjectByType<PlayerController>().transform;
     }
 
+    /**
+     * @brief Updates the enemy's orientation every frame to face the player.
+     */
     void Update()
     {
         if (canLookVertically)

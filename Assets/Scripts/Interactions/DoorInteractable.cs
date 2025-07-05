@@ -1,85 +1,81 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; // Añadido para NavMeshObstacle
+using UnityEngine.AI; // Added for NavMeshObstacle
 
-/// <summary>
-/// Controls door interaction, requiring a specific item to open/close.
-/// Implements the IInteractable interface.
-/// </summary>
+/**
+ * @brief Controls door interaction, requiring a specific item to open/close.
+ * Implements the IInteractable interface.
+ */
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
     [Header("Animation Settings")]
-    /// <summary>
-    /// Reference to the door's Animator component.
-    /// </summary>
+    /**
+     * @brief Reference to the door's Animator component.
+     */
     public Animator leftDoorAnim;
     public Animator rightDoorAnim;
 
-    /// <summary>
-    /// Name of the animation parameter that controls door state.
-    /// </summary>
+    /**
+     * @brief Name of the animation parameter that controls door state.
+     */
     private string openParameter = "Open";
 
-    /// <summary>
-    /// Current state of the door (open/closed).
-    /// </summary>
+    /**
+     * @brief Current state of the door (open/closed).
+     */
     public bool isOpen = false;
 
     [Header("UI References")]
-    /// <summary>
-    /// Game text configurations for UI messages.
-    /// </summary>
+    /**
+     * @brief Game text configurations for UI messages.
+     */
     public GameTexts gameTexts;
     public UITextController textController;
 
     [Header("Required Item")]
-    /// <summary>
-    /// Item ID required to interact with the door.
-    /// </summary>
+    /**
+     * @brief Item ID required to interact with the door.
+     */
     public string requiredItem;
 
     BoxCollider interactCollider;
 
-    /// <summary>
-    /// Initializes the door animator reference.
-    /// </summary>
-    private void Start()
+    /**
+     * @brief Initializes the door animator reference.
+     */
+    void Start()
     {
         interactCollider = GetComponent<BoxCollider>();
         textController = FindObjectOfType<UITextController>();
-
-       
     }
 
-    private void Update()
+    void Update()
     {
         leftDoorAnim.SetBool(openParameter, isOpen);
         rightDoorAnim.SetBool(openParameter, isOpen);
     }
 
-    
-
-    /// <summary>
-    /// Displays interaction prompt when hovering over the door.
-    /// </summary>
-    /// <param name="textController">UI text controller reference.</param>
+    /**
+     * @brief Displays interaction prompt when hovering over the door.
+     * @param textController UI text controller reference.
+     */
     public void OnHoverEnter(UITextController textController)
     {
         textController.ShowInteraction(gameTexts.interactMessage, Color.cyan);
     }
 
-    /// <summary>
-    /// Clears interaction prompt when hovering ends.
-    /// </summary>
+    /**
+     * @brief Clears interaction prompt when hovering ends.
+     */
     public void OnHoverExit()
     {
         textController.ClearMessages();
     }
 
-    /// <summary>
-    /// Handles door interaction, checking for required item and toggling door state.
-    /// </summary>
-    /// <param name="objectOnHand">Item currently held by the player.</param>
+    /**
+     * @brief Handles door interaction, checking for required item and toggling door state.
+     * @param objectOnHand Item currently held by the player.
+     */
     public void Interact(GameObject objectOnHand = null)
     {
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
@@ -87,15 +83,15 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         // Check if player has required item
         if (!inventory.HasItem(requiredItem))
         {
-            textController.ShowThought("Looks like I need something...");
+            textController.ShowThought(gameTexts.needSomething);
             return;
         }
         else
         {
             if (!isOpen)
-                textController.ShowThought("I can finally open it.");
+                textController.ShowThought(gameTexts.canOpen);
             else
-                textController.ShowThought("Let's keep it closed just in case.");
+                textController.ShowThought(gameTexts.closeDoor);
         }
 
         // Toggle door state

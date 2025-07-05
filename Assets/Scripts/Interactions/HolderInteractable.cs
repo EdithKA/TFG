@@ -1,27 +1,49 @@
 using System;
 using UnityEngine;
 
-// Permite asignar como objetivo de un puzzle un soporte y colocar objetos en el.
+/**
+ * @brief Allows assigning a holder as a puzzle objective and placing objects on it.
+ */
 public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
 {
-    public bool isComplete { get; private set; } // Indica si el objetivo del holder ya se ha completado.
+    /**
+     * @brief Indicates whether the holder's objective has been completed.
+     */
+    public bool isComplete { get; private set; }
 
-    
-    public string correctObjectID; // ID del objeto correcto que debe de colocarse en el soporte.
-    public Transform holderPoint; // Lugar donde se instanciará el objeto colocado.
-    public GameTexts gameTexts; 
+    /**
+     * @brief ID of the correct object that must be placed on the holder.
+     */
+    public string correctObjectID;
+
+    /**
+     * @brief Location where the placed object will be instantiated.
+     */
+    public Transform holderPoint;
+
+    public GameTexts gameTexts;
 
     InventoryManager inventoryManager;
     UITextController uiTextController;
-    ItemInteractable itemOnHolder; // Objeto colocado en el soporte.
 
-    private void Start()
+    /**
+     * @brief Object currently placed on the holder.
+     */
+    ItemInteractable itemOnHolder;
+
+    /**
+     * @brief Initializes references to UI and inventory controllers.
+     */
+    void Start()
     {
         uiTextController = FindObjectOfType<UITextController>();
         inventoryManager = FindObjectOfType<InventoryManager>();
     }
 
-    // Al pasar el cursor sobre el objeto, muestra un mensaje de interacción si no está completo.
+    /**
+     * @brief When hovering over the object, shows an interaction message if not completed.
+     * @param textController Reference to the UI text controller.
+     */
     public void OnHoverEnter(UITextController textController)
     {
         if (!isComplete)
@@ -30,23 +52,28 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
         }
     }
 
-    // Limpia los mensajes de la UI al dejar de apuntar al objeto.
+    /**
+     * @brief Clears UI messages when the object is no longer being pointed at.
+     */
     public void OnHoverExit()
     {
         uiTextController.ClearMessages();
     }
 
-    // Lógica de interacción con el soporte.
+    /**
+     * @brief Logic for interacting with the holder.
+     * @param objectOnHand The object currently held by the player.
+     */
     public void Interact(GameObject objectOnHand = null)
     {
-        // Si se ha colocado el objeto correcto, muestra mensaje y termina.
+        // If the correct object has been placed, show a message and exit.
         if (isComplete)
         {
             uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
             return;
         }
 
-        // Si hay un objeto en el soporte, lo devuelve al inventario y lo elimina del soporte.
+        // If there is an object on the holder, return it to the inventory and remove it from the holder.
         if (itemOnHolder != null)
         {
             inventoryManager.AddItem(itemOnHolder.itemData);
@@ -55,20 +82,20 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
             uiTextController.ShowThought(gameTexts.collectedMessage);
             uiTextController.ClearMessages();
         }
-        // Si el jugador tiene un objeto en la mano.
+        // If the player has an object in hand.
         else if (objectOnHand != null)
         {
             ItemInteractable item = objectOnHand.GetComponent<ItemInteractable>();
             if (item != null)
             {
-                // Elimina el objeto del inventario y de la mano, y lo instancia en el soporte.
+                // Removes the object from the inventory and from the hand, and instantiates it on the holder.
                 inventoryManager.RemoveItem(item.itemData);
                 GameObject newItem = Instantiate(item.itemData.itemPrefab, holderPoint.position, holderPoint.rotation, holderPoint);
                 itemOnHolder = newItem.GetComponentInChildren<ItemInteractable>(true);
                 inventoryManager.RemoveItem(item.itemData);
                 Destroy(objectOnHand);
 
-                // Si el objeto es el correcto, desactiva la interacción con este y marca el objetivo como completo.
+                // If the object is the correct one, disables interaction and marks the objective as complete.
                 if (item.itemData.itemID == correctObjectID)
                 {
                     itemOnHolder.enabled = false;
@@ -78,7 +105,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
                     uiTextController.ShowThought(gameTexts.placedCorrectlyMessage);
                     isComplete = true;
                 }
-                // Si no es el correcto, muestra un mensaje de error.
+                // If it is not the correct one, shows an error message.
                 else
                 {
                     uiTextController.ShowThought(gameTexts.wrongObjectMessage);
@@ -86,7 +113,7 @@ public class HolderInteractable : MonoBehaviour, IInteractable, IPuzleObjective
                 uiTextController.ClearMessages();
             }
         }
-        // Si no hay objeto en la mano ni en el soporte, muestra un mensaje de error en rojo.
+        // If there is no object in hand or on the holder, shows an error message in red.
         else
         {
             uiTextController.ShowInteraction(gameTexts.needObjectMessage, Color.red);

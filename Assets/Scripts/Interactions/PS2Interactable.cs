@@ -69,22 +69,22 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
     /// <summary>
     /// Audio source component for sound playback.
     /// </summary>
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
     /// <summary>
     /// UI text controller for displaying messages.
     /// </summary>
-    private UITextController uiTextController;
+    UITextController uiTextController;
 
     /// <summary>
     /// Inventory manager reference.
     /// </summary>
-    private InventoryManager inventoryManager;
+    InventoryManager inventoryManager;
 
     /// <summary>
     /// Initializes components and sets up initial state.
     /// </summary>
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         uiTextController = FindObjectOfType<UITextController>();
@@ -163,7 +163,7 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
     /// Handles video end events and reward distribution.
     /// </summary>
     /// <param name="vp">Video the player that finished playback.</param>
-    private void OnVideoEnded(VideoPlayer vp)
+    void OnVideoEnded(VideoPlayer vp)
     {
         if (isComplete && !inventoryManager.HasItem(crashSaveData.itemID))
         {

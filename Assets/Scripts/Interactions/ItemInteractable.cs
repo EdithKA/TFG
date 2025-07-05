@@ -41,7 +41,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Initializes references to necessary components.
     /// </summary>
-    private void Start()
+    void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         inventoryManager = playerController.inventoryManager;
@@ -96,7 +96,7 @@ public class ItemInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Picks up the item and adds it to the inventory.
     /// </summary>
-    private void PickUp()
+    void PickUp()
     {
         inventoryManager.AddItem(itemData);
 

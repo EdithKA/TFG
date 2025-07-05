@@ -1,30 +1,36 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Controla el menú de pausa, cambio de escenas y salida del juego.
+/**
+ * @brief Controls the pause menu, scene changes, and quitting the game.
+ */
 public class GameManager : MonoBehaviour
 {
     // Pause Menu Settings.
-    public GameObject pauseMenu; // Menú de pausa.
-    public bool isLevel; // Indica si estamos en un nivel o un menú.
-    private bool isPaused = false; // Estado de pausa.
-    public bool gameComplete = false; // Indica si el juego ha sido completado.
+    public GameObject pauseMenu; ///< Pause menu.
+    public bool isLevel; ///< Indicates if we are in a level or a menu.
+    bool isPaused = false; ///< Pause state.
+    public bool gameComplete = false; ///< Indicates if the game has been completed.
 
-
-    private void Update()
+    /**
+     * @brief Handles pause/resume and checks for game completion every frame.
+     */
+    void Update()
     {
-        // Si es un nivel, tecla ESC para pausar/reanudar.
+        // If it's a level, ESC key to pause/resume.
         if (isLevel && Input.GetKeyDown(KeyCode.Escape))
             if (isPaused)
                 Resume();
             else
                 Pause();
-        // Si el juego está completo se carga la escena final.
+        // If the game is complete, load the final scene.
         if (isLevel && gameComplete)
             LoadSceneByName("End");
     }
 
-    // Reanuda el juego desde el menú de pausa.
+    /**
+     * @brief Resumes the game from the pause menu.
+     */
     public void Resume()
     {
         AudioListener.pause = false;
@@ -35,7 +41,9 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // Activa el menú de pausa y detiene el tiempo.
+    /**
+     * @brief Activates the pause menu and stops time.
+     */
     void Pause()
     {
         pauseMenu.SetActive(true);
@@ -46,7 +54,10 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    // Cambia de escena según el nombre recibido.
+    /**
+     * @brief Changes the scene according to the received name.
+     * @param name Name of the scene to load.
+     */
     public void LoadSceneByName(string name)
     {
         if (AudioListener.pause == true)
@@ -65,7 +76,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    // Cierra la aplicación.
+    /**
+     * @brief Closes the application.
+     */
     public void QuitGame()
     {
         Application.Quit();

@@ -2,8 +2,14 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
+/**
+ * @brief Enum for UI message types.
+ */
 public enum UIMessageType { Interact, Collect, Collected, Read }
 
+/**
+ * @brief Controls the UI text messages for interaction, thoughts, and inventory.
+ */
 public class UITextController : MonoBehaviour
 {
     [Header("Text Components")]
@@ -33,36 +39,40 @@ public class UITextController : MonoBehaviour
     public float thoughtDisplayTime = 3f;
     public float thoughtFadeDuration = 0.5f;
 
-    private Coroutine interactionRoutine;
-    private Coroutine thoughtRoutine;
-    private Coroutine inventoryRoutine;
+    Coroutine interactionRoutine;
+    Coroutine thoughtRoutine;
+    Coroutine inventoryRoutine;
 
-    /// <summary>
-    /// Muestra un mensaje de interacción con el color por defecto.
-    /// </summary>
+    /**
+     * @brief Shows an interaction message with the default color.
+     * @param message The message to display.
+     */
     public void ShowInteraction(string message)
     {
         ShowInteraction(message, interactColor);
     }
 
-    /// <summary>
-    /// Muestra un mensaje de interacción con color personalizado (si alguna vez lo necesitas).
-    /// </summary>
+    /**
+     * @brief Shows an interaction message with a custom color (if ever needed).
+     * @param message The message to display.
+     * @param color The color for the message.
+     */
     public void ShowInteraction(string message, Color color)
     {
         if (interactionRoutine != null) StopCoroutine(interactionRoutine);
         interactionRoutine = StartCoroutine(ShowInteractionRoutine(message, color));
     }
 
-    /// <summary>
-    /// Muestra un mensaje de colección con el color definido para colección.
-    /// </summary>
+    /**
+     * @brief Shows a collect message with the defined collect color.
+     * @param message The message to display.
+     */
     public void ShowCollect(string message)
     {
         ShowInteraction(message, collectColor);
     }
 
-    private IEnumerator ShowInteractionRoutine(string message, Color color)
+    IEnumerator ShowInteractionRoutine(string message, Color color)
     {
         interactionText.color = color;
         interactionText.text = message;
@@ -87,20 +97,21 @@ public class UITextController : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-        interactionText.alpha = 0;
         interactionText.text = "";
+        interactionText.alpha = 0;
     }
 
-    /// <summary>
-    /// Muestra un pensamiento con efecto máquina de escribir y color por defecto.
-    /// </summary>
+    /**
+     * @brief Shows a thought message with typewriter effect and default color.
+     * @param message The message to display.
+     */
     public void ShowThought(string message)
     {
         if (thoughtRoutine != null) StopCoroutine(thoughtRoutine);
         thoughtRoutine = StartCoroutine(ShowThoughtRoutine(message));
     }
 
-    private IEnumerator ShowThoughtRoutine(string message)
+    IEnumerator ShowThoughtRoutine(string message)
     {
         thoughtText.text = "";
         thoughtText.color = thoughtColor;
@@ -126,9 +137,11 @@ public class UITextController : MonoBehaviour
         thoughtText.alpha = 0f;
     }
 
-    /// <summary>
-    /// Muestra mensaje de inventario con color por defecto.
-    /// </summary>
+    /**
+     * @brief Shows an inventory message with the default color.
+     * @param message The message to display.
+     * @param isAdding True if adding, false if removing.
+     */
     public void ShowInventoryMessage(string message, bool isAdding)
     {
         if (isAdding) { inventoryText.color = addColor; }
@@ -137,7 +150,7 @@ public class UITextController : MonoBehaviour
         inventoryRoutine = StartCoroutine(ShowInventoryRoutine(message));
     }
 
-    private IEnumerator ShowInventoryRoutine(string message)
+    IEnumerator ShowInventoryRoutine(string message)
     {
         inventoryText.text = "";
         inventoryText.alpha = 1f;
@@ -162,9 +175,9 @@ public class UITextController : MonoBehaviour
         inventoryText.alpha = 0f;
     }
 
-    /// <summary>
-    /// Limpia los mensajes de interacción e inventario.
-    /// </summary>
+    /**
+     * @brief Clears interaction and inventory messages.
+     */
     public void ClearMessages()
     {
         if (interactionRoutine != null) StopCoroutine(interactionRoutine);

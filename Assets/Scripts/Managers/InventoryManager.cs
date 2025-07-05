@@ -2,66 +2,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Gestiona el inventario, la UI y la lógica de objetos especiales (a piezas).
+/**
+ * @brief Manages the inventory, UI, and special item logic (such as pieces).
+ */
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    public int inventorySize = 20; // Tamaño máximo del inventario.
-    public GameObject inventorySlotPrefab; // Prefab para cada slot de la UI.
-    public Transform inventoryGrid; // Grid donde se instancian los slots.
-    public GameObject inventoryUI; // Panel de la UI del inventario.
+    public int inventorySize = 20; ///< Maximum inventory size.
+    public GameObject inventorySlotPrefab; ///< Prefab for each UI slot.
+    public Transform inventoryGrid; ///< Grid where slots are instantiated.
+    public GameObject inventoryUI; ///< Inventory UI panel.
 
     [Header("Hand References")]
-    public Transform leftHand; // Mano izquierda (para el teléfono).
-    public Transform rightHand; // Mano derecha (para el resto de objetos equipables).
+    public Transform leftHand; ///< Left hand (for the phone).
+    public Transform rightHand; ///< Right hand (for other equipable items).
 
     [Header("Special Items")]
-    public Item completedToy; // Juguete completo (se obtiene al tener todas las piezas).
+    public Item completedToy; ///< Complete toy (obtained when collecting all pieces).
 
     [Header("UI Reference")]
-    UITextController uiTextController; // Controlador de mensajes de la UI.
-    GameTexts gameTexts; // Textos del juego.
+    UITextController uiTextController; ///< UI message controller.
+    GameTexts gameTexts; ///< Game texts.
 
-    public List<Item> items = new List<Item>(); // Lista de objetos en el inventario.
-    List<GameObject> slots = new List<GameObject>(); // Slots instanciados en la UI.
-    int toyPieces = 0; // Contador de piezas actuales en el inventario.
+    public List<Item> items = new List<Item>(); ///< List of items in the inventory.
+    List<GameObject> slots = new List<GameObject>(); ///< Instantiated UI slots.
+    int toyPieces = 0; ///< Current number of pieces in the inventory.
 
-    public GameObject equippedRight; // Objeto equipado en la mano derecha.
-    public bool isInventoryOpen = false; // Estado del inventario (abierto/cerrado).
-
+    public GameObject equippedRight; ///< Object equipped in the right hand.
+    public bool isInventoryOpen = false; ///< Inventory state (open/closed).
 
     public AudioSource soundPlayer;
-    public AudioClip inventorySoundClip; // Sonido al interactuar con el inventario.
-    Stats stats; // Referencia a las estadísticas del jugador.
+    public AudioClip inventorySoundClip; ///< Sound played when interacting with the inventory.
+    Stats stats; ///< Reference to player stats.
 
     // Object Inspection
     public GameObject inspectMenu;
     public Image itemDisplay;
 
-    private void Start()
+    /**
+     * @brief Assigns scene references at the start.
+     */
+    void Start()
     {
-        // Asignamos las referencias de la escena.
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
         gameTexts = FindAnyObjectByType<GameTexts>();
 
-        // Inventario oculto al inicio.
+        // Hide inventory at start.
         inventoryUI.SetActive(false);
 
-        // Ocultamos el menu de inspección
+        // Hide inspection menu.
         inspectMenu.gameObject.SetActive(false);
         Button btn = itemDisplay.GetComponent<Button>();
         btn.onClick.AddListener(HideInspectMenu);
-       
-
     }
 
-    private void Update()
+    void Update()
     {
         UpdateUI();
     }
 
-    // Añade un objeto al inventario y gestiona la lógica especial (piezas, recompensas, fotos).
+    /**
+     * @brief Adds an item to the inventory and handles special logic (pieces, rewards, photos).
+     * @param item The item to add.
+     */
     public void AddItem(Item item)
     {
         soundPlayer.PlayOneShot(inventorySoundClip);
@@ -83,9 +87,6 @@ public class InventoryManager : MonoBehaviour
                 stats.sanity = Mathf.Min(stats.sanity + 100, 100);
                 uiTextController.ShowThought(gameTexts.rewardCollected);
             }
-
-
-
             if (item.type == "photo")
             {
                 stats.sanity = Mathf.Min(stats.sanity + 50, 100);
@@ -97,7 +98,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // Elimina un objeto del inventario
+    /**
+     * @brief Removes an item from the inventory.
+     * @param item The item to remove.
+     */
     public void RemoveItem(Item item)
     {
         if (items.Contains(item))
@@ -108,10 +112,16 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // Comprueba si el inventario contiene un objeto con un determinado ID.
+    /**
+     * @brief Checks if the inventory contains an item with a given ID.
+     * @param itemName The ID of the item.
+     * @return True if the item is in the inventory, false otherwise.
+     */
     public bool HasItem(string itemName) => items.Exists(item => item.itemID == itemName);
 
-    // Abre o cierra el inventario y gestiona la visibilidad y el bloqueo del cursor.
+    /**
+     * @brief Opens or closes the inventory and manages cursor visibility and locking.
+     */
     public void ToggleInventory()
     {
         isInventoryOpen = !isInventoryOpen;
@@ -120,7 +130,9 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = isInventoryOpen;
     }
 
-    // Actualiza la UI del inventario.
+    /**
+     * @brief Updates the inventory UI.
+     */
     public void UpdateUI()
     {
         foreach (GameObject slot in slots) Destroy(slot);
@@ -149,7 +161,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // Desequipa el objeto de la mano.
+    /**
+     * @brief Unequips the object from the hand.
+     */
     public void UnequipItem()
     {
         if (equippedRight != null)
@@ -159,8 +173,11 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // Equipa un objeto de la mano o muestra mensaje si es pieza, foto o reward.
-    private void EquipItem(Item item)
+    /**
+     * @brief Equips an item in the hand or shows a message if it's a piece, photo, or reward.
+     * @param item The item to equip.
+     */
+    void EquipItem(Item item)
     {
         if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
         {
@@ -189,30 +206,35 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // Muestra en el menú de inspección el icono del objeto.
+    /**
+     * @brief Shows the item's icon in the inspection menu.
+     * @param photoSprite The sprite to display.
+     */
     public void ShowInspectMenu(Sprite photoSprite)
     {
         itemDisplay.sprite = photoSprite;
         inspectMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
     }
 
-    // Oculta el menú de inspección.
+    /**
+     * @brief Hides the inspection menu.
+     */
     public void HideInspectMenu()
     {
-       
         inspectMenu.SetActive(false);
         if (!isInventoryOpen)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-       
     }
 
-    // Devuelve el objeto equipado en la mano derecha.
+    /**
+     * @brief Returns the object equipped in the right hand.
+     * @return The equipped GameObject.
+     */
     public GameObject GetRightHandObject() => equippedRight;
 
 }

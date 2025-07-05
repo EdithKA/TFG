@@ -1,32 +1,36 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+/**
+ * @brief Controls the enemy's behavior based on the player's distance and vision.
+ */
 public class EnemyDistanceController : MonoBehaviour
 {
-    // Referencias
-    public Transform playerTransform;
-    Stats playerStats;
-    public AngleToPlayer angleToPlayer;
-    public Transform eyes;
-    public Animator anim;
-    public Transform[] waypoints; // Puntos para el patrullaje
-    public GameObject lightCone; // "Rayo" del enemigo
+    // References
+    public Transform playerTransform; ///< Reference to the player's transform
+    Stats playerStats; ///< Reference to the player's stats
+    public AngleToPlayer angleToPlayer; ///< Reference to the angle calculation script
+    public Transform eyes; ///< Enemy's eyes position for raycasting
+    public Animator anim; ///< Animator for enemy animations
+    public Transform[] waypoints; ///< Patrol points
+    public GameObject lightCone; ///< Enemy's "ray" or vision cone
 
+    // Agent Configuration
+    NavMeshAgent navMeshAgent; ///< NavMeshAgent for movement
+    public float chaseDistance = 20f; ///< Distance to start chasing the player
+    public float attackDistance = 15f; ///< Distance to start attacking the player
+    public int damageAmount = 15; ///< Damage dealt by the enemy
+    public float attackCooldown = 0.8f; ///< Time between attacks
+    public float visionAngle = 60f; ///< Enemy's field of view angle (for raycast)
+    public LayerMask obstacleLayer; ///< Layers the raycast can detect
+    int currentWaypointIndex = 0; ///< Current patrol waypoint index
+    float attackTimer = 0f; ///< Timer for attack cooldown
+    public bool canChase = false; ///< Whether the enemy can chase
+    public bool canAttack = false; ///< Whether the enemy can attack
 
-    // Configuración del Agent
-    NavMeshAgent navMeshAgent;
-    public float chaseDistance = 20f; // Distancia para perseguir al jugador
-    public float attackDistance = 15f; // Distancia para atacar al jugador
-    public int damageAmount = 15; // Daño que hace el enemigo
-    public float attackCooldown = 0.8f; // Tiempo entre ataques
-    public float visionAngle = 60f; // Ángulo de visión del enemigo (para el raycast)
-    public LayerMask obstacleLayer; // Capas que el raycast puede detectar
-    int currentWaypointIndex = 0;
-    float attackTimer = 0f;
-    public bool canChase = false;
-    public bool canAttack = false;
-
-    // Busca las referencias necesarias al iniciar
+    /**
+     * @brief Finds the necessary references at the start.
+     */
     void Start()
     {
         playerStats = FindAnyObjectByType<Stats>();
@@ -34,17 +38,22 @@ public class EnemyDistanceController : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
+    /**
+     * @brief Updates enemy behavior and animation every frame.
+     */
     void Update()
     {
         NextAction();
         SetAnimation();
 
-        // El "rayo" del enemigo va siempre en la dirección de éste
-        Vector3 moveDir = navMeshAgent.velocity.sqrMagnitude > 0.01f ? navMeshAgent.velocity.normalized: transform.forward;
+        // The enemy's "ray" always points in its current direction
+        Vector3 moveDir = navMeshAgent.velocity.sqrMagnitude > 0.01f ? navMeshAgent.velocity.normalized : transform.forward;
         lightCone.transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
     }
 
-    // Decide qué debe de hacer el enemigo: Patrullar, perseguir o atacar
+    /**
+     * @brief Decides what the enemy should do: patrol, chase, or attack.
+     */
     void NextAction()
     {
         float dist = Vector3.Distance(transform.position, playerTransform.position);
@@ -62,11 +71,11 @@ public class EnemyDistanceController : MonoBehaviour
         }
         else
         {
-            if (CanSeePlayer()) //Solo ataca al jugador si lo ve directamente
+            if (CanSeePlayer()) // Only attacks if the player is directly seen
             {
                 canAttack = true;
                 navMeshAgent.ResetPath();
-                Attack(); 
+                Attack();
             }
             else
             {
@@ -76,7 +85,9 @@ public class EnemyDistanceController : MonoBehaviour
         }
     }
 
-    // Lógica de ataque del enemigo con un tiempo entre ataques
+    /**
+     * @brief Enemy attack logic with cooldown.
+     */
     void Attack()
     {
         if (attackTimer <= 0f)
@@ -90,14 +101,18 @@ public class EnemyDistanceController : MonoBehaviour
         }
     }
 
-
+    /**
+     * @brief Sets the enemy's animation parameters.
+     */
     void SetAnimation()
     {
         anim.SetBool("Attack", canAttack);
         anim.SetFloat("spriteRot", angleToPlayer.lastIndex);
     }
 
-    // Lógica de patrulla entre diferentes puntos
+    /**
+     * @brief Patrols between different waypoints.
+     */
     void Patrol()
     {
         if (waypoints.Length == 0) return;
@@ -112,12 +127,15 @@ public class EnemyDistanceController : MonoBehaviour
         }
     }
 
-    // Utilizando un raycast, comprueba si el enemigo ve al jugador
+    /**
+     * @brief Uses a raycast to check if the enemy can see the player.
+     * @return True if the enemy sees the player, false otherwise.
+     */
     bool CanSeePlayer()
     {
-        Vector3 rayOrigin = eyes.position; // El raycast sale desde los ojos del enemigo
+        Vector3 rayOrigin = eyes.position; // Raycast starts from the enemy's eyes
         Vector3 direction = transform.forward;
-        float maxDistance = chaseDistance; //  Cómo de lejos ve el enemigo
+        float maxDistance = chaseDistance; // How far the enemy can see
 
         RaycastHit hit;
         bool hitSomething = Physics.Raycast(rayOrigin, direction, out hit, maxDistance, obstacleLayer);
@@ -126,7 +144,7 @@ public class EnemyDistanceController : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                return true; //Si el raycast colisiona con el jugador, devuelve true
+                return true; // If the raycast hits the player, return true
             }
             else
             {

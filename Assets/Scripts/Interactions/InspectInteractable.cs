@@ -17,12 +17,12 @@ public class InspectInteractable : MonoBehaviour, IInteractable
     /// <summary>
     /// Reference to the UI text controller for displaying messages.
     /// </summary>
-    private UITextController uiTextController;
+    UITextController uiTextController;
 
     /// <summary>
     /// Initializes the UI text controller reference.
     /// </summary>
-    private void Start()
+    void Start()
     {
         uiTextController = FindObjectOfType<UITextController>();
     }

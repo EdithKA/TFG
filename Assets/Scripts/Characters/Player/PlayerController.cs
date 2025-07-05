@@ -1,41 +1,47 @@
 using System.Collections;
 using UnityEngine;
 
-// Este script recoge loc controles del jugador
+/**
+ * @brief This script handles the player's controls.
+ */
 public class PlayerController : MonoBehaviour
 {
     // Movement settings
-    public float playerSpeed = 20f; 
-    public float stamina;
-    public float interactDistance = 3f;
-    public LayerMask interactMask;
-    public LayerMask doorsMask;
+    public float playerSpeed = 20f; ///< Player's base movement speed
+    public float stamina; ///< Player's maximum stamina
+    public float interactDistance = 3f; ///< Distance to interact with objects
+    public LayerMask interactMask; ///< Layer mask for interactable objects
+    public LayerMask doorsMask; ///< Layer mask for doors
 
-    // Referencias
-    public Animator camAnim;
-    public Animator LHAnim;
-    public Animator RHAnim;
-    public Transform leftHand;
-    public Transform rightHand;
-    public InventoryManager inventoryManager;
-    public UITextController textController;
-    public GameManager gameManager;
+    // References
+    public Animator camAnim; ///< Camera animator
+    public Animator LHAnim; ///< Left hand animator
+    public Animator RHAnim; ///< Right hand animator
+    public Transform leftHand; ///< Left hand transform
+    public Transform rightHand; ///< Right hand transform
+    public InventoryManager inventoryManager; ///< Reference to InventoryManager
+    public UITextController textController; ///< Reference to UITextController
+    public GameManager gameManager; ///< Reference to GameManager
+    CharacterController characterController; ///< CharacterController component
 
-    [Header("Sounds Configuration")]
-    public AudioSource stepsPlayer;
-    public AudioClip stepSound;
-    public float stepInterval = 1f;
+    // Sounds
+    public AudioSource stepsPlayer; ///< AudioSource for footsteps
+    public AudioClip stepSound; ///< AudioClip for a single footstep
+    public float stepInterval = 1f; ///< Interval between footsteps
 
-    CharacterController characterController;
-    Camera mainCamera;
-    float currentStamina;
-    float speed;
-    Vector3 movementVector;
-    bool isWalking;
-    bool isCloser;
-    IInteractable currentInteractable;
-    float stepTimer = 0f;
+    Camera mainCamera; ///< Reference to the main camera
+    float currentStamina; ///< Current stamina value
+    float speed; ///< Current movement speed
+    Vector3 movementVector; ///< Movement vector
 
+    bool isWalking; ///< Whether the player is currently walking
+    bool isCloser; ///< Whether the left hand is closer (for mobile phone)
+    IInteractable currentInteractable; ///< Currently detected interactable object
+    float stepTimer = 0f; ///< Timer for footsteps
+
+    /**
+     * @brief Initializes references at the start.
+     */
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -46,6 +52,9 @@ public class PlayerController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+    /**
+     * @brief Handles input, animations, and footsteps every frame.
+     */
     void Update()
     {
         GetInputs();
@@ -53,22 +62,25 @@ public class PlayerController : MonoBehaviour
         HandleFootsteps();
     }
 
+    /**
+     * @brief Handles all player inputs.
+     */
     void GetInputs()
     {
-        // Acercar mano izquierda (Para ver mejor el telefono móvil)
+        // Bring left hand closer (to better see the mobile phone)
         if (Input.GetMouseButtonDown(1) && !inventoryManager.isInventoryOpen)
             isCloser = true;
         else if (Input.GetMouseButtonUp(1))
             isCloser = false;
 
-        // Abrir/Cerrar el inventario
+        // Open/close the inventory
         if (Input.GetKeyDown(KeyCode.I) && inventoryManager.HasItem("Mobile"))
             StartCoroutine(OpenInventory());
 
-        // Movimiento
+        // Movement
         if (!inventoryManager.isInventoryOpen)
         {
-            // Si tiene estamina, el jugador puede correr
+            // If stamina is available, the player can run
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
             {
                 speed = playerSpeed * 3;
@@ -94,7 +106,7 @@ public class PlayerController : MonoBehaviour
             movementVector = Vector3.zero;
         }
 
-        // Detecta el objeto con el que se puede interactuar
+        // Detects the object that can be interacted with
         Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         IInteractable newInteractable = null;
@@ -113,15 +125,17 @@ public class PlayerController : MonoBehaviour
                 currentInteractable.OnHoverEnter(textController);
         }
 
-        // Interactua con el objeto detectado
+        // Interacts with the detected object
         if (Input.GetKeyDown(KeyCode.E) && !inventoryManager.isInventoryOpen)
         {
             GameObject heldItem = inventoryManager?.GetRightHandObject();
             currentInteractable?.Interact(heldItem);
         }
     }
-    
-    // Actualiza las animaciones del jugador
+
+    /**
+     * @brief Updates the player's animations.
+     */
     void SetAnimation()
     {
         camAnim.SetBool("IsWalking", isWalking);
@@ -130,14 +144,18 @@ public class PlayerController : MonoBehaviour
         RHAnim.SetBool("isActive", rightHand.childCount > 0);
     }
 
-    // Abre el inventario con un pequeño retardo
+    /**
+     * @brief Opens the inventory with a small delay.
+     */
     IEnumerator OpenInventory()
     {
         yield return new WaitForSeconds(0.1f);
         inventoryManager.ToggleInventory();
     }
 
-    // Gestiona el sonido de las pisadas del jugador
+    /**
+     * @brief Handles the player's footstep sounds.
+     */
     void HandleFootsteps()
     {
         if (isWalking && !inventoryManager.isInventoryOpen && characterController.isGrounded)
@@ -151,7 +169,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /**
+     * @brief Triggers when the player enters a collider.
+     * @param other The collider entered by the player.
+     */
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "End")
             gameManager.gameComplete = true;

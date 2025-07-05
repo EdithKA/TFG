@@ -3,25 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Este script maneja el estao del puzle del cine.
+/**
+ * @brief This script manages the state of the cinema puzzle.
+ */
 public class CinemaManager : MonoBehaviour, IPuzleObjective
 {
-    public Material screenMaterial; // Material que se asignará a la pantalla cuando el puzle esté completo.
-    public List<DoorInteractable> doors; // Lista de puertas qe deben estar abiertas para completar el puzle.
+    /**
+     * @brief Material to assign to the screen when the puzzle is complete.
+     */
+    public Material screenMaterial;
 
-    public bool isComplete { get; private set; } // Indica si el objetivo del puzle está completo.
+    /**
+     * @brief List of doors that must be open to complete the puzzle.
+     */
+    public List<DoorInteractable> doors;
 
-    // Revisa constantemente si las puertas necesarias están abiertas.
+    /**
+     * @brief Indicates if the puzzle objective is complete.
+     */
+    public bool isComplete { get; private set; }
+
+    /**
+     * @brief Constantly checks if the required doors are open.
+     */
     void Update()
     {
-        if(checkDoors())
+        if (checkDoors())
         {
             isComplete = true;
             this.gameObject.GetComponent<MeshRenderer>().material = screenMaterial;
         }
     }
 
-    // Devuelve true solo si todas las puertas de la lista están abiertas.
+    /**
+     * @brief Returns true only if all doors in the list are open.
+     * @return True if all doors are open, false otherwise.
+     */
     bool checkDoors()
     {
         foreach (DoorInteractable door in doors)
@@ -30,6 +47,5 @@ public class CinemaManager : MonoBehaviour, IPuzleObjective
                 return false;
         }
         return true;
-
     }
 }

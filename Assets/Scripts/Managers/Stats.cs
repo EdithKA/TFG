@@ -6,45 +6,48 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-// Gestiona la salud y cordura del jugador, la UI y los efectos de corrupción del mundo.
+/**
+ * @brief Manages the player's health and sanity, UI, and world corruption effects.
+ */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    public int sanity = 100; // Cordura actual.
-    public int health = 100; // Salud actual.
-    public float decreaseInterval = 1.5f; // Intervalo de decrecimiento de la cordura.
-    float lastSanityDecreaseTime; //última vez que se redujo la cordura.
-    public bool hasPhone = false; // Indica si el jugador tiene el teléfono.
+    public int sanity = 100; ///< Current sanity.
+    public int health = 100; ///< Current health.
+    public float decreaseInterval = 1.5f; ///< Sanity decrease interval.
+    float lastSanityDecreaseTime; ///< Last time sanity was decreased.
+    public bool hasPhone = false; ///< Indicates if the player has the phone.
 
     [Header("World Corruption")]
-    public string corruptibleTag; // Tag de objetos corruptibles.
-    public float moveRange = 0.5f; // Máximo desplazamiento aleatorio de los objetos corruptibles.
-    public float rotationRange = 45f; // Máxima rotación aleatoria de los objetos corruptibles.
-    public int sanityThreshold = 50; // Umbral de cordura para iniciar la corrupción.
+    public string corruptibleTag; ///< Tag for corruptible objects.
+    public float moveRange = 0.5f; ///< Maximum random movement of corruptible objects.
+    public float rotationRange = 45f; ///< Maximum random rotation of corruptible objects.
+    public int sanityThreshold = 50; ///< Sanity threshold to start corruption.
 
-    List<GameObject> corruptibleObjects = new List<GameObject>(); // Lista de objetos corruptibles.
-    Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); // Posiciones originales de los objetos corruptibles.
-    Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>(); // Rotaciones originales de los objetos corruptibles.
+    List<GameObject> corruptibleObjects = new List<GameObject>(); ///< List of corruptible objects.
+    Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); ///< Original positions of corruptible objects.
+    Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>(); ///< Original rotations of corruptible objects.
 
     [Header("Health UI")]
-    public Image heartIcon; // Icono de la salud en la UI.
-    public Sprite[] heartSprites; // Sprites para los distintos estados de salud.
-    public List<GameObject> healthBars; // Barras de salud en la UI.
+    public Image heartIcon; ///< Health icon in the UI.
+    public Sprite[] heartSprites; ///< Sprites for different health states.
+    public List<GameObject> healthBars; ///< Health bars in the UI.
 
     [Header("Sanity UI")]
-    public Image sanityIcon; // Icono de la cordura en la UI.
-    public Sprite[] sanitySprites; // Sprites para los distintos estados de la cordura.
-    public List<GameObject> sanityBars; // Barras de cordura en la UI.
+    public Image sanityIcon; ///< Sanity icon in the UI.
+    public Sprite[] sanitySprites; ///< Sprites for different sanity states.
+    public List<GameObject> sanityBars; ///< Sanity bars in the UI.
 
     [Header("References")]
     public GameManager gameManager;
 
     [Header("Camera Effects")]
     public Volume postProcessVolume;
-    Vignette vignette; 
+    Vignette vignette;
 
-
-    // Ínicialización de referencias, objetos corruptibles y estadísticas iniciales.
+    /**
+     * @brief Initializes references, corruptible objects, and initial stats.
+     */
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -70,13 +73,15 @@ public class Stats : MonoBehaviour
         }
     }
 
-    // Reducción de cordura, corrupción del mundo, restauración de estadísticas y actualización de UI/efectos.
+    /**
+     * @brief Handles sanity reduction, world corruption, stat restoration, and UI/effects update.
+     */
     void Update()
     {
-        // Si la salud llega a 0 --> GAME OVER
+        // If health reaches 0 --> GAME OVER
         if (health <= 0)
             gameManager.LoadSceneByName("GameOver");
-        //Si el jugador tiene el movil, la cordura comienza a bajar.
+        // If the player has the phone, sanity starts to decrease.
         if (hasPhone)
         {
             if (Time.time - lastSanityDecreaseTime > decreaseInterval)
@@ -93,23 +98,25 @@ public class Stats : MonoBehaviour
             }
         }
 
-        // Si la cordura es alta, restaurar salud poco a poco.
+        // If sanity is high, restore health little by little.
         if (sanity > 90)
             RestoreHealth();
 
-        // Si la cordura está por encima del umbral, restaurar objetos corruptos.
+        // If sanity is above the threshold, restore corrupt objects.
         if (sanity >= sanityThreshold)
         {
             ResetCorruptedObjects();
         }
 
-        // Actualizar iconos, barras y efectos visuales.
+        // Update icons, bars, and visual effects.
         UpdateUI();
         UpdateBars();
         UpdateVignetteEffect();
     }
 
-    // Restaura el estado original de los objetos corruptibles.
+    /**
+     * @brief Restores the original state of corruptible objects.
+     */
     void ResetCorruptedObjects()
     {
         foreach (GameObject obj in corruptibleObjects)
@@ -122,14 +129,18 @@ public class Stats : MonoBehaviour
         }
     }
 
-    // Actualiza los iconos de salud y cordura en la UI.
+    /**
+     * @brief Updates the health and sanity icons in the UI.
+     */
     void UpdateUI()
     {
         SetHeartIcon();
         SetBrainIcon();
     }
 
-    // Cambia el sprite del corazón según la cantidad de salud.
+    /**
+     * @brief Changes the heart sprite according to the amount of health.
+     */
     void SetHeartIcon()
     {
         if (health <= 0)
@@ -143,8 +154,10 @@ public class Stats : MonoBehaviour
         else
             heartIcon.sprite = heartSprites[4];
     }
-    
-    // Cambia el sprite del cerebro según la cantidad de cordura.
+
+    /**
+     * @brief Changes the brain sprite according to the amount of sanity.
+     */
     void SetBrainIcon()
     {
         if (sanity <= 0)
@@ -159,14 +172,20 @@ public class Stats : MonoBehaviour
             sanityIcon.sprite = sanitySprites[4];
     }
 
-    // Actualiza las barras de salud y cordura en la UI.
+    /**
+     * @brief Updates the health and sanity bars in the UI.
+     */
     void UpdateBars()
     {
         UpdateBar(health, healthBars);
         UpdateBar(sanity, sanityBars);
     }
 
-    // Activa o desactiva las barras según el valor del stat.
+    /**
+     * @brief Activates or deactivates the bars according to the stat value.
+     * @param statValue The value of the stat.
+     * @param bars The list of bar GameObjects.
+     */
     void UpdateBar(int statValue, List<GameObject> bars)
     {
         int activeBarsCount = Mathf.CeilToInt(statValue / 25f);
@@ -177,13 +196,18 @@ public class Stats : MonoBehaviour
         }
     }
 
-    // Resta salud al jugador.
+    /**
+     * @brief Subtracts health from the player.
+     * @param amount The amount of health to subtract.
+     */
     public void TakeDamage(int amount)
     {
         health -= amount;
     }
 
-    // Actualiza el efecto de viñeta según la salud (menos salud = más rojo y cerrado).
+    /**
+     * @brief Updates the vignette effect according to health (less health = more red and closed).
+     */
     void UpdateVignetteEffect()
     {
         if (vignette == null) return;
@@ -196,7 +220,9 @@ public class Stats : MonoBehaviour
         vignette.smoothness.Override(vignetteSmoothness);
     }
 
-    //  Restaura la salud poco a poco.
+    /**
+     * @brief Gradually restores health.
+     */
     void RestoreHealth()
     {
         if (health < 100)

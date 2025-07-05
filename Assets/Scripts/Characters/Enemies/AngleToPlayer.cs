@@ -2,38 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/**
+ * @brief This script calculates the angle between the enemy and the player to determine animation direction.
+ */
 public class AngleToPlayer : MonoBehaviour
 {
+    Transform player; ///< Reference to the player
+    Vector3 targetPos; ///< Player's position projected on the horizontal plane
+    Vector3 targetDir; ///< Direction from the enemy to the player
+    float angle; ///< Calculated angle between the enemy's forward and the player
+    public int lastIndex; ///< Direction index for animations
+    SpriteRenderer spriteRenderer;
 
-    private Transform player; // Referencia al jugador
-    private Vector3 targetPos; // Posicion del jugador proyectada en el plano horizontal
-    private Vector3 targetDir; // Dirección desde el enemigo hacia el jugador
-    private float angle; // Ángulo calculado entre el forward del enemigo y el jugador
-    public int lastIndex; // Indice de dirección para las animaciones
-    private SpriteRenderer spriteRenderer;
-
-    // Al inicio se asignan las referencias automáticamente
+    /**
+     * @brief At the start, references are assigned automatically.
+     */
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    //En cada frame se calcula el ángulo y la dirección para el enemigo
+    /**
+     * @brief Every frame, the angle and direction for the enemy are calculated.
+     */
     void Update()
     {
-        // Se obtiene la posición del jugador y se calcula la dirección hacia este
+        // The player's position is obtained and the direction towards them is calculated
         targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
         targetDir = targetPos - transform.position;
 
-        // Se calcula el ángulo entre el forward del enemigo y la dirección
+        // The angle between the enemy's forward and the direction is calculated
         angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
-        
-        // Se calcula el índice para la animación del enemigo
-        lastIndex = GetIndex(angle); 
+
+        // The index for the enemy's animation is calculated
+        lastIndex = GetIndex(angle);
     }
 
+    /**
+     * @brief Calculates the animation index based on the angle.
+     * @param angle The angle between the enemy's forward and the player.
+     * @return The animation direction index.
+     */
     int GetIndex(float angle)
     {
         // Front-facing directions
