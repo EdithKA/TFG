@@ -80,7 +80,7 @@ public class Stats : MonoBehaviour
     {
         // If health reaches 0 --> GAME OVER
         if (health <= 0)
-            gameManager.LoadSceneByName("GameOver");
+            gameManager.ChangeScene("GameOver");
         // If the player has the phone, sanity starts to decrease.
         if (hasPhone)
         {

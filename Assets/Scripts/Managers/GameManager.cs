@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu; ///< Pause menu.
     public bool isLevel; ///< Indicates if we are in a level or a menu.
     bool isPaused = false; ///< Pause state.
-    public bool gameComplete = false; ///< Indicates if the game has been completed.
+    public bool gameComplete = false; ///< Indicates if the game has been completed
 
+    // Menu Settings
+    public AudioSource buttonPlayer;
+    public AudioClip buttonSound;
     /**
      * @brief Handles pause/resume and checks for game completion every frame.
      */
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
                 Pause();
         // If the game is complete, load the final scene.
         if (isLevel && gameComplete)
-            LoadSceneByName("End");
+            ChangeScene("End");
     }
 
     /**
@@ -54,11 +57,17 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void ButtonToScene(string sceneName)
+    {
+        buttonPlayer.PlayOneShot(buttonSound);
+        SceneManager.LoadScene(sceneName);
+    }
+
     /**
      * @brief Changes the scene according to the received name.
      * @param name Name of the scene to load.
      */
-    public void LoadSceneByName(string name)
+    public void ChangeScene(string name)
     {
         if (AudioListener.pause == true)
             AudioListener.pause = false;
@@ -81,6 +90,7 @@ public class GameManager : MonoBehaviour
      */
     public void QuitGame()
     {
+        buttonPlayer.PlayOneShot(buttonSound);
         Application.Quit();
     }
 }

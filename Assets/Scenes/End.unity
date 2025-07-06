@@ -413,7 +413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1910927187}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadSceneByName
+        m_MethodName: ButtonToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1383,6 +1383,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   isLevel: 0
   gameComplete: 0
+  buttonPlayer: {fileID: 0}
+  buttonSound: {fileID: 0}
 --- !u!82 &1910927188
 AudioSource:
   m_ObjectHideFlags: 0
