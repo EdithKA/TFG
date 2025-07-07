@@ -140,6 +140,7 @@ public class EnemyDistanceController : MonoBehaviour
         RaycastHit hit;
         bool hitSomething = Physics.Raycast(rayOrigin, direction, out hit, maxDistance, obstacleLayer);
 
+        lightCone.gameObject.SetActive(true);
         if (hitSomething)
         {
             if (hit.collider.CompareTag("Player"))
@@ -148,6 +149,7 @@ public class EnemyDistanceController : MonoBehaviour
             }
             else
             {
+                lightCone.gameObject.SetActive(false);
                 return false;
             }
         }
