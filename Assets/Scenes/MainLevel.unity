@@ -3887,30 +3887,60 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2708480595714976527, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708480595714976527, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708480595714976527, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_BaseOffset
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218318875348464268, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.38907197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218318875348464268, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.38907197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218318875348464268, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.38907197
+      objectReference: {fileID: 0}
     - target: {fileID: 5613972074986606249, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_Height
-      value: 1.9443117
+      value: 2.7088537
       objectReference: {fileID: 0}
     - target: {fileID: 5613972074986606249, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_Radius
-      value: 0.4713651
+      value: 0.782252
       objectReference: {fileID: 0}
     - target: {fileID: 5613972074986606249, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.036855817
+      value: 0.0013515346
       objectReference: {fileID: 0}
     - target: {fileID: 5613972074986606249, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.04587019
+      value: -0.38975334
       objectReference: {fileID: 0}
     - target: {fileID: 5613972074986606249, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.0033664142
+      value: -0.01929415
       objectReference: {fileID: 0}
     - target: {fileID: 5614240836592050590, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
@@ -3935,7 +3965,7 @@ PrefabInstance:
     - target: {fileID: 5614240836592050590, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.584
       objectReference: {fileID: 0}
     - target: {fileID: 5614240836592050590, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
@@ -3977,6 +4007,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344384008011779947, guid: fae7c8be20a84b249a72d99cc54eff8b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1206569249, guid: a3276be97d126bf4886e291209e6b761,
+        type: 3}
     - target: {fileID: 7488480460506388575, guid: fae7c8be20a84b249a72d99cc54eff8b,
         type: 3}
       propertyPath: enemyType
@@ -20457,7 +20493,7 @@ Transform:
   m_GameObject: {fileID: 1289238791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.096, y: 0.538, z: 0.993}
+  m_LocalPosition: {x: -0.096, y: -0.077, z: 1.112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29653,8 +29689,8 @@ MonoBehaviour:
   - {fileID: 16818716}
   - {fileID: 2053287734}
   - {fileID: 1721665845}
-  chaseDistance: 6
-  attackDistance: 2
+  chaseDistance: 8
+  attackDistance: 3
   damageAmount: 25
   attackCooldown: 0.2
   visionAngle: 60
