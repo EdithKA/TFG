@@ -7,7 +7,7 @@ using UnityEngine;
 public class PuzleManager : MonoBehaviour
 {
     [Header("Puzle Settings")]
-    List<MonoBehaviour> puzzleObjectives = new List<MonoBehaviour>(); ///< List of objectives to complete the puzzle.
+    public List<MonoBehaviour> puzzleObjectives = new List<MonoBehaviour>(); ///< List of objectives to complete the puzzle.
     public GameObject rewardPrefab; ///< Prefab of the reward object for completing the puzzle.
     public Transform rewardSpawnPoint; ///< Point where the reward will be instantiated.
 

@@ -6,9 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-/**
- * @brief Manages the player's health and sanity, UI, and world corruption effects.
- */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
@@ -23,6 +20,7 @@ public class Stats : MonoBehaviour
     public float moveRange = 0.5f; ///< Maximum random movement of corruptible objects.
     public float rotationRange = 45f; ///< Maximum random rotation of corruptible objects.
     public int sanityThreshold = 50; ///< Sanity threshold to start corruption.
+    public float corruptionSpeed = 1f; ///< Velocidad a la que los objetos se corrompen (menor = más lento).
 
     List<GameObject> corruptibleObjects = new List<GameObject>(); ///< List of corruptible objects.
     Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); ///< Original positions of corruptible objects.
@@ -102,16 +100,60 @@ public class Stats : MonoBehaviour
         if (sanity > 90)
             RestoreHealth();
 
-        // If sanity is above the threshold, restore corrupt objects.
-        if (sanity >= sanityThreshold)
+        // --- NUEVO: corrupción si la cordura es menor que el umbral ---
+        if (sanity < sanityThreshold)
         {
-            ResetCorruptedObjects();
+            CorruptObjects(); ///< Corrompe los objetos cuando la cordura es baja.
         }
+        else
+        {
+            ResetCorruptedObjects(); ///< Restaura los objetos si la cordura es suficiente.
+        }
+        // --- FIN NUEVO ---
 
         // Update icons, bars, and visual effects.
         UpdateUI();
         UpdateBars();
         UpdateVignetteEffect();
+    }
+
+    /**
+     * @brief Corrompe los objetos alterando posición y rotación si la cordura es baja.
+     */
+    void CorruptObjects()
+    {
+        foreach (GameObject obj in corruptibleObjects)
+        {
+            if (obj != null && originalPositions.ContainsKey(obj) && originalRotations.ContainsKey(obj))
+            {
+                // Calcula el destino corrompido
+                Vector3 randomOffset = new Vector3(
+                    Random.Range(-moveRange, moveRange),
+                    Random.Range(-moveRange, moveRange),
+                    Random.Range(-moveRange, moveRange)
+                );
+                Vector3 corruptedPosition = originalPositions[obj] + randomOffset;
+
+                Quaternion randomRotation = Quaternion.Euler(
+                    originalRotations[obj].eulerAngles.x + Random.Range(-rotationRange, rotationRange),
+                    originalRotations[obj].eulerAngles.y + Random.Range(-rotationRange, rotationRange),
+                    originalRotations[obj].eulerAngles.z + Random.Range(-rotationRange, rotationRange)
+                );
+
+                // --- NUEVO: Interpolación para movimiento más lento ---
+                obj.transform.position = Vector3.Lerp(
+                    obj.transform.position,
+                    corruptedPosition,
+                    Time.deltaTime * corruptionSpeed
+                );
+                obj.transform.rotation = Quaternion.Lerp(
+                    obj.transform.rotation,
+                    randomRotation,
+                    Time.deltaTime * corruptionSpeed
+                );
+                // --- FIN NUEVO ---
+            }
+        }
     }
 
     /**
