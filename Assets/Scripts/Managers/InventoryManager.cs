@@ -21,24 +21,22 @@ public class InventoryManager : MonoBehaviour
     public Item completedToy; ///< Complete toy (obtained when collecting all pieces).
 
     [Header("UI Reference")]
-    UITextController uiTextController; ///< UI message controller.
-    GameTexts gameTexts; ///< Game texts.
+    [SerializeField] private UITextController uiTextController; ///< UI message controller.
+    public GameObject inspectMenu; ///< Panel for inspecting items.
+    public Image itemDisplay; ///< Image for inspected item.
+    public Button btn; ///< Button to close inspect menu.
+    public AudioSource soundPlayer;
+    public AudioClip inventorySoundClip; ///< Sound played when interacting with the inventory.
 
     public List<Item> items = new List<Item>(); ///< List of items in the inventory.
-    List<GameObject> slots = new List<GameObject>(); ///< Instantiated UI slots.
-    int toyPieces = 0; ///< Current number of pieces in the inventory.
+    private List<GameObject> slots = new List<GameObject>(); ///< Instantiated UI slots.
+    private int toyPieces = 0; ///< Current number of pieces in the inventory.
 
     public GameObject equippedRight; ///< Object equipped in the right hand.
     public bool isInventoryOpen = false; ///< Inventory state (open/closed).
 
-    public AudioSource soundPlayer;
-    public AudioClip inventorySoundClip; ///< Sound played when interacting with the inventory.
     Stats stats; ///< Reference to player stats.
-
-    // Object Inspection
-    public GameObject inspectMenu;
-    public Image itemDisplay;
-    public Button btn;
+    GameTexts gameTexts; ///< Game texts.
 
     /**
      * @brief Assigns scene references at the start.
@@ -47,22 +45,15 @@ public class InventoryManager : MonoBehaviour
     {
         soundPlayer = GetComponent<AudioSource>();
         stats = FindAnyObjectByType<Stats>();
-        uiTextController = FindAnyObjectByType<UITextController>();
-        gameTexts = uiTextController.gameTexts;
+        if (uiTextController == null)
+            uiTextController = FindAnyObjectByType<UITextController>();
+        if (uiTextController != null)
+            gameTexts = uiTextController.gameTexts;
 
-
-
-        // Hide inventory at start.
         inventoryUI.SetActive(false);
-
-        // Hide inspection menu.
-        inspectMenu.gameObject.SetActive(false);
+        inspectMenu.SetActive(false);
         btn.onClick.AddListener(HideInspectMenu);
-    }
-
-    void Update()
-    {
-        UpdateUI();
+        RefreshUI();
     }
 
     /**
@@ -71,7 +62,7 @@ public class InventoryManager : MonoBehaviour
      */
     public void AddItem(Item item)
     {
-        soundPlayer.PlayOneShot(inventorySoundClip);
+        soundPlayer?.PlayOneShot(inventorySoundClip);
         if (items.Count < inventorySize)
         {
             if (item.type == "piece")
@@ -87,17 +78,20 @@ public class InventoryManager : MonoBehaviour
             }
             if (item.type == "reward")
             {
-                stats.sanity = Mathf.Min(stats.sanity + 100, 100);
-                uiTextController.ShowThought(gameTexts.rewardCollected);
+                if (stats != null)
+                    stats.sanity = Mathf.Min(stats.sanity + 100, 100);
+                uiTextController?.ShowThought(gameTexts?.rewardCollected);
             }
             if (item.type == "photo")
             {
-                stats.sanity = Mathf.Min(stats.sanity + 50, 100);
-                uiTextController.ShowThought(gameTexts.photoCollected);
+                if (stats != null)
+                    stats.sanity = Mathf.Min(stats.sanity + 50, 100);
+                uiTextController?.ShowThought(gameTexts?.photoCollected);
             }
 
             items.Add(item);
-            uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectAdded, true);
+            RefreshUI();
+            uiTextController?.ShowInventoryMessage($"{item.displayName} " + (gameTexts?.objectAdded), true);
         }
     }
 
@@ -110,8 +104,9 @@ public class InventoryManager : MonoBehaviour
         if (items.Contains(item))
         {
             items.Remove(item);
-            uiTextController.ShowInventoryMessage($"{item.displayName} " + gameTexts.objectRemoved, false);
-            soundPlayer.PlayOneShot(inventorySoundClip);
+            RefreshUI();
+            uiTextController?.ShowInventoryMessage($"{item.displayName} " + (gameTexts?.objectRemoved), false);
+            soundPlayer?.PlayOneShot(inventorySoundClip);
         }
     }
 
@@ -131,12 +126,14 @@ public class InventoryManager : MonoBehaviour
         inventoryUI.SetActive(isInventoryOpen);
         Cursor.lockState = isInventoryOpen ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = isInventoryOpen;
+        if (isInventoryOpen)
+            RefreshUI();
     }
 
     /**
-     * @brief Updates the inventory UI.
+     * @brief Rebuilds inventory UI from current items.
      */
-    public void UpdateUI()
+    public void RefreshUI()
     {
         foreach (GameObject slot in slots) Destroy(slot);
         slots.Clear();
@@ -150,16 +147,21 @@ public class InventoryManager : MonoBehaviour
             if (item.itemID != "Mobile")
             {
                 Button button = slot.GetComponent<Button>();
+                button.onClick.RemoveAllListeners();
+                Item capturedItem = item;
                 if (item.type == "photo")
                 {
-                    button.onClick.AddListener(() => ShowInspectMenu(item.icon));
+                    button.onClick.AddListener(() => ShowInspectMenu(capturedItem.icon));
                 }
                 else
                 {
-                    button.onClick.AddListener(() => EquipItem(item));
+                    button.onClick.AddListener(() =>
+                    {
+                        EquipRightHandItem(capturedItem);
+                        CloseInventory();
+                    });
                 }
             }
-
             slots.Add(slot);
         }
     }
@@ -167,12 +169,13 @@ public class InventoryManager : MonoBehaviour
     /**
      * @brief Unequips the object from the hand.
      */
-    public void UnequipItem()
+    public void UnequipRightHandItem()
     {
         if (equippedRight != null)
         {
             Destroy(equippedRight);
             equippedRight = null;
+            CloseInventory();
         }
     }
 
@@ -180,33 +183,36 @@ public class InventoryManager : MonoBehaviour
      * @brief Equips an item in the hand or shows a message if it's a piece, photo, or reward.
      * @param item The item to equip.
      */
-    void EquipItem(Item item)
+    private void EquipRightHandItem(Item item)
     {
         if (equippedRight != null && equippedRight.GetComponent<ItemInteractable>().itemData == item)
         {
-            UnequipItem();
-            ToggleInventory();
+            UnequipRightHandItem();
         }
         else
         {
-            if (item.type == "piece")
+            UnequipRightHandItem();
+            if (item.itemPrefab != null)
             {
-                uiTextController.ShowThought(gameTexts.needPieces);
-            }
-            else if (item.type == "photo")
-            {
-                ShowInspectMenu(item.icon);
-            }
-            else
-            {
-                UnequipItem();
                 equippedRight = Instantiate(item.itemPrefab, rightHand);
                 equippedRight.transform.localPosition = item.equipPositionOffset;
                 equippedRight.transform.localRotation = Quaternion.Euler(item.equipRotationOffset);
-                equippedRight.GetComponent<ItemInteractable>().isHeld = true;
-                ToggleInventory();
+                var interactable = equippedRight.GetComponent<ItemInteractable>();
+                if (interactable != null)
+                    interactable.isHeld = true;
             }
         }
+    }
+
+    /**
+     * @brief Closes the inventory and manages cursor state.
+     */
+    private void CloseInventory()
+    {
+        isInventoryOpen = false;
+        inventoryUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     /**
@@ -215,8 +221,10 @@ public class InventoryManager : MonoBehaviour
      */
     public void ShowInspectMenu(Sprite photoSprite)
     {
-        itemDisplay.sprite = photoSprite;
-        inspectMenu.SetActive(true);
+        if (itemDisplay != null)
+            itemDisplay.sprite = photoSprite;
+        if (inspectMenu != null)
+            inspectMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -226,7 +234,8 @@ public class InventoryManager : MonoBehaviour
      */
     public void HideInspectMenu()
     {
-        inspectMenu.SetActive(false);
+        if (inspectMenu != null)
+            inspectMenu.SetActive(false);
         if (!isInventoryOpen)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -240,4 +249,40 @@ public class InventoryManager : MonoBehaviour
      */
     public GameObject GetRightHandObject() => equippedRight;
 
+    /**
+     * @brief Returns a list of item IDs currently in the inventory.
+     */
+    public List<string> GetInventoryItemIDs()
+    {
+        List<string> ids = new List<string>();
+        foreach (Item item in items)
+            ids.Add(item.itemID);
+        return ids;
+    }
+
+    /**
+     * @brief Restores inventory from a list of item IDs.
+     */
+    public void RestoreInventory(List<string> itemIDs)
+    {
+        items.Clear();
+        foreach (string id in itemIDs)
+        {
+            Item item = FindItemByID(id);
+            if (item != null)
+                items.Add(item);
+        }
+        RefreshUI();
+    }
+
+    /**
+     * @brief Finds an item by its ID from resources.
+     */
+    private Item FindItemByID(string id)
+    {
+        foreach (Item item in Resources.LoadAll<Item>("Items"))
+            if (item.itemID == id)
+                return item;
+        return null;
+    }
 }
