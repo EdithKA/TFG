@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
+    /**
+     * @brief Activates the button sound and changes the scene according to the received name.
+     */
     public void ButtonToScene(string sceneName)
     {
         buttonPlayer.PlayOneShot(buttonSound);
