@@ -176,6 +176,6 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "End")
-            gameManager.gameComplete = true;
+            gameManager.ChangeScene("End");
     }
 }

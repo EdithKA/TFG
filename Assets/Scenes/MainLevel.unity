@@ -1358,7 +1358,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1104225553}
-  m_Father: {fileID: 1099738345}
+  m_Father: {fileID: 1455487778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18238,18 +18238,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bdd6c2e2ee130e4d937c770c8590953, type: 3}
---- !u!1 &1099738344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6934812550385064485, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 44353316889908529}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1099738345 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8480735701822670758, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 44353316889908529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104225552
 GameObject:
   m_ObjectHideFlags: 0
@@ -24557,6 +24545,12 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1455487778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4978289449165244078, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 44353316889908529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1464667542 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1677586198735015791, guid: 24feba1d1473e5c4488da81485d9a343,
@@ -27120,12 +27114,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1601630541 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5054937216935116681, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 44353316889908529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1602714902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29363,19 +29351,20 @@ MonoBehaviour:
   inventorySize: 20
   inventorySlotPrefab: {fileID: 4294684222737195475, guid: d4e6653444075224699a3dafe03e12a0,
     type: 3}
-  inventoryGrid: {fileID: 1601630541}
-  inventoryUI: {fileID: 1099738344}
+  inventoryGrid: {fileID: 0}
+  inventoryUI: {fileID: 0}
   leftHand: {fileID: 1978627110}
   rightHand: {fileID: 1810593156}
   completedToy: {fileID: 11400000, guid: eaf6b818445297a4ea8acd444904ac2d, type: 2}
-  items: []
-  equippedRight: {fileID: 0}
-  isInventoryOpen: 0
-  soundPlayer: {fileID: 0}
-  inventorySoundClip: {fileID: 8300000, guid: 3cb32bbe7dc8e4141bacdb5146d5422d, type: 3}
+  uiTextController: {fileID: 0}
   inspectMenu: {fileID: 106516299}
   itemDisplay: {fileID: 0}
   btn: {fileID: 106516303}
+  soundPlayer: {fileID: 0}
+  inventorySoundClip: {fileID: 8300000, guid: 3cb32bbe7dc8e4141bacdb5146d5422d, type: 3}
+  items: []
+  equippedRight: {fileID: 0}
+  isInventoryOpen: 0
 --- !u!4 &1692874409
 Transform:
   m_ObjectHideFlags: 0
@@ -29577,7 +29566,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1918815613}
   isLevel: 1
-  gameComplete: 0
   buttonPlayer: {fileID: 0}
   buttonSound: {fileID: 0}
 --- !u!4 &1692912056 stripped
@@ -32719,7 +32707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1918815614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36466,7 +36454,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8480735701822670758, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
+    - targetCorrespondingSourceObject: {fileID: 4978289449165244078, guid: d03e3417fe87e1d4182c717f5c8ca7ed,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 106516300}

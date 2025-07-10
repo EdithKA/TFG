@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu; ///< Pause menu.
     public bool isLevel; ///< Indicates if we are in a level or a menu.
     bool isPaused = false; ///< Pause state.
-    public bool gameComplete = false; ///< Indicates if the game has been completed
 
     // Menu Settings
     public AudioSource buttonPlayer;
@@ -26,15 +25,12 @@ public class GameManager : MonoBehaviour
                 Resume();
             else
                 Pause();
-        // If the game is complete, load the final scene.
-        if (isLevel && gameComplete)
-            ChangeScene("End");
     }
 
     /**
      * @brief Resumes the game from the pause menu.
      */
-    public void Resume()
+    void Resume()
     {
         AudioListener.pause = false;
         pauseMenu.SetActive(false);
