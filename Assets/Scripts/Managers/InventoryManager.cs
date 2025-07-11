@@ -221,10 +221,9 @@ public class InventoryManager : MonoBehaviour
      */
     public void ShowInspectMenu(Sprite photoSprite)
     {
-        if (itemDisplay != null)
-            itemDisplay.sprite = photoSprite;
-        if (inspectMenu != null)
-            inspectMenu.SetActive(true);
+        Debug.Log("ShowInspectMenu llamado");
+        itemDisplay.sprite = photoSprite;
+        inspectMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
