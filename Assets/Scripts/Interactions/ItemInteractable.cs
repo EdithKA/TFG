@@ -1,46 +1,23 @@
 using UnityEngine;
 
-/// <summary>
-/// Represents an interactable item that can be collected by the the player.
-/// Implements the IInteractable interface for interaction handling.
-/// </summary>
+/**
+ * @brief Collectible item. Implements interaction.
+ */
 public class ItemInteractable : MonoBehaviour, IInteractable
 {
-    [Header("Configuration")]
-    /// <summary>
-    /// Data container for the item's properties.
-    /// </summary>
-    public Item itemData;
+    [Header("Config")]
+    public Item itemData;                    ///< Item data
+    public bool isHeld = false;              ///< Is the item held
 
-    /// <summary>
-    /// Flag indicating if the item is currently being held by the the player.
-    /// </summary>
-    public bool isHeld = false;
+    [Header("Refs")]
+    public InventoryManager inventoryManager;///< Inventory ref
+    public UITextController uiTextController;///< UI ref
+    public PlayerController playerController;///< Player ref
+    public Stats stats;                      ///< Player stats
 
-    [Header("References")]
-    /// <summary>
-    /// Reference to the inventory manager.
-    /// </summary>
-    public InventoryManager inventoryManager;
-
-    /// <summary>
-    /// Reference to the UI text controller.
-    /// </summary>
-    public UITextController uiTextController;
-
-    /// <summary>
-    /// Reference to the the player controller.
-    /// </summary>
-    public PlayerController playerController;
-
-    /// <summary>
-    /// Reference to the the player stats component.
-    /// </summary>
-    public Stats stats;
-
-    /// <summary>
-    /// Initializes references to necessary components.
-    /// </summary>
+    /**
+     * @brief Get refs.
+     */
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
@@ -49,40 +26,38 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         stats = FindObjectOfType<Stats>();
     }
 
-    /// <summary>
-    /// Displays interaction prompt when the item is hovered over.
-    /// </summary>
-    /// <param name="textController">UI text controller reference.</param>
+    /**
+     * @brief Show prompt on hover.
+     */
     public void OnHoverEnter(UITextController textController)
     {
         if (!isHeld)
             textController.ShowInteraction(textController.gameTexts.collectMessage);
     }
 
-    /// <summary>
-    /// Clears interaction prompt when hover ends.
-    /// </summary>
+    /**
+     * @brief Clear prompt on exit.
+     */
     public void OnHoverExit()
     {
         uiTextController.ClearMessages();
     }
 
-    /// <summary>
-    /// Handles item interaction logic when the the player interacts with the item.
-    /// </summary>
-    /// <param name="objectOnHand">Item currently held by the the player (unused).</param>
+    /**
+     * @brief Collect item. Needs mobile for others.
+     */
     public void Interact(GameObject objectOnHand = null)
     {
         if (isHeld) return;
 
-        // Special case: Mobile is required to collect other items
+        // Need mobile to pick up other items
         if (!inventoryManager.HasItem("Mobile") && itemData.itemID != "Mobile")
         {
             uiTextController.ShowThought(uiTextController.gameTexts.needMobileMessage);
             return;
         }
 
-        // Special handling for Mobile item
+        // Special case for Mobile
         if (itemData.name == "Mobile")
         {
             stats.hasPhone = true;
@@ -93,16 +68,15 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         PickUp();
     }
 
-    /// <summary>
-    /// Picks up the item and adds it to the inventory.
-    /// </summary>
+    /**
+     * @brief Add to inventory and handle visuals.
+     */
     void PickUp()
     {
         inventoryManager.AddItem(itemData);
 
         if (itemData.itemID == "Mobile")
         {
-            // Parent the mobile to the player's hand
             isHeld = true;
             transform.SetParent(playerController.leftHand);
             transform.localPosition = Vector3.zero;
@@ -110,7 +84,6 @@ public class ItemInteractable : MonoBehaviour, IInteractable
         }
         else
         {
-            // Destroy regular items after collection
             Destroy(gameObject);
         }
 

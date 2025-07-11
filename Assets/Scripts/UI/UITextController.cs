@@ -3,38 +3,38 @@ using UnityEngine;
 using TMPro;
 
 /**
- * @brief Enum for UI message types.
+ * @brief UI messages: interaction, thoughts, inventory.
  */
 public enum UIMessageType { Interact, Collect, Collected, Read }
 
 /**
- * @brief Controls the UI text messages for interaction, thoughts, and inventory.
+ * @brief Controls UI text for interaction, thoughts, inventory.
  */
 public class UITextController : MonoBehaviour
 {
     [Header("Text Components")]
-    public TextMeshProUGUI interactionText;
-    public TextMeshProUGUI thoughtText;
-    public TextMeshProUGUI inventoryText;
+    public TextMeshProUGUI interactionText; ///< Interaction message
+    public TextMeshProUGUI thoughtText;     ///< Thought message
+    public TextMeshProUGUI inventoryText;   ///< Inventory message
 
     [Header("Game Texts")]
-    public GameTexts gameTexts;
+    public GameTexts gameTexts;             ///< UI texts
 
     [Header("Interaction Settings")]
-    public Color interactColor = Color.cyan;
-    public Color collectColor = Color.yellow;
+    public Color interactColor = Color.cyan;///< Default interact color
+    public Color collectColor = Color.yellow;///< Collect color
     public float interactionFadeDuration = 0.4f;
     public float interactionDisplayTime = 1.5f;
 
     [Header("Inventory Settings")]
-    public Color addColor;
-    public Color removeColor;
+    public Color addColor;                  ///< Add color
+    public Color removeColor;               ///< Remove color
     public float inventoryTypingSpeed = 0.03f;
     public float inventoryDisplayTime = 1f;
     public float inventoryFadeDuration = 0.5f;
 
     [Header("Thought Settings")]
-    public Color thoughtColor = Color.white;
+    public Color thoughtColor = Color.white;///< Thought color
     public float thoughtTypingSpeed = 0.03f;
     public float thoughtDisplayTime = 3f;
     public float thoughtFadeDuration = 0.5f;
@@ -44,8 +44,7 @@ public class UITextController : MonoBehaviour
     Coroutine inventoryRoutine;
 
     /**
-     * @brief Shows an interaction message with the default color.
-     * @param message The message to display.
+     * @brief Show interaction message (default color).
      */
     public void ShowInteraction(string message)
     {
@@ -53,9 +52,7 @@ public class UITextController : MonoBehaviour
     }
 
     /**
-     * @brief Shows an interaction message with a custom color (if ever needed).
-     * @param message The message to display.
-     * @param color The color for the message.
+     * @brief Show interaction message (custom color).
      */
     public void ShowInteraction(string message, Color color)
     {
@@ -64,8 +61,7 @@ public class UITextController : MonoBehaviour
     }
 
     /**
-     * @brief Shows a collect message with the defined collect color.
-     * @param message The message to display.
+     * @brief Show collect message.
      */
     public void ShowCollect(string message)
     {
@@ -102,8 +98,7 @@ public class UITextController : MonoBehaviour
     }
 
     /**
-     * @brief Shows a thought message with typewriter effect and default color.
-     * @param message The message to display.
+     * @brief Show thought message with typewriter effect.
      */
     public void ShowThought(string message)
     {
@@ -138,9 +133,7 @@ public class UITextController : MonoBehaviour
     }
 
     /**
-     * @brief Shows an inventory message with the default color.
-     * @param message The message to display.
-     * @param isAdding True if adding, false if removing.
+     * @brief Show inventory message (add/remove).
      */
     public void ShowInventoryMessage(string message, bool isAdding)
     {
@@ -176,7 +169,7 @@ public class UITextController : MonoBehaviour
     }
 
     /**
-     * @brief Clears interaction and inventory messages.
+     * @brief Clear interaction and inventory messages.
      */
     public void ClearMessages()
     {

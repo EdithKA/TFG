@@ -4,27 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief This script manages the state of the cinema puzzle.
+ * @brief Manages cinema puzzle state.
  */
 public class CinemaManager : MonoBehaviour, IPuzleObjective
 {
-    /**
-     * @brief Material to assign to the screen when the puzzle is complete.
-     */
-    public Material screenMaterial;
+    public Material screenMaterial;         ///< Material for screen when complete
+    public List<DoorInteractable> doors;    ///< Doors to check
+    public bool isComplete { get; private set; } ///< Puzzle done
 
     /**
-     * @brief List of doors that must be open to complete the puzzle.
-     */
-    public List<DoorInteractable> doors;
-
-    /**
-     * @brief Indicates if the puzzle objective is complete.
-     */
-    public bool isComplete { get; private set; }
-
-    /**
-     * @brief Constantly checks if the required doors are open.
+     * @brief Check doors each frame.
      */
     void Update()
     {
@@ -36,8 +25,7 @@ public class CinemaManager : MonoBehaviour, IPuzleObjective
     }
 
     /**
-     * @brief Returns true only if all doors in the list are open.
-     * @return True if all doors are open, false otherwise.
+     * @brief True if all doors open.
      */
     bool checkDoors()
     {

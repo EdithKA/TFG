@@ -6,45 +6,48 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+/**
+ * @brief Player stats: sanity, health, world corruption, UI, and effects.
+ */
 public class Stats : MonoBehaviour
 {
     [Header("Player Stats")]
-    public int sanity = 100; ///< Current sanity.
-    public int health = 100; ///< Current health.
-    public float decreaseInterval = 1.5f; ///< Sanity decrease interval.
-    float lastSanityDecreaseTime; ///< Last time sanity was decreased.
-    public bool hasPhone = false; ///< Indicates if the player has the phone.
+    public int sanity = 100;              ///< Current sanity
+    public int health = 100;              ///< Current health
+    public float decreaseInterval = 1.5f; ///< Sanity decrease interval
+    float lastSanityDecreaseTime;         ///< Last sanity decrease
+    public bool hasPhone = false;         ///< Player has phone
 
     [Header("World Corruption")]
-    public string corruptibleTag; ///< Tag for corruptible objects.
-    public float moveRange = 0.5f; ///< Maximum random movement of corruptible objects.
-    public float rotationRange = 45f; ///< Maximum random rotation of corruptible objects.
-    public int sanityThreshold = 50; ///< Sanity threshold to start corruption.
-    public float corruptionSpeed = 1f; ///< Velocidad a la que los objetos se corrompen (menor = más lento).
+    public string corruptibleTag;         ///< Tag for corruptibles
+    public float moveRange = 0.5f;        ///< Max move offset
+    public float rotationRange = 45f;     ///< Max rotation offset
+    public int sanityThreshold = 50;      ///< Corrupt if sanity < threshold
+    public float corruptionSpeed = 1f;    ///< Corruption speed
 
-    List<GameObject> corruptibleObjects = new List<GameObject>(); ///< List of corruptible objects.
-    Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); ///< Original positions of corruptible objects.
-    Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>(); ///< Original rotations of corruptible objects.
+    List<GameObject> corruptibleObjects = new List<GameObject>(); ///< Corruptibles
+    Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>(); ///< Original positions
+    Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>(); ///< Original rotations
 
     [Header("Health UI")]
-    public Image heartIcon; ///< Health icon in the UI.
-    public Sprite[] heartSprites; ///< Sprites for different health states.
-    public List<GameObject> healthBars; ///< Health bars in the UI.
+    public Image heartIcon;               ///< Heart icon
+    public Sprite[] heartSprites;         ///< Heart sprites
+    public List<GameObject> healthBars;   ///< Health bars
 
     [Header("Sanity UI")]
-    public Image sanityIcon; ///< Sanity icon in the UI.
-    public Sprite[] sanitySprites; ///< Sprites for different sanity states.
-    public List<GameObject> sanityBars; ///< Sanity bars in the UI.
+    public Image sanityIcon;              ///< Sanity icon
+    public Sprite[] sanitySprites;        ///< Sanity sprites
+    public List<GameObject> sanityBars;   ///< Sanity bars
 
     [Header("References")]
-    public GameManager gameManager;
+    public GameManager gameManager;       ///< Game manager
 
     [Header("Camera Effects")]
-    public Volume postProcessVolume;
-    Vignette vignette;
+    public Volume postProcessVolume;      ///< Post-process volume
+    Vignette vignette;                    ///< Vignette effect
 
     /**
-     * @brief Initializes references, corruptible objects, and initial stats.
+     * @brief Get refs, setup stats and corruptibles.
      */
     void Start()
     {
@@ -72,14 +75,13 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Handles sanity reduction, world corruption, stat restoration, and UI/effects update.
+     * @brief Handle sanity, corruption, UI, and effects.
      */
     void Update()
     {
-        // If health reaches 0 --> GAME OVER
         if (health <= 0)
             gameManager.ChangeScene("GameOver");
-        // If the player has the phone, sanity starts to decrease.
+
         if (hasPhone)
         {
             if (Time.time - lastSanityDecreaseTime > decreaseInterval)
@@ -96,29 +98,25 @@ public class Stats : MonoBehaviour
             }
         }
 
-        // If sanity is high, restore health little by little.
         if (sanity > 90)
             RestoreHealth();
 
-        // --- NUEVO: corrupción si la cordura es menor que el umbral ---
         if (sanity < sanityThreshold)
         {
-            CorruptObjects(); ///< Corrompe los objetos cuando la cordura es baja.
+            CorruptObjects();
         }
         else
         {
-            ResetCorruptedObjects(); ///< Restaura los objetos si la cordura es suficiente.
+            ResetCorruptedObjects();
         }
-        // --- FIN NUEVO ---
 
-        // Update icons, bars, and visual effects.
         UpdateUI();
         UpdateBars();
         UpdateVignetteEffect();
     }
 
     /**
-     * @brief Corrompe los objetos alterando posición y rotación si la cordura es baja.
+     * @brief Corrupt objects if sanity is low.
      */
     void CorruptObjects()
     {
@@ -126,7 +124,6 @@ public class Stats : MonoBehaviour
         {
             if (obj != null && originalPositions.ContainsKey(obj) && originalRotations.ContainsKey(obj))
             {
-                // Calcula el destino corrompido
                 Vector3 randomOffset = new Vector3(
                     Random.Range(-moveRange, moveRange),
                     Random.Range(-moveRange, moveRange),
@@ -140,7 +137,6 @@ public class Stats : MonoBehaviour
                     originalRotations[obj].eulerAngles.z + Random.Range(-rotationRange, rotationRange)
                 );
 
-                // --- NUEVO: Interpolación para movimiento más lento ---
                 obj.transform.position = Vector3.Lerp(
                     obj.transform.position,
                     corruptedPosition,
@@ -151,13 +147,12 @@ public class Stats : MonoBehaviour
                     randomRotation,
                     Time.deltaTime * corruptionSpeed
                 );
-                // --- FIN NUEVO ---
             }
         }
     }
 
     /**
-     * @brief Restores the original state of corruptible objects.
+     * @brief Reset objects to original state.
      */
     void ResetCorruptedObjects()
     {
@@ -172,7 +167,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Updates the health and sanity icons in the UI.
+     * @brief Update health and sanity icons.
      */
     void UpdateUI()
     {
@@ -181,7 +176,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Changes the heart sprite according to the amount of health.
+     * @brief Set heart icon by health.
      */
     void SetHeartIcon()
     {
@@ -198,7 +193,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Changes the brain sprite according to the amount of sanity.
+     * @brief Set brain icon by sanity.
      */
     void SetBrainIcon()
     {
@@ -215,7 +210,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Updates the health and sanity bars in the UI.
+     * @brief Update health and sanity bars.
      */
     void UpdateBars()
     {
@@ -224,9 +219,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Activates or deactivates the bars according to the stat value.
-     * @param statValue The value of the stat.
-     * @param bars The list of bar GameObjects.
+     * @brief Set bars active by stat value.
      */
     void UpdateBar(int statValue, List<GameObject> bars)
     {
@@ -239,8 +232,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Subtracts health from the player.
-     * @param amount The amount of health to subtract.
+     * @brief Subtract health.
      */
     public void TakeDamage(int amount)
     {
@@ -248,7 +240,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Updates the vignette effect according to health (less health = more red and closed).
+     * @brief Update vignette by health.
      */
     void UpdateVignetteEffect()
     {
@@ -263,7 +255,7 @@ public class Stats : MonoBehaviour
     }
 
     /**
-     * @brief Gradually restores health.
+     * @brief Restore health slowly.
      */
     void RestoreHealth()
     {

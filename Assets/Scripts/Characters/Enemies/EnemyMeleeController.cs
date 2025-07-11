@@ -2,33 +2,33 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /**
- * @brief Controls the melee enemy's behavior based on the player's distance and vision.
+ * @brief Melee enemy AI: patrol, chase, attack.
  */
 public class EnemyMeleeController : MonoBehaviour
 {
-    //References
-    public Transform playerTransform; ///< Reference to the player's transform
-    Stats playerStats; ///< Reference to the player's stats
-    public AngleToPlayer angleToPlayer; ///< Reference to the angle calculation script
-    public Transform eyes; ///< Enemy's eyes position for raycasting
-    public Animator anim; ///< Animator for enemy animations
-    public Transform[] waypoints; ///< Patrol points
+    // --- References ---
+    public Transform playerTransform;      ///< Player's Transform
+    Stats playerStats;                     ///< Player stats
+    public AngleToPlayer angleToPlayer;    ///< Angle script (for animation)
+    public Transform eyes;                 ///< Eyes for raycast
+    public Animator anim;                  ///< Animator
+    public Transform[] waypoints;          ///< Patrol points
 
-    // Agent Configuration
-    NavMeshAgent navMeshAgent; ///< NavMeshAgent for movement
-    public float chaseDistance = 10f; ///< Distance to start chasing the player
-    public float attackDistance = 4f; ///< Distance to start attacking the player
-    public int damageAmount = 25; ///< Damage dealt by the enemy
-    public float attackCooldown = 0.5f; ///< Time between attacks
-    public float visionAngle = 60f; ///< Enemy's field of view angle (for raycast)
-    public LayerMask obstacleLayer; ///< Layers the raycast can detect
-    int currentWaypointIndex = 0; ///< Current patrol waypoint index
-    float attackTimer = 0f; ///< Timer for attack cooldown
-    public bool canChase = false; ///< Whether the enemy can chase
-    public bool canAttack = false; ///< Whether the enemy can attack
+    // --- Config ---
+    NavMeshAgent navMeshAgent;             ///< Agent for movement
+    public float chaseDistance = 10f;      ///< Start chasing at this distance
+    public float attackDistance = 4f;      ///< Start attacking at this distance
+    public int damageAmount = 25;          ///< Damage per attack
+    public float attackCooldown = 0.5f;    ///< Time between attacks
+    public float visionAngle = 60f;        ///< FOV (not used here)
+    public LayerMask obstacleLayer;        ///< Raycast mask
+    int currentWaypointIndex = 0;          ///< Current patrol point
+    float attackTimer = 0f;                ///< Attack cooldown timer
+    public bool canChase = false;          ///< Can chase player
+    public bool canAttack = false;         ///< Can attack player
 
     /**
-     * @brief Finds the necessary references at the start.
+     * @brief Get refs.
      */
     void Start()
     {
@@ -38,7 +38,7 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Updates enemy behavior and animation every frame.
+     * @brief Update AI and animations.
      */
     void Update()
     {
@@ -47,7 +47,7 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Decides what the enemy should do: patrol, chase, or attack.
+     * @brief Decide: patrol, chase, or attack.
      */
     void NextAction()
     {
@@ -66,7 +66,7 @@ public class EnemyMeleeController : MonoBehaviour
         }
         else
         {
-            if (CanSeePlayer()) //Only attacks if the player is directly seen
+            if (CanSeePlayer())
             {
                 canAttack = true;
                 navMeshAgent.ResetPath();
@@ -81,7 +81,7 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Enemy attack logic with cooldown.
+     * @brief Attack player if cooldown ready.
      */
     void Attack()
     {
@@ -97,7 +97,7 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Sets the enemy's animation parameters.
+     * @brief Update animator params.
      */
     void SetAnimation()
     {
@@ -106,7 +106,7 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Patrols between different waypoints.
+     * @brief Patrol between points.
      */
     void Patrol()
     {
@@ -123,14 +123,13 @@ public class EnemyMeleeController : MonoBehaviour
     }
 
     /**
-     * @brief Uses a raycast to check if the enemy can see the player.
-     * @return True if the enemy sees the player, false otherwise.
+     * @brief Raycast to check if player is visible.
      */
     bool CanSeePlayer()
     {
-        Vector3 rayOrigin = eyes.position; // The raycast starts from the enemy's eyes
+        Vector3 rayOrigin = eyes.position;
         Vector3 direction = transform.forward;
-        float maxDistance = chaseDistance; // How far the enemy can see
+        float maxDistance = chaseDistance;
 
         RaycastHit hit;
         bool hitSomething = Physics.Raycast(rayOrigin, direction, out hit, maxDistance, obstacleLayer);
@@ -139,7 +138,7 @@ public class EnemyMeleeController : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                return true; //If the raycast hits the player, return true
+                return true;
             }
             else
             {

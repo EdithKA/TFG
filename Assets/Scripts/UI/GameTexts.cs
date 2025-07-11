@@ -1,37 +1,37 @@
 using UnityEngine;
 
 /**
- * @brief This class allows you to create an asset with the different texts present in the game.
+ * @brief Game texts asset for interaction and thought messages.
  */
 [CreateAssetMenu(menuName = "Game/GameTexts")]
 public class GameTexts : ScriptableObject
 {
     [Header("Interaction Messages")]
-    public string interactMessage = ""; ///< Message for interaction.
-    public string placeObjectMessage = ""; ///< Message for placing an object.
-    public string collectMessage = ""; ///< Message for collecting.
-    public string collectedMessage = ""; ///< Message for collected object.
-    public string inspectMessage = ""; ///< Message for inspecting.
-    public string objectAdded = ""; ///< Message for object added to inventory.
-    public string objectRemoved = ""; ///< Message for object removed from inventory.
+    public string interactMessage = "";         ///< Interaction prompt
+    public string placeObjectMessage = "";      ///< Place object prompt
+    public string collectMessage = "";          ///< Collect prompt
+    public string collectedMessage = "";        ///< Collected object message
+    public string inspectMessage = "";          ///< Inspect prompt
+    public string objectAdded = "";             ///< Added to inventory
+    public string objectRemoved = "";           ///< Removed from inventory
 
     [Header("Thoughts")]
-    public string startThought = "";
-    public string needMobileMessage = ""; ///< Message when mobile is needed.
-    public string objectAlreadyPlaced = ""; ///< Message when object is already placed.
-    public string needObjectMessage = ""; ///< Message when an object is needed.
-    public string placedCorrectlyMessage = ""; ///< Message when object is placed correctly.
-    public string wrongObjectMessage = ""; ///< Message when wrong object is placed.
+    public string startThought = "";            ///< Initial thought
+    public string needMobileMessage = "";       ///< Need mobile
+    public string objectAlreadyPlaced = "";     ///< Already placed
+    public string needObjectMessage = "";       ///< Need object
+    public string placedCorrectlyMessage = "";  ///< Correctly placed
+    public string wrongObjectMessage = "";      ///< Wrong object
 
-    public string dvdCorrectMessage = ""; ///< Message when DVD is correct.
-    public string dvdError = ""; ///< Message for DVD error.
-    public string dvdMissing = ""; ///< Message when DVD is missing.
-    public string rewardAppear = ""; ///< Message when reward appears.
+    public string dvdCorrectMessage = "";       ///< Correct DVD
+    public string dvdError = "";                ///< DVD error
+    public string dvdMissing = "";              ///< DVD missing
+    public string rewardAppear = "";            ///< Reward appears
 
-    public string needSomething = ""; ///< Message when something is needed.
-    public string canOpen = ""; ///< Message when something can be opened.
-    public string closeDoor = ""; ///< Message for closing the door.
-    public string rewardCollected = ""; ///< Message for reward collected.
-    public string photoCollected = ""; ///< Message for photo collected.
-    public string needPieces = ""; ///< Message when more pieces are needed.
+    public string needSomething = "";           ///< Need something
+    public string canOpen = "";                 ///< Can open
+    public string closeDoor = "";               ///< Close door
+    public string rewardCollected = "";         ///< Reward collected
+    public string photoCollected = "";          ///< Photo collected
+    public string needPieces = "";              ///< Need more pieces
 }

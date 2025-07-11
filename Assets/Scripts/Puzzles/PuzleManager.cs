@@ -2,20 +2,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief This script manages the state of a minigame based on its assigned objectives.
+ * @brief Manages puzzle state and reward spawning.
  */
 public class PuzleManager : MonoBehaviour
 {
     [Header("Puzle Settings")]
-    public List<MonoBehaviour> puzzleObjectives = new List<MonoBehaviour>(); ///< List of objectives to complete the puzzle.
-    public GameObject rewardPrefab; ///< Prefab of the reward object for completing the puzzle.
-    public Transform rewardSpawnPoint; ///< Point where the reward will be instantiated.
+    public List<MonoBehaviour> puzzleObjectives = new List<MonoBehaviour>(); ///< Objectives to complete
+    public GameObject rewardPrefab;           ///< Reward prefab
+    public Transform rewardSpawnPoint;        ///< Reward spawn point
 
-    public List<IPuzleObjective> objectives = new List<IPuzleObjective>(); ///< List of objectives converted to the IPuzleObjective interface.
-    public bool puzzleCompleted = false;
+    public List<IPuzleObjective> objectives = new List<IPuzleObjective>(); ///< Objectives as interface
+    public bool puzzleCompleted = false;      ///< Puzzle done
 
     /**
-     * @brief At start, converts the objectives to IPuzleObjective and adds them to the objectives list.
+     * @brief Get objectives as interface.
      */
     void Start()
     {
@@ -30,7 +30,7 @@ public class PuzleManager : MonoBehaviour
     }
 
     /**
-     * @brief Constantly checks if the puzzle is completed.
+     * @brief Check completion each frame.
      */
     void Update()
     {
@@ -41,7 +41,7 @@ public class PuzleManager : MonoBehaviour
     }
 
     /**
-     * @brief Checks if all objectives are complete; if so, instantiates the reward and marks the puzzle as completed.
+     * @brief If all objectives done, spawn reward.
      */
     void CheckObjectives()
     {

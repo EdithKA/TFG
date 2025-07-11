@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- * @brief Interface to implement an objective to be completed for a minigame.
+ * @brief Interface for a minigame objective.
  */
 public interface IPuzleObjective
 {
     /**
-     * @brief Indicates if the objective is complete.
+     * @brief True if the objective is complete.
      */
     bool isComplete { get; }
 }

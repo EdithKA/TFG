@@ -3,43 +3,43 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
- * @brief Manages the inventory, UI, and special item logic (such as pieces).
+ * @brief Manages inventory, UI, and special item logic.
  */
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory Settings")]
-    public int inventorySize = 20; ///< Maximum inventory size.
-    public GameObject inventorySlotPrefab; ///< Prefab for each UI slot.
-    public Transform inventoryGrid; ///< Grid where slots are instantiated.
-    public GameObject inventoryUI; ///< Inventory UI panel.
+    public int inventorySize = 20;                  ///< Max inventory size
+    public GameObject inventorySlotPrefab;          ///< UI slot prefab
+    public Transform inventoryGrid;                 ///< Slot grid parent
+    public GameObject inventoryUI;                  ///< Inventory panel
 
     [Header("Hand References")]
-    public Transform leftHand; ///< Left hand (for the phone).
-    public Transform rightHand; ///< Right hand (for other equipable items).
+    public Transform leftHand;                      ///< Left hand (phone)
+    public Transform rightHand;                     ///< Right hand (equip)
 
     [Header("Special Items")]
-    public Item completedToy; ///< Complete toy (obtained when collecting all pieces).
+    public Item completedToy;                       ///< Full toy (all pieces)
 
     [Header("UI Reference")]
-    [SerializeField] private UITextController uiTextController; ///< UI message controller.
-    public GameObject inspectMenu; ///< Panel for inspecting items.
-    public Image itemDisplay; ///< Image for inspected item.
-    public Button btn; ///< Button to close inspect menu.
-    public AudioSource soundPlayer;
-    public AudioClip inventorySoundClip; ///< Sound played when interacting with the inventory.
+    [SerializeField] private UITextController uiTextController; ///< UI controller
+    public GameObject inspectMenu;                  ///< Inspect panel
+    public Image itemDisplay;                       ///< Inspected item image
+    public Button btn;                              ///< Close inspect button
+    public AudioSource soundPlayer;                 ///< Audio source
+    public AudioClip inventorySoundClip;            ///< Inventory sound
 
-    public List<Item> items = new List<Item>(); ///< List of items in the inventory.
-    private List<GameObject> slots = new List<GameObject>(); ///< Instantiated UI slots.
-    private int toyPieces = 0; ///< Current number of pieces in the inventory.
+    public List<Item> items = new List<Item>();     ///< Inventory items
+    private List<GameObject> slots = new List<GameObject>(); ///< UI slots
+    private int toyPieces = 0;                      ///< Piece count
 
-    public GameObject equippedRight; ///< Object equipped in the right hand.
-    public bool isInventoryOpen = false; ///< Inventory state (open/closed).
+    public GameObject equippedRight;                ///< Equipped right-hand object
+    public bool isInventoryOpen = false;            ///< Inventory open/closed
 
-    Stats stats; ///< Reference to player stats.
-    GameTexts gameTexts; ///< Game texts.
+    Stats stats;                                   ///< Player stats
+    GameTexts gameTexts;                           ///< UI texts
 
     /**
-     * @brief Assigns scene references at the start.
+     * @brief Get refs and setup.
      */
     void Start()
     {
@@ -57,8 +57,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Adds an item to the inventory and handles special logic (pieces, rewards, photos).
-     * @param item The item to add.
+     * @brief Add item, handle pieces, rewards, photos.
      */
     public void AddItem(Item item)
     {
@@ -96,8 +95,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Removes an item from the inventory.
-     * @param item The item to remove.
+     * @brief Remove item from inventory.
      */
     public void RemoveItem(Item item)
     {
@@ -111,14 +109,12 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Checks if the inventory contains an item with a given ID.
-     * @param itemName The ID of the item.
-     * @return True if the item is in the inventory, false otherwise.
+     * @brief Check if item exists by ID.
      */
     public bool HasItem(string itemName) => items.Exists(item => item.itemID == itemName);
 
     /**
-     * @brief Opens or closes the inventory and manages cursor visibility and locking.
+     * @brief Open/close inventory, set cursor.
      */
     public void ToggleInventory()
     {
@@ -131,7 +127,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Rebuilds inventory UI from current items.
+     * @brief Rebuild inventory UI.
      */
     public void RefreshUI()
     {
@@ -167,7 +163,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Unequips the object from the hand.
+     * @brief Unequip right-hand object.
      */
     public void UnequipRightHandItem()
     {
@@ -180,8 +176,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Equips an item in the hand or shows a message if it's a piece, photo, or reward.
-     * @param item The item to equip.
+     * @brief Equip item in right hand.
      */
     private void EquipRightHandItem(Item item)
     {
@@ -205,7 +200,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Closes the inventory and manages cursor state.
+     * @brief Close inventory and lock cursor.
      */
     private void CloseInventory()
     {
@@ -216,8 +211,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Shows the item's icon in the inspection menu.
-     * @param photoSprite The sprite to display.
+     * @brief Show inspect menu for item.
      */
     public void ShowInspectMenu(Sprite photoSprite)
     {
@@ -229,7 +223,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Hides the inspection menu.
+     * @brief Hide inspect menu.
      */
     public void HideInspectMenu()
     {
@@ -243,13 +237,12 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Returns the object equipped in the right hand.
-     * @return The equipped GameObject.
+     * @brief Get equipped right-hand object.
      */
     public GameObject GetRightHandObject() => equippedRight;
 
     /**
-     * @brief Returns a list of item IDs currently in the inventory.
+     * @brief Get list of item IDs in inventory.
      */
     public List<string> GetInventoryItemIDs()
     {
@@ -260,7 +253,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Restores inventory from a list of item IDs.
+     * @brief Restore inventory from item IDs.
      */
     public void RestoreInventory(List<string> itemIDs)
     {
@@ -275,7 +268,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     /**
-     * @brief Finds an item by its ID from resources.
+     * @brief Find item by ID (Resources).
      */
     private Item FindItemByID(string id)
     {

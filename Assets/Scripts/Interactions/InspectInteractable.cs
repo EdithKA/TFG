@@ -2,52 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Provides inspection functionality for examinable objects in the game world.
-/// Displays custom thoughts when the 
-/// interacts with the object.
-/// </summary>
+/**
+ * @brief Lets you inspect objects. Shows a thought when used.
+ */
 public class InspectInteractable : MonoBehaviour, IInteractable
 {
-    /// <summary>
-    /// The thought message to display when the object is inspected.
-    /// </summary>
-    public string thought;
+    public string thought;                     ///< Thought to show on inspect
+    GameTexts gameTexts;                       ///< UI texts
+    UITextController uiTextController;         ///< UI ref
 
-    /// <summary>
-    /// Reference to the UI text controller for displaying messages.
-    /// </summary>
-    UITextController uiTextController;
-
-    /// <summary>
-    /// Initializes the UI text controller reference.
-    /// </summary>
+    /**
+     * @brief Get UI refs.
+     */
     void Start()
     {
         uiTextController = FindObjectOfType<UITextController>();
+        gameTexts = uiTextController.gameTexts;
     }
 
-    /// <summary>
-    /// Handles the interaction when the the player examines the object.
-    /// </summary>
-    /// <param name="objectOnHand">Item currently held by the the player (unused).</param>
+    /**
+     * @brief Show thought when inspected.
+     */
     public void Interact(GameObject objectOnHand = null)
     {
         uiTextController.ShowThought(thought);
     }
 
-    /// <summary>
-    /// Displays the interaction prompt when the the player hovers over the object.
-    /// </summary>
-    /// <param name="textController">UI text controller reference.</param>
+    /**
+     * @brief Show prompt on hover.
+     */
     public void OnHoverEnter(UITextController textController)
     {
-        textController.ShowInteraction("Pulsa [E] para examinar.", Color.cyan);
+        textController.ShowInteraction(gameTexts.inspectMessage);
     }
 
-    /// <summary>
-    /// Clears the interaction prompt when the the player stops hovering.
-    /// </summary>
+    /**
+     * @brief Clear prompt on exit.
+     */
     public void OnHoverExit()
     {
         uiTextController.ClearMessages();

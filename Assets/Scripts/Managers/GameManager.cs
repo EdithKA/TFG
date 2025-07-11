@@ -3,24 +3,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /**
- * @brief Controls the pause menu, scene changes, and quitting the game.
+ * @brief Handles pause menu, scene changes, and quitting the game.
  */
 public class GameManager : MonoBehaviour
 {
-    // Pause Menu Settings.
-    public GameObject pauseMenu; ///< Pause menu.
-    public bool isLevel; ///< Indicates if we are in a level or a menu.
-    bool isPaused = false; ///< Pause state.
+    // --- Pause Menu ---
+    public GameObject pauseMenu;      ///< Pause menu panel
+    public bool isLevel;              ///< True if in a level
+    bool isPaused = false;            ///< Pause state
 
-    // Menu Settings
-    public AudioSource buttonPlayer;
-    public AudioClip buttonSound;
+    // --- Menu ---
+    public AudioSource buttonPlayer;  ///< Audio source for buttons
+    public AudioClip buttonSound;     ///< Button sound
+
     /**
-     * @brief Handles pause/resume and checks for game completion every frame.
+     * @brief Pause/resume logic each frame.
      */
     void Update()
     {
-        // If it's a level, ESC key to pause/resume.
         if (isLevel && Input.GetKeyDown(KeyCode.Escape))
             if (isPaused)
                 Resume();
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-     * @brief Resumes the game from the pause menu.
+     * @brief Resume from pause.
      */
     void Resume()
     {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-     * @brief Activates the pause menu and stops time.
+     * @brief Pause the game.
      */
     void Pause()
     {
@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+
     /**
-     * @brief Activates the button sound and changes the scene according to the received name.
+     * @brief Play button sound and change scene.
      */
     public void ButtonToScene(string sceneName)
     {
@@ -69,8 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-     * @brief Changes the scene according to the received name.
-     * @param name Name of the scene to load.
+     * @brief Change scene by name.
      */
     public void ChangeScene(string name)
     {
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     }
 
     /**
-     * @brief Closes the application.
+     * @brief Quit the game.
      */
     public void QuitGame()
     {

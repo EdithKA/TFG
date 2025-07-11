@@ -1,24 +1,24 @@
 using UnityEngine;
 
-/// <summary>
-/// Defines the standard interface for objects that can be interacted with by the the player.
-/// </summary>
+/**
+ * @brief Interface for objects the player can interact with.
+ */
 public interface IInteractable
 {
-    /// <summary>
-    /// Called when the the player hovers over the interactable object.
-    /// </summary>
-    /// <param name="textController">The UI text controller to display interaction prompts.</param>
+    /**
+     * @brief Called when the player hovers over the object.
+     * @param textController UI text controller for prompts.
+     */
     void OnHoverEnter(UITextController textController);
 
-    /// <summary>
-    /// Called when the the player stops hovering over the interactable object.
-    /// </summary>
+    /**
+     * @brief Called when the player stops hovering.
+     */
     void OnHoverExit();
 
-    /// <summary>
-    /// Called when the the player interacts with the object.
-    /// </summary>
-    /// <param name="objectOnHand">Optional reference to the item currently held by the the player.</param>
+    /**
+     * @brief Called when the player interacts with the object.
+     * @param objectOnHand Item the player holds (optional).
+     */
     void Interact(GameObject objectOnHand = null);
 }

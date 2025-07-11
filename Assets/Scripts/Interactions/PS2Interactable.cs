@@ -2,88 +2,36 @@ using UnityEngine;
 using UnityEngine.Video;
 using System;
 
-/// <summary>
-/// Controls PS2 puzzle interaction, DVD verification, and reward system.
-/// Implements both interactable and puzzle objective interfaces.
-/// </summary>
+/**
+ * @brief PS2 puzzle: insert correct DVD, get reward.
+ */
 public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
 {
-    /// <summary>
-    /// Indicates if the puzzle has been completed.
-    /// </summary>
-    public bool isComplete { get; private set; }
+    public bool isComplete { get; private set; } ///< Puzzle done
+    public event Action onCompleted;             ///< On complete event
 
-    /// <summary>
-    /// Event triggered when the puzzle is completed.
-    /// </summary>
-    public event Action onCompleted;
-
-    [Header("Reward Settings")]
-    /// <summary>
-    /// Item rewarded upon puzzle completion.
-    /// </summary>
-    public Item crashSaveData;
+    [Header("Reward")]
+    public Item crashSaveData;                   ///< Reward item
 
     [Header("Components")]
-    /// <summary>
-    /// Status LED light component.
-    /// </summary>
-    public Light led;
+    public Light led;                            ///< Status LED
+    public AudioClip bootSound;                  ///< Boot sound
+    public VideoPlayer dvdPlayer;                ///< Video player
+    public VideoClip noSignal;                   ///< No DVD video
+    public VideoClip correctDVD;                 ///< Correct DVD video
+    public VideoClip wrongDVD;                   ///< Wrong DVD video
+    public GameTexts gameTexts;                  ///< UI texts
 
-    /// <summary>
-    /// Sound played when inserting a DVD.
-    /// </summary>
-    public AudioClip bootSound;
+    [Header("Config")]
+    public string requiredDVD = "CrashDVD";      ///< Needed DVD
 
-    /// <summary>
-    /// Video the player component for DVD playback.
-    /// </summary>
-    public VideoPlayer dvdPlayer;
+    AudioSource audioSource;                     ///< Audio ref
+    UITextController uiTextController;           ///< UI ref
+    InventoryManager inventoryManager;           ///< Inventory ref
 
-    /// <summary>
-    /// Video clip shown when no DVD is inserted.
-    /// </summary>
-    public VideoClip noSignal;
-
-    /// <summary>
-    /// Video clip shown when correct DVD is inserted.
-    /// </summary>
-    public VideoClip correctDVD;
-
-    /// <summary>
-    /// Video clip shown when wrong DVD is inserted.
-    /// </summary>
-    public VideoClip wrongDVD;
-
-    /// <summary>
-    /// Game text configurations for UI messages.
-    /// </summary>
-    public GameTexts gameTexts;
-
-    [Header("Configuration")]
-    /// <summary>
-    /// Required DVD item ID to complete the puzzle.
-    /// </summary>
-    public string requiredDVD = "CrashDVD";
-
-    /// <summary>
-    /// Audio source component for sound playback.
-    /// </summary>
-    AudioSource audioSource;
-
-    /// <summary>
-    /// UI text controller for displaying messages.
-    /// </summary>
-    UITextController uiTextController;
-
-    /// <summary>
-    /// Inventory manager reference.
-    /// </summary>
-    InventoryManager inventoryManager;
-
-    /// <summary>
-    /// Initializes components and sets up initial state.
-    /// </summary>
+    /**
+     * @brief Get refs, set up.
+     */
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -96,28 +44,26 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
         dvdPlayer.Play();
     }
 
-    /// <summary>
-    /// Displays interaction prompt when hovered.
-    /// </summary>
-    /// <param name="textController">UI text controller reference.</param>
+    /**
+     * @brief Show prompt on hover.
+     */
     public void OnHoverEnter(UITextController textController)
     {
         if (!isComplete)
             textController.ShowInteraction(gameTexts.interactMessage, Color.cyan);
     }
 
-    /// <summary>
-    /// Clears interaction prompt when hover ends.
-    /// </summary>
+    /**
+     * @brief Clear prompt on exit.
+     */
     public void OnHoverExit()
     {
         uiTextController.ClearMessages();
     }
 
-    /// <summary>
-    /// Handles DVD insertion and verification.
-    /// </summary>
-    /// <param name="objectOnHand">DVD item being used.</param>
+    /**
+     * @brief Insert DVD, check if correct.
+     */
     public void Interact(GameObject objectOnHand = null)
     {
         if (!isComplete)
@@ -159,10 +105,9 @@ public class PS2Interactable : MonoBehaviour, IInteractable, IPuzleObjective
         }
     }
 
-    /// <summary>
-    /// Handles video end events and reward distribution.
-    /// </summary>
-    /// <param name="vp">Video the player that finished playback.</param>
+    /**
+     * @brief On video end, give reward if solved.
+     */
     void OnVideoEnded(VideoPlayer vp)
     {
         if (isComplete && !inventoryManager.HasItem(crashSaveData.itemID))

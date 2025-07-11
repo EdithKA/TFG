@@ -1,47 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; // Added for NavMeshObstacle
+using UnityEngine.AI;
 
 /**
- * @brief Controls door interaction, requiring a specific item to open/close.
- * Implements the IInteractable interface.
+ * @brief Door that needs an item to open/close.
  */
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
-    [Header("Animation Settings")]
-    /**
-     * @brief Reference to the door's Animator component.
-     */
-    public Animator leftDoorAnim;
-    public Animator rightDoorAnim;
+    [Header("Animation")]
+    public Animator leftDoorAnim;   ///< Left door animator
+    public Animator rightDoorAnim;  ///< Right door animator
+    private string openParameter = "Open"; ///< Animator param
+    public bool isOpen = false;     ///< Is the door open
+
+    [Header("UI")]
+    public GameTexts gameTexts;         ///< UI texts
+    public UITextController textController; ///< UI controller
+
+    [Header("Item")]
+    public string requiredItem;     ///< Needed item
+
+    BoxCollider interactCollider;   ///< Collider for interaction
 
     /**
-     * @brief Name of the animation parameter that controls door state.
-     */
-    private string openParameter = "Open";
-
-    /**
-     * @brief Current state of the door (open/closed).
-     */
-    public bool isOpen = false;
-
-    [Header("UI References")]
-    /**
-     * @brief Game text configurations for UI messages.
-     */
-    public GameTexts gameTexts;
-    public UITextController textController;
-
-    [Header("Required Item")]
-    /**
-     * @brief Item ID required to interact with the door.
-     */
-    public string requiredItem;
-
-    BoxCollider interactCollider;
-
-    /**
-     * @brief Initializes the door animator reference.
+     * @brief Setup refs.
      */
     void Start()
     {
@@ -56,8 +38,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     }
 
     /**
-     * @brief Displays interaction prompt when hovering over the door.
-     * @param textController UI text controller reference.
+     * @brief Show prompt on hover.
      */
     public void OnHoverEnter(UITextController textController)
     {
@@ -65,7 +46,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     }
 
     /**
-     * @brief Clears interaction prompt when hovering ends.
+     * @brief Clear prompt on exit.
      */
     public void OnHoverExit()
     {
@@ -73,14 +54,12 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     }
 
     /**
-     * @brief Handles door interaction, checking for required item and toggling door state.
-     * @param objectOnHand Item currently held by the player.
+     * @brief Try to open/close. Needs item.
      */
     public void Interact(GameObject objectOnHand = null)
     {
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        // Check if player has required item
         if (!inventory.HasItem(requiredItem))
         {
             textController.ShowThought(gameTexts.needSomething);
@@ -94,7 +73,6 @@ public class DoorInteractable : MonoBehaviour, IInteractable
                 textController.ShowThought(gameTexts.closeDoor);
         }
 
-        // Toggle door state
         isOpen = !isOpen;
     }
 }
