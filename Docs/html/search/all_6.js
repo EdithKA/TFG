@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['hasitem_0',['HasItem',['../class_inventory_manager.html#ae105fd7e1358690239919d27df074ffb',1,'InventoryManager']]],
-  ['hasphone_1',['hasPhone',['../class_stats.html#ad683cc7700550d018522b6b6f1e0c382',1,'Stats']]],
-  ['health_2',['health',['../class_stats.html#a611e0ef59fa783a6fdf34c09431195a3',1,'Stats']]],
-  ['healthbars_3',['healthBars',['../class_stats.html#ad92ffb04f87610042019c77cdb265414',1,'Stats']]],
-  ['hearticon_4',['heartIcon',['../class_stats.html#a732164e243d904f211d25de0fc9586c9',1,'Stats']]],
-  ['heartsprites_5',['heartSprites',['../class_stats.html#ae734d4d680c41be22704e63c33cebdef',1,'Stats']]],
-  ['hideinspectmenu_6',['HideInspectMenu',['../class_inventory_manager.html#a8a64ab457c653fe05556d307e7a98bd7',1,'InventoryManager']]],
-  ['holderinteractable_7',['HolderInteractable',['../class_holder_interactable.html',1,'']]],
-  ['holderinteractable_2ecs_8',['HolderInteractable.cs',['../_holder_interactable_8cs.html',1,'']]],
-  ['holderpoint_9',['holderPoint',['../class_holder_interactable.html#abe419dadc30edb937cd6b2051c074fdb',1,'HolderInteractable']]]
+  ['gamemanager_0',['GameManager',['../class_game_manager.html',1,'']]],
+  ['gamemanager_1',['gameManager',['../class_player_controller.html#ab71a808b87ea114cdfaa1403a1b2aa4c',1,'PlayerController.gameManager'],['../class_stats.html#a2293cba6c2af4007f26e0aa321ac04ea',1,'Stats.gameManager']]],
+  ['gamemanager_2ecs_2',['GameManager.cs',['../_game_manager_8cs.html',1,'']]],
+  ['gametexts_3',['GameTexts',['../class_game_texts.html',1,'']]],
+  ['gametexts_4',['gameTexts',['../class_player_controller.html#aa6440c818fc6a6ad47d82e2fa77dc83a',1,'PlayerController.gameTexts'],['../class_door_interactable.html#aac1b5ef1384fa008255d5d1fd1e46300',1,'DoorInteractable.gameTexts'],['../class_holder_interactable.html#abf111bca455fe2f05b639279f51a0c00',1,'HolderInteractable.gameTexts'],['../class_inspect_interactable.html#abe2e4728ec3e0b92a5fc12d30ef7f1c6',1,'InspectInteractable.gameTexts'],['../class_p_s2_interactable.html#a0976420e24dd619c6ab44f865e8bd0be',1,'PS2Interactable.gameTexts'],['../class_inventory_manager.html#a82bf8e7ae95e676d8c2f6ef0c8418345',1,'InventoryManager.gameTexts'],['../class_u_i_text_controller.html#a29790892cc8b22b4e7e5bd519eb8ce2f',1,'UITextController.gameTexts']]],
+  ['gametexts_2ecs_5',['GameTexts.cs',['../_game_texts_8cs.html',1,'']]],
+  ['getindex_6',['GetIndex',['../class_angle_to_player.html#a1a7a5732d9a0659c0a4f5f56b4450549',1,'AngleToPlayer']]],
+  ['getinputs_7',['GetInputs',['../class_player_controller.html#a8312824479b277a543f76aa8c1fa0e09',1,'PlayerController']]],
+  ['getinventoryitemids_8',['GetInventoryItemIDs',['../class_inventory_manager.html#a0539b76288a78514d991e322448adc4f',1,'InventoryManager']]],
+  ['getrighthandobject_9',['GetRightHandObject',['../class_inventory_manager.html#a14061613b7558fb161c238f0558f0439',1,'InventoryManager']]]
 ];

@@ -24,22 +24,22 @@
 */
 var NAVTREE =
 [
-  [ "The In-Between", "index.html", [
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
+  [ "THE IN-BETWEEN", "index.html", [
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Structure Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
+      [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Enumerations", "globals_enum.html", null ]
       ] ]
@@ -50,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_angle_to_player_8cs.html",
-"dir_95c22b13456f3541727825ea725a381f.html"
+"class_mouse_look.html#a74aea4a5377c9adfdfbfce2f8c11dd3b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

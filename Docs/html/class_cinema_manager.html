@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: CinemaManager Class Reference</title>
-<link rel="icon" href="Mobile.png" type="image/x-icon" />
+<title>THE IN-BETWEEN: CinemaManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,14 +103,14 @@ $(function(){initNavTree('class_cinema_manager.html',''); initResizable(true); }
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#properties">Properties</a> &#124;
-<a href="class_cinema_manager-members.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle"><div class="title">CinemaManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This script manages the state of the cinema puzzle.  
+<p>Manages cinema puzzle state.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CinemaManager:</div>
@@ -119,28 +118,98 @@ Inheritance diagram for CinemaManager:</div>
  <div class="center">
   <img src="class_cinema_manager.png" usemap="#CinemaManager_map" alt=""/>
   <map id="CinemaManager_map" name="CinemaManager_map">
-<area href="interface_i_puzle_objective.html" title="Interface to implement an objective to be completed for a minigame." alt="IPuzleObjective" shape="rect" coords="115,0,220,24"/>
+<area href="interface_i_puzle_objective.html" title="Interface for a minigame objective." alt="IPuzleObjective" shape="rect" coords="115,0,220,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a3152d13cab508268088be81ace1c0c24" id="r_a3152d13cab508268088be81ace1c0c24"><td class="memItemLeft" align="right" valign="top">Material&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3152d13cab508268088be81ace1c0c24">screenMaterial</a></td></tr>
-<tr class="memdesc:a3152d13cab508268088be81ace1c0c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Material to assign to the screen when the puzzle is complete.  <br /></td></tr>
+<tr class="memdesc:a3152d13cab508268088be81ace1c0c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Material for screen when complete.  <br /></td></tr>
 <tr class="separator:a3152d13cab508268088be81ace1c0c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6555bf2442e058344607201c5a2b2184" id="r_a6555bf2442e058344607201c5a2b2184"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_door_interactable.html">DoorInteractable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6555bf2442e058344607201c5a2b2184">doors</a></td></tr>
-<tr class="memdesc:a6555bf2442e058344607201c5a2b2184"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of doors that must be open to complete the puzzle.  <br /></td></tr>
+<tr class="memdesc:a6555bf2442e058344607201c5a2b2184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Doors to check.  <br /></td></tr>
 <tr class="separator:a6555bf2442e058344607201c5a2b2184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a2bf2da61366e1a2115d603484dc4ce76" id="r_a2bf2da61366e1a2115d603484dc4ce76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf2da61366e1a2115d603484dc4ce76">isComplete</a><code> [get]</code></td></tr>
-<tr class="memdesc:a2bf2da61366e1a2115d603484dc4ce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the puzzle objective is complete.  <br /></td></tr>
+<tr class="memitem:a2bf2da61366e1a2115d603484dc4ce76" id="r_a2bf2da61366e1a2115d603484dc4ce76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf2da61366e1a2115d603484dc4ce76">isComplete</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:a2bf2da61366e1a2115d603484dc4ce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puzzle done.  <br /></td></tr>
 <tr class="separator:a2bf2da61366e1a2115d603484dc4ce76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6019d43316676af993f2b0939f3ec1eb" id="r_a6019d43316676af993f2b0939f3ec1eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6019d43316676af993f2b0939f3ec1eb">Update</a> ()</td></tr>
+<tr class="memdesc:a6019d43316676af993f2b0939f3ec1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check doors each frame.  <br /></td></tr>
+<tr class="separator:a6019d43316676af993f2b0939f3ec1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fafdf7d5e198e0c8ba88f907b407fc9" id="r_a3fafdf7d5e198e0c8ba88f907b407fc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fafdf7d5e198e0c8ba88f907b407fc9">checkDoors</a> ()</td></tr>
+<tr class="memdesc:a3fafdf7d5e198e0c8ba88f907b407fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if all doors open.  <br /></td></tr>
+<tr class="separator:a3fafdf7d5e198e0c8ba88f907b407fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This script manages the state of the cinema puzzle. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+<div class="textblock"><p>Manages cinema puzzle state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00009">9</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3fafdf7d5e198e0c8ba88f907b407fc9" name="a3fafdf7d5e198e0c8ba88f907b407fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fafdf7d5e198e0c8ba88f907b407fc9">&#9670;&#160;</a></span>checkDoors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CinemaManager.checkDoors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if all doors open. </p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00030">30</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a6019d43316676af993f2b0939f3ec1eb" name="a6019d43316676af993f2b0939f3ec1eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6019d43316676af993f2b0939f3ec1eb">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CinemaManager.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check doors each frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00018">18</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a6555bf2442e058344607201c5a2b2184" name="a6555bf2442e058344607201c5a2b2184"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6555bf2442e058344607201c5a2b2184">&#9670;&#160;</a></span>doors</h2>
 
@@ -153,7 +222,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of doors that must be open to complete the puzzle. </p>
+<p>Doors to check. </p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
 
 </div>
 </div>
@@ -169,7 +240,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Material to assign to the screen when the puzzle is complete. </p>
+<p>Material for screen when complete. </p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
 
 </div>
 </div>
@@ -189,19 +262,21 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel private-set">private set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates if the puzzle objective is complete. </p>
+<p>Puzzle done. </p>
 
 <p>Implements <a class="el" href="interface_i_puzle_objective.html#a8ab7638bb7ab67ae5b43325e1510dc13">IPuzleObjective</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_cinema_manager_8cs_source.html#l00013">13</a> of file <a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Puzzles/<a class="el" href="_cinema_manager_8cs.html">CinemaManager.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Puzzles/<a class="el" href="_cinema_manager_8cs_source.html">CinemaManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['needmobilemessage_0',['needMobileMessage',['../class_game_texts.html#a644c9d6b74f60d58df7c1f4b3c9abc62',1,'GameTexts']]],
-  ['needobjectmessage_1',['needObjectMessage',['../class_game_texts.html#a9694be923b7a4e57969f6048657abf97',1,'GameTexts']]],
-  ['needpieces_2',['needPieces',['../class_game_texts.html#a8e22cd7fd4df664e1ee92dac1a5a1295',1,'GameTexts']]],
-  ['needsomething_3',['needSomething',['../class_game_texts.html#a927948371de0a9158af4159458e0de55',1,'GameTexts']]],
-  ['nosignal_4',['noSignal',['../class_p_s2_interactable.html#a8e557b860624bb4247ecd80e906c0101',1,'PS2Interactable']]]
+  ['maincamera_0',['mainCamera',['../class_player_controller.html#a45b2a343c0a4f258cb3fab611d23214b',1,'PlayerController']]],
+  ['mouselook_1',['MouseLook',['../class_mouse_look.html',1,'']]],
+  ['mouselook_2ecs_2',['MouseLook.cs',['../_mouse_look_8cs.html',1,'']]],
+  ['mousesensitivity_3',['mouseSensitivity',['../class_mouse_look.html#a3e984b4fd9a46c25309ffeedd22aa4aa',1,'MouseLook']]],
+  ['movementvector_4',['movementVector',['../class_player_controller.html#a7944c2b7786e62e1b4f72e4d6a1adb0d',1,'PlayerController']]],
+  ['moverange_5',['moveRange',['../class_stats.html#aa3d802107b5116940254cb648b1c9cec',1,'Stats']]]
 ];

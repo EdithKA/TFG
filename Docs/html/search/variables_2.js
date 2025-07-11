@@ -4,8 +4,8 @@ var searchData=
   ['cameratransform_1',['cameraTransform',['../class_mouse_look.html#ab0f3a530a840babd6944a17d7e30a732',1,'MouseLook']]],
   ['canattack_2',['canAttack',['../class_enemy_distance_controller.html#ab7d1b7a26f9923f972386bfbe192c700',1,'EnemyDistanceController.canAttack'],['../class_enemy_melee_controller.html#a00f79100ad39297bb103d9191f63486b',1,'EnemyMeleeController.canAttack']]],
   ['canchase_3',['canChase',['../class_enemy_distance_controller.html#a9515462c88e69086c38f5cf1c783a6dd',1,'EnemyDistanceController.canChase'],['../class_enemy_melee_controller.html#a339e37f718fb5937b5e3ea98d85506ae',1,'EnemyMeleeController.canChase']]],
-  ['canlookvertically_4',['canLookVertically',['../class_enemy_sprite_look.html#adba02e7b25180e8fe3c3b5eff6959dd4',1,'EnemySpriteLook']]],
-  ['canopen_5',['canOpen',['../class_game_texts.html#aef4c852c50a5cd998584e6234a2d511b',1,'GameTexts']]],
+  ['canopen_4',['canOpen',['../class_game_texts.html#aef4c852c50a5cd998584e6234a2d511b',1,'GameTexts']]],
+  ['charactercontroller_5',['characterController',['../class_player_controller.html#ac0f9de9c0ab3c9e5f9c4aebb56cd36da',1,'PlayerController']]],
   ['chasedistance_6',['chaseDistance',['../class_enemy_distance_controller.html#a6e8564e9a5d9cf19b7105d150d6a240a',1,'EnemyDistanceController.chaseDistance'],['../class_enemy_melee_controller.html#a56942b57dc63679dde3342ed48bfc706',1,'EnemyMeleeController.chaseDistance']]],
   ['closedoor_7',['closeDoor',['../class_game_texts.html#a66d72bc757d92a19c7005c9c3b3d9657',1,'GameTexts']]],
   ['collectcolor_8',['collectColor',['../class_u_i_text_controller.html#acc29b84fc387e80a166e9b6e380a3a90',1,'UITextController']]],
@@ -14,6 +14,11 @@ var searchData=
   ['completedtoy_11',['completedToy',['../class_inventory_manager.html#a60011c9b3bda8b4aa05d6721c55e9f67',1,'InventoryManager']]],
   ['correctdvd_12',['correctDVD',['../class_p_s2_interactable.html#ac4519b40c5d4b52ec7ff3cd9d8c4d66c',1,'PS2Interactable']]],
   ['correctobjectid_13',['correctObjectID',['../class_holder_interactable.html#a23439708a66d4095625f3545a432d446',1,'HolderInteractable']]],
-  ['corruptibletag_14',['corruptibleTag',['../class_stats.html#a4878ad61cc3f165e926e1a0ab2a9d188',1,'Stats']]],
-  ['crashsavedata_15',['crashSaveData',['../class_p_s2_interactable.html#a0e8027418bc53750a6bb232ac7dc9be9',1,'PS2Interactable']]]
+  ['corruptibleobjects_14',['corruptibleObjects',['../class_stats.html#ac467b455ac70bdacd6abb5cecf6a06e3',1,'Stats']]],
+  ['corruptibletag_15',['corruptibleTag',['../class_stats.html#a4878ad61cc3f165e926e1a0ab2a9d188',1,'Stats']]],
+  ['corruptionspeed_16',['corruptionSpeed',['../class_stats.html#a40bfe079c2e087724111739501147f90',1,'Stats']]],
+  ['crashsavedata_17',['crashSaveData',['../class_p_s2_interactable.html#a0e8027418bc53750a6bb232ac7dc9be9',1,'PS2Interactable']]],
+  ['currentinteractable_18',['currentInteractable',['../class_player_controller.html#af28ed87dd22bbfb854db7ac49a08e34a',1,'PlayerController']]],
+  ['currentstamina_19',['currentStamina',['../class_player_controller.html#a1780dc222b68afbb38bd8852fbf409be',1,'PlayerController']]],
+  ['currentwaypointindex_20',['currentWaypointIndex',['../class_enemy_distance_controller.html#aecd72c04f0dd8096c1ef1e544223c653',1,'EnemyDistanceController.currentWaypointIndex'],['../class_enemy_melee_controller.html#acb69102577f94bd13bde68c51e0e5677',1,'EnemyMeleeController.currentWaypointIndex']]]
 ];

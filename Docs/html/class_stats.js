@@ -1,7 +1,20 @@
 var class_stats =
 [
+    [ "CorruptObjects", "class_stats.html#a14ebcff6d67293916b79d541b7e40a00", null ],
+    [ "ResetCorruptedObjects", "class_stats.html#aadfab142d46a8582ca09911a0c4fdb6b", null ],
+    [ "RestoreHealth", "class_stats.html#af31b4e99d3ed1a4bcd2b2dc5001c958a", null ],
+    [ "SetBrainIcon", "class_stats.html#abf58e872f3be56be69d85af7563aa5cf", null ],
+    [ "SetHeartIcon", "class_stats.html#a3e84dab90b23988582631c2477ea83d5", null ],
+    [ "Start", "class_stats.html#ab7122da0fafe848b0eb99729c0f5db44", null ],
     [ "TakeDamage", "class_stats.html#a6107871f3f867ffdfa7edddd9023ad6c", null ],
+    [ "Update", "class_stats.html#a66237d25345c00b4022dc9c02aa1fa26", null ],
+    [ "UpdateBar", "class_stats.html#a151f0a0d1da5805e7ee7d1884f8df151", null ],
+    [ "UpdateBars", "class_stats.html#aecc284e0ece872a7617613b181fd9192", null ],
+    [ "UpdateUI", "class_stats.html#afb1e78b38a3a8c80813afdc62c306b6b", null ],
+    [ "UpdateVignetteEffect", "class_stats.html#a9d6af826e9b2059891299dd7746fc4de", null ],
+    [ "corruptibleObjects", "class_stats.html#ac467b455ac70bdacd6abb5cecf6a06e3", null ],
     [ "corruptibleTag", "class_stats.html#a4878ad61cc3f165e926e1a0ab2a9d188", null ],
+    [ "corruptionSpeed", "class_stats.html#a40bfe079c2e087724111739501147f90", null ],
     [ "decreaseInterval", "class_stats.html#ac218a6fa3d03cf7dce2c201fedf00da4", null ],
     [ "gameManager", "class_stats.html#a2293cba6c2af4007f26e0aa321ac04ea", null ],
     [ "hasPhone", "class_stats.html#ad683cc7700550d018522b6b6f1e0c382", null ],
@@ -9,12 +22,16 @@ var class_stats =
     [ "healthBars", "class_stats.html#ad92ffb04f87610042019c77cdb265414", null ],
     [ "heartIcon", "class_stats.html#a732164e243d904f211d25de0fc9586c9", null ],
     [ "heartSprites", "class_stats.html#ae734d4d680c41be22704e63c33cebdef", null ],
+    [ "lastSanityDecreaseTime", "class_stats.html#a42a70b9f8eb8969225473afe151ee7bd", null ],
     [ "moveRange", "class_stats.html#aa3d802107b5116940254cb648b1c9cec", null ],
+    [ "originalPositions", "class_stats.html#aedb7237a13b682fdf3f101f89d1027bd", null ],
+    [ "originalRotations", "class_stats.html#aeae3a3572cf1bfa0e08f203e0ad9563b", null ],
     [ "postProcessVolume", "class_stats.html#afcc377de8911fff36fc931ff890857aa", null ],
     [ "rotationRange", "class_stats.html#ae79ab77a7b06d2ac673b0cc235188431", null ],
     [ "sanity", "class_stats.html#a72bec48562258013be6e4b75d9c34463", null ],
     [ "sanityBars", "class_stats.html#a63947ff30ac0518d61e76aea6399bd83", null ],
     [ "sanityIcon", "class_stats.html#abda59df727f5ea418a7442882814cbdd", null ],
     [ "sanitySprites", "class_stats.html#a2596ed66a1648ddb03572b40a60a217c", null ],
-    [ "sanityThreshold", "class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894", null ]
+    [ "sanityThreshold", "class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894", null ],
+    [ "vignette", "class_stats.html#a47df9580da378c4c97029e1bbe854b73", null ]
 ];

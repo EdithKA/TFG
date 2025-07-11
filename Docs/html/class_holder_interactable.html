@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: HolderInteractable Class Reference</title>
-<link rel="icon" href="Mobile.png" type="image/x-icon" />
+<title>THE IN-BETWEEN: HolderInteractable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,14 +104,15 @@ $(function(){initNavTree('class_holder_interactable.html',''); initResizable(tru
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-attribs">Data Fields</a> &#124;
 <a href="#properties">Properties</a> &#124;
-<a href="class_holder_interactable-members.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">HolderInteractable Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Allows assigning a holder as a puzzle objective and placing objects on it.  
+<p>Holder for puzzle objects. Lets you place and check items.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HolderInteractable:</div>
@@ -120,51 +120,69 @@ Inheritance diagram for HolderInteractable:</div>
  <div class="center">
   <img src="class_holder_interactable.png" usemap="#HolderInteractable_map" alt=""/>
   <map id="HolderInteractable_map" name="HolderInteractable_map">
-<area href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player." alt="IInteractable" shape="rect" coords="126,0,242,24"/>
-<area href="interface_i_puzle_objective.html" title="Interface to implement an objective to be completed for a minigame." alt="IPuzleObjective" shape="rect" coords="252,0,368,24"/>
+<area href="interface_i_interactable.html" title="Interface for objects the player can interact with." alt="IInteractable" shape="rect" coords="126,0,242,24"/>
+<area href="interface_i_puzle_objective.html" title="Interface for a minigame objective." alt="IPuzleObjective" shape="rect" coords="252,0,368,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c6d95b6d4bb99192bdb32b09b66db03" id="r_a3c6d95b6d4bb99192bdb32b09b66db03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c6d95b6d4bb99192bdb32b09b66db03">OnHoverEnter</a> (<a class="el" href="class_u_i_text_controller.html">UITextController</a> textController)</td></tr>
-<tr class="memdesc:a3c6d95b6d4bb99192bdb32b09b66db03"><td class="mdescLeft">&#160;</td><td class="mdescRight">When hovering over the object, shows an interaction message if not completed.  <br /></td></tr>
+<tr class="memdesc:a3c6d95b6d4bb99192bdb32b09b66db03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show prompt if not done.  <br /></td></tr>
 <tr class="separator:a3c6d95b6d4bb99192bdb32b09b66db03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa26c72a758814e8661697f16194d5ea1" id="r_aa26c72a758814e8661697f16194d5ea1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa26c72a758814e8661697f16194d5ea1">OnHoverExit</a> ()</td></tr>
-<tr class="memdesc:aa26c72a758814e8661697f16194d5ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears UI messages when the object is no longer being pointed at.  <br /></td></tr>
+<tr class="memdesc:aa26c72a758814e8661697f16194d5ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear UI on exit.  <br /></td></tr>
 <tr class="separator:aa26c72a758814e8661697f16194d5ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f7b96c5278eeecc351faddf6cc1f7c2" id="r_a0f7b96c5278eeecc351faddf6cc1f7c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f7b96c5278eeecc351faddf6cc1f7c2">Interact</a> (GameObject objectOnHand=null)</td></tr>
-<tr class="memdesc:a0f7b96c5278eeecc351faddf6cc1f7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logic for interacting with the holder.  <br /></td></tr>
+<tr class="memdesc:a0f7b96c5278eeecc351faddf6cc1f7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place or collect object.  <br /></td></tr>
 <tr class="separator:a0f7b96c5278eeecc351faddf6cc1f7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a23439708a66d4095625f3545a432d446" id="r_a23439708a66d4095625f3545a432d446"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23439708a66d4095625f3545a432d446">correctObjectID</a></td></tr>
-<tr class="memdesc:a23439708a66d4095625f3545a432d446"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the correct object that must be placed on the holder.  <br /></td></tr>
+<tr class="memdesc:a23439708a66d4095625f3545a432d446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needed object ID.  <br /></td></tr>
 <tr class="separator:a23439708a66d4095625f3545a432d446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe419dadc30edb937cd6b2051c074fdb" id="r_abe419dadc30edb937cd6b2051c074fdb"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe419dadc30edb937cd6b2051c074fdb">holderPoint</a></td></tr>
-<tr class="memdesc:abe419dadc30edb937cd6b2051c074fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Location where the placed object will be instantiated.  <br /></td></tr>
+<tr class="memdesc:abe419dadc30edb937cd6b2051c074fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where to place the object.  <br /></td></tr>
 <tr class="separator:abe419dadc30edb937cd6b2051c074fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf111bca455fe2f05b639279f51a0c00" id="r_abf111bca455fe2f05b639279f51a0c00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_texts.html">GameTexts</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf111bca455fe2f05b639279f51a0c00">gameTexts</a></td></tr>
+<tr class="memdesc:abf111bca455fe2f05b639279f51a0c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI messages.  <br /></td></tr>
 <tr class="separator:abf111bca455fe2f05b639279f51a0c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ad01e06cbaa91d3f0263ee7439119fe11" id="r_ad01e06cbaa91d3f0263ee7439119fe11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01e06cbaa91d3f0263ee7439119fe11">isComplete</a><code> [get]</code></td></tr>
-<tr class="memdesc:ad01e06cbaa91d3f0263ee7439119fe11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the holder's objective has been completed.  <br /></td></tr>
+<tr class="memitem:ad01e06cbaa91d3f0263ee7439119fe11" id="r_ad01e06cbaa91d3f0263ee7439119fe11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01e06cbaa91d3f0263ee7439119fe11">isComplete</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:ad01e06cbaa91d3f0263ee7439119fe11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the objective done.  <br /></td></tr>
 <tr class="separator:ad01e06cbaa91d3f0263ee7439119fe11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af52a38b36806ead9d3935d615ab46ac1" id="r_af52a38b36806ead9d3935d615ab46ac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52a38b36806ead9d3935d615ab46ac1">Start</a> ()</td></tr>
+<tr class="memdesc:af52a38b36806ead9d3935d615ab46ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get refs.  <br /></td></tr>
+<tr class="separator:af52a38b36806ead9d3935d615ab46ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaa83c4ab58f94a1a93039c294b31f2bc" id="r_aaa83c4ab58f94a1a93039c294b31f2bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_inventory_manager.html">InventoryManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa83c4ab58f94a1a93039c294b31f2bc">inventoryManager</a></td></tr>
+<tr class="memdesc:aaa83c4ab58f94a1a93039c294b31f2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inventory ref.  <br /></td></tr>
+<tr class="separator:aaa83c4ab58f94a1a93039c294b31f2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdea829341c057045467014101027fc8" id="r_afdea829341c057045467014101027fc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_i_text_controller.html">UITextController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdea829341c057045467014101027fc8">uiTextController</a></td></tr>
+<tr class="memdesc:afdea829341c057045467014101027fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI ref.  <br /></td></tr>
+<tr class="separator:afdea829341c057045467014101027fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f79a9cb37a84337f943eda5cb2dff41" id="r_a0f79a9cb37a84337f943eda5cb2dff41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_item_interactable.html">ItemInteractable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f79a9cb37a84337f943eda5cb2dff41">itemOnHolder</a></td></tr>
+<tr class="memdesc:a0f79a9cb37a84337f943eda5cb2dff41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current object.  <br /></td></tr>
+<tr class="separator:a0f79a9cb37a84337f943eda5cb2dff41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Allows assigning a holder as a puzzle objective and placing objects on it. </p>
+<div class="textblock"><p>Holder for puzzle objects. Lets you place and check items. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00007">7</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0f7b96c5278eeecc351faddf6cc1f7c2" name="a0f7b96c5278eeecc351faddf6cc1f7c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f7b96c5278eeecc351faddf6cc1f7c2">&#9670;&#160;</a></span>Interact()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void HolderInteractable.Interact </td>
@@ -173,22 +191,13 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Logic for interacting with the holder. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">objectOnHand</td><td>The object currently held by the player. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Place or collect object. </p>
 
 <p>Implements <a class="el" href="interface_i_interactable.html#ac96e72b5b0ddf4531aef36932deff760">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00049">49</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -197,9 +206,6 @@ Properties</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void HolderInteractable.OnHoverEnter </td>
@@ -208,22 +214,13 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>When hovering over the object, shows an interaction message if not completed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">textController</td><td>Reference to the UI text controller. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Show prompt if not done. </p>
 
 <p>Implements <a class="el" href="interface_i_interactable.html#aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00032">32</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -232,9 +229,6 @@ Properties</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void HolderInteractable.OnHoverExit </td>
@@ -243,20 +237,46 @@ Properties</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+<p>Clear UI on exit. </p>
+
+<p>Implements <a class="el" href="interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00041">41</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
+
+</div>
+</div>
+<a id="af52a38b36806ead9d3935d615ab46ac1" name="af52a38b36806ead9d3935d615ab46ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52a38b36806ead9d3935d615ab46ac1">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HolderInteractable.Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clears UI messages when the object is no longer being pointed at. </p>
+<p>Get refs. </p>
 
-<p>Implements <a class="el" href="interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00023">23</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a23439708a66d4095625f3545a432d446" name="a23439708a66d4095625f3545a432d446"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23439708a66d4095625f3545a432d446">&#9670;&#160;</a></span>correctObjectID</h2>
 
@@ -269,7 +289,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>ID of the correct object that must be placed on the holder. </p>
+<p>Needed object ID. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00010">10</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -285,6 +307,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>UI messages. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00013">13</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
+
 </div>
 </div>
 <a id="abe419dadc30edb937cd6b2051c074fdb" name="abe419dadc30edb937cd6b2051c074fdb"></a>
@@ -299,7 +325,87 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Location where the placed object will be instantiated. </p>
+<p>Where to place the object. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00011">11</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
+
+</div>
+</div>
+<a id="aaa83c4ab58f94a1a93039c294b31f2bc" name="aaa83c4ab58f94a1a93039c294b31f2bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa83c4ab58f94a1a93039c294b31f2bc">&#9670;&#160;</a></span>inventoryManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_inventory_manager.html">InventoryManager</a> HolderInteractable.inventoryManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inventory ref. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00015">15</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0f79a9cb37a84337f943eda5cb2dff41" name="a0f79a9cb37a84337f943eda5cb2dff41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f79a9cb37a84337f943eda5cb2dff41">&#9670;&#160;</a></span>itemOnHolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_item_interactable.html">ItemInteractable</a> HolderInteractable.itemOnHolder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Current object. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00018">18</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
+
+</div>
+</div>
+<a id="afdea829341c057045467014101027fc8" name="afdea829341c057045467014101027fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdea829341c057045467014101027fc8">&#9670;&#160;</a></span>uiTextController</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_i_text_controller.html">UITextController</a> HolderInteractable.uiTextController</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UI ref. </p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00016">16</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -319,19 +425,21 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel private-set">private set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the holder's objective has been completed. </p>
+<p>Is the objective done. </p>
 
 <p>Implements <a class="el" href="interface_i_puzle_objective.html#a8ab7638bb7ab67ae5b43325e1510dc13">IPuzleObjective</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_holder_interactable_8cs_source.html#l00009">9</a> of file <a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_holder_interactable_8cs.html">HolderInteractable.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_holder_interactable_8cs_source.html">HolderInteractable.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

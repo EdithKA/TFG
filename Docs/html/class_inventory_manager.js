@@ -1,16 +1,24 @@
 var class_inventory_manager =
 [
     [ "AddItem", "class_inventory_manager.html#ab03cb9976ed0fd2ee6e77cd7006d1104", null ],
+    [ "CloseInventory", "class_inventory_manager.html#a16e7ef3a58c9e51c51d0e5a7218821b9", null ],
+    [ "EquipRightHandItem", "class_inventory_manager.html#a973902835c46166a2e189fa6c02666d7", null ],
+    [ "FindItemByID", "class_inventory_manager.html#ad7fd2eb8f4a9ff280a8290209eff5c20", null ],
+    [ "GetInventoryItemIDs", "class_inventory_manager.html#a0539b76288a78514d991e322448adc4f", null ],
     [ "GetRightHandObject", "class_inventory_manager.html#a14061613b7558fb161c238f0558f0439", null ],
     [ "HasItem", "class_inventory_manager.html#ae105fd7e1358690239919d27df074ffb", null ],
     [ "HideInspectMenu", "class_inventory_manager.html#a8a64ab457c653fe05556d307e7a98bd7", null ],
+    [ "RefreshUI", "class_inventory_manager.html#a32e0b17c1e4fce547e13e5695ffacd3d", null ],
     [ "RemoveItem", "class_inventory_manager.html#afc55d3b8671e510b3fd64199e140b001", null ],
+    [ "RestoreInventory", "class_inventory_manager.html#a219e502d693cee6d4da732eb03abb7ad", null ],
     [ "ShowInspectMenu", "class_inventory_manager.html#ac664ffcc393261b1bc3394df618e6a36", null ],
+    [ "Start", "class_inventory_manager.html#a5b18458e8dd8426c55d2d4e2d184706a", null ],
     [ "ToggleInventory", "class_inventory_manager.html#a87c8ecad45dfad4a04b0ec48b901b3c8", null ],
-    [ "UnequipItem", "class_inventory_manager.html#a6659c19268f452eaa013c869abb9f6ad", null ],
-    [ "UpdateUI", "class_inventory_manager.html#a8d1fac39e9190b0b9643f927804d3413", null ],
+    [ "UnequipRightHandItem", "class_inventory_manager.html#a8481adee902247957c3e8e3ef40d4f95", null ],
+    [ "btn", "class_inventory_manager.html#af764e05505f600edf022d8ac43848ab1", null ],
     [ "completedToy", "class_inventory_manager.html#a60011c9b3bda8b4aa05d6721c55e9f67", null ],
     [ "equippedRight", "class_inventory_manager.html#a304b59aa253507606dfb6d97fb0690db", null ],
+    [ "gameTexts", "class_inventory_manager.html#a82bf8e7ae95e676d8c2f6ef0c8418345", null ],
     [ "inspectMenu", "class_inventory_manager.html#ad58024e2444031f38ec864ed200d1349", null ],
     [ "inventoryGrid", "class_inventory_manager.html#aed656f8e5efb81f008b13b8886bb45cf", null ],
     [ "inventorySize", "class_inventory_manager.html#a092943feb47c79fd1b12613640b14a30", null ],
@@ -22,5 +30,9 @@ var class_inventory_manager =
     [ "items", "class_inventory_manager.html#a9178b7de01f139ff256f16e3f1dd62e6", null ],
     [ "leftHand", "class_inventory_manager.html#acda1ac0d407d41e520a986445d29ed07", null ],
     [ "rightHand", "class_inventory_manager.html#a9117e06d048be3f8202abf967b9fa266", null ],
-    [ "soundPlayer", "class_inventory_manager.html#a64ceb3bc16df1b072214c8fa1505db0a", null ]
+    [ "slots", "class_inventory_manager.html#a1ba74f4b51fc220d80c471a2acf8573f", null ],
+    [ "soundPlayer", "class_inventory_manager.html#a64ceb3bc16df1b072214c8fa1505db0a", null ],
+    [ "stats", "class_inventory_manager.html#a258d269c1c99c0791a23ccd5955c969b", null ],
+    [ "toyPieces", "class_inventory_manager.html#a50b1ae7eeefed7308f625609926578bd", null ],
+    [ "uiTextController", "class_inventory_manager.html#ab1bc247ff19b5d9b40ffd6ebcede50b7", null ]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['waypoints_0',['waypoints',['../class_enemy_distance_controller.html#ad894c9343ee7b877dae680f9d86e9cdb',1,'EnemyDistanceController.waypoints'],['../class_enemy_melee_controller.html#a569ab78354e73041f5348e70a3445d23',1,'EnemyMeleeController.waypoints']]],
-  ['wrongdvd_1',['wrongDVD',['../class_p_s2_interactable.html#a4c903e3b1ff5fbac938c937dcff3ec24',1,'PS2Interactable']]],
-  ['wrongobjectmessage_2',['wrongObjectMessage',['../class_game_texts.html#a1f6ef9fbff89c880207094e8ddb7c334',1,'GameTexts']]]
+  ['verticalrotation_0',['verticalRotation',['../class_mouse_look.html#ac6eebe98dcbcd63acf2d90f51ba073a5',1,'MouseLook']]],
+  ['vignette_1',['vignette',['../class_stats.html#a47df9580da378c4c97029e1bbe854b73',1,'Stats']]],
+  ['visionangle_2',['visionAngle',['../class_enemy_distance_controller.html#a43440b7d72eef04171874eacfa3dfebe',1,'EnemyDistanceController.visionAngle'],['../class_enemy_melee_controller.html#a08c37f82baf636cc7f57831fb7d95aee',1,'EnemyMeleeController.visionAngle']]]
 ];

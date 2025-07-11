@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: GameManager Class Reference</title>
-<link rel="icon" href="Mobile.png" type="image/x-icon" />
+<title>THE IN-BETWEEN: GameManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,13 +104,14 @@ $(function(){initNavTree('class_game_manager.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="class_game_manager-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">GameManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Controls the pause menu, scene changes, and quitting the game.  
+<p>Handles pause menu, scene changes, and quitting the game.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameManager:</div>
@@ -122,33 +122,100 @@ Inheritance diagram for GameManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59e6dd8d370a45a4eecd4b1fee7da4b3" id="r_a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</a> ()</td></tr>
-<tr class="memdesc:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the game from the pause menu.  <br /></td></tr>
-<tr class="separator:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b427a8159a66fe01c067fefa369ae86" id="r_a1b427a8159a66fe01c067fefa369ae86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b427a8159a66fe01c067fefa369ae86">LoadSceneByName</a> (string name)</td></tr>
-<tr class="memdesc:a1b427a8159a66fe01c067fefa369ae86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the scene according to the received name.  <br /></td></tr>
-<tr class="separator:a1b427a8159a66fe01c067fefa369ae86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7de74656d57942a1cb3b0d2b375dcc" id="r_abe7de74656d57942a1cb3b0d2b375dcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7de74656d57942a1cb3b0d2b375dcc">ButtonToScene</a> (string sceneName)</td></tr>
+<tr class="memdesc:abe7de74656d57942a1cb3b0d2b375dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play button sound and change scene.  <br /></td></tr>
+<tr class="separator:abe7de74656d57942a1cb3b0d2b375dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93654b52611497c690d9ad5af2772f6" id="r_aa93654b52611497c690d9ad5af2772f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa93654b52611497c690d9ad5af2772f6">ChangeScene</a> (string name)</td></tr>
+<tr class="memdesc:aa93654b52611497c690d9ad5af2772f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change scene by name.  <br /></td></tr>
+<tr class="separator:aa93654b52611497c690d9ad5af2772f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2528be72763c8bf072557d9ece157b" id="r_aad2528be72763c8bf072557d9ece157b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2528be72763c8bf072557d9ece157b">QuitGame</a> ()</td></tr>
-<tr class="memdesc:aad2528be72763c8bf072557d9ece157b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the application.  <br /></td></tr>
+<tr class="memdesc:aad2528be72763c8bf072557d9ece157b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit the game.  <br /></td></tr>
 <tr class="separator:aad2528be72763c8bf072557d9ece157b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:a0f1468dcf4ee59a87f135ee85cf6b800" id="r_a0f1468dcf4ee59a87f135ee85cf6b800"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</a></td></tr>
-<tr class="memdesc:a0f1468dcf4ee59a87f135ee85cf6b800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause menu.  <br /></td></tr>
+<tr class="memdesc:a0f1468dcf4ee59a87f135ee85cf6b800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause menu panel.  <br /></td></tr>
 <tr class="separator:a0f1468dcf4ee59a87f135ee85cf6b800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f706085605070c6aa1a8367c3fd07d" id="r_aa1f706085605070c6aa1a8367c3fd07d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1f706085605070c6aa1a8367c3fd07d">isLevel</a></td></tr>
-<tr class="memdesc:aa1f706085605070c6aa1a8367c3fd07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if we are in a level or a menu.  <br /></td></tr>
+<tr class="memdesc:aa1f706085605070c6aa1a8367c3fd07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if in a level.  <br /></td></tr>
 <tr class="separator:aa1f706085605070c6aa1a8367c3fd07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab37b0224a8cb0b2c35e40584c28d700b" id="r_ab37b0224a8cb0b2c35e40584c28d700b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab37b0224a8cb0b2c35e40584c28d700b">gameComplete</a> = false</td></tr>
-<tr class="memdesc:ab37b0224a8cb0b2c35e40584c28d700b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the game has been completed.  <br /></td></tr>
-<tr class="separator:ab37b0224a8cb0b2c35e40584c28d700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcfce2477465ad2945d178efdbce316" id="r_acdcfce2477465ad2945d178efdbce316"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdcfce2477465ad2945d178efdbce316">buttonPlayer</a></td></tr>
+<tr class="memdesc:acdcfce2477465ad2945d178efdbce316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Audio source for buttons.  <br /></td></tr>
+<tr class="separator:acdcfce2477465ad2945d178efdbce316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7090efd882462f4d6816580d1244f8" id="r_aee7090efd882462f4d6816580d1244f8"><td class="memItemLeft" align="right" valign="top">AudioClip&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee7090efd882462f4d6816580d1244f8">buttonSound</a></td></tr>
+<tr class="memdesc:aee7090efd882462f4d6816580d1244f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button sound.  <br /></td></tr>
+<tr class="separator:aee7090efd882462f4d6816580d1244f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a44c79b205dec16bfe650e21259860c5b" id="r_a44c79b205dec16bfe650e21259860c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44c79b205dec16bfe650e21259860c5b">Update</a> ()</td></tr>
+<tr class="memdesc:a44c79b205dec16bfe650e21259860c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause/resume logic each frame.  <br /></td></tr>
+<tr class="separator:a44c79b205dec16bfe650e21259860c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e6dd8d370a45a4eecd4b1fee7da4b3" id="r_a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</a> ()</td></tr>
+<tr class="memdesc:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume from pause.  <br /></td></tr>
+<tr class="separator:a59e6dd8d370a45a4eecd4b1fee7da4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7979fca811638424b6778a6c223a66ba" id="r_a7979fca811638424b6778a6c223a66ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7979fca811638424b6778a6c223a66ba">Pause</a> ()</td></tr>
+<tr class="memdesc:a7979fca811638424b6778a6c223a66ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause the game.  <br /></td></tr>
+<tr class="separator:a7979fca811638424b6778a6c223a66ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d39c49e4b36479a51b6cb2b5cdd8374" id="r_a2d39c49e4b36479a51b6cb2b5cdd8374"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d39c49e4b36479a51b6cb2b5cdd8374">PlaySoundAndChangeScene</a> (string sceneName)</td></tr>
+<tr class="separator:a2d39c49e4b36479a51b6cb2b5cdd8374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9b6571bbce4dfff13fc7f38467c07c05" id="r_a9b6571bbce4dfff13fc7f38467c07c05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b6571bbce4dfff13fc7f38467c07c05">isPaused</a> = false</td></tr>
+<tr class="memdesc:a9b6571bbce4dfff13fc7f38467c07c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause state.  <br /></td></tr>
+<tr class="separator:a9b6571bbce4dfff13fc7f38467c07c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Controls the pause menu, scene changes, and quitting the game. </p>
+<div class="textblock"><p>Handles pause menu, scene changes, and quitting the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00008">8</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1b427a8159a66fe01c067fefa369ae86" name="a1b427a8159a66fe01c067fefa369ae86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b427a8159a66fe01c067fefa369ae86">&#9670;&#160;</a></span>LoadSceneByName()</h2>
+<a id="abe7de74656d57942a1cb3b0d2b375dcc" name="abe7de74656d57942a1cb3b0d2b375dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7de74656d57942a1cb3b0d2b375dcc">&#9670;&#160;</a></span>ButtonToScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.ButtonToScene </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>sceneName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Play button sound and change scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00060">60</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa93654b52611497c690d9ad5af2772f6" name="aa93654b52611497c690d9ad5af2772f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93654b52611497c690d9ad5af2772f6">&#9670;&#160;</a></span>ChangeScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.ChangeScene </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change scene by name. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00075">75</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7979fca811638424b6778a6c223a66ba" name="a7979fca811638424b6778a6c223a66ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7979fca811638424b6778a6c223a66ba">&#9670;&#160;</a></span>Pause()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,26 +224,49 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameManager.LoadSceneByName </td>
+          <td class="memname">void GameManager.Pause </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Changes the scene according to the received name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>Name of the scene to load. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Pause the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00047">47</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2d39c49e4b36479a51b6cb2b5cdd8374" name="a2d39c49e4b36479a51b6cb2b5cdd8374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d39c49e4b36479a51b6cb2b5cdd8374">&#9670;&#160;</a></span>PlaySoundAndChangeScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator GameManager.PlaySoundAndChangeScene </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>sceneName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00065">65</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
@@ -185,9 +275,6 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GameManager.QuitGame </td>
@@ -196,14 +283,11 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Closes the application. </p>
+<p>Quit the game. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00096">96</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
@@ -225,29 +309,80 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Resumes the game from the pause menu. </p>
+<p>Resume from pause. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00034">34</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab37b0224a8cb0b2c35e40584c28d700b" name="ab37b0224a8cb0b2c35e40584c28d700b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab37b0224a8cb0b2c35e40584c28d700b">&#9670;&#160;</a></span>gameComplete</h2>
+<a id="a44c79b205dec16bfe650e21259860c5b" name="a44c79b205dec16bfe650e21259860c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c79b205dec16bfe650e21259860c5b">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pause/resume logic each frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00022">22</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="acdcfce2477465ad2945d178efdbce316" name="acdcfce2477465ad2945d178efdbce316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdcfce2477465ad2945d178efdbce316">&#9670;&#160;</a></span>buttonPlayer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameManager.gameComplete = false</td>
+          <td class="memname">AudioSource GameManager.buttonPlayer</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicates if the game has been completed. </p>
+<p>Audio source for buttons. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00016">16</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="aee7090efd882462f4d6816580d1244f8" name="aee7090efd882462f4d6816580d1244f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7090efd882462f4d6816580d1244f8">&#9670;&#160;</a></span>buttonSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioClip GameManager.buttonSound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Button sound. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00017">17</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
@@ -263,7 +398,35 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicates if we are in a level or a menu. </p>
+<p>True if in a level. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9b6571bbce4dfff13fc7f38467c07c05" name="a9b6571bbce4dfff13fc7f38467c07c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6571bbce4dfff13fc7f38467c07c05">&#9670;&#160;</a></span>isPaused</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameManager.isPaused = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pause state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00013">13</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
@@ -279,12 +442,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pause menu. </p>
+<p>Pause menu panel. </p>
+
+<p class="definition">Definition at line <a class="el" href="_game_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Managers/<a class="el" href="_game_manager_8cs.html">GameManager.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Managers/<a class="el" href="_game_manager_8cs_source.html">GameManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

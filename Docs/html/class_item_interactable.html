@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: ItemInteractable Class Reference</title>
-<link rel="icon" href="Mobile.png" type="image/x-icon" />
+<title>THE IN-BETWEEN: ItemInteractable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,13 +104,13 @@ $(function(){initNavTree('class_item_interactable.html',''); initResizable(true)
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="class_item_interactable-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle"><div class="title">ItemInteractable Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Represents an interactable item that can be collected by the the player. Implements the <a class="el" href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player.">IInteractable</a> interface for interaction handling.  
+<p>Collectible item. Implements interaction.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ItemInteractable:</div>
@@ -119,54 +118,62 @@ Inheritance diagram for ItemInteractable:</div>
  <div class="center">
   <img src="class_item_interactable.png" usemap="#ItemInteractable_map" alt=""/>
   <map id="ItemInteractable_map" name="ItemInteractable_map">
-<area href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player." alt="IInteractable" shape="rect" coords="112,0,214,24"/>
+<area href="interface_i_interactable.html" title="Interface for objects the player can interact with." alt="IInteractable" shape="rect" coords="112,0,214,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d2c76c260a42ce13a98b6dca799312e" id="r_a3d2c76c260a42ce13a98b6dca799312e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d2c76c260a42ce13a98b6dca799312e">OnHoverEnter</a> (<a class="el" href="class_u_i_text_controller.html">UITextController</a> textController)</td></tr>
-<tr class="memdesc:a3d2c76c260a42ce13a98b6dca799312e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays interaction prompt when the item is hovered over.  <br /></td></tr>
+<tr class="memdesc:a3d2c76c260a42ce13a98b6dca799312e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show prompt on hover.  <br /></td></tr>
 <tr class="separator:a3d2c76c260a42ce13a98b6dca799312e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d3b7331b69312c4897c2bf2354d40d" id="r_af3d3b7331b69312c4897c2bf2354d40d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3d3b7331b69312c4897c2bf2354d40d">OnHoverExit</a> ()</td></tr>
-<tr class="memdesc:af3d3b7331b69312c4897c2bf2354d40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears interaction prompt when hover ends.  <br /></td></tr>
+<tr class="memdesc:af3d3b7331b69312c4897c2bf2354d40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear prompt on exit.  <br /></td></tr>
 <tr class="separator:af3d3b7331b69312c4897c2bf2354d40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ab781057ba464b91fa03b8401007938" id="r_a5ab781057ba464b91fa03b8401007938"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab781057ba464b91fa03b8401007938">Interact</a> (GameObject objectOnHand=null)</td></tr>
-<tr class="memdesc:a5ab781057ba464b91fa03b8401007938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles item interaction logic when the the player interacts with the item.  <br /></td></tr>
+<tr class="memdesc:a5ab781057ba464b91fa03b8401007938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collect item. Needs mobile for others.  <br /></td></tr>
 <tr class="separator:a5ab781057ba464b91fa03b8401007938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
 <tr class="memitem:ae172325c7a166c41390d8a8af4fe5a29" id="r_ae172325c7a166c41390d8a8af4fe5a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_item.html">Item</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae172325c7a166c41390d8a8af4fe5a29">itemData</a></td></tr>
-<tr class="memdesc:ae172325c7a166c41390d8a8af4fe5a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data container for the item's properties.  <br /></td></tr>
+<tr class="memdesc:ae172325c7a166c41390d8a8af4fe5a29"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_item.html" title="Inventory item ScriptableObject for easy asset management. Used for UI (2D) and world (3D) objects.">Item</a> data.  <br /></td></tr>
 <tr class="separator:ae172325c7a166c41390d8a8af4fe5a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85fe05ef552790c82bf1ef871cb05644" id="r_a85fe05ef552790c82bf1ef871cb05644"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85fe05ef552790c82bf1ef871cb05644">isHeld</a> = false</td></tr>
-<tr class="memdesc:a85fe05ef552790c82bf1ef871cb05644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the item is currently being held by the the player.  <br /></td></tr>
+<tr class="memdesc:a85fe05ef552790c82bf1ef871cb05644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the item held.  <br /></td></tr>
 <tr class="separator:a85fe05ef552790c82bf1ef871cb05644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaee5fab3463f0d4ae0488d474ec0210c" id="r_aaee5fab3463f0d4ae0488d474ec0210c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_inventory_manager.html">InventoryManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaee5fab3463f0d4ae0488d474ec0210c">inventoryManager</a></td></tr>
-<tr class="memdesc:aaee5fab3463f0d4ae0488d474ec0210c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the inventory manager.  <br /></td></tr>
+<tr class="memdesc:aaee5fab3463f0d4ae0488d474ec0210c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inventory ref.  <br /></td></tr>
 <tr class="separator:aaee5fab3463f0d4ae0488d474ec0210c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98054d6d62309b7f1b5acdd758d9b7ba" id="r_a98054d6d62309b7f1b5acdd758d9b7ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_i_text_controller.html">UITextController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98054d6d62309b7f1b5acdd758d9b7ba">uiTextController</a></td></tr>
-<tr class="memdesc:a98054d6d62309b7f1b5acdd758d9b7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the UI text controller.  <br /></td></tr>
+<tr class="memdesc:a98054d6d62309b7f1b5acdd758d9b7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI ref.  <br /></td></tr>
 <tr class="separator:a98054d6d62309b7f1b5acdd758d9b7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ba22469fedffc3a1449adc1efe70aac" id="r_a5ba22469fedffc3a1449adc1efe70aac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_controller.html">PlayerController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ba22469fedffc3a1449adc1efe70aac">playerController</a></td></tr>
-<tr class="memdesc:a5ba22469fedffc3a1449adc1efe70aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the the player controller.  <br /></td></tr>
+<tr class="memdesc:a5ba22469fedffc3a1449adc1efe70aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player ref.  <br /></td></tr>
 <tr class="separator:a5ba22469fedffc3a1449adc1efe70aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f49e3607aa5a16c331e28f9a7a0285" id="r_a23f49e3607aa5a16c331e28f9a7a0285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_stats.html">Stats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f49e3607aa5a16c331e28f9a7a0285">stats</a></td></tr>
-<tr class="memdesc:a23f49e3607aa5a16c331e28f9a7a0285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the the player stats component.  <br /></td></tr>
+<tr class="memdesc:a23f49e3607aa5a16c331e28f9a7a0285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player stats.  <br /></td></tr>
 <tr class="separator:a23f49e3607aa5a16c331e28f9a7a0285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aaccae0ab51e066599d735d12084e5b42" id="r_aaccae0ab51e066599d735d12084e5b42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaccae0ab51e066599d735d12084e5b42">Start</a> ()</td></tr>
+<tr class="memdesc:aaccae0ab51e066599d735d12084e5b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get refs.  <br /></td></tr>
+<tr class="separator:aaccae0ab51e066599d735d12084e5b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67752f3d7206557389fcad6b36018a2a" id="r_a67752f3d7206557389fcad6b36018a2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67752f3d7206557389fcad6b36018a2a">PickUp</a> ()</td></tr>
+<tr class="memdesc:a67752f3d7206557389fcad6b36018a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to inventory and handle visuals.  <br /></td></tr>
+<tr class="separator:a67752f3d7206557389fcad6b36018a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents an interactable item that can be collected by the the player. Implements the <a class="el" href="interface_i_interactable.html" title="Defines the standard interface for objects that can be interacted with by the the player.">IInteractable</a> interface for interaction handling. </p>
+<div class="textblock"><p>Collectible item. Implements interaction. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00006">6</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5ab781057ba464b91fa03b8401007938" name="a5ab781057ba464b91fa03b8401007938"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ab781057ba464b91fa03b8401007938">&#9670;&#160;</a></span>Interact()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ItemInteractable.Interact </td>
@@ -175,22 +182,13 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Handles item interaction logic when the the player interacts with the item. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">objectOnHand</td><td><a class="el" href="class_item.html" title="Defines inventory items as ScriptableObjects for easy asset creation and management....">Item</a> currently held by the the player (unused).</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Collect item. Needs mobile for others. </p>
 
 <p>Implements <a class="el" href="interface_i_interactable.html#ac96e72b5b0ddf4531aef36932deff760">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00049">49</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -199,9 +197,6 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ItemInteractable.OnHoverEnter </td>
@@ -210,22 +205,13 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Displays interaction prompt when the item is hovered over. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">textController</td><td>UI text controller reference.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Show prompt on hover. </p>
 
 <p>Implements <a class="el" href="interface_i_interactable.html#aa4da5c9d3114de5d1ef7837aa86c7958">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00032">32</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -234,9 +220,6 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ItemInteractable.OnHoverExit </td>
@@ -245,20 +228,75 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+<p>Clear prompt on exit. </p>
+
+<p>Implements <a class="el" href="interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00041">41</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
+
+</div>
+</div>
+<a id="a67752f3d7206557389fcad6b36018a2a" name="a67752f3d7206557389fcad6b36018a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67752f3d7206557389fcad6b36018a2a">&#9670;&#160;</a></span>PickUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ItemInteractable.PickUp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clears interaction prompt when hover ends. </p>
+<p>Add to inventory and handle visuals. </p>
 
-<p>Implements <a class="el" href="interface_i_interactable.html#ae6c157e6b4a36bdbf4acd4cbf0e2b78b">IInteractable</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00074">74</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aaccae0ab51e066599d735d12084e5b42" name="aaccae0ab51e066599d735d12084e5b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaccae0ab51e066599d735d12084e5b42">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ItemInteractable.Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get refs. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00021">21</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="aaee5fab3463f0d4ae0488d474ec0210c" name="aaee5fab3463f0d4ae0488d474ec0210c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaee5fab3463f0d4ae0488d474ec0210c">&#9670;&#160;</a></span>inventoryManager</h2>
 
@@ -271,7 +309,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reference to the inventory manager. </p>
+<p>Inventory ref. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00013">13</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -287,7 +327,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Flag indicating if the item is currently being held by the the player. </p>
+<p>Is the item held. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00010">10</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -303,7 +345,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Data container for the item's properties. </p>
+<p><a class="el" href="class_item.html" title="Inventory item ScriptableObject for easy asset management. Used for UI (2D) and world (3D) objects.">Item</a> data. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00009">9</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -319,7 +363,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reference to the the player controller. </p>
+<p>Player ref. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00015">15</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -335,7 +381,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reference to the the player stats component. </p>
+<p>Player stats. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00016">16</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
@@ -351,12 +399,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reference to the UI text controller. </p>
+<p>UI ref. </p>
+
+<p class="definition">Definition at line <a class="el" href="_item_interactable_8cs_source.html#l00014">14</a> of file <a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_item_interactable_8cs.html">ItemInteractable.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Interactions/<a class="el" href="_item_interactable_8cs_source.html">ItemInteractable.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

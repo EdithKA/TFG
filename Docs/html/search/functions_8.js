@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['removeitem_0',['RemoveItem',['../class_inventory_manager.html#afc55d3b8671e510b3fd64199e140b001',1,'InventoryManager']]],
-  ['resume_1',['Resume',['../class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3',1,'GameManager']]]
+  ['nextaction_0',['NextAction',['../class_enemy_distance_controller.html#abffd1822cf4ce667c57f85714471ce62',1,'EnemyDistanceController.NextAction()'],['../class_enemy_melee_controller.html#a948f263b297c2413e0be50be6ac5d899',1,'EnemyMeleeController.NextAction()']]]
 ];

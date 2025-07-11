@@ -6,10 +6,15 @@ var searchData=
   ['sanitysprites_3',['sanitySprites',['../class_stats.html#a2596ed66a1648ddb03572b40a60a217c',1,'Stats']]],
   ['sanitythreshold_4',['sanityThreshold',['../class_stats.html#a42e1c5e0cdcc66d2b1f8e26882255894',1,'Stats']]],
   ['screenmaterial_5',['screenMaterial',['../class_cinema_manager.html#a3152d13cab508268088be81ace1c0c24',1,'CinemaManager']]],
-  ['soundplayer_6',['soundPlayer',['../class_inventory_manager.html#a64ceb3bc16df1b072214c8fa1505db0a',1,'InventoryManager']]],
-  ['stamina_7',['stamina',['../class_player_controller.html#a91e9c34ee791cf1192de8126f22e74d8',1,'PlayerController']]],
-  ['stats_8',['stats',['../class_item_interactable.html#a23f49e3607aa5a16c331e28f9a7a0285',1,'ItemInteractable']]],
-  ['stepinterval_9',['stepInterval',['../class_player_controller.html#affff329fd0f77606a5e593b41ff9ba6f',1,'PlayerController']]],
-  ['stepsound_10',['stepSound',['../class_player_controller.html#a08566e581f83e2c173577a7c0c6de08e',1,'PlayerController']]],
-  ['stepsplayer_11',['stepsPlayer',['../class_player_controller.html#ab4da3b524a6c2c9fcb8b329fd58fef77',1,'PlayerController']]]
+  ['slots_6',['slots',['../class_inventory_manager.html#a1ba74f4b51fc220d80c471a2acf8573f',1,'InventoryManager']]],
+  ['soundplayer_7',['soundPlayer',['../class_inventory_manager.html#a64ceb3bc16df1b072214c8fa1505db0a',1,'InventoryManager']]],
+  ['speed_8',['speed',['../class_player_controller.html#a0928605583f0563cd84fe43119d336ec',1,'PlayerController']]],
+  ['spriterenderer_9',['spriteRenderer',['../class_angle_to_player.html#a65f4a46d9485b06ad0d10a44f64ed288',1,'AngleToPlayer']]],
+  ['stamina_10',['stamina',['../class_player_controller.html#a91e9c34ee791cf1192de8126f22e74d8',1,'PlayerController']]],
+  ['startthought_11',['startThought',['../class_game_texts.html#a648c4762803845a537614257a4365cc0',1,'GameTexts']]],
+  ['stats_12',['stats',['../class_item_interactable.html#a23f49e3607aa5a16c331e28f9a7a0285',1,'ItemInteractable.stats'],['../class_inventory_manager.html#a258d269c1c99c0791a23ccd5955c969b',1,'InventoryManager.stats']]],
+  ['stepinterval_13',['stepInterval',['../class_player_controller.html#affff329fd0f77606a5e593b41ff9ba6f',1,'PlayerController']]],
+  ['stepsound_14',['stepSound',['../class_player_controller.html#a08566e581f83e2c173577a7c0c6de08e',1,'PlayerController']]],
+  ['stepsplayer_15',['stepsPlayer',['../class_player_controller.html#ab4da3b524a6c2c9fcb8b329fd58fef77',1,'PlayerController']]],
+  ['steptimer_16',['stepTimer',['../class_player_controller.html#ac88b2e92b6d875da7f17edb573f5f794',1,'PlayerController']]]
 ];

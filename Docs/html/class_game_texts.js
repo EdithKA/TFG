@@ -21,5 +21,6 @@ var class_game_texts =
     [ "placeObjectMessage", "class_game_texts.html#a3aa71ce1559848e20bce74f1f6e7ee83", null ],
     [ "rewardAppear", "class_game_texts.html#ab31aad798c0479e9a857131b7ccf375c", null ],
     [ "rewardCollected", "class_game_texts.html#a5af555507449207741b678a4be9dee3c", null ],
+    [ "startThought", "class_game_texts.html#a648c4762803845a537614257a4365cc0", null ],
     [ "wrongObjectMessage", "class_game_texts.html#a1f6ef9fbff89c880207094e8ddb7c334", null ]
 ];

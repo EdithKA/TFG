@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The In-Between: PuzleManager Class Reference</title>
-<link rel="icon" href="Mobile.png" type="image/x-icon" />
+<title>THE IN-BETWEEN: PuzleManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">The In-Between
+   <div id="projectname">THE IN-BETWEEN
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -104,13 +103,13 @@ $(function(){initNavTree('class_puzle_manager.html',''); initResizable(true); })
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="class_puzle_manager-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle"><div class="title">PuzleManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This script manages the state of a minigame based on its assigned objectives.  
+<p>Manages puzzle state and reward spawning.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PuzleManager:</div>
@@ -120,16 +119,128 @@ Inheritance diagram for PuzleManager:</div>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a81ba72abc9a985816a94605224307e6d" id="r_a81ba72abc9a985816a94605224307e6d"><td class="memItemLeft" align="right" valign="top">List&lt; MonoBehaviour &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81ba72abc9a985816a94605224307e6d">puzzleObjectives</a> = new List&lt;MonoBehaviour&gt;()</td></tr>
+<tr class="memdesc:a81ba72abc9a985816a94605224307e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objectives to complete.  <br /></td></tr>
+<tr class="separator:a81ba72abc9a985816a94605224307e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74bcd434ee9feea4b1b64b2b0a479e8" id="r_ac74bcd434ee9feea4b1b64b2b0a479e8"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac74bcd434ee9feea4b1b64b2b0a479e8">rewardPrefab</a></td></tr>
+<tr class="memdesc:ac74bcd434ee9feea4b1b64b2b0a479e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reward prefab.  <br /></td></tr>
+<tr class="separator:ac74bcd434ee9feea4b1b64b2b0a479e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3492601eb2876564ff2d2bbe83b8f3af" id="r_a3492601eb2876564ff2d2bbe83b8f3af"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3492601eb2876564ff2d2bbe83b8f3af">rewardSpawnPoint</a></td></tr>
+<tr class="memdesc:a3492601eb2876564ff2d2bbe83b8f3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reward spawn point.  <br /></td></tr>
+<tr class="separator:a3492601eb2876564ff2d2bbe83b8f3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa704f74be1178315000fd824d177c4d0" id="r_aa704f74be1178315000fd824d177c4d0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="interface_i_puzle_objective.html">IPuzleObjective</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa704f74be1178315000fd824d177c4d0">objectives</a> = new List&lt;<a class="el" href="interface_i_puzle_objective.html">IPuzleObjective</a>&gt;()</td></tr>
-<tr class="memdesc:aa704f74be1178315000fd824d177c4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of objectives converted to the <a class="el" href="interface_i_puzle_objective.html" title="Interface to implement an objective to be completed for a minigame.">IPuzleObjective</a> interface.  <br /></td></tr>
+<tr class="memdesc:aa704f74be1178315000fd824d177c4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objectives as interface.  <br /></td></tr>
 <tr class="separator:aa704f74be1178315000fd824d177c4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1093fd11a3b93367cf0ada763ff752eb" id="r_a1093fd11a3b93367cf0ada763ff752eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1093fd11a3b93367cf0ada763ff752eb">puzzleCompleted</a> = false</td></tr>
+<tr class="memdesc:a1093fd11a3b93367cf0ada763ff752eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puzzle done.  <br /></td></tr>
 <tr class="separator:a1093fd11a3b93367cf0ada763ff752eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a17e18744fcb56eae4db59c1edb1b95e5" id="r_a17e18744fcb56eae4db59c1edb1b95e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17e18744fcb56eae4db59c1edb1b95e5">Start</a> ()</td></tr>
+<tr class="memdesc:a17e18744fcb56eae4db59c1edb1b95e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get objectives as interface.  <br /></td></tr>
+<tr class="separator:a17e18744fcb56eae4db59c1edb1b95e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ad8b3ea9ebae1ef6651d5fda72c8b8" id="r_a34ad8b3ea9ebae1ef6651d5fda72c8b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ad8b3ea9ebae1ef6651d5fda72c8b8">Update</a> ()</td></tr>
+<tr class="memdesc:a34ad8b3ea9ebae1ef6651d5fda72c8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check completion each frame.  <br /></td></tr>
+<tr class="separator:a34ad8b3ea9ebae1ef6651d5fda72c8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d8bd95cc5260d3cfa26d337efbf912" id="r_a04d8bd95cc5260d3cfa26d337efbf912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d8bd95cc5260d3cfa26d337efbf912">CheckObjectives</a> ()</td></tr>
+<tr class="memdesc:a04d8bd95cc5260d3cfa26d337efbf912"><td class="mdescLeft">&#160;</td><td class="mdescRight">If all objectives done, spawn reward.  <br /></td></tr>
+<tr class="separator:a04d8bd95cc5260d3cfa26d337efbf912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This script manages the state of a minigame based on its assigned objectives. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+<div class="textblock"><p>Manages puzzle state and reward spawning. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00007">7</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a04d8bd95cc5260d3cfa26d337efbf912" name="a04d8bd95cc5260d3cfa26d337efbf912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d8bd95cc5260d3cfa26d337efbf912">&#9670;&#160;</a></span>CheckObjectives()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PuzleManager.CheckObjectives </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If all objectives done, spawn reward. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00046">46</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a17e18744fcb56eae4db59c1edb1b95e5" name="a17e18744fcb56eae4db59c1edb1b95e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e18744fcb56eae4db59c1edb1b95e5">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PuzleManager.Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get objectives as interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00020">20</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a34ad8b3ea9ebae1ef6651d5fda72c8b8" name="a34ad8b3ea9ebae1ef6651d5fda72c8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ad8b3ea9ebae1ef6651d5fda72c8b8">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PuzleManager.Update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check completion each frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00035">35</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="aa704f74be1178315000fd824d177c4d0" name="aa704f74be1178315000fd824d177c4d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa704f74be1178315000fd824d177c4d0">&#9670;&#160;</a></span>objectives</h2>
 
@@ -142,7 +253,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>List of objectives converted to the <a class="el" href="interface_i_puzle_objective.html" title="Interface to implement an objective to be completed for a minigame.">IPuzleObjective</a> interface. </p>
+<p>Objectives as interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00014">14</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
 
 </div>
 </div>
@@ -158,10 +271,68 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Puzzle done. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00015">15</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a81ba72abc9a985816a94605224307e6d" name="a81ba72abc9a985816a94605224307e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ba72abc9a985816a94605224307e6d">&#9670;&#160;</a></span>puzzleObjectives</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;MonoBehaviour&gt; PuzleManager.puzzleObjectives = new List&lt;MonoBehaviour&gt;()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Objectives to complete. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00010">10</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac74bcd434ee9feea4b1b64b2b0a479e8" name="ac74bcd434ee9feea4b1b64b2b0a479e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74bcd434ee9feea4b1b64b2b0a479e8">&#9670;&#160;</a></span>rewardPrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject PuzleManager.rewardPrefab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reward prefab. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3492601eb2876564ff2d2bbe83b8f3af" name="a3492601eb2876564ff2d2bbe83b8f3af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3492601eb2876564ff2d2bbe83b8f3af">&#9670;&#160;</a></span>rewardSpawnPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform PuzleManager.rewardSpawnPoint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reward spawn point. </p>
+
+<p class="definition">Definition at line <a class="el" href="_puzle_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/MyProjects/TFG/Assets/Scripts/Puzzles/<a class="el" href="_puzle_manager_8cs.html">PuzleManager.cs</a></li>
+<li>D:/MyProjects/TFG/Assets/Scripts/Puzzles/<a class="el" href="_puzle_manager_8cs_source.html">PuzleManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

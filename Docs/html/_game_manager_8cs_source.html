@@ -106,31 +106,114 @@ $(function(){initNavTree('_game_manager_8cs_source.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <a href="_game_manager_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine.SceneManagement;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_game_manager.html">   10</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_game_manager.html">GameManager</a> : MonoBehaviour</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_game_manager.html#a1b427a8159a66fe01c067fefa369ae86">   16</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#a1b427a8159a66fe01c067fefa369ae86">LoadSceneByName</a>(<span class="keywordtype">string</span> name)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        SceneManager.LoadScene(name);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine.SceneManagement;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_game_manager.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_game_manager.html">GameManager</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// --- Pause Menu ---</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_game_manager.html#a0f1468dcf4ee59a87f135ee85cf6b800">   11</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_variable" href="class_game_manager.html#a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</a>;      </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_game_manager.html#aa1f706085605070c6aa1a8367c3fd07d">   12</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_manager.html#aa1f706085605070c6aa1a8367c3fd07d">isLevel</a>;              </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">   13</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">isPaused</a> = <span class="keyword">false</span>;            </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// --- Menu ---</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_game_manager.html#acdcfce2477465ad2945d178efdbce316">   16</a></span>    <span class="keyword">public</span> AudioSource <a class="code hl_variable" href="class_game_manager.html#acdcfce2477465ad2945d178efdbce316">buttonPlayer</a>;  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">   17</a></span>    <span class="keyword">public</span> AudioClip <a class="code hl_variable" href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">buttonSound</a>;     </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_game_manager.html#a44c79b205dec16bfe650e21259860c5b">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#a44c79b205dec16bfe650e21259860c5b">Update</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_manager.html#aa1f706085605070c6aa1a8367c3fd07d">isLevel</a> &amp;&amp; Input.GetKeyDown(KeyCode.Escape))</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">isPaused</a>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <a class="code hl_function" href="class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <a class="code hl_function" href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba">Pause</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">   25</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">QuitGame</a>()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        Application.Quit();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3">Resume</a>()</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        AudioListener.pause = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_game_manager.html#a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</a>.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Time.timeScale = 1f;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_variable" href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">isPaused</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        Cursor.lockState = CursorLockMode.Locked;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Cursor.visible = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba">   47</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba">Pause</a>()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="class_game_manager.html#a0f1468dcf4ee59a87f135ee85cf6b800">pauseMenu</a>.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        AudioListener.pause = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Time.timeScale = 0f;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">isPaused</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        Cursor.lockState = CursorLockMode.None;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Cursor.visible = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 </div>
-<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">Handles core game management actions such as scene transitions and quitting the game....</div><div class="ttdef"><b>Definition</b> <a href="#l00010">GameManager.cs:11</a></div></div>
-<div class="ttc" id="aclass_game_manager_html_a1b427a8159a66fe01c067fefa369ae86"><div class="ttname"><a href="class_game_manager.html#a1b427a8159a66fe01c067fefa369ae86">GameManager.LoadSceneByName</a></div><div class="ttdeci">void LoadSceneByName(string name)</div><div class="ttdoc">Loads a new scene by its name.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">GameManager.cs:16</a></div></div>
-<div class="ttc" id="aclass_game_manager_html_aad2528be72763c8bf072557d9ece157b"><div class="ttname"><a href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">GameManager.QuitGame</a></div><div class="ttdeci">void QuitGame()</div><div class="ttdoc">Quits the game application. Note: This will only work in a built game, not in the Unity Editor.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">GameManager.cs:25</a></div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_game_manager.html#abe7de74656d57942a1cb3b0d2b375dcc">   60</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#abe7de74656d57942a1cb3b0d2b375dcc">ButtonToScene</a>(<span class="keywordtype">string</span> sceneName)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        StartCoroutine(<a class="code hl_function" href="class_game_manager.html#a2d39c49e4b36479a51b6cb2b5cdd8374">PlaySoundAndChangeScene</a>(sceneName));</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_game_manager.html#a2d39c49e4b36479a51b6cb2b5cdd8374">   65</a></span>    <span class="keyword">private</span> IEnumerator <a class="code hl_function" href="class_game_manager.html#a2d39c49e4b36479a51b6cb2b5cdd8374">PlaySoundAndChangeScene</a>(<span class="keywordtype">string</span> sceneName)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_variable" href="class_game_manager.html#acdcfce2477465ad2945d178efdbce316">buttonPlayer</a>.PlayOneShot(<a class="code hl_variable" href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">buttonSound</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">buttonSound</a>.length);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        SceneManager.LoadScene(sceneName);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_game_manager.html#aa93654b52611497c690d9ad5af2772f6">   75</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#aa93654b52611497c690d9ad5af2772f6">ChangeScene</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (AudioListener.pause == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            AudioListener.pause = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (name != <span class="stringliteral">&quot;MainLevel&quot;</span>)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            Cursor.lockState = CursorLockMode.None;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            Cursor.visible = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            Cursor.lockState = CursorLockMode.Locked;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            Cursor.visible = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        Time.timeScale = 1f;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        SceneManager.LoadScene(name);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">   96</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">QuitGame</a>()</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_variable" href="class_game_manager.html#acdcfce2477465ad2945d178efdbce316">buttonPlayer</a>.PlayOneShot(<a class="code hl_variable" href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">buttonSound</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        Application.Quit();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdoc">Handles pause menu, scene changes, and quitting the game.</div><div class="ttdef"><b>Definition</b> <a href="#l00008">GameManager.cs:9</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a0f1468dcf4ee59a87f135ee85cf6b800"><div class="ttname"><a href="class_game_manager.html#a0f1468dcf4ee59a87f135ee85cf6b800">GameManager.pauseMenu</a></div><div class="ttdeci">GameObject pauseMenu</div><div class="ttdoc">Pause menu panel.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">GameManager.cs:11</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a2d39c49e4b36479a51b6cb2b5cdd8374"><div class="ttname"><a href="class_game_manager.html#a2d39c49e4b36479a51b6cb2b5cdd8374">GameManager.PlaySoundAndChangeScene</a></div><div class="ttdeci">IEnumerator PlaySoundAndChangeScene(string sceneName)</div><div class="ttdef"><b>Definition</b> <a href="#l00065">GameManager.cs:65</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a44c79b205dec16bfe650e21259860c5b"><div class="ttname"><a href="class_game_manager.html#a44c79b205dec16bfe650e21259860c5b">GameManager.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Pause/resume logic each frame.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">GameManager.cs:22</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a59e6dd8d370a45a4eecd4b1fee7da4b3"><div class="ttname"><a href="class_game_manager.html#a59e6dd8d370a45a4eecd4b1fee7da4b3">GameManager.Resume</a></div><div class="ttdeci">void Resume()</div><div class="ttdoc">Resume from pause.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">GameManager.cs:34</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a7979fca811638424b6778a6c223a66ba"><div class="ttname"><a href="class_game_manager.html#a7979fca811638424b6778a6c223a66ba">GameManager.Pause</a></div><div class="ttdeci">void Pause()</div><div class="ttdoc">Pause the game.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">GameManager.cs:47</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a9b6571bbce4dfff13fc7f38467c07c05"><div class="ttname"><a href="class_game_manager.html#a9b6571bbce4dfff13fc7f38467c07c05">GameManager.isPaused</a></div><div class="ttdeci">bool isPaused</div><div class="ttdoc">Pause state.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">GameManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_aa1f706085605070c6aa1a8367c3fd07d"><div class="ttname"><a href="class_game_manager.html#aa1f706085605070c6aa1a8367c3fd07d">GameManager.isLevel</a></div><div class="ttdeci">bool isLevel</div><div class="ttdoc">True if in a level.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">GameManager.cs:12</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_aa93654b52611497c690d9ad5af2772f6"><div class="ttname"><a href="class_game_manager.html#aa93654b52611497c690d9ad5af2772f6">GameManager.ChangeScene</a></div><div class="ttdeci">void ChangeScene(string name)</div><div class="ttdoc">Change scene by name.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">GameManager.cs:75</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_aad2528be72763c8bf072557d9ece157b"><div class="ttname"><a href="class_game_manager.html#aad2528be72763c8bf072557d9ece157b">GameManager.QuitGame</a></div><div class="ttdeci">void QuitGame()</div><div class="ttdoc">Quit the game.</div><div class="ttdef"><b>Definition</b> <a href="#l00096">GameManager.cs:96</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_abe7de74656d57942a1cb3b0d2b375dcc"><div class="ttname"><a href="class_game_manager.html#abe7de74656d57942a1cb3b0d2b375dcc">GameManager.ButtonToScene</a></div><div class="ttdeci">void ButtonToScene(string sceneName)</div><div class="ttdoc">Play button sound and change scene.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">GameManager.cs:60</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_acdcfce2477465ad2945d178efdbce316"><div class="ttname"><a href="class_game_manager.html#acdcfce2477465ad2945d178efdbce316">GameManager.buttonPlayer</a></div><div class="ttdeci">AudioSource buttonPlayer</div><div class="ttdoc">Audio source for buttons.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">GameManager.cs:16</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_aee7090efd882462f4d6816580d1244f8"><div class="ttname"><a href="class_game_manager.html#aee7090efd882462f4d6816580d1244f8">GameManager.buttonSound</a></div><div class="ttdeci">AudioClip buttonSound</div><div class="ttdoc">Button sound.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">GameManager.cs:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
