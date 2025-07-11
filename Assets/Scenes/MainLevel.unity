@@ -561,6 +561,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 697257764}
     m_Modifications:
+    - target: {fileID: 1758504727694703679, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c6ac6b29bf88f4799b29a0c32c7f21, type: 2}
+    - target: {fileID: 6166242128003831092, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8382792233751230917, guid: c4e6b6db84e5bce448ae9905e231faaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11533,6 +11543,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 211189960143851136, guid: 5bdd6c2e2ee130e4d937c770c8590953,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 679506341094141228, guid: 5bdd6c2e2ee130e4d937c770c8590953,
         type: 3}
       propertyPath: m_Name
@@ -16130,6 +16145,11 @@ PrefabInstance:
     - target: {fileID: 154749416928638870, guid: 5bdd6c2e2ee130e4d937c770c8590953,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211189960143851136, guid: 5bdd6c2e2ee130e4d937c770c8590953,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 679506341094141228, guid: 5bdd6c2e2ee130e4d937c770c8590953,
@@ -23302,6 +23322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -27456,6 +27481,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1482239952}
     m_Modifications:
+    - target: {fileID: 1758504727694703679, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c6ac6b29bf88f4799b29a0c32c7f21, type: 2}
+    - target: {fileID: 6166242128003831092, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8382792233751230917, guid: c4e6b6db84e5bce448ae9905e231faaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30907,6 +30942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
         type: 3}
+      propertyPath: m_TagString
+      value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221052153289065868, guid: 25a51b150b220f249bda6848ac5d6300,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -31158,6 +31198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -25.771
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304144706539832853, guid: 136811b17f12a4744869d26ad61731ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32691,6 +32736,11 @@ PrefabInstance:
     - target: {fileID: 154749416928638870, guid: 5bdd6c2e2ee130e4d937c770c8590953,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 211189960143851136, guid: 5bdd6c2e2ee130e4d937c770c8590953,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 679506341094141228, guid: 5bdd6c2e2ee130e4d937c770c8590953,
@@ -34875,10 +34925,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 697257764}
     m_Modifications:
+    - target: {fileID: 1758504727694703679, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45c6ac6b29bf88f4799b29a0c32c7f21, type: 2}
     - target: {fileID: 5850735313886236131, guid: c4e6b6db84e5bce448ae9905e231faaa,
         type: 3}
       propertyPath: m_Intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166242128003831092, guid: c4e6b6db84e5bce448ae9905e231faaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8382792233751230917, guid: c4e6b6db84e5bce448ae9905e231faaa,
         type: 3}
@@ -37036,6 +37096,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
+        type: 3}
+      propertyPath: m_TagString
+      value: Glitch
       objectReference: {fileID: 0}
     - target: {fileID: 7040802943515350845, guid: 12d657002d1219e47a675028c44a5597,
         type: 3}

@@ -19,6 +19,8 @@ MonoBehaviour:
   inspectMessage: Press [E] to examine.
   objectAdded: added to the inventory.
   objectRemoved: removed from the inventory.
+  startThought: "Where am I? How did I get here? ...Who am I? All I remember is being
+    in the car and then... I have to\_get\_out\_of\_here."
   needMobileMessage: Looks like I need to pick something up first.
   objectAlreadyPlaced: There is already an object here.
   needObjectMessage: I have to put something here.

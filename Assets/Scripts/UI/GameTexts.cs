@@ -16,6 +16,7 @@ public class GameTexts : ScriptableObject
     public string objectRemoved = ""; ///< Message for object removed from inventory.
 
     [Header("Thoughts")]
+    public string startThought = "";
     public string needMobileMessage = ""; ///< Message when mobile is needed.
     public string objectAlreadyPlaced = ""; ///< Message when object is already placed.
     public string needObjectMessage = ""; ///< Message when an object is needed.

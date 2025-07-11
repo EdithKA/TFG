@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public UITextController textController; ///< Reference to UITextController
     public GameManager gameManager; ///< Reference to GameManager
     CharacterController characterController; ///< CharacterController component
+    GameTexts gameTexts;
 
     // Sounds
     public AudioSource stepsPlayer; ///< AudioSource for footsteps
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
         inventoryManager = FindObjectOfType<InventoryManager>();
         textController = FindObjectOfType<UITextController>();
         gameManager = FindObjectOfType<GameManager>();
+        gameTexts = textController.gameTexts;
+        textController.ShowThought(gameTexts.startThought);
     }
 
     /**
