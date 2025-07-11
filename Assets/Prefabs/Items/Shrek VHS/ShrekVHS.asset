@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c04cfef2a62b9408dde9fba4f42751, type: 3}
   m_Name: ShrekVHS
   m_EditorClassIdentifier: 
-  itemName: ShrekVHS
+  itemID: Shrek
+  displayName: 'Shrek 2 VHS '
   icon: {fileID: 21300000, guid: 3ba03c61defa6fa4589da6c5fc66d173, type: 3}
-  type: VHS
+  type: photo
   itemPrefab: {fileID: 2622645650571717385, guid: 574c1155f039ae141ab855e29cc85ce3,
     type: 3}
-  collectedText: "\xA1Has encontrado el VHS de Shrek!"
+  equipPositionOffset: {x: 0, y: 0, z: 0}
+  equipRotationOffset: {x: 0, y: 0, z: 0}

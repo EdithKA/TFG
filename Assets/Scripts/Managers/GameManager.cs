@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -57,7 +58,13 @@ public class GameManager : MonoBehaviour
      */
     public void ButtonToScene(string sceneName)
     {
+        StartCoroutine(PlaySoundAndChangeScene(sceneName));
+    }
+
+    private IEnumerator PlaySoundAndChangeScene(string sceneName)
+    {
         buttonPlayer.PlayOneShot(buttonSound);
+        yield return new WaitForSeconds(buttonSound.length);
         SceneManager.LoadScene(sceneName);
     }
 
