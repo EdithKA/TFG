@@ -78,10 +78,20 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 788864409757023954, guid: 8b3c5a3e9e220104b89ebfd6e53a3146,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b3c5a3e9e220104b89ebfd6e53a3146,
         type: 3}
       propertyPath: m_Name
       value: butaca_bebida
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434369213266406234, guid: 8b3c5a3e9e220104b89ebfd6e53a3146,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

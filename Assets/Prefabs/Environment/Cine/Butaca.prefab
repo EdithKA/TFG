@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Butaca
       objectReference: {fileID: 0}
+    - target: {fileID: 5434369213266406234, guid: 1f20ce4ad59ffb94a9dcb66616efe352,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -6464581315734654916, guid: 1f20ce4ad59ffb94a9dcb66616efe352, type: 3}
